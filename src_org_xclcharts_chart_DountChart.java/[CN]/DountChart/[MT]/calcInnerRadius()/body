@@ -1,0 +1,4 @@
+{
+  mFillRadius=(int)Math.round(getRadius() * mInnerRelativePercentage);
+  return mFillRadius;
+}

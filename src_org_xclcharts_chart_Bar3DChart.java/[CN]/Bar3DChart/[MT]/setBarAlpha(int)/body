@@ -1,0 +1,3 @@
+{
+  mBar3D.setAlpha(alpha);
+}

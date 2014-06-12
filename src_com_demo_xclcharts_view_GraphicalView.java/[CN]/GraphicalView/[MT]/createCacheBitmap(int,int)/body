@@ -1,0 +1,3 @@
+{
+  mCacheBitmap=Bitmap.createBitmap(width,height,Config.ARGB_8888);
+}

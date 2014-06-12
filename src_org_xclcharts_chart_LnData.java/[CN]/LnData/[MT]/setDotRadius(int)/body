@@ -1,0 +1,3 @@
+{
+  mPlotLines.getPlotDot().setDotRadius(radius);
+}

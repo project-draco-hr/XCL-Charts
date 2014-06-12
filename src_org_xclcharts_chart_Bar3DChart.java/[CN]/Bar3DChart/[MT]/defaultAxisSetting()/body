@@ -1,0 +1,20 @@
+{
+  super.defaultAxisSetting();
+  try {
+switch (getChartDirection()) {
+case HORIZONTAL:
+{
+        labelsAxis.setAxisTickMarksVisible(false);
+        break;
+      }
+case VERTICAL:
+{
+      labelsAxis.setAxisTickMarksVisible(false);
+      break;
+    }
+}
+}
+ catch (Exception ex) {
+Log.e("ERROR-Bar3DChart",ex.toString());
+}
+}

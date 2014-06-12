@@ -1,0 +1,18 @@
+{
+  try {
+    super.render();
+    calcPlotRange();
+    plotArea.render();
+    plotGrid.render();
+    legend.setCanvas(mCanvas);
+    dataAxis.setCanvas(mCanvas);
+    labelsAxis.setCanvas(mCanvas);
+    renderTitle();
+    legend.setRange(this);
+    legend.render();
+  }
+ catch (  Exception e) {
+    throw e;
+  }
+  return true;
+}

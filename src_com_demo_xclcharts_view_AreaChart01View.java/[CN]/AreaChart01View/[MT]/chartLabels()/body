@@ -1,0 +1,7 @@
+{
+  mChartLabels.add("2010");
+  mChartLabels.add("2011");
+  mChartLabels.add("2012");
+  mChartLabels.add("2013");
+  mChartLabels.add("2014");
+}

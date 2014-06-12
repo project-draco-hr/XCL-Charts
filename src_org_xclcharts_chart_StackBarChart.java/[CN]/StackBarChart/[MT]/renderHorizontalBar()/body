@@ -1,0 +1,39 @@
+{
+  renderHorizontalBarDataAxis();
+  renderHorizontalBarLabelAxis();
+  float axisScreenWidth=getAxisScreenWidth();
+  float axisDataRange=(float)dataAxis.getAxisRange();
+  float valueWidth=axisDataRange;
+  float YSteps=getHorizontalYSteps();
+  int barHeight=(int)Math.round(YSteps * 0.5);
+  for (int r=0; r < labelsAxis.getDataSet().size(); r++) {
+    float currentX=plotArea.getPlotLeft();
+    float currentY=plotArea.getPlotBottom() - (r + 1) * YSteps;
+    Double total=0d;
+    List<BarData> chartDataSource=this.getDataSource();
+    for (int i=0; i < chartDataSource.size(); i++) {
+      BarData bd=chartDataSource.get(i);
+      flatBar.getBarPaint().setColor(bd.getColor());
+      if (bd.getDataSet().size() < r + 1)       continue;
+      Double bv=bd.getDataSet().get(r);
+      total+=bv;
+      float valuePostion=0.0f;
+      if (i == 0) {
+        valuePostion=(float)Math.round(axisScreenWidth * ((bv - dataAxis.getAxisMin()) / valueWidth));
+      }
+ else {
+        valuePostion=(float)Math.round(axisScreenWidth * ((bv) / valueWidth));
+      }
+      flatBar.renderBar(currentX,currentY - barHeight / 2,currentX + valuePostion,currentY + barHeight / 2,this.mCanvas);
+      flatBar.renderBarItemLabel(getFormatterItemLabel(bv),currentX + valuePostion / 2,currentY,mCanvas);
+      currentX+=valuePostion;
+    }
+    if (mTotalLableVisible) {
+      float totalPostion=(float)Math.round(axisScreenWidth / axisDataRange * (total - dataAxis.getAxisMin()));
+      flatBar.renderBarItemLabel(getFormatterItemLabel(total),plotArea.getPlotLeft() - totalPostion,currentY,mCanvas);
+    }
+  }
+  dataAxis.renderAxis(plotArea.getPlotLeft(),plotArea.getPlotBottom(),plotArea.getPlotLeft(),plotArea.getPlotTop());
+  labelsAxis.renderAxis(plotArea.getPlotLeft(),plotArea.getPlotBottom(),plotArea.getPlotRight(),plotArea.getPlotBottom());
+  drawDataSetKey();
+}

@@ -1,0 +1,10 @@
+{
+  mChartTitlePaint=new Paint();
+  mChartSubTitlePaint=new Paint();
+  mChartTitlePaint.setTextSize(32);
+  mChartSubTitlePaint.setTextSize(22);
+  mChartTitlePaint.setColor(Color.BLACK);
+  mChartSubTitlePaint.setColor(Color.BLACK);
+  mChartTitlePaint.setAntiAlias(true);
+  mChartSubTitlePaint.setAntiAlias(true);
+}

@@ -1,0 +1,10 @@
+{
+  String itemLabel="";
+  try {
+    itemLabel=mItemLabelFormatter.doubleFormatter(value);
+  }
+ catch (  Exception ex) {
+    itemLabel=Double.toString(value);
+  }
+  return itemLabel;
+}

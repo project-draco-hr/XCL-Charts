@@ -1,0 +1,54 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.activity_seek_bar);
+  SeekBar seekBar=(SeekBar)this.findViewById(R.id.sk_process);
+  mLaychart=(LinearLayout)this.findViewById(R.id.lay_chart);
+  mDesc=(TextView)findViewById(R.id.tv_process);
+  Bundle bunde=this.getIntent().getExtras();
+  String title=bunde.getString("title");
+  this.setTitle(title);
+  mSelected=bunde.getInt("selected");
+  if (0 == mSelected) {
+    mGaChart=new GaugeChart01View(this);
+    mLaychart.addView(mGaChart);
+    seekBar.setMax(180);
+  }
+ else   if (1 == mSelected) {
+    mCirChart2=new CircleChart02View(this);
+    mLaychart.addView(mCirChart2);
+    seekBar.setMax(100);
+  }
+ else   if (2 == mSelected) {
+    mCirChart=new CircleChart01View(this);
+    mLaychart.addView(mCirChart);
+    seekBar.setMax(100);
+  }
+  seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
+    @Override public void onStopTrackingTouch(    SeekBar seekBar){
+    }
+    @Override public void onStartTrackingTouch(    SeekBar seekBar){
+    }
+    @Override public void onProgressChanged(    SeekBar seekBar,    int progress,    boolean fromUser){
+      mDesc.setText(Integer.toString(progress));
+      if (0 == mSelected) {
+        mGaChart.initCache();
+        mGaChart.setAgent(progress);
+        mGaChart.chartRender();
+        mGaChart.invalidate();
+      }
+ else       if (1 == mSelected) {
+        mCirChart2.initCache();
+        mCirChart2.setPercentage(progress);
+        mCirChart2.chartRender();
+        mCirChart2.invalidate();
+      }
+ else       if (2 == mSelected) {
+        mCirChart.initCache();
+        mCirChart.setPercentage(progress);
+        mCirChart.chartRender();
+        mCirChart.invalidate();
+      }
+    }
+  }
+);
+}

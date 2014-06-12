@@ -1,0 +1,31 @@
+{
+  DrawHelper dw=new DrawHelper();
+  float perLeft=mPaddingPercentLeft;
+  float perRight=mPaddingPercentRight;
+  float perTop=mPaddingPercentTop;
+  float perBottom=mPaddingPercentBottom;
+  if (mChartWidth > this.mChartHeight) {
+    float scrPer=mChartHeight / mChartWidth;
+    perTop+=scrPer;
+    perBottom+=scrPer;
+    perLeft-=scrPer;
+    perRight-=scrPer;
+  }
+  plotArea.setPlotBottom(this.mChartBottom - Math.round(this.mChartHeight / 100 * perBottom));
+  plotArea.setPlotLeft(this.mChartLeft + Math.round(this.mChartWidth / 100 * perLeft));
+  plotArea.setPlotRight(this.mChartRight - Math.round(this.mChartWidth / 100 * perRight));
+  float rederTop=0.0f;
+  float titleHeight=0.0f;
+  float subtitleHeight=0.0f;
+  if (plotTitle.getChartTitle().length() > 0) {
+    titleHeight=dw.getPaintFontHeight(plotTitle.getChartTitlePaint());
+  }
+  if (plotTitle.getChartSubTitle().length() > 0) {
+    subtitleHeight=dw.getPaintFontHeight(plotTitle.getChartTitlePaint());
+  }
+  rederTop=Math.round(this.mChartHeight / 100 * perTop);
+  if (rederTop < titleHeight + subtitleHeight) {
+    rederTop=titleHeight + subtitleHeight;
+  }
+  plotArea.setPlotTop(this.mChartTop + rederTop);
+}

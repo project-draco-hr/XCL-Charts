@@ -1,0 +1,9 @@
+{
+  lPieData.add(new PieData("PostgreSQL",40,(int)Color.rgb(77,83,97)));
+  lPieData.add(new PieData("Sybase",50,(int)Color.rgb(148,159,181)));
+  lPieData.add(new PieData("DB2",60,(int)Color.rgb(253,180,90)));
+  lPieData.add(new PieData("???????????????",35,(int)Color.rgb(52,194,188)));
+  lPieData.add(new PieData("SQL Server",70,(int)Color.rgb(39,51,72)));
+  lPieData.add(new PieData("DB2",80,(int)Color.rgb(255,135,195)));
+  lPieData.add(new PieData("Oracle",90,(int)Color.rgb(215,124,124)));
+}

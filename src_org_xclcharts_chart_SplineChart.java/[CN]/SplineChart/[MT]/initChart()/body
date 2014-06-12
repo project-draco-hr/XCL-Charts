@@ -1,0 +1,4 @@
+{
+  labelsAxis.setAxisHorizontalTickAlign(Align.CENTER);
+  dataAxis.setAxisHorizontalTickAlign(Align.LEFT);
+}

@@ -1,0 +1,20 @@
+{
+  List<Double> valuesA=new LinkedList<Double>();
+  valuesA.add(50d);
+  valuesA.add(25d);
+  valuesA.add(20d);
+  BarData BarDataA=new BarData("Google",valuesA,(int)Color.rgb(73,135,218));
+  List<Double> valuesB=new LinkedList<Double>();
+  valuesB.add(35d);
+  valuesB.add(65d);
+  valuesB.add(75d);
+  BarData BarDataB=new BarData("Baidu",valuesB,(int)Color.rgb(224,4,0));
+  List<Double> valuesC=new LinkedList<Double>();
+  valuesC.add(15d);
+  valuesC.add(10d);
+  valuesC.add(5d);
+  BarData BarDataC=new BarData("Bing",valuesC,(int)Color.rgb(255,185,0));
+  chartData.add(BarDataA);
+  chartData.add(BarDataB);
+  chartData.add(BarDataC);
+}

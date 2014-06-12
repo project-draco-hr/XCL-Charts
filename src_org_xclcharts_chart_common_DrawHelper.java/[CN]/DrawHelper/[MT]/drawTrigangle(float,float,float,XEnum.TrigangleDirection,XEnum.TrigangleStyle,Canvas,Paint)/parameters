@@ -1,0 +1,7 @@
+float baseLine
+float baseLnCentX
+float baseLnCentY
+XEnum.TrigangleDirection direction
+XEnum.TrigangleStyle style
+Canvas canvas
+Paint paint

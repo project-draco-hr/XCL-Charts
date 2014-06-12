@@ -1,0 +1,14 @@
+{
+  super.onOptionsItemSelected(item);
+switch (item.getItemId()) {
+case Menu.FIRST + 1:
+    String URL=getResources().getString(R.string.helpurl);
+  Uri uri=Uri.parse(URL);
+Intent intent2=new Intent(Intent.ACTION_VIEW,uri);
+startActivity(intent2);
+finish();
+break;
+default :
+}
+return true;
+}

@@ -1,0 +1,20 @@
+{
+  super.onCreate(savedInstanceState);
+  requestWindowFeature(Window.FEATURE_NO_TITLE);
+  View[] mCharts=new View[]{new BarChart01View(this),new BarChart02View(this),new Bar3DChart01View(this),new Bar3DChart02View(this),new StackBarChart01View(this),new StackBarChart02View(this),new LineChart01View(this),new SplineChart01View(this),new AreaChart01View(this),new MultiAxisChart01View(this),new MultiAxisChart02View(this),new PieChart01View(this),new Pie3DChart01View(this),new DountChart01View(this),new RoseChart01View(this)};
+  Bundle bunde=this.getIntent().getExtras();
+  mSelected=bunde.getInt("selected");
+  String title=bunde.getString("title");
+  if (mSelected > mCharts.length - 1) {
+    setContentView(R.layout.activity_charts);
+    this.setTitle(Integer.toString(mSelected));
+  }
+ else {
+    final LinearLayout layout=new LinearLayout(this);
+    layout.setOrientation(LinearLayout.VERTICAL);
+    layout.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.MATCH_PARENT));
+    layout.addView(mCharts[mSelected]);
+    setContentView(layout);
+    this.setTitle(title);
+  }
+}

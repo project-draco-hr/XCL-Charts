@@ -1,0 +1,25 @@
+{
+  int baseLightColor=this.mDrawHelper.getLightColor(getAxis3DBaseColor(),mAlpha);
+  mPaintBase.setColor(getAxis3DBaseColor());
+  mPaintBase3D.setColor(baseLightColor);
+  double offsetX=getOffsetX();
+  double offsetY=getOffsetY();
+  float baseLeft2=Math.round(baseLeft - offsetX);
+  float baseTop2=Math.round(baseTop + offsetY);
+  float baseBottom2=Math.round(baseBottom + offsetY);
+  Path pBase2D=new Path();
+  pBase2D.moveTo(baseLeft,baseTop);
+  pBase2D.lineTo(baseLeft2,baseTop2);
+  pBase2D.lineTo(baseLeft2,baseBottom2);
+  pBase2D.lineTo(baseLeft,baseBottom);
+  pBase2D.close();
+  canvas.drawPath(pBase2D,mPaintBase);
+  canvas.drawRect(baseLeft2,baseTop2,Math.round(baseLeft2 - offsetX),baseBottom2,mPaintBase3D);
+  pBase2D.reset();
+  pBase2D.moveTo(baseLeft,baseTop);
+  pBase2D.lineTo(baseLeft2,baseTop2);
+  pBase2D.lineTo(Math.round(baseLeft2 - offsetX),baseTop2);
+  pBase2D.lineTo(Math.round(baseLeft - offsetX),baseTop);
+  pBase2D.close();
+  canvas.drawPath(pBase2D,mPaintBase3D);
+}

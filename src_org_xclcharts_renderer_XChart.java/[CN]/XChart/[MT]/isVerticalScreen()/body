@@ -1,0 +1,8 @@
+{
+  if (mChartWidth < mChartHeight) {
+    return true;
+  }
+ else {
+    return false;
+  }
+}

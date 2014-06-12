@@ -1,0 +1,5 @@
+{
+  if (null != mCanvas && this.getHorizontalLinesVisible()) {
+    mDrawHelper.drawLine(this.getHorizontalLinesDashStyle(),startX,startY,stopX,stopY,mCanvas,getHorizontalLinesPaint());
+  }
+}

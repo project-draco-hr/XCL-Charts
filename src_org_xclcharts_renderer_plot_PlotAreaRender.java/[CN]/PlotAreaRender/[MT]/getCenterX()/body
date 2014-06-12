@@ -1,0 +1,4 @@
+{
+  mCenterX=((float)Math.abs(mPlotLeft + (mPlotRight - mPlotLeft) / 2));
+  return mCenterX;
+}

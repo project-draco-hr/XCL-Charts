@@ -1,0 +1,4 @@
+{
+  mSliceAgent=(int)Math.round(360 * (mPieValue / 100));
+  return mSliceAgent;
+}

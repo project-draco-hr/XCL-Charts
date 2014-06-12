@@ -1,0 +1,4 @@
+String label
+double percent
+int color
+boolean selected

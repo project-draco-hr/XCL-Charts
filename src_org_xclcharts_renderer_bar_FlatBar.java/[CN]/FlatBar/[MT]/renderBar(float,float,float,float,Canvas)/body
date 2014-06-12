@@ -1,0 +1,4 @@
+{
+  setBarTo2D(left,top,right,bottom);
+  canvas.drawRect(left,bottom,right,top,getBarPaint());
+}

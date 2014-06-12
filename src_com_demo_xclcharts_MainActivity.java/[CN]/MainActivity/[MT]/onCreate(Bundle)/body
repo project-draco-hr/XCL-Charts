@@ -1,4 +1,36 @@
 {
   super.onCreate(savedInstanceState);
-  setContentView(R.layout.activity_main);
+  ListView mListView=new ListView(this);
+  SimpleAdapter adapter=new SimpleAdapter(this,getData(),android.R.layout.simple_list_item_2,new String[]{"title","description"},new int[]{android.R.id.text1,android.R.id.text2});
+  mListView.setAdapter(adapter);
+  final LinearLayout layout=new LinearLayout(this);
+  layout.setOrientation(LinearLayout.VERTICAL);
+  layout.addView(mListView);
+  setContentView(layout);
+  setTitle("XCL-Charts demo");
+  OnItemClickListener listener=new OnItemClickListener(){
+    @Override public void onItemClick(    AdapterView<?> parent,    android.view.View view,    int position,    long id){
+      String chartsTitleCurr[]=getResources().getStringArray(R.array.chartsTitle);
+      if (position > chartsTitleCurr.length - 1)       return;
+      Bundle bundleSimple=new Bundle();
+      Intent intent=new Intent();
+      bundleSimple.putString("title",chartsTitleCurr[position]);
+      if (position >= chartsTitleCurr.length - 3) {
+        position=chartsTitleCurr.length - 1 - position;
+        intent.setClass(MainActivity.this,SeekBarActivity.class);
+      }
+ else       if (position >= chartsTitleCurr.length - 5) {
+        position=chartsTitleCurr.length - 4 - position;
+        intent.setClass(MainActivity.this,SpinnerActivity.class);
+      }
+ else {
+        intent.setClass(MainActivity.this,ChartsActivity.class);
+      }
+      bundleSimple.putInt("selected",position);
+      intent.putExtras(bundleSimple);
+      startActivity(intent);
+    }
+  }
+;
+  mListView.setOnItemClickListener(listener);
 }

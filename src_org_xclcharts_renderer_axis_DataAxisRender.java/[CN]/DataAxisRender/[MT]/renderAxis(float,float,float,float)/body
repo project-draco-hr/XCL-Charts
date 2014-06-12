@@ -1,0 +1,3 @@
+{
+  if (getVisible() && getAxisLineVisible())   mCanvas.drawLine(startX,startY,stopX,stopY,this.getAxisPaint());
+}

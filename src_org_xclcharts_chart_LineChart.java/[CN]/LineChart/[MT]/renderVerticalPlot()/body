@@ -1,0 +1,16 @@
+{
+  if (XEnum.LineDataAxisPostion.LEFT == mDataAxisPostion) {
+    renderVerticalDataAxis();
+  }
+ else {
+    renderVerticalDataAxisRight();
+  }
+  renderVerticalLabelsAxis();
+  List<LnData> lstKey=new ArrayList<LnData>();
+  for (int i=0; i < mDataSet.size(); i++) {
+    renderLine(mDataSet.get(i),"LINE");
+    renderLine(mDataSet.get(i),"DOT2LABEL");
+    lstKey.add(mDataSet.get(i));
+  }
+  renderKey(lstKey);
+}

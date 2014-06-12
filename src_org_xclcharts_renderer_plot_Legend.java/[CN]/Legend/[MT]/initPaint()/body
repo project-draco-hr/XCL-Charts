@@ -1,0 +1,11 @@
+{
+  mPaintLeftLegend=new Paint();
+  mPaintLowerLegend=new Paint();
+  mPaintRightLegend=new Paint();
+  mPaintLeftLegend.setTextAlign(Align.CENTER);
+  mPaintLowerLegend.setTextAlign(Align.CENTER);
+  mPaintRightLegend.setTextAlign(Align.CENTER);
+  mPaintLeftLegend.setAntiAlias(true);
+  mPaintLowerLegend.setAntiAlias(true);
+  mPaintRightLegend.setAntiAlias(true);
+}

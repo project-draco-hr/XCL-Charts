@@ -1,0 +1,11 @@
+{
+  try {
+    Paint bmpPaint=new Paint();
+    canvas.drawBitmap(mCacheBitmap,0,0,bmpPaint);
+    mCacheBitmap.recycle();
+  }
+ catch (  Exception e) {
+    e.printStackTrace();
+    Log.e("GraphicalView",e.toString());
+  }
+}

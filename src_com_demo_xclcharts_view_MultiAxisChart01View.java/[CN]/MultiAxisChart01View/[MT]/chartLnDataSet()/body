@@ -1,0 +1,28 @@
+{
+  LinkedList<Double> BarKey1=new LinkedList<Double>();
+  BarKey1.add(0d);
+  LinkedList<Double> BarKey2=new LinkedList<Double>();
+  BarKey2.add(0d);
+  LineData lineDataBarKey1=new LineData("Virtual OPM",BarKey1,(int)Color.rgb(0,221,177));
+  LineData lineDataBarKey2=new LineData("Physical OPM",BarKey2,(int)Color.rgb(238,28,161));
+  lineDataBarKey1.setDotStyle(XEnum.DotStyle.RECT);
+  lineDataBarKey2.setDotStyle(XEnum.DotStyle.RECT);
+  chartDataLn.add(lineDataBarKey1);
+  chartDataLn.add(lineDataBarKey2);
+  LinkedList<Double> virtual=new LinkedList<Double>();
+  virtual.add(0d);
+  virtual.add(95d);
+  virtual.add(100d);
+  virtual.add(0d);
+  LinkedList<Double> physical=new LinkedList<Double>();
+  physical.add(0d);
+  physical.add(110d);
+  physical.add(125d);
+  physical.add(0d);
+  LineData lineData1=new LineData("Virtual RT",virtual,(int)Color.rgb(234,83,71));
+  LineData lineData2=new LineData("Physical RT",physical,(int)Color.rgb(75,166,51));
+  lineData1.setDotStyle(XEnum.DotStyle.TRIGANALE);
+  lineData1.getPlotDotPaint().setColor((int)Color.rgb(234,83,71));
+  chartDataLn.add(lineData1);
+  chartDataLn.add(lineData2);
+}

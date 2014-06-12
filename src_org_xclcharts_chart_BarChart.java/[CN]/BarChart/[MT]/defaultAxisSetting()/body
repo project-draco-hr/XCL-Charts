@@ -1,0 +1,27 @@
+{
+  try {
+switch (mDirection) {
+case HORIZONTAL:
+{
+        labelsAxis.setAxisHorizontalTickAlign(Align.LEFT);
+        labelsAxis.getAxisTickLabelsPaint().setTextAlign(Align.RIGHT);
+        dataAxis.setAxisHorizontalTickAlign(Align.CENTER);
+        dataAxis.getAxisTickLabelsPaint().setTextAlign(Align.CENTER);
+        getBar().getItemLabelsPaint().setTextAlign(Align.LEFT);
+        break;
+      }
+case VERTICAL:
+{
+      dataAxis.setAxisHorizontalTickAlign(Align.LEFT);
+      dataAxis.getAxisTickLabelsPaint().setTextAlign(Align.RIGHT);
+      labelsAxis.setAxisHorizontalTickAlign(Align.CENTER);
+      labelsAxis.getAxisTickLabelsPaint().setTextAlign(Align.CENTER);
+      labelsAxis.setAxisVerticalTickPostion(XEnum.Postion.LOWER);
+      break;
+    }
+}
+}
+ catch (Exception ex) {
+Log.e("ERROR-BarChart",ex.toString());
+}
+}

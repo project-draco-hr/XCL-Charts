@@ -1,0 +1,9 @@
+{
+  try {
+    mCanvas.drawArc(arcRF0,offsetAgent,curretAgent,true,paintArc);
+    drawLables(cData.getLabel(),cirX,cirY,radius,offsetAgent,curretAgent);
+  }
+ catch (  Exception e) {
+    throw e;
+  }
+}

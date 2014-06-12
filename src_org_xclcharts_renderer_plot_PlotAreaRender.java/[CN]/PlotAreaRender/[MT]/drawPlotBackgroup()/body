@@ -1,0 +1,4 @@
+{
+  if (null == mCanvas)   return;
+  if (mBackgroupColorVisible)   this.mCanvas.drawRect(mPlotLeft,mPlotTop,mPlotRight,mPlotBottom,mPlotBackgroundPaint);
+}

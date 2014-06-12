@@ -1,0 +1,6 @@
+String text
+float cirX
+float cirY
+float radius
+float offsetAgent
+float curretAgentt

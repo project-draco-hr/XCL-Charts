@@ -1,0 +1,4 @@
+{
+  mCacheCanvas=new Canvas();
+  mCacheCanvas.setBitmap(mCacheBitmap);
+}

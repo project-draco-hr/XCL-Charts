@@ -1,0 +1,3 @@
+{
+  return calcBarHeightAndMargin(YSteps,barNumber);
+}

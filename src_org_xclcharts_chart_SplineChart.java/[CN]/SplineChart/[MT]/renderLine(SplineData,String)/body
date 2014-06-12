@@ -1,0 +1,53 @@
+{
+  float initX=plotArea.getPlotLeft();
+  float initY=plotArea.getPlotBottom();
+  float lineStartX=initX;
+  float lineStartY=initY;
+  float lineEndX=0.0f;
+  float lineEndY=0.0f;
+  float axisScreenWidth=getAxisScreenWidth();
+  float axisScreenHeight=getAxisScreenHeight();
+  float axisDataHeight=(float)dataAxis.getAxisRange();
+  LinkedHashMap<Double,Double> chartValues=bd.getLineDataSet();
+  int j=0;
+  Iterator iter=chartValues.entrySet().iterator();
+  while (iter.hasNext()) {
+    Entry entry=(Entry)iter.next();
+    Double xValue=(Double)entry.getKey();
+    Double yValue=(Double)entry.getValue();
+    float YvaluePostion=(float)Math.round(axisScreenHeight * ((yValue - dataAxis.getAxisMin()) / axisDataHeight));
+    float XvaluePostion=(float)Math.round(axisScreenWidth * ((xValue - mLablesValuesMin) / (mLablesValuesMax - mLablesValuesMin)));
+    if (j == 0) {
+      lineStartX=initX + XvaluePostion;
+      lineStartY=initY - YvaluePostion;
+      lineEndX=lineStartX;
+      lineEndY=lineStartY;
+    }
+ else {
+      lineEndX=initX + XvaluePostion;
+      lineEndY=initY - YvaluePostion;
+    }
+    PlotLines pLine=bd.getPlotLines();
+    if (type.equalsIgnoreCase("LINE")) {
+      mCanvas.drawLine(lineStartX,lineStartY,lineEndX,lineEndY,pLine.getPlotLinesPaint());
+    }
+ else     if (type.equalsIgnoreCase("DOT2LABEL")) {
+      if (!pLine.getDotStyle().equals(XEnum.DotStyle.HIDE)) {
+        float rendEndX=lineEndX;
+        PlotDot pDot=pLine.getPlotDot();
+        rendEndX=lineEndX + pDot.getDotRadius();
+        renderDot(pDot,lineStartX,lineStartY,lineEndX,lineEndY,pLine.getPlotDotPaint());
+        lineEndX=rendEndX;
+      }
+      if (bd.getLineLabelVisible()) {
+        mCanvas.drawText("(" + Double.toString(xValue) + ","+ Double.toString(yValue)+ ")",lineEndX,lineEndY,pLine.getPlotLabelsPaint());
+      }
+    }
+ else {
+      return;
+    }
+    lineStartX=lineEndX;
+    lineStartY=lineEndY;
+    j++;
+  }
+}

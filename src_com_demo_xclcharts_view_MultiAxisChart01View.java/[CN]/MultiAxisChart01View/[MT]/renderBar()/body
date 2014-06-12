@@ -1,0 +1,13 @@
+{
+  Bar bar=chart.getBar();
+  bar.setItemLabelsVisible(true);
+  bar.setItemLabelsRotateAgent(-90);
+  bar.getItemLabelsPaint().setFakeBoldText(true);
+  chart.setItemLabelFormatter(new IFormatterDoubleCallBack(){
+    @Override public String doubleFormatter(    Double value){
+      DecimalFormat df=new DecimalFormat("#0");
+      return df.format(value).toString();
+    }
+  }
+);
+}

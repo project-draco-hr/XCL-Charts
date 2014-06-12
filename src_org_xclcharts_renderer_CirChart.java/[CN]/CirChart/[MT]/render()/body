@@ -1,0 +1,13 @@
+{
+  try {
+    super.render();
+    calcPlotRange();
+    plotArea.render();
+    plotGrid.render();
+    renderTitle();
+  }
+ catch (  Exception e) {
+    throw e;
+  }
+  return true;
+}

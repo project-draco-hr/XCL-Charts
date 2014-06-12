@@ -1,0 +1,8 @@
+{
+  super();
+  mPaintKey=new Paint();
+  mPaintKey.setColor(Color.BLACK);
+  mPaintKey.setTextSize(18);
+  mPaintKey.setStyle(Style.FILL);
+  mPaintKey.setAntiAlias(true);
+}

@@ -1,0 +1,4 @@
+{
+  mGridLinesEvenColor=color;
+  mPaintOddFill.setColor(color);
+}

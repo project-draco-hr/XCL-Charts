@@ -1,0 +1,13 @@
+{
+  mPaintAxis=new Paint();
+  mPaintAxisTickMarks=new Paint();
+  mPaintAxisTickLabels=new Paint();
+  mPaintAxis.setColor(Color.BLACK);
+  mPaintAxis.setStrokeWidth(mAxisLineWidth);
+  mPaintAxisTickMarks.setColor(Color.BLACK);
+  mPaintAxisTickMarks.setStrokeWidth(3);
+  mPaintAxisTickLabels.setColor(Color.BLACK);
+  mPaintAxisTickLabels.setTextAlign(Align.RIGHT);
+  mPaintAxisTickLabels.setTextSize(18);
+  mPaintAxisTickLabels.setAntiAlias(true);
+}

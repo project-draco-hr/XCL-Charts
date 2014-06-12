@@ -1,0 +1,63 @@
+{
+  DrawHelper dw=new DrawHelper();
+  int titleHeight=0;
+  int subtitleHeight=0;
+  int totalHegith=0;
+  float titleInitY=0.0f;
+  float titleX=0.0f;
+  float titleY=0.0f;
+  float subtitleX=0.0f;
+  float subtitleY=0.0f;
+  if (this.getChartTitle().length() == 0 && getChartSubTitle().length() == 0)   return;
+  if (getChartTitle().length() > 0) {
+    titleHeight=dw.getPaintFontHeight(this.getChartTitlePaint());
+  }
+  if (getChartTitle().length() > 0) {
+    subtitleHeight=dw.getPaintFontHeight(this.getChartSubTitlePaint());
+  }
+  totalHegith=titleHeight + subtitleHeight;
+  float pcHeight=Math.abs(plotTop - chartTop);
+switch (this.getChartTitlePosition()) {
+case UP:
+    titleInitY=chartTop + titleHeight;
+  break;
+case CENTER:
+titleInitY=Math.round(chartTop + pcHeight / 2 - totalHegith / 2);
+break;
+case LOWER:
+titleInitY=plotTop - titleHeight;
+break;
+}
+switch (this.getChartTitleAlign()) {
+case LEFT:
+titleX=chartLeft;
+titleY=titleInitY;
+subtitleX=chartLeft;
+subtitleY=titleY + subtitleHeight;
+getChartTitlePaint().setTextAlign(Align.LEFT);
+getChartSubTitlePaint().setTextAlign(Align.LEFT);
+break;
+case CENTER:
+titleX=(float)Math.round(chartLeft + chartWidth / 2);
+titleY=titleInitY;
+subtitleX=titleX;
+subtitleY=(float)(titleY + subtitleHeight);
+getChartTitlePaint().setTextAlign(Align.CENTER);
+getChartSubTitlePaint().setTextAlign(Align.CENTER);
+break;
+case RIGHT:
+titleX=chartRight;
+titleY=titleInitY;
+subtitleX=titleX;
+subtitleY=titleY + subtitleHeight;
+getChartTitlePaint().setTextAlign(Align.RIGHT);
+getChartSubTitlePaint().setTextAlign(Align.RIGHT);
+break;
+}
+if (getChartTitle().length() > 0) {
+canvas.drawText(getChartTitle(),titleX,titleY,this.getChartTitlePaint());
+}
+if (getChartSubTitle().length() > 0) {
+canvas.drawText(getChartSubTitle(),subtitleX,subtitleY,this.getChartSubTitlePaint());
+}
+}

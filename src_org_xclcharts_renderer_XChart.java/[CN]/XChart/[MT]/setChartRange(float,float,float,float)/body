@@ -1,0 +1,8 @@
+{
+  if (startX > 0)   mChartLeft=startX;
+  if (startY > 0)   mChartTop=startY;
+  mChartRight=startX + width;
+  mChartBottom=startY + height;
+  if (width > 0)   mChartWidth=width;
+  if (height > 0)   mChartHeight=height;
+}

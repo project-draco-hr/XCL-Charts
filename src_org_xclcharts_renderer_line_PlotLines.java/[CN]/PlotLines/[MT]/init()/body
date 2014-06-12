@@ -1,0 +1,12 @@
+{
+  mPaintLines=new Paint();
+  mPaintLines.setColor(Color.BLUE);
+  mPaintLines.setAntiAlias(true);
+  mPaintLines.setStrokeWidth(5);
+  mPaintLabels=new Paint();
+  mPaintLabels.setColor(Color.BLUE);
+  mPaintLabels.setTextSize(18);
+  mPaintLabels.setTextAlign(Align.CENTER);
+  mPaintLabels.setAntiAlias(true);
+  mPlotDot=new PlotDot();
+}

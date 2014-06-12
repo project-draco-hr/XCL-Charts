@@ -1,0 +1,3 @@
+{
+  if (mBackgroupColorVisible)   this.mCanvas.drawRect(mChartLeft,mChartTop,mChartRight,mChartBottom,mChartBackgroundPaint);
+}

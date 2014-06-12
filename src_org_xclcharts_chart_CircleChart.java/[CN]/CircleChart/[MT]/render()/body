@@ -1,0 +1,10 @@
+{
+  try {
+    super.render();
+    renderPlot();
+  }
+ catch (  Exception e) {
+    throw e;
+  }
+  return true;
+}

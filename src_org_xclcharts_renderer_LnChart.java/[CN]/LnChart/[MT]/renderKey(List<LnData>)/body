@@ -1,0 +1,32 @@
+{
+  if (getPlotKeyVisible() == false)   return;
+  DrawHelper dw=new DrawHelper();
+  float textHeight=dw.getPaintFontHeight(this.mPaintKey);
+  float rectWidth=2 * textHeight;
+  float currentX=0.0f;
+  float currentY=0.0f;
+  mPaintKey.setTextAlign(Align.LEFT);
+  currentX=plotArea.getPlotLeft();
+  currentY=plotArea.getPlotTop() - 5;
+  int totalTextWidth=0;
+  for (  LnData cData : dataSet) {
+    mPaintKey.setColor(cData.getLineColor());
+    int keyTextWidth=dw.getTextWidth(mPaintKey,cData.getLineKey());
+    totalTextWidth+=keyTextWidth;
+    if (totalTextWidth > plotArea.getPlotWidth()) {
+      currentY-=textHeight;
+      currentX=plotArea.getPlotLeft();
+      totalTextWidth=0;
+    }
+    mCanvas.drawLine(currentX,currentY - textHeight / 2,currentX + rectWidth,currentY - textHeight / 2,mPaintKey);
+    mCanvas.drawText(cData.getLineKey(),currentX + rectWidth,currentY - textHeight / 3,mPaintKey);
+    float dotLeft=currentX + rectWidth / 4;
+    float dotRight=currentX + 2 * (rectWidth / 4);
+    PlotLines pLine=cData.getPlotLines();
+    if (!pLine.getDotStyle().equals(XEnum.DotStyle.HIDE)) {
+      PlotDot pDot=pLine.getPlotDot();
+      renderDot(pDot,dotLeft,currentY,dotRight,currentY - textHeight / 2,pLine.getPlotDotPaint());
+    }
+    currentX+=rectWidth + keyTextWidth + 10;
+  }
+}

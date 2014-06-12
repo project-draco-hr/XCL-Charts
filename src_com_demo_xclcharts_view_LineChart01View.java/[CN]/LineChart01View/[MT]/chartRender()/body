@@ -1,0 +1,28 @@
+{
+  try {
+    LineChart chart=new LineChart();
+    chart.setChartRange(0.0f,0.0f,getScreenWidth(),getScreenHeight());
+    chart.setCanvas(this.mCacheCanvas);
+    chart.setPadding(20,20,10,5);
+    chart.setLabels(lables);
+    chart.setDataSource(chartData);
+    chart.getDataAxis().setAxisMax(100);
+    chart.getDataAxis().setAxisSteps(10);
+    chart.getPlotGrid().setHorizontalLinesVisible(true);
+    chart.getPlotGrid().setVerticalLinesVisible(true);
+    chart.getPlotGrid().setEvenRowsFillVisible(true);
+    chart.getPlotGrid().setOddRowsFillVisible(true);
+    chart.getPlotGrid().getHorizontalLinesPaint().setStrokeWidth(2);
+    chart.getPlotGrid().setHorizontalLinesDashStyle(XEnum.LineDashStyle.DASH);
+    chart.getPlotGrid().setVerticalLinesDashStyle(XEnum.LineDashStyle.DOT);
+    chart.getPlotGrid().getHorizontalLinesPaint().setColor(Color.RED);
+    chart.getPlotGrid().getVerticalLinesPaint().setColor(Color.BLUE);
+    chart.setChartTitle("?????????(Line Chart)");
+    chart.setChartSubTitle("(XCL-Charts Demo)");
+    chart.getLegend().setLowerLegend("(??????)");
+    chart.render();
+  }
+ catch (  Exception e) {
+    e.printStackTrace();
+  }
+}

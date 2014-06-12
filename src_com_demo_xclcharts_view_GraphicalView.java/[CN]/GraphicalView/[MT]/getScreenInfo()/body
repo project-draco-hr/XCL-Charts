@@ -1,0 +1,5 @@
+{
+  DisplayMetrics dm=getResources().getDisplayMetrics();
+  mScrWidth=dm.widthPixels;
+  mScrHeight=dm.heightPixels;
+}

@@ -1,0 +1,18 @@
+{
+  try {
+    PieChart chart=new PieChart();
+    chart.setChartRange(0.0f,0.0f,getScreenWidth(),getScreenHeight());
+    chart.setCanvas(this.mCacheCanvas);
+    chart.setPadding(10,20,15,15);
+    chart.setDataSource(lPieData);
+    chart.setInitialAngle(90);
+    chart.setLablesDisplay(XEnum.DisplayPostion.OUTSIDE);
+    chart.setChartTitle("Pie Chart");
+    chart.getPlotTitle().setChartTitlePosition(XEnum.Postion.LOWER);
+    chart.setKeyVisible(true);
+    chart.render();
+  }
+ catch (  Exception e) {
+    e.printStackTrace();
+  }
+}

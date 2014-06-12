@@ -1,0 +1,3 @@
+{
+  drawBarItemLabel(text,x,y,canvas);
+}

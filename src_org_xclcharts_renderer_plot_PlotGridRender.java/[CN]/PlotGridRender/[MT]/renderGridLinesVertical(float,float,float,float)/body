@@ -1,0 +1,6 @@
+{
+  if (getVerticalLinesVisible()) {
+    if (null == mCanvas)     return;
+    mDrawHelper.drawLine(this.getVerticalLinesDashStyle(),startX,startY,stopX,stopY,mCanvas,getVerticalLinesPaint());
+  }
+}

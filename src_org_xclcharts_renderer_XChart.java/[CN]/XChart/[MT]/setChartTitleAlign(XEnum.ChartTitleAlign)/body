@@ -1,0 +1,3 @@
+{
+  plotTitle.setChartTitleAlign(align);
+}

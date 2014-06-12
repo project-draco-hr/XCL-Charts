@@ -1,0 +1,8 @@
+{
+  renderVerticalDataAxis();
+  renderVerticalLabelsAxis();
+  for (int i=0; i < mDataSet.size(); i++) {
+    this.renderLine(mDataSet.get(i),"LINE",(int)Math.round(mDataSet.size() * i));
+    this.renderLine(mDataSet.get(i),"DOT2LABEL",(int)Math.round(mDataSet.size() * i));
+  }
+}

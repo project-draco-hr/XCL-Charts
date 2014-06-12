@@ -1,0 +1,6 @@
+float chartLeft
+float chartRight
+float chartTop
+float chartWidth
+float plotTop
+Canvas canvas

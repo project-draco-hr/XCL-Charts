@@ -1,0 +1,20 @@
+{
+  try {
+    CircleChart chart=new CircleChart();
+    if (getScreenWidth() < this.getScreenHeight()) {
+      chart.setChartRange(0.0f,0.0f,getScreenWidth(),getScreenWidth());
+    }
+ else {
+      chart.setChartRange(0.0f,0.0f,getScreenHeight(),getScreenHeight());
+    }
+    chart.setCanvas(this.mCacheCanvas);
+    chart.setAttributeInfo(mDataInfo);
+    chart.setPadding(20,20,15,15);
+    chart.setCircleDisplayType(XEnum.CircleDisplayType.HALF);
+    chart.setDataSource(mlPieData);
+    chart.render();
+  }
+ catch (  Exception e) {
+    e.printStackTrace();
+  }
+}

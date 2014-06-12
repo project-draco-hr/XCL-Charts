@@ -1,0 +1,33 @@
+{
+  renderHorizontalBarDataAxis();
+  renderHorizontalBarLabelAxis();
+  float YSteps=getHorizontalYSteps();
+  int barNumber=mDataSet.size();
+  int currNumber=0;
+  List<Integer> ret=mFlatBar.getBarHeightAndMargin(YSteps,barNumber);
+  int barHeight=ret.get(0);
+  int barInnerMargin=ret.get(1);
+  int labelBarUseHeight=barNumber * barHeight + (barNumber - 1) * barInnerMargin;
+  float scrWidth=getAxisScreenWidth();
+  float valueWidth=(float)dataAxis.getAxisRange();
+  for (int i=0; i < barNumber; i++) {
+    BarData bd=mDataSet.get(i);
+    List<Double> barValues=bd.getDataSet();
+    mFlatBar.getBarPaint().setColor(bd.getColor());
+    int k=1;
+    for (    Double bv : barValues) {
+      float currLableY=plotArea.getPlotBottom() - (k) * YSteps;
+      float drawBarButtomY=currLableY + labelBarUseHeight / 2;
+      drawBarButtomY=drawBarButtomY - (barHeight + barInnerMargin) * currNumber;
+      float drawBarTopY=drawBarButtomY - barHeight;
+      float valuePostion=(float)Math.round(scrWidth * ((bv - dataAxis.getAxisMin()) / valueWidth));
+      mFlatBar.renderBar(plotArea.getPlotLeft(),drawBarButtomY,plotArea.getPlotLeft() + valuePostion,drawBarTopY,this.mCanvas);
+      mFlatBar.renderBarItemLabel(getFormatterItemLabel(bv),plotArea.getPlotLeft() + valuePostion,(float)Math.round(drawBarButtomY - barHeight / 2),mCanvas);
+      k++;
+    }
+    currNumber++;
+  }
+  dataAxis.renderAxis(plotArea.getPlotLeft(),plotArea.getPlotBottom(),plotArea.getPlotLeft(),plotArea.getPlotTop());
+  labelsAxis.renderAxis(plotArea.getPlotLeft(),plotArea.getPlotBottom(),plotArea.getPlotRight(),plotArea.getPlotBottom());
+  drawDataSetKey();
+}

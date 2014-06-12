@@ -1,0 +1,6 @@
+{
+  chartLablesLn.add(" ");
+  chartLablesLn.add("4 Cores Per Node");
+  chartLablesLn.add("8 Cores per Node");
+  chartLablesLn.add(" ");
+}

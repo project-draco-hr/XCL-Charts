@@ -1,0 +1,9 @@
+{
+  mPaintInner=new Paint();
+  mPaintInner.setColor(Color.DKGRAY);
+  mPaintInner.setStyle(Style.FILL);
+  mPaintInner.setAntiAlias(true);
+  getLabelsPaint().setColor(Color.WHITE);
+  getLabelsPaint().setTextSize(22);
+  getLabelsPaint().setTextAlign(Align.CENTER);
+}

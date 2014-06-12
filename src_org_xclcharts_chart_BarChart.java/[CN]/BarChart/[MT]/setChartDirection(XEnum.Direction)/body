@@ -1,0 +1,4 @@
+{
+  mDirection=direction;
+  defaultAxisSetting();
+}
