@@ -1,3 +1,14 @@
 {
-  mCacheBitmap=Bitmap.createBitmap(width,height,Config.ARGB_8888);
+  try {
+    if (null != mCacheBitmap) {
+      if (!mCacheBitmap.isRecycled()) {
+        mCacheBitmap.recycle();
+        System.gc();
+      }
+    }
+    mCacheBitmap=Bitmap.createBitmap(width,height,Config.ARGB_8888);
+  }
+ catch (  Exception ex) {
+    Log.e("ERROR-GraphicalView",ex.toString());
+  }
 }
