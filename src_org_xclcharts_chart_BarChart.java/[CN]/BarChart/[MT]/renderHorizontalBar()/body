@@ -20,7 +20,7 @@
       float drawBarButtomY=currLableY + labelBarUseHeight / 2;
       drawBarButtomY=drawBarButtomY - (barHeight + barInnerMargin) * currNumber;
       float drawBarTopY=drawBarButtomY - barHeight;
-      float valuePostion=(float)Math.round(scrWidth * ((bv - dataAxis.getAxisMin()) / valueWidth));
+      float valuePostion=(float)(scrWidth * ((bv - dataAxis.getAxisMin()) / valueWidth));
       mFlatBar.renderBar(plotArea.getPlotLeft(),drawBarButtomY,plotArea.getPlotLeft() + valuePostion,drawBarTopY,this.mCanvas);
       mFlatBar.renderBarItemLabel(getFormatterItemLabel(bv),plotArea.getPlotLeft() + valuePostion,(float)Math.round(drawBarButtomY - barHeight / 2),mCanvas);
       k++;
@@ -30,4 +30,5 @@
   dataAxis.renderAxis(plotArea.getPlotLeft(),plotArea.getPlotBottom(),plotArea.getPlotLeft(),plotArea.getPlotTop());
   labelsAxis.renderAxis(plotArea.getPlotLeft(),plotArea.getPlotBottom(),plotArea.getPlotRight(),plotArea.getPlotBottom());
   drawDataSetKey();
+  renderHorizontalDesirelinesDataAxis();
 }

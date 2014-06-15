@@ -1,5 +1,5 @@
 {
-  float YSteps=(float)Math.ceil(this.getAxisScreenHeight() / (this.labelsAxis.getDataSet().size() + 1));
+  float YSteps=(float)(getAxisScreenHeight() / (labelsAxis.getDataSet().size() + 1));
   float currentY=0.0f;
   for (int i=0; i < labelsAxis.getDataSet().size(); i++) {
     currentY=plotArea.getPlotBottom() - (i + 1) * YSteps;

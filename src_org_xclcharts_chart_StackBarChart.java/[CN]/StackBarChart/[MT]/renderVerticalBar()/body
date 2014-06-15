@@ -19,16 +19,16 @@
       total+=bv;
       float valuePostion=0.0f;
       if (i == 0) {
-        valuePostion=(float)Math.round(axisScreenHeight * ((bv - dataAxis.getAxisMin()) / axisDataHeight));
+        valuePostion=(float)(axisScreenHeight * ((bv - dataAxis.getAxisMin()) / axisDataHeight));
       }
  else {
-        valuePostion=(float)Math.round(axisScreenHeight * ((bv) / axisDataHeight));
+        valuePostion=(float)(axisScreenHeight * ((bv) / axisDataHeight));
       }
       flatBar.renderBar(currentX - barWidht / 2,currentY - valuePostion,currentX + barWidht / 2,currentY,mCanvas);
       flatBar.renderBarItemLabel(getFormatterItemLabel(bv),currentX,currentY - valuePostion / 2,mCanvas);
       currentY-=valuePostion;
     }
-    float totalPostion=(float)Math.round(axisScreenHeight / axisDataHeight * (total - dataAxis.getAxisMin()));
+    float totalPostion=(float)(axisScreenHeight / axisDataHeight * (total - dataAxis.getAxisMin()));
     flatBar.renderBarItemLabel(getFormatterItemLabel(total),currentX,plotArea.getPlotBottom() - totalPostion,mCanvas);
   }
   dataAxis.renderAxis(plotArea.getPlotLeft(),plotArea.getPlotBottom(),plotArea.getPlotRight(),plotArea.getPlotBottom());

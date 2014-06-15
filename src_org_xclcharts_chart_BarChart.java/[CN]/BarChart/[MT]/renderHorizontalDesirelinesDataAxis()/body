@@ -1,0 +1,12 @@
+{
+  if (null == mDesireLineDataSet)   return;
+  double axisHeight=dataAxis.getAxisMax() - dataAxis.getAxisMin();
+  for (  DesireLineData line : mDesireLineDataSet) {
+    getDesireLinePaint().setColor(line.getColor());
+    getDesireLinePaint().setStrokeWidth(line.getLineWidth());
+    double postion=getAxisScreenWidth() * ((line.getDesireValue() - dataAxis.getAxisMin()) / axisHeight);
+    float currentX=(float)(plotArea.getPlotLeft() + postion);
+    this.mCanvas.drawLine(currentX,plotArea.getPlotBottom(),currentX,plotArea.getPlotTop(),this.getDesireLinePaint());
+    if (line.getLabel().length() > 0)     mCanvas.drawText(line.getLabel(),currentX,plotArea.getPlotTop(),getDesireLinePaint());
+  }
+}

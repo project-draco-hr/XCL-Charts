@@ -1,5 +1,10 @@
 {
   super();
+  mPaintDesireLine=new Paint();
+  mPaintDesireLine.setAntiAlias(true);
+  mPaintDesireLine.setStrokeWidth(3);
+  mPaintDesireLine.setTextSize(18);
+  mPaintDesireLine.setTextAlign(Align.LEFT);
   setPlotKeyVisible(true);
   defaultAxisSetting();
 }

@@ -1,7 +1,7 @@
 {
   super.onCreate(savedInstanceState);
   requestWindowFeature(Window.FEATURE_NO_TITLE);
-  View[] mCharts=new View[]{new BarChart01View(this),new BarChart02View(this),new Bar3DChart01View(this),new Bar3DChart02View(this),new StackBarChart01View(this),new StackBarChart02View(this),new LineChart01View(this),new SplineChart01View(this),new AreaChart01View(this),new MultiAxisChart01View(this),new MultiAxisChart02View(this),new PieChart01View(this),new Pie3DChart01View(this),new DountChart01View(this),new RoseChart01View(this)};
+  View[] mCharts=new View[]{new BarChart01View(this),new BarChart02View(this),new BarChart03View(this),new Bar3DChart01View(this),new Bar3DChart02View(this),new StackBarChart01View(this),new StackBarChart02View(this),new LineChart01View(this),new SplineChart01View(this),new AreaChart01View(this),new MultiAxisChart01View(this),new MultiAxisChart02View(this),new PieChart01View(this),new Pie3DChart01View(this),new DountChart01View(this),new RoseChart01View(this),new PolarChart01View(this)};
   Bundle bunde=this.getIntent().getExtras();
   mSelected=bunde.getInt("selected");
   String title=bunde.getString("title");

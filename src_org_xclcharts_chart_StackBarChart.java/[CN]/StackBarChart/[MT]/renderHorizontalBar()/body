@@ -9,7 +9,7 @@
   for (int r=0; r < labelsAxis.getDataSet().size(); r++) {
     float currentX=plotArea.getPlotLeft();
     float currentY=plotArea.getPlotBottom() - (r + 1) * YSteps;
-    Double total=0d;
+    double total=0d;
     List<BarData> chartDataSource=this.getDataSource();
     for (int i=0; i < chartDataSource.size(); i++) {
       BarData bd=chartDataSource.get(i);
@@ -19,17 +19,17 @@
       total+=bv;
       float valuePostion=0.0f;
       if (i == 0) {
-        valuePostion=(float)Math.round(axisScreenWidth * ((bv - dataAxis.getAxisMin()) / valueWidth));
+        valuePostion=(float)(axisScreenWidth * ((bv - dataAxis.getAxisMin()) / valueWidth));
       }
  else {
-        valuePostion=(float)Math.round(axisScreenWidth * ((bv) / valueWidth));
+        valuePostion=(float)(axisScreenWidth * ((bv) / valueWidth));
       }
       flatBar.renderBar(currentX,currentY - barHeight / 2,currentX + valuePostion,currentY + barHeight / 2,this.mCanvas);
       flatBar.renderBarItemLabel(getFormatterItemLabel(bv),currentX + valuePostion / 2,currentY,mCanvas);
       currentX+=valuePostion;
     }
     if (mTotalLableVisible) {
-      float totalPostion=(float)Math.round(axisScreenWidth / axisDataRange * (total - dataAxis.getAxisMin()));
+      float totalPostion=(float)(axisScreenWidth / axisDataRange * (total - dataAxis.getAxisMin()));
       flatBar.renderBarItemLabel(getFormatterItemLabel(total),plotArea.getPlotLeft() - totalPostion,currentY,mCanvas);
     }
   }

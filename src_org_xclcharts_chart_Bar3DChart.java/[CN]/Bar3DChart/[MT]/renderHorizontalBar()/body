@@ -21,9 +21,9 @@
     for (    Double bv : barValues) {
       float drawBarButtomY=plotArea.getPlotBottom() - (k) * YSteps + labelBarUseHeight / 2;
       drawBarButtomY=drawBarButtomY - (barHeight + barInnerMargin) * currNumber;
-      float valuePostion=(float)Math.round(scrWidth * ((bv - dataAxis.getAxisMin()) / valueWidth));
-      mBar3D.renderHorizontal3DBar(plotArea.getPlotLeft(),drawBarButtomY - barHeight,(float)Math.round(plotArea.getPlotLeft() + valuePostion),drawBarButtomY,mBar3D.getBarPaint().getColor(),this.mCanvas);
-      mBar3D.renderBarItemLabel(getFormatterItemLabel(bv),(float)Math.round(plotArea.getPlotLeft() + valuePostion),(float)Math.round(drawBarButtomY - barHeight / 2),mCanvas);
+      float valuePostion=(float)(scrWidth * ((bv - dataAxis.getAxisMin()) / valueWidth));
+      mBar3D.renderHorizontal3DBar(plotArea.getPlotLeft(),drawBarButtomY - barHeight,(float)(plotArea.getPlotLeft() + valuePostion),drawBarButtomY,mBar3D.getBarPaint().getColor(),this.mCanvas);
+      mBar3D.renderBarItemLabel(getFormatterItemLabel(bv),(float)(plotArea.getPlotLeft() + valuePostion),(float)(drawBarButtomY - barHeight / 2),mCanvas);
       k++;
     }
     currNumber++;

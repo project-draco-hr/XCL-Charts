@@ -1,0 +1,3 @@
+{
+  return (!isPrimaryTick() ? false : super.getAxisTickLabelsVisible());
+}

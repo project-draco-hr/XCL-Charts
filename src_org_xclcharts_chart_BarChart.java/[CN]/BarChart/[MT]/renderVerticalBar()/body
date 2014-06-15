@@ -17,7 +17,7 @@
     mFlatBar.getBarPaint().setColor(bd.getColor());
     for (int j=0; j < barValues.size(); j++) {
       Double bv=barValues.get(j);
-      float valuePostion=(float)Math.round(axisScreenHeight * ((bv - dataAxis.getAxisMin()) / axisDataHeight));
+      float valuePostion=(float)(axisScreenHeight * ((bv - dataAxis.getAxisMin()) / axisDataHeight));
       float currLableX=plotArea.getPlotLeft() + (j + 1) * XSteps;
       float drawBarStartX=currLableX - labelBarUseWidth / 2;
       drawBarStartX=drawBarStartX + (barWidth + barInnerMargin) * currNumber;
@@ -29,4 +29,5 @@
   }
   dataAxis.renderAxis(plotArea.getPlotLeft(),plotArea.getPlotBottom(),plotArea.getPlotRight(),plotArea.getPlotBottom());
   drawDataSetKey();
+  renderVerticalDesirelinesDataAxis();
 }
