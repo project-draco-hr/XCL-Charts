@@ -1,18 +1,21 @@
 {
   List<Double> dataSeries1=new LinkedList<Double>();
   dataSeries1.add((double)55);
-  dataSeries1.add((double)21);
-  dataSeries1.add((double)31);
+  dataSeries1.add((double)60);
+  dataSeries1.add((double)71);
   dataSeries1.add((double)40);
   dataSeries1.add((double)35);
   List<Double> dataSeries2=new LinkedList<Double>();
-  dataSeries2.add((double)30);
-  dataSeries2.add((double)52);
-  dataSeries2.add((double)70);
-  dataSeries2.add((double)60);
   dataSeries2.add((double)10);
-  AreaData line1=new AreaData("??????",dataSeries1,(int)Color.rgb(22,107,164),(int)Color.rgb(1,78,130));
-  AreaData line2=new AreaData("?????????",dataSeries2,(int)Color.rgb(79,200,100),(int)Color.rgb(75,179,124));
+  dataSeries2.add((double)22);
+  dataSeries2.add((double)30);
+  dataSeries2.add((double)30);
+  dataSeries2.add((double)15);
+  AreaData line1=new AreaData("??????",dataSeries1,Color.BLUE,Color.YELLOW);
+  line1.setDotStyle(XEnum.DotStyle.HIDE);
+  AreaData line2=new AreaData("?????????",dataSeries2,(int)Color.rgb(79,200,100),Color.GREEN);
+  line2.getPlotLabelsPaint().setColor(Color.RED);
+  line2.setLineLabelVisible(true);
   mChartDataSet.add(line1);
   mChartDataSet.add(line2);
 }

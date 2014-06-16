@@ -2,4 +2,5 @@
   setLineLabel(key);
   setLinePoint(dataSeries);
   setLineColor(lineColor);
+  setAreaFillColor(areaColor);
 }

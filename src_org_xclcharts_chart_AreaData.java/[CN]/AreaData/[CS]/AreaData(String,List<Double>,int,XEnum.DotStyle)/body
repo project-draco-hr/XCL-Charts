@@ -3,4 +3,5 @@
   setLineColor(color);
   setLinePoint(dataSeries);
   setDotStyle(dotStyle);
+  setAreaFillColor(color);
 }

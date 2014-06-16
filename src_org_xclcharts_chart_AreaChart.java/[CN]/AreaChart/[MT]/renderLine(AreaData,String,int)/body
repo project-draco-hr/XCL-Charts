@@ -13,6 +13,7 @@
   pathArea.moveTo(initX,initY);
   mPaintAreaFill.setAlpha(mAreaAlpha);
   PlotLines pLine=bd.getPlotLines();
+  mPaintAreaFill.setColor(bd.getAreaFillColor());
   int j=0;
   for (  Double bv : chartValues) {
     float valuePostion=(float)Math.round(axisScreenHeight * ((bv - dataAxis.getAxisMin()) / axisDataHeight));
@@ -55,5 +56,7 @@
   pathArea.lineTo(lineStartX,lineStartY);
   pathArea.lineTo(lineStartX,initY);
   pathArea.close();
-  mCanvas.drawPath(pathArea,mPaintAreaFill);
+  if (type.equalsIgnoreCase("LINE")) {
+    mCanvas.drawPath(pathArea,mPaintAreaFill);
+  }
 }

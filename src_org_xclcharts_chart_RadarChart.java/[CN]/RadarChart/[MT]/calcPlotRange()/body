@@ -1,0 +1,9 @@
+{
+  super.calcPlotRange();
+  if (isVerticalScreen()) {
+    this.mRadius=this.plotArea.getPlotWidth() / 2;
+  }
+ else {
+    this.mRadius=this.plotArea.getPlotHeight() / 2;
+  }
+}

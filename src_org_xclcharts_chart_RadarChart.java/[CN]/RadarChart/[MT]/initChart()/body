@@ -1,0 +1,6 @@
+{
+  mPaintLabels=new Paint();
+  mPaintLabels.setColor(Color.BLACK);
+  mPaintLabels.setTextSize(18);
+  mPaintLabels.setAntiAlias(true);
+}

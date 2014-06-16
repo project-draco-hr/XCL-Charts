@@ -8,12 +8,12 @@
     chart.setDataSource(mChartDataSet);
     chart.getDataAxis().setAxisMax(100);
     chart.getDataAxis().setAxisSteps(10);
-    chart.getPlotGrid().setHorizontalLinesVisible(true);
-    chart.getPlotGrid().setVerticalLinesVisible(true);
     chart.getPlotGrid().setEvenRowsFillVisible(true);
     chart.getPlotGrid().setOddRowsFillVisible(true);
-    chart.setChartTitle("Area Chart");
+    chart.setChartTitle("?????????(Area Chart)");
+    chart.setChartSubTitle("(XCL-Charts Demo)");
     chart.getLegend().setLowerLegend("(??????)");
+    chart.setPlotKeyVisible(true);
     chart.render();
   }
  catch (  Exception e) {
