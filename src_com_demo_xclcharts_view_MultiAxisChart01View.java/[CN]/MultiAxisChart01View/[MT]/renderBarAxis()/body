@@ -1,6 +1,6 @@
 {
   chart.setLabels(chartLables);
-  chart.setDataSource(chartData);
+  chart.setDataSource(chartDataset);
   chart.getDataAxis().setAxisMax(90000);
   chart.getDataAxis().setAxisSteps(10000);
   chart.getDataAxis().setLabelFormatter(new IFormatterTextCallBack(){

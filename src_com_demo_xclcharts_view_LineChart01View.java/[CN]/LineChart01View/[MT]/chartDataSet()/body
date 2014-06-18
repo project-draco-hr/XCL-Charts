@@ -8,9 +8,9 @@
   LineData lineData1=new LineData("??????",valuesA,(int)Color.rgb(234,83,71));
   lineData1.setLineLabelVisible(true);
   lineData1.setDotStyle(XEnum.DotStyle.RECT);
-  lineData1.getPlotLabelsPaint().setColor(Color.BLUE);
-  lineData1.getPlotLabelsPaint().setTextSize(22);
-  lineData1.getPlotLabelsPaint().setTextAlign(Align.RIGHT);
+  lineData1.getDotLabelPaint().setColor(Color.BLUE);
+  lineData1.getDotLabelPaint().setTextSize(22);
+  lineData1.getDotLabelPaint().setTextAlign(Align.RIGHT);
   LinkedList<Double> valuesB=new LinkedList<Double>();
   valuesB.add((double)30);
   valuesB.add((double)42);
@@ -19,7 +19,7 @@
   valuesB.add((double)40);
   LineData lineData2=new LineData("?????????",valuesB,(int)Color.rgb(75,166,51));
   lineData2.setDotStyle(XEnum.DotStyle.RING);
-  lineData2.getPlotLines().getPlotDotPaint().setColor(Color.BLACK);
+  lineData2.getPlotLine().getDotPaint().setColor(Color.BLACK);
   lineData2.setLineLabelVisible(true);
   LinkedList<Double> valuesC=new LinkedList<Double>();
   valuesC.add(65d);

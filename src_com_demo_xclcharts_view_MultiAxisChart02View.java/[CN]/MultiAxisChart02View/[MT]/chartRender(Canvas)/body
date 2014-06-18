@@ -1,0 +1,56 @@
+{
+  try {
+    BarChart chart=new BarChart();
+    chart.setCanvas(canvas);
+    chart.setChartRange(0.0f,0.0f,getScreenWidth(),getScreenHeight());
+    chart.setChartDirection(XEnum.Direction.VERTICAL);
+    if (chart.isVerticalScreen()) {
+      chart.setPadding(20,10,10,10);
+    }
+ else {
+      chart.setPadding(20,30,18,10);
+    }
+    chart.setChartTitle("Virtual vs Native Oracle RAC Performance");
+    chart.setChartSubTitle("(XCL-Charts Demo)");
+    chart.getLegend().setLeftLegend("Orders Per Minute (OPM)");
+    chart.getLegend().setRightLegend("Average Response Time (RT)");
+    chart.setLabels(chartLables);
+    chart.setDataSource(chartData);
+    chart.getDataAxis().setAxisMax(90000);
+    chart.getDataAxis().setAxisSteps(10000);
+    chart.getDataAxis().setLabelFormatter(new IFormatterTextCallBack(){
+      @Override public String textFormatter(      String value){
+        double label=Double.parseDouble(value);
+        DecimalFormat df=new DecimalFormat("#0");
+        return df.format(label).toString();
+      }
+    }
+);
+    LabelsAxis labelAxis=chart.getLabelsAxis();
+    labelAxis.setAxisTickLabelsRotateAgent(-15f);
+    labelAxis.getAxisTickLabelsPaint().setTextSize(15);
+    labelAxis.getAxisTickLabelsPaint().setTextAlign(Align.CENTER);
+    labelAxis.setLabelFormatter(new IFormatterTextCallBack(){
+      @Override public String textFormatter(      String value){
+        return value;
+      }
+    }
+);
+    chart.getBar().setItemLabelsVisible(true);
+    chart.setItemLabelFormatter(new IFormatterDoubleCallBack(){
+      @Override public String doubleFormatter(      Double value){
+        DecimalFormat df=new DecimalFormat("#0");
+        return df.format(value).toString();
+      }
+    }
+);
+    chart.getPlotGrid().setHorizontalLinesVisible(true);
+    chart.getPlotGrid().setEvenRowsFillVisible(true);
+    chart.getPlotGrid().setOddRowsFillVisible(true);
+    chart.setPlotKeyVisible(false);
+    chart.render();
+  }
+ catch (  Exception e) {
+    e.printStackTrace();
+  }
+}

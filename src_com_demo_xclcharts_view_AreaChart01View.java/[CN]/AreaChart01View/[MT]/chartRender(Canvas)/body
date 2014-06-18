@@ -1,0 +1,23 @@
+{
+  try {
+    AreaChart chart=new AreaChart();
+    chart.setChartRange(0.0f,0.0f,getScreenWidth(),getScreenHeight());
+    chart.setCanvas(canvas);
+    chart.setPadding(15,30,10,5);
+    chart.setLabels(mLabels);
+    chart.setDataSource(mDataset);
+    chart.getDataAxis().setAxisMax(100);
+    chart.getDataAxis().setAxisSteps(10);
+    chart.getPlotGrid().setEvenRowsFillVisible(true);
+    chart.getPlotGrid().setOddRowsFillVisible(true);
+    chart.setChartTitle("?????????(Area Chart)");
+    chart.setChartSubTitle("(XCL-Charts Demo)");
+    chart.getLegend().setLowerLegend("(??????)");
+    chart.setPlotKeyVisible(true);
+    chart.render();
+  }
+ catch (  Exception e) {
+    e.printStackTrace();
+    Log.e("ERROR-AreaChart01View",e.toString());
+  }
+}

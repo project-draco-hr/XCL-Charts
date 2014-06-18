@@ -1,21 +1,6 @@
 {
-  mRadius=50;
-  int DuCount=5;
-  float cirX=plotArea.getCenterX();
-  float cirY=plotArea.getCenterY();
-  float arcLeft=cirX - mRadius;
-  float arcTop=cirY - mRadius;
-  float arcRight=cirX + mRadius;
-  float arcBottom=cirY + mRadius;
-  RectF arcRF0=new RectF(arcLeft,arcTop,arcRight,arcBottom);
-  float pAngle=72f;
-  float pAngleOffset=18f + 36f;
-  float avgRadius=mRadius / DuCount;
-  for (int i=DuCount; i >= 0; i--) {
-    float curRadius=avgRadius * i;
-    this.mCanvas.drawCircle(cirX,cirY,curRadius,mPaintLabels);
-    if (i == 5) {
-      mCanvas.drawArc(arcRF0,pAngleOffset + pAngle * (DuCount - 1),pAngle,true,mPaintLabels);
-    }
-  }
+  mRadius=300;
+  GetAllXY();
+  renderWebLines();
+  renderAxisLines();
 }

@@ -1,0 +1,17 @@
+{
+  try {
+    Pie3DChart chart=new Pie3DChart();
+    chart.setChartRange(0.0f,0.0f,getScreenWidth(),getScreenHeight());
+    chart.setCanvas(canvas);
+    chart.setPadding(10,20,15,15);
+    chart.setDataSource(lPieData);
+    chart.setChartTitle("3D Pie Chart");
+    chart.getPlotTitle().setChartTitlePosition(XEnum.Postion.LOWER);
+    chart.setKeyVisible(false);
+    chart.getLabelsPaint().setColor(Color.WHITE);
+    chart.render();
+  }
+ catch (  Exception e) {
+    e.printStackTrace();
+  }
+}

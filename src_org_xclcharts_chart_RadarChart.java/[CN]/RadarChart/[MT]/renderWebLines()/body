@@ -1,0 +1,16 @@
+{
+  Path lnPath=new Path();
+  for (int i=0; i < dataCount; i++) {
+    for (int j=0; j < labelsCount; j++) {
+      if (0 == j) {
+        lnPath.moveTo(arrayLabelX[i][j],arrayLabelY[i][j]);
+      }
+ else {
+        lnPath.lineTo(arrayLabelX[i][j],arrayLabelY[i][j]);
+      }
+    }
+    lnPath.close();
+    mCanvas.drawPath(lnPath,mPaintWebLines);
+    lnPath.reset();
+  }
+}

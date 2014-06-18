@@ -17,12 +17,12 @@ mChart.setChartDirection(XEnum.Direction.HORIZONTAL);
 break;
 case 4:
 mChart=new StackBarChart();
-((StackBarChart)mChart).setTotalLabelVisible(false);
+((StackBarChart)mChart).setTotalVisible(false);
 break;
 case 5:
 mChart=new StackBarChart();
 mChart.setChartDirection(XEnum.Direction.HORIZONTAL);
-((StackBarChart)mChart).setTotalLabelVisible(false);
+((StackBarChart)mChart).setTotalVisible(false);
 break;
 }
 }

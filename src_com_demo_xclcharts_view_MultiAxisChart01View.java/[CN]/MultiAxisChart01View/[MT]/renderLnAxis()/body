@@ -1,7 +1,7 @@
 {
   lnChart.setLabels(chartLablesLn);
   lnChart.getLabelsAxis().setVisible(false);
-  lnChart.setDataSource(chartDataLn);
+  lnChart.setDataSource(chartDatasetLn);
   DataAxis dataAxis=lnChart.getDataAxis();
   dataAxis.setAxisHorizontalTickAlign(Align.RIGHT);
   dataAxis.setAxisMax(135);

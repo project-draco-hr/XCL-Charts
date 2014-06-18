@@ -31,21 +31,15 @@
     @Override public void onProgressChanged(    SeekBar seekBar,    int progress,    boolean fromUser){
       mDesc.setText(Integer.toString(progress));
       if (0 == mSelected) {
-        mGaChart.initCache();
         mGaChart.setAgent(progress);
-        mGaChart.chartRender();
         mGaChart.invalidate();
       }
  else       if (1 == mSelected) {
-        mCirChart2.initCache();
         mCirChart2.setPercentage(progress);
-        mCirChart2.chartRender();
         mCirChart2.invalidate();
       }
  else       if (2 == mSelected) {
-        mCirChart.initCache();
         mCirChart.setPercentage(progress);
-        mCirChart.chartRender();
         mCirChart.invalidate();
       }
     }

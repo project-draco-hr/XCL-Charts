@@ -18,7 +18,7 @@
   SplineData dataSeries2=new SplineData("?????????",linePoint2,(int)Color.rgb(255,165,132));
   dataSeries2.setLineLabelVisible(true);
   dataSeries2.setDotStyle(XEnum.DotStyle.RECT);
-  dataSeries2.getPlotLabelsPaint().setColor(Color.RED);
+  dataSeries2.getDotLabelPaint().setColor(Color.RED);
   chartData.add(dataSeries1);
   chartData.add(dataSeries2);
 }

@@ -1,3 +1,7 @@
 {
-  renderGridLines();
+  GetAllXY();
+  renderWebLines();
+  renderAxisLines();
+  renderWebArea();
+  renderKey();
 }

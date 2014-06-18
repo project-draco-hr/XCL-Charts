@@ -22,10 +22,10 @@
     mCanvas.drawText(cData.getLineKey(),currentX + rectWidth,currentY - textHeight / 3,mPaintKey);
     float dotLeft=currentX + rectWidth / 4;
     float dotRight=currentX + 2 * (rectWidth / 4);
-    PlotLines pLine=cData.getPlotLines();
+    PlotLine pLine=cData.getPlotLine();
     if (!pLine.getDotStyle().equals(XEnum.DotStyle.HIDE)) {
       PlotDot pDot=pLine.getPlotDot();
-      renderDot(pDot,dotLeft,currentY,dotRight,currentY - textHeight / 2,pLine.getPlotDotPaint());
+      renderDot(pDot,dotLeft,currentY,dotRight,currentY - textHeight / 2,pLine.getDotPaint());
     }
     currentX+=rectWidth + keyTextWidth + 10;
   }

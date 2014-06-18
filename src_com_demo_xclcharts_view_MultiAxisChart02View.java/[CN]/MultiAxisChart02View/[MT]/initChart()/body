@@ -1,0 +1,6 @@
+{
+  chartLabels();
+  chartDataLnSet();
+  chartLnLabels();
+  chartLnDataSet();
+}

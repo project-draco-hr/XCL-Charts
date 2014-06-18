@@ -1,9 +1,4 @@
 {
   super(context);
-  chartLabels();
-  chartDataLnSet();
-  chartLnLabels();
-  chartLnDataSet();
-  chartRender();
-  chartLnRender();
+  initChart();
 }

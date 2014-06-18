@@ -1,5 +1,5 @@
 {
-  mPlotLines.getPlotLinesPaint().setColor(color);
-  mPlotLines.getPlotLabelsPaint().setColor(color);
-  mPlotLines.getPlotDotPaint().setColor(color);
+  mPlotLine.getLinePaint().setColor(color);
+  mPlotLine.getDotLabelPaint().setColor(color);
+  mPlotLine.getDotPaint().setColor(color);
 }

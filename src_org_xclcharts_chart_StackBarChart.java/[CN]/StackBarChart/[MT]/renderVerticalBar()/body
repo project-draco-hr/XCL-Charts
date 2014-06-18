@@ -17,16 +17,16 @@
       if (bd.getDataSet().size() < r + 1)       continue;
       Double bv=bd.getDataSet().get(r);
       total+=bv;
-      float valuePostion=0.0f;
+      float postion=0.0f;
       if (i == 0) {
-        valuePostion=(float)(axisScreenHeight * ((bv - dataAxis.getAxisMin()) / axisDataHeight));
+        postion=(float)(axisScreenHeight * ((bv - dataAxis.getAxisMin()) / axisDataHeight));
       }
  else {
-        valuePostion=(float)(axisScreenHeight * ((bv) / axisDataHeight));
+        postion=(float)(axisScreenHeight * ((bv) / axisDataHeight));
       }
-      flatBar.renderBar(currentX - barWidht / 2,currentY - valuePostion,currentX + barWidht / 2,currentY,mCanvas);
-      flatBar.renderBarItemLabel(getFormatterItemLabel(bv),currentX,currentY - valuePostion / 2,mCanvas);
-      currentY-=valuePostion;
+      flatBar.renderBar(currentX - barWidht / 2,currentY - postion,currentX + barWidht / 2,currentY,mCanvas);
+      flatBar.renderBarItemLabel(getFormatterItemLabel(bv),currentX,currentY - postion / 2,mCanvas);
+      currentY-=postion;
     }
     float totalPostion=(float)(axisScreenHeight / axisDataHeight * (total - dataAxis.getAxisMin()));
     flatBar.renderBarItemLabel(getFormatterItemLabel(total),currentX,plotArea.getPlotBottom() - totalPostion,mCanvas);

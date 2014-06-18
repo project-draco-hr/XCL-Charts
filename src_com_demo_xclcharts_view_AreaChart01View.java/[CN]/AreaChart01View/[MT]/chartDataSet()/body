@@ -14,8 +14,8 @@
   AreaData line1=new AreaData("??????",dataSeries1,Color.BLUE,Color.YELLOW);
   line1.setDotStyle(XEnum.DotStyle.HIDE);
   AreaData line2=new AreaData("?????????",dataSeries2,(int)Color.rgb(79,200,100),Color.GREEN);
-  line2.getPlotLabelsPaint().setColor(Color.RED);
+  line2.getDotLabelPaint().setColor(Color.RED);
   line2.setLineLabelVisible(true);
-  mChartDataSet.add(line1);
-  mChartDataSet.add(line2);
+  mDataset.add(line1);
+  mDataset.add(line2);
 }

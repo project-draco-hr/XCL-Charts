@@ -24,19 +24,19 @@
       lineEndY=initY - valuePostion;
     }
     if (bv != dataAxis.getAxisMin()) {
-      PlotLines pLine=bd.getPlotLines();
+      PlotLine pLine=bd.getPlotLine();
       if (type.equalsIgnoreCase("LINE")) {
-        if (lineStartY != initY)         mCanvas.drawLine(lineStartX,lineStartY,lineEndX,lineEndY,pLine.getPlotLinesPaint());
+        if (lineStartY != initY)         mCanvas.drawLine(lineStartX,lineStartY,lineEndX,lineEndY,pLine.getLinePaint());
       }
  else       if (type.equalsIgnoreCase("DOT2LABEL")) {
         if (!pLine.getDotStyle().equals(XEnum.DotStyle.HIDE)) {
           PlotDot pDot=pLine.getPlotDot();
           float rendEndX=lineEndX + pDot.getDotRadius();
-          renderDot(pDot,lineStartX,lineStartY,lineEndX,lineEndY,pLine.getPlotDotPaint());
+          renderDot(pDot,lineStartX,lineStartY,lineEndX,lineEndY,pLine.getDotPaint());
           lineEndX=rendEndX;
         }
         if (bd.getLineLabelVisible()) {
-          mCanvas.drawText(Double.toString(bv),lineEndX,lineEndY,pLine.getPlotLabelsPaint());
+          mCanvas.drawText(Double.toString(bv),lineEndX,lineEndY,pLine.getDotLabelPaint());
         }
       }
  else {

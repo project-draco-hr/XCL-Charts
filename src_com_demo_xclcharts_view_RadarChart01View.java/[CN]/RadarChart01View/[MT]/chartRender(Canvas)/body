@@ -1,0 +1,14 @@
+{
+  try {
+    RadarChart chart=new RadarChart();
+    chart.setChartRange(0.0f,0.0f,getScreenWidth(),getScreenHeight());
+    chart.setCanvas(canvas);
+    chart.setPadding(15,30,10,5);
+    chart.setChartTitle("?????????");
+    chart.render();
+  }
+ catch (  Exception e) {
+    e.printStackTrace();
+    Log.e("ERROR-RadarChart01View",e.toString());
+  }
+}

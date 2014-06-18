@@ -1,0 +1,8 @@
+{
+  SysinfoHelper sysinfo=new SysinfoHelper();
+  if (sysinfo.supportHardwareAccelerated()) {
+    if (!isHardwareAccelerated()) {
+      setLayerType(View.LAYER_TYPE_SOFTWARE,null);
+    }
+  }
+}

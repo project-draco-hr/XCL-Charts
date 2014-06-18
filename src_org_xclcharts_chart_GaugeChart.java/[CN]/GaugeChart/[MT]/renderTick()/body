@@ -10,6 +10,6 @@
     float startX=mCalc.getPosX();
     float startY=mCalc.getPosY();
     mCalc.CalcArcEndPointXY(cirX,cirY,tickRadius,agent);
-    mCanvas.drawLine(startX,startY,mCalc.getPosX(),mCalc.getPosY(),mPaintTick);
+    mCanvas.drawLine(startX,startY,mCalc.getPosX(),mCalc.getPosY(),mPaintTicks);
   }
 }

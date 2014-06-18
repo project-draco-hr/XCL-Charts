@@ -1,0 +1,17 @@
+{
+  try {
+    DountChart chart=new DountChart();
+    chart.setChartRange(0.0f,0.0f,getScreenWidth(),getScreenHeight());
+    chart.setCanvas(canvas);
+    chart.setPadding(20,30,15,15);
+    chart.setInitialAngle(90);
+    chart.setDataSource(lPieData);
+    chart.setLablesDisplay(XEnum.DisplayPostion.OUTSIDE);
+    chart.setChartTitle("Dount Chart");
+    chart.setChartSubTitle("(XCL-Charts Demo)");
+    chart.render();
+  }
+ catch (  Exception e) {
+    e.printStackTrace();
+  }
+}

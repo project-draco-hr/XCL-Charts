@@ -1,0 +1,16 @@
+{
+  try {
+    chart.setChartRange(0.0f,0.0f,getScreenWidth() - 100,getScreenHeight());
+    chart.setCanvas(canvas);
+    chart.setPadding(25,20,10,10);
+    chart.setChartTitle("????????? ");
+    chart.setTickSteps(10d);
+    chart.setLabels(mLabels);
+    chart.setPartition(mPartitionSet);
+    chart.setCurrentAgent(mAgent);
+    chart.render();
+  }
+ catch (  Exception e) {
+    e.printStackTrace();
+  }
+}

@@ -1,0 +1,4 @@
+{
+  chartRender(canvas);
+  chartLnRender(canvas);
+}

@@ -1,6 +1,22 @@
 {
+  dataAxis=new DataAxisRender();
+  labelsAxis=new LabelsAxisRender();
   mPaintLabels=new Paint();
-  mPaintLabels.setColor(Color.BLACK);
+  mPaintLabels.setColor(Color.RED);
   mPaintLabels.setTextSize(18);
   mPaintLabels.setAntiAlias(true);
+  mPaintLabels.setStyle(Style.STROKE);
+  mPaintLabels.setTextAlign(Align.CENTER);
+  mPaintTick=new Paint();
+  mPaintTick.setColor(Color.BLUE);
+  mPaintTick.setTextSize(18);
+  mPaintTick.setAntiAlias(true);
+  mPaintTick.setStyle(Style.STROKE);
+  mPaintTick.setTextAlign(Align.RIGHT);
+  mPaintWebLines=new Paint();
+  mPaintWebLines.setColor(Color.BLACK);
+  mPaintWebLines.setAntiAlias(true);
+  mPaintWebLines.setStyle(Style.STROKE);
+  mPaintWebLines.setStrokeWidth(3);
+  mPaintWebLines.setTextSize(22);
 }

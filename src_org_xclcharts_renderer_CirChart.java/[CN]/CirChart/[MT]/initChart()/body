@@ -1,7 +1,7 @@
 {
   mLablesDP=XEnum.DisplayPostion.CENTER;
-  mPaintLabels=new Paint();
-  mPaintLabels.setColor(Color.BLACK);
-  mPaintLabels.setTextSize(18);
-  mPaintLabels.setAntiAlias(true);
+  mPaintLabel=new Paint();
+  mPaintLabel.setColor(Color.BLACK);
+  mPaintLabel.setTextSize(18);
+  mPaintLabel.setAntiAlias(true);
 }

@@ -3,7 +3,6 @@
     super.render();
     calcPlotRange();
     plotArea.render();
-    plotGrid.render();
     renderTitle();
     renderPlot();
   }

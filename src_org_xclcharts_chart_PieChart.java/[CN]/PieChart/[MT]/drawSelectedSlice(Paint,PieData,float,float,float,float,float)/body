@@ -8,7 +8,7 @@
     float arcBottom=mCalc.getPosY() + radius;
     RectF arcRF1=new RectF(arcLeft,arcTop,arcRight,arcBottom);
     mCanvas.drawArc(arcRF1,offsetAgent,curretAgent,true,paintArc);
-    drawLables(cData.getLabel(),mCalc.getPosX(),mCalc.getPosY(),radius,offsetAgent,curretAgent);
+    drawLabel(cData.getLabel(),mCalc.getPosX(),mCalc.getPosY(),radius,offsetAgent,curretAgent);
   }
  catch (  Exception e) {
     throw e;
