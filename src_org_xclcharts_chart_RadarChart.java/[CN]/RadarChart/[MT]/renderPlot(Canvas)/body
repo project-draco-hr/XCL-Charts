@@ -1,0 +1,7 @@
+{
+  GetAllXY();
+  renderGridLines(canvas);
+  renderAxisLines(canvas);
+  renderDataArea(canvas);
+  renderKey(canvas);
+}

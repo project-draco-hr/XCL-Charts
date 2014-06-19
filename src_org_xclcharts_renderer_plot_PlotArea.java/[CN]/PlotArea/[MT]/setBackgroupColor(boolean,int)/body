@@ -1,4 +1,0 @@
-{
-  mBackgroupColorVisible=visible;
-  getBackgroundPaint().setColor(color);
-}

@@ -2,5 +2,4 @@
   super(context);
   disableHardwareAccelerated();
   getScreenInfo();
-  initCache();
 }

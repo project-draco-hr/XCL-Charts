@@ -1,11 +1,11 @@
 {
   getLabelsPaint().setTextSize(18);
   getLabelsPaint().setColor(Color.BLUE);
-  mPaintTicks=new Paint();
-  mPaintTicks.setStyle(Style.FILL);
-  mPaintTicks.setAntiAlias(true);
-  mPaintTicks.setColor((int)Color.rgb(50,149,222));
-  mPaintTicks.setStrokeWidth(1);
+  mPaintTick=new Paint();
+  mPaintTick.setStyle(Style.FILL);
+  mPaintTick.setAntiAlias(true);
+  mPaintTick.setColor((int)Color.rgb(50,149,222));
+  mPaintTick.setStrokeWidth(1);
   mPaintPointerLine=new Paint();
   mPaintPointerLine.setStyle(Style.FILL);
   mPaintPointerLine.setAntiAlias(true);

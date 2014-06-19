@@ -1,7 +1,0 @@
-{
-  GetAllXY();
-  renderWebLines();
-  renderAxisLines();
-  renderWebArea();
-  renderKey();
-}

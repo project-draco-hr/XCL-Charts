@@ -1,5 +1,5 @@
 {
   super();
   getAxisTickLabelsPaint().setTextAlign(Align.CENTER);
-  setAxisVerticalTickPostion(XEnum.Postion.LOWER);
+  setAxisVerticalTickPosition(XEnum.Position.LOWER);
 }

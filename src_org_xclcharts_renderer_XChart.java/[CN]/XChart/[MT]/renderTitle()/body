@@ -1,3 +1,0 @@
-{
-  this.plotTitle.renderTitle(mChartLeft,mChartRight,mChartTop,mChartWidth,this.plotArea.getPlotTop(),this.mCanvas);
-}

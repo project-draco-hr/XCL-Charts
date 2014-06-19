@@ -1,12 +1,12 @@
 {
-  List<Double> valuesA=new LinkedList<Double>();
-  valuesA.add((double)200);
-  valuesA.add((double)250);
-  valuesA.add((double)400);
-  List<Double> valuesB=new LinkedList<Double>();
-  valuesB.add((double)300);
-  valuesB.add((double)150);
-  valuesB.add((double)450);
-  BarDataSet.add(new BarData("????????????",valuesA,(int)Color.rgb(0,0,255)));
-  BarDataSet.add(new BarData("????????????",valuesB,(int)Color.rgb(255,0,0)));
+  List<Double> dataSeriesA=new LinkedList<Double>();
+  dataSeriesA.add((double)200);
+  dataSeriesA.add((double)250);
+  dataSeriesA.add((double)400);
+  List<Double> dataSeriesB=new LinkedList<Double>();
+  dataSeriesB.add((double)300);
+  dataSeriesB.add((double)150);
+  dataSeriesB.add((double)450);
+  BarDataSet.add(new BarData("????????????",dataSeriesA,(int)Color.rgb(0,0,255)));
+  BarDataSet.add(new BarData("????????????",dataSeriesB,(int)Color.rgb(255,0,0)));
 }

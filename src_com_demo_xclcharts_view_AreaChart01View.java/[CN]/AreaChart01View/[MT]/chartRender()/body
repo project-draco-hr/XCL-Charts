@@ -1,0 +1,20 @@
+{
+  try {
+    chart.setChartRange(0.0f,0.0f,getScreenWidth(),getScreenHeight());
+    chart.setPadding(15,30,10,5);
+    chart.setLabels(mLabels);
+    chart.setDataSource(mDataset);
+    chart.getDataAxis().setAxisMax(100);
+    chart.getDataAxis().setAxisSteps(10);
+    chart.getPlotGrid().showEvenRowsBgColor(true);
+    chart.getPlotGrid().showOddRowsBgColor(true);
+    chart.setChartTitle("?????????(Area Chart)");
+    chart.setChartSubTitle("(XCL-Charts Demo)");
+    chart.getLegend().setLowerLegend("(??????)");
+    chart.setPlotKeyVisible(true);
+  }
+ catch (  Exception e) {
+    e.printStackTrace();
+    Log.e(TAG,e.toString());
+  }
+}

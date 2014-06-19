@@ -1,0 +1,18 @@
+{
+  if (false == getPlotKeyVisible())   return;
+  DrawHelper dw=new DrawHelper();
+  float keyTextHeight=dw.getPaintFontHeight(getPlotDataSetKeyPaint());
+  float keyLablesX=this.plotArea.getPlotRight();
+  float keyLablesY=(float)(this.getChartTop() + keyTextHeight);
+  float rectWidth=2 * keyTextHeight;
+  float rectHeight=keyTextHeight;
+  float rectOffset=getPlotDataSetKeyMargin();
+  getPlotDataSetKeyPaint().setTextAlign(Align.RIGHT);
+  for (  BarData cData : mDataSet) {
+    String key=cData.getKey();
+    getPlotDataSetKeyPaint().setColor(cData.getColor());
+    canvas.drawRect(keyLablesX,keyLablesY,keyLablesX - rectWidth,keyLablesY + rectHeight,getPlotDataSetKeyPaint());
+    dw.drawRotateText(key,keyLablesX - rectWidth - rectOffset,keyLablesY + rectHeight,0,canvas,getPlotDataSetKeyPaint());
+    keyLablesY+=keyTextHeight;
+  }
+}

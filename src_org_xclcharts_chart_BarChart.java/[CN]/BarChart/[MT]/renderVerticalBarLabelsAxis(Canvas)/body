@@ -1,0 +1,12 @@
+{
+  float currentX=plotArea.getPlotLeft();
+  List<String> dataSet=labelsAxis.getDataSet();
+  float XSteps=getAxisScreenWidth() / (dataSet.size() + 1);
+  for (int i=0; i < dataSet.size(); i++) {
+    currentX=plotArea.getPlotLeft() + (i + 1) * XSteps;
+    if (plotGrid.isShowVerticalLines()) {
+      canvas.drawLine(currentX,plotArea.getPlotBottom(),currentX,plotArea.getPlotTop(),plotGrid.getVerticalLinesPaint());
+    }
+    labelsAxis.renderAxisVerticalTick(canvas,currentX,plotArea.getPlotBottom(),dataSet.get(i));
+  }
+}

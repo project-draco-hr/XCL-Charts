@@ -3,4 +3,6 @@
   chartDatasetLnSet();
   chartLnLabels();
   chartLnDataSet();
+  chartRender();
+  chartLnRender();
 }

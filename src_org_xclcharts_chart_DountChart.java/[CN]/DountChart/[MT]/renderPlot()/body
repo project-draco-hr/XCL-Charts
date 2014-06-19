@@ -1,7 +1,0 @@
-{
-  super.renderPlot();
-  float cirX=plotArea.getCenterX();
-  float cirY=plotArea.getCenterY();
-  calcInnerRadius();
-  this.mCanvas.drawCircle(cirX,cirY,mFillRadius,mPaintFill);
-}

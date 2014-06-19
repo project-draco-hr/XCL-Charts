@@ -1,0 +1,47 @@
+{
+  try {
+    chart.setChartRange(0.0f,0.0f,getScreenWidth(),getScreenHeight());
+    if (chart.isVerticalScreen()) {
+      chart.setPadding(15,20,10,5);
+    }
+ else {
+      chart.setPadding(25,20,18,5);
+    }
+    chart.setChartDirection(XEnum.Direction.HORIZONTAL);
+    chart.setDataSource(chartData);
+    chart.setLabels(chartLabels);
+    chart.getDataAxis().setAxisMax(50);
+    chart.getDataAxis().setAxisMin(10);
+    chart.getDataAxis().setAxisSteps(10);
+    chart.getLabelsAxis().setAxisTickLabelsRotateAgent(-45f);
+    chart.setChartTitle("????????????????????????");
+    chart.setChartSubTitle("(XCL-Charts Demo)");
+    chart.getLegend().setLeftLegend("??????");
+    chart.getLegend().setLowerLegend("?????????");
+    chart.getPlotGrid().showHorizontalLines(true);
+    chart.getPlotGrid().showVerticalLines(true);
+    chart.getPlotGrid().showEvenRowsBgColor(true);
+    chart.getDataAxis().setLabelFormatter(new IFormatterTextCallBack(){
+      @Override public String textFormatter(      String value){
+        Double tmp=Double.parseDouble(value);
+        DecimalFormat df=new DecimalFormat("#0");
+        String label=df.format(tmp).toString();
+        return (label + "???");
+      }
+    }
+);
+    chart.getBar().setItemLabelsVisible(true);
+    chart.setItemLabelFormatter(new IFormatterDoubleCallBack(){
+      @Override public String doubleFormatter(      Double value){
+        DecimalFormat df=new DecimalFormat("#0.00");
+        String label=df.format(value).toString();
+        return label;
+      }
+    }
+);
+    chart.setAxis3DBaseColor((int)Color.rgb(132,162,197));
+  }
+ catch (  Exception e) {
+    Log.e(TAG,e.toString());
+  }
+}

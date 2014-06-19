@@ -1,5 +1,5 @@
 {
-  lnChart.setLabels(chartLablesLn);
+  lnChart.setLabels(chartLabelsLn);
   lnChart.getLabelsAxis().setVisible(false);
   lnChart.setDataSource(chartDatasetLn);
   DataAxis dataAxis=lnChart.getDataAxis();

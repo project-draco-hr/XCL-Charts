@@ -3,5 +3,5 @@
   mPaintFill=new Paint();
   mPaintFill.setColor(fillColor);
   mPaintFill.setAntiAlias(true);
-  this.setLablesDisplay(XEnum.DisplayPostion.OUTSIDE);
+  this.setLabelsDisplay(XEnum.DisplayPosition.OUTSIDE);
 }

@@ -1,5 +1,0 @@
-{
-  mBackgroupColorVisible=visible;
-  getChartBackgroundPaint().setColor(color);
-  getPlotArea().getBackgroundPaint().setColor(color);
-}

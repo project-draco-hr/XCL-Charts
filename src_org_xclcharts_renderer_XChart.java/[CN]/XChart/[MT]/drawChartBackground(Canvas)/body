@@ -1,0 +1,3 @@
+{
+  if (mBackgroundColorVisible)   canvas.drawRect(mChartLeft,mChartTop,mChartRight,mChartBottom,mChartBackgroundPaint);
+}

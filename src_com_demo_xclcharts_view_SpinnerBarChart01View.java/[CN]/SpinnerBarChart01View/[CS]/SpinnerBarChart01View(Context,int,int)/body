@@ -1,6 +1,8 @@
 {
   super(context);
   mChartStyle=chartStyle;
-  mMoveHeight=moveHeight;
-  initChart();
+  mOffsetHeight=offsetHeight;
+  chartLabels();
+  chartDataSet();
+  chartRender();
 }

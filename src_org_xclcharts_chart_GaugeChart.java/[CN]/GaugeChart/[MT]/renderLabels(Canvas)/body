@@ -1,0 +1,21 @@
+{
+  float stepsAgent=Math.round(180 / (mLabels.size() - 1));
+  float calcRadius=this.getRadius() + getRadius() / 10;
+  float cirX=plotArea.getCenterX();
+  float cirY=plotArea.getCenterY();
+  getLabelsPaint().setTextAlign(Align.CENTER);
+  int i=0;
+  for (  String label : mLabels) {
+    if (0 == i) {
+      canvas.drawText(label,cirX - calcRadius,cirY,this.getLabelsPaint());
+    }
+ else     if (i == mLabels.size() - 1) {
+      canvas.drawText(label,cirX + calcRadius,cirY,this.getLabelsPaint());
+    }
+ else {
+      mCalc.CalcArcEndPointXY(cirX,cirY,calcRadius,180 + i * stepsAgent);
+      canvas.drawText(label,mCalc.getPosX(),mCalc.getPosY(),this.getLabelsPaint());
+    }
+    i++;
+  }
+}

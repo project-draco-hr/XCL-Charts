@@ -1,0 +1,11 @@
+{
+  try {
+    super.render(canvas);
+    if (false == checkInput())     return false;
+    renderPlot(canvas);
+  }
+ catch (  Exception e) {
+    throw e;
+  }
+  return true;
+}

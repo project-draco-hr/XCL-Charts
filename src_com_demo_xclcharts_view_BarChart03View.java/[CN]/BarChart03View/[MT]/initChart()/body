@@ -1,5 +1,0 @@
-{
-  chartLabels();
-  chartDataSet();
-  chartDesireLines();
-}

@@ -1,8 +1,8 @@
 {
-  lnChart.setLabels(chartLablesLn);
+  lnChart.setLabels(chartLabelsLn);
   lnChart.getLabelsAxis().setVisible(false);
   lnChart.setDataSource(chartDataLn);
-  lnChart.setDataAxisDisplay(XEnum.LineDataAxisPostion.RIGHT);
+  lnChart.setDataAxisDisplay(XEnum.LineDataAxisPosition.RIGHT);
   DataAxis dataAxis=lnChart.getDataAxis();
   dataAxis.setAxisMax(135);
   dataAxis.setAxisMin(0);

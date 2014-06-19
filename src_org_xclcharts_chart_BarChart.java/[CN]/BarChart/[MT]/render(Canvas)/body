@@ -1,0 +1,21 @@
+{
+  try {
+    super.render(canvas);
+switch (mDirection) {
+case HORIZONTAL:
+{
+        renderHorizontalBar(canvas);
+        break;
+      }
+case VERTICAL:
+{
+      renderVerticalBar(canvas);
+      break;
+    }
+}
+}
+ catch (Exception e) {
+throw e;
+}
+return true;
+}

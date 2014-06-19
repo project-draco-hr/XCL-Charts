@@ -1,0 +1,13 @@
+{
+  if (null == mChart)   return false;
+  if (this.getLeftLegend().length() > 0) {
+    drawLeftLegend(canvas,getLeftLegend(),mChart.getChartLeft(),mChart.getChartTop(),mChart.getChartRight(),mChart.getChartBottom());
+  }
+  if (this.getLowerLegend().length() > 0) {
+    drawLegendLower(canvas,getLowerLegend(),mChart.getChartLeft(),mChart.getChartTop(),mChart.getChartRight(),mChart.getChartBottom());
+  }
+  if (this.getRightLegend().length() > 0) {
+    drawRightLegend(canvas,getRightLegend(),mChart.getChartLeft(),mChart.getChartTop(),mChart.getChartRight(),mChart.getChartBottom());
+  }
+  return true;
+}

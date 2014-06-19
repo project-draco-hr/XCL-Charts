@@ -1,0 +1,14 @@
+{
+  try {
+    super.render(canvas);
+    calcPlotRange();
+    plotArea.render(canvas);
+    renderTitle(canvas);
+    legend.setRange(this);
+    legend.render(canvas);
+  }
+ catch (  Exception e) {
+    throw e;
+  }
+  return true;
+}

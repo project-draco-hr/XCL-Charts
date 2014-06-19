@@ -1,0 +1,47 @@
+{
+  if (false == getVisible())   return;
+  float marksStartY=centerY;
+  float marksStopY=centerY;
+  float labelsStartY=centerY;
+switch (getAxisVerticalTickPosition()) {
+case UP:
+{
+      if (getAxisTickMarksVisible()) {
+        marksStartY=Math.round(centerY - getTickMarksLength());
+        marksStopY=centerY;
+        labelsStartY=marksStartY - getTickLabelsMargin() - mDrawHelper.getPaintFontHeight(getAxisTickLabelsPaint());
+      }
+      break;
+    }
+case CENTER:
+{
+    if (getAxisTickMarksVisible()) {
+      marksStartY=Math.round(centerY - getTickMarksLength() / 2);
+      marksStopY=Math.round(centerY + getTickMarksLength() / 2);
+    }
+    break;
+  }
+case LOWER:
+if (getAxisTickMarksVisible()) {
+  marksStartY=centerY;
+  marksStopY=Math.round(centerY + getTickMarksLength());
+  labelsStartY=marksStopY + getTickLabelsMargin() + mDrawHelper.getPaintFontHeight(getAxisTickLabelsPaint()) / 3;
+}
+break;
+default :
+break;
+}
+if (getAxisTickMarksVisible()) {
+canvas.drawLine(centerX,marksStartY - this.getAxisPaint().getStrokeWidth() / 2,centerX,marksStopY,getAxisTickMarksPaint());
+}
+if (getAxisTickLabelsVisible()) {
+String itemLabel="";
+try {
+itemLabel=mLabelFormatter.textFormatter(text);
+}
+ catch (Exception ex) {
+itemLabel=text;
+}
+mDrawHelper.drawRotateText(itemLabel,centerX,labelsStartY,getAxisTickLabelsRotateAgent(),canvas,getAxisTickLabelsPaint());
+}
+}

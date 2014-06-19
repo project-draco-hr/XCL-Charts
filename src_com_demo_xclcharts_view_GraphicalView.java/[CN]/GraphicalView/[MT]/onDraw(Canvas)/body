@@ -1,12 +1,8 @@
 {
   try {
-    if (null != mCacheBitmap) {
-      Paint bmpPaint=new Paint();
-      canvas.drawBitmap(mCacheBitmap,0,0,bmpPaint);
-    }
+    render(canvas);
   }
  catch (  Exception e) {
-    e.printStackTrace();
-    Log.e("GraphicalView",e.toString());
+    Log.e(TAG,e.toString());
   }
 }

@@ -1,4 +1,5 @@
 {
   super(context);
-  initChart();
+  setPercentage(0);
+  chartRender();
 }

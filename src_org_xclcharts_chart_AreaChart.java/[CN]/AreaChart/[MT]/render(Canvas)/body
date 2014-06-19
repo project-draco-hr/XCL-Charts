@@ -1,0 +1,10 @@
+{
+  try {
+    super.render(canvas);
+    renderVerticalPlot(canvas);
+  }
+ catch (  Exception e) {
+    throw e;
+  }
+  return true;
+}

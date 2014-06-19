@@ -1,0 +1,9 @@
+{
+  for (  LineData lineData : mDataSet) {
+    List<Double> dataset=lineData.getLinePoint();
+    for (    Double data : dataset) {
+      Double dataPrc=(data - dataAxis.getAxisMin()) / dataAxis.getAxisRange();
+      Double currRadius=mRadius * dataPrc;
+    }
+  }
+}

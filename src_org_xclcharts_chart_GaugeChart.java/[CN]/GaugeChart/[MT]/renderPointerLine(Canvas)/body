@@ -1,0 +1,16 @@
+{
+  if (mPointerAgent > 180) {
+    Log.e("ERROR-GaugeChart","????????? !!!");
+  }
+ else   if (mPointerAgent < 0) {
+    Log.e("ERROR-GaugeChart","????????????!!!");
+  }
+ else {
+    float currentRadius=Math.round(this.getRadius() * 0.9);
+    float calcAgent=Math.round(mPointerAgent + mStartAgent);
+    float cirX=plotArea.getCenterX();
+    float cirY=plotArea.getCenterY();
+    mCalc.CalcArcEndPointXY(cirX,cirY,currentRadius,calcAgent);
+    canvas.drawLine(cirX,cirY,mCalc.getPosX(),mCalc.getPosY(),mPaintPointerLine);
+  }
+}

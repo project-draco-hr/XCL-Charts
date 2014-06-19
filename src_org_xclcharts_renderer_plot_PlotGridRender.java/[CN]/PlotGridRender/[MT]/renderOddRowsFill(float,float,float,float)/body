@@ -1,5 +1,0 @@
-{
-  if (null != mCanvas && getOddRowsFillVisible()) {
-    mCanvas.drawRect(left,bottom,right,top,getOddFillPaint());
-  }
-}

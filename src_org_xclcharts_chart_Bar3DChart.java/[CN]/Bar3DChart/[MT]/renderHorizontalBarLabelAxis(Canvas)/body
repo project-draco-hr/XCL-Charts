@@ -1,0 +1,10 @@
+{
+  float YSteps=(float)(getAxisScreenHeight() / (this.labelsAxis.getDataSet().size() + 1));
+  float currentY=0.0f;
+  for (int i=0; i < labelsAxis.getDataSet().size(); i++) {
+    currentY=plotArea.getPlotBottom() - (i + 1) * YSteps;
+    plotGrid.renderGridLinesHorizontal(canvas,plotArea.getPlotLeft(),currentY,plotArea.getPlotRight(),currentY);
+    float labelX=(float)(plotArea.getPlotLeft() - mBar3D.getOffsetX() * 2);
+    this.labelsAxis.renderAxisHorizontalTick(canvas,labelX,currentY,labelsAxis.getDataSet().get(i));
+  }
+}

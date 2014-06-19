@@ -1,0 +1,10 @@
+{
+  try {
+    chart.setChartRange(0.0f,0.0f,getScreenWidth(),getScreenHeight());
+    chart.setPadding(15,30,10,5);
+    chart.setChartTitle("?????????");
+  }
+ catch (  Exception e) {
+    Log.e(TAG,e.toString());
+  }
+}

@@ -16,7 +16,7 @@ case VERTICAL:
       dataAxis.getAxisTickLabelsPaint().setTextAlign(Align.RIGHT);
       labelsAxis.setAxisHorizontalTickAlign(Align.CENTER);
       labelsAxis.getAxisTickLabelsPaint().setTextAlign(Align.CENTER);
-      labelsAxis.setAxisVerticalTickPostion(XEnum.Postion.LOWER);
+      labelsAxis.setAxisVerticalTickPosition(XEnum.Position.LOWER);
       break;
     }
 }

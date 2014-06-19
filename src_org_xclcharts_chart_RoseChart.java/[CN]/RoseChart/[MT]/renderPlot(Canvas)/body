@@ -1,0 +1,28 @@
+{
+  float cirX=plotArea.getCenterX();
+  float cirY=plotArea.getCenterY();
+  float radius=getRadius();
+  Paint paintArc=new Paint();
+  paintArc.setAntiAlias(true);
+  paintArc.setStyle(Style.FILL);
+  canvas.drawCircle(cirX,cirY,radius,mPaintInner);
+  float percentage=0.0f;
+  float newRaidus=0.0f;
+  List<PieData> chartDataSource=this.getDataSource();
+  percentage=360 / chartDataSource.size();
+  percentage=(float)(Math.round(percentage * 100)) / 100;
+  for (  PieData cData : chartDataSource) {
+    paintArc.setColor(cData.getSliceColor());
+    newRaidus=(float)(radius * (cData.getPercentage() / 100));
+    newRaidus=(float)(Math.round(newRaidus * 100)) / 100;
+    float nLeft=cirX - newRaidus;
+    float nTop=cirY - newRaidus;
+    float nRight=cirX + newRaidus;
+    float nBottom=cirY + newRaidus;
+    RectF nRF=new RectF(nLeft,nTop,nRight,nBottom);
+    canvas.drawArc(nRF,mOffsetAgent,percentage,true,paintArc);
+    this.mCalc.CalcArcEndPointXY(cirX,cirY,radius - radius / 2 / 2,mOffsetAgent + percentage / 2);
+    canvas.drawText(cData.getLabel(),mCalc.getPosX(),mCalc.getPosY(),getLabelsPaint());
+    mOffsetAgent+=percentage;
+  }
+}

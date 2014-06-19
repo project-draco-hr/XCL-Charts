@@ -1,6 +1,0 @@
-{
-  mRadius=300;
-  GetAllXY();
-  renderWebLines();
-  renderAxisLines();
-}

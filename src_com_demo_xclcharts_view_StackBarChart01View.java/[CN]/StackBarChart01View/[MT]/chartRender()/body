@@ -1,0 +1,56 @@
+{
+  try {
+    chart.setChartRange(0.0f,0.0f,getScreenWidth(),getScreenHeight());
+    chart.setChartDirection(XEnum.Direction.VERTICAL);
+    if (chart.isVerticalScreen()) {
+      chart.setPadding(15,20,10,5);
+    }
+ else {
+      chart.setPadding(25,30,18,5);
+    }
+    chart.setLabels(chartLabels);
+    chart.setDataSource(BarDataSet);
+    chart.getDataAxis().setAxisMax(1024);
+    chart.getDataAxis().setAxisMin(0);
+    chart.getDataAxis().setAxisSteps(64);
+    chart.getLabelsAxis().setAxisTickLabelsRotateAgent(-45f);
+    Paint labelPaint=chart.getLabelsAxis().getAxisTickLabelsPaint();
+    labelPaint.setTextAlign(Align.RIGHT);
+    labelPaint.setColor((int)Color.rgb(0,75,106));
+    chart.setChartTitle("?????????????????????????????????");
+    chart.setChartSubTitle("(XCL-Charts Demo)");
+    chart.setChartTitleAlign(XEnum.ChartTitleAlign.CENTER);
+    chart.setChartTitlePosition(XEnum.Position.CENTER);
+    chart.getLegend().setLeftLegend("??????(TB)");
+    chart.getPlotGrid().showEvenRowsBgColor(true);
+    chart.getPlotGrid().showOddRowsBgColor(true);
+    chart.getDataAxis().setLabelFormatter(new IFormatterTextCallBack(){
+      @Override public String textFormatter(      String value){
+        DecimalFormat df=new DecimalFormat("#0");
+        Double tmp=Double.parseDouble(value);
+        String label=df.format(tmp).toString();
+        return label;
+      }
+    }
+);
+    chart.getLabelsAxis().setLabelFormatter(new IFormatterTextCallBack(){
+      @Override public String textFormatter(      String value){
+        String label="IP-[" + value + "]";
+        return label;
+      }
+    }
+);
+    chart.getBar().setItemLabelsVisible(true);
+    chart.setItemLabelFormatter(new IFormatterDoubleCallBack(){
+      @Override public String doubleFormatter(      Double value){
+        DecimalFormat df=new DecimalFormat("#0.00");
+        String label=df.format(value).toString();
+        return label;
+      }
+    }
+);
+  }
+ catch (  Exception e) {
+    Log.e(TAG,e.toString());
+  }
+}

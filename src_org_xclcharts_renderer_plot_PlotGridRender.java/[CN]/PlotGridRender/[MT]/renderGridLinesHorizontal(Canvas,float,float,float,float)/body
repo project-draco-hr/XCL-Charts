@@ -1,0 +1,8 @@
+{
+  if (null != canvas && this.isShowHorizontalLines()) {
+    float initWidth=getHorizontalLinesPaint().getStrokeWidth();
+    if (mPrimaryTickLine)     getHorizontalLinesPaint().setStrokeWidth(initWidth + BLOB_WIDTH);
+    mDrawHelper.drawLine(this.getHorizontalLinesStyle(),startX,startY,stopX,stopY,canvas,getHorizontalLinesPaint());
+    if (mPrimaryTickLine)     getHorizontalLinesPaint().setStrokeWidth(initWidth);
+  }
+}

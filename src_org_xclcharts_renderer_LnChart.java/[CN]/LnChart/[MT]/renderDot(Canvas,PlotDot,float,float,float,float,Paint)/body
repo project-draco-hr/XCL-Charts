@@ -1,0 +1,41 @@
+{
+  float radius=pDot.getDotRadius();
+  float halfRadius=radius / 2;
+switch (pDot.getDotStyle()) {
+case CIRCLE:
+    canvas.drawCircle(left + Math.abs(right - left),bottom,radius,paint);
+  break;
+case RING:
+int ringRadius=(int)Math.round(radius * 0.7);
+canvas.drawCircle(left + Math.abs(right - left),bottom,radius,paint);
+Paint paintfill=new Paint();
+paintfill.setColor(Color.WHITE);
+paintfill.setStyle(Style.FILL);
+canvas.drawCircle(left + Math.abs(right - left),bottom,ringRadius,paintfill);
+break;
+case TRIANGLE:
+float triganaleHeight=radius + radius / 2;
+Path path=new Path();
+path.moveTo(right - radius,bottom + halfRadius);
+path.lineTo(right,bottom - triganaleHeight);
+path.lineTo(right + radius,bottom + halfRadius);
+path.close();
+canvas.drawPath(path,paint);
+break;
+case PRISMATIC:
+Path pathPir=new Path();
+pathPir.moveTo(right - radius,bottom);
+pathPir.lineTo(right,bottom - radius);
+pathPir.lineTo(right + radius,bottom);
+pathPir.lineTo(left + (right - left),bottom + radius);
+pathPir.close();
+canvas.drawPath(pathPir,paint);
+break;
+case RECT:
+paint.setStyle(Style.FILL);
+canvas.drawRect(right - radius,bottom + radius,right + radius,bottom - radius,paint);
+break;
+case HIDE:
+default :
+}
+}

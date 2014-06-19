@@ -1,5 +1,5 @@
 {
-  chart.setLabels(chartLables);
+  chart.setLabels(chartLabels);
   chart.setDataSource(chartDataset);
   chart.getDataAxis().setAxisMax(90000);
   chart.getDataAxis().setAxisSteps(10000);

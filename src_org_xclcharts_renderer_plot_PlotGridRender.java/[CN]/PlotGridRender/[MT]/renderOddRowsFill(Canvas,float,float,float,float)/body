@@ -1,0 +1,5 @@
+{
+  if (null != canvas && isShowOddRowsBgColor()) {
+    canvas.drawRect(left,bottom,right,top,getOddRowsBgColorPaint());
+  }
+}

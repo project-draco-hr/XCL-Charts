@@ -1,4 +1,0 @@
-{
-  createCacheBitmap(getScreenWidth(),getScreenHeight());
-  setCacheBitmapCanvas();
-}

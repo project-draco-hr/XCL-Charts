@@ -1,0 +1,13 @@
+{
+  try {
+    renderDount(canvas);
+    renderTick(canvas);
+    renderPartitionFill(canvas);
+    renderLabels(canvas);
+    renderPointerLine(canvas);
+    renderPinterCircle(canvas);
+  }
+ catch (  Exception e) {
+    Log.e("ERROR",e.toString());
+  }
+}

@@ -1,4 +1,6 @@
 {
   super(context);
-  initChart();
+  chartLabels();
+  chartDataSet();
+  chartRender();
 }

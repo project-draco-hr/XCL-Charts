@@ -1,9 +1,0 @@
-{
-  try {
-    drawChart(canvas);
-  }
- catch (  Exception e) {
-    e.printStackTrace();
-    Log.e("ERROR-DemoView",e.toString());
-  }
-}

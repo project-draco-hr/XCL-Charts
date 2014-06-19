@@ -2,11 +2,11 @@
 switch (chartStyle) {
 case 0:
     mChart=new PieChart();
-  mChart.setLablesDisplay(XEnum.DisplayPostion.OUTSIDE);
+  mChart.setLabelsDisplay(XEnum.DisplayPosition.OUTSIDE);
 break;
 case 1:
 mChart=new Pie3DChart();
-mChart.setLablesDisplay(XEnum.DisplayPostion.CENTER);
+mChart.setLabelsDisplay(XEnum.DisplayPosition.CENTER);
 mChart.getLabelsPaint().setColor(Color.WHITE);
 break;
 case 2:
@@ -14,10 +14,10 @@ mChart=new DountChart();
 break;
 case 3:
 mChart=new RoseChart();
-mChart.setBackgroupColor(true,(int)Color.rgb(115,153,0));
+mChart.setBackgroundColor(true,(int)Color.rgb(115,153,0));
 ((RoseChart)mChart).getInnerPaint().setColor((int)Color.rgb(153,204,0));
 mChart.getLabelsPaint().setColor(Color.WHITE);
-mChart.setLablesDisplay(XEnum.DisplayPostion.CENTER);
+mChart.setLabelsDisplay(XEnum.DisplayPosition.CENTER);
 break;
 }
 }

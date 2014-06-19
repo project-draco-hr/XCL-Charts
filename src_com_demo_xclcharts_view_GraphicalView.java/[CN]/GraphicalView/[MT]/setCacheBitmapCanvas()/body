@@ -1,6 +1,0 @@
-{
-  if (null != mCacheBitmap) {
-    mCacheCanvas=new Canvas();
-    mCacheCanvas.setBitmap(mCacheBitmap);
-  }
-}

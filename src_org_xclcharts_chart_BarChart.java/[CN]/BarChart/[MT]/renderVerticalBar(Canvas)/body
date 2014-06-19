@@ -1,0 +1,33 @@
+{
+  renderVerticalBarDataAxis(canvas);
+  renderVerticalBarLabelsAxis(canvas);
+  float axisScreenHeight=getAxisScreenHeight();
+  float axisDataHeight=(float)dataAxis.getAxisRange();
+  List<String> dataSet=labelsAxis.getDataSet();
+  float XSteps=getVerticalXSteps(dataSet.size() + 1);
+  int barNumber=mDataSet.size();
+  int currNumber=0;
+  List<Integer> ret=mFlatBar.getBarWidthAndMargin(XSteps,barNumber);
+  int barWidth=ret.get(0);
+  int barInnerMargin=ret.get(1);
+  int labelBarUseWidth=barNumber * barWidth + (barNumber - 1) * barInnerMargin;
+  for (int i=0; i < mDataSet.size(); i++) {
+    BarData bd=mDataSet.get(i);
+    List<Double> barValues=bd.getDataSet();
+    mFlatBar.getBarPaint().setColor(bd.getColor());
+    for (int j=0; j < barValues.size(); j++) {
+      Double bv=barValues.get(j);
+      float valuePostion=(float)(axisScreenHeight * ((bv - dataAxis.getAxisMin()) / axisDataHeight));
+      float currLableX=plotArea.getPlotLeft() + (j + 1) * XSteps;
+      float drawBarStartX=currLableX - labelBarUseWidth / 2;
+      drawBarStartX=drawBarStartX + (barWidth + barInnerMargin) * currNumber;
+      float drawBarEndX=drawBarStartX + barWidth;
+      mFlatBar.renderBar(drawBarStartX,plotArea.getPlotBottom(),drawBarEndX,plotArea.getPlotBottom() - valuePostion,canvas);
+      mFlatBar.renderBarItemLabel(getFormatterItemLabel(bv),(float)Math.round(drawBarStartX + barWidth / 2),(float)Math.round(plotArea.getPlotBottom() - valuePostion),canvas);
+    }
+    currNumber++;
+  }
+  dataAxis.renderAxis(canvas,plotArea.getPlotLeft(),plotArea.getPlotBottom(),plotArea.getPlotRight(),plotArea.getPlotBottom());
+  drawDataSetKey(canvas);
+  renderVerticalDesirelinesDataAxis(canvas);
+}
