@@ -1,5 +1,5 @@
 {
-  if (null != canvas && isShowEvenRowsBgColor()) {
+  if (null != canvas && isShowEvenRowBgColor()) {
     canvas.drawRect(left,bottom,right,top,getEvenRowsBgColorPaint());
   }
 }

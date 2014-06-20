@@ -4,38 +4,38 @@
   float markeStopX=centerX;
   float lablesStartX=centerX;
   float lablesStartY=centerY;
-switch (getAxisHorizontalTickAlign()) {
+switch (getHorizontalTickAlign()) {
 case LEFT:
 {
-      if (getAxisTickMarksVisible()) {
+      if (getTickMarksVisible()) {
         marksStartX=Math.round(centerX - getTickMarksLength());
         markeStopX=centerX;
-        lablesStartX=marksStartX - getTickLabelsMargin();
+        lablesStartX=marksStartX - getTickLabelMargin();
       }
       break;
     }
 case CENTER:
 {
-    if (getAxisTickMarksVisible()) {
+    if (getTickMarksVisible()) {
       marksStartX=Math.round(centerX - getTickMarksLength() / 2);
       markeStopX=Math.round(centerX + getTickMarksLength() / 2);
     }
     break;
   }
 case RIGHT:
-if (getAxisTickMarksVisible()) {
+if (getTickMarksVisible()) {
   marksStartX=centerX;
   markeStopX=Math.round(centerX + getTickMarksLength());
-  lablesStartX=markeStopX + getTickLabelsMargin();
+  lablesStartX=markeStopX + getTickLabelMargin();
 }
 break;
 default :
 break;
 }
-if (getAxisTickMarksVisible()) {
-canvas.drawLine(marksStartX,centerY,markeStopX + this.getAxisPaint().getStrokeWidth() / 2,centerY,getAxisTickMarksPaint());
+if (getTickMarksVisible()) {
+canvas.drawLine(marksStartX,centerY,markeStopX + this.getAxisPaint().getStrokeWidth() / 2,centerY,getTickMarksPaint());
 }
-if (getAxisTickLabelsVisible()) {
+if (getTickLabelVisible()) {
 String itemLabel="";
 try {
 itemLabel=mLabelFormatter.textFormatter(text);
@@ -43,8 +43,8 @@ itemLabel=mLabelFormatter.textFormatter(text);
  catch (Exception ex) {
 itemLabel=text;
 }
-float textHeight=this.mDrawHelper.getPaintFontHeight(getAxisTickLabelsPaint());
+float textHeight=this.mDrawHelper.getPaintFontHeight(getAxisTickLabelPaint());
 textHeight/=4;
-mDrawHelper.drawRotateText(itemLabel,lablesStartX,lablesStartY + textHeight,getAxisTickLabelsRotateAgent(),canvas,getAxisTickLabelsPaint());
+mDrawHelper.drawRotateText(itemLabel,lablesStartX,lablesStartY + textHeight,getTickLabelRotateAgent(),canvas,getAxisTickLabelPaint());
 }
 }

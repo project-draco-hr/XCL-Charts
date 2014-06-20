@@ -1,8 +1,0 @@
-{
-  chartLabels();
-  chartDataLnSet();
-  chartLnLabels();
-  chartLnDataSet();
-  chartRender();
-  chartLnRender();
-}

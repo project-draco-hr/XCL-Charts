@@ -1,7 +1,0 @@
-{
-  super(context);
-  mChartStyle=chartStyle;
-  mMoveHeight=moveHeight;
-  chartDataSet();
-  chartRender();
-}

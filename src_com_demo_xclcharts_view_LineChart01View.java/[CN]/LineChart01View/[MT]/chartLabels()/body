@@ -1,7 +1,0 @@
-{
-  labels.add("2010");
-  labels.add("2011");
-  labels.add("2012");
-  labels.add("2013");
-  labels.add("2014");
-}

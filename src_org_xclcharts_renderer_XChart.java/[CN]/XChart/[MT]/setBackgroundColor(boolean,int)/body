@@ -1,5 +1,5 @@
 {
   mBackgroundColorVisible=visible;
-  getChartBackgroundPaint().setColor(color);
+  getBackgroundPaint().setColor(color);
   getPlotArea().getBackgroundPaint().setColor(color);
 }

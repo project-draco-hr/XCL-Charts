@@ -18,16 +18,16 @@
     for (int j=0; j < barValues.size(); j++) {
       Double bv=barValues.get(j);
       float valuePostion=(float)(axisScreenHeight * ((bv - dataAxis.getAxisMin()) / axisDataHeight));
-      float currLableX=plotArea.getPlotLeft() + (j + 1) * XSteps;
+      float currLableX=plotArea.getLeft() + (j + 1) * XSteps;
       float drawBarStartX=currLableX - labelBarUseWidth / 2;
       drawBarStartX=drawBarStartX + (barWidth + barInnerMargin) * currNumber;
       float drawBarEndX=drawBarStartX + barWidth;
-      mFlatBar.renderBar(drawBarStartX,plotArea.getPlotBottom(),drawBarEndX,plotArea.getPlotBottom() - valuePostion,canvas);
-      mFlatBar.renderBarItemLabel(getFormatterItemLabel(bv),(float)Math.round(drawBarStartX + barWidth / 2),(float)Math.round(plotArea.getPlotBottom() - valuePostion),canvas);
+      mFlatBar.renderBar(drawBarStartX,plotArea.getBottom(),drawBarEndX,plotArea.getBottom() - valuePostion,canvas);
+      mFlatBar.renderBarItemLabel(getFormatterItemLabel(bv),(float)Math.round(drawBarStartX + barWidth / 2),(float)Math.round(plotArea.getBottom() - valuePostion),canvas);
     }
     currNumber++;
   }
-  dataAxis.renderAxis(canvas,plotArea.getPlotLeft(),plotArea.getPlotBottom(),plotArea.getPlotRight(),plotArea.getPlotBottom());
-  drawDataSetKey(canvas);
+  dataAxis.renderAxis(canvas,plotArea.getLeft(),plotArea.getBottom(),plotArea.getRight(),plotArea.getBottom());
+  renderDataKey(canvas);
   renderVerticalDesirelinesDataAxis(canvas);
 }

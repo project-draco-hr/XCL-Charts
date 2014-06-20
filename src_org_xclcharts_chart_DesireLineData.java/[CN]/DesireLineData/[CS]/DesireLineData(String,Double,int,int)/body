@@ -2,5 +2,5 @@
   setLabel(label);
   setDesireValue(desireValue);
   setColor(color);
-  setLineWidth(lineWidth);
+  setLineStroke(stroke);
 }

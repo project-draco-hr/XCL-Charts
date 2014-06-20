@@ -1,26 +1,26 @@
 {
   double tickCount=dataAxis.getAixTickCount();
   float YSteps=getVerticalYSteps(tickCount);
-  float currentY=plotArea.getPlotBottom();
+  float currentY=plotArea.getBottom();
   for (int i=0; i <= tickCount; i++) {
     if (i == 0)     continue;
     dataAxis.setAxisTickCurrentID(i);
-    currentY=(float)(plotArea.getPlotBottom() - i * YSteps);
+    currentY=(float)(plotArea.getBottom() - i * YSteps);
     float currentTickLabel=(float)(dataAxis.getAxisMin() + (i * dataAxis.getAxisSteps()));
     if (i % 2 != 0) {
-      plotGrid.renderOddRowsFill(canvas,plotArea.getPlotLeft(),currentY + YSteps,plotArea.getPlotRight(),currentY);
+      plotGrid.renderOddRowsFill(canvas,plotArea.getLeft(),currentY + YSteps,plotArea.getRight(),currentY);
     }
  else {
-      plotGrid.renderEvenRowsFill(canvas,plotArea.getPlotLeft(),currentY + YSteps,plotArea.getPlotRight(),currentY);
+      plotGrid.renderEvenRowsFill(canvas,plotArea.getLeft(),currentY + YSteps,plotArea.getRight(),currentY);
     }
     plotGrid.setPrimaryTickLine(dataAxis.isPrimaryTick());
-    plotGrid.renderGridLinesHorizontal(canvas,plotArea.getPlotLeft(),currentY,plotArea.getPlotRight(),currentY);
+    plotGrid.renderGridLinesHorizontal(canvas,plotArea.getLeft(),currentY,plotArea.getRight(),currentY);
     if (i == tickCount) {
-      dataAxis.renderAxisHorizontalTick(canvas,plotArea.getPlotLeft(),plotArea.getPlotTop(),Float.toString(currentTickLabel));
+      dataAxis.renderAxisHorizontalTick(canvas,plotArea.getLeft(),plotArea.getTop(),Float.toString(currentTickLabel));
     }
  else {
-      dataAxis.renderAxisHorizontalTick(canvas,plotArea.getPlotLeft(),currentY,Float.toString(currentTickLabel));
+      dataAxis.renderAxisHorizontalTick(canvas,plotArea.getLeft(),currentY,Float.toString(currentTickLabel));
     }
   }
-  dataAxis.renderAxis(canvas,plotArea.getPlotLeft(),plotArea.getPlotBottom(),plotArea.getPlotLeft(),plotArea.getPlotTop());
+  dataAxis.renderAxis(canvas,plotArea.getLeft(),plotArea.getBottom(),plotArea.getLeft(),plotArea.getTop());
 }

@@ -22,7 +22,7 @@
     RectF nRF=new RectF(nLeft,nTop,nRight,nBottom);
     canvas.drawArc(nRF,mOffsetAgent,percentage,true,paintArc);
     this.mCalc.CalcArcEndPointXY(cirX,cirY,radius - radius / 2 / 2,mOffsetAgent + percentage / 2);
-    canvas.drawText(cData.getLabel(),mCalc.getPosX(),mCalc.getPosY(),getLabelsPaint());
+    canvas.drawText(cData.getLabel(),mCalc.getPosX(),mCalc.getPosY(),getLabelPaint());
     mOffsetAgent+=percentage;
   }
 }

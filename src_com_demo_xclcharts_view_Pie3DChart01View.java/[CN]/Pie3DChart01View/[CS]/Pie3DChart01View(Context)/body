@@ -1,5 +1,0 @@
-{
-  super(context);
-  chartDataSet();
-  chartRender();
-}

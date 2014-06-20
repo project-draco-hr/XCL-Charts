@@ -5,9 +5,9 @@
   mPaintFillCircle=new Paint();
   mPaintFillCircle.setColor((int)Color.rgb(77,83,97));
   mPaintFillCircle.setAntiAlias(true);
-  getLabelsPaint().setColor(Color.WHITE);
-  getLabelsPaint().setTextSize(36);
-  getLabelsPaint().setTextAlign(Align.CENTER);
+  getLabelPaint().setColor(Color.WHITE);
+  getLabelPaint().setTextSize(36);
+  getLabelPaint().setTextAlign(Align.CENTER);
   mPaintDataInfo=new Paint();
   mPaintDataInfo.setTextSize(22);
   mPaintDataInfo.setColor(Color.WHITE);

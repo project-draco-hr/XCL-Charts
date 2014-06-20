@@ -2,7 +2,7 @@
   plotArea=new PlotAreaRender();
   plotGrid=new PlotGridRender();
   plotTitle=new PlotTitleRender();
-  plotTitle.setChartTitlePosition(XEnum.Position.CENTER);
-  plotTitle.setChartTitleAlign(XEnum.ChartTitleAlign.CENTER);
+  plotTitle.setTitlePosition(XEnum.Position.CENTER);
+  plotTitle.setTitleAlign(XEnum.ChartTitleAlign.CENTER);
   initPaint();
 }

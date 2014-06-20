@@ -2,6 +2,6 @@
   dataAxis=new DataAxisRender();
   labelsAxis=new LabelsAxisRender();
   legend=new LegendRender();
-  mDataSetKeyDescPaint=new Paint();
-  mDataSetKeyDescPaint.setColor(Color.BLACK);
+  mDataKeyPaint=new Paint();
+  mDataKeyPaint.setColor(Color.BLACK);
 }

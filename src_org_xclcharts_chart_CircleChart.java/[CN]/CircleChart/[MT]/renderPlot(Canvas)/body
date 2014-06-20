@@ -13,7 +13,7 @@
     float currentAgent=0.0f;
     DrawHelper dw=new DrawHelper();
     int infoHeight=dw.getPaintFontHeight(mPaintDataInfo);
-    int LabelHeight=dw.getPaintFontHeight(getLabelsPaint());
+    int LabelHeight=dw.getPaintFontHeight(getLabelPaint());
     int textHeight=LabelHeight + infoHeight;
     for (    PieData cData : mDataSet) {
       paintArc.setColor(cData.getSliceColor());
@@ -24,7 +24,7 @@
         currentAgent=(int)Math.round(180 * (cData.getPercentage() / 100));
         drawPercent(canvas,paintArc,cirX,cirY,radius,180f,currentAgent);
         drawPercent(canvas,mPaintFillCircle,cirX,cirY,(float)(Math.round(radius * 0.8)),180f,180);
-        canvas.drawText(cData.getLabel(),cirX,cirY - textHeight,getLabelsPaint());
+        canvas.drawText(cData.getLabel(),cirX,cirY - textHeight,getLabelPaint());
         canvas.drawText(mDataInfo,cirX,cirY - infoHeight,mPaintDataInfo);
       }
  else {
@@ -33,7 +33,7 @@
         canvas.drawCircle(cirX,cirY,(float)(Math.round(radius * 0.9)),mPaintFillCircle);
         canvas.drawArc(arcRF0,mOffsetAgent,currentAgent,true,paintArc);
         canvas.drawCircle(cirX,cirY,(float)(Math.round(radius * 0.8)),mPaintFillCircle);
-        canvas.drawText(cData.getLabel(),cirX,cirY,getLabelsPaint());
+        canvas.drawText(cData.getLabel(),cirX,cirY,getLabelPaint());
         if (mDataInfo.length() > 0)         canvas.drawText(mDataInfo,cirX,cirY + LabelHeight,mPaintDataInfo);
       }
       break;

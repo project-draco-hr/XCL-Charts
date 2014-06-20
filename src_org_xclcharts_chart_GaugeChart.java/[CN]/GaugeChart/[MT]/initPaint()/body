@@ -1,6 +1,6 @@
 {
-  getLabelsPaint().setTextSize(18);
-  getLabelsPaint().setColor(Color.BLUE);
+  getLabelPaint().setTextSize(18);
+  getLabelPaint().setColor(Color.BLUE);
   mPaintTick=new Paint();
   mPaintTick.setStyle(Style.FILL);
   mPaintTick.setAntiAlias(true);

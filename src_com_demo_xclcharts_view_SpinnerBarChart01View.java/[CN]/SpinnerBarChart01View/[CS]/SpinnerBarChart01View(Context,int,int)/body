@@ -1,8 +1,0 @@
-{
-  super(context);
-  mChartStyle=chartStyle;
-  mOffsetHeight=offsetHeight;
-  chartLabels();
-  chartDataSet();
-  chartRender();
-}

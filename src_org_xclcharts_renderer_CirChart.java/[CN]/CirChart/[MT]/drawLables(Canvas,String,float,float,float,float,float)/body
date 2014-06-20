@@ -2,18 +2,18 @@
   if (XEnum.DisplayPosition.HIDE == mLabelsDP)   return;
   float calcRadius=0.0f;
   float calcAgent=0.0f;
-  mPaintLabels.setTextAlign(Align.CENTER);
+  mPaintLabel.setTextAlign(Align.CENTER);
   if (XEnum.DisplayPosition.CENTER == mLabelsDP) {
     calcRadius=radius - radius / 2;
     calcAgent=offsetAgent + curretAgentt / 2;
     mCalc.CalcArcEndPointXY(cirX,cirY,calcRadius,calcAgent);
-    canvas.drawText(text,mCalc.getPosX(),mCalc.getPosY(),mPaintLabels);
+    canvas.drawText(text,mCalc.getPosX(),mCalc.getPosY(),mPaintLabel);
   }
  else   if (XEnum.DisplayPosition.OUTSIDE == mLabelsDP) {
     calcRadius=radius + radius / 10;
     calcAgent=offsetAgent + curretAgentt / 2;
     mCalc.CalcArcEndPointXY(cirX,cirY,calcRadius,calcAgent);
-    canvas.drawText(text,mCalc.getPosX(),mCalc.getPosY(),mPaintLabels);
+    canvas.drawText(text,mCalc.getPosX(),mCalc.getPosY(),mPaintLabel);
   }
  else {
     return;

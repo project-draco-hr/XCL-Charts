@@ -3,20 +3,20 @@
 switch (mDirection) {
 case HORIZONTAL:
 {
-        labelsAxis.setAxisHorizontalTickAlign(Align.LEFT);
-        labelsAxis.getAxisTickLabelsPaint().setTextAlign(Align.RIGHT);
-        dataAxis.setAxisHorizontalTickAlign(Align.CENTER);
-        dataAxis.getAxisTickLabelsPaint().setTextAlign(Align.CENTER);
-        getBar().getItemLabelsPaint().setTextAlign(Align.LEFT);
+        labelsAxis.setHorizontalTickAlign(Align.LEFT);
+        labelsAxis.getAxisTickLabelPaint().setTextAlign(Align.RIGHT);
+        dataAxis.setHorizontalTickAlign(Align.CENTER);
+        dataAxis.getAxisTickLabelPaint().setTextAlign(Align.CENTER);
+        getBar().getItemLabelPaint().setTextAlign(Align.LEFT);
         break;
       }
 case VERTICAL:
 {
-      dataAxis.setAxisHorizontalTickAlign(Align.LEFT);
-      dataAxis.getAxisTickLabelsPaint().setTextAlign(Align.RIGHT);
-      labelsAxis.setAxisHorizontalTickAlign(Align.CENTER);
-      labelsAxis.getAxisTickLabelsPaint().setTextAlign(Align.CENTER);
-      labelsAxis.setAxisVerticalTickPosition(XEnum.Position.LOWER);
+      dataAxis.setHorizontalTickAlign(Align.LEFT);
+      dataAxis.getAxisTickLabelPaint().setTextAlign(Align.RIGHT);
+      labelsAxis.setHorizontalTickAlign(Align.CENTER);
+      labelsAxis.getAxisTickLabelPaint().setTextAlign(Align.CENTER);
+      labelsAxis.setVerticalTickPosition(XEnum.Position.LOWER);
       break;
     }
 }

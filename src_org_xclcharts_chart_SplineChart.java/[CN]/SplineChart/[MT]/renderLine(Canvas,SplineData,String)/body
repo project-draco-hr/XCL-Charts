@@ -1,6 +1,6 @@
 {
-  float initX=plotArea.getPlotLeft();
-  float initY=plotArea.getPlotBottom();
+  float initX=plotArea.getLeft();
+  float initY=plotArea.getBottom();
   float lineStartX=initX;
   float lineStartY=initY;
   float lineEndX=0.0f;

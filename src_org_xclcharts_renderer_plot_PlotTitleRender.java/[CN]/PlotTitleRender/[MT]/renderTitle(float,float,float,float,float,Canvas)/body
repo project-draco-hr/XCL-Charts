@@ -8,16 +8,16 @@
   float titleY=0.0f;
   float subtitleX=0.0f;
   float subtitleY=0.0f;
-  if (this.getChartTitle().length() == 0 && getChartSubTitle().length() == 0)   return;
-  if (getChartTitle().length() > 0) {
-    titleHeight=dw.getPaintFontHeight(this.getChartTitlePaint());
+  if (this.getTitle().length() == 0 && getChartSubTitle().length() == 0)   return;
+  if (getTitle().length() > 0) {
+    titleHeight=dw.getPaintFontHeight(this.getTitlePaint());
   }
-  if (getChartTitle().length() > 0) {
-    subtitleHeight=dw.getPaintFontHeight(this.getChartSubTitlePaint());
+  if (getTitle().length() > 0) {
+    subtitleHeight=dw.getPaintFontHeight(this.getSubtitlePaint());
   }
   totalHegith=titleHeight + subtitleHeight;
   float pcHeight=Math.abs(plotTop - chartTop);
-switch (this.getChartTitlePosition()) {
+switch (this.getTitlePosition()) {
 case UP:
     titleInitY=chartTop + titleHeight;
   break;
@@ -28,36 +28,36 @@ case LOWER:
 titleInitY=plotTop - titleHeight;
 break;
 }
-switch (this.getChartTitleAlign()) {
+switch (this.getTitleAlign()) {
 case LEFT:
 titleX=chartLeft;
 titleY=titleInitY;
 subtitleX=chartLeft;
 subtitleY=titleY + subtitleHeight;
-getChartTitlePaint().setTextAlign(Align.LEFT);
-getChartSubTitlePaint().setTextAlign(Align.LEFT);
+getTitlePaint().setTextAlign(Align.LEFT);
+getSubtitlePaint().setTextAlign(Align.LEFT);
 break;
 case CENTER:
 titleX=(float)Math.round(chartLeft + chartWidth / 2);
 titleY=titleInitY;
 subtitleX=titleX;
 subtitleY=(float)(titleY + subtitleHeight);
-getChartTitlePaint().setTextAlign(Align.CENTER);
-getChartSubTitlePaint().setTextAlign(Align.CENTER);
+getTitlePaint().setTextAlign(Align.CENTER);
+getSubtitlePaint().setTextAlign(Align.CENTER);
 break;
 case RIGHT:
 titleX=chartRight;
 titleY=titleInitY;
 subtitleX=titleX;
 subtitleY=titleY + subtitleHeight;
-getChartTitlePaint().setTextAlign(Align.RIGHT);
-getChartSubTitlePaint().setTextAlign(Align.RIGHT);
+getTitlePaint().setTextAlign(Align.RIGHT);
+getSubtitlePaint().setTextAlign(Align.RIGHT);
 break;
 }
-if (getChartTitle().length() > 0) {
-canvas.drawText(getChartTitle(),titleX,titleY,this.getChartTitlePaint());
+if (getTitle().length() > 0) {
+canvas.drawText(getTitle(),titleX,titleY,this.getTitlePaint());
 }
 if (getChartSubTitle().length() > 0) {
-canvas.drawText(getChartSubTitle(),subtitleX,subtitleY,this.getChartSubTitlePaint());
+canvas.drawText(getChartSubTitle(),subtitleX,subtitleY,this.getSubtitlePaint());
 }
 }

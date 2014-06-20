@@ -1,24 +1,24 @@
 {
   super.calcPlotRange();
-  float perLeft=getPaddingPercentLeft();
-  float perRight=getPaddingPercentRight();
-  float perBottom=getPaddingPercentBottom();
-  float width=getChartWidth();
-  float height=getChartHeight();
+  DrawHelper dw=new DrawHelper();
+  float perLeft=getPaddingLeft();
+  float perRight=getPaddingRight();
+  float perBottom=getPaddingBottom();
+  float width=getWidth();
+  float height=getHeight();
   if (width > height) {
     float scrPer=height / width;
     perBottom+=scrPer;
     perLeft-=scrPer;
     perRight-=scrPer;
   }
-  DrawHelper dw=new DrawHelper();
   if (perLeft > 0) {
     float rederLeft=Math.round(height / 100 * perLeft);
     if (this.getLegend().getLeftLegend().length() > 0) {
       float legendLength=dw.getPaintFontHeight(getLegend().getLeftLegendPaint());
       if (legendLength > rederLeft)       rederLeft=legendLength;
     }
-    plotArea.setPlotLeft(getChartLeft() + rederLeft);
+    plotArea.setLeft(getLeft() + rederLeft);
   }
   if (perRight > 0) {
     float rederRight=Math.round(width / 100 * perRight);
@@ -26,7 +26,7 @@
       float legendLength=dw.getPaintFontHeight(getLegend().getRightLegendPaint());
       if (legendLength > rederRight)       rederRight=legendLength;
     }
-    plotArea.setPlotRight(this.getChartRight() - rederRight);
+    plotArea.setRight(this.getChartRight() - rederRight);
   }
   if (perBottom > 0) {
     float rederBottom=Math.round(height / 100 * perBottom);
@@ -34,6 +34,6 @@
       float legendHeight=dw.getPaintFontHeight(getLegend().getLowerLegendPaint());
       if (legendHeight > rederBottom)       rederBottom=legendHeight;
     }
-    plotArea.setPlotBottom(this.getChartBottom() - rederBottom);
+    plotArea.setBottom(this.getBottom() - rederBottom);
   }
 }

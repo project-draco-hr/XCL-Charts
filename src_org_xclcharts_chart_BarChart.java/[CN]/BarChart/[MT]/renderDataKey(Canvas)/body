@@ -1,0 +1,12 @@
+{
+  if (false == this.isShowKeyLabel())   return;
+switch (this.getPlotTitle().getTitleAlign()) {
+case CENTER:
+case RIGHT:
+    drawDataSetKeyLeft(canvas);
+  break;
+case LEFT:
+drawDataKeyRight(canvas);
+break;
+}
+}

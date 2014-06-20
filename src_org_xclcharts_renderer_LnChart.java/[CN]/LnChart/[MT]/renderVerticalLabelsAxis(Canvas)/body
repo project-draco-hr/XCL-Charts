@@ -1,19 +1,19 @@
 {
-  float currentX=plotArea.getPlotLeft();
+  float currentX=plotArea.getLeft();
   List<String> dataSet=labelsAxis.getDataSet();
   float XSteps=getVerticalXSteps(dataSet.size() - 1);
   for (int i=0; i < dataSet.size(); i++) {
-    currentX=Math.round(plotArea.getPlotLeft() + (i) * XSteps);
+    currentX=Math.round(plotArea.getLeft() + (i) * XSteps);
     if (plotGrid.isShowVerticalLines()) {
-      if (i > 0 && i + 1 < dataSet.size())       plotGrid.renderGridLinesVertical(canvas,currentX,plotArea.getPlotBottom(),currentX,plotArea.getPlotTop());
+      if (i > 0 && i + 1 < dataSet.size())       plotGrid.renderGridLinesVertical(canvas,currentX,plotArea.getBottom(),currentX,plotArea.getTop());
     }
     if (dataSet.size() == i + 1) {
-      labelsAxis.renderAxisVerticalTick(canvas,plotArea.getPlotRight(),plotArea.getPlotBottom(),dataSet.get(i));
+      labelsAxis.renderAxisVerticalTick(canvas,plotArea.getRight(),plotArea.getBottom(),dataSet.get(i));
     }
  else {
-      labelsAxis.renderAxisVerticalTick(canvas,currentX,plotArea.getPlotBottom(),dataSet.get(i));
+      labelsAxis.renderAxisVerticalTick(canvas,currentX,plotArea.getBottom(),dataSet.get(i));
     }
   }
-  if (mRightAxisVisible)   labelsAxis.renderAxis(canvas,plotArea.getPlotRight(),plotArea.getPlotBottom(),plotArea.getPlotRight(),plotArea.getPlotTop());
-  labelsAxis.renderAxis(canvas,plotArea.getPlotLeft(),plotArea.getPlotBottom(),plotArea.getPlotRight(),plotArea.getPlotBottom());
+  if (mRightAxisVisible)   labelsAxis.renderAxis(canvas,plotArea.getRight(),plotArea.getBottom(),plotArea.getRight(),plotArea.getTop());
+  labelsAxis.renderAxis(canvas,plotArea.getLeft(),plotArea.getBottom(),plotArea.getRight(),plotArea.getBottom());
 }

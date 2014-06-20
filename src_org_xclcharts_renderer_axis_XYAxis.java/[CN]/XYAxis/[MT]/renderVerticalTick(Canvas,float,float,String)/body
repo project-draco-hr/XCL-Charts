@@ -3,38 +3,38 @@
   float marksStartY=centerY;
   float marksStopY=centerY;
   float labelsStartY=centerY;
-switch (getAxisVerticalTickPosition()) {
+switch (getVerticalTickPosition()) {
 case UP:
 {
-      if (getAxisTickMarksVisible()) {
+      if (getTickMarksVisible()) {
         marksStartY=Math.round(centerY - getTickMarksLength());
         marksStopY=centerY;
-        labelsStartY=marksStartY - getTickLabelsMargin() - mDrawHelper.getPaintFontHeight(getAxisTickLabelsPaint());
+        labelsStartY=marksStartY - getTickLabelMargin() - mDrawHelper.getPaintFontHeight(getAxisTickLabelPaint());
       }
       break;
     }
 case CENTER:
 {
-    if (getAxisTickMarksVisible()) {
+    if (getTickMarksVisible()) {
       marksStartY=Math.round(centerY - getTickMarksLength() / 2);
       marksStopY=Math.round(centerY + getTickMarksLength() / 2);
     }
     break;
   }
 case LOWER:
-if (getAxisTickMarksVisible()) {
+if (getTickMarksVisible()) {
   marksStartY=centerY;
   marksStopY=Math.round(centerY + getTickMarksLength());
-  labelsStartY=marksStopY + getTickLabelsMargin() + mDrawHelper.getPaintFontHeight(getAxisTickLabelsPaint()) / 3;
+  labelsStartY=marksStopY + getTickLabelMargin() + mDrawHelper.getPaintFontHeight(getAxisTickLabelPaint()) / 3;
 }
 break;
 default :
 break;
 }
-if (getAxisTickMarksVisible()) {
-canvas.drawLine(centerX,marksStartY - this.getAxisPaint().getStrokeWidth() / 2,centerX,marksStopY,getAxisTickMarksPaint());
+if (getTickMarksVisible()) {
+canvas.drawLine(centerX,marksStartY - this.getAxisPaint().getStrokeWidth() / 2,centerX,marksStopY,getTickMarksPaint());
 }
-if (getAxisTickLabelsVisible()) {
+if (getTickLabelVisible()) {
 String itemLabel="";
 try {
 itemLabel=mLabelFormatter.textFormatter(text);
@@ -42,6 +42,6 @@ itemLabel=mLabelFormatter.textFormatter(text);
  catch (Exception ex) {
 itemLabel=text;
 }
-mDrawHelper.drawRotateText(itemLabel,centerX,labelsStartY,getAxisTickLabelsRotateAgent(),canvas,getAxisTickLabelsPaint());
+mDrawHelper.drawRotateText(itemLabel,centerX,labelsStartY,getTickLabelRotateAgent(),canvas,getAxisTickLabelPaint());
 }
 }

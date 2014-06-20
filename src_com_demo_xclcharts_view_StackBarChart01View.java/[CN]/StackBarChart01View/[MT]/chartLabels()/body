@@ -1,5 +1,0 @@
-{
-  chartLabels.add("172.16.8.1");
-  chartLabels.add("172.16.8.6");
-  chartLabels.add("172.16.8.8");
-}

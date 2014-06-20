@@ -1,5 +1,5 @@
 {
-  mPlotBackgroundPaint=new Paint();
-  mPlotBackgroundPaint.setStyle(Style.FILL);
-  mPlotBackgroundPaint.setColor(Color.WHITE);
+  mBackgroundPaint=new Paint();
+  mBackgroundPaint.setStyle(Style.FILL);
+  mBackgroundPaint.setColor(Color.WHITE);
 }

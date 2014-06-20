@@ -1,7 +1,7 @@
 {
-  mPaintKey=new Paint();
-  mPaintKey.setTextSize(18);
-  mPaintKey.setStyle(Style.FILL);
-  mPaintKey.setAntiAlias(true);
-  setPlotKeyVisible(true);
+  mPaintKeyLabel=new Paint();
+  mPaintKeyLabel.setTextSize(18);
+  mPaintKeyLabel.setStyle(Style.FILL);
+  mPaintKeyLabel.setAntiAlias(true);
+  showKeyLabel();
 }

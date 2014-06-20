@@ -1,10 +1,10 @@
 {
-  mChartTitlePaint=new Paint();
-  mChartSubTitlePaint=new Paint();
-  mChartTitlePaint.setTextSize(32);
-  mChartSubTitlePaint.setTextSize(22);
-  mChartTitlePaint.setColor(Color.BLACK);
-  mChartSubTitlePaint.setColor(Color.BLACK);
-  mChartTitlePaint.setAntiAlias(true);
-  mChartSubTitlePaint.setAntiAlias(true);
+  mTitlePaint=new Paint();
+  mSubtitlePaint=new Paint();
+  mTitlePaint.setTextSize(32);
+  mSubtitlePaint.setTextSize(22);
+  mTitlePaint.setColor(Color.BLACK);
+  mSubtitlePaint.setColor(Color.BLACK);
+  mTitlePaint.setAntiAlias(true);
+  mSubtitlePaint.setAntiAlias(true);
 }

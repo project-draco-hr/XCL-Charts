@@ -1,4 +1,0 @@
-{
-  mPlotWidth=(float)Math.abs(mPlotRight - mPlotLeft);
-  return mPlotWidth;
-}

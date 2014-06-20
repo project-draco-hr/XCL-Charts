@@ -8,8 +8,8 @@
   int barWidht=(int)Math.round(XSteps * 0.5);
   List<BarData> chartDataSource=this.getDataSource();
   for (int r=0; r < dataSet.size(); r++) {
-    float currentX=plotArea.getPlotLeft() + (r + 1) * XSteps;
-    float currentY=plotArea.getPlotBottom();
+    float currentX=plotArea.getLeft() + (r + 1) * XSteps;
+    float currentY=plotArea.getBottom();
     Double total=0d;
     for (int i=0; i < chartDataSource.size(); i++) {
       BarData bd=chartDataSource.get(i);
@@ -29,8 +29,8 @@
       currentY-=valuePostion;
     }
     float totalPostion=(float)(axisScreenHeight / axisDataHeight * (total - dataAxis.getAxisMin()));
-    flatBar.renderBarItemLabel(getFormatterItemLabel(total),currentX,plotArea.getPlotBottom() - totalPostion,canvas);
+    flatBar.renderBarItemLabel(getFormatterItemLabel(total),currentX,plotArea.getBottom() - totalPostion,canvas);
   }
-  dataAxis.renderAxis(canvas,plotArea.getPlotLeft(),plotArea.getPlotBottom(),plotArea.getPlotRight(),plotArea.getPlotBottom());
-  drawDataSetKey(canvas);
+  dataAxis.renderAxis(canvas,plotArea.getLeft(),plotArea.getBottom(),plotArea.getRight(),plotArea.getBottom());
+  renderDataKey(canvas);
 }
