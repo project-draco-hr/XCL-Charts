@@ -3,5 +3,5 @@
   mPaintKeyLabel.setTextSize(18);
   mPaintKeyLabel.setStyle(Style.FILL);
   mPaintKeyLabel.setAntiAlias(true);
-  showKeyLabel();
+  showKeyLabels();
 }

@@ -11,7 +11,7 @@
     String key=cData.getKey();
     getKeyLabelPaint().setColor(cData.getColor());
     float strWidth=getKeyLabelPaint().measureText(key,0,key.length());
-    if (keyLabelsX + 2 * rectWidth + strWidth > this.getChartRight()) {
+    if (keyLabelsX + 2 * rectWidth + strWidth > this.getRight()) {
       keyLabelsX=this.plotArea.getLeft();
       keyLabelsY=keyLabelsY + rectHeight * 2;
     }

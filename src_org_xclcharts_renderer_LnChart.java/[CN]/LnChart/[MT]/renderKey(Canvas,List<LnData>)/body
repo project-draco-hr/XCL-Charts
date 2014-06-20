@@ -1,5 +1,5 @@
 {
-  if (isShowKeyLabel() == false)   return;
+  if (isShowKeyLabels() == false)   return;
   DrawHelper dw=new DrawHelper();
   float textHeight=dw.getPaintFontHeight(this.mPaintKeyLabel);
   float rectWidth=2 * textHeight;

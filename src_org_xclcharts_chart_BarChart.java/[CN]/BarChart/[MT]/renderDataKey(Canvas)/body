@@ -1,5 +1,5 @@
 {
-  if (false == this.isShowKeyLabel())   return;
+  if (false == this.isShowKeyLabels())   return;
 switch (this.getPlotTitle().getTitleAlign()) {
 case CENTER:
 case RIGHT:

@@ -26,7 +26,7 @@
       float legendLength=dw.getPaintFontHeight(getLegend().getRightLegendPaint());
       if (legendLength > rederRight)       rederRight=legendLength;
     }
-    plotArea.setRight(this.getChartRight() - rederRight);
+    plotArea.setRight(this.getRight() - rederRight);
   }
   if (perBottom > 0) {
     float rederBottom=Math.round(height / 100 * perBottom);
