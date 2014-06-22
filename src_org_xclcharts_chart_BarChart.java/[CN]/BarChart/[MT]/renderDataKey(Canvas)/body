@@ -3,10 +3,10 @@
 switch (this.getPlotTitle().getTitleAlign()) {
 case CENTER:
 case RIGHT:
-    drawDataSetKeyLeft(canvas);
+    renderKeyLeft(canvas);
   break;
 case LEFT:
-drawDataKeyRight(canvas);
+renderKeyRight(canvas);
 break;
 }
 }

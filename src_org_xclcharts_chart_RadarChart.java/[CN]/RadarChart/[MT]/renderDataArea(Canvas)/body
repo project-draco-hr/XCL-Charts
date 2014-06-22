@@ -1,9 +1,33 @@
 {
-  for (  LineData lineData : mDataSet) {
+  float cirX=plotArea.getCenterX();
+  float cirY=plotArea.getCenterY();
+  for (  RadarData lineData : mDataSet) {
     List<Double> dataset=lineData.getLinePoint();
-    for (    Double data : dataset) {
-      Double dataPrc=(data - dataAxis.getAxisMin()) / dataAxis.getAxisRange();
-      Double currRadius=mRadius * dataPrc;
+    int dataSize=dataset.size();
+    if (dataSize < 3) {
+      Log.e("ERROR-RadarChart","?????????????????????????????????????????????.");
+      continue;
     }
-  }
+    Float[] arrayDataX=new Float[dataSize];
+    Float[] arrayDataY=new Float[dataSize];
+    int i=0;
+    for (    Double data : dataset) {
+      Double per=(data - dataAxis.getAxisMin()) / dataAxis.getAxisRange();
+      float curRadius=(float)(getRadius() * per);
+      mCalc.calcArcEndPointXY(cirX,cirY,curRadius,mArrayLabelAgent[i]);
+      arrayDataX[i]=mCalc.getPosX();
+      arrayDataY[i]=mCalc.getPosY();
+      i++;
+    }
+switch (lineData.getAreaStyle()) {
+case FILL:
+      drawDataPath(canvas,lineData,arrayDataX,arrayDataY);
+    break;
+case STROKE:
+  renderDataLine(canvas,lineData,arrayDataX,arrayDataY);
+break;
+default :
+Log.e("ERROR-RadarChart","??????????????????.");
+}
+}
 }

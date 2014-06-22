@@ -3,5 +3,5 @@
   mPaintFill=new Paint();
   mPaintFill.setColor(fillColor);
   mPaintFill.setAntiAlias(true);
-  this.setLabelsDisplay(XEnum.DisplayPosition.OUTSIDE);
+  this.setLabelLocation(XEnum.ArcLabelLocation.OUTSIDE);
 }

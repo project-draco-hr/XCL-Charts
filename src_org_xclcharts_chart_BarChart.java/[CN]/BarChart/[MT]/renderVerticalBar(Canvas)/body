@@ -1,9 +1,9 @@
 {
   renderVerticalBarDataAxis(canvas);
-  renderVerticalBarLabelsAxis(canvas);
+  renderVerticalBarCategoryAxis(canvas);
   float axisScreenHeight=getAxisScreenHeight();
   float axisDataHeight=(float)dataAxis.getAxisRange();
-  List<String> dataSet=labelsAxis.getDataSet();
+  List<String> dataSet=categoryAxis.getDataSet();
   float XSteps=getVerticalXSteps(dataSet.size() + 1);
   int barNumber=mDataSet.size();
   int currNumber=0;

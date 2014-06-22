@@ -1,0 +1,11 @@
+{
+  PlotLine plotLine=lineData.getPlotLine();
+  if (!plotLine.getDotStyle().equals(XEnum.DotStyle.HIDE)) {
+    PlotDot pDot=plotLine.getPlotDot();
+    LnChart lnChart=new LnChart();
+    lnChart.renderDot(canvas,pDot,currentX - pDot.getDotRadius(),currentY - pDot.getDotRadius(),currentX,currentY,lineData.getPlotLine().getDotPaint());
+  }
+  if (lineData.getLabelVisible()) {
+    canvas.drawText(getFormatterDotLabel(lineData.getLinePoint().get(listID)),currentX,currentY,lineData.getPlotLine().getDotLabelPaint());
+  }
+}

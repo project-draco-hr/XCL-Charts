@@ -1,6 +1,6 @@
 {
-  if (XEnum.LineDataAxisPosition.LEFT == mDataAxisPosition) {
-    labelsAxis.setHorizontalTickAlign(Align.CENTER);
+  if (XEnum.LineDataAxisLocation.LEFT == mDataAxisPosition) {
+    categoryAxis.setHorizontalTickAlign(Align.CENTER);
     dataAxis.setHorizontalTickAlign(Align.LEFT);
   }
  else {

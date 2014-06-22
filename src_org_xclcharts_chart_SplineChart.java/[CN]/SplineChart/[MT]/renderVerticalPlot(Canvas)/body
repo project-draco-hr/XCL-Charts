@@ -1,7 +1,7 @@
 {
   if (mLablesValuesMax == mLablesValuesMin && 0 == mLablesValuesMax)   return;
   renderVerticalDataAxis(canvas);
-  renderVerticalLabelsAxis(canvas);
+  renderVerticalCategoryAxis(canvas);
   List<LnData> lstKey=new ArrayList<LnData>();
   for (int i=0; i < mDataSet.size(); i++) {
     renderLine(canvas,mDataSet.get(i),"LINE");

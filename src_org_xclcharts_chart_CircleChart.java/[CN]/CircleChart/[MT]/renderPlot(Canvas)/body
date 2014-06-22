@@ -17,7 +17,7 @@
     int textHeight=LabelHeight + infoHeight;
     for (    PieData cData : mDataSet) {
       paintArc.setColor(cData.getSliceColor());
-      if (XEnum.CircleDisplayType.HALF == mDisplayType) {
+      if (XEnum.CircleType.HALF == mDisplayType) {
         setInitialAngle(180);
         drawPercent(canvas,mPaintBgCircle,cirX,cirY,radius,180f,180f);
         drawPercent(canvas,mPaintFillCircle,cirX,cirY,(float)(Math.round(radius * 0.9)),180f,180);

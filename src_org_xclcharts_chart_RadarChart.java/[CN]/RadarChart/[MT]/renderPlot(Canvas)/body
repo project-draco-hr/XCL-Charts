@@ -1,7 +1,9 @@
 {
-  GetAllXY();
+  if (!validateParams())   return;
+  calcAllPoint();
   renderGridLines(canvas);
   renderAxisLines(canvas);
   renderDataArea(canvas);
+  renderAxisLabels(canvas);
   renderKey(canvas);
 }

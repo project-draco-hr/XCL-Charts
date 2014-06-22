@@ -1,6 +1,6 @@
 {
   dataAxis=new DataAxisRender();
-  labelsAxis=new LabelsAxisRender();
+  categoryAxis=new CategoryAxisRender();
   legend=new LegendRender();
   mDataKeyPaint=new Paint();
   mDataKeyPaint.setColor(Color.BLACK);

@@ -1,16 +1,10 @@
 {
   float cirX=plotArea.getCenterX();
   float cirY=plotArea.getCenterY();
-  for (int i=0; i < dataCount; i++) {
-    for (int j=0; j < labelsCount; j++) {
-      if (i == dataCount - 1) {
-        canvas.drawLine(cirX,cirY,arrayLabelX[i][j],arrayLabelY[i][j],mPaintWebLines);
-        canvas.drawText(Integer.toString(i) + " - " + Integer.toString(j),arrayLabelX[i][j],arrayLabelY[i][j],mPaintLabels);
-      }
-      if (0 == j) {
-        canvas.drawLine(arrayLabelX[i][j] - 10,arrayLabelY[i][j],arrayLabelX[i][j],arrayLabelY[i][j],mPaintLabels);
-        canvas.drawText("[" + Integer.toString(i) + "]",arrayLabelX[i][j] - 15,arrayLabelY[i][j],mPaintTick);
-      }
-    }
+  int labelsCount=getPlotAgentNumber();
+  int dataAxisTickCount=getAxisTickCount();
+  int i=dataAxisTickCount - 1;
+  for (int j=0; j < labelsCount; j++) {
+    canvas.drawLine(cirX,cirY,mArrayDotX[i][j],mArrayDotY[i][j],getLinePaint());
   }
 }

@@ -4,12 +4,12 @@
 switch (getChartDirection()) {
 case HORIZONTAL:
 {
-        labelsAxis.setTickMarksVisible(false);
+        categoryAxis.setTickMarksVisible(false);
         break;
       }
 case VERTICAL:
 {
-      labelsAxis.setTickMarksVisible(false);
+      categoryAxis.setTickMarksVisible(false);
       break;
     }
 }

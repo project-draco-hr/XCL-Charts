@@ -3,8 +3,8 @@
 switch (mDirection) {
 case HORIZONTAL:
 {
-        labelsAxis.setHorizontalTickAlign(Align.LEFT);
-        labelsAxis.getAxisTickLabelPaint().setTextAlign(Align.RIGHT);
+        categoryAxis.setHorizontalTickAlign(Align.LEFT);
+        categoryAxis.getAxisTickLabelPaint().setTextAlign(Align.RIGHT);
         dataAxis.setHorizontalTickAlign(Align.CENTER);
         dataAxis.getAxisTickLabelPaint().setTextAlign(Align.CENTER);
         getBar().getItemLabelPaint().setTextAlign(Align.LEFT);
@@ -14,14 +14,14 @@ case VERTICAL:
 {
       dataAxis.setHorizontalTickAlign(Align.LEFT);
       dataAxis.getAxisTickLabelPaint().setTextAlign(Align.RIGHT);
-      labelsAxis.setHorizontalTickAlign(Align.CENTER);
-      labelsAxis.getAxisTickLabelPaint().setTextAlign(Align.CENTER);
-      labelsAxis.setVerticalTickPosition(XEnum.Position.LOWER);
+      categoryAxis.setHorizontalTickAlign(Align.CENTER);
+      categoryAxis.getAxisTickLabelPaint().setTextAlign(Align.CENTER);
+      categoryAxis.setVerticalTickPosition(XEnum.Position.LOWER);
       break;
     }
 }
 }
  catch (Exception ex) {
-Log.e("ERROR-BarChart",ex.toString());
+Log.e(TAG,ex.toString());
 }
 }

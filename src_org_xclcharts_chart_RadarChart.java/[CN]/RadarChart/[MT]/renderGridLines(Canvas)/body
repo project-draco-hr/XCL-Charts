@@ -1,16 +1,16 @@
 {
   Path lnPath=new Path();
-  for (int i=0; i < dataCount; i++) {
-    for (int j=0; j < labelsCount; j++) {
+  for (int i=0; i < getAxisTickCount(); i++) {
+    for (int j=0; j < getPlotAgentNumber(); j++) {
       if (0 == j) {
-        lnPath.moveTo(arrayLabelX[i][j],arrayLabelY[i][j]);
+        lnPath.moveTo(mArrayDotX[i][j],mArrayDotY[i][j]);
       }
  else {
-        lnPath.lineTo(arrayLabelX[i][j],arrayLabelY[i][j]);
+        lnPath.lineTo(mArrayDotX[i][j],mArrayDotY[i][j]);
       }
     }
     lnPath.close();
-    canvas.drawPath(lnPath,mPaintWebLines);
+    canvas.drawPath(lnPath,getLinePaint());
     lnPath.reset();
   }
 }

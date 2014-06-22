@@ -1,0 +1,21 @@
+{
+  if (XEnum.ArcLabelLocation.HIDE == mLabelLocation)   return;
+  float calcRadius=0.0f;
+  float calcAgent=0.0f;
+  mPaintLabel.setTextAlign(Align.CENTER);
+  if (XEnum.ArcLabelLocation.CENTER == mLabelLocation) {
+    calcRadius=radius - radius / 2;
+    calcAgent=offsetAgent + curretAgentt / 2;
+    mCalc.calcArcEndPointXY(cirX,cirY,calcRadius,calcAgent);
+    canvas.drawText(text,mCalc.getPosX(),mCalc.getPosY(),mPaintLabel);
+  }
+ else   if (XEnum.ArcLabelLocation.OUTSIDE == mLabelLocation) {
+    calcRadius=radius + radius / 10;
+    calcAgent=offsetAgent + curretAgentt / 2;
+    mCalc.calcArcEndPointXY(cirX,cirY,calcRadius,calcAgent);
+    canvas.drawText(text,mCalc.getPosX(),mCalc.getPosY(),mPaintLabel);
+  }
+ else {
+    return;
+  }
+}

@@ -1,11 +1,11 @@
 {
-  if (XEnum.LineDataAxisPosition.LEFT == mDataAxisPosition) {
+  if (XEnum.LineDataAxisLocation.LEFT == mDataAxisPosition) {
     renderVerticalDataAxis(canvas);
   }
  else {
     renderVerticalDataAxisRight(canvas);
   }
-  renderVerticalLabelsAxis(canvas);
+  renderVerticalCategoryAxis(canvas);
   List<LnData> lstKey=new ArrayList<LnData>();
   for (int i=0; i < mDataSet.size(); i++) {
     renderLine(canvas,mDataSet.get(i),"LINE");

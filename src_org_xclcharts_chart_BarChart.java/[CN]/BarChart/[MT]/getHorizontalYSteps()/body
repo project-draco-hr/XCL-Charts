@@ -1,4 +1,4 @@
 {
-  float YSteps=(float)Math.ceil((getAxisScreenHeight()) / (this.labelsAxis.getDataSet().size() + 1));
+  float YSteps=(float)Math.ceil((getAxisScreenHeight()) / (this.categoryAxis.getDataSet().size() + 1));
   return YSteps;
 }

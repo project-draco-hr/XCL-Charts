@@ -1,9 +1,9 @@
 {
-  float YSteps=(float)(getAxisScreenHeight() / (labelsAxis.getDataSet().size() + 1));
+  float YSteps=(float)(getAxisScreenHeight() / (categoryAxis.getDataSet().size() + 1));
   float currentY=0.0f;
-  for (int i=0; i < labelsAxis.getDataSet().size(); i++) {
+  for (int i=0; i < categoryAxis.getDataSet().size(); i++) {
     currentY=plotArea.getBottom() - (i + 1) * YSteps;
     plotGrid.renderGridLinesHorizontal(canvas,plotArea.getLeft(),currentY,plotArea.getRight(),currentY);
-    this.labelsAxis.renderAxisHorizontalTick(canvas,plotArea.getLeft(),currentY,labelsAxis.getDataSet().get(i));
+    this.categoryAxis.renderAxisHorizontalTick(canvas,plotArea.getLeft(),currentY,categoryAxis.getDataSet().get(i));
   }
 }

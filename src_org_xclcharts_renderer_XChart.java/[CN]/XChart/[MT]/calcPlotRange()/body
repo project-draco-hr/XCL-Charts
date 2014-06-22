@@ -20,7 +20,7 @@
   if (plotTitle.getTitle().length() > 0) {
     titleHeight=dw.getPaintFontHeight(plotTitle.getTitlePaint());
   }
-  if (plotTitle.getChartSubTitle().length() > 0) {
+  if (plotTitle.getSubtitle().length() > 0) {
     subtitleHeight=dw.getPaintFontHeight(plotTitle.getTitlePaint());
   }
   rederTop=Math.round(this.mHeight / 100 * perTop);

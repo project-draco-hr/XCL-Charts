@@ -1,0 +1,20 @@
+{
+  float currentX=plotArea.getLeft();
+  List<String> dataSet=categoryAxis.getDataSet();
+  float XSteps=(getAxisScreenWidth() / (dataSet.size() + 1));
+  double baseTickness=mBar3D.getAxis3DBaseThickness();
+  double baseAngle=mBar3D.getAngle();
+  double baseOffsetX=mBar3D.getOffsetX(baseTickness,baseAngle);
+  double baseOffsetY=mBar3D.getOffsetY(baseTickness,baseAngle);
+  DrawHelper dw=new DrawHelper();
+  double labelHeight=dw.getPaintFontHeight(categoryAxis.getAxisTickLabelPaint());
+  for (int i=0; i < dataSet.size(); i++) {
+    currentX=(plotArea.getLeft() + (i + 1) * XSteps);
+    if (plotGrid.isShowVerticalLines()) {
+      canvas.drawLine(currentX,plotArea.getBottom(),currentX,plotArea.getTop(),this.plotGrid.getVerticalLinePaint());
+    }
+    float currentY=(float)(plotArea.getBottom() + baseOffsetY + baseTickness+ labelHeight);
+    currentX=(float)(currentX - baseOffsetX);
+    categoryAxis.renderAxisVerticalTick(canvas,currentX,currentY,dataSet.get(i));
+  }
+}

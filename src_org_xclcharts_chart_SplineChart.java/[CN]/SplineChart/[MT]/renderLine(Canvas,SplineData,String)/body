@@ -39,7 +39,7 @@
         renderDot(canvas,pDot,lineStartX,lineStartY,lineEndX,lineEndY,pLine.getDotPaint());
         lineEndX=rendEndX;
       }
-      if (bd.getLineLabelVisible()) {
+      if (bd.getLabelVisible()) {
         canvas.drawText("(" + Double.toString(xValue) + ","+ Double.toString(yValue)+ ")",lineEndX,lineEndY,pLine.getDotLabelPaint());
       }
     }

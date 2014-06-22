@@ -1,4 +1,4 @@
 {
-  labelsAxis.setHorizontalTickAlign(Align.CENTER);
+  categoryAxis.setHorizontalTickAlign(Align.CENTER);
   dataAxis.setHorizontalTickAlign(Align.LEFT);
 }

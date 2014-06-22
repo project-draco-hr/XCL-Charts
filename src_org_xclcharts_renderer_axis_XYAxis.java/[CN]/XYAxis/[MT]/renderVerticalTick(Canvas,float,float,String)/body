@@ -9,6 +9,8 @@ case UP:
       if (getTickMarksVisible()) {
         marksStartY=Math.round(centerY - getTickMarksLength());
         marksStopY=centerY;
+      }
+      if (this.getTickLabelVisible()) {
         labelsStartY=marksStartY - getTickLabelMargin() - mDrawHelper.getPaintFontHeight(getAxisTickLabelPaint());
       }
       break;
@@ -25,7 +27,9 @@ case LOWER:
 if (getTickMarksVisible()) {
   marksStartY=centerY;
   marksStopY=Math.round(centerY + getTickMarksLength());
-  labelsStartY=marksStopY + getTickLabelMargin() + mDrawHelper.getPaintFontHeight(getAxisTickLabelPaint()) / 3;
+}
+if (this.getTickLabelVisible()) {
+labelsStartY=marksStopY + getTickLabelMargin() + mDrawHelper.getPaintFontHeight(getAxisTickLabelPaint()) / 3;
 }
 break;
 default :

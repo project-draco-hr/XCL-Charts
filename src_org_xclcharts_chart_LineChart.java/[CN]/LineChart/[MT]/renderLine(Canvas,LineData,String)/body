@@ -7,7 +7,7 @@
   float lineEndY=0.0f;
   float axisScreenHeight=getAxisScreenHeight();
   float axisDataHeight=(float)dataAxis.getAxisRange();
-  List<String> dataSet=labelsAxis.getDataSet();
+  List<String> dataSet=categoryAxis.getDataSet();
   int XSteps=(int)Math.ceil(getAxisScreenWidth() / (dataSet.size() - 1));
   List<Double> chartValues=bd.getLinePoint();
   int j=0;
@@ -35,8 +35,8 @@
           renderDot(canvas,pDot,lineStartX,lineStartY,lineEndX,lineEndY,pLine.getDotPaint());
           lineEndX=rendEndX;
         }
-        if (bd.getLineLabelVisible()) {
-          canvas.drawText(Double.toString(bv),lineEndX,lineEndY,pLine.getDotLabelPaint());
+        if (bd.getLabelVisible()) {
+          canvas.drawText(getFormatterDotLabel(bv),lineEndX,lineEndY,pLine.getDotLabelPaint());
         }
       }
  else {

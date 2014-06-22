@@ -1,5 +1,5 @@
 {
-  setLineLabel(key);
+  setLabel(key);
   setLineColor(color);
   setLinePoint(dataSeries);
   setDotStyle(dotStyle);

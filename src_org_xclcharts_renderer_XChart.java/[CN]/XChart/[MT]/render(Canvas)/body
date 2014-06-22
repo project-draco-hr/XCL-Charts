@@ -1,7 +1,7 @@
 {
   try {
     if (null == canvas)     return false;
-    drawChartBackground(canvas);
+    renderChartBackground(canvas);
   }
  catch (  Exception e) {
     throw e;

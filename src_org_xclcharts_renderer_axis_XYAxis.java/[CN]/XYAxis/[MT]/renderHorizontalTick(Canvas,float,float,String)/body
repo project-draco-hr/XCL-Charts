@@ -10,8 +10,8 @@ case LEFT:
       if (getTickMarksVisible()) {
         marksStartX=Math.round(centerX - getTickMarksLength());
         markeStopX=centerX;
-        lablesStartX=marksStartX - getTickLabelMargin();
       }
+      if (this.getTickLabelVisible())       lablesStartX=marksStartX - getTickLabelMargin();
       break;
     }
 case CENTER:
@@ -26,8 +26,8 @@ case RIGHT:
 if (getTickMarksVisible()) {
   marksStartX=centerX;
   markeStopX=Math.round(centerX + getTickMarksLength());
-  lablesStartX=markeStopX + getTickLabelMargin();
 }
+if (this.getTickLabelVisible()) lablesStartX=markeStopX + getTickLabelMargin();
 break;
 default :
 break;

@@ -7,7 +7,7 @@
   float lineEndY=0.0f;
   float axisScreenHeight=getAxisScreenHeight();
   float axisDataHeight=(float)dataAxis.getAxisRange();
-  float currLablesSteps=this.getAxisScreenWidth() / (labelsAxis.getDataSet().size() - 1);
+  float currLablesSteps=this.getAxisScreenWidth() / (categoryAxis.getDataSet().size() - 1);
   List<Double> chartValues=bd.getLinePoint();
   Path pathArea=new Path();
   pathArea.moveTo(initX,initY);
@@ -42,7 +42,7 @@
         renderDot(canvas,pDot,lineStartX,lineStartY,lineEndX,lineEndY,pLine.getDotPaint());
         lineEndX=rendEndX;
       }
-      if (bd.getLineLabelVisible()) {
+      if (bd.getLabelVisible()) {
         canvas.drawText(Double.toString(bv),lineEndX,lineEndY,pLine.getDotLabelPaint());
       }
     }

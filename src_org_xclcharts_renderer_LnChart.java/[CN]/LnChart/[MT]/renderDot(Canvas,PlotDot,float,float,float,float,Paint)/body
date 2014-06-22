@@ -2,7 +2,7 @@
   float radius=pDot.getDotRadius();
   float halfRadius=radius / 2;
 switch (pDot.getDotStyle()) {
-case CIRCLE:
+case DOT:
     canvas.drawCircle(left + Math.abs(right - left),bottom,radius,paint);
   break;
 case RING:

@@ -1,5 +1,5 @@
 {
-  mLabelsDP=XEnum.DisplayPosition.CENTER;
+  mLabelLocation=XEnum.ArcLabelLocation.CENTER;
   mPaintLabel=new Paint();
   mPaintLabel.setColor(Color.BLACK);
   mPaintLabel.setTextSize(18);
