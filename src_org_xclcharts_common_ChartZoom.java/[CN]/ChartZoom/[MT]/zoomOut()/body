@@ -1,0 +1,10 @@
+{
+  int offsetX=(int)(scale * chart.getWidth());
+  int offsetY=(int)(scale * chart.getHeight());
+  float newWidth=chart.getRight() - offsetX;
+  float newHeight=chart.getBottom() - offsetY;
+  if (newWidth < FIX_WITH)   return;
+  if (newHeight < FIX_HEIGHT)   return;
+  chart.setChartRange(0.0f,0.0f,newWidth,newHeight);
+  view.invalidate();
+}
