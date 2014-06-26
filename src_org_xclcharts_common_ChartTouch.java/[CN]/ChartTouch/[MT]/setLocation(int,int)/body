@@ -1,4 +1,0 @@
-{
-  chart.setChartRange(chart.getLeft() + x,chart.getTop() + y,chart.getWidth(),chart.getHeight());
-  view.invalidate();
-}

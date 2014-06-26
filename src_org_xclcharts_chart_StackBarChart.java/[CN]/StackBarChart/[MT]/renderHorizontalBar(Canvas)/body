@@ -22,15 +22,15 @@
         valuePostion=(float)(axisScreenWidth * ((bv - dataAxis.getAxisMin()) / valueWidth));
       }
  else {
-        valuePostion=(float)(axisScreenWidth * ((bv) / valueWidth));
+        valuePostion=(float)(axisScreenWidth * (bv / valueWidth));
       }
       flatBar.renderBar(currentX,currentY - barHeight / 2,currentX + valuePostion,currentY + barHeight / 2,canvas);
       flatBar.renderBarItemLabel(getFormatterItemLabel(bv),currentX + valuePostion / 2,currentY,canvas);
       currentX+=valuePostion;
     }
-    if (mTotalLableVisible) {
+    if (mTotalLabelVisible) {
       float totalPostion=(float)(axisScreenWidth / axisDataRange * (total - dataAxis.getAxisMin()));
-      flatBar.renderBarItemLabel(getFormatterItemLabel(total),plotArea.getLeft() - totalPostion,currentY,canvas);
+      flatBar.renderBarItemLabel(getFormatterItemLabel(total),plotArea.getLeft() + totalPostion,currentY,canvas);
     }
   }
   dataAxis.renderAxis(canvas,plotArea.getLeft(),plotArea.getBottom(),plotArea.getLeft(),plotArea.getTop());

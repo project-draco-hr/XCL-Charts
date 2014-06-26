@@ -1,4 +1,8 @@
 {
-  this.chart=chart;
-  this.view=view;
+  this.mChart=chart;
+  this.mView=view;
+  mInitWidth=chart.getWidth();
+  mInitHeight=chart.getHeight();
+  mScaleMinWidth=(int)(MIN_SCALE_RATE * mInitWidth);
+  mScaleMinHeight=(int)(MIN_SCALE_RATE * mInitHeight);
 }

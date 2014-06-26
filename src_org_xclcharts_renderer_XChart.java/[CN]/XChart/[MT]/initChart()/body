@@ -1,4 +1,6 @@
 {
+  mTranslateXY[0]=0.0f;
+  mTranslateXY[1]=0.0f;
   plotArea=new PlotAreaRender();
   plotGrid=new PlotGridRender();
   plotTitle=new PlotTitleRender();

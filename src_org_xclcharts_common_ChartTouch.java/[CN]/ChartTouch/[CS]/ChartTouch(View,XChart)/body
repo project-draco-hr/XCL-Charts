@@ -1,4 +1,4 @@
 {
-  this.chart=chart;
-  this.view=view;
+  this.mChart=chart;
+  this.mView=view;
 }

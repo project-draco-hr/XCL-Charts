@@ -1,23 +1,25 @@
 {
-switch (event.getAction()) {
-case MotionEvent.ACTION_DOWN:
-    if (event.getPointerCount() == 1) {
-      beforeX=event.getX();
-      beforeY=event.getY();
+  int action=event.getAction();
+  if (action == MotionEvent.ACTION_MOVE) {
+    if (oldX >= 0 || oldY >= 0) {
+      float newX=event.getX(0);
+      float newY=event.getY(0);
+      if (newX - oldX == 0 || newY - oldY == 0)       return;
+      setLocation(oldX,oldY,newX,newY);
+      oldX=newX;
+      oldY=newY;
     }
-  break;
-case MotionEvent.ACTION_MOVE:
-if (event.getPointerCount() == 1) {
-  afterX=event.getX();
-  afterY=event.getY();
-  this.setLocation((int)(afterX - beforeX),(int)(afterY - beforeY));
-  beforeX=afterX;
-  beforeY=afterY;
-}
-break;
-case MotionEvent.ACTION_UP:
-afterX=afterY=0.0f;
-beforeX=beforeY=0.0f;
-break;
-}
+  }
+ else   if (action == MotionEvent.ACTION_DOWN) {
+    oldX=event.getX(0);
+    oldY=event.getY(0);
+  }
+ else   if (action == MotionEvent.ACTION_UP || action == MotionEvent.ACTION_POINTER_UP) {
+    oldX=0;
+    oldY=0;
+    if (action == MotionEvent.ACTION_POINTER_UP) {
+      oldX=-1;
+      oldY=-1;
+    }
+  }
 }

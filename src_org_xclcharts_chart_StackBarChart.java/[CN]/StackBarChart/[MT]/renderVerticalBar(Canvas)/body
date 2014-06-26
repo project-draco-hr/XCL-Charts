@@ -22,7 +22,7 @@
         valuePostion=(float)(axisScreenHeight * ((bv - dataAxis.getAxisMin()) / axisDataHeight));
       }
  else {
-        valuePostion=(float)(axisScreenHeight * ((bv) / axisDataHeight));
+        valuePostion=(float)(axisScreenHeight * (bv / axisDataHeight));
       }
       flatBar.renderBar(currentX - barWidht / 2,currentY - valuePostion,currentX + barWidht / 2,currentY,canvas);
       flatBar.renderBarItemLabel(getFormatterItemLabel(bv),currentX,currentY - valuePostion / 2,canvas);

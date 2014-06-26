@@ -1,6 +1,7 @@
 {
   try {
     if (null == canvas)     return false;
+    canvas.translate(mTranslateXY[0],mTranslateXY[1]);
     renderChartBackground(canvas);
   }
  catch (  Exception e) {

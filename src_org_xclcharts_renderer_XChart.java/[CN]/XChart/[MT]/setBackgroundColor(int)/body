@@ -1,5 +1,4 @@
 {
-  mBackgroundColorVisible=visible;
   getBackgroundPaint().setColor(color);
   getPlotArea().getBackgroundPaint().setColor(color);
 }

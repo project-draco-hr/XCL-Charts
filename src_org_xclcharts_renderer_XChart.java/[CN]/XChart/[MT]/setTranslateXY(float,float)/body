@@ -1,0 +1,4 @@
+{
+  mTranslateXY[0]=x;
+  mTranslateXY[1]=y;
+}
