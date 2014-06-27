@@ -1,6 +1,6 @@
 {
   int labelBarTotalWidth=(int)Math.round(XSteps * 0.9);
-  int barTotalInnerMargin=(int)Math.round(labelBarTotalWidth * 0.2);
+  int barTotalInnerMargin=(int)Math.round(labelBarTotalWidth * mBarSpacePercentage);
   int barTotalWidth=labelBarTotalWidth - barTotalInnerMargin;
   int barInnerMargin=barTotalInnerMargin / barNumber;
   int barWidth=barTotalWidth / barNumber;

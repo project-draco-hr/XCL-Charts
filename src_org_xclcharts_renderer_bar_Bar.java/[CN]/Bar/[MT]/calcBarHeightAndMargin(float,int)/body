@@ -1,6 +1,6 @@
 {
   int labelBarTotalHeight=(int)Math.round(YSteps * 0.9);
-  int barTotalInnerMargin=(int)Math.round(labelBarTotalHeight * 0.2);
+  int barTotalInnerMargin=(int)Math.round(labelBarTotalHeight * mBarSpacePercentage);
   int barInnerMargin=barTotalInnerMargin / barNumber;
   int barHeight=(labelBarTotalHeight - barTotalInnerMargin) / barNumber;
   List<Integer> ret=new LinkedList<Integer>();
