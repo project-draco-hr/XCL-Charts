@@ -1,7 +1,6 @@
 {
   try {
-    super.render(canvas);
-    renderVerticalPlot(canvas);
+    renderChartBackground(canvas);
   }
  catch (  Exception e) {
     throw e;

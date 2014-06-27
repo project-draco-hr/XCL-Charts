@@ -1,6 +1,6 @@
 {
   try {
-    super.render(canvas);
+    super.postRender(canvas);
 switch (mDirection) {
 case HORIZONTAL:
 {

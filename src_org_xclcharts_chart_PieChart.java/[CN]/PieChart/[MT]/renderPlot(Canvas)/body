@@ -11,7 +11,7 @@
     Paint paintArc=new Paint();
     paintArc.setAntiAlias(true);
     float currentAgent=0.0f;
-    for (    PieData cData : mDataSet) {
+    for (    PieData cData : mDataset) {
       paintArc.setColor(cData.getSliceColor());
       currentAgent=cData.getSliceAgent();
       if (cData.getSelected()) {
@@ -25,6 +25,6 @@
     renderKey(canvas);
   }
  catch (  Exception e) {
-    Log.e("ERROR-PieChart",e.toString());
+    Log.e(TAG,e.toString());
   }
 }

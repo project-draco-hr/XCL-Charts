@@ -16,7 +16,7 @@
     currentY=this.plotArea.getBottom();
   }
   int totalTextWidth=0;
-  for (  PieData cData : mDataSet) {
+  for (  PieData cData : mDataset) {
     mPaintKey.setColor(cData.getSliceColor());
     if (!isVerticalScreen()) {
       canvas.drawRect(currentX,currentY,currentX - rectWidth,currentY - textHeight,mPaintKey);

@@ -1,7 +1,7 @@
 {
   try {
-    super.render(canvas);
-    renderPlot(canvas);
+    super.postRender(canvas);
+    renderVerticalPlot(canvas);
   }
  catch (  Exception e) {
     throw e;

@@ -1,6 +1,6 @@
 {
   try {
-    super.render(canvas);
+    super.postRender(canvas);
     renderVerticalPlot(canvas);
   }
  catch (  Exception e) {

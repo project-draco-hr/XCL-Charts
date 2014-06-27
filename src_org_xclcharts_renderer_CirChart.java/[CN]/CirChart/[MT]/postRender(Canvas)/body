@@ -1,10 +1,9 @@
 {
   try {
-    super.render(canvas);
+    super.postRender(canvas);
     calcPlotRange();
     plotArea.render(canvas);
     renderTitle(canvas);
-    renderPlot(canvas);
   }
  catch (  Exception e) {
     throw e;

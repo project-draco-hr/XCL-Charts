@@ -1,7 +1,7 @@
 {
   try {
     renderDount(canvas);
-    renderTick(canvas);
+    renderTicks(canvas);
     renderPartitionFill(canvas);
     renderLabels(canvas);
     renderPointerLine(canvas);

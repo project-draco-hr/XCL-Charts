@@ -1,12 +1,12 @@
 {
-  if (mLablesValuesMax == mLablesValuesMin && 0 == mLablesValuesMax)   return;
+  if (mMaxValue == mMinValue && 0 == mMaxValue)   return;
   renderVerticalDataAxis(canvas);
   renderVerticalCategoryAxis(canvas);
   List<LnData> lstKey=new ArrayList<LnData>();
-  for (int i=0; i < mDataSet.size(); i++) {
-    renderLine(canvas,mDataSet.get(i),"LINE");
-    renderLine(canvas,mDataSet.get(i),"DOT2LABEL");
-    lstKey.add(mDataSet.get(i));
+  for (int i=0; i < mDataset.size(); i++) {
+    renderLine(canvas,mDataset.get(i),"LINE");
+    renderLine(canvas,mDataset.get(i),"DOT2LABEL");
+    lstKey.add(mDataset.get(i));
   }
   renderKey(canvas,lstKey);
 }
