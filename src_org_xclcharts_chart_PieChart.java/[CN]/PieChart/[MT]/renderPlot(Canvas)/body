@@ -22,7 +22,7 @@
       }
       mOffsetAgent+=currentAgent;
     }
-    renderKey(canvas);
+    plotKey.renderPieKey(canvas,this.mDataset);
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

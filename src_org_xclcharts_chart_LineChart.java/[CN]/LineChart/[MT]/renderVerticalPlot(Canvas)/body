@@ -10,7 +10,9 @@
   for (int i=0; i < mDataSet.size(); i++) {
     renderLine(canvas,mDataSet.get(i),"LINE");
     renderLine(canvas,mDataSet.get(i),"DOT2LABEL");
-    lstKey.add(mDataSet.get(i));
+    String key=mDataSet.get(i).getLineKey();
+    if ("" != key)     lstKey.add(mDataSet.get(i));
   }
-  renderKey(canvas,lstKey);
+  if (null == plotKey)   plotKey=new PlotKeyRender(this);
+  plotKey.renderLineKey(canvas,lstKey);
 }

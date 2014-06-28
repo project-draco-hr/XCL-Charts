@@ -8,5 +8,5 @@
     renderLine(canvas,mDataset.get(i),"DOT2LABEL");
     lstKey.add(mDataset.get(i));
   }
-  renderKey(canvas,lstKey);
+  plotKey.renderLineKey(canvas,lstKey);
 }

@@ -2,6 +2,5 @@
   dataAxis=new DataAxisRender();
   categoryAxis=new CategoryAxisRender();
   legend=new LegendRender();
-  mDataKeyPaint=new Paint();
-  mDataKeyPaint.setColor(Color.BLACK);
+  plotKey=new PlotKeyRender(this);
 }

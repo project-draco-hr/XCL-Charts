@@ -1,0 +1,17 @@
+{
+  if (false == this.isShowKeyLabels())   return true;
+  ;
+  if (!validateParams())   return false;
+  if (null == mDataSet)   mDataSet=dataSet;
+  if (null == mPlotArea)   mPlotArea=mXChart.getPlotArea();
+switch (mXChart.getPlotTitle().getTitleAlign()) {
+case CENTER:
+case RIGHT:
+    renderBarKeyLeft(canvas);
+  break;
+case LEFT:
+renderBarKeyRight(canvas);
+break;
+}
+return false;
+}

@@ -9,6 +9,7 @@
   float axisScreenHeight=getAxisScreenHeight();
   float axisDataHeight=(float)dataAxis.getAxisRange();
   LinkedHashMap<Double,Double> chartValues=bd.getLineDataSet();
+  PlotDotRender dotRender=new PlotDotRender();
   int j=0;
   Iterator iter=chartValues.entrySet().iterator();
   while (iter.hasNext()) {
@@ -36,7 +37,7 @@
         float rendEndX=lineEndX;
         PlotDot pDot=pLine.getPlotDot();
         rendEndX=lineEndX + pDot.getDotRadius();
-        renderDot(canvas,pDot,lineStartX,lineStartY,lineEndX,lineEndY,pLine.getDotPaint());
+        dotRender.renderDot(canvas,pDot,lineStartX,lineStartY,lineEndX,lineEndY,pLine.getDotPaint());
         lineEndX=rendEndX;
       }
       if (bd.getLabelVisible()) {

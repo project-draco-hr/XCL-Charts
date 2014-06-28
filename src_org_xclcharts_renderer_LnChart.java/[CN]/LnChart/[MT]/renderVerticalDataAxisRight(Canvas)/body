@@ -5,6 +5,7 @@
   float markHeight=dataAxis.getTickMarksPaint().getStrokeWidth() / 2;
   for (int i=0; i <= tickCount; i++) {
     if (i == 0)     continue;
+    dataAxis.setAxisTickCurrentID(i);
     currentY=Math.round(plotArea.getBottom() - i * YSteps);
     float currentTickLabel=(float)(dataAxis.getAxisMin() + (i * dataAxis.getAxisSteps()));
     if (i == tickCount) {

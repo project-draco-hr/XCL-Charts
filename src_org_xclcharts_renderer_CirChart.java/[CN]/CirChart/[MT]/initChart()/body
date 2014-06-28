@@ -1,5 +1,6 @@
 {
   mLabelLocation=XEnum.ArcLabelLocation.CENTER;
+  plotKey=new PlotKeyRender(this);
   mPaintLabel=new Paint();
   mPaintLabel.setColor(Color.BLACK);
   mPaintLabel.setTextSize(18);

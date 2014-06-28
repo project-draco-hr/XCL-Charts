@@ -14,9 +14,12 @@
   for (int i=0; i < mDataSet.size(); i++) {
     BarData bd=mDataSet.get(i);
     List<Double> barValues=bd.getDataSet();
-    mFlatBar.getBarPaint().setColor(bd.getColor());
+    List<Integer> barDataColor=bd.getDataColor();
+    int barDefualtColor=bd.getColor();
+    mFlatBar.getBarPaint().setColor(barDefualtColor);
     for (int j=0; j < barValues.size(); j++) {
       Double bv=barValues.get(j);
+      setBarDataColor(mFlatBar.getBarPaint(),barDataColor,j,barDefualtColor);
       float valuePostion=(float)(axisScreenHeight * ((bv - dataAxis.getAxisMin()) / axisDataHeight));
       float currLableX=plotArea.getLeft() + (j + 1) * XSteps;
       float drawBarStartX=currLableX - labelBarUseWidth / 2;
@@ -28,6 +31,7 @@
     currNumber++;
   }
   dataAxis.renderAxis(canvas,plotArea.getLeft(),plotArea.getBottom(),plotArea.getRight(),plotArea.getBottom());
-  renderDataKey(canvas);
-  renderVerticalDesirelinesDataAxis(canvas);
+  plotKey.renderBarKey(canvas,this.mDataSet);
+  mDesireLine.setVerticalPlot(dataAxis,plotArea,getAxisScreenHeight());
+  mDesireLine.renderVerticalDesirelinesDataAxis(canvas);
 }

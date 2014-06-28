@@ -1,0 +1,36 @@
+{
+  if (isShowKeyLabels() == false)   return;
+  if (null == mPlotArea)   mPlotArea=mXChart.getPlotArea();
+  PlotDotRender dotRender=new PlotDotRender();
+  DrawHelper dw=new DrawHelper();
+  float textHeight=dw.getPaintFontHeight(this.getKeyLabelPaint());
+  float rectWidth=2 * textHeight;
+  float currentX=0.0f;
+  float currentY=0.0f;
+  getKeyLabelPaint().setTextAlign(Align.LEFT);
+  currentX=mPlotArea.getLeft();
+  currentY=mPlotArea.getTop() - 5;
+  int totalTextWidth=0;
+  for (  LnData cData : dataSet) {
+    String key=cData.getLineKey();
+    if ("" == key)     continue;
+    getKeyLabelPaint().setColor(cData.getLineColor());
+    int keyTextWidth=dw.getTextWidth(getKeyLabelPaint(),key);
+    totalTextWidth+=keyTextWidth;
+    if (totalTextWidth > mPlotArea.getWidth()) {
+      currentY-=textHeight;
+      currentX=mPlotArea.getLeft();
+      totalTextWidth=0;
+    }
+    canvas.drawLine(currentX,currentY - textHeight / 2,currentX + rectWidth,currentY - textHeight / 2,getKeyLabelPaint());
+    canvas.drawText(cData.getLineKey(),currentX + rectWidth,currentY - textHeight / 3,getKeyLabelPaint());
+    float dotLeft=currentX + rectWidth / 4;
+    float dotRight=currentX + 2 * (rectWidth / 4);
+    PlotLine pLine=cData.getPlotLine();
+    if (!pLine.getDotStyle().equals(XEnum.DotStyle.HIDE)) {
+      PlotDot pDot=pLine.getPlotDot();
+      dotRender.renderDot(canvas,pDot,dotLeft,currentY,dotRight,currentY - textHeight / 2,pLine.getDotPaint());
+    }
+    currentX+=rectWidth + keyTextWidth + 10;
+  }
+}

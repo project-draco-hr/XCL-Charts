@@ -15,6 +15,6 @@ case VERTICAL:
 }
 }
  catch (Exception ex) {
-Log.e("ERROR-Bar3DChart",ex.toString());
+Log.e(TAG,ex.toString());
 }
 }

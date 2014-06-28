@@ -32,5 +32,5 @@
     flatBar.renderBarItemLabel(getFormatterItemLabel(total),currentX,plotArea.getBottom() - totalPostion,canvas);
   }
   dataAxis.renderAxis(canvas,plotArea.getLeft(),plotArea.getBottom(),plotArea.getRight(),plotArea.getBottom());
-  renderDataKey(canvas);
+  plotKey.renderBarKey(canvas,this.getDataSource());
 }

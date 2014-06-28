@@ -35,5 +35,5 @@
   }
   dataAxis.renderAxis(canvas,plotArea.getLeft(),plotArea.getBottom(),plotArea.getLeft(),plotArea.getTop());
   categoryAxis.renderAxis(canvas,plotArea.getLeft(),plotArea.getBottom(),plotArea.getRight(),plotArea.getBottom());
-  renderDataKey(canvas);
+  plotKey.renderBarKey(canvas,this.getDataSource());
 }

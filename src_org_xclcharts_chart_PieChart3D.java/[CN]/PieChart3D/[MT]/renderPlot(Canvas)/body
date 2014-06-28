@@ -61,5 +61,5 @@
     }
     mOffsetAgent+=currentAgent;
   }
-  renderKey(canvas);
+  plotKey.renderPieKey(canvas,this.getDataSource());
 }

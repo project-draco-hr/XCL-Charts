@@ -1,7 +1,3 @@
 {
-  mPaintKeyLabel=new Paint();
-  mPaintKeyLabel.setTextSize(18);
-  mPaintKeyLabel.setStyle(Style.FILL);
-  mPaintKeyLabel.setAntiAlias(true);
-  showKeyLabels();
+  plotKey.showKeyLabels();
 }
