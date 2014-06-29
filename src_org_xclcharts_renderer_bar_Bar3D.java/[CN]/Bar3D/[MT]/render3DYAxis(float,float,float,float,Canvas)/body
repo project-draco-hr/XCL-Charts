@@ -1,5 +1,5 @@
 {
-  int baseLightColor=this.mDrawHelper.getLightColor(getAxis3DBaseColor(),mAlpha);
+  int baseLightColor=DrawHelper.getInstance().getLightColor(getAxis3DBaseColor(),mAlpha);
   mPaintBase.setColor(getAxis3DBaseColor());
   mPaintBase3D.setColor(baseLightColor);
   double offsetX=getOffsetX();

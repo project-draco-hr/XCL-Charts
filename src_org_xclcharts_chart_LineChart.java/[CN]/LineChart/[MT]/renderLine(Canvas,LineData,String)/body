@@ -11,7 +11,6 @@
   int XSteps=(int)Math.ceil(getAxisScreenWidth() / (dataSet.size() - 1));
   List<Double> chartValues=bd.getLinePoint();
   int j=0;
-  PlotDotRender dotRender=new PlotDotRender();
   for (  Double bv : chartValues) {
     float valuePostion=(float)Math.round(axisScreenHeight * ((bv - dataAxis.getAxisMin()) / axisDataHeight));
     if (j == 0) {
@@ -33,7 +32,7 @@
         if (!pLine.getDotStyle().equals(XEnum.DotStyle.HIDE)) {
           PlotDot pDot=pLine.getPlotDot();
           float rendEndX=lineEndX + pDot.getDotRadius();
-          dotRender.renderDot(canvas,pDot,lineStartX,lineStartY,lineEndX,lineEndY,pLine.getDotPaint());
+          PlotDotRender.getInstance().renderDot(canvas,pDot,lineStartX,lineStartY,lineEndX,lineEndY,pLine.getDotPaint());
           lineEndX=rendEndX;
         }
         if (bd.getLabelVisible()) {

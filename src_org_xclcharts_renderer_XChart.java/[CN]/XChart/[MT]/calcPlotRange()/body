@@ -1,5 +1,4 @@
 {
-  DrawHelper dw=new DrawHelper();
   float perLeft=mPaddingLeft;
   float perRight=mPaddingRight;
   float perTop=mPaddingTop;
@@ -18,10 +17,10 @@
   float titleHeight=0.0f;
   float subtitleHeight=0.0f;
   if (plotTitle.getTitle().length() > 0) {
-    titleHeight=dw.getPaintFontHeight(plotTitle.getTitlePaint());
+    titleHeight=DrawHelper.getInstance().getPaintFontHeight(plotTitle.getTitlePaint());
   }
   if (plotTitle.getSubtitle().length() > 0) {
-    subtitleHeight=dw.getPaintFontHeight(plotTitle.getTitlePaint());
+    subtitleHeight=DrawHelper.getInstance().getPaintFontHeight(plotTitle.getTitlePaint());
   }
   renderTop=Math.round(this.mHeight / 100 * perTop);
   if (renderTop < titleHeight + subtitleHeight) {

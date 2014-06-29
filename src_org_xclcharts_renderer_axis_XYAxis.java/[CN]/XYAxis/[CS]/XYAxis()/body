@@ -1,4 +1,3 @@
 {
   super();
-  mDrawHelper=new DrawHelper();
 }

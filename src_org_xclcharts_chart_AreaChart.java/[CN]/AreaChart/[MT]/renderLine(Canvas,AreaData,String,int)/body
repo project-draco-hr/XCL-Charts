@@ -14,7 +14,6 @@
   mPaintAreaFill.setAlpha(mAreaAlpha);
   PlotLine pLine=bd.getPlotLine();
   mPaintAreaFill.setColor(bd.getAreaFillColor());
-  PlotDotRender dotRender=new PlotDotRender();
   int j=0;
   for (  Double bv : chartValues) {
     float valuePosition=(float)Math.round(axisScreenHeight * ((bv - dataAxis.getAxisMin()) / axisDataHeight));
@@ -40,11 +39,11 @@
       if (!pLine.getDotStyle().equals(XEnum.DotStyle.HIDE)) {
         PlotDot pDot=pLine.getPlotDot();
         float rendEndX=lineEndX + pDot.getDotRadius();
-        dotRender.renderDot(canvas,pDot,lineStartX,lineStartY,lineEndX,lineEndY,pLine.getDotPaint());
+        PlotDotRender.getInstance().renderDot(canvas,pDot,lineStartX,lineStartY,lineEndX,lineEndY,pLine.getDotPaint());
         lineEndX=rendEndX;
       }
       if (bd.getLabelVisible()) {
-        canvas.drawText(Double.toString(bv),lineEndX,lineEndY,pLine.getDotLabelPaint());
+        canvas.drawText(this.getFormatterItemLabel(bv),lineEndX,lineEndY,pLine.getDotLabelPaint());
       }
     }
  else {

@@ -43,8 +43,8 @@ itemLabel=mLabelFormatter.textFormatter(text);
  catch (Exception ex) {
 itemLabel=text;
 }
-float textHeight=this.mDrawHelper.getPaintFontHeight(getAxisTickLabelPaint());
+float textHeight=DrawHelper.getInstance().getPaintFontHeight(getAxisTickLabelPaint());
 textHeight/=4;
-mDrawHelper.drawRotateText(itemLabel,lablesStartX,lablesStartY + textHeight,getTickLabelRotateAgent(),canvas,getAxisTickLabelPaint());
+DrawHelper.getInstance().drawRotateText(itemLabel,lablesStartX,lablesStartY + textHeight,getTickLabelRotateAgent(),canvas,getAxisTickLabelPaint());
 }
 }

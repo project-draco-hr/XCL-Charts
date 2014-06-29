@@ -26,6 +26,14 @@
     }
     dataAxis.renderAxisHorizontalTick(canvas,plotLeft,currentY,Float.toString(currentTickLabel));
   }
-  if (mTopAxisVisible)   dataAxis.renderAxis(canvas,plotLeft,plotTop,plotRight,plotTop);
+  if (mTopAxisVisible) {
+    dataAxis.renderAxis(canvas,plotLeft,plotTop,plotRight,plotTop);
+  }
+ else {
+    plotGrid.renderGridLinesHorizontal(canvas,plotLeft,plotTop,plotRight,plotTop);
+  }
   dataAxis.renderAxis(canvas,plotLeft,plotBottom,plotLeft,plotTop);
+  if (!dataAxis.getAxisLineVisible() || !dataAxis.getVisible()) {
+    plotGrid.renderGridLinesHorizontal(canvas,plotLeft,plotBottom,plotRight,plotBottom);
+  }
 }

@@ -5,7 +5,7 @@
       initWidth=getHorizontalLinePaint().getStrokeWidth();
       getHorizontalLinePaint().setStrokeWidth(initWidth + BLOB_WIDTH);
     }
-    mDrawHelper.drawLine(this.getHorizontalLineStyle(),startX,startY,stopX,stopY,canvas,getHorizontalLinePaint());
+    DrawHelper.getInstance().drawLine(this.getHorizontalLineStyle(),startX,startY,stopX,stopY,canvas,getHorizontalLinePaint());
     if (mMajorTickLine)     getHorizontalLinePaint().setStrokeWidth(initWidth);
   }
 }

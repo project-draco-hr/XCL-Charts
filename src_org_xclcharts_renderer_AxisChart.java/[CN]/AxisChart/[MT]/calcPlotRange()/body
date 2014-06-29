@@ -1,6 +1,5 @@
 {
   super.calcPlotRange();
-  DrawHelper dw=new DrawHelper();
   float perLeft=getPaddingLeft();
   float perRight=getPaddingRight();
   float perBottom=getPaddingBottom();
@@ -15,7 +14,7 @@
   if (perLeft > 0) {
     float rederLeft=Math.round(height / 100 * perLeft);
     if (this.getLegend().getLeftLegend().length() > 0) {
-      float legendLength=dw.getPaintFontHeight(getLegend().getLeftLegendPaint());
+      float legendLength=DrawHelper.getInstance().getPaintFontHeight(getLegend().getLeftLegendPaint());
       if (legendLength > rederLeft)       rederLeft=legendLength;
     }
     plotArea.setLeft(getLeft() + rederLeft);
@@ -23,7 +22,7 @@
   if (perRight > 0) {
     float rederRight=Math.round(width / 100 * perRight);
     if (this.getLegend().getRightLegend().length() > 0) {
-      float legendLength=dw.getPaintFontHeight(getLegend().getRightLegendPaint());
+      float legendLength=DrawHelper.getInstance().getPaintFontHeight(getLegend().getRightLegendPaint());
       if (legendLength > rederRight)       rederRight=legendLength;
     }
     plotArea.setRight(this.getRight() - rederRight);
@@ -31,7 +30,7 @@
   if (perBottom > 0) {
     float rederBottom=Math.round(height / 100 * perBottom);
     if (this.getLegend().getLowerLegend().length() > 0) {
-      float legendHeight=dw.getPaintFontHeight(getLegend().getLowerLegendPaint());
+      float legendHeight=DrawHelper.getInstance().getPaintFontHeight(getLegend().getLowerLegendPaint());
       if (legendHeight > rederBottom)       rederBottom=legendHeight;
     }
     plotArea.setBottom(this.getBottom() - rederBottom);

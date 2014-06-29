@@ -5,7 +5,7 @@
       initWidth=getVerticalLinePaint().getStrokeWidth();
       getVerticalLinePaint().setStrokeWidth(initWidth + BLOB_WIDTH);
     }
-    mDrawHelper.drawLine(this.getVerticalLineStyle(),startX,startY,stopX,stopY,canvas,getVerticalLinePaint());
+    DrawHelper.getInstance().drawLine(this.getVerticalLineStyle(),startX,startY,stopX,stopY,canvas,getVerticalLinePaint());
     if (mMajorTickLine)     getVerticalLinePaint().setStrokeWidth(initWidth);
   }
 }

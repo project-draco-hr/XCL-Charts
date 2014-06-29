@@ -21,11 +21,11 @@
       currentAgent=cData.getSliceAgent();
       if (cData.getSelected()) {
         float newRadius=radius / 10;
-        mCalc.calcArcEndPointXY(cirX,cirY,newRadius,mOffsetAgent + currentAgent / 2);
-        float arcLeft2=mCalc.getPosX() - radius;
-        float arcTop2=mCalc.getPosY() - radius;
-        float arcRight2=mCalc.getPosX() + radius;
-        float arcBottom2=mCalc.getPosY() + radius;
+        MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,newRadius,mOffsetAgent + currentAgent / 2);
+        float arcLeft2=MathHelper.getInstance().getPosX() - radius;
+        float arcTop2=MathHelper.getInstance().getPosY() - radius;
+        float arcRight2=MathHelper.getInstance().getPosX() + radius;
+        float arcBottom2=MathHelper.getInstance().getPosY() + radius;
         RectF arcRF1=new RectF(arcLeft2,arcTop2,arcRight2,arcBottom2);
         canvas.drawArc(arcRF1,mOffsetAgent,currentAgent,true,paintArc);
       }
@@ -46,14 +46,14 @@
     paintArc.setColor(darkColor);
     if (cData.getSelected()) {
       float newRadius=radius / 10;
-      mCalc.calcArcEndPointXY(cirX,cirY,newRadius,mOffsetAgent + currentAgent / 2);
-      float arcLeft2=mCalc.getPosX() - radius;
-      float arcTop2=mCalc.getPosY() - radius;
-      float arcRight2=mCalc.getPosX() + radius;
-      float arcBottom2=mCalc.getPosY() + radius;
+      MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,newRadius,mOffsetAgent + currentAgent / 2);
+      float arcLeft2=MathHelper.getInstance().getPosX() - radius;
+      float arcTop2=MathHelper.getInstance().getPosY() - radius;
+      float arcRight2=MathHelper.getInstance().getPosX() + radius;
+      float arcBottom2=MathHelper.getInstance().getPosY() + radius;
       RectF arcRF1=new RectF(arcLeft2,arcTop2,arcRight2,arcBottom2);
       canvas.drawArc(arcRF1,mOffsetAgent,currentAgent,true,paintArc);
-      renderLabel(canvas,cData.getLabel(),mCalc.getPosX(),mCalc.getPosY(),radius,mOffsetAgent,currentAgent);
+      renderLabel(canvas,cData.getLabel(),MathHelper.getInstance().getPosX(),MathHelper.getInstance().getPosY(),radius,mOffsetAgent,currentAgent);
     }
  else {
       canvas.drawArc(arcRF0,mOffsetAgent,currentAgent,true,paintArc);

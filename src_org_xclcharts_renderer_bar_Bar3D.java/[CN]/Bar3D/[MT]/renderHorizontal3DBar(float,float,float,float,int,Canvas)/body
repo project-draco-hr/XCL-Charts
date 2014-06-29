@@ -1,5 +1,5 @@
 {
-  int lightColor=mDrawHelper.getLightColor(color,mAlpha);
+  int lightColor=DrawHelper.getInstance().getLightColor(color,mAlpha);
   mPaintBar.setColor(color);
   mPaint3D.setColor(lightColor);
   double offsetX=getOffsetX();

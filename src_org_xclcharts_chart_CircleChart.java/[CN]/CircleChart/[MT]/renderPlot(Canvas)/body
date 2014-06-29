@@ -11,9 +11,8 @@
     Paint paintArc=new Paint();
     paintArc.setAntiAlias(true);
     float currentAgent=0.0f;
-    DrawHelper dw=new DrawHelper();
-    int infoHeight=dw.getPaintFontHeight(mPaintDataInfo);
-    int LabelHeight=dw.getPaintFontHeight(getLabelPaint());
+    int infoHeight=DrawHelper.getInstance().getPaintFontHeight(mPaintDataInfo);
+    int LabelHeight=DrawHelper.getInstance().getPaintFontHeight(getLabelPaint());
     int textHeight=LabelHeight + infoHeight;
     for (    PieData cData : mDataSet) {
       paintArc.setColor(cData.getSliceColor());

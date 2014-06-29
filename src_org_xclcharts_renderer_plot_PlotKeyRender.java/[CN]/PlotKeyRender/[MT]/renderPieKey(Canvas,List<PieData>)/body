@@ -1,8 +1,7 @@
 {
   if (isShowKeyLabels() == false)   return;
   if (null == mPlotArea)   mPlotArea=mXChart.getPlotArea();
-  DrawHelper dw=new DrawHelper();
-  float textHeight=dw.getPaintFontHeight(this.getKeyLabelPaint());
+  float textHeight=DrawHelper.getInstance().getPaintFontHeight(getKeyLabelPaint());
   float rectWidth=2 * textHeight;
   float currentX=0.0f;
   float currentY=0.0f;
@@ -25,7 +24,7 @@
       currentY+=textHeight;
     }
  else {
-      int keyTextWidth=dw.getTextWidth(getKeyLabelPaint(),cData.getKey());
+      int keyTextWidth=DrawHelper.getInstance().getTextWidth(getKeyLabelPaint(),cData.getKey());
       totalTextWidth+=keyTextWidth;
       if (totalTextWidth > mPlotArea.getWidth()) {
         currentY+=textHeight;

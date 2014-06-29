@@ -21,8 +21,8 @@
     float nBottom=cirY + newRaidus;
     RectF nRF=new RectF(nLeft,nTop,nRight,nBottom);
     canvas.drawArc(nRF,mOffsetAgent,percentage,true,paintArc);
-    this.mCalc.calcArcEndPointXY(cirX,cirY,radius - radius / 2 / 2,mOffsetAgent + percentage / 2);
-    canvas.drawText(cData.getLabel(),mCalc.getPosX(),mCalc.getPosY(),getLabelPaint());
+    MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,radius - radius / 2 / 2,mOffsetAgent + percentage / 2);
+    canvas.drawText(cData.getLabel(),MathHelper.getInstance().getPosX(),MathHelper.getInstance().getPosY(),getLabelPaint());
     mOffsetAgent+=percentage;
   }
 }

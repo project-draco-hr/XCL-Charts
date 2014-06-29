@@ -14,9 +14,9 @@
     for (    Double data : dataset) {
       Double per=(data - dataAxis.getAxisMin()) / dataAxis.getAxisRange();
       float curRadius=(float)(getRadius() * per);
-      mCalc.calcArcEndPointXY(cirX,cirY,curRadius,mArrayLabelAgent[i]);
-      arrayDataX[i]=mCalc.getPosX();
-      arrayDataY[i]=mCalc.getPosY();
+      MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,curRadius,mArrayLabelAgent[i]);
+      arrayDataX[i]=MathHelper.getInstance().getPosX();
+      arrayDataY[i]=MathHelper.getInstance().getPosY();
       i++;
     }
 switch (lineData.getAreaStyle()) {

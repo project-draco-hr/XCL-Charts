@@ -1,6 +1,5 @@
 {
-  DrawHelper dw=new DrawHelper();
-  float keyTextHeight=dw.getPaintFontHeight(this.getKeyLabelPaint());
+  float keyTextHeight=DrawHelper.getInstance().getPaintFontHeight(this.getKeyLabelPaint());
   float keyLabelsX=mPlotArea.getLeft();
   float keyLabelsY=mPlotArea.getTop() - keyTextHeight;
   float rectWidth=2 * keyTextHeight;
@@ -18,7 +17,7 @@
     }
     canvas.drawRect(keyLabelsX,keyLabelsY,keyLabelsX + rectWidth,keyLabelsY - rectHeight,getKeyLabelPaint());
     getKeyLabelPaint().setTextAlign(Align.LEFT);
-    dw.drawRotateText(key,keyLabelsX + rectWidth + rectOffset,keyLabelsY,0,canvas,getKeyLabelPaint());
+    DrawHelper.getInstance().drawRotateText(key,keyLabelsX + rectWidth + rectOffset,keyLabelsY,0,canvas,getKeyLabelPaint());
     keyLabelsX+=rectWidth + strWidth + 2 * rectOffset;
   }
 }

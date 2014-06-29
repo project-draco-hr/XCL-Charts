@@ -10,7 +10,7 @@
     float calcAgent=Math.round(mPointerAgent + mStartAgent);
     float cirX=plotArea.getCenterX();
     float cirY=plotArea.getCenterY();
-    mCalc.calcArcEndPointXY(cirX,cirY,currentRadius,calcAgent);
-    canvas.drawLine(cirX,cirY,mCalc.getPosX(),mCalc.getPosY(),mPaintPointerLine);
+    MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,currentRadius,calcAgent);
+    canvas.drawLine(cirX,cirY,MathHelper.getInstance().getPosX(),MathHelper.getInstance().getPosY(),mPaintPointerLine);
   }
 }

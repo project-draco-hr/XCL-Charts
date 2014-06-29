@@ -1,6 +1,5 @@
 {
   super();
-  mDrawHelper=new DrawHelper();
   getLeftLegendPaint().setTextSize(26);
   getLeftLegendPaint().setColor((int)Color.rgb(255,153,204));
   getLowerLegendPaint().setTextSize(26);

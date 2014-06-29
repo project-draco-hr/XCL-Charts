@@ -13,8 +13,8 @@
       canvas.drawText(label,cirX + calcRadius,cirY,this.getLabelPaint());
     }
  else {
-      mCalc.calcArcEndPointXY(cirX,cirY,calcRadius,180 + i * stepsAgent);
-      canvas.drawText(label,mCalc.getPosX(),mCalc.getPosY(),this.getLabelPaint());
+      MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,calcRadius,180 + i * stepsAgent);
+      canvas.drawText(label,MathHelper.getInstance().getPosX(),MathHelper.getInstance().getPosY(),this.getLabelPaint());
     }
     i++;
   }

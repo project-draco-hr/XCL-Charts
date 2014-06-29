@@ -11,7 +11,7 @@ case UP:
         marksStopY=centerY;
       }
       if (this.getTickLabelVisible()) {
-        labelsStartY=marksStartY - getTickLabelMargin() - mDrawHelper.getPaintFontHeight(getAxisTickLabelPaint());
+        labelsStartY=marksStartY - getTickLabelMargin() - DrawHelper.getInstance().getPaintFontHeight(getAxisTickLabelPaint());
       }
       break;
     }
@@ -29,7 +29,7 @@ if (getTickMarksVisible()) {
   marksStopY=Math.round(centerY + getTickMarksLength());
 }
 if (this.getTickLabelVisible()) {
-labelsStartY=marksStopY + getTickLabelMargin() + mDrawHelper.getPaintFontHeight(getAxisTickLabelPaint()) / 3;
+labelsStartY=marksStopY + getTickLabelMargin() + DrawHelper.getInstance().getPaintFontHeight(getAxisTickLabelPaint()) / 3;
 }
 break;
 default :
@@ -46,6 +46,6 @@ itemLabel=mLabelFormatter.textFormatter(text);
  catch (Exception ex) {
 itemLabel=text;
 }
-mDrawHelper.drawRotateText(itemLabel,centerX,labelsStartY,getTickLabelRotateAgent(),canvas,getAxisTickLabelPaint());
+DrawHelper.getInstance().drawRotateText(itemLabel,centerX,labelsStartY,getTickLabelRotateAgent(),canvas,getAxisTickLabelPaint());
 }
 }

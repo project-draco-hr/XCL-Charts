@@ -13,20 +13,19 @@
   mArrayLabelAgent=new Float[labelsCount];
   mArrayLabelX=new Float[dataAxisTickCount][labelsCount];
   mArrayLabelY=new Float[dataAxisTickCount][labelsCount];
-  DrawHelper dw=new DrawHelper();
-  int labelHeight=dw.getPaintFontHeight(getLabelPaint());
+  int labelHeight=DrawHelper.getInstance().getPaintFontHeight(getLabelPaint());
   float labelRadius=this.getRadius() + labelHeight;
   for (int i=0; i < dataAxisTickCount; i++) {
     curRadius=avgRadius * i;
     for (int j=0; j < labelsCount; j++) {
       offsetAgent=initOffsetAgent + pAngle * j;
-      mCalc.calcArcEndPointXY(cirX,cirY,curRadius,offsetAgent + pAngle);
-      mArrayDotX[i][j]=mCalc.getPosX();
-      mArrayDotY[i][j]=mCalc.getPosY();
+      MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,curRadius,offsetAgent + pAngle);
+      mArrayDotX[i][j]=MathHelper.getInstance().getPosX();
+      mArrayDotY[i][j]=MathHelper.getInstance().getPosY();
       if (0 == i)       mArrayLabelAgent[j]=offsetAgent + pAngle;
-      mCalc.calcArcEndPointXY(cirX,cirY,labelRadius,offsetAgent + pAngle);
-      mArrayLabelX[i][j]=mCalc.getPosX();
-      mArrayLabelY[i][j]=mCalc.getPosY();
+      MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,labelRadius,offsetAgent + pAngle);
+      mArrayLabelX[i][j]=MathHelper.getInstance().getPosX();
+      mArrayLabelY[i][j]=MathHelper.getInstance().getPosY();
     }
   }
 }

@@ -6,10 +6,10 @@
   for (int i=0; i < mTickSteps; i++) {
     if (0 == i)     continue;
     float agent=(float)(180 + i * stepsAgent);
-    mCalc.calcArcEndPointXY(cirX,cirY,getRadius(),agent);
-    float startX=mCalc.getPosX();
-    float startY=mCalc.getPosY();
-    mCalc.calcArcEndPointXY(cirX,cirY,tickRadius,agent);
-    canvas.drawLine(startX,startY,mCalc.getPosX(),mCalc.getPosY(),mPaintTick);
+    MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,getRadius(),agent);
+    float startX=MathHelper.getInstance().getPosX();
+    float startY=MathHelper.getInstance().getPosY();
+    MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,tickRadius,agent);
+    canvas.drawLine(startX,startY,MathHelper.getInstance().getPosX(),MathHelper.getInstance().getPosY(),mPaintTick);
   }
 }
