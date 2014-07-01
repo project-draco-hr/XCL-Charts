@@ -1,0 +1,16 @@
+{
+  try {
+    lnChart.setChartRange(0.0f,0.0f,getScreenWidth(),getScreenHeight());
+    if (lnChart.isVerticalScreen()) {
+      lnChart.setPadding(20,10,10,10);
+    }
+ else {
+      lnChart.setPadding(20,30,18,10);
+    }
+    renderLnAxis();
+    lnChart.getPlotKey().showKeyLabels();
+  }
+ catch (  Exception e) {
+    Log.e(TAG,e.toString());
+  }
+}

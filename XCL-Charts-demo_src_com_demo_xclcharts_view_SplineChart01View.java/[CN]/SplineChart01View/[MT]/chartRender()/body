@@ -1,0 +1,37 @@
+{
+  try {
+    chart.setChartRange(0.0f,0.0f,getScreenWidth(),getScreenHeight());
+    chart.setPadding(15,20,13,5);
+    chart.setCategories(labels);
+    chart.setDataSource(chartData);
+    chart.getDataAxis().setAxisMax(100);
+    chart.getDataAxis().setAxisSteps(10);
+    chart.setCategoryAxisMax(100);
+    chart.setCategoryAxisMin(0);
+    PlotGrid plot=chart.getPlotGrid();
+    plot.showHorizontalLines();
+    plot.showVerticalLines();
+    plot.getHorizontalLinePaint().setStrokeWidth(3);
+    plot.getHorizontalLinePaint().setColor((int)Color.rgb(127,204,204));
+    plot.setHorizontalLineStyle(XEnum.LineStyle.DOT);
+    chart.getDataAxis().getAxisPaint().setStrokeWidth(plot.getHorizontalLinePaint().getStrokeWidth());
+    chart.getCategoryAxis().getAxisPaint().setStrokeWidth(plot.getHorizontalLinePaint().getStrokeWidth());
+    chart.getDataAxis().getAxisPaint().setColor(plot.getHorizontalLinePaint().getColor());
+    chart.getCategoryAxis().getAxisPaint().setColor(plot.getHorizontalLinePaint().getColor());
+    chart.getDataAxis().getTickMarksPaint().setColor(plot.getHorizontalLinePaint().getColor());
+    chart.getCategoryAxis().getTickMarksPaint().setColor(plot.getHorizontalLinePaint().getColor());
+    chart.setDotLabelFormatter(new IFormatterTextCallBack(){
+      @Override public String textFormatter(      String value){
+        String label="(" + value + ")";
+        return (label);
+      }
+    }
+);
+    chart.setTitle("Spline Chart");
+    chart.addSubtitle("(XCL-Charts Demo)");
+  }
+ catch (  Exception e) {
+    e.printStackTrace();
+    Log.e(TAG,e.toString());
+  }
+}

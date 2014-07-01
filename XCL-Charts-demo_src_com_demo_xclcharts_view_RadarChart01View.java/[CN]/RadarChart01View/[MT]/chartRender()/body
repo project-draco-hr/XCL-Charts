@@ -1,0 +1,33 @@
+{
+  try {
+    chart.setChartRange(0.0f,0.0f,getScreenWidth(),getScreenHeight());
+    chart.setPadding(15,30,10,5);
+    chart.setTitle("?????????-Radar Chart");
+    chart.addSubtitle("(XCL-Charts Demo)");
+    chart.setCategories(labels);
+    chart.setDataSource(chartData);
+    chart.getDataAxis().setAxisMax(50);
+    chart.getDataAxis().setAxisSteps(10);
+    chart.getDataAxis().setTickLabelMargin(50);
+    chart.getDataAxis().setLabelFormatter(new IFormatterTextCallBack(){
+      @Override public String textFormatter(      String value){
+        Double tmp=Double.parseDouble(value);
+        DecimalFormat df=new DecimalFormat("#0");
+        String label=df.format(tmp).toString();
+        return (label);
+      }
+    }
+);
+    chart.setDotLabelFormatter(new IFormatterDoubleCallBack(){
+      @Override public String doubleFormatter(      Double value){
+        DecimalFormat df=new DecimalFormat("#0");
+        String label="[" + df.format(value).toString() + "]";
+        return label;
+      }
+    }
+);
+  }
+ catch (  Exception e) {
+    Log.e(TAG,e.toString());
+  }
+}

@@ -1,0 +1,28 @@
+{
+switch (chartStyle) {
+case 0:
+    mChart=new BarChart();
+  mChart.getLegend().setLeftLegend("?????????");
+break;
+case 1:
+mChart=new BarChart();
+mChart.setChartDirection(XEnum.Direction.HORIZONTAL);
+break;
+case 2:
+mChart=new BarChart3D();
+break;
+case 3:
+mChart=new BarChart3D();
+mChart.setChartDirection(XEnum.Direction.HORIZONTAL);
+break;
+case 4:
+mChart=new StackBarChart();
+((StackBarChart)mChart).setTotalLabelVisible(false);
+break;
+case 5:
+mChart=new StackBarChart();
+mChart.setChartDirection(XEnum.Direction.HORIZONTAL);
+((StackBarChart)mChart).setTotalLabelVisible(false);
+break;
+}
+}

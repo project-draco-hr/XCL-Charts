@@ -1,0 +1,27 @@
+{
+  List<XChart> listCharts=bindChart();
+  int count=listCharts.size();
+  if (0 == count) {
+    Log.e(TAG,"?????????????????????????????????!!!");
+    return false;
+  }
+  if (INIT_ZOOM == flag) {
+    mChartZoom=new ChartZoom[count];
+  }
+ else   if (INIT_TOUCH == flag) {
+    mChartTouch=new ChartTouch[count];
+  }
+ else {
+    Log.e(TAG,"????????????????????????!!!");
+    return false;
+  }
+  for (int i=0; i < count; i++) {
+    if (INIT_ZOOM == flag) {
+      mChartZoom[i]=new ChartZoom(this,listCharts.get(i));
+    }
+ else     if (INIT_TOUCH == flag) {
+      mChartTouch[i]=new ChartTouch(this,listCharts.get(i));
+    }
+  }
+  return true;
+}

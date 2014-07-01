@@ -1,0 +1,22 @@
+{
+  lnChart.setCategories(chartLabelsLn);
+  lnChart.getCategoryAxis().setVisible(false);
+  lnChart.setDataSource(chartDatasetLn);
+  DataAxis dataAxis=lnChart.getDataAxis();
+  dataAxis.setHorizontalTickAlign(Align.RIGHT);
+  dataAxis.setAxisMax(135);
+  dataAxis.setAxisMin(0);
+  dataAxis.setAxisSteps(5);
+  dataAxis.getTickMarksPaint().setColor((int)Color.rgb(51,204,204));
+  dataAxis.getAxisTickLabelPaint().setTextAlign(Align.LEFT);
+  dataAxis.getAxisTickLabelPaint().setColor((int)Color.rgb(51,204,204));
+  lnChart.setTopAxisVisible(false);
+  lnChart.getDataAxis().setLabelFormatter(new IFormatterTextCallBack(){
+    @Override public String textFormatter(    String value){
+      double label=Double.parseDouble(value);
+      DecimalFormat df=new DecimalFormat("#0");
+      return df.format(label).toString();
+    }
+  }
+);
+}

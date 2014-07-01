@@ -1,0 +1,8 @@
+{
+  super(context);
+  chartLabels();
+  chartDataSet();
+  chartDesireLines();
+  chartRender();
+  new Thread(this).start();
+}

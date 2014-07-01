@@ -1,0 +1,7 @@
+{
+  if (null == mChartTouch)   if (!initArrayTouch())   return false;
+  for (int i=0; i < mChartTouch.length; i++) {
+    mChartTouch[i].handleTouch(event);
+  }
+  return true;
+}

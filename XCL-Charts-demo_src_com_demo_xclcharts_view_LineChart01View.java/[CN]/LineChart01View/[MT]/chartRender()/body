@@ -1,0 +1,24 @@
+{
+  try {
+    chart.setChartRange(0.0f,0.0f,getScreenWidth(),getScreenHeight());
+    chart.setPadding(20,20,10,5);
+    chart.setCategories(labels);
+    chart.setDataSource(chartData);
+    chart.getDataAxis().setAxisMax(100);
+    chart.getDataAxis().setAxisSteps(10);
+    chart.getPlotGrid().showHorizontalLines();
+    chart.getPlotGrid().showEvenRowBgColor();
+    chart.getPlotGrid().showOddRowBgColor();
+    chart.getPlotGrid().getHorizontalLinePaint().setStrokeWidth(2);
+    chart.getPlotGrid().setHorizontalLineStyle(XEnum.LineStyle.DASH);
+    chart.getPlotGrid().setVerticalLineStyle(XEnum.LineStyle.DOT);
+    chart.getPlotGrid().getHorizontalLinePaint().setColor(Color.RED);
+    chart.getPlotGrid().getVerticalLinePaint().setColor(Color.BLUE);
+    chart.setTitle("?????????(Line Chart)");
+    chart.addSubtitle("(XCL-Charts Demo)");
+    chart.getLegend().setLowerLegend("(??????)");
+  }
+ catch (  Exception e) {
+    Log.e(TAG,e.toString());
+  }
+}

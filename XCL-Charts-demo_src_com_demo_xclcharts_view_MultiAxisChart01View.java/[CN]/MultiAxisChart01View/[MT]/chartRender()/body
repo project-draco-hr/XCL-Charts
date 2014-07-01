@@ -1,0 +1,26 @@
+{
+  try {
+    chart.setChartRange(0.0f,0.0f,getScreenWidth(),getScreenHeight());
+    chart.setChartDirection(XEnum.Direction.VERTICAL);
+    if (chart.isVerticalScreen()) {
+      chart.setPadding(20,10,10,10);
+    }
+ else {
+      chart.setPadding(20,30,18,10);
+    }
+    chart.setTitle("Virtual vs Native Oracle RAC Performance");
+    chart.addSubtitle("(XCL-Charts Demo)");
+    chart.getPlotTitle().getTitlePaint().setTextSize(20);
+    chart.getLegend().setLeftLegend("Orders Per Minute (OPM)");
+    chart.getLegend().setRightLegend("Average Response Time (RT)");
+    renderBarAxis();
+    renderBar();
+    chart.getPlotGrid().showHorizontalLines();
+    chart.getPlotGrid().showEvenRowBgColor();
+    chart.getPlotGrid().showOddRowBgColor();
+    chart.getPlotKey().hideKeyLabels();
+  }
+ catch (  Exception e) {
+    Log.e(TAG,e.toString());
+  }
+}

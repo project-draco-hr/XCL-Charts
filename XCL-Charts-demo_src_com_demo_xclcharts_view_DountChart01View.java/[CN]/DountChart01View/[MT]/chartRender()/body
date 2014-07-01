@@ -1,0 +1,15 @@
+{
+  try {
+    chart.setChartRange(0.0f,0.0f,getScreenWidth(),getScreenHeight());
+    chart.setPadding(20,30,15,15);
+    chart.setInitialAngle(90);
+    chart.setDataSource(lPieData);
+    chart.setLabelLocation(XEnum.ArcLabelLocation.OUTSIDE);
+    chart.setTitle("Dount Chart");
+    chart.addSubtitle("(XCL-Charts Demo)");
+    chart.getPlotKey().showKeyLabels();
+  }
+ catch (  Exception e) {
+    Log.e(TAG,e.toString());
+  }
+}

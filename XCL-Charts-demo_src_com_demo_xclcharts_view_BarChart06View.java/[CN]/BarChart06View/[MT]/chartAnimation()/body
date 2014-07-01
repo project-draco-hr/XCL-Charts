@@ -1,0 +1,23 @@
+{
+  try {
+    List<Double> dataSeries=new LinkedList<Double>();
+    dataSeries.add(0d);
+    for (int i=0; i < chartData.size(); i++) {
+      Thread.sleep(100);
+      List<BarData> animationData=new LinkedList<BarData>();
+      for (int j=0; j < chartData.size(); j++) {
+        if (j > i) {
+          animationData.add(new BarData());
+        }
+ else {
+          animationData.add(chartData.get(j));
+        }
+      }
+      chart.setDataSource(animationData);
+      postInvalidate();
+    }
+  }
+ catch (  Exception e) {
+    Thread.currentThread().interrupt();
+  }
+}

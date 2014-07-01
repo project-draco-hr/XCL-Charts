@@ -1,0 +1,6 @@
+{
+  super(context);
+  chartDataSet();
+  chartRender();
+  new Thread(this).start();
+}

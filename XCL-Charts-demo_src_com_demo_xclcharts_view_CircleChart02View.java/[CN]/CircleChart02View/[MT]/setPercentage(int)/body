@@ -1,0 +1,16 @@
+{
+  mlPieData.clear();
+  int color=(int)Color.rgb(72,201,176);
+  if (per < 40) {
+    mDataInfo="????????????";
+  }
+ else   if (per < 60) {
+    mDataInfo="????????????";
+    color=(int)Color.rgb(246,202,13);
+  }
+ else {
+    mDataInfo="????????????";
+    color=(int)Color.rgb(243,75,125);
+  }
+  mlPieData.add(new PieData(Integer.toString(per) + "%",per,color));
+}

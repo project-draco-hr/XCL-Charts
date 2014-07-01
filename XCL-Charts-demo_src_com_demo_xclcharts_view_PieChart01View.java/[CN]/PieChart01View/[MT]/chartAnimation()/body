@@ -1,0 +1,21 @@
+{
+  try {
+    List<Double> dataSeries=new LinkedList<Double>();
+    dataSeries.add(0d);
+    for (int i=0; i < chartData.size(); i++) {
+      Thread.sleep(100);
+      LinkedList<PieData> animationData=new LinkedList<PieData>();
+      int sum=0;
+      for (int j=0; j <= i; j++) {
+        animationData.add(chartData.get(j));
+        sum+=chartData.get(j).getPercentage();
+      }
+      animationData.add(new PieData("","",100 - sum,(int)Color.argb(1,0,0,0)));
+      chart.setDataSource(animationData);
+      postInvalidate();
+    }
+  }
+ catch (  Exception e) {
+    Thread.currentThread().interrupt();
+  }
+}

@@ -1,0 +1,22 @@
+{
+  try {
+    for (int i=0; i < chartData.size(); i++) {
+      BarData barData=chartData.get(i);
+      for (int j=0; j < barData.getDataSet().size(); j++) {
+        Thread.sleep(100);
+        List<BarData> animationData=new LinkedList<BarData>();
+        List<Double> dataSeries=new LinkedList<Double>();
+        for (int k=0; k <= j; k++) {
+          dataSeries.add(barData.getDataSet().get(k));
+        }
+        BarData animationBarData=new BarData("",dataSeries,(int)Color.rgb(53,169,239));
+        animationData.add(animationBarData);
+        chart.setDataSource(animationData);
+        postInvalidate();
+      }
+    }
+  }
+ catch (  Exception e) {
+    Thread.currentThread().interrupt();
+  }
+}

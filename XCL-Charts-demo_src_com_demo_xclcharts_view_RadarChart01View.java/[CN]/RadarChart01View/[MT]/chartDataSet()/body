@@ -1,0 +1,31 @@
+{
+  LinkedList<Double> dataSeriesA=new LinkedList<Double>();
+  dataSeriesA.add(20d);
+  dataSeriesA.add(10d);
+  dataSeriesA.add(30d);
+  dataSeriesA.add(25d);
+  dataSeriesA.add(20d);
+  RadarData lineData1=new RadarData("??????",dataSeriesA,(int)Color.rgb(234,83,71),XEnum.RadarDataAreaStyle.FILL);
+  lineData1.setLabelVisible(true);
+  lineData1.getPlotLine().getDotLabelPaint().setTextAlign(Align.LEFT);
+  LinkedList<Double> dataSeriesB=new LinkedList<Double>();
+  dataSeriesB.add((double)30);
+  dataSeriesB.add((double)20);
+  dataSeriesB.add((double)35);
+  dataSeriesB.add((double)30);
+  dataSeriesB.add((double)40);
+  RadarData lineData2=new RadarData("????????????",dataSeriesB,(int)Color.rgb(75,166,51),XEnum.RadarDataAreaStyle.STROKE);
+  lineData2.getPlotLine().getDotPaint().setColor(Color.BLACK);
+  LinkedList<Double> dataSeriesC=new LinkedList<Double>();
+  dataSeriesC.add(40d);
+  dataSeriesC.add(30d);
+  dataSeriesC.add(40d);
+  dataSeriesC.add(35d);
+  dataSeriesC.add(45d);
+  RadarData lineData3=new RadarData("????????????",dataSeriesC,(int)Color.rgb(224,53,49),XEnum.RadarDataAreaStyle.STROKE);
+  lineData3.setLineStyle(XEnum.LineStyle.DASH);
+  lineData3.getPlotLine().setDotStyle(XEnum.DotStyle.RECT);
+  chartData.add(lineData1);
+  chartData.add(lineData2);
+  chartData.add(lineData3);
+}

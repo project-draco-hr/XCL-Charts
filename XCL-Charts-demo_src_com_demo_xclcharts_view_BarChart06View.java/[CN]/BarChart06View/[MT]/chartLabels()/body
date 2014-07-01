@@ -1,0 +1,3 @@
+{
+  for (int i=0; i < labelsNumber; i++)   chartLabels.add(Integer.toString(i + 1));
+}

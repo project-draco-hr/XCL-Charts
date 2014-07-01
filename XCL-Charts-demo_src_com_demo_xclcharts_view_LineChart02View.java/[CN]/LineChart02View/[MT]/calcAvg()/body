@@ -1,0 +1,5 @@
+{
+  double total=400d + 480d + 500d+ 560d+ 800d+ 950d+ 1200d+ 630d+ 710d;
+  double yearNumber=9d;
+  return (total / yearNumber);
+}

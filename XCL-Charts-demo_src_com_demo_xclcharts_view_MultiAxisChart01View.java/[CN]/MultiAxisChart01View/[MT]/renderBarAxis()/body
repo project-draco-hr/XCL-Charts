@@ -1,0 +1,24 @@
+{
+  chart.setCategories(chartLabels);
+  chart.setDataSource(chartDataset);
+  chart.getDataAxis().setAxisMax(90000);
+  chart.getDataAxis().setAxisSteps(10000);
+  chart.getDataAxis().setLabelFormatter(new IFormatterTextCallBack(){
+    @Override public String textFormatter(    String value){
+      double label=Double.parseDouble(value);
+      DecimalFormat df=new DecimalFormat("#0");
+      return df.format(label).toString();
+    }
+  }
+);
+  CategoryAxis categoryAxis=chart.getCategoryAxis();
+  categoryAxis.setTickLabelRotateAgent(-15f);
+  categoryAxis.getAxisTickLabelPaint().setTextSize(15);
+  categoryAxis.getAxisTickLabelPaint().setTextAlign(Align.CENTER);
+  categoryAxis.setLabelFormatter(new IFormatterTextCallBack(){
+    @Override public String textFormatter(    String value){
+      return value;
+    }
+  }
+);
+}

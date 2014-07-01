@@ -1,0 +1,48 @@
+{
+  try {
+    chart.setChartRange(0.0f,0.0f,getScreenWidth(),getScreenHeight());
+    if (chart.isVerticalScreen()) {
+      chart.setPadding(15,20,8,10);
+    }
+ else {
+      chart.setPadding(20,20,10,8);
+    }
+    chart.setTitle("BMI??????");
+    chart.addSubtitle("(XCL-Charts Demo)");
+    chart.setDataSource(chartData);
+    chart.setCategories(chartLabels);
+    chart.setCustomLines(mCustomLineDataset);
+    chart.getLegend().setLeftLegend("???????????????????????????");
+    chart.getLegend().setLowerLegend("(???????????????????????????)");
+    chart.getDataAxis().setAxisMax(40);
+    chart.getDataAxis().setAxisMin(0);
+    chart.getDataAxis().setAxisSteps(5);
+    chart.getDataAxis().setDetailModeSteps(2);
+    chart.getPlotGrid().showHorizontalLines();
+    chart.getDataAxis().setLabelFormatter(new IFormatterTextCallBack(){
+      @Override public String textFormatter(      String value){
+        Double tmp=Double.parseDouble(value);
+        DecimalFormat df=new DecimalFormat("#0");
+        String label=df.format(tmp).toString();
+        return (label);
+      }
+    }
+);
+    chart.getCategoryAxis().setTickLabelRotateAgent(45f);
+    chart.getCategoryAxis().getAxisTickLabelPaint().setTextSize(15);
+    chart.getBar().setItemLabelVisible(true);
+    chart.setItemLabelFormatter(new IFormatterDoubleCallBack(){
+      @Override public String doubleFormatter(      Double value){
+        DecimalFormat df=new DecimalFormat("#0");
+        String label=df.format(value).toString();
+        return label;
+      }
+    }
+);
+    chart.getPlotKey().hideKeyLabels();
+    chart.getBar().setBarInnerMargin(0.1d);
+  }
+ catch (  Exception e) {
+    e.printStackTrace();
+  }
+}
