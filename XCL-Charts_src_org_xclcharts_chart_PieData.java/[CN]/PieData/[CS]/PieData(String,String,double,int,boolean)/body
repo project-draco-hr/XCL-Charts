@@ -1,0 +1,7 @@
+{
+  setLabel(label);
+  setPercentage(percent);
+  setSliceColor(color);
+  setKey(key);
+  setSelected(selected);
+}

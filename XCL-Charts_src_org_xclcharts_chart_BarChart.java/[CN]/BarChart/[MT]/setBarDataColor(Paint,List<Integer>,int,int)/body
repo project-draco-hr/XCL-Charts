@@ -1,0 +1,10 @@
+{
+  if (null != lstDataColor) {
+    if (lstDataColor.size() > currNumber) {
+      paint.setColor(lstDataColor.get(currNumber));
+    }
+ else {
+      paint.setColor(defaultColor);
+    }
+  }
+}

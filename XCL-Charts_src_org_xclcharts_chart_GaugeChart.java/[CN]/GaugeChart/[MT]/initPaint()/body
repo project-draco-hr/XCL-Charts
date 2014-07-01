@@ -1,0 +1,27 @@
+{
+  getLabelPaint().setTextSize(18);
+  getLabelPaint().setColor(Color.BLUE);
+  mPaintTick=new Paint();
+  mPaintTick.setStyle(Style.FILL);
+  mPaintTick.setAntiAlias(true);
+  mPaintTick.setColor((int)Color.rgb(50,149,222));
+  mPaintTick.setStrokeWidth(1);
+  mPaintPointerLine=new Paint();
+  mPaintPointerLine.setStyle(Style.FILL);
+  mPaintPointerLine.setAntiAlias(true);
+  mPaintPointerLine.setColor(Color.BLACK);
+  mPaintPointerLine.setStrokeWidth(8);
+  mPaintPinterCircle=new Paint();
+  mPaintPinterCircle.setStyle(Style.FILL);
+  mPaintPinterCircle.setAntiAlias(true);
+  mPaintPinterCircle.setColor(Color.BLACK);
+  mPaintPinterCircle.setStrokeWidth(8);
+  mPaintPartitionFill=new Paint();
+  mPaintPartitionFill.setStyle(Style.FILL);
+  mPaintPartitionFill.setAntiAlias(true);
+  mPaintDount=new Paint();
+  mPaintDount.setStyle(Style.STROKE);
+  mPaintDount.setColor((int)Color.rgb(50,149,222));
+  mPaintDount.setAntiAlias(true);
+  mPaintDount.setStrokeWidth(2);
+}

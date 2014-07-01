@@ -1,0 +1,7 @@
+{
+  setKey(key);
+  List<Double> valueList=new LinkedList<Double>();
+  valueList.add(dataSeries);
+  setDataSet(valueList);
+  setColor(Color.BLACK);
+}

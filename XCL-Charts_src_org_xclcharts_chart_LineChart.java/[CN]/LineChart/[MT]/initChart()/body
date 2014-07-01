@@ -1,0 +1,4 @@
+{
+  mCustomLine=new PlotCustomLine();
+  defaultAxisSetting();
+}

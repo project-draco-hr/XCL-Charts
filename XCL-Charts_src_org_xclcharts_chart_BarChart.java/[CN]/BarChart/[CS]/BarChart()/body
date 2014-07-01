@@ -1,0 +1,6 @@
+{
+  super();
+  mCustomLine=new PlotCustomLine();
+  plotKey.showKeyLabels();
+  defaultAxisSetting();
+}

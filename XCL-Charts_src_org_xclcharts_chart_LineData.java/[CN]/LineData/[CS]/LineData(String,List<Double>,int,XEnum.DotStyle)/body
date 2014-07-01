@@ -1,0 +1,7 @@
+{
+  setLabel(key);
+  setLineKey(key);
+  setLineColor(color);
+  setLinePoint(dataSeries);
+  setDotStyle(dotStyle);
+}

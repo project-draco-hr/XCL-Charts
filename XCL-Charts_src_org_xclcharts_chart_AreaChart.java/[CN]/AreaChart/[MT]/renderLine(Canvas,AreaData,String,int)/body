@@ -1,0 +1,63 @@
+{
+  float initX=plotArea.getLeft();
+  float initY=plotArea.getBottom();
+  float lineStartX=initX;
+  float lineStartY=initY;
+  float lineEndX=0.0f;
+  float lineEndY=0.0f;
+  float axisScreenHeight=getAxisScreenHeight();
+  float axisDataHeight=(float)dataAxis.getAxisRange();
+  float currLablesSteps=this.getAxisScreenWidth() / (categoryAxis.getDataSet().size() - 1);
+  List<Double> chartValues=bd.getLinePoint();
+  if (null == chartValues)   return;
+  Path pathArea=new Path();
+  pathArea.moveTo(initX,initY);
+  mPaintAreaFill.setAlpha(mAreaAlpha);
+  PlotLine pLine=bd.getPlotLine();
+  mPaintAreaFill.setColor(bd.getAreaFillColor());
+  int j=0;
+  for (  Double bv : chartValues) {
+    float valuePosition=(float)Math.round(axisScreenHeight * ((bv - dataAxis.getAxisMin()) / axisDataHeight));
+    if (j == 0) {
+      lineStartX=initX;
+      lineStartY=initY - valuePosition;
+      lineEndX=lineStartX;
+      lineEndY=lineStartY;
+    }
+ else {
+      lineEndX=initX + (j) * currLablesSteps;
+      lineEndY=initY - valuePosition;
+    }
+    if (j == chartValues.size() - 1) {
+    }
+ else {
+      pathArea.lineTo(lineEndX,lineEndY);
+    }
+    if (type.equalsIgnoreCase("LINE")) {
+      canvas.drawLine(lineStartX,lineStartY,lineEndX,lineEndY,pLine.getLinePaint());
+    }
+ else     if (type.equalsIgnoreCase("DOT2LABEL")) {
+      if (!pLine.getDotStyle().equals(XEnum.DotStyle.HIDE)) {
+        PlotDot pDot=pLine.getPlotDot();
+        float rendEndX=lineEndX + pDot.getDotRadius();
+        PlotDotRender.getInstance().renderDot(canvas,pDot,lineStartX,lineStartY,lineEndX,lineEndY,pLine.getDotPaint());
+        lineEndX=rendEndX;
+      }
+      if (bd.getLabelVisible()) {
+        canvas.drawText(this.getFormatterItemLabel(bv),lineEndX,lineEndY,pLine.getDotLabelPaint());
+      }
+    }
+ else {
+      return;
+    }
+    lineStartX=lineEndX;
+    lineStartY=lineEndY;
+    j++;
+  }
+  pathArea.lineTo(lineStartX,lineStartY);
+  pathArea.lineTo(lineStartX,initY);
+  pathArea.close();
+  if (type.equalsIgnoreCase("LINE")) {
+    canvas.drawPath(pathArea,mPaintAreaFill);
+  }
+}

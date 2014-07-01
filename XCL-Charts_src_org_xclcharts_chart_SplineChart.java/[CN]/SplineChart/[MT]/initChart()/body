@@ -1,0 +1,5 @@
+{
+  mCustomLine=new PlotCustomLine();
+  categoryAxis.setHorizontalTickAlign(Align.CENTER);
+  dataAxis.setHorizontalTickAlign(Align.LEFT);
+}

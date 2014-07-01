@@ -1,0 +1,13 @@
+{
+  if (mMaxValue == mMinValue && 0 == mMaxValue)   return;
+  if (null == mDataset)   return;
+  renderVerticalDataAxis(canvas);
+  renderVerticalCategoryAxis(canvas);
+  List<LnData> lstKey=new ArrayList<LnData>();
+  for (int i=0; i < mDataset.size(); i++) {
+    renderLine(canvas,mDataset.get(i),"LINE");
+    renderLine(canvas,mDataset.get(i),"DOT2LABEL");
+    lstKey.add(mDataset.get(i));
+  }
+  plotKey.renderLineKey(canvas,lstKey);
+}

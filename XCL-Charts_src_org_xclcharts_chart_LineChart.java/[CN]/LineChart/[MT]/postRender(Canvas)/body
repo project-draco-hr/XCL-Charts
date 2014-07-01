@@ -1,0 +1,13 @@
+{
+  boolean ret=true;
+  try {
+    super.postRender(canvas);
+    renderVerticalPlot(canvas);
+    mCustomLine.setVerticalPlot(dataAxis,plotArea,getAxisScreenHeight());
+    ret=mCustomLine.renderVerticalCustomlinesDataAxis(canvas);
+  }
+ catch (  Exception e) {
+    throw e;
+  }
+  return ret;
+}

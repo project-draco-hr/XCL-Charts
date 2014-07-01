@@ -1,0 +1,4 @@
+{
+  float XSteps=(float)Math.ceil(getAxisScreenWidth() / num);
+  return XSteps;
+}

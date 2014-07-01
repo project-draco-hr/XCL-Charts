@@ -1,0 +1,4 @@
+{
+  mPaintOutline=new Paint();
+  mPaintOutline.setColor(Color.BLACK);
+}

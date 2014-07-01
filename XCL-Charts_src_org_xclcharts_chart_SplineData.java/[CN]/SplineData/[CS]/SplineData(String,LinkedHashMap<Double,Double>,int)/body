@@ -1,0 +1,5 @@
+{
+  setLineKey(lineKey);
+  setLineDataSet(dataSeries);
+  setLineColor(color);
+}

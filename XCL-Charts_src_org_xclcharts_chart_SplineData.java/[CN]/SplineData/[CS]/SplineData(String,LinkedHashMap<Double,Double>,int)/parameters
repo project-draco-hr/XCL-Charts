@@ -1,0 +1,3 @@
+String lineKey
+LinkedHashMap<Double,Double> dataSeries
+int color

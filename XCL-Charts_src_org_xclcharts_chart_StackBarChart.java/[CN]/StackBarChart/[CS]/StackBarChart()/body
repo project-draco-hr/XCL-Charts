@@ -1,0 +1,4 @@
+{
+  super();
+  flatBar=new FlatBar();
+}

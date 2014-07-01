@@ -1,0 +1,16 @@
+{
+  if (mPointerAgent > 180) {
+    Log.e(TAG,"????????? !!!");
+  }
+ else   if (mPointerAgent < 0) {
+    Log.e(TAG,"????????????!!!");
+  }
+ else {
+    float currentRadius=Math.round(this.getRadius() * 0.9);
+    float calcAgent=Math.round(mPointerAgent + mStartAgent);
+    float cirX=plotArea.getCenterX();
+    float cirY=plotArea.getCenterY();
+    MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,currentRadius,calcAgent);
+    canvas.drawLine(cirX,cirY,MathHelper.getInstance().getPosX(),MathHelper.getInstance().getPosY(),mPaintPointerLine);
+  }
+}

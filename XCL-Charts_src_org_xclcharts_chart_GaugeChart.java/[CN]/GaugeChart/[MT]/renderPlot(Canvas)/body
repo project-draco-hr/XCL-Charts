@@ -1,0 +1,13 @@
+{
+  try {
+    renderDount(canvas);
+    renderTicks(canvas);
+    renderPartitionFill(canvas);
+    renderLabels(canvas);
+    renderPointerLine(canvas);
+    renderPinterCircle(canvas);
+  }
+ catch (  Exception e) {
+    Log.e(TAG,e.toString());
+  }
+}

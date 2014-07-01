@@ -1,0 +1,17 @@
+{
+  float startX=0.0f, startY=0.0f;
+  float initX=0.0f, initY=0.0f;
+  for (int p=0; p < arrayDataX.length; p++) {
+    if (0 == p) {
+      initX=startX=arrayDataX[p];
+      initY=startY=arrayDataY[p];
+    }
+ else {
+      DrawHelper.getInstance().drawLine(lineData.getLineStyle(),startX,startY,arrayDataX[p],arrayDataY[p],canvas,lineData.getPlotLine().getLinePaint());
+      startX=arrayDataX[p];
+      startY=arrayDataY[p];
+    }
+    renderDotAndLabel(canvas,lineData,arrayDataX[p],arrayDataY[p],p);
+  }
+  DrawHelper.getInstance().drawLine(lineData.getLineStyle(),startX,startY,initX,initY,canvas,lineData.getPlotLine().getLinePaint());
+}

@@ -1,0 +1,10 @@
+{
+  float cirX=plotArea.getCenterX();
+  float cirY=plotArea.getCenterY();
+  int labelsCount=getPlotAgentNumber();
+  int dataAxisTickCount=getAxisTickCount();
+  int i=dataAxisTickCount - 1;
+  for (int j=0; j < labelsCount; j++) {
+    canvas.drawLine(cirX,cirY,mArrayDotX[i][j],mArrayDotY[i][j],getLinePaint());
+  }
+}
