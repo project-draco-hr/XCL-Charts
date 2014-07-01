@@ -1,0 +1,20 @@
+{
+  FrameLayout content=new FrameLayout(this);
+  mZoomControls=new ZoomControls(this);
+  mZoomControls.setIsZoomInEnabled(true);
+  mZoomControls.setIsZoomOutEnabled(true);
+  FrameLayout.LayoutParams flp=new FrameLayout.LayoutParams(FrameLayout.LayoutParams.WRAP_CONTENT,FrameLayout.LayoutParams.WRAP_CONTENT);
+  flp.gravity=Gravity.BOTTOM | Gravity.RIGHT;
+  mZoomControls.setLayoutParams(flp);
+  LinearLayout.LayoutParams llp=new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.MATCH_PARENT);
+  llp.gravity=Gravity.CENTER;
+  final LinearLayout chartLayout=new LinearLayout(this);
+  chartLayout.setOrientation(LinearLayout.VERTICAL);
+  chartLayout.setLayoutParams(llp);
+  chartLayout.addView(mCharts[mSelected]);
+  ((ViewGroup)content).addView(chartLayout);
+  ((ViewGroup)content).addView(mZoomControls);
+  setContentView(content);
+  mZoomControls.setOnZoomInClickListener(new OnZoomInClickListenerImpl());
+  mZoomControls.setOnZoomOutClickListener(new OnZoomOutClickListenerImpl());
+}

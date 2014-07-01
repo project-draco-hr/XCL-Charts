@@ -1,0 +1,16 @@
+{
+  super.onCreate(savedInstanceState);
+  requestWindowFeature(Window.FEATURE_NO_TITLE);
+  mCharts=new TouchView[]{new BarChart01View(this),new BarChart02View(this),new BarChart03View(this),new BarChart05View(this),new BarChart04View(this),new BarChart3D01View(this),new BarChart3D02View(this),new StackBarChart01View(this),new StackBarChart02View(this),new LineChart01View(this),new LineChart02View(this),new SplineChart01View(this),new SplineChart02View(this),new AreaChart01View(this),new MultiAxisChart01View(this),new MultiAxisChart02View(this),new PieChart01View(this),new PieChart3D01View(this),new DountChart01View(this),new RoseChart01View(this),new RadarChart01View(this),new BarChart06View(this)};
+  Bundle bunde=this.getIntent().getExtras();
+  mSelected=bunde.getInt("selected");
+  String title=bunde.getString("title");
+  if (mSelected > mCharts.length - 1) {
+    setContentView(R.layout.activity_charts);
+    this.setTitle(Integer.toString(mSelected));
+  }
+ else {
+    initActivity();
+    this.setTitle(title);
+  }
+}

@@ -1,0 +1,13 @@
+{
+  List<Map<String,String>> listData=new ArrayList<Map<String,String>>();
+  String chartsTitle[]=getResources().getStringArray(R.array.chartsTitle);
+  String chartsDesc[]=getResources().getStringArray(R.array.chartsDesc);
+  int count=chartsDesc.length < chartsTitle.length ? chartsDesc.length : chartsTitle.length;
+  for (int i=0; i < count; i++) {
+    Map<String,String> map=new HashMap<String,String>();
+    map.put("title",chartsTitle[i]);
+    map.put("description",chartsDesc[i]);
+    listData.add(map);
+  }
+  return listData;
+}
