@@ -1,3 +1,0 @@
-{
-  return (int)Math.round(dataAxis.getAixTickCount() + 1);
-}

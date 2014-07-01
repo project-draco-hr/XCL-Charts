@@ -1,7 +1,0 @@
-{
-  int dsetMaxSize=0;
-  for (int i=0; i < mDataSet.size(); i++) {
-    if (dsetMaxSize < mDataSet.get(i).getDataSet().size())     dsetMaxSize=mDataSet.get(i).getDataSet().size();
-  }
-  return dsetMaxSize;
-}

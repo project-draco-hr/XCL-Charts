@@ -1,4 +1,0 @@
-{
-  if (false == getVisible())   return true;
-  return true;
-}

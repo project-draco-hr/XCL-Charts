@@ -1,4 +1,0 @@
-{
-  mFillRadius=(int)Math.round(getRadius() * mInnerSize);
-  return mFillRadius;
-}

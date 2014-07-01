@@ -1,6 +1,0 @@
-float barLeft
-float barTop
-float barRight
-float barBottom
-int color
-Canvas canvas

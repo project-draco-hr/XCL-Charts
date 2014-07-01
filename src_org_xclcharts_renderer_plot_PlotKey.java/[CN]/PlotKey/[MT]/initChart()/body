@@ -1,6 +1,0 @@
-{
-  mDataKeyPaint=new Paint();
-  mDataKeyPaint.setColor(Color.BLACK);
-  mDataKeyPaint.setAntiAlias(true);
-  mDataKeyPaint.setTextSize(15);
-}

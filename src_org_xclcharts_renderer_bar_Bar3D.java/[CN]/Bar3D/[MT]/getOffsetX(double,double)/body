@@ -1,3 +1,0 @@
-{
-  return thickness * Math.cos(angle * Math.PI / 180);
-}

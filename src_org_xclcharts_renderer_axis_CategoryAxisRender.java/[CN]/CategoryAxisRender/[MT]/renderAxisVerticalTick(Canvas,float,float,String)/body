@@ -1,3 +1,0 @@
-{
-  if (getVisible())   renderVerticalTick(canvas,centerX,centerY,text);
-}

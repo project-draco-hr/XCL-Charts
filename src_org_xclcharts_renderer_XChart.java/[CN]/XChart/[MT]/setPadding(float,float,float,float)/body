@@ -1,6 +1,0 @@
-{
-  if (top > 0)   mPaddingTop=top;
-  if (bottom > 0)   mPaddingBottom=bottom;
-  if (left > 0)   mPaddingLeft=left;
-  if (right > 0)   mPaddingRight=right;
-}

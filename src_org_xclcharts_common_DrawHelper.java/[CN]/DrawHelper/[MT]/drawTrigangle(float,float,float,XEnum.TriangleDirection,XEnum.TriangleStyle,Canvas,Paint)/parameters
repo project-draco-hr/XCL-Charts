@@ -1,7 +1,0 @@
-float baseLine
-float baseLnCentX
-float baseLnCentY
-XEnum.TriangleDirection direction
-XEnum.TriangleStyle style
-Canvas canvas
-Paint paint

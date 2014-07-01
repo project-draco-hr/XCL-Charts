@@ -1,7 +1,0 @@
-{
-  setLabel(key);
-  setLineColor(color);
-  setLinePoint(dataSeries);
-  setAreaStyle(areaStyle);
-  getPlotLine().setDotStyle(XEnum.DotStyle.HIDE);
-}

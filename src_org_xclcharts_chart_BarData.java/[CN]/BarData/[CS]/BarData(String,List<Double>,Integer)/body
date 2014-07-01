@@ -1,5 +1,0 @@
-{
-  setKey(key);
-  setColor(color);
-  setDataSet(dataSeries);
-}

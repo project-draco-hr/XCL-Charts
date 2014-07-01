@@ -1,6 +1,0 @@
-{
-  dataAxis=new DataAxisRender();
-  categoryAxis=new CategoryAxisRender();
-  legend=new LegendRender();
-  plotKey=new PlotKeyRender(this);
-}

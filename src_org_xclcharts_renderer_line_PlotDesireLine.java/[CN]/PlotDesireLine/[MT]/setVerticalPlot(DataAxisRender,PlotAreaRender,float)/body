@@ -1,5 +1,0 @@
-{
-  setDataAxis(dataAxis);
-  setPlotArea(plotArea);
-  setAxisScreenHeight(axisScreenHeight);
-}

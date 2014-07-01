@@ -1,9 +1,0 @@
-{
-  if (null == canvas)   return;
-  if (0 == legend.length())   return;
-  double legendTextHeight=DrawHelper.getInstance().getPaintFontHeight(getLowerLegendPaint());
-  float legendTextStartX=(float)Math.round(left + (right - left) / 2);
-  float plotBottom=mChart.getPlotArea().getBottom();
-  float legendY=(float)Math.abs(plotBottom + ((bottom - plotBottom) / 2 - (legendTextHeight / 2)));
-  DrawHelper.getInstance().drawRotateText(legend,legendTextStartX,legendY,0,canvas,getLowerLegendPaint());
-}

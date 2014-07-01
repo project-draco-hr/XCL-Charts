@@ -1,9 +1,0 @@
-{
-  super();
-  mPaintAreaFill=new Paint();
-  mPaintAreaFill.setStyle(Style.FILL);
-  mPaintAreaFill.setAntiAlias(true);
-  mPaintAreaFill.setColor((int)Color.rgb(73,172,72));
-  categoryAxis.setHorizontalTickAlign(Align.CENTER);
-  dataAxis.setHorizontalTickAlign(Align.LEFT);
-}

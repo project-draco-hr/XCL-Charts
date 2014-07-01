@@ -1,3 +1,0 @@
-{
-  return getOffsetY(mAxisBaseThickness,mAngle);
-}

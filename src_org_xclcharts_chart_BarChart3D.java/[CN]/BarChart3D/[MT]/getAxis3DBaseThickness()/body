@@ -1,3 +1,0 @@
-{
-  return mBar3D.getAxis3DBaseThickness();
-}

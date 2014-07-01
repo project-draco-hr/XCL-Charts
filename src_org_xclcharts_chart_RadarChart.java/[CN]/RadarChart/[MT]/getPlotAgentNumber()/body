@@ -1,3 +1,0 @@
-{
-  return CategoryAxis.getDataSet().size();
-}

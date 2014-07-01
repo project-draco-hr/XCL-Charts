@@ -1,4 +1,0 @@
-{
-  mHeight=Math.abs(getBottom() - getTop());
-  return mHeight;
-}

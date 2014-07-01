@@ -1,8 +1,0 @@
-{
-  mPaintBar=new Paint();
-  mPaintBar.setColor((int)Color.rgb(252,210,9));
-  mPaintBar.setStyle(Style.FILL);
-  mPaintItemLabel.setTextSize(12);
-  mPaintItemLabel.setColor(Color.BLACK);
-  mPaintItemLabel.setTextAlign(Align.CENTER);
-}

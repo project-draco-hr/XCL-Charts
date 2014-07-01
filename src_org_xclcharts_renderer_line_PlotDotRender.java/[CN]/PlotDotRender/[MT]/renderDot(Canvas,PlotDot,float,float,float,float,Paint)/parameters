@@ -1,7 +1,0 @@
-Canvas canvas
-PlotDot pDot
-float left
-float top
-float right
-float bottom
-Paint paint

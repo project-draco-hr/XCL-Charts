@@ -1,6 +1,0 @@
-{
-  setLabel(label);
-  setDesireValue(desireValue);
-  setColor(color);
-  setLineStroke(stroke);
-}

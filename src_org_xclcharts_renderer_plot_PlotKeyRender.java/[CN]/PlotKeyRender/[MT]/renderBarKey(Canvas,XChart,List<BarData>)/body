@@ -1,4 +1,0 @@
-{
-  setXChart(xChart);
-  renderBarKey(canvas,dataSet);
-}

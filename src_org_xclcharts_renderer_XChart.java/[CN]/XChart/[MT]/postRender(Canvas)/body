@@ -1,9 +1,0 @@
-{
-  try {
-    renderChartBackground(canvas);
-  }
- catch (  Exception e) {
-    throw e;
-  }
-  return true;
-}

@@ -1,3 +1,0 @@
-{
-  getPlotLine().setDotStyle(XEnum.DotStyle.HIDE);
-}

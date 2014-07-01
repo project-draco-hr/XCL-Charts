@@ -1,4 +1,0 @@
-{
-  setDesireValue(desireValue);
-  setColor(color);
-}

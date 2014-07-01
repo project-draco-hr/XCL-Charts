@@ -1,6 +1,0 @@
-{
-  super();
-  mDesireLine=new PlotDesireLine();
-  plotKey.showKeyLabels();
-  defaultAxisSetting();
-}

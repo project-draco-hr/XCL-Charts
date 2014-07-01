@@ -1,5 +1,0 @@
-{
-  setLabel(label);
-  setPercentage(percent);
-  setSliceColor(color);
-}

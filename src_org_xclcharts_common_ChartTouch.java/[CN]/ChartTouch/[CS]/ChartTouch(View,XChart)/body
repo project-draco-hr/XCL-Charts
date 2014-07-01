@@ -1,4 +1,0 @@
-{
-  this.mChart=chart;
-  this.mView=view;
-}

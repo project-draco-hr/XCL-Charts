@@ -1,7 +1,0 @@
-XEnum.LineStyle style
-float startX
-float startY
-float stopX
-float stopY
-Canvas canvas
-Paint paint

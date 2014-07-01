@@ -1,8 +1,0 @@
-{
-  dataAxis=new DataAxisRender();
-  CategoryAxis=new CategoryAxisRender();
-  dataAxis.setHorizontalTickAlign(Align.LEFT);
-  dataAxis.getAxisTickLabelPaint().setTextAlign(Align.RIGHT);
-  dataAxis.setTickMarksVisible(false);
-  showKeyLabels();
-}

@@ -1,4 +1,0 @@
-{
-  int width=(int)Math.abs(paint.measureText(str,0,str.length()));
-  return width;
-}

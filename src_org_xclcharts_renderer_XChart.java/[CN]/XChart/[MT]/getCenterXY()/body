@@ -1,6 +1,0 @@
-{
-  double[] xy=new double[2];
-  xy[0]=this.getLeft() + this.getWidth() / 2;
-  xy[1]=this.getTop() + this.getHeight() / 2;
-  return xy;
-}

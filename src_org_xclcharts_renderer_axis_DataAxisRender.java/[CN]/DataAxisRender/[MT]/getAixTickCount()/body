@@ -1,4 +1,0 @@
-{
-  double tickCount=Math.ceil(getAxisRange() / getAxisSteps());
-  return tickCount;
-}
