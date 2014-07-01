@@ -1,0 +1,24 @@
+{
+  if (line.getLabel().length() > 0) {
+    float currentX=0.0f, currentY=0.0f;
+    float capY=0.0f;
+    currentX=(float)(mPlotArea.getLeft() + chartPostion);
+switch (line.getLabelVerticalPostion()) {
+case UP:
+      currentY=mPlotArea.getTop() - line.getLabelOffset();
+    capY=mPlotArea.getBottom();
+  break;
+case CENTER:
+currentY=mPlotArea.getBottom() - (mPlotArea.getBottom() - mPlotArea.getTop()) / 2 - line.getLabelOffset();
+capY=mPlotArea.getBottom() - (mPlotArea.getBottom() - mPlotArea.getTop()) / 2;
+break;
+case LOWER:
+currentY=mPlotArea.getBottom() + line.getLabelOffset();
+capY=mPlotArea.getTop();
+break;
+}
+line.getLineLabelPaint().setTextAlign(Align.CENTER);
+renderLineCapHorizontalPlot(canvas,line,currentX,capY);
+DrawHelper.getInstance().drawRotateText(line.getLabel(),currentX,currentY,line.getLabelRotateAgent(),canvas,line.getLineLabelPaint());
+}
+}

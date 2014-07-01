@@ -1,0 +1,13 @@
+{
+  if (null == canvas)   return;
+  if (0 == legend.length() || "" == legend)   return;
+  double legendTextHeight=DrawHelper.getInstance().getTextWidth(mPaintLeftLegend,legend);
+  float legendTextStartX=(float)Math.round(left + mPaintLeftLegend.getTextSize());
+  float legendTextStartY=Math.round(top + (bottom - top) / 2 + legendTextHeight / 2);
+  double legendCharHeight=0d;
+  for (int i=0; i < legend.length(); i++) {
+    legendCharHeight=DrawHelper.getInstance().getTextWidth(mPaintLeftLegend,legend.substring(i,i + 1));
+    DrawHelper.getInstance().drawRotateText(legend.substring(i,i + 1),legendTextStartX,legendTextStartY,-90,canvas,mPaintLeftLegend);
+    legendTextStartY-=legendCharHeight;
+  }
+}

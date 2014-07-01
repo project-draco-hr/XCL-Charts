@@ -1,0 +1,11 @@
+{
+  if (null != canvas && isShowVerticalLines()) {
+    float initWidth=0.0f;
+    if (mMajorTickLine) {
+      initWidth=getVerticalLinePaint().getStrokeWidth();
+      getVerticalLinePaint().setStrokeWidth(initWidth + BLOB_WIDTH);
+    }
+    DrawHelper.getInstance().drawLine(this.getVerticalLineStyle(),startX,startY,stopX,stopY,canvas,getVerticalLinePaint());
+    if (mMajorTickLine)     getVerticalLinePaint().setStrokeWidth(initWidth);
+  }
+}

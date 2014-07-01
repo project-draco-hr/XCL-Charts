@@ -1,0 +1,4 @@
+{
+  getBackgroundPaint().setColor(color);
+  getPlotArea().getBackgroundPaint().setColor(color);
+}

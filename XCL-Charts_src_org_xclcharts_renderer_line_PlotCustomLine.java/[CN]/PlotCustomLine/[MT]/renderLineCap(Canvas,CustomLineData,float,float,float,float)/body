@@ -1,0 +1,5 @@
+{
+  PlotDot pDot=new PlotDot();
+  pDot.setDotStyle(line.getCustomeLineCap());
+  PlotDotRender.getInstance().renderDot(canvas,pDot,left,top,right,bottom,line.getCustomLinePaint());
+}

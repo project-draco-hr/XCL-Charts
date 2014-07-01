@@ -1,0 +1,10 @@
+{
+  try {
+    if (null == canvas)     return false;
+    drawPlotBackground(canvas);
+  }
+ catch (  Exception e) {
+    throw e;
+  }
+  return false;
+}

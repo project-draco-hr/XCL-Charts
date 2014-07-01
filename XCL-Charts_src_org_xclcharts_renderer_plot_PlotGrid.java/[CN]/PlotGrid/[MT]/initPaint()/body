@@ -1,0 +1,18 @@
+{
+  mPaintGridLineHorizontal=new Paint();
+  mPaintGridLineVertical=new Paint();
+  mPaintGridLineHorizontal.setColor((int)Color.rgb(180,205,230));
+  mPaintGridLineVertical.setColor((int)Color.rgb(180,205,230));
+  mPaintGridLineHorizontal.setStrokeWidth(1);
+  mPaintGridLineVertical.setStrokeWidth(1);
+  mPaintOddBgColor=new Paint();
+  mPaintEvenBgColor=new Paint();
+  mPaintOddBgColor.setStyle(Style.FILL);
+  mPaintEvenBgColor.setStyle(Style.FILL);
+  mPaintOddBgColor.setColor(Color.WHITE);
+  mPaintEvenBgColor.setColor((int)Color.rgb(239,239,239));
+  mPaintOddBgColor.setAntiAlias(true);
+  mPaintEvenBgColor.setAntiAlias(true);
+  mPaintGridLineHorizontal.setAntiAlias(true);
+  mPaintGridLineVertical.setAntiAlias(true);
+}

@@ -1,0 +1,5 @@
+{
+  mBackgroundPaint=new Paint();
+  mBackgroundPaint.setStyle(Style.FILL);
+  mBackgroundPaint.setColor(Color.WHITE);
+}

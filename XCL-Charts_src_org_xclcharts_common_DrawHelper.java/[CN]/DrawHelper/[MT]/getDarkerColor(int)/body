@@ -1,0 +1,8 @@
+{
+  float[] hsv=new float[3];
+  Color.colorToHSV(color,hsv);
+  hsv[1]=hsv[1] + 0.1f;
+  hsv[2]=hsv[2] - 0.1f;
+  int darkerColor=Color.HSVToColor(hsv);
+  return darkerColor;
+}

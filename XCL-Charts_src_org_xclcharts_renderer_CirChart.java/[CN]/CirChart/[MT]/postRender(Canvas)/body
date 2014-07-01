@@ -1,0 +1,12 @@
+{
+  try {
+    super.postRender(canvas);
+    calcPlotRange();
+    plotArea.render(canvas);
+    renderTitle(canvas);
+  }
+ catch (  Exception e) {
+    throw e;
+  }
+  return true;
+}

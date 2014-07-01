@@ -1,0 +1,6 @@
+{
+  super();
+  mPaint3D=new Paint();
+  mPaintBase=new Paint();
+  mPaintBase3D=new Paint();
+}

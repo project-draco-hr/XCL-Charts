@@ -1,0 +1,4 @@
+{
+  if (null == canvas)   return;
+  if (getBackgroundColorVisible())   canvas.drawRect(mLeft,mTop,mRight,mBottom,getBackgroundPaint());
+}

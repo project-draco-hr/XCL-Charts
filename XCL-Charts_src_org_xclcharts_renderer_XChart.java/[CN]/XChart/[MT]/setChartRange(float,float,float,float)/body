@@ -1,0 +1,8 @@
+{
+  if (startX > 0)   mLeft=startX;
+  if (startY > 0)   mTop=startY;
+  mRight=startX + width;
+  mBottom=startY + height;
+  if (width > 0)   mWidth=width;
+  if (height > 0)   mHeight=height;
+}

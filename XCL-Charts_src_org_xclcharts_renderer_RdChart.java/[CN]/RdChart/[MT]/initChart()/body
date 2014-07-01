@@ -1,0 +1,17 @@
+{
+  mPaintKey=new Paint();
+  mPaintKey.setColor(Color.BLACK);
+  mPaintKey.setTextSize(18);
+  mPaintKey.setStyle(Style.FILL);
+  mPaintKey.setAntiAlias(true);
+  mPaintLabel=new Paint();
+  mPaintLabel.setColor(Color.BLACK);
+  mPaintLabel.setTextSize(18);
+  mPaintLabel.setAntiAlias(true);
+  mPaintLabel.setTextAlign(Align.CENTER);
+  mPaintLine=new Paint();
+  mPaintLine.setColor((int)Color.rgb(180,205,230));
+  mPaintLine.setAntiAlias(true);
+  mPaintLine.setStyle(Style.STROKE);
+  mPaintLine.setStrokeWidth(3);
+}

@@ -1,0 +1,6 @@
+Canvas canvas
+String legend
+double left
+double top
+double right
+double bottom

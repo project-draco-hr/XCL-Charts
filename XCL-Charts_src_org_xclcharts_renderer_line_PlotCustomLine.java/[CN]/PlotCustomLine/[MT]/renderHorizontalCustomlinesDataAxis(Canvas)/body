@@ -1,0 +1,17 @@
+{
+  if (!validateParams())   return false;
+  if (0.0f == mAxisScreenWidth) {
+    Log.e(TAG,"???????????????????????????????????????");
+    return false;
+  }
+  double axisHeight=mDataAxis.getAxisMax() - mDataAxis.getAxisMin();
+  for (  CustomLineData line : mCustomLineDataset) {
+    line.getCustomLinePaint().setColor(line.getColor());
+    line.getCustomLinePaint().setStrokeWidth(line.getLineStroke());
+    double postion=mAxisScreenWidth * ((line.getValue() - mDataAxis.getAxisMin()) / axisHeight);
+    float currentX=(float)(mPlotArea.getLeft() + postion);
+    if (line.isShowLine())     DrawHelper.getInstance().drawLine(line.getLineStyle(),currentX,mPlotArea.getBottom(),currentX,mPlotArea.getTop(),canvas,line.getCustomLinePaint());
+    renderCapLabelHorizontalPlot(canvas,line,postion);
+  }
+  return true;
+}

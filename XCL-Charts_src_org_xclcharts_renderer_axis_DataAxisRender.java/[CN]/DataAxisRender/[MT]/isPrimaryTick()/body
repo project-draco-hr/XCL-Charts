@@ -1,0 +1,6 @@
+{
+  if (isDetailMode()) {
+    if (mCurrentId < getDetailModeSteps() || mCurrentId % getDetailModeSteps() != 0)     return false;
+  }
+  return true;
+}

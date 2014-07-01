@@ -1,0 +1,10 @@
+{
+  mTitlePaint=new Paint();
+  mSubtitlePaint=new Paint();
+  mTitlePaint.setTextSize(32);
+  mSubtitlePaint.setTextSize(22);
+  mTitlePaint.setColor(Color.BLACK);
+  mSubtitlePaint.setColor(Color.BLACK);
+  mTitlePaint.setAntiAlias(true);
+  mSubtitlePaint.setAntiAlias(true);
+}

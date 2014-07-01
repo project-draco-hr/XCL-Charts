@@ -1,0 +1,6 @@
+String text
+float x
+float y
+float angle
+Canvas canvas
+Paint paint

@@ -1,0 +1,19 @@
+{
+  float newWidth=0.0f, newHeight=0.0f;
+  int scaleWidth=(int)(mScaleRate * mInitWidth);
+  int scaleHeight=(int)(mScaleRate * mInitHeight);
+  if (ZOOM_OUT == flag) {
+    newWidth=mChart.getWidth() - scaleWidth;
+    newHeight=mChart.getHeight() - scaleHeight;
+    if (mScaleMinWidth > newWidth)     newWidth=mScaleMinWidth;
+    if (mScaleMinHeight > newHeight)     newHeight=mScaleMinHeight;
+  }
+ else {
+    newWidth=mChart.getWidth() + scaleWidth;
+    newHeight=mChart.getHeight() + scaleHeight;
+  }
+  if (newWidth > 0 && newHeight > 0) {
+    mChart.setChartRange(mChart.getLeft(),mChart.getTop(),newWidth,newHeight);
+    mView.invalidate();
+  }
+}

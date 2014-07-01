@@ -1,0 +1,7 @@
+{
+  float left=currentX - CAPSIZE * 2;
+  float top=currentY - CAPSIZE * 2;
+  float right=currentX;
+  float bottom=currentY;
+  renderLineCap(canvas,line,left,top,right,bottom);
+}

@@ -1,0 +1,14 @@
+{
+  boolean ret=true;
+  try {
+    if (null == canvas)     return false;
+    canvas.save();
+    canvas.translate(mTranslateXY[0],mTranslateXY[1]);
+    ret=postRender(canvas);
+    canvas.restore();
+  }
+ catch (  Exception e) {
+    throw e;
+  }
+  return ret;
+}

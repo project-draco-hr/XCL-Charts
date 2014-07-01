@@ -1,0 +1,30 @@
+{
+  float perLeft=mPaddingLeft;
+  float perRight=mPaddingRight;
+  float perTop=mPaddingTop;
+  float perBottom=mPaddingBottom;
+  if (mWidth > this.mHeight) {
+    float scrPer=mHeight / mWidth;
+    perTop+=scrPer;
+    perBottom+=scrPer;
+    perLeft-=scrPer;
+    perRight-=scrPer;
+  }
+  plotArea.setBottom(this.mBottom - Math.round(this.mHeight / 100 * perBottom));
+  plotArea.setLeft(this.mLeft + Math.round(this.mWidth / 100 * perLeft));
+  plotArea.setRight(this.mRight - Math.round(this.mWidth / 100 * perRight));
+  float renderTop=0.0f;
+  float titleHeight=0.0f;
+  float subtitleHeight=0.0f;
+  if (plotTitle.getTitle().length() > 0) {
+    titleHeight=DrawHelper.getInstance().getPaintFontHeight(plotTitle.getTitlePaint());
+  }
+  if (plotTitle.getSubtitle().length() > 0) {
+    subtitleHeight=DrawHelper.getInstance().getPaintFontHeight(plotTitle.getTitlePaint());
+  }
+  renderTop=Math.round(this.mHeight / 100 * perTop);
+  if (renderTop < titleHeight + subtitleHeight) {
+    renderTop=titleHeight + subtitleHeight;
+  }
+  plotArea.setTop(this.mTop + renderTop);
+}

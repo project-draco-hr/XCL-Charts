@@ -1,0 +1,4 @@
+{
+  int len=super.getTickMarksLength();
+  return (isPrimaryTick() ? len : len / 2);
+}

@@ -1,0 +1,5 @@
+{
+  if (getItemLabelsVisible()) {
+    DrawHelper.getInstance().drawRotateText(text,x,y,getItemLabelRotateAgent(),canvas,getItemLabelPaint());
+  }
+}

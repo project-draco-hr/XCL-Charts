@@ -1,0 +1,8 @@
+{
+  if (mWidth < mHeight) {
+    return true;
+  }
+ else {
+    return false;
+  }
+}

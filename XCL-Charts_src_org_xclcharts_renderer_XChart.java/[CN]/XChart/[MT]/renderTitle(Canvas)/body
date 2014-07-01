@@ -1,0 +1,3 @@
+{
+  this.plotTitle.renderTitle(mLeft,mRight,mTop,mWidth,this.plotArea.getTop(),canvas);
+}

@@ -1,0 +1,40 @@
+{
+  if (isShowKeyLabels() == false)   return;
+  if (null == dataset)   return;
+  if (null == mPlotArea)   mPlotArea=mXChart.getPlotArea();
+  float textHeight=DrawHelper.getInstance().getPaintFontHeight(getKeyLabelPaint());
+  float rectWidth=2 * textHeight;
+  float currentX=0.0f;
+  float currentY=0.0f;
+  if (!mXChart.isVerticalScreen()) {
+    getKeyLabelPaint().setTextAlign(Align.RIGHT);
+    currentX=mPlotArea.getRight();
+    currentY=this.mPlotArea.getTop() + textHeight;
+  }
+ else {
+    getKeyLabelPaint().setTextAlign(Align.LEFT);
+    currentX=mPlotArea.getLeft();
+    currentY=this.mPlotArea.getBottom();
+  }
+  int totalTextWidth=0;
+  for (  PieData cData : dataset) {
+    getKeyLabelPaint().setColor(cData.getSliceColor());
+    if (!this.mXChart.isVerticalScreen()) {
+      canvas.drawRect(currentX,currentY,currentX - rectWidth,currentY - textHeight,getKeyLabelPaint());
+      canvas.drawText(cData.getKey(),currentX - rectWidth,currentY,getKeyLabelPaint());
+      currentY+=textHeight;
+    }
+ else {
+      int keyTextWidth=DrawHelper.getInstance().getTextWidth(getKeyLabelPaint(),cData.getKey());
+      totalTextWidth+=keyTextWidth;
+      if (totalTextWidth > mPlotArea.getWidth()) {
+        currentY+=textHeight;
+        currentX=mPlotArea.getLeft();
+        totalTextWidth=0;
+      }
+      canvas.drawRect(currentX,currentY,currentX + rectWidth,currentY - textHeight,getKeyLabelPaint());
+      canvas.drawText(cData.getKey(),currentX + rectWidth,currentY,getKeyLabelPaint());
+      currentX+=rectWidth + keyTextWidth + 5;
+    }
+  }
+}

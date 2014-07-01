@@ -1,0 +1,3 @@
+{
+  return getPaintFontHeight(paint) * str.length();
+}

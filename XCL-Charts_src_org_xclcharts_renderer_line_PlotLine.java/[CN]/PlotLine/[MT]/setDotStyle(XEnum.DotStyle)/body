@@ -1,0 +1,3 @@
+{
+  mPlotDot.setDotStyle(style);
+}

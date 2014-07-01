@@ -1,0 +1,4 @@
+Canvas canvas
+CustomLineData line
+float currentX
+float currentY

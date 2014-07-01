@@ -1,0 +1,6 @@
+{
+  boolean result=true;
+  int currentVersion=android.os.Build.VERSION.SDK_INT;
+  if (currentVersion < 11)   result=false;
+  return result;
+}
