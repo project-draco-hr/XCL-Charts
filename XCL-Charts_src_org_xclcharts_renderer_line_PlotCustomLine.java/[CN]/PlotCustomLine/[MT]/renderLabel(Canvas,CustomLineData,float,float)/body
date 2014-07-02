@@ -1,0 +1,15 @@
+{
+  float txtHeight=DrawHelper.getInstance().getPaintFontHeight(line.getLineLabelPaint());
+switch (line.getLabelHorizontalPostion()) {
+case LEFT:
+    currentY+=txtHeight / 3;
+  break;
+case CENTER:
+if (line.isShowLine()) currentY-=DrawHelper.getInstance().getPaintFontHeight(line.getCustomLinePaint());
+break;
+case RIGHT:
+currentY+=txtHeight / 3;
+break;
+}
+DrawHelper.getInstance().drawRotateText(line.getLabel(),currentX,currentY,line.getLabelRotateAgent(),canvas,line.getLineLabelPaint());
+}

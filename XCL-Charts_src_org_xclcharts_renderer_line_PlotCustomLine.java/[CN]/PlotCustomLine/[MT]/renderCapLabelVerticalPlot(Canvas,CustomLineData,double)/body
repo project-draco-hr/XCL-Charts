@@ -21,6 +21,6 @@ capX=mPlotArea.getLeft();
 break;
 }
 renderLineCapVerticalPlot(canvas,line,capX,currentY);
-DrawHelper.getInstance().drawRotateText(line.getLabel(),currentX,currentY,line.getLabelRotateAgent(),canvas,line.getLineLabelPaint());
+renderLabel(canvas,line,currentX,currentY);
 }
 }
