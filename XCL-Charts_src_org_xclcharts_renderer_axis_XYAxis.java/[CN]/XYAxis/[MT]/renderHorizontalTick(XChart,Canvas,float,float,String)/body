@@ -2,8 +2,8 @@
   if (false == getVisible())   return;
   float marksStartX=centerX;
   float markeStopX=centerX;
-  float lablesStartX=centerX;
-  float lablesStartY=centerY;
+  float labelStartX=centerX;
+  float labelStartY=centerY;
 switch (getHorizontalTickAlign()) {
 case LEFT:
 {
@@ -11,7 +11,7 @@ case LEFT:
         marksStartX=Math.round(centerX - getTickMarksLength());
         markeStopX=centerX;
       }
-      if (this.getTickLabelVisible())       lablesStartX=marksStartX - getTickLabelMargin();
+      if (this.getTickLabelVisible())       labelStartX=marksStartX - getTickLabelMargin();
       break;
     }
 case CENTER:
@@ -27,7 +27,7 @@ if (getTickMarksVisible()) {
   marksStartX=centerX;
   markeStopX=Math.round(centerX + getTickMarksLength());
 }
-if (this.getTickLabelVisible()) lablesStartX=markeStopX + getTickLabelMargin();
+if (this.getTickLabelVisible()) labelStartX=markeStopX + getTickLabelMargin();
 break;
 default :
 break;
@@ -36,15 +36,20 @@ if (getTickMarksVisible()) {
 canvas.drawLine(marksStartX,centerY,markeStopX + this.getAxisPaint().getStrokeWidth() / 2,centerY,getTickMarksPaint());
 }
 if (getTickLabelVisible()) {
-String itemLabel="";
-try {
-itemLabel=mLabelFormatter.textFormatter(text);
-}
- catch (Exception ex) {
-itemLabel=text;
-}
 float textHeight=DrawHelper.getInstance().getPaintFontHeight(getAxisTickLabelPaint());
 textHeight/=4;
-DrawHelper.getInstance().drawRotateText(itemLabel,lablesStartX,lablesStartY + textHeight,getTickLabelRotateAgent(),canvas,getAxisTickLabelPaint());
+if (Align.LEFT == getHorizontalTickAlign()) {
+float width=0.0f;
+if (getTickMarksVisible()) {
+width=markeStopX - xchart.getLeft();
+}
+ else {
+width=xchart.getPlotArea().getLeft() - xchart.getLeft();
+}
+renderLeftAxisTickMaskLabel(canvas,labelStartX,labelStartY + textHeight,text,width);
+}
+ else {
+DrawHelper.getInstance().drawRotateText(getFormatterLabel(text),labelStartX,labelStartY + textHeight,getTickLabelRotateAgent(),canvas,getAxisTickLabelPaint());
+}
 }
 }

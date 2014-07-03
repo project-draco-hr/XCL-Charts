@@ -9,10 +9,10 @@
     currentY=Math.round(plotArea.getBottom() - i * YSteps);
     float currentTickLabel=(float)(dataAxis.getAxisMin() + (i * dataAxis.getAxisSteps()));
     if (i == tickCount) {
-      dataAxis.renderAxisHorizontalTick(canvas,plotArea.getRight(),plotArea.getTop(),Float.toString(currentTickLabel));
+      dataAxis.renderAxisHorizontalTick(this,canvas,plotArea.getRight(),plotArea.getTop(),Float.toString(currentTickLabel));
     }
  else {
-      this.dataAxis.renderAxisHorizontalTick(canvas,plotArea.getRight(),currentY + markHeight,Float.toString(currentTickLabel));
+      this.dataAxis.renderAxisHorizontalTick(this,canvas,plotArea.getRight(),currentY + markHeight,Float.toString(currentTickLabel));
     }
   }
   float paintWidth=dataAxis.getAxisPaint().getStrokeWidth() / 2;

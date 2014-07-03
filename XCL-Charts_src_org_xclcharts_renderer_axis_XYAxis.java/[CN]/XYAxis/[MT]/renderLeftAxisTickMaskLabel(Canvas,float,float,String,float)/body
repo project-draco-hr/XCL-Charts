@@ -1,0 +1,29 @@
+{
+  String label=getFormatterLabel(text);
+  double txtLength=DrawHelper.getInstance().getTextWidth(getAxisTickLabelPaint(),label);
+  if (txtLength <= width) {
+    DrawHelper.getInstance().drawRotateText(label,centerX,centerY,getTickLabelRotateAgent(),canvas,getAxisTickLabelPaint());
+  }
+ else {
+    double txtHeight=DrawHelper.getInstance().getPaintFontHeight(getAxisTickLabelPaint());
+    double charWidth=0d, totalWidth=0.0f;
+    float renderY=centerY;
+    String lnString="";
+    for (int i=0; i < label.length(); i++) {
+      charWidth=DrawHelper.getInstance().getTextWidth(getAxisTickLabelPaint(),label.substring(i,i + 1));
+      totalWidth+=charWidth;
+      if (totalWidth > width) {
+        DrawHelper.getInstance().drawRotateText(lnString,centerX,renderY,getTickLabelRotateAgent(),canvas,getAxisTickLabelPaint());
+        totalWidth=charWidth;
+        renderY+=txtHeight;
+        lnString=label.substring(i,i + 1);
+      }
+ else {
+        lnString+=label.substring(i,i + 1);
+      }
+    }
+    if (lnString.length() > 0) {
+      DrawHelper.getInstance().drawRotateText(lnString,centerX,renderY,getTickLabelRotateAgent(),canvas,getAxisTickLabelPaint());
+    }
+  }
+}

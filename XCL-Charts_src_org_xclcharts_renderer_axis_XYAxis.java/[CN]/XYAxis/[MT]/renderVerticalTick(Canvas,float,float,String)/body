@@ -39,13 +39,6 @@ if (getTickMarksVisible()) {
 canvas.drawLine(centerX,marksStartY - this.getAxisPaint().getStrokeWidth() / 2,centerX,marksStopY,getTickMarksPaint());
 }
 if (getTickLabelVisible()) {
-String itemLabel="";
-try {
-itemLabel=mLabelFormatter.textFormatter(text);
-}
- catch (Exception ex) {
-itemLabel=text;
-}
-DrawHelper.getInstance().drawRotateText(itemLabel,centerX,labelsStartY,getTickLabelRotateAgent(),canvas,getAxisTickLabelPaint());
+DrawHelper.getInstance().drawRotateText(getFormatterLabel(text),centerX,labelsStartY,getTickLabelRotateAgent(),canvas,getAxisTickLabelPaint());
 }
 }

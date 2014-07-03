@@ -4,6 +4,6 @@
   for (int i=0; i < categoryAxis.getDataSet().size(); i++) {
     currentY=plotArea.getBottom() - (i + 1) * YSteps;
     plotGrid.renderGridLinesHorizontal(canvas,plotArea.getLeft(),currentY,plotArea.getRight(),currentY);
-    this.categoryAxis.renderAxisHorizontalTick(canvas,plotArea.getLeft(),currentY,categoryAxis.getDataSet().get(i));
+    this.categoryAxis.renderAxisHorizontalTick(this,canvas,plotArea.getLeft(),currentY,categoryAxis.getDataSet().get(i));
   }
 }

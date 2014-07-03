@@ -1,0 +1,3 @@
+{
+  if (getVisible())   renderHorizontalTick(xchart,canvas,centerX,centerY,text);
+}

@@ -8,9 +8,12 @@
     if (mScaleMinWidth > newWidth)     newWidth=mScaleMinWidth;
     if (mScaleMinHeight > newHeight)     newHeight=mScaleMinHeight;
   }
- else {
+ else   if (ZOOM_IN == flag) {
     newWidth=mChart.getWidth() + scaleWidth;
     newHeight=mChart.getHeight() + scaleHeight;
+  }
+ else {
+    Log.e(TAG,"?????????????????????.");
   }
   if (newWidth > 0 && newHeight > 0) {
     mChart.setChartRange(mChart.getLeft(),mChart.getTop(),newWidth,newHeight);

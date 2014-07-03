@@ -1,3 +1,0 @@
-{
-  if (getVisible())   renderHorizontalTick(canvas,centerX,centerY,text);
-}

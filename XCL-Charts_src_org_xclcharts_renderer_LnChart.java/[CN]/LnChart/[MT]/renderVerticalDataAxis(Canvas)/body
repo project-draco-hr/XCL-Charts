@@ -23,7 +23,7 @@
         plotGrid.renderGridLinesHorizontal(canvas,plotLeft,currentY,plotRight,currentY);
       }
     }
-    dataAxis.renderAxisHorizontalTick(canvas,plotLeft,currentY,Float.toString(currentTickLabel));
+    dataAxis.renderAxisHorizontalTick(this,canvas,plotLeft,currentY,Float.toString(currentTickLabel));
   }
   if (mTopAxisVisible) {
     dataAxis.renderAxis(canvas,plotLeft,plotTop,plotRight,plotTop);
