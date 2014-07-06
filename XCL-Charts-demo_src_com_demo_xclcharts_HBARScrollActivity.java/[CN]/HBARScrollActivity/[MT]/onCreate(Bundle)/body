@@ -1,0 +1,6 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.activity_hbarscroll);
+  chart=(com.demo.xclcharts.view.BarChart07View)findViewById(R.id.BarChart07View);
+  chart.setChartRange(chart.getLeft(),chart.getBottom(),chart.getRight() - chart.getLeft(),chart.getBottom() - chart.getTop());
+}

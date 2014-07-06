@@ -4,7 +4,7 @@
     chart.setPadding(20,30,15,15);
     chart.setInitialAngle(90);
     chart.setDataSource(lPieData);
-    chart.setLabelLocation(XEnum.ArcLabelLocation.OUTSIDE);
+    chart.setLabelPosition(XEnum.SliceLabelPosition.OUTSIDE);
     chart.setTitle("Dount Chart");
     chart.addSubtitle("(XCL-Charts Demo)");
     chart.getPlotKey().showKeyLabels();

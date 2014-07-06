@@ -1,5 +1,5 @@
 {
-  mLabelLocation=XEnum.ArcLabelLocation.CENTER;
+  mLabelPosition=XEnum.SliceLabelPosition.INNER;
   plotKey=new PlotKeyRender(this);
   mPaintLabel=new Paint();
   mPaintLabel.setColor(Color.BLACK);

@@ -1,0 +1,4 @@
+{
+  getMenuInflater().inflate(R.menu.hbarscroll,menu);
+  return true;
+}

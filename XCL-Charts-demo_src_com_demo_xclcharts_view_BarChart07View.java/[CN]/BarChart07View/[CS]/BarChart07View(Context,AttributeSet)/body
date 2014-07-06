@@ -1,0 +1,7 @@
+{
+  super(context,attrs);
+  chartLabels();
+  chartDataSet();
+  chartDesireLines();
+  chartRender();
+}

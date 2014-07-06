@@ -1,15 +1,15 @@
 {
-  if (XEnum.ArcLabelLocation.HIDE == mLabelLocation)   return;
+  if (XEnum.SliceLabelPosition.HIDE == mLabelPosition)   return;
   float calcRadius=0.0f;
   float calcAgent=0.0f;
   mPaintLabel.setTextAlign(Align.CENTER);
-  if (XEnum.ArcLabelLocation.CENTER == mLabelLocation) {
+  if (XEnum.SliceLabelPosition.INNER == mLabelPosition) {
     calcRadius=radius - radius / 2;
     calcAgent=offsetAgent + curretAgentt / 2;
     MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,calcRadius,calcAgent);
     canvas.drawText(text,MathHelper.getInstance().getPosX(),MathHelper.getInstance().getPosY(),mPaintLabel);
   }
- else   if (XEnum.ArcLabelLocation.OUTSIDE == mLabelLocation) {
+ else   if (XEnum.SliceLabelPosition.OUTSIDE == mLabelPosition) {
     calcRadius=radius + radius / 10;
     calcAgent=offsetAgent + curretAgentt / 2;
     MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,calcRadius,calcAgent);

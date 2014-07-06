@@ -1,0 +1,7 @@
+{
+  float radialRadius=(float)(radius * 0.8);
+  int color=paintArc.getColor();
+  int darkerColor=DrawHelper.getInstance().getDarkerColor(color);
+  RadialGradient radialGradient=new RadialGradient(cirX,cirY,radialRadius,darkerColor,color,Shader.TileMode.MIRROR);
+  return radialGradient;
+}

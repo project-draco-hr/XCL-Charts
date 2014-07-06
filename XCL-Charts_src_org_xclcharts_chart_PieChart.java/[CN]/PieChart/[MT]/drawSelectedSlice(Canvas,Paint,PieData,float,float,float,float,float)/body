@@ -7,6 +7,7 @@
     float arcRight=MathHelper.getInstance().getPosX() + radius;
     float arcBottom=MathHelper.getInstance().getPosY() + radius;
     RectF arcRF1=new RectF(arcLeft,arcTop,arcRight,arcBottom);
+    if (getGradient())     paintArc.setShader(renderRadialGradient(paintArc,cirX,cirY,radius));
     canvas.drawArc(arcRF1,offsetAgent,curretAgent,true,paintArc);
     renderLabel(canvas,cData.getLabel(),MathHelper.getInstance().getPosX(),MathHelper.getInstance().getPosY(),radius,offsetAgent,curretAgent);
   }

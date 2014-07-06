@@ -1,0 +1,5 @@
+{
+  super.onCreate(savedInstanceState);
+  radialGradientView=new PieChart02View(this);
+  setContentView(radialGradientView);
+}

@@ -1,0 +1,4 @@
+{
+  canvas.drawColor(Color.GREEN);
+  super.onDraw(canvas);
+}

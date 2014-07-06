@@ -3,7 +3,7 @@
     chart.setChartRange(0.0f,0.0f,getScreenWidth(),getScreenHeight());
     chart.setPadding(10,20,15,15);
     chart.setInitialAngle(90);
-    chart.setLabelLocation(XEnum.ArcLabelLocation.OUTSIDE);
+    chart.setLabelPosition(XEnum.SliceLabelPosition.INNER);
     chart.setTitle("??????-Pie Chart");
     chart.addSubtitle("(XCL-Charts Demo)");
     chart.getPlotTitle().setTitlePosition(XEnum.Position.LOWER);

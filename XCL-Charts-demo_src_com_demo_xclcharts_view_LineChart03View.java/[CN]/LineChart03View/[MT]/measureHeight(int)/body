@@ -1,0 +1,12 @@
+{
+  int specMode=MeasureSpec.getMode(measureSpec);
+  int specSize=MeasureSpec.getSize(measureSpec);
+  int result=500;
+  if (specMode == MeasureSpec.AT_MOST) {
+    result=specSize;
+  }
+ else   if (specMode == MeasureSpec.EXACTLY) {
+    result=specSize;
+  }
+  return result;
+}
