@@ -6,6 +6,7 @@
     chart.setDataSource(chartData);
     chart.getDataAxis().setAxisMax(100);
     chart.getDataAxis().setAxisSteps(10);
+    chart.getDataAxis().setVisible(false);
     chart.getPlotGrid().showHorizontalLines();
     chart.getPlotGrid().showEvenRowBgColor();
     chart.getPlotGrid().showOddRowBgColor();

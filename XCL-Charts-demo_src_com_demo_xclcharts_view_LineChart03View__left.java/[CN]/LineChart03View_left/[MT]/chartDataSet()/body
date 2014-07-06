@@ -1,0 +1,6 @@
+{
+  LinkedList<Double> dataSeries1=new LinkedList<Double>();
+  dataSeries1.add(0d);
+  LineData lineData1=new LineData("??????",dataSeries1,(int)Color.rgb(234,83,71));
+  chartData.add(lineData1);
+}

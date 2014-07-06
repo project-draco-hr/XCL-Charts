@@ -1,4 +1,5 @@
 {
   super.onCreate(savedInstanceState);
   setContentView(R.layout.activity_hlnscroll);
+  int paddingLeft=Math.round(800 / 100 * 10);
 }
