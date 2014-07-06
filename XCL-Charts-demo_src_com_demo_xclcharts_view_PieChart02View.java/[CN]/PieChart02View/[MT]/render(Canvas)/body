@@ -1,6 +1,6 @@
 {
   try {
-    chartAxis.render(canvas);
+    chart.render(canvas);
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

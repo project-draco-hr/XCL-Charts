@@ -1,5 +1,9 @@
 {
   try {
+    if (0 == curretAgent) {
+      Log.e(TAG,"????????????0???.");
+      return;
+    }
     if (getGradient())     paintArc.setShader(renderRadialGradient(paintArc,cirX,cirY,radius));
     canvas.drawArc(arcRF0,offsetAgent,curretAgent,true,paintArc);
     renderLabel(canvas,cData.getLabel(),cirX,cirY,radius,offsetAgent,curretAgent);

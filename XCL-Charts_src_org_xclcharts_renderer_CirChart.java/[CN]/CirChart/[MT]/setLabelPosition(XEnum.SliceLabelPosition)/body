@@ -1,3 +1,15 @@
 {
-  mLabelPosition=location;
+  mLabelPosition=position;
+switch (position) {
+case INNER:
+    mPaintLabel.setTextAlign(Align.CENTER);
+  break;
+case OUTSIDE:
+break;
+case HIDE:
+break;
+case LINE:
+break;
+default :
+}
 }

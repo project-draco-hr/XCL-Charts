@@ -4,4 +4,5 @@
   chartDataSet();
   chartDesireLines();
   chartRender();
+  chartRender2();
 }

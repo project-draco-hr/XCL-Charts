@@ -1,0 +1,20 @@
+{
+  try {
+    chartAxis.setChartRange(0.0f,0.0f,400f,400f);
+    if (chartAxis.isVerticalScreen()) {
+    }
+ else {
+    }
+    chartAxis.setTitle("BMI??????");
+    chartAxis.addSubtitle("(XCL-Charts Demo)");
+    chartAxis.setDataSource(chartData);
+    chartAxis.setCategories(chartLabels);
+    chartAxis.getDataAxis().setAxisMax(40);
+    chartAxis.getDataAxis().setAxisMin(0);
+    chartAxis.getDataAxis().setAxisSteps(5);
+    chartAxis.getDataAxis().setDetailModeSteps(2);
+  }
+ catch (  Exception e) {
+    e.printStackTrace();
+  }
+}

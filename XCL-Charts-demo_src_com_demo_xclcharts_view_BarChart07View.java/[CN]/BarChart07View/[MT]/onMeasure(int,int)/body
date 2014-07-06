@@ -1,6 +1,6 @@
 {
   int measuredHeight=measureHeight(heightMeasureSpec);
   int measuredWidth=measureWidth(widthMeasureSpec);
-  chart.setChartRange(mChartX,mChartY,measuredWidth,measuredHeight);
+  chartAxis.setChartRange(mChartX,mChartY,measuredWidth,measuredHeight);
   setMeasuredDimension(measuredHeight,measuredWidth);
 }

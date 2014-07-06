@@ -1,6 +1,7 @@
 {
   try {
-    chart.setChartRange(0.0f,0.0f,450f,650f);
+    if (null == chart)     return;
+    chart.setChartRange(0.0f,0.0f,400f,400f);
     if (chart.isVerticalScreen()) {
     }
  else {

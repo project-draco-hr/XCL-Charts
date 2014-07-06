@@ -1,0 +1,15 @@
+{
+  try {
+    chart.setChartRange(0.0f,0.0f,getScreenWidth(),getScreenHeight());
+    chart.setPadding(30,30,30,30);
+    chart.setDataSource(chartData);
+    chart.setLabelPosition(XEnum.SliceLabelPosition.LINE);
+    chart.setTitle("???????????????");
+    chart.addSubtitle("(XCL-Charts Demo)");
+    chart.getPlotTitle().setTitlePosition(XEnum.Position.CENTER);
+    chart.hideGradient();
+  }
+ catch (  Exception e) {
+    Log.e(TAG,e.toString());
+  }
+}

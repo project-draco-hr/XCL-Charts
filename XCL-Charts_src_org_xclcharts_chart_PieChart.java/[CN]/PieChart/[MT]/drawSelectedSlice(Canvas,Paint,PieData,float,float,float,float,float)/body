@@ -1,5 +1,9 @@
 {
   try {
+    if (0 == curretAgent) {
+      Log.e(TAG,"????????????????????????0???.");
+      return;
+    }
     float newRadius=radius / 10;
     MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,newRadius,offsetAgent + curretAgent / 2);
     float arcLeft=MathHelper.getInstance().getPosX() - radius;
