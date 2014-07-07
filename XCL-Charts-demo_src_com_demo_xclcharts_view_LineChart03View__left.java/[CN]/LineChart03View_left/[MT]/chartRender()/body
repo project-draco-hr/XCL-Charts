@@ -1,12 +1,16 @@
 {
   try {
-    chart.setChartRange(0.0f,0.0f,80f,600f);
+    chart.setChartRange(0.0f,0.0f,800f,600f);
     chart.setPadding(20,20,12,5);
+    chart.setTitle("????????? (scroll view)");
+    chart.addSubtitle("(XCL-Charts Demo)");
     chart.setCategories(labels);
     chart.setDataSource(chartData);
     chart.getDataAxis().setAxisMax(100);
     chart.getDataAxis().setAxisSteps(10);
     chart.getCategoryAxis().setVisible(false);
+    chart.setTopAxisVisible(false);
+    chart.setRightAxisVisible(false);
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

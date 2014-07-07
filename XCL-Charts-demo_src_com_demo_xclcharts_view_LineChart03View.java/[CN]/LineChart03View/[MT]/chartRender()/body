@@ -1,23 +1,17 @@
 {
   try {
-    chart.setChartRange(0.0f,0.0f,800f,600f);
-    chart.setPadding(20,20,10,5);
+    chart.setChartRange(0,0.0f,800f,600f);
+    float per=38f / 800f * 100;
+    chart.setPadding(20,20,per,5);
     chart.setCategories(labels);
     chart.setDataSource(chartData);
     chart.getDataAxis().setAxisMax(100);
     chart.getDataAxis().setAxisSteps(10);
     chart.getDataAxis().setVisible(false);
-    chart.getPlotGrid().showHorizontalLines();
-    chart.getPlotGrid().showEvenRowBgColor();
-    chart.getPlotGrid().showOddRowBgColor();
-    chart.getPlotGrid().getHorizontalLinePaint().setStrokeWidth(2);
-    chart.getPlotGrid().setHorizontalLineStyle(XEnum.LineStyle.DASH);
-    chart.getPlotGrid().setVerticalLineStyle(XEnum.LineStyle.DOT);
-    chart.getPlotGrid().getHorizontalLinePaint().setColor(Color.RED);
-    chart.getPlotGrid().getVerticalLinePaint().setColor(Color.BLUE);
-    chart.setTitle("????????? (scroll view)");
-    chart.addSubtitle("(XCL-Charts Demo)");
     chart.getLegend().setLowerLegend("(??????)");
+    chart.setRightAxisVisible(false);
+    chart.setTopAxisVisible(false);
+    chart.getPlotKey().hideKeyLabels();
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

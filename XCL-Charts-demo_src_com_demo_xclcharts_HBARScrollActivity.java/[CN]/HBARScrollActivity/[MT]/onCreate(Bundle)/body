@@ -2,9 +2,4 @@
   super.onCreate(savedInstanceState);
   setContentView(R.layout.activity_hbarscroll);
   chart=(com.demo.xclcharts.view.BarChart07View)findViewById(R.id.BarChart07View);
-  int[] locations=new int[2];
-  chart.getLocationOnScreen(locations);
-  int x=locations[0];
-  int y=locations[1];
-  chart.setChartRange(x,y);
 }
