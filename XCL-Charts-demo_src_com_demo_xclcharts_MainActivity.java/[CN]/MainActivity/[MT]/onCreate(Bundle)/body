@@ -31,6 +31,9 @@
  else       if (position >= chartsTitleCurr.length - 7) {
         intent.setClass(MainActivity.this,HBARScrollActivity.class);
       }
+ else       if (position >= chartsTitleCurr.length - 8) {
+        intent.setClass(MainActivity.this,CircleChartActivity.class);
+      }
  else {
         intent.setClass(MainActivity.this,ChartsActivity.class);
       }

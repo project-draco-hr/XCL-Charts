@@ -1,4 +1,15 @@
 {
-  canvas.drawColor(Color.BLACK);
+  if (getLayoutParams() == null)   return;
+  RectF rect=new RectF();
+  rect.left=1f;
+  rect.right=getLayoutParams().width;
+  rect.top=1f;
+  rect.bottom=getLayoutParams().height - 1;
+  Paint paint2=new Paint();
+  paint2.setColor(Color.BLUE);
+  paint2.setStyle(Style.STROKE);
+  canvas.drawRect(rect,paint2);
+  chart.setChartRange(10f,10f,this.getLayoutParams().width - 10,this.getLayoutParams().height - 10);
+  chart.setPadding(120,180,100,100);
   super.onDraw(canvas);
 }

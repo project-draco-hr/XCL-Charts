@@ -1,8 +1,5 @@
 {
   try {
-    chart.setChartRange(0,0.0f,800f,600f);
-    float per=38f / 800f * 100;
-    chart.setPadding(20,20,per,5);
     chart.setCategories(labels);
     chart.setDataSource(chartData);
     chart.getDataAxis().setAxisMax(100);

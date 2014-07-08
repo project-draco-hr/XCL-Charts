@@ -1,7 +1,5 @@
 {
   try {
-    chart.setChartRange(0.0f,0.0f,800f,600f);
-    chart.setPadding(20,20,12,5);
     chart.setTitle("????????? (scroll view)");
     chart.addSubtitle("(XCL-Charts Demo)");
     chart.setCategories(labels);

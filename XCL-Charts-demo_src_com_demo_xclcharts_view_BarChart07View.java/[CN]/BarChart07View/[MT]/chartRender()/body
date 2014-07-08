@@ -1,16 +1,22 @@
 {
   try {
-    if (null == chart)     return;
-    chart.setChartRange(0.0f,0.0f,400f,400f);
+    chart.setChartRange(0.0f,0.0f,getScreenWidth(),getScreenHeight());
     if (chart.isVerticalScreen()) {
+      chart.setPadding(15,20,8,10);
     }
  else {
+      chart.setPadding(20,20,10,8);
     }
     chart.setTitle("BMI??????");
     chart.addSubtitle("(XCL-Charts Demo)");
     chart.setDataSource(chartData);
     chart.setCategories(chartLabels);
     chart.setCustomLines(mCustomLineDataset);
+    chart.getLegend().setLeftLegend("???????????????????????????");
+    chart.getLegend().setLowerLegend("(???????????????????????????)");
+    chart.getLegend().setRightLegend("??????Legend");
+    chart.setApplyBackgroundColor(true);
+    chart.setBackgroundColor(Color.GRAY);
     chart.getDataAxis().setAxisMax(40);
     chart.getDataAxis().setAxisMin(0);
     chart.getDataAxis().setAxisSteps(5);
