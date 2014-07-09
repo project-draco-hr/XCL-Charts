@@ -1,0 +1,14 @@
+{
+  paint.setStyle(Paint.Style.FILL);
+  paint.setAntiAlias(true);
+  paint.setColor(Color.BLACK);
+  paint.setTextSize(Integer.parseInt(getResources().getString(R.string.textsizeX)));
+  for (int i=0; i < levelName.length; i++) {
+    if (i == levelName.length - 1) {
+      canvas.drawText(levelName[i],0,begins[i] - each / 2,paint);
+    }
+ else {
+      canvas.drawText(levelName[i],0,(begins[i] + begins[i + 1]) / 2,paint);
+    }
+  }
+}

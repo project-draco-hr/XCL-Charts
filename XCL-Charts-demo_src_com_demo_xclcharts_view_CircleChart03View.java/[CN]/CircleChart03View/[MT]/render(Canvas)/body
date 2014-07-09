@@ -1,8 +1,20 @@
 {
   try {
     canvas.drawColor(Color.GRAY);
-    chart.setChartRange(10f,10f,this.getLayoutParams().width - 10,this.getLayoutParams().height - 10);
-    chart.setPadding(120,180,100,100);
+    float mScrWidth=0.0f, mScrHeight=0.0f;
+    ViewGroup vg=(ViewGroup)getParent();
+    if (vg != null) {
+      mScrWidth=this.getWidth();
+      mScrHeight=this.getHeight();
+    }
+ else {
+      DisplayMetrics dm=getResources().getDisplayMetrics();
+      mScrWidth=dm.widthPixels;
+      mScrHeight=dm.heightPixels;
+    }
+    chart.setChartRange(mScrWidth,mScrHeight);
+    if (this.getWidth() == 0 || this.getHeight() == 0) {
+    }
     chart.render(canvas);
   }
  catch (  Exception e) {

@@ -1,7 +1,6 @@
 {
   try {
     chart.setAttributeInfo(mDataInfo);
-    chart.setPadding(20,20,15,15);
     chart.setCircleType(XEnum.CircleType.HALF);
     chart.setDataSource(mlPieData);
   }

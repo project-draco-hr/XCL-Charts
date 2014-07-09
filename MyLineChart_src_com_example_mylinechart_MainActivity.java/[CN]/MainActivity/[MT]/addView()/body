@@ -1,0 +1,13 @@
+{
+  int width=0;
+  if (mp == false)   width=Common.screenWidth * 7 / 8 + 10;
+ else   width=Common.screenWidth * 5 / 2;
+  statisticsOneView.initValue(width,Common.screenHeight * 6 / 8 - 10,mp);
+  axisY.initValue(Common.screenHeight * 6 / 8 - 10);
+  axisLayout.removeAllViews();
+  axisLayout.addView(axisY);
+  threndLine_Layout.removeAllViews();
+  threndLine_Layout.addView(statisticsOneView);
+  title_layout.removeAllViews();
+  title_layout.addView(titleView);
+}

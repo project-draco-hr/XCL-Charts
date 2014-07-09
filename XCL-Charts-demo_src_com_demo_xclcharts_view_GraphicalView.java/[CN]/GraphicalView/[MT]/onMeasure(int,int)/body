@@ -1,0 +1,4 @@
+{
+  super.onMeasure(widthMeasureSpec,heightMeasureSpec);
+  setMeasuredDimension(measureWidth(widthMeasureSpec),measureHeight(heightMeasureSpec));
+}

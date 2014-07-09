@@ -1,7 +1,6 @@
 {
   try {
-    chart.setChartRange(0.0f,0.0f,getScreenWidth(),getScreenHeight());
-    chart.setPadding(30,30,30,30);
+    chart.setPadding(getChartTop(),getChartBottom(),getChartLeft(),getChartRight());
     chart.setDataSource(chartData);
     chart.setLabelPosition(XEnum.SliceLabelPosition.LINE);
     chart.setTitle("???????????????");

@@ -1,0 +1,11 @@
+{
+  super.onDraw(canvas);
+  Paint paint=new Paint();
+  paint.setStyle(Paint.Style.FILL);
+  paint.setAntiAlias(true);
+  paint.setColor(Color.BLACK);
+  paint.setTextSize(Integer.parseInt(getResources().getString(R.string.textsizeX)));
+  paint.setStrokeWidth(1);
+  drawTitle(canvas);
+  drawRect(canvas);
+}

@@ -1,13 +1,6 @@
 {
   try {
-    if (getScreenWidth() < this.getScreenHeight()) {
-      chart.setChartRange(0.0f,0.0f,getScreenWidth(),getScreenWidth());
-    }
- else {
-      chart.setChartRange(0.0f,0.0f,getScreenHeight(),getScreenHeight());
-    }
     chart.setAttributeInfo(mDataInfo);
-    chart.setPadding(20,20,15,15);
     chart.setCircleType(XEnum.CircleType.HALF);
     chart.setDataSource(mlPieData);
   }

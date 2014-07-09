@@ -1,18 +1,19 @@
 {
   FrameLayout content=new FrameLayout(this);
+  FrameLayout.LayoutParams flp=new FrameLayout.LayoutParams(FrameLayout.LayoutParams.WRAP_CONTENT,FrameLayout.LayoutParams.WRAP_CONTENT);
+  flp.gravity=Gravity.BOTTOM | Gravity.RIGHT;
   mZoomControls=new ZoomControls(this);
   mZoomControls.setIsZoomInEnabled(true);
   mZoomControls.setIsZoomOutEnabled(true);
-  FrameLayout.LayoutParams flp=new FrameLayout.LayoutParams(FrameLayout.LayoutParams.WRAP_CONTENT,FrameLayout.LayoutParams.WRAP_CONTENT);
-  flp.gravity=Gravity.BOTTOM | Gravity.RIGHT;
   mZoomControls.setLayoutParams(flp);
-  LinearLayout.LayoutParams llp=new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.MATCH_PARENT);
-  llp.gravity=Gravity.CENTER;
-  final LinearLayout chartLayout=new LinearLayout(this);
-  chartLayout.setOrientation(LinearLayout.VERTICAL);
-  chartLayout.setLayoutParams(llp);
-  chartLayout.addView(mCharts[mSelected]);
-  ((ViewGroup)content).addView(chartLayout);
+  DisplayMetrics dm=getResources().getDisplayMetrics();
+  int scrWidth=(int)(dm.widthPixels * 0.8);
+  int scrHeight=(int)(dm.heightPixels * 0.8);
+  RelativeLayout.LayoutParams layoutParams=new RelativeLayout.LayoutParams(scrWidth,scrHeight);
+  layoutParams.addRule(RelativeLayout.CENTER_IN_PARENT);
+  final RelativeLayout chartLayout2=new RelativeLayout(this);
+  chartLayout2.addView(mCharts[mSelected],layoutParams);
+  ((ViewGroup)content).addView(chartLayout2);
   ((ViewGroup)content).addView(mZoomControls);
   setContentView(content);
   mZoomControls.setOnZoomInClickListener(new OnZoomInClickListenerImpl());

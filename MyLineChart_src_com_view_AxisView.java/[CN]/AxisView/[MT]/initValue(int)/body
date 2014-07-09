@@ -1,0 +1,12 @@
+{
+  xPoint=widthBorder;
+  yPoint=Height - 20;
+  yLengh=Height;
+  yLableArray=Common.yScaleArray;
+  this.levelName=Common.levelName;
+  bitmap=new Bitmap[levelName.length];
+  for (int i=0; i < levelName.length; i++) {
+    bitmap[i]=BitmapFactory.decodeResource(getResources(),R.drawable.l_1 + i);
+  }
+  help2getPoint();
+}

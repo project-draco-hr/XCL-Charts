@@ -1,12 +1,5 @@
 {
   DisplayMetrics dm=getResources().getDisplayMetrics();
-  ViewGroup vg=(ViewGroup)getParent();
-  if (vg != null) {
-    mScrWidth=vg.getLayoutParams().width / 2;
-    mScrHeight=vg.getLayoutParams().height / 2;
-  }
- else {
-    mScrWidth=dm.widthPixels;
-    mScrHeight=dm.heightPixels;
-  }
+  mScrWidth=dm.widthPixels;
+  mScrHeight=dm.heightPixels;
 }

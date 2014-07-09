@@ -1,0 +1,35 @@
+{
+  int radius=3;
+  int lineWidth=2;
+  Paint paint=new Paint();
+  paint.setStyle(Paint.Style.FILL);
+  paint.setAntiAlias(true);
+  paint.setColor(color);
+  paint.setTextSize(Integer.parseInt(getResources().getString(R.string.textsize)));
+  for (int i=0; i < array.length; i++) {
+    if (array[i] > -1) {
+      float ydata=getYDataPoint(array[i]);
+      if (ydata >= 0) {
+        if (mp) {
+          paint.setStrokeWidth(1);
+          if (i < array.length - 1)           canvas.drawText(array[i] + "",xPoint + xScale * i,ydata - 5,paint);
+ else           canvas.drawText(array[i] + "",xPoint - 30 + xScale * i,ydata - 5,paint);
+          paint.setStrokeWidth(3);
+          if (Common.screenWidth < 540)           radius=5;
+ else           radius=8;
+          lineWidth=3;
+        }
+        paint.setStrokeWidth(lineWidth);
+        canvas.drawCircle(xPoint + xScale * i,ydata,radius,paint);
+        if (i < array.length - 1) {
+          if (array[i + 1] > -1) {
+            canvas.drawLine(xPoint + xScale * i,ydata,xPoint + xScale * (i + 1),getYDataPoint(array[i + 1]),paint);
+          }
+        }
+ else {
+          canvas.drawLine(xPoint + xScale * i,ydata,xPoint + xScale * i,ydata,paint);
+        }
+      }
+    }
+  }
+}

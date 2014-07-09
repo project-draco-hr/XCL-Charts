@@ -1,7 +1,6 @@
 {
   try {
-    chart.setChartRange(0.0f,0.0f,getScreenWidth(),getScreenHeight());
-    chart.setPadding(10,20,10,15);
+    chart.setPadding(getChartTop(),getChartBottom(),getChartLeft(),getChartRight());
     chart.setCategories(labels);
     chart.setDesireLines(mCustomLineDataset);
     chart.getDataAxis().setAxisMax(3500);

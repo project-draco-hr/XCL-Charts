@@ -1,7 +1,6 @@
 {
   try {
-    chart.setChartRange(0.0f,0.0f,getScreenWidth(),getScreenHeight());
-    chart.setPadding(15,30,10,5);
+    chart.setPadding(getChartTop(),getChartBottom(),getChartLeft(),getChartRight());
     chart.setTitle("?????????-Radar Chart");
     chart.addSubtitle("(XCL-Charts Demo)");
     chart.setCategories(labels);

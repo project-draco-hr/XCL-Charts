@@ -1,7 +1,6 @@
 {
   try {
-    chart.setChartRange(0.0f,0.0f,getScreenWidth(),getScreenHeight());
-    chart.setPadding(10,20,15,15);
+    chart.setPadding(getChartTop(),getChartBottom(),getChartLeft(),getChartRight());
     chart.getPlotKey().hideKeyLabels();
     chart.getLabelPaint().setColor(Color.WHITE);
   }

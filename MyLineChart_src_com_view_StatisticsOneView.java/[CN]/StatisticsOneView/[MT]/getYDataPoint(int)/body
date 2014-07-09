@@ -1,0 +1,9 @@
+{
+  for (int i=0; i < yLableArray.length; i++) {
+    if (data < yLableArray[i]) {
+      float f=begins[i] + each * (yLableArray[i] - data) / (yLableArray[i] - yLableArray[i - 1]);
+      return f;
+    }
+  }
+  return 0;
+}

@@ -3,12 +3,12 @@
     chart.setDataSource(chartData);
     for (int i=10; i > 0; i--) {
       Thread.sleep(100);
-      chart.setChartRange(0.0f,0.0f,getScreenWidth() / i,getScreenHeight() / i);
+      chart.setChartRange(0.0f,0.0f,this.getWidth() / i,this.getHeight() / i);
       if (1 == i) {
         chart.setTitle("????????????????????????");
         chart.addSubtitle("(XCL-Charts Demo)");
         chart.getPlotTitle().setTitlePosition(XEnum.Position.LOWER);
-        chart.setChartRange(0.0f,0.0f,getScreenWidth(),getScreenHeight());
+        chart.setChartRange(0.0f,0.0f,getWidth(),getHeight());
       }
       postInvalidate();
     }

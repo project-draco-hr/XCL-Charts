@@ -1,7 +1,6 @@
 {
   try {
-    chart.setChartRange(0.0f,0.0f,getScreenWidth(),getScreenHeight());
-    chart.setPadding(20,30,15,15);
+    chart.setPadding(getChartTop(),getChartBottom(),getChartLeft(),getChartRight());
     chart.setInitialAngle(90);
     chart.setDataSource(lPieData);
     chart.setLabelPosition(XEnum.SliceLabelPosition.OUTSIDE);
