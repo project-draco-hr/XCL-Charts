@@ -1,0 +1,24 @@
+{
+  title_layout=(LinearLayout)findViewById(R.id.titleView);
+  axisXLayout=(LinearLayout)findViewById(R.id.axisX);
+  RelativeLayout.LayoutParams xParams=(LayoutParams)axisXLayout.getLayoutParams();
+  xParams.height=Common.layoutHeight;
+  xParams.width=Common.layoutWidth;
+  xParams.setMargins(Common.YWidth,0,0,0);
+  axisXLayout.setLayoutParams(xParams);
+  axisYLayout=(LinearLayout)findViewById(R.id.axisY);
+  RelativeLayout.LayoutParams yParams=(LayoutParams)axisYLayout.getLayoutParams();
+  yParams.height=Common.layoutHeight;
+  yParams.setMargins(0,0,0,yParams.bottomMargin + Common.XHeight);
+  axisYLayout.setLayoutParams(yParams);
+  threndLine_Layout=(LinearLayout)findViewById(R.id.thrend_line);
+  RelativeLayout.LayoutParams hParams=(LayoutParams)threndLine_Layout.getLayoutParams();
+  hParams.height=Common.layoutHeight;
+  hParams.width=Common.layoutWidth;
+  hParams.setMargins(Common.YWidth,0,0,hParams.bottomMargin + Common.XHeight);
+  threndLine_Layout.setLayoutParams(hParams);
+  axisY=new AxisYView(this);
+  axisX=new AxisXView(this);
+  statisticsOneView=new StatisticsOneView(this);
+  titleView=new TitleView(this);
+}

@@ -1,0 +1,14 @@
+{
+  xPoint=widthBorder;
+  yPoint=Height - 20;
+  xLengh=Width - widthBorder * 2;
+  yLengh=Height;
+  xScale=getScale(Common.xScaleArray.length - 1,xLengh);
+  xLableArray=Common.xScaleArray;
+  if (xLableArray.length <= 10) {
+    count=2;
+  }
+ else {
+    count=4;
+  }
+}

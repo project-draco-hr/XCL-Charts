@@ -1,3 +1,0 @@
-{
-  if (Common.screenWidth < 540)   widthBorder=45;
-}

@@ -1,0 +1,13 @@
+{
+  int parentWidth=parent.getWidth();
+  int parentHeight=parent.getHeight();
+  if (x < 0)   xy.x=0;
+ else   if (x > width - parentWidth)   xy.x=width - parentWidth;
+ else   xy.x=(int)x;
+  if (y < 0)   xy.y=0;
+ else   if (y > height - parentHeight)   xy.y=height - parentHeight;
+ else   xy.y=(int)y;
+  if (width <= parentWidth)   xy.x=0;
+  if (height <= parentHeight)   xy.y=0;
+  System.out.println("y=" + xy.y);
+}

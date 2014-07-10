@@ -1,12 +1,18 @@
 {
   if (per < 50) {
     mDataInfo="????????????";
+    chart.getLabelPaint().setColor(Color.WHITE);
+    chart.getPaintDataInfo().setColor(Color.WHITE);
   }
  else   if (per < 70) {
     mDataInfo="????????????";
+    chart.getLabelPaint().setColor((int)Color.rgb(72,201,176));
+    chart.getPaintDataInfo().setColor(Color.WHITE);
   }
  else {
     mDataInfo="????????????";
+    chart.getLabelPaint().setColor(Color.RED);
+    chart.getPaintDataInfo().setColor(Color.RED);
   }
   mlPieData.clear();
   mlPieData.add(new PieData(Integer.toString(per) + "%",per,(int)Color.rgb(72,201,176)));

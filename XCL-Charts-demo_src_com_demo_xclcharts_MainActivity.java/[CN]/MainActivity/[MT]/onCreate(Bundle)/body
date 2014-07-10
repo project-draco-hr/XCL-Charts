@@ -15,24 +15,22 @@
       Bundle bundleSimple=new Bundle();
       Intent intent=new Intent();
       bundleSimple.putString("title",chartsTitleCurr[position]);
-      int id_desc_1_2_3=chartsTitleCurr.length - 3;
-      int id_desc_4_5=chartsTitleCurr.length - 5;
-      if (position >= id_desc_1_2_3) {
-        position=chartsTitleCurr.length - 1 - position;
-        intent.setClass(MainActivity.this,SeekBarActivity.class);
+      int id_desc_3_4=chartsTitleCurr.length - 4;
+      if (position == chartsTitleCurr.length - 1) {
+        intent.setClass(MainActivity.this,GaugeChartActivity.class);
       }
- else       if (position >= id_desc_4_5) {
-        position=chartsTitleCurr.length - 4 - position;
+ else       if (position == chartsTitleCurr.length - 2) {
+        intent.setClass(MainActivity.this,CircleChartActivity.class);
+      }
+ else       if (position >= id_desc_3_4) {
+        position=chartsTitleCurr.length - 3 - position;
         intent.setClass(MainActivity.this,SpinnerActivity.class);
       }
- else       if (position >= chartsTitleCurr.length - 6) {
+ else       if (position >= chartsTitleCurr.length - 5) {
         intent.setClass(MainActivity.this,HLNScrollActivity.class);
       }
- else       if (position >= chartsTitleCurr.length - 7) {
+ else       if (position >= chartsTitleCurr.length - 6) {
         intent.setClass(MainActivity.this,HBARScrollActivity.class);
-      }
- else       if (position >= chartsTitleCurr.length - 8) {
-        intent.setClass(MainActivity.this,CircleChartActivity.class);
       }
  else {
         intent.setClass(MainActivity.this,ChartsActivity.class);

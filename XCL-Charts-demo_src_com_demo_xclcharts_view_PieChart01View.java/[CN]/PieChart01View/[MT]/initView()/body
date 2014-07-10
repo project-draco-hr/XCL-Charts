@@ -1,0 +1,5 @@
+{
+  chartDataSet();
+  chartRender();
+  new Thread(this).start();
+}

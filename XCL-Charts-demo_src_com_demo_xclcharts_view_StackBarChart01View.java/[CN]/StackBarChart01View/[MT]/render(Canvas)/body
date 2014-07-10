@@ -1,6 +1,5 @@
 {
   try {
-    chart.setChartRange(this.getMeasuredWidth(),this.getMeasuredHeight());
     chart.render(canvas);
   }
  catch (  Exception e) {

@@ -1,0 +1,19 @@
+{
+  chart=(com.demo.xclcharts.view.GaugeChart01View)findViewById(R.id.chart_view);
+  process=(TextView)findViewById(R.id.tv_process);
+  seekBar=(SeekBar)this.findViewById(R.id.seekBar1);
+  seekBar.setMax(180);
+  seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
+    @Override public void onStopTrackingTouch(    SeekBar seekBar){
+    }
+    @Override public void onStartTrackingTouch(    SeekBar seekBar){
+    }
+    @Override public void onProgressChanged(    SeekBar seekBar,    int progress,    boolean fromUser){
+      process.setText(Integer.toString(progress));
+      chart.setAgent(progress);
+      chart.chartRender();
+      chart.invalidate();
+    }
+  }
+);
+}

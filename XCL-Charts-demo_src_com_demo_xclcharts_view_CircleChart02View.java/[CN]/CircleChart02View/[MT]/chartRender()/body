@@ -1,12 +1,5 @@
 {
   try {
-    if (getScreenWidth() < this.getScreenHeight()) {
-      chart.setChartRange(0.0f,0.0f,getScreenWidth(),getScreenWidth());
-    }
- else {
-      chart.setChartRange(0.0f,0.0f,getScreenHeight(),getScreenHeight());
-    }
-    chart.setPadding(10,10,10,15);
     chart.setAttributeInfo(mDataInfo);
     chart.setDataSource(mlPieData);
     chart.getPaintBgCircle().setColor((int)Color.rgb(117,197,141));

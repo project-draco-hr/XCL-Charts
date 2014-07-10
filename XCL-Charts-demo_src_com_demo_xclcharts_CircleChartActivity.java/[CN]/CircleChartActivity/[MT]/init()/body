@@ -1,0 +1,22 @@
+{
+  halfchart=(com.demo.xclcharts.view.CircleChart01View)findViewById(R.id.halfcircle_view);
+  chart=(com.demo.xclcharts.view.CircleChart02View)findViewById(R.id.circle_view);
+  process=(TextView)findViewById(R.id.tv_process);
+  SeekBar seekBar=(SeekBar)this.findViewById(R.id.seekBar1);
+  seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
+    @Override public void onStopTrackingTouch(    SeekBar seekBar){
+    }
+    @Override public void onStartTrackingTouch(    SeekBar seekBar){
+    }
+    @Override public void onProgressChanged(    SeekBar seekBar,    int progress,    boolean fromUser){
+      process.setText(Integer.toString(progress));
+      halfchart.setPercentage(progress);
+      halfchart.chartRender();
+      halfchart.invalidate();
+      chart.setPercentage(progress);
+      chart.chartRender();
+      chart.invalidate();
+    }
+  }
+);
+}

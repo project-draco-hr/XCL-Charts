@@ -1,17 +1,10 @@
 {
   xPoint=widthBorder;
-  yPoint=Height - 20;
+  yPoint=Height;
   xLengh=Width - widthBorder * 2;
   yLengh=Height;
   xScale=getScale(Common.xScaleArray.length - 1,xLengh);
-  xLableArray=Common.xScaleArray;
   yLableArray=Common.yScaleArray;
   this.mp=mp;
-  if (xLableArray.length <= 10) {
-    count=2;
-  }
- else {
-    count=4;
-  }
   help2getPoint();
 }

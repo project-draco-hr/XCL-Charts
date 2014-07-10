@@ -1,4 +1,7 @@
 {
   super.onCreate(savedInstanceState);
   setContentView(R.layout.activity_hlnscroll);
+  horiView=(HorizontalScrollView)findViewById(R.id.horizontalScrollView1);
+  horiView.setPadding(70,0,0,0);
+  horiView.setOverScrollMode(View.OVER_SCROLL_NEVER);
 }

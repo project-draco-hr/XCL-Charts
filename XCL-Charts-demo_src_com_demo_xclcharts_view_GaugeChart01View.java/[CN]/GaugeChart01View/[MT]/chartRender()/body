@@ -1,7 +1,5 @@
 {
   try {
-    chart.setChartRange(0.0f,0.0f,getScreenWidth() - 100,getScreenHeight());
-    chart.setPadding(25,20,10,10);
     chart.setTitle("????????? ");
     chart.setTickSteps(10d);
     chart.setCategories(mLabels);

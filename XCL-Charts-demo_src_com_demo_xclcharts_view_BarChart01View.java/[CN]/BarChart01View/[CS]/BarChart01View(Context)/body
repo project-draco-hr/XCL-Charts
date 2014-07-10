@@ -1,7 +1,4 @@
 {
   super(context);
-  chartLabels();
-  chartDataSet();
-  chartRender();
-  new Thread(this).start();
+  initView();
 }

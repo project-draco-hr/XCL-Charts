@@ -1,13 +1,7 @@
 {
   try {
     initChart(mChartStyle);
-    mChart.setChartRange(0.0f,mOffsetHeight,getScreenWidth(),getScreenHeight() - mOffsetHeight);
-    if (mChart.isVerticalScreen()) {
-      mChart.setPadding(5,40,10,15);
-    }
- else {
-      mChart.setPadding(10,45,15,15);
-    }
+    mChart.setPadding(getChartTop(),getChartBottom(),getChartLeft(),getChartRight());
     mChart.setDataSource(chartData);
     mChart.setCategories(chartLabels);
     mChart.getDataAxis().setAxisMax(100);

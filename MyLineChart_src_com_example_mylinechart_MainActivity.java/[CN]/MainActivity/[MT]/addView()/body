@@ -1,13 +1,37 @@
 {
   int width=0;
-  if (mp == false)   width=Common.screenWidth * 7 / 8 + 10;
- else   width=Common.screenWidth * 5 / 2;
-  statisticsOneView.initValue(width,Common.screenHeight * 6 / 8 - 10,mp);
-  axisY.initValue(Common.screenHeight * 6 / 8 - 10);
-  axisLayout.removeAllViews();
-  axisLayout.addView(axisY);
+  width=Common.viewWidth;
+  xy.y=Common.viewHeight - Common.layoutHeight;
+  statisticsOneView.initValue(width,Common.viewHeight,true);
+  statisticsOneView.scrollTo(0,xy.y);
+  axisY.initValue(Common.viewHeight);
+  axisY.scrollTo(0,xy.y);
+  axisX.initValue(width,Common.viewHeight);
+  axisX.scrollTo(0,xy.y);
+  axisYLayout.removeAllViews();
+  axisYLayout.addView(axisY);
+  axisXLayout.removeAllViews();
+  axisXLayout.addView(axisX);
   threndLine_Layout.removeAllViews();
   threndLine_Layout.addView(statisticsOneView);
   title_layout.removeAllViews();
   title_layout.addView(titleView);
+  statisticsOneView.setOnTouchListener(new View.OnTouchListener(){
+    @Override public boolean onTouch(    View v,    MotionEvent event){
+      if (event.getAction() == MotionEvent.ACTION_DOWN) {
+        oldX=event.getX();
+        oldY=event.getY();
+      }
+      if (event.getAction() == MotionEvent.ACTION_MOVE) {
+        parseXY(xy.x+=oldX - event.getX(),xy.y+=oldY - event.getY(),statisticsOneView.getWidth(),statisticsOneView.getHeight(),threndLine_Layout);
+        statisticsOneView.scrollTo(xy.x,xy.y);
+        axisY.scrollTo(0,xy.y);
+        axisX.scrollTo(xy.x,Common.viewHeight - Common.layoutHeight);
+        oldX=event.getX();
+        oldY=event.getY();
+      }
+      return true;
+    }
+  }
+);
 }

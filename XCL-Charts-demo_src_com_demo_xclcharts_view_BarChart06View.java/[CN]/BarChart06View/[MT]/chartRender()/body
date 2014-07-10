@@ -1,12 +1,6 @@
 {
   try {
-    chart.setChartRange(0.0f,0.0f,getScreenWidth(),getScreenHeight());
-    if (chart.isVerticalScreen()) {
-      chart.setPadding(15,20,10,5);
-    }
- else {
-      chart.setPadding(20,20,18,5);
-    }
+    chart.setPadding(getChartTop(),getChartBottom(),getChartLeft(),getChartRight());
     chart.setTitle("????????????????????????");
     chart.addSubtitle("(XCL-Charts Demo)");
     chart.setCategories(chartLabels);

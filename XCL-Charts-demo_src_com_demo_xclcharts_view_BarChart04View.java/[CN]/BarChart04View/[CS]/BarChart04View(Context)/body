@@ -1,7 +1,4 @@
 {
   super(context);
-  chartLabels();
-  chartDataSet();
-  chartDesireLines();
-  chartRender();
+  initView();
 }

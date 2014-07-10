@@ -1,0 +1,7 @@
+{
+  super.onSizeChanged(w,h,oldw,oldh);
+  chart.setChartRange(w,h);
+  int offsetX=DensityUtil.dip2px(getContext(),(float)(300 * 0.1));
+  int offsetY=DensityUtil.dip2px(getContext(),(float)(300 * 0.25));
+  chart.setPadding(offsetY,0,offsetX,offsetX);
+}
