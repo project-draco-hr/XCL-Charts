@@ -1,7 +1,7 @@
 {
   try {
     super.postRender(canvas);
-    if (false == checkInput())     return false;
+    if (false == validateParams())     return false;
     renderPlot(canvas);
   }
  catch (  Exception e) {

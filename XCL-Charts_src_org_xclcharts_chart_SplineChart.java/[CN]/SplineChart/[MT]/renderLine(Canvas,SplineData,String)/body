@@ -19,14 +19,14 @@
     float YvaluePostion=(float)Math.round(axisScreenHeight * ((yValue - dataAxis.getAxisMin()) / axisDataHeight));
     float XvaluePostion=(float)Math.round(axisScreenWidth * ((xValue - mMinValue) / (mMaxValue - mMinValue)));
     if (j == 0) {
-      lineStartX=initX + XvaluePostion;
-      lineStartY=initY - YvaluePostion;
+      lineStartX=add(initX,XvaluePostion);
+      lineStartY=sub(initY,YvaluePostion);
       lineEndX=lineStartX;
       lineEndY=lineStartY;
     }
  else {
-      lineEndX=initX + XvaluePostion;
-      lineEndY=initY - YvaluePostion;
+      lineEndX=add(initX,XvaluePostion);
+      lineEndY=sub(initY,YvaluePostion);
     }
     PlotLine pLine=bd.getPlotLine();
     if (type.equalsIgnoreCase("LINE")) {
@@ -36,7 +36,7 @@
       if (!pLine.getDotStyle().equals(XEnum.DotStyle.HIDE)) {
         float rendEndX=lineEndX;
         PlotDot pDot=pLine.getPlotDot();
-        rendEndX=lineEndX + pDot.getDotRadius();
+        rendEndX=add(lineEndX,pDot.getDotRadius());
         PlotDotRender.getInstance().renderDot(canvas,pDot,lineStartX,lineStartY,lineEndX,lineEndY,pLine.getDotPaint());
         lineEndX=rendEndX;
       }

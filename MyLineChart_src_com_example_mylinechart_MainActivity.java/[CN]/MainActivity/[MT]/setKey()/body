@@ -1,8 +1,0 @@
-{
-  Common.keyWidth=30;
-  Common.keyHeight=10;
-  Common.keyToLeft=200;
-  Common.keyToTop=80;
-  Common.keyToNext=80;
-  Common.keyTextPadding=5;
-}

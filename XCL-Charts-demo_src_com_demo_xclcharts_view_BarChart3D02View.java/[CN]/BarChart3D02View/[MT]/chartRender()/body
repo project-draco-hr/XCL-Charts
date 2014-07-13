@@ -1,6 +1,7 @@
 {
   try {
-    chart.setPadding(getChartTop(),getChartBottom(),getChartLeft(),getChartRight());
+    int[] ltrb=getBarLnDefaultSpadding();
+    chart.setPadding(ltrb[0],ltrb[1],DensityUtil.dip2px(getContext(),40),ltrb[3]);
     chart.setChartDirection(XEnum.Direction.HORIZONTAL);
     chart.setDataSource(chartData);
     chart.setCategories(chartLabels);
@@ -10,8 +11,8 @@
     chart.getCategoryAxis().setTickLabelRotateAgent(-45f);
     chart.setTitle("????????????????????????");
     chart.addSubtitle("(XCL-Charts Demo)");
-    chart.getLegend().setLeftLegend("??????");
-    chart.getLegend().setLowerLegend("?????????");
+    chart.getAxisTitle().setLeftAxisTitle("??????");
+    chart.getAxisTitle().setLowerAxisTitle("?????????");
     chart.getPlotGrid().showHorizontalLines();
     chart.getPlotGrid().showVerticalLines();
     chart.getPlotGrid().showEvenRowBgColor();

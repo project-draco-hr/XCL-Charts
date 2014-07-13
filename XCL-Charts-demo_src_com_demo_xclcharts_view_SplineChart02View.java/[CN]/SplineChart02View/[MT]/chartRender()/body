@@ -1,11 +1,13 @@
 {
   try {
-    chart.setPadding(getChartTop(),getChartBottom(),getChartLeft(),getChartRight());
+    int[] ltrb=getBarLnDefaultSpadding();
+    chart.setPadding(ltrb[0],ltrb[1],ltrb[2],ltrb[3]);
+    chart.showRoundBorder();
     chart.setCategories(labels);
     chart.setDataSource(chartData);
     chart.getDataAxis().setAxisMax(1);
     chart.getDataAxis().setAxisMin(-1);
-    chart.getDataAxis().setAxisSteps(0.5);
+    chart.getDataAxis().setAxisSteps(0.5f);
     chart.setCategoryAxisMax(360);
     chart.setCategoryAxisMin(0);
     PlotGrid plot=chart.getPlotGrid();

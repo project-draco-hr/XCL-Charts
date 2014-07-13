@@ -1,14 +1,5 @@
 {
   try {
-    RectF rect=new RectF();
-    rect.left=1f;
-    rect.right=getMeasuredWidth() - 1;
-    rect.top=1f;
-    rect.bottom=this.getMeasuredHeight() - 1;
-    Paint paint2=new Paint();
-    paint2.setColor(Color.BLUE);
-    paint2.setStyle(Style.STROKE);
-    canvas.drawRect(rect,paint2);
     render(canvas);
   }
  catch (  Exception e) {

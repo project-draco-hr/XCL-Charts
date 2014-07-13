@@ -1,0 +1,13 @@
+{
+  if (null == mChart)   return false;
+  if (this.getLeftAxisTitle().length() > 0) {
+    drawLeftAxisTitle(canvas,getLeftAxisTitle(),mChart.getLeft(),mChart.getTop(),mChart.getRight(),mChart.getBottom());
+  }
+  if (this.getLowerAxisTitle().length() > 0) {
+    drawAxisTitleLower(canvas,getLowerAxisTitle(),mChart.getLeft(),mChart.getTop(),mChart.getRight(),mChart.getBottom());
+  }
+  if (this.getRightAxisTitle().length() > 0) {
+    drawRightAxisTitle(canvas,getRightAxisTitle(),mChart.getLeft(),mChart.getTop(),mChart.getRight(),mChart.getBottom());
+  }
+  return true;
+}

@@ -1,0 +1,16 @@
+{
+  try {
+    chart.render(canvas);
+    chart2.render(canvas);
+    float radius=10f;
+    Paint paint=new Paint();
+    paint.setAntiAlias(true);
+    paint.setColor(this.axisColor);
+    canvas.drawCircle(chart2.getPlotArea().getLeft(),chart2.getPlotArea().getBottom(),radius,paint);
+    canvas.drawCircle(chart2.getPlotArea().getRight(),chart2.getPlotArea().getBottom(),radius,paint);
+    canvas.drawCircle(chart2.getPlotArea().getLeft(),chart2.getPlotArea().getTop(),radius,paint);
+  }
+ catch (  Exception e) {
+    Log.e(TAG,e.toString());
+  }
+}

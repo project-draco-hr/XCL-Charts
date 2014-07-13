@@ -1,0 +1,5 @@
+{
+  mShowBorder=true;
+  if (null == mBorder)   mBorder=new BorderRender();
+  mBorder.setBorderRectType(XEnum.RectType.RECT);
+}

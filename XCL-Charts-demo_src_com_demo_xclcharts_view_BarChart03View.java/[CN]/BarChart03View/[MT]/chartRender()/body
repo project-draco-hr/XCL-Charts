@@ -1,12 +1,13 @@
 {
   try {
-    chart.setPadding(getChartTop(),getChartBottom(),getChartLeft(),getChartRight());
+    int[] ltrb=getBarLnDefaultSpadding();
+    chart.setPadding(ltrb[0],ltrb[1],ltrb[2],ltrb[3]);
     chart.setTitle("????????? - ??????????????????");
     chart.addSubtitle("(XCL-Charts Demo)");
     chart.setCategories(chartLabels);
     chart.setCustomLines(mCustomLineDataset);
-    chart.getLegend().setLeftLegend("??????");
-    chart.getLegend().setLowerLegend("??????");
+    chart.getAxisTitle().setLeftAxisTitle("??????");
+    chart.getAxisTitle().setLowerAxisTitle("??????");
     chart.getDataAxis().setAxisMax(100);
     chart.getDataAxis().setAxisMin(0);
     chart.getDataAxis().setAxisSteps(5);
@@ -30,7 +31,7 @@
       }
     }
 );
-    chart.getPlotKey().hideKeyLabels();
+    chart.getPlotLegend().hideLegend();
   }
  catch (  Exception e) {
     e.printStackTrace();

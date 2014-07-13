@@ -1,10 +1,10 @@
 {
   try {
-    chart.setTitle("????????? ");
     chart.setTickSteps(10d);
     chart.setCategories(mLabels);
     chart.setPartition(mPartitionSet);
     chart.setCurrentAgent(mAgent);
+    chart.showRoundBorder();
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

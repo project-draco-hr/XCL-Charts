@@ -1,7 +1,8 @@
 {
   try {
-    chart.setPadding(getChartTop(),getChartBottom(),getChartLeft(),getChartRight());
-    chart.getPlotKey().hideKeyLabels();
+    int[] ltrb=getPieDefaultSpadding();
+    chart.setPadding(ltrb[0],ltrb[1],ltrb[2],ltrb[3]);
+    chart.getPlotLegend().hideLegend();
     chart.getLabelPaint().setColor(Color.WHITE);
   }
  catch (  Exception e) {

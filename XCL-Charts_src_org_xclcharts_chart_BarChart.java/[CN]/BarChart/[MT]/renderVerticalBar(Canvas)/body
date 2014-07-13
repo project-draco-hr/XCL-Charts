@@ -6,7 +6,7 @@
   float axisDataHeight=(float)dataAxis.getAxisRange();
   List<String> dataSet=categoryAxis.getDataSet();
   float XSteps=getVerticalXSteps(dataSet.size() + 1);
-  int barNumber=mDataSet.size();
+  int barNumber=getDatasetSize(mDataSet);
   int currNumber=0;
   List<Integer> ret=mFlatBar.getBarWidthAndMargin(XSteps,barNumber);
   int barWidth=ret.get(0);
@@ -22,18 +22,20 @@
     for (int j=0; j < barValues.size(); j++) {
       Double bv=barValues.get(j);
       setBarDataColor(mFlatBar.getBarPaint(),barDataColor,j,barDefualtColor);
-      float valuePostion=(float)(axisScreenHeight * ((bv - dataAxis.getAxisMin()) / axisDataHeight));
-      float currLableX=plotArea.getLeft() + (j + 1) * XSteps;
-      float drawBarStartX=currLableX - labelBarUseWidth / 2;
-      drawBarStartX=drawBarStartX + (barWidth + barInnerMargin) * currNumber;
-      float drawBarEndX=drawBarStartX + barWidth;
-      mFlatBar.renderBar(drawBarStartX,plotArea.getBottom(),drawBarEndX,plotArea.getBottom() - valuePostion,canvas);
-      mFlatBar.renderBarItemLabel(getFormatterItemLabel(bv),drawBarStartX + barWidth / 2,plotArea.getBottom() - valuePostion,canvas);
+      float vaxlen=(float)MathHelper.getInstance().sub(bv,dataAxis.getAxisMin());
+      float fvper=div(vaxlen,axisDataHeight);
+      float valuePostion=mul(axisScreenHeight,fvper);
+      float currLableX=add(plotArea.getLeft(),mul((j + 1),XSteps));
+      float drawBarStartX=sub(currLableX,labelBarUseWidth / 2);
+      drawBarStartX=add(drawBarStartX,(barWidth + barInnerMargin) * currNumber);
+      float drawBarEndX=add(drawBarStartX,barWidth);
+      mFlatBar.renderBar(drawBarStartX,plotArea.getBottom(),drawBarEndX,sub(plotArea.getBottom(),valuePostion),canvas);
+      mFlatBar.renderBarItemLabel(getFormatterItemLabel(bv),add(drawBarStartX,barWidth / 2),sub(plotArea.getBottom(),valuePostion),canvas);
     }
     currNumber++;
   }
   dataAxis.renderAxis(canvas,plotArea.getLeft(),plotArea.getBottom(),plotArea.getRight(),plotArea.getBottom());
-  plotKey.renderBarKey(canvas,this.mDataSet);
+  plotLegend.renderBarKey(canvas,this.mDataSet);
   mCustomLine.setVerticalPlot(dataAxis,plotArea,getAxisScreenHeight());
   mCustomLine.renderVerticalCustomlinesDataAxis(canvas);
 }

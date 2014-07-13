@@ -1,6 +1,7 @@
 {
   try {
-    chart.setPadding(getChartTop(),getChartBottom(),getChartLeft(),getChartRight());
+    int[] ltrb=getBarLnDefaultSpadding();
+    chart.setPadding(ltrb[0],ltrb[1],ltrb[2],ltrb[3]);
     chart.setCategories(labels);
     chart.setDesireLines(mCustomLineDataset);
     chart.getDataAxis().setAxisMax(3500);

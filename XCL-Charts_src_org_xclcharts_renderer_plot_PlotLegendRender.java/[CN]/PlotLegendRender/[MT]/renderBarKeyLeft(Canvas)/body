@@ -1,0 +1,23 @@
+{
+  float keyTextHeight=DrawHelper.getInstance().getPaintFontHeight(this.getLegendLabelPaint());
+  float keyLabelsX=mPlotArea.getLeft();
+  float keyLabelsY=mPlotArea.getTop() - keyTextHeight;
+  float rectWidth=2 * keyTextHeight;
+  float rectHeight=keyTextHeight;
+  float rectOffset=getLegendLabelMargin();
+  getLegendLabelPaint().setTextAlign(Align.LEFT);
+  for (  BarData cData : mDataSet) {
+    String key=cData.getKey();
+    if ("" == key)     continue;
+    getLegendLabelPaint().setColor(cData.getColor());
+    float strWidth=getLegendLabelPaint().measureText(key,0,key.length());
+    if (keyLabelsX + 2 * rectWidth + strWidth > mXChart.getRight()) {
+      keyLabelsX=mPlotArea.getLeft();
+      keyLabelsY=keyLabelsY + rectHeight * 2;
+    }
+    canvas.drawRect(keyLabelsX,keyLabelsY,keyLabelsX + rectWidth,keyLabelsY - rectHeight,getLegendLabelPaint());
+    getLegendLabelPaint().setTextAlign(Align.LEFT);
+    DrawHelper.getInstance().drawRotateText(key,keyLabelsX + rectWidth + rectOffset,keyLabelsY,0,canvas,getLegendLabelPaint());
+    keyLabelsX+=rectWidth + strWidth + 2 * rectOffset;
+  }
+}

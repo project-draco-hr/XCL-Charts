@@ -1,11 +1,11 @@
 {
   Integer totalAgent=0;
-  float newRadius=Math.round(getRadius() * 0.8);
+  float newRadius=Math.round(getRadius() * 0.8f);
   RectF rect=new RectF();
-  rect.left=plotArea.getCenterX() - newRadius;
-  rect.top=plotArea.getCenterY() - newRadius;
-  rect.right=plotArea.getCenterX() + newRadius;
-  rect.bottom=plotArea.getCenterY() + newRadius;
+  rect.left=sub(plotArea.getCenterX(),newRadius);
+  rect.top=sub(plotArea.getCenterY(),newRadius);
+  rect.right=add(plotArea.getCenterX(),newRadius);
+  rect.bottom=add(plotArea.getCenterY(),newRadius);
   if (null == mPartitionDataset)   return;
   for (  Pair pr : mPartitionDataset) {
     Integer agentValue=(Integer)pr.first;
@@ -13,7 +13,7 @@
       Log.e(TAG,"????????????!!!");
     }
  else     if ((totalAgent + agentValue) > 180) {
-      Log.e(TAG,"???????????????????????????mStartAgent???");
+      Log.e(TAG,"???????????????????????????180???");
       return;
     }
     mPaintPartitionFill.setColor((Integer)pr.second);

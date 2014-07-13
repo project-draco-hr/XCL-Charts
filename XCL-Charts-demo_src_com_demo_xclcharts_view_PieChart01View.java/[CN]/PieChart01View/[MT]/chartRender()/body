@@ -1,13 +1,13 @@
 {
   try {
-    chart.setPadding(getChartTop(),getChartBottom(),getChartLeft(),getChartRight());
-    chart.setInitialAngle(90);
+    int[] ltrb=getPieDefaultSpadding();
+    chart.setPadding(ltrb[0],ltrb[1],ltrb[2],ltrb[3]);
     chart.setLabelPosition(XEnum.SliceLabelPosition.INNER);
     chart.getLabelPaint().setColor(Color.WHITE);
     chart.setTitle("??????-Pie Chart");
     chart.addSubtitle("(XCL-Charts Demo)");
     chart.getPlotTitle().setTitlePosition(XEnum.Position.LOWER);
-    chart.getPlotKey().showKeyLabels();
+    chart.getPlotLegend().showLegend();
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

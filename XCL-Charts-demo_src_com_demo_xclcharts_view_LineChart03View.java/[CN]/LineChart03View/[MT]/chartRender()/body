@@ -5,12 +5,12 @@
     chart.getDataAxis().setAxisMax(100);
     chart.getDataAxis().setAxisSteps(10);
     chart.getDataAxis().setVisible(false);
-    chart.getCategoryAxis().getAxisTickLabelPaint().setTextAlign(Align.LEFT);
+    chart.getCategoryAxis().getTickLabelPaint().setTextAlign(Align.LEFT);
     chart.getCategoryAxis().setTickLabelRotateAgent(90);
-    chart.getLegend().setLowerLegend("(??????)");
+    chart.getAxisTitle().setLowerAxisTitle("(??????)");
     chart.setRightAxisVisible(false);
     chart.setTopAxisVisible(false);
-    chart.getPlotKey().hideKeyLabels();
+    chart.getPlotLegend().hideLegend();
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

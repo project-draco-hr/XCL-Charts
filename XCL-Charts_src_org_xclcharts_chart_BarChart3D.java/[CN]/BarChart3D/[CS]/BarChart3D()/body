@@ -1,4 +1,4 @@
 {
   super();
-  plotKey.showKeyLabels();
+  plotLegend.showLegend();
 }

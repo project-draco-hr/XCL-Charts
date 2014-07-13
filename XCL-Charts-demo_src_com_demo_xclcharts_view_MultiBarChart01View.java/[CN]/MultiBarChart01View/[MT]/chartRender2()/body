@@ -1,0 +1,40 @@
+{
+  try {
+    int[] ltrb=getBarLnDefaultSpadding();
+    chart2.setPadding(ltrb[0],ltrb[1],DensityUtil.dip2px(getContext(),45),ltrb[3]);
+    chart2.getBar().setBarStyle(XEnum.BarStyle.FILL);
+    chart2.setTitle("??????????????????: 40%~60%");
+    chart2.addSubtitle("(XCL-Charts Demo)");
+    chart2.getPlotTitle().getTitlePaint().setColor(axisColor);
+    chart2.getPlotTitle().getSubtitlePaint().setColor(axisColor);
+    chart2.setDataSource(chartData2);
+    chart2.setCategories(chartLabels);
+    chart2.getAxisTitle().setLeftAxisTitle("??????");
+    chart2.getAxisTitle().setLowerAxisTitle("???????????????");
+    chart2.getDataAxis().setAxisMax(2500);
+    chart2.getDataAxis().setAxisMin(0);
+    chart2.getDataAxis().setAxisSteps(500);
+    chart2.getDataAxis().setLabelFormatter(new IFormatterTextCallBack(){
+      @Override public String textFormatter(      String value){
+        Double tmp=Double.parseDouble(value);
+        DecimalFormat df=new DecimalFormat("#0");
+        String label=df.format(tmp).toString();
+        return (label);
+      }
+    }
+);
+    chart2.getBar().setBarInnerMargin(0d);
+    chart2.getDataAxis().getAxisPaint().setColor(axisColor);
+    chart2.getCategoryAxis().getAxisPaint().setColor(axisColor);
+    chart2.getDataAxis().getTickMarksPaint().setColor(axisColor);
+    chart2.getCategoryAxis().getTickMarksPaint().setColor(axisColor);
+    chart2.getDataAxis().getTickLabelPaint().setColor(axisColor);
+    chart2.getCategoryAxis().getTickLabelPaint().setColor(axisColor);
+    chart2.getAxisTitle().getLeftAxisTitlePaint().setColor(axisColor);
+    chart2.getAxisTitle().getLowerAxisTitlePaint().setColor(axisColor);
+    chart2.getPlotLegend().hideLegend();
+  }
+ catch (  Exception e) {
+    Log.e(TAG,e.toString());
+  }
+}

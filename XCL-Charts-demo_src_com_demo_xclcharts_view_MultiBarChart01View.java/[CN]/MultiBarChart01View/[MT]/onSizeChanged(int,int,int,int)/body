@@ -1,0 +1,5 @@
+{
+  super.onSizeChanged(w,h,oldw,oldh);
+  chart.setChartRange(w,h);
+  chart2.setChartRange(w,h);
+}

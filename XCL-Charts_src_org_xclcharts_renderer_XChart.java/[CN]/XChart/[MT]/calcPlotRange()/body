@@ -1,6 +1,7 @@
 {
-  plotArea.setBottom(this.mBottom - mPaddingBottom);
-  plotArea.setLeft(this.mLeft + mPaddingLeft);
-  plotArea.setRight(this.mRight - mPaddingRight);
-  plotArea.setTop(this.mTop + mPaddingTop);
+  int borderWidth=getBorderWidth();
+  plotArea.setBottom(sub(this.getBottom() - borderWidth / 2,mPaddingBottom));
+  plotArea.setLeft(add(this.getLeft() + borderWidth / 2,mPaddingLeft));
+  plotArea.setRight(sub(this.getRight() - borderWidth / 2,mPaddingRight));
+  plotArea.setTop(add(this.getTop() + borderWidth / 2,mPaddingTop));
 }

@@ -1,6 +1,6 @@
 {
   dataAxis=new DataAxisRender();
   categoryAxis=new CategoryAxisRender();
-  legend=new LegendRender();
-  plotKey=new PlotKeyRender(this);
+  axisTitle=new AxisTitleRender();
+  plotLegend=new PlotLegendRender(this);
 }

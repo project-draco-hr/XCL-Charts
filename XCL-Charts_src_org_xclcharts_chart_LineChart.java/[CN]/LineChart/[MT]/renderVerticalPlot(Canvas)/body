@@ -14,6 +14,6 @@
     String key=mDataSet.get(i).getLineKey();
     if ("" != key)     lstKey.add(mDataSet.get(i));
   }
-  if (null == plotKey)   plotKey=new PlotKeyRender(this);
-  plotKey.renderLineKey(canvas,lstKey);
+  if (null == plotLegend)   plotLegend=new PlotLegendRender(this);
+  plotLegend.renderLineKey(canvas,lstKey);
 }

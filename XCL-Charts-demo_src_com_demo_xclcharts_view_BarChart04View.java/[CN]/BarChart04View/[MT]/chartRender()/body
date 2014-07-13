@@ -1,13 +1,15 @@
 {
   try {
-    chart.setPadding(getChartTop(),getChartBottom(),getChartLeft(),getChartRight());
+    int[] ltrb=getBarLnDefaultSpadding();
+    chart.setPadding(ltrb[0],ltrb[1],ltrb[2],ltrb[3]);
+    chart.showRoundBorder();
     chart.setTitle("BMI??????");
     chart.addSubtitle("(XCL-Charts Demo)");
     chart.setDataSource(chartData);
     chart.setCategories(chartLabels);
     chart.setCustomLines(mCustomLineDataset);
-    chart.getLegend().setLeftLegend("???????????????????????????");
-    chart.getLegend().setLowerLegend("(???????????????????????????)");
+    chart.getAxisTitle().setLeftAxisTitle("???????????????????????????");
+    chart.getAxisTitle().setLowerAxisTitle("(???????????????????????????)");
     chart.getDataAxis().setAxisMax(40);
     chart.getDataAxis().setAxisMin(0);
     chart.getDataAxis().setAxisSteps(5);
@@ -23,7 +25,7 @@
     }
 );
     chart.getCategoryAxis().setTickLabelRotateAgent(45f);
-    chart.getCategoryAxis().getAxisTickLabelPaint().setTextSize(15);
+    chart.getCategoryAxis().getTickLabelPaint().setTextSize(15);
     chart.getBar().setItemLabelVisible(true);
     chart.setItemLabelFormatter(new IFormatterDoubleCallBack(){
       @Override public String doubleFormatter(      Double value){
@@ -33,7 +35,7 @@
       }
     }
 );
-    chart.getPlotKey().hideKeyLabels();
+    chart.getPlotLegend().hideLegend();
     chart.getBar().setBarInnerMargin(0.1d);
   }
  catch (  Exception e) {

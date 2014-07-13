@@ -21,7 +21,7 @@
     if (!isVerticalScreen()) {
       canvas.drawRect(currentX,currentY,currentX - rectWidth,currentY - textHeight,getKeyPaint());
       canvas.drawText(cData.getLineKey(),currentX - rectWidth,currentY,getKeyPaint());
-      currentY+=textHeight;
+      currentY=MathHelper.getInstance().add(currentY,textHeight);
     }
  else {
       int keyTextWidth=dw.getTextWidth(getKeyPaint(),cData.getLineKey());
@@ -33,7 +33,7 @@
       }
       canvas.drawRect(currentX,currentY,currentX + rectWidth,currentY - textHeight,getKeyPaint());
       canvas.drawText(cData.getLineKey(),currentX + rectWidth,currentY,getKeyPaint());
-      currentX+=rectWidth + keyTextWidth + 5;
+      currentX=MathHelper.getInstance().add(currentX,rectWidth + keyTextWidth + 5);
     }
   }
 }

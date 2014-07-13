@@ -1,0 +1,5 @@
+{
+  BigDecimal b1=new BigDecimal(Float.toString(v1));
+  BigDecimal b2=new BigDecimal(Float.toString(v2));
+  return b1.add(b2).floatValue();
+}

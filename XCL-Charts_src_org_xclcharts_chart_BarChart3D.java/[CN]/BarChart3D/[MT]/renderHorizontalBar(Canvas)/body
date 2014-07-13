@@ -6,7 +6,7 @@
   float YSteps=getHorizontalYSteps();
   List<BarData> chartDataSource=this.getDataSource();
   if (null == chartDataSource)   return;
-  int barNumber=chartDataSource.size();
+  int barNumber=getDatasetSize(chartDataSource);
   int currNumber=0;
   List<Integer> ret=mBar3D.getBarHeightAndMargin(YSteps,barNumber);
   int barHeight=ret.get(0);
@@ -24,13 +24,15 @@
     for (int j=0; j < barValues.size(); j++) {
       Double bv=barValues.get(j);
       setBarDataColor(mBar3D.getBarPaint(),barDataColor,j,barDefualtColor);
-      float drawBarButtomY=plotArea.getBottom() - (j + 1) * YSteps + labelBarUseHeight / 2;
-      drawBarButtomY=drawBarButtomY - (barHeight + barInnerMargin) * currNumber;
-      float valuePostion=(float)(scrWidth * ((bv - dataAxis.getAxisMin()) / valueWidth));
-      mBar3D.renderHorizontal3DBar(plotArea.getLeft(),drawBarButtomY - barHeight,(float)(plotArea.getLeft() + valuePostion),drawBarButtomY,mBar3D.getBarPaint().getColor(),canvas);
-      mBar3D.renderBarItemLabel(getFormatterItemLabel(bv),(float)(plotArea.getLeft() + valuePostion),(float)(drawBarButtomY - barHeight / 2),canvas);
+      float ty1=mul((j + 1),YSteps);
+      float drawBarButtomY=add(sub(plotArea.getBottom(),ty1),labelBarUseHeight / 2);
+      drawBarButtomY=sub(drawBarButtomY,(barHeight + barInnerMargin) * currNumber);
+      float tlen=(float)MathHelper.getInstance().sub(bv,dataAxis.getAxisMin());
+      float valuePostion=mul(scrWidth,div(tlen,valueWidth));
+      mBar3D.renderHorizontal3DBar(plotArea.getLeft(),sub(drawBarButtomY,barHeight),add(plotArea.getLeft(),valuePostion),drawBarButtomY,mBar3D.getBarPaint().getColor(),canvas);
+      mBar3D.renderBarItemLabel(getFormatterItemLabel(bv),add(plotArea.getLeft(),valuePostion),sub(drawBarButtomY,barHeight / 2),canvas);
     }
     currNumber++;
   }
-  plotKey.renderBarKey(canvas,this.getDataSource());
+  plotLegend.renderBarKey(canvas,this.getDataSource());
 }

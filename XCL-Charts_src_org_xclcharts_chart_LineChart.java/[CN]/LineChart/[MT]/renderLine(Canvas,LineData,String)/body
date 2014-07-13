@@ -14,7 +14,9 @@
   if (null == chartValues)   return;
   int j=0;
   for (  Double bv : chartValues) {
-    float valuePostion=(float)Math.round(axisScreenHeight * ((bv - dataAxis.getAxisMin()) / axisDataHeight));
+    float vaxlen=(float)MathHelper.getInstance().sub(bv,dataAxis.getAxisMin());
+    float fvper=div(vaxlen,axisDataHeight);
+    float valuePostion=mul(axisScreenHeight,fvper);
     if (j == 0) {
       lineStartX=initX;
       lineStartY=initY - valuePostion;

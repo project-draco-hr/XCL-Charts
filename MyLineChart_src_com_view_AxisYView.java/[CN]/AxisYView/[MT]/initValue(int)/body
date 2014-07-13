@@ -1,8 +1,0 @@
-{
-  xPoint=widthBorder;
-  yPoint=Height;
-  yLengh=Height;
-  yLableArray=Common.yScaleArray;
-  this.levelName=Common.levelName;
-  help2getPoint();
-}

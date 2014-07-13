@@ -1,5 +1,8 @@
 {
   super.onCreate(savedInstanceState);
   setContentView(R.layout.activity_hbarscroll);
-  chart=(com.demo.xclcharts.view.BarChart07View)findViewById(R.id.BarChart07View);
+  this.setTitle("?????????????????????");
+  horiView=(HorizontalScrollView)findViewById(R.id.horizontalScrollView1);
+  horiView.setPadding(70,0,0,0);
+  horiView.setOverScrollMode(View.OVER_SCROLL_NEVER);
 }

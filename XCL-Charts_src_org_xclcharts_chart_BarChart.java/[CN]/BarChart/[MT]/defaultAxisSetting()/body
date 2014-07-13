@@ -4,18 +4,18 @@ switch (mDirection) {
 case HORIZONTAL:
 {
         categoryAxis.setHorizontalTickAlign(Align.LEFT);
-        categoryAxis.getAxisTickLabelPaint().setTextAlign(Align.RIGHT);
+        categoryAxis.getTickLabelPaint().setTextAlign(Align.RIGHT);
         dataAxis.setHorizontalTickAlign(Align.CENTER);
-        dataAxis.getAxisTickLabelPaint().setTextAlign(Align.CENTER);
+        dataAxis.getTickLabelPaint().setTextAlign(Align.CENTER);
         getBar().getItemLabelPaint().setTextAlign(Align.LEFT);
         break;
       }
 case VERTICAL:
 {
       dataAxis.setHorizontalTickAlign(Align.LEFT);
-      dataAxis.getAxisTickLabelPaint().setTextAlign(Align.RIGHT);
+      dataAxis.getTickLabelPaint().setTextAlign(Align.RIGHT);
       categoryAxis.setHorizontalTickAlign(Align.CENTER);
-      categoryAxis.getAxisTickLabelPaint().setTextAlign(Align.CENTER);
+      categoryAxis.getTickLabelPaint().setTextAlign(Align.CENTER);
       categoryAxis.setVerticalTickPosition(XEnum.Position.LOWER);
       break;
     }

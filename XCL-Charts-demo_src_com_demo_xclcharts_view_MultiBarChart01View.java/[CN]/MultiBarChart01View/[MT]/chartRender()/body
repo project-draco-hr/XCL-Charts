@@ -1,0 +1,20 @@
+{
+  try {
+    int[] ltrb=getBarLnDefaultSpadding();
+    chart.setPadding(ltrb[0],ltrb[1],DensityUtil.dip2px(getContext(),45),ltrb[3]);
+    chart.setDataSource(chartData);
+    chart.setCategories(chartLabels);
+    chart.getDataAxis().setAxisMax(2500);
+    chart.getDataAxis().setAxisMin(0);
+    chart.getDataAxis().setAxisSteps(500);
+    chart.getBar().setBarInnerMargin(0d);
+    chart.getDataAxis().setVisible(false);
+    chart.getCategoryAxis().setVisible(false);
+    chart.getBar().setBarStyle(XEnum.BarStyle.FILL);
+    chart.setApplyBackgroundColor(true);
+    chart.setBackgroundColor(Color.rgb(19,163,224));
+  }
+ catch (  Exception e) {
+    Log.e(TAG,e.toString());
+  }
+}

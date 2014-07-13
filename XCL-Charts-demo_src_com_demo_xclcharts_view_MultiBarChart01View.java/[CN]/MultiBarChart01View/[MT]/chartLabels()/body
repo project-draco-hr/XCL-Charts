@@ -1,0 +1,7 @@
+{
+  chartLabels.add("20%");
+  chartLabels.add("40%");
+  chartLabels.add("60%");
+  chartLabels.add("80%");
+  chartLabels.add("100%");
+}

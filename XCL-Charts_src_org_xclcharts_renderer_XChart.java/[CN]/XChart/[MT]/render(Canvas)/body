@@ -5,6 +5,7 @@
     canvas.save();
     canvas.translate(mTranslateXY[0],mTranslateXY[1]);
     ret=postRender(canvas);
+    renderBorder(canvas);
     canvas.restore();
   }
  catch (  Exception e) {

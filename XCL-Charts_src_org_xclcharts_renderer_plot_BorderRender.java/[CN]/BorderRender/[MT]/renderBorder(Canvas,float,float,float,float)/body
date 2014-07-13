@@ -1,0 +1,25 @@
+{
+  RectF rect=new RectF();
+  rect.left=left + mBorderSpadding;
+  rect.top=top + mBorderSpadding;
+  rect.right=right - mBorderSpadding;
+  rect.bottom=bottom - mBorderSpadding;
+switch (getBorderLineStyle()) {
+case SOLID:
+    break;
+case DOT:
+  getLinePaint().setPathEffect(DrawHelper.getInstance().getDotLineStyle());
+break;
+case DASH:
+getLinePaint().setPathEffect(DrawHelper.getInstance().getDashLineStyle());
+break;
+}
+switch (getBorderRectType()) {
+case RECT:
+canvas.drawRect(rect,getLinePaint());
+break;
+case ROUNDRECT:
+canvas.drawRoundRect(rect,getRoundRadius(),getRoundRadius(),getLinePaint());
+break;
+}
+}

@@ -1,0 +1,7 @@
+{
+  mBorderLinePaint=new Paint();
+  mBorderLinePaint.setAntiAlias(true);
+  mBorderLinePaint.setColor((int)Color.rgb(26,59,105));
+  mBorderLinePaint.setStyle(Style.STROKE);
+  mBorderLinePaint.setStrokeWidth(2);
+}

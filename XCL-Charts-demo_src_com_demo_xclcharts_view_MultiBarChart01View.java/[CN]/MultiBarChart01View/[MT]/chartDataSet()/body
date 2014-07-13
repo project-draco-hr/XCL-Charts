@@ -1,0 +1,26 @@
+{
+  List<Double> dataSeriesA=new LinkedList<Double>();
+  dataSeriesA.add(2400d);
+  dataSeriesA.add(2400d);
+  dataSeriesA.add(2400d);
+  dataSeriesA.add(2400d);
+  dataSeriesA.add(2400d);
+  BarData BarDataA=new BarData("????????????",dataSeriesA,(int)Color.rgb(58,191,247));
+  List<Double> dataSeriesB=new LinkedList<Double>();
+  dataSeriesB.add(2000d);
+  dataSeriesB.add(2000d);
+  dataSeriesB.add(2000d);
+  dataSeriesB.add(2000d);
+  dataSeriesB.add(2000d);
+  BarData BarDataB=new BarData("???????????????",dataSeriesB,(int)Color.rgb(20,181,251));
+  chartData.add(BarDataA);
+  chartData.add(BarDataB);
+  List<Double> dataSeriesAA=new LinkedList<Double>();
+  dataSeriesAA.add(0d);
+  BarData BarDataAA=new BarData("??????",dataSeriesAA,(int)Color.rgb(38,137,176));
+  List<Double> dataSeriesBB=new LinkedList<Double>();
+  dataSeriesBB.add(0d);
+  BarData BarDataBB=new BarData("???????????????",dataSeriesBB,(int)Color.rgb(13,116,161));
+  chartData.add(BarDataAA);
+  chartData.add(BarDataBB);
+}

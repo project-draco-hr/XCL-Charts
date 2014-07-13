@@ -1,0 +1,70 @@
+{
+  if (XEnum.SliceLabelPosition.HIDE == mLabelPosition)   return;
+  if ("" == text || text.length() == 0)   return;
+  float calcRadius=0.0f;
+  float calcAgent=0.0f;
+  calcAgent=(float)MathHelper.getInstance().add(offsetAgent,curretAgentt / 2);
+  if (Float.compare(calcAgent,0.0f) == 0 || Float.compare(calcAgent,0.0f) == -1) {
+    Log.e(TAG,"??????????????????????????????0.");
+    return;
+  }
+  if (XEnum.SliceLabelPosition.INNER == mLabelPosition) {
+    calcRadius=MathHelper.getInstance().sub(radius,radius / 2f);
+    MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,calcRadius,calcAgent);
+    canvas.drawText(text,MathHelper.getInstance().getPosX(),MathHelper.getInstance().getPosY(),mPaintLabel);
+  }
+ else   if (XEnum.SliceLabelPosition.OUTSIDE == mLabelPosition) {
+    calcRadius=MathHelper.getInstance().add(radius,radius / 10f);
+    MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,calcRadius,calcAgent);
+    canvas.drawText(text,MathHelper.getInstance().getPosX(),MathHelper.getInstance().getPosY(),mPaintLabel);
+  }
+ else   if (XEnum.SliceLabelPosition.LINE == mLabelPosition) {
+    calcRadius=MathHelper.getInstance().sub(radius,radius / 4f);
+    MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,calcRadius,calcAgent);
+    float startX=MathHelper.getInstance().getPosX();
+    float startY=MathHelper.getInstance().getPosY();
+    calcRadius=radius / 2f;
+    MathHelper.getInstance().calcArcEndPointXY(startX,startY,calcRadius,calcAgent);
+    float stopX=MathHelper.getInstance().getPosX();
+    float stopY=MathHelper.getInstance().getPosY();
+    canvas.drawLine(startX,startY,stopX,stopY,mPaintLabelLine);
+    float endX=0.0f;
+    if (stopX == cirX) {
+      if (stopY > cirY) {
+        mPaintLabel.setTextAlign(Align.LEFT);
+        endX=stopX + mLabelBrokenLineLength;
+      }
+ else {
+        endX=stopX - mLabelBrokenLineLength;
+        mPaintLabel.setTextAlign(Align.RIGHT);
+      }
+    }
+ else     if (stopY == cirY) {
+      if (stopX <= cirX) {
+        mPaintLabel.setTextAlign(Align.RIGHT);
+      }
+ else {
+        mPaintLabel.setTextAlign(Align.LEFT);
+      }
+      endX=stopX;
+    }
+ else     if (stopX + mLabelBrokenLineLength > cirX) {
+      mPaintLabel.setTextAlign(Align.LEFT);
+      endX=stopX + mLabelBrokenLineLength;
+    }
+ else     if (stopX - mLabelBrokenLineLength < cirX) {
+      mPaintLabel.setTextAlign(Align.RIGHT);
+      endX=stopX - mLabelBrokenLineLength;
+    }
+ else {
+      endX=stopX;
+      mPaintLabel.setTextAlign(Align.CENTER);
+    }
+    canvas.drawLine(stopX,stopY,endX,stopY,mPaintLabelLine);
+    canvas.drawText(text,endX,stopY,mPaintLabel);
+  }
+ else {
+    Log.e(TAG,"???????????????????????????.");
+    return;
+  }
+}

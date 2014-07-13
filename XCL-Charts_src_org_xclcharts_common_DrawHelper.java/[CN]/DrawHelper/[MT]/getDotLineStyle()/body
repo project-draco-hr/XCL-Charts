@@ -1,0 +1,4 @@
+{
+  PathEffect effects=new DashPathEffect(new float[]{2,2,2,2},1);
+  return effects;
+}

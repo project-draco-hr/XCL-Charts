@@ -1,0 +1,29 @@
+{
+  try {
+    chart.setTitle("???????????????????????????");
+    chart.addSubtitle("(XCL-Charts Demo)");
+    chart.setTitleAlign(XEnum.ChartTitleAlign.LEFT);
+    chart.setDataSource(chartData);
+    chart.setCategories(chartLabels);
+    chart.setCustomLines(mCustomLineDataset);
+    chart.getAxisTitle().setLeftAxisTitle("???????????????????????????");
+    chart.getDataAxis().setAxisMax(40);
+    chart.getDataAxis().setAxisMin(0);
+    chart.getDataAxis().setAxisSteps(5);
+    chart.getDataAxis().setDetailModeSteps(2);
+    chart.getDataAxis().setLabelFormatter(new IFormatterTextCallBack(){
+      @Override public String textFormatter(      String value){
+        Double tmp=Double.parseDouble(value);
+        DecimalFormat df=new DecimalFormat("#0");
+        String label=df.format(tmp).toString();
+        return (label);
+      }
+    }
+);
+    chart.getPlotLegend().hideLegend();
+    chart.getCategoryAxis().setVisible(false);
+  }
+ catch (  Exception e) {
+    e.printStackTrace();
+  }
+}

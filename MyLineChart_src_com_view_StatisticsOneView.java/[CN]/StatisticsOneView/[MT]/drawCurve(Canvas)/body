@@ -1,5 +1,0 @@
-{
-  for (  MyData data : Common.DataSeries) {
-    if (data.getData().length > 0)     drawLine(canvas,data.getData(),data.getColor());
-  }
-}

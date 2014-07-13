@@ -1,10 +1,11 @@
 {
   try {
+    super.postRender(canvas);
     calcPlotRange();
     plotArea.render(canvas);
     renderTitle(canvas);
-    legend.setRange(this);
-    legend.render(canvas);
+    axisTitle.setRange(this);
+    axisTitle.render(canvas);
   }
  catch (  Exception e) {
     throw e;

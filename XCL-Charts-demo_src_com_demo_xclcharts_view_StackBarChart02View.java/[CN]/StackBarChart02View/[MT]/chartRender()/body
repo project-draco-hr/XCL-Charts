@@ -1,6 +1,8 @@
 {
   try {
-    chart.setPadding(getChartTop(),getChartBottom(),getChartLeft(),getChartRight());
+    int[] ltrb=getBarLnDefaultSpadding();
+    chart.setPadding(ltrb[0],ltrb[1],DensityUtil.dip2px(getContext(),50),ltrb[3]);
+    chart.showRoundBorder();
     chart.setChartDirection(XEnum.Direction.HORIZONTAL);
     chart.setCategories(chartLabels);
     chart.setDataSource(BarDataSet);
@@ -11,7 +13,7 @@
     chart.setTitle("?????????????????????????????????");
     chart.addSubtitle("(XCL-Charts Demo)");
     chart.setTitleAlign(XEnum.ChartTitleAlign.CENTER);
-    chart.getLegend().setLowerLegend("?????????(W)");
+    chart.getAxisTitle().setLowerAxisTitle("?????????(W)");
     chart.getPlotGrid().showVerticalLines();
     chart.getPlotGrid().setVerticalLineStyle(XEnum.LineStyle.DOT);
     chart.getDataAxis().setLabelFormatter(new IFormatterTextCallBack(){
@@ -23,7 +25,7 @@
       }
     }
 );
-    chart.getCategoryAxis().getAxisTickLabelPaint().setColor((int)Color.rgb(1,188,242));
+    chart.getCategoryAxis().getTickLabelPaint().setColor((int)Color.rgb(1,188,242));
     chart.getBar().setItemLabelVisible(true);
     chart.setItemLabelFormatter(new IFormatterDoubleCallBack(){
       @Override public String doubleFormatter(      Double value){

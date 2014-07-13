@@ -1,0 +1,5 @@
+{
+  BigDecimal b=new BigDecimal(String.valueOf(d));
+  float f=b.floatValue();
+  return f;
+}

@@ -1,0 +1,3 @@
+{
+  return MathHelper.getInstance().mul(v1,v2);
+}

@@ -1,9 +1,0 @@
-{
-  super();
-  getLeftLegendPaint().setTextSize(26);
-  getLeftLegendPaint().setColor((int)Color.rgb(255,153,204));
-  getLowerLegendPaint().setTextSize(26);
-  getLowerLegendPaint().setColor((int)Color.rgb(58,65,83));
-  getRightLegendPaint().setTextSize(26);
-  getRightLegendPaint().setColor((int)Color.rgb(51,204,204));
-}

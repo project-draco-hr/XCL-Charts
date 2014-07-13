@@ -1,0 +1,12 @@
+{
+  float r=super.getRadius();
+  if (null != mLabels && mLabels.size() > 0) {
+    int e=mLabels.size() - 1;
+    float left=DrawHelper.getInstance().getTextWidth(getLabelPaint(),mLabels.get(0));
+    float right=DrawHelper.getInstance().getTextWidth(getLabelPaint(),mLabels.get(e));
+    float spadding=Math.max(left,right);
+    r=sub(r,spadding);
+    r=sub(r,this.getBorderWidth() / 2);
+  }
+  return r;
+}

@@ -3,7 +3,7 @@
   renderHorizontalBarLabelAxis(canvas);
   if (null == mDataSet)   return;
   float YSteps=getHorizontalYSteps();
-  int barNumber=mDataSet.size();
+  int barNumber=getDatasetSize(mDataSet);
   int currNumber=0;
   List<Integer> ret=mFlatBar.getBarHeightAndMargin(YSteps,barNumber);
   int barHeight=ret.get(0);
@@ -21,19 +21,21 @@
     for (int j=0; j < barValues.size(); j++) {
       Double bv=barValues.get(j);
       setBarDataColor(mFlatBar.getBarPaint(),barDataColor,j,barDefualtColor);
-      float currLableY=plotArea.getBottom() - (j + 1) * YSteps;
-      float drawBarButtomY=currLableY + labelBarUseHeight / 2;
-      drawBarButtomY=drawBarButtomY - (barHeight + barInnerMargin) * currNumber;
-      float drawBarTopY=drawBarButtomY - barHeight;
-      float valuePostion=(float)(scrWidth * ((bv - dataAxis.getAxisMin()) / valueWidth));
-      mFlatBar.renderBar(plotArea.getLeft(),drawBarButtomY,plotArea.getLeft() + valuePostion,drawBarTopY,canvas);
-      mFlatBar.renderBarItemLabel(getFormatterItemLabel(bv),plotArea.getLeft() + valuePostion,drawBarButtomY - barHeight / 2,canvas);
+      float currLableY=sub(plotArea.getBottom(),mul((j + 1),YSteps));
+      float drawBarButtomY=add(currLableY,labelBarUseHeight / 2);
+      drawBarButtomY=sub(drawBarButtomY,(barHeight + barInnerMargin) * currNumber);
+      float drawBarTopY=sub(drawBarButtomY,barHeight);
+      float vaxlen=(float)MathHelper.getInstance().sub(bv,dataAxis.getAxisMin());
+      float fvper=div(vaxlen,valueWidth);
+      float valuePostion=mul(scrWidth,fvper);
+      mFlatBar.renderBar(plotArea.getLeft(),drawBarButtomY,add(plotArea.getLeft(),valuePostion),drawBarTopY,canvas);
+      mFlatBar.renderBarItemLabel(getFormatterItemLabel(bv),add(plotArea.getLeft(),valuePostion),sub(drawBarButtomY,barHeight / 2),canvas);
     }
     currNumber++;
   }
   dataAxis.renderAxis(canvas,plotArea.getLeft(),plotArea.getBottom(),plotArea.getLeft(),plotArea.getTop());
   categoryAxis.renderAxis(canvas,plotArea.getLeft(),plotArea.getBottom(),plotArea.getRight(),plotArea.getBottom());
-  plotKey.renderBarKey(canvas,this.mDataSet);
+  plotLegend.renderBarKey(canvas,this.mDataSet);
   mCustomLine.setHorizontalPlot(dataAxis,plotArea,this.getAxisScreenWidth());
   mCustomLine.renderHorizontalCustomlinesDataAxis(canvas);
 }

@@ -1,11 +1,11 @@
 {
-  double stepsAgent=Math.round(180 / mTickSteps);
+  double stepsAgent=Math.round(180d / mTickSteps);
   float cirX=plotArea.getCenterX();
   float cirY=plotArea.getCenterY();
-  float tickRadius=Math.round(this.getRadius() * 0.9);
+  float tickRadius=Math.round(this.getRadius() * 0.9f);
   for (int i=0; i < mTickSteps; i++) {
     if (0 == i)     continue;
-    float agent=(float)(180 + i * stepsAgent);
+    float agent=(float)MathHelper.getInstance().add(180d,i * stepsAgent);
     MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,getRadius(),agent);
     float startX=MathHelper.getInstance().getPosX();
     float startY=MathHelper.getInstance().getPosY();

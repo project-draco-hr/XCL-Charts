@@ -1,0 +1,13 @@
+{
+  if (null == canvas)   return;
+  if (0 == axisTitle.length() || "" == axisTitle)   return;
+  double axisTitleTextHeight=DrawHelper.getInstance().getTextWidth(mPaintLeftAxisTitle,axisTitle);
+  float axisTitleTextStartX=(float)Math.round(left + mPaintLeftAxisTitle.getTextSize());
+  float axisTitleTextStartY=Math.round(top + (bottom - top) / 2 + axisTitleTextHeight / 2);
+  double axisTitleCharHeight=0d;
+  for (int i=0; i < axisTitle.length(); i++) {
+    axisTitleCharHeight=DrawHelper.getInstance().getTextWidth(mPaintLeftAxisTitle,axisTitle.substring(i,i + 1));
+    DrawHelper.getInstance().drawRotateText(axisTitle.substring(i,i + 1),axisTitleTextStartX,axisTitleTextStartY,-90,canvas,mPaintLeftAxisTitle);
+    axisTitleTextStartY-=axisTitleCharHeight;
+  }
+}

@@ -1,6 +1,7 @@
 {
   try {
-    chart.setPadding(getChartTop(),getChartBottom(),getChartLeft(),getChartRight());
+    int[] ltrb=getPieDefaultSpadding();
+    chart.setPadding(ltrb[0],ltrb[1],ltrb[2],ltrb[3]);
     chart.setApplyBackgroundColor(true);
     chart.setBackgroundColor(Color.BLACK);
     chart.setDataSource(roseData);

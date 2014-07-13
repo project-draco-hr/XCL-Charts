@@ -1,34 +1,36 @@
 {
-  float arcAngle=(float)(Math.PI * cirAngle / 180.0);
-  if (cirAngle < 90) {
-    posX=(float)(cirX + (float)(Math.cos(arcAngle)) * mRadius);
-    posY=(float)(cirY + (float)(Math.sin(arcAngle)) * mRadius);
+  if (Float.compare(cirAngle,0.0f) == -1 || Float.compare(cirAngle,0.0f) == 0)   posX=posY=0.0f;
+  float arcAngle=(float)(Math.PI * div(cirAngle,180.0f));
+  if (Float.compare(arcAngle,0.0f) == -1)   posX=posY=0.0f;
+  if (Float.compare(cirAngle,90.0f) == -1) {
+    posX=add(cirX,(float)Math.cos(arcAngle) * mRadius);
+    posY=add(cirY,(float)Math.sin(arcAngle) * mRadius);
   }
- else   if (cirAngle == 90) {
+ else   if (Float.compare(cirAngle,00.0f) == 0) {
     posX=cirX;
-    posY=(float)(cirY + mRadius);
+    posY=add(cirY,mRadius);
   }
- else   if (cirAngle > 90 && cirAngle < 180) {
-    arcAngle=(float)(Math.PI * (180 - cirAngle) / 180.0);
-    posX=(float)(cirX - (float)(Math.cos(arcAngle)) * mRadius);
-    posY=(float)(cirY + (float)(Math.sin(arcAngle)) * mRadius);
+ else   if (Float.compare(cirAngle,90.0f) == 1 && Float.compare(cirAngle,180.0f) == -1) {
+    arcAngle=(float)(Math.PI * (sub(180f,cirAngle)) / 180.0f);
+    posX=sub(cirX,(float)(Math.cos(arcAngle) * mRadius));
+    posY=add(cirY,(float)(Math.sin(arcAngle) * mRadius));
   }
- else   if (cirAngle == 180) {
+ else   if (Float.compare(cirAngle,180.0f) == 0) {
     posX=(float)(cirX - mRadius);
     posY=cirY;
   }
- else   if (cirAngle > 180 && cirAngle < 270) {
-    arcAngle=(float)(Math.PI * (cirAngle - 180) / 180.0);
-    posX=(float)(cirX - (float)(Math.cos(arcAngle)) * mRadius);
-    posY=(float)(cirY - (float)(Math.sin(arcAngle)) * mRadius);
+ else   if (Float.compare(cirAngle,180.0f) == 1 && Float.compare(cirAngle,270.0f) == -1) {
+    arcAngle=(float)(Math.PI * (sub(cirAngle,180.0f)) / 180.0f);
+    posX=sub(cirX,(float)(Math.cos(arcAngle) * mRadius));
+    posY=sub(cirY,(float)(Math.sin(arcAngle) * mRadius));
   }
- else   if (cirAngle == 270) {
+ else   if (Float.compare(cirAngle,270.0f) == 0) {
     posX=cirX;
-    posY=(float)(cirY - mRadius);
+    posY=sub(cirY,mRadius);
   }
  else {
-    arcAngle=(float)(Math.PI * (360 - cirAngle) / 180.0);
-    posX=(float)(cirX + (float)(Math.cos(arcAngle)) * mRadius);
-    posY=(float)(cirY - (float)(Math.sin(arcAngle)) * mRadius);
+    arcAngle=(float)(Math.PI * (sub(360.0f,cirAngle)) / 180.0f);
+    posX=add(cirX,(float)(Math.cos(arcAngle) * mRadius));
+    posY=sub(cirY,(float)(Math.sin(arcAngle) * mRadius));
   }
 }

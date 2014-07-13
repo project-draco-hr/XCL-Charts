@@ -1,11 +1,12 @@
 {
   try {
-    chart.setPadding(getChartTop(),getChartBottom(),getChartLeft(),getChartRight());
+    int[] ltrb=getBarLnDefaultSpadding();
+    chart.setPadding(ltrb[0],ltrb[1],ltrb[2],ltrb[3]);
     chart.setChartDirection(XEnum.Direction.VERTICAL);
     chart.setTitle("Virtual vs Native Oracle RAC Performance");
     chart.addSubtitle("(XCL-Charts Demo)");
-    chart.getLegend().setLeftLegend("Orders Per Minute (OPM)");
-    chart.getLegend().setRightLegend("Average Response Time (RT)");
+    chart.getAxisTitle().setLeftAxisTitle("Orders Per Minute (OPM)");
+    chart.getAxisTitle().setRightAxisTitle("Average Response Time (RT)");
     chart.setCategories(chartLabels);
     chart.setDataSource(chartData);
     chart.getDataAxis().setAxisMax(90000);
@@ -20,8 +21,8 @@
 );
     CategoryAxis categoryAxis=chart.getCategoryAxis();
     categoryAxis.setTickLabelRotateAgent(-15f);
-    categoryAxis.getAxisTickLabelPaint().setTextSize(15);
-    categoryAxis.getAxisTickLabelPaint().setTextAlign(Align.CENTER);
+    categoryAxis.getTickLabelPaint().setTextSize(15);
+    categoryAxis.getTickLabelPaint().setTextAlign(Align.CENTER);
     categoryAxis.setLabelFormatter(new IFormatterTextCallBack(){
       @Override public String textFormatter(      String value){
         return value;
@@ -39,7 +40,7 @@
     chart.getPlotGrid().showHorizontalLines();
     chart.getPlotGrid().showEvenRowBgColor();
     chart.getPlotGrid().showOddRowBgColor();
-    chart.getPlotKey().hideKeyLabels();
+    chart.getPlotLegend().hideLegend();
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

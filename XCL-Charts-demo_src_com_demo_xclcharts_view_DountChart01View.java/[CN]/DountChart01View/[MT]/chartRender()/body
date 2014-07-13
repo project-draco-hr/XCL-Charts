@@ -1,12 +1,14 @@
 {
   try {
-    chart.setPadding(getChartTop(),getChartBottom(),getChartLeft(),getChartRight());
+    int[] ltrb=getPieDefaultSpadding();
+    chart.setPadding(ltrb[0],ltrb[1],ltrb[2],ltrb[3]);
     chart.setInitialAngle(90);
     chart.setDataSource(lPieData);
     chart.setLabelPosition(XEnum.SliceLabelPosition.OUTSIDE);
     chart.setTitle("Dount Chart");
     chart.addSubtitle("(XCL-Charts Demo)");
-    chart.getPlotKey().showKeyLabels();
+    chart.getPlotLegend().showLegend();
+    chart.showRoundBorder();
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

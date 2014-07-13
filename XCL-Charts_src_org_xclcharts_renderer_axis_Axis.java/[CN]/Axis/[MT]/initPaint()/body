@@ -1,13 +1,13 @@
 {
   mPaintAxis=new Paint();
   mPaintTickMarks=new Paint();
-  mPaintAxisTickLabel=new Paint();
+  mPaintTickLabel=new Paint();
   mPaintAxis.setColor(Color.BLACK);
   mPaintAxis.setStrokeWidth(mAxisLineWidth);
   mPaintTickMarks.setColor(Color.BLACK);
   mPaintTickMarks.setStrokeWidth(3);
-  mPaintAxisTickLabel.setColor(Color.BLACK);
-  mPaintAxisTickLabel.setTextAlign(Align.RIGHT);
-  mPaintAxisTickLabel.setTextSize(18);
-  mPaintAxisTickLabel.setAntiAlias(true);
+  mPaintTickLabel.setColor(Color.BLACK);
+  mPaintTickLabel.setTextAlign(Align.RIGHT);
+  mPaintTickLabel.setTextSize(18);
+  mPaintTickLabel.setAntiAlias(true);
 }

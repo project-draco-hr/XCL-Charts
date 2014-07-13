@@ -1,0 +1,9 @@
+{
+  super();
+  getLeftAxisTitlePaint().setTextSize(26);
+  getLeftAxisTitlePaint().setColor((int)Color.rgb(255,153,204));
+  getLowerAxisTitlePaint().setTextSize(26);
+  getLowerAxisTitlePaint().setColor((int)Color.rgb(58,65,83));
+  getRightAxisTitlePaint().setTextSize(26);
+  getRightAxisTitlePaint().setColor((int)Color.rgb(51,204,204));
+}

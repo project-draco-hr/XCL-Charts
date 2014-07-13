@@ -14,7 +14,7 @@
         }
       }
       if (chartData.size() - 1 == i) {
-        chart.getPlotKey().showKeyLabels();
+        chart.getPlotLegend().showLegend();
       }
       chart.setDataSource(animationData);
       postInvalidate();

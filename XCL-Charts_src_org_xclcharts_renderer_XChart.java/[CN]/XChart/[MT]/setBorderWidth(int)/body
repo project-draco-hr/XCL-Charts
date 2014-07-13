@@ -1,0 +1,5 @@
+{
+  if (0 >= width)   return;
+  if (null == mBorder)   mBorder=new BorderRender();
+  mBorder.setRoundRadius(width);
+}

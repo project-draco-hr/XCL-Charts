@@ -1,9 +1,11 @@
 {
   try {
     initChart(mChartStyle);
+    int[] ltrb=getPieDefaultSpadding();
+    mChart.setPadding(ltrb[0],ltrb[1],ltrb[2],ltrb[3]);
     mChart.setDataSource(chartData);
     mChart.setInitialAngle(90);
-    mChart.getPlotKey().showKeyLabels();
+    mChart.getPlotLegend().hideLegend();
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

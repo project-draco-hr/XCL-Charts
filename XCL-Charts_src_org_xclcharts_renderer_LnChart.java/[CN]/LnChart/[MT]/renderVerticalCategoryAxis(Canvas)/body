@@ -3,7 +3,7 @@
   List<String> dataSet=categoryAxis.getDataSet();
   float XSteps=getVerticalXSteps(dataSet.size() - 1);
   for (int i=0; i < dataSet.size(); i++) {
-    currentX=Math.round(plotArea.getLeft() + (i) * XSteps);
+    currentX=MathHelper.getInstance().add(plotArea.getLeft(),(i) * XSteps);
     if (plotGrid.isShowVerticalLines()) {
       if (i > 0 && i + 1 < dataSet.size())       plotGrid.renderGridLinesVertical(canvas,currentX,plotArea.getBottom(),currentX,plotArea.getTop());
     }

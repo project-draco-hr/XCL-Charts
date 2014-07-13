@@ -1,5 +1,4 @@
 {
-  PathEffect effects=new DashPathEffect(new float[]{4,8,5,10},1);
-  paint.setPathEffect(effects);
+  paint.setPathEffect(getDashLineStyle());
   canvas.drawLine(startX,startY,stopX,stopY,paint);
 }

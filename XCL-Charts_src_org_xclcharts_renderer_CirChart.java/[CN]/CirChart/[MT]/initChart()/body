@@ -1,6 +1,6 @@
 {
   mLabelPosition=XEnum.SliceLabelPosition.INNER;
-  plotKey=new PlotKeyRender(this);
+  PlotLegend=new PlotLegendRender(this);
   mPaintLabel=new Paint();
   mPaintLabel.setColor(Color.BLACK);
   mPaintLabel.setTextSize(18);

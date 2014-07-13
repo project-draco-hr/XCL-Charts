@@ -1,0 +1,7 @@
+{
+  int width=mBorderSpadding;
+  if (getBorderRectType() == XEnum.RectType.ROUNDRECT) {
+    width+=getRoundRadius();
+  }
+  return width;
+}

@@ -1,0 +1,11 @@
+{
+  mPaintLeftAxisTitle=new Paint();
+  mPaintLowerAxisTitle=new Paint();
+  mPaintRightAxisTitle=new Paint();
+  mPaintLeftAxisTitle.setTextAlign(Align.CENTER);
+  mPaintLowerAxisTitle.setTextAlign(Align.CENTER);
+  mPaintRightAxisTitle.setTextAlign(Align.CENTER);
+  mPaintLeftAxisTitle.setAntiAlias(true);
+  mPaintLowerAxisTitle.setAntiAlias(true);
+  mPaintRightAxisTitle.setAntiAlias(true);
+}

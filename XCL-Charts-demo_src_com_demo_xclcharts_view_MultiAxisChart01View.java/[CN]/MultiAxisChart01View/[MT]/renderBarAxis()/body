@@ -13,8 +13,8 @@
 );
   CategoryAxis categoryAxis=chart.getCategoryAxis();
   categoryAxis.setTickLabelRotateAgent(-15f);
-  categoryAxis.getAxisTickLabelPaint().setTextSize(15);
-  categoryAxis.getAxisTickLabelPaint().setTextAlign(Align.CENTER);
+  categoryAxis.getTickLabelPaint().setTextSize(15);
+  categoryAxis.getTickLabelPaint().setTextAlign(Align.CENTER);
   categoryAxis.setLabelFormatter(new IFormatterTextCallBack(){
     @Override public String textFormatter(    String value){
       return value;

@@ -1,0 +1,6 @@
+Canvas canvas
+String axisTitle
+double left
+double top
+double right
+double bottom

@@ -10,7 +10,7 @@
   mPaintPointerLine.setStyle(Style.FILL);
   mPaintPointerLine.setAntiAlias(true);
   mPaintPointerLine.setColor(Color.BLACK);
-  mPaintPointerLine.setStrokeWidth(8);
+  mPaintPointerLine.setStrokeWidth(3);
   mPaintPinterCircle=new Paint();
   mPaintPinterCircle.setStyle(Style.FILL);
   mPaintPinterCircle.setAntiAlias(true);

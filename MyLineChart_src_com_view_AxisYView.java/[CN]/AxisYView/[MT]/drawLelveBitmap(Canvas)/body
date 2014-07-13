@@ -1,9 +1,0 @@
-{
-  Paint paint=new Paint();
-  paint.setStyle(Paint.Style.FILL_AND_STROKE);
-  paint.setAntiAlias(true);
-  for (int i=0; i < Common.yScaleColor.length; i++) {
-    paint.setColor(Common.yScaleColor[i]);
-    canvas.drawRect(xPoint - 10,begins[i + 1],xPoint,begins[i],paint);
-  }
-}

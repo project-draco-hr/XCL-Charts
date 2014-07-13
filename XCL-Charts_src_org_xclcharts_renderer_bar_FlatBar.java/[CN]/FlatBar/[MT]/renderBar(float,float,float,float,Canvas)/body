@@ -1,4 +1,29 @@
 {
-  setBarTo2D(left,top,right,bottom);
-  canvas.drawRect(left,bottom,right,top,getBarPaint());
+  if (XEnum.BarStyle.OUTLINE == getBarStyle()) {
+    int barColor=getBarPaint().getColor();
+    int lightColor=DrawHelper.getInstance().getLightColor(barColor,150);
+    getBarPaint().setStyle(Style.FILL);
+    getBarPaint().setColor(lightColor);
+    canvas.drawRect(left,bottom,right,top,getBarPaint());
+    getBarPaint().setStyle(Style.STROKE);
+    getBarPaint().setColor(barColor);
+    canvas.drawRect(left,bottom,right,top,getBarPaint());
+    return;
+  }
+switch (getBarStyle()) {
+case GRADIENT:
+    setBarGradient(left,top,right,bottom);
+  break;
+case FILL:
+getBarPaint().setStyle(Style.FILL);
+break;
+case STROKE:
+if (Float.compare(1f,getBarPaint().getStrokeWidth()) == 0) getBarPaint().setStrokeWidth(2);
+getBarPaint().setStyle(Style.STROKE);
+break;
+default :
+Log.e(TAG,"??????????????????????????????.");
+return;
+}
+canvas.drawRect(left,bottom,right,top,getBarPaint());
 }

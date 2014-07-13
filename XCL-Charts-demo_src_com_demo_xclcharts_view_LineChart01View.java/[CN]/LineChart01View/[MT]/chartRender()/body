@@ -1,6 +1,8 @@
 {
   try {
-    chart.setPadding(getChartTop(),getChartBottom(),getChartLeft(),getChartRight());
+    int[] ltrb=getBarLnDefaultSpadding();
+    chart.setPadding(ltrb[0],ltrb[1],ltrb[2],ltrb[3]);
+    chart.showRoundBorder();
     chart.setCategories(labels);
     chart.setDataSource(chartData);
     chart.getDataAxis().setAxisMax(100);
@@ -15,7 +17,7 @@
     chart.getPlotGrid().getVerticalLinePaint().setColor(Color.BLUE);
     chart.setTitle("?????????(Line Chart)");
     chart.addSubtitle("(XCL-Charts Demo)");
-    chart.getLegend().setLowerLegend("(??????)");
+    chart.getAxisTitle().setLowerAxisTitle("(??????)");
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

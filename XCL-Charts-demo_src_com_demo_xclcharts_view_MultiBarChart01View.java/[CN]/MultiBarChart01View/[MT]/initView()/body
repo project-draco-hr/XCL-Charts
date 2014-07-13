@@ -1,0 +1,7 @@
+{
+  chartLabels();
+  chartDataSet();
+  chartDataSet2();
+  chartRender();
+  chartRender2();
+}

@@ -1,17 +1,14 @@
 {
   try {
-    if (chart.isVerticalScreen()) {
-    }
- else {
-    }
-    chart.setPadding(200,200,100,10);
+    int[] ltrb=getBarLnDefaultSpadding();
+    chart.setPadding(ltrb[0],ltrb[1],ltrb[2],ltrb[3]);
     chart.setTitle("???????????????????????????");
     chart.addSubtitle("(XCL-Charts Demo)");
     chart.getPlotTitle().getTitlePaint().setColor(Color.BLUE);
     chart.getPlotTitle().getSubtitlePaint().setColor(Color.BLUE);
     chart.setCategories(chartLabels);
-    chart.getLegend().setLeftLegend("???????????????");
-    chart.getLegend().setLowerLegend("????????????");
+    chart.getAxisTitle().setLeftAxisTitle("???????????????");
+    chart.getAxisTitle().setLowerAxisTitle("????????????");
     chart.getDataAxis().setAxisMax(100);
     chart.getDataAxis().setAxisMin(0);
     chart.getDataAxis().setAxisSteps(5);
@@ -33,7 +30,12 @@
       }
     }
 );
-    chart.getPlotKey().hideKeyLabels();
+    int axisColor=Color.BLUE;
+    chart.getDataAxis().getAxisPaint().setColor(axisColor);
+    chart.getCategoryAxis().getAxisPaint().setColor(axisColor);
+    chart.getDataAxis().getTickMarksPaint().setColor(axisColor);
+    chart.getCategoryAxis().getTickMarksPaint().setColor(axisColor);
+    chart.getDataAxis().setDetailModeSteps(5);
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

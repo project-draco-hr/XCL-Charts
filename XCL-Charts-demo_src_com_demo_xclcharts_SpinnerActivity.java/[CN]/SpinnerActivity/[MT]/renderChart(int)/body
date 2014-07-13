@@ -1,5 +1,7 @@
 {
-  RelativeLayout.LayoutParams layoutParams=new RelativeLayout.LayoutParams(500,650);
+  int width=DensityUtil.dip2px(getApplicationContext(),300);
+  int height=DensityUtil.dip2px(getApplicationContext(),400);
+  RelativeLayout.LayoutParams layoutParams=new RelativeLayout.LayoutParams(width,height);
   layoutParams.addRule(RelativeLayout.CENTER_IN_PARENT);
   mLaychart.removeAllViews();
   if (0 == mSelected) {
