@@ -3,7 +3,7 @@
     int[] ltrb=getBarLnDefaultSpadding();
     chart2.setPadding(ltrb[0],ltrb[1],DensityUtil.dip2px(getContext(),45),ltrb[3]);
     chart2.getBar().setBarStyle(XEnum.BarStyle.FILL);
-    chart2.setTitle("??????????????????: 40%~60%");
+    chart2.setTitle("???????????????: 40%~60%");
     chart2.addSubtitle("(XCL-Charts Demo)");
     chart2.getPlotTitle().getTitlePaint().setColor(axisColor);
     chart2.getPlotTitle().getSubtitlePaint().setColor(axisColor);
