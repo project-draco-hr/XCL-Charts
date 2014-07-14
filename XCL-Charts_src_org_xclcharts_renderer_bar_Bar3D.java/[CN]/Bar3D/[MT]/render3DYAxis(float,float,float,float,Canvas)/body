@@ -2,11 +2,11 @@
   int baseLightColor=DrawHelper.getInstance().getLightColor(getAxis3DBaseColor(),mAlpha);
   mPaintBase.setColor(getAxis3DBaseColor());
   mPaintBase3D.setColor(baseLightColor);
-  double offsetX=getOffsetX();
-  double offsetY=getOffsetY();
-  float baseLeft2=Math.round(baseLeft - offsetX);
-  float baseTop2=Math.round(baseTop + offsetY);
-  float baseBottom2=Math.round(baseBottom + offsetY);
+  float offsetX=(float)getOffsetX();
+  float offsetY=(float)getOffsetY();
+  float baseLeft2=MathHelper.getInstance().sub(baseLeft,offsetX);
+  float baseTop2=MathHelper.getInstance().add(baseTop,offsetY);
+  float baseBottom2=MathHelper.getInstance().add(baseBottom,offsetY);
   Path pBase2D=new Path();
   pBase2D.moveTo(baseLeft,baseTop);
   pBase2D.lineTo(baseLeft2,baseTop2);

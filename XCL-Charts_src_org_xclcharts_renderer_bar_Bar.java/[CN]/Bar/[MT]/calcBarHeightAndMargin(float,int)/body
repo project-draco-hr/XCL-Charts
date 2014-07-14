@@ -1,9 +1,9 @@
 {
-  int labelBarTotalHeight=(int)Math.round(YSteps * 0.9);
-  int barTotalInnerMargin=(int)Math.round(labelBarTotalHeight * mBarInnerMargin);
-  int barInnerMargin=barTotalInnerMargin / barNumber;
-  int barHeight=(labelBarTotalHeight - barTotalInnerMargin) / barNumber;
-  List<Integer> ret=new LinkedList<Integer>();
+  float labelBarTotalHeight=MathHelper.getInstance().mul(YSteps,0.9f);
+  float barTotalInnerMargin=MathHelper.getInstance().mul(labelBarTotalHeight,(float)mBarInnerMargin);
+  float barInnerMargin=MathHelper.getInstance().div(barTotalInnerMargin,barNumber);
+  float barHeight=MathHelper.getInstance().div(MathHelper.getInstance().sub(labelBarTotalHeight,barTotalInnerMargin),barNumber);
+  List<Float> ret=new LinkedList<Float>();
   ret.add(barHeight);
   ret.add(barInnerMargin);
   return ret;

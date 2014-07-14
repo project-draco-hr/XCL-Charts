@@ -29,7 +29,8 @@
 );
     chart.getPlotLegend().hideLegend();
     chart.getBar().setBarInnerMargin(0.1d);
-    chart.getDataAxis().setVisible(false);
+    chart.getPlotGrid().showEvenRowBgColor();
+    chart.getPlotGrid().getEvenRowsBgColorPaint().setColor((int)Color.rgb(225,230,246));
   }
  catch (  Exception e) {
     e.printStackTrace();

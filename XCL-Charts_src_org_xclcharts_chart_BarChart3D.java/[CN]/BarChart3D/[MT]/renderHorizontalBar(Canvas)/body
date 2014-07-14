@@ -8,10 +8,10 @@
   if (null == chartDataSource)   return;
   int barNumber=getDatasetSize(chartDataSource);
   int currNumber=0;
-  List<Integer> ret=mBar3D.getBarHeightAndMargin(YSteps,barNumber);
-  int barHeight=ret.get(0);
-  int barInnerMargin=ret.get(1);
-  int labelBarUseHeight=barNumber * barHeight + (barNumber - 1) * barInnerMargin;
+  List<Float> ret=mBar3D.getBarHeightAndMargin(YSteps,barNumber);
+  float barHeight=ret.get(0);
+  float barInnerMargin=ret.get(1);
+  float labelBarUseHeight=add(mul(barNumber,barHeight),mul((barNumber - 1),barInnerMargin));
   float scrWidth=plotArea.getWidth();
   float valueWidth=(float)dataAxis.getAxisRange();
   for (int i=0; i < barNumber; i++) {

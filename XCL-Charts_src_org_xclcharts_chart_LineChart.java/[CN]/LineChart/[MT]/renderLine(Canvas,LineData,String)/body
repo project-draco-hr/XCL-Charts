@@ -9,7 +9,7 @@
   float axisDataHeight=(float)dataAxis.getAxisRange();
   List<String> dataSet=categoryAxis.getDataSet();
   if (null == dataSet)   return;
-  float XSteps=getAxisScreenWidth() / (dataSet.size() - 1);
+  float XSteps=div(getAxisScreenWidth(),(dataSet.size() - 1));
   List<Double> chartValues=bd.getLinePoint();
   if (null == chartValues)   return;
   int j=0;
@@ -19,18 +19,18 @@
     float valuePostion=mul(axisScreenHeight,fvper);
     if (j == 0) {
       lineStartX=initX;
-      lineStartY=initY - valuePostion;
+      lineStartY=sub(initY,valuePostion);
       lineEndX=lineStartX;
       lineEndY=lineStartY;
     }
  else {
       lineEndX=initX + (j) * XSteps;
-      lineEndY=initY - valuePostion;
+      lineEndY=sub(initY,valuePostion);
     }
     if (bv != dataAxis.getAxisMin()) {
       PlotLine pLine=bd.getPlotLine();
       if (type.equalsIgnoreCase("LINE")) {
-        if (lineStartY != initY)         canvas.drawLine(lineStartX,lineStartY,lineEndX,lineEndY,pLine.getLinePaint());
+        if (Float.compare(lineStartY,initY) != 0)         canvas.drawLine(lineStartX,lineStartY,lineEndX,lineEndY,pLine.getLinePaint());
       }
  else       if (type.equalsIgnoreCase("DOT2LABEL")) {
         if (!pLine.getDotStyle().equals(XEnum.DotStyle.HIDE)) {

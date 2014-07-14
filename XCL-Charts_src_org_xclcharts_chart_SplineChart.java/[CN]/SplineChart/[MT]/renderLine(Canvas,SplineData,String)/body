@@ -16,8 +16,8 @@
     Entry entry=(Entry)iter.next();
     Double xValue=(Double)entry.getKey();
     Double yValue=(Double)entry.getValue();
-    float YvaluePostion=(float)Math.round(axisScreenHeight * ((yValue - dataAxis.getAxisMin()) / axisDataHeight));
-    float XvaluePostion=(float)Math.round(axisScreenWidth * ((xValue - mMinValue) / (mMaxValue - mMinValue)));
+    float YvaluePostion=(float)(axisScreenHeight * ((yValue - dataAxis.getAxisMin()) / axisDataHeight));
+    float XvaluePostion=(float)(axisScreenWidth * ((xValue - mMinValue) / (mMaxValue - mMinValue)));
     if (j == 0) {
       lineStartX=add(initX,XvaluePostion);
       lineStartY=sub(initY,YvaluePostion);

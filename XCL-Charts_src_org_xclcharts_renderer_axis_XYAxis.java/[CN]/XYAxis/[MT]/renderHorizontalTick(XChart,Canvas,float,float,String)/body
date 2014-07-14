@@ -8,35 +8,35 @@ switch (getHorizontalTickAlign()) {
 case LEFT:
 {
       if (getTickMarksVisible()) {
-        marksStartX=Math.round(centerX - getTickMarksLength());
+        marksStartX=MathHelper.getInstance().sub(centerX,getTickMarksLength());
         markeStopX=centerX;
       }
-      if (this.getTickLabelVisible())       labelStartX=marksStartX - getTickLabelMargin();
+      if (this.getTickLabelVisible())       labelStartX=MathHelper.getInstance().sub(marksStartX,getTickLabelMargin());
       break;
     }
 case CENTER:
 {
     if (getTickMarksVisible()) {
-      marksStartX=Math.round(centerX - getTickMarksLength() / 2);
-      markeStopX=Math.round(centerX + getTickMarksLength() / 2);
+      marksStartX=MathHelper.getInstance().sub(centerX,getTickMarksLength() / 2);
+      markeStopX=MathHelper.getInstance().add(centerX,getTickMarksLength() / 2);
     }
     break;
   }
 case RIGHT:
 if (getTickMarksVisible()) {
   marksStartX=centerX;
-  markeStopX=Math.round(centerX + getTickMarksLength());
+  markeStopX=MathHelper.getInstance().add(centerX,getTickMarksLength());
 }
-if (this.getTickLabelVisible()) labelStartX=markeStopX + getTickLabelMargin();
+if (this.getTickLabelVisible()) labelStartX=MathHelper.getInstance().add(markeStopX,getTickLabelMargin());
 break;
 default :
 break;
 }
 if (getTickMarksVisible()) {
-canvas.drawLine(marksStartX,centerY,markeStopX + this.getAxisPaint().getStrokeWidth() / 2,centerY,getTickMarksPaint());
+canvas.drawLine(marksStartX,centerY,MathHelper.getInstance().add(markeStopX,this.getAxisPaint().getStrokeWidth() / 2),centerY,getTickMarksPaint());
 }
 if (getTickLabelVisible()) {
-float textHeight=DrawHelper.getInstance().getPaintFontHeight(getTickLabelPaint());
+int textHeight=DrawHelper.getInstance().getPaintFontHeight(getTickLabelPaint());
 textHeight/=4;
 if (Align.LEFT == getHorizontalTickAlign()) {
 float width=0.0f;
@@ -44,7 +44,7 @@ if (getTickMarksVisible()) {
 width=markeStopX - xchart.getLeft();
 }
  else {
-width=xchart.getPlotArea().getLeft() - xchart.getLeft();
+width=MathHelper.getInstance().sub(xchart.getPlotArea().getLeft(),xchart.getLeft());
 }
 renderLeftAxisTickMaskLabel(canvas,labelStartX,labelStartY + textHeight,text,width);
 }

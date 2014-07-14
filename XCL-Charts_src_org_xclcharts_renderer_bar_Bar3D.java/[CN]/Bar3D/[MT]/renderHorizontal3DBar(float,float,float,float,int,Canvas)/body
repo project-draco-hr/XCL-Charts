@@ -2,12 +2,12 @@
   int lightColor=DrawHelper.getInstance().getLightColor(color,mAlpha);
   mPaintBar.setColor(color);
   mPaint3D.setColor(lightColor);
-  double offsetX=getOffsetX();
-  double offsetY=getOffsetY();
-  float barLeft2=Math.round(barLeft - offsetX);
-  float barTop2=Math.round(barTop + offsetY);
-  float barRight2=Math.round(barRight - offsetX);
-  float barBottom2=Math.round(barBottom + offsetY);
+  float offsetX=(float)getOffsetX();
+  float offsetY=(float)getOffsetY();
+  float barLeft2=MathHelper.getInstance().sub(barLeft,offsetX);
+  float barTop2=MathHelper.getInstance().add(barTop,offsetY);
+  float barRight2=MathHelper.getInstance().sub(barRight,offsetX);
+  float barBottom2=MathHelper.getInstance().add(barBottom,offsetY);
   Path pRectangle2D=new Path();
   pRectangle2D.moveTo(barRight,barTop);
   pRectangle2D.lineTo(barRight,barBottom);

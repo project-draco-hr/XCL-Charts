@@ -18,7 +18,7 @@
       flatBar.getBarPaint().setColor(bd.getColor());
       if (bd.getDataSet().size() < r + 1)       continue;
       Double bv=bd.getDataSet().get(r);
-      total+=bv;
+      total=MathHelper.getInstance().add(total,bv);
       float valuePostion=0.0f;
       if (i == 0) {
         float t=(float)MathHelper.getInstance().sub(bv,dataAxis.getAxisMin());

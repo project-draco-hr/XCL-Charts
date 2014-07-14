@@ -11,10 +11,10 @@
   if (null == chartDataSource)   return;
   int barNumber=getDatasetSize(chartDataSource);
   int currNumber=0;
-  List<Integer> ret=mBar3D.getBarWidthAndMargin(XSteps,barNumber);
-  int barWidth=ret.get(0);
-  int barInnerMargin=ret.get(1);
-  int labelBarUseWidth=barNumber * barWidth + (barNumber - 1) * barInnerMargin;
+  List<Float> ret=mBar3D.getBarWidthAndMargin(XSteps,barNumber);
+  float barWidth=ret.get(0);
+  float barInnerMargin=ret.get(1);
+  float labelBarUseWidth=add(mul(barNumber,barWidth),mul((barNumber - 1),barInnerMargin));
   for (int i=0; i < barNumber; i++) {
     currentX=add(initX,mul((i + 1),XSteps));
     BarData bd=chartDataSource.get(i);

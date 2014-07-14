@@ -6,7 +6,7 @@
   float XSteps=getVerticalXSteps(dataSet.size() + 1);
   float axisScreenHeight=getAxisScreenHeight();
   float axisDataHeight=(float)dataAxis.getAxisRange();
-  int barWidht=(int)Math.round(XSteps * 0.5);
+  float barWidht=mul(XSteps,0.5f);
   List<BarData> chartDataSource=this.getDataSource();
   if (null == chartDataSource)   return;
   for (int r=0; r < dataSet.size(); r++) {
@@ -19,7 +19,7 @@
       flatBar.getBarPaint().setColor(bd.getColor());
       if (bd.getDataSet().size() < r + 1)       continue;
       Double bv=bd.getDataSet().get(r);
-      total+=bv;
+      total=MathHelper.getInstance().add(total,bv);
       float valuePostion=0.0f;
       if (i == 0) {
         float t=(float)MathHelper.getInstance().sub(bv,dataAxis.getAxisMin());
@@ -33,7 +33,8 @@
       flatBar.renderBarItemLabel(getFormatterItemLabel(bv),currentX,sub(currentY,valuePostion / 2),canvas);
       currentY=sub(currentY,valuePostion);
     }
-    float totalPostion=(float)(axisScreenHeight / axisDataHeight * (total - dataAxis.getAxisMin()));
+    float per=(float)MathHelper.getInstance().sub(total,dataAxis.getAxisMin());
+    float totalPostion=MathHelper.getInstance().mul(div(axisScreenHeight,axisDataHeight),per);
     flatBar.renderBarItemLabel(getFormatterItemLabel(total),currentX,plotArea.getBottom() - totalPostion,canvas);
   }
   dataAxis.renderAxis(canvas,plotArea.getLeft(),plotArea.getBottom(),plotArea.getRight(),plotArea.getBottom());
