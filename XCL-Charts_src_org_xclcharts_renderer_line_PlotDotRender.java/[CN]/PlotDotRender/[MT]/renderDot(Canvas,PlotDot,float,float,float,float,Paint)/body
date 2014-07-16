@@ -1,17 +1,21 @@
 {
   float radius=pDot.getDotRadius();
-  float halfRadius=radius / 2;
+  float halfRadius=MathHelper.getInstance().div(radius,2f);
+  float cX=0.0f;
+  if (XEnum.DotStyle.DOT == pDot.getDotStyle() || XEnum.DotStyle.RING == pDot.getDotStyle()) {
+    cX=MathHelper.getInstance().add(left,MathHelper.getInstance().sub(right,left));
+  }
 switch (pDot.getDotStyle()) {
 case DOT:
-    canvas.drawCircle(left + Math.abs(right - left),bottom,radius,paint);
+    canvas.drawCircle(cX,bottom,radius,paint);
   break;
 case RING:
-int ringRadius=(int)Math.round(radius * 0.7);
-canvas.drawCircle(left + Math.abs(right - left),bottom,radius,paint);
-Paint paintfill=new Paint();
-paintfill.setColor(Color.WHITE);
-paintfill.setStyle(Style.FILL);
-canvas.drawCircle(left + Math.abs(right - left),bottom,ringRadius,paintfill);
+float ringRadius=MathHelper.getInstance().mul(radius,0.7f);
+canvas.drawCircle(cX,bottom,radius,paint);
+Paint paintFill=new Paint();
+paintFill.setColor(Color.WHITE);
+paintFill.setStyle(Style.FILL);
+canvas.drawCircle(cX,bottom,ringRadius,paintFill);
 break;
 case TRIANGLE:
 float triganaleHeight=radius + radius / 2;

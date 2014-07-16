@@ -4,5 +4,5 @@
   dataAxis.setHorizontalTickAlign(Align.LEFT);
   dataAxis.getTickLabelPaint().setTextAlign(Align.RIGHT);
   dataAxis.setTickMarksVisible(false);
-  showKeyLabels();
+  this.plotLegend.showLegend();
 }

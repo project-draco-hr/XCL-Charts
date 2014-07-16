@@ -1,4 +1,3 @@
 {
-  float YSteps=(float)(getAxisScreenHeight() / tickCount);
-  return YSteps;
+  return MathHelper.getInstance().div(getAxisScreenHeight(),tickCount);
 }

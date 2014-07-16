@@ -1,9 +1,4 @@
 {
-  mPaintKey=new Paint();
-  mPaintKey.setColor(Color.BLACK);
-  mPaintKey.setTextSize(18);
-  mPaintKey.setStyle(Style.FILL);
-  mPaintKey.setAntiAlias(true);
   mPaintLabel=new Paint();
   mPaintLabel.setColor(Color.BLACK);
   mPaintLabel.setTextSize(18);
