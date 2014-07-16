@@ -2,5 +2,4 @@
   dataAxis=new DataAxisRender();
   categoryAxis=new CategoryAxisRender();
   axisTitle=new AxisTitleRender();
-  plotLegend=new PlotLegendRender(this);
 }

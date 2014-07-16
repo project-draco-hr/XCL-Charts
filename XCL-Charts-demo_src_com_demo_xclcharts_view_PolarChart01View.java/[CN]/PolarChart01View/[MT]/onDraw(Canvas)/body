@@ -1,0 +1,105 @@
+{
+  canvas.drawColor(Color.WHITE);
+  float cirX=ScrWidth / 2;
+  float cirY=ScrHeight / 3;
+  float radius=ScrHeight / 4;
+  float arcLeft=cirX - radius;
+  float arcTop=cirY - radius;
+  float arcRight=cirX + radius;
+  float arcBottom=cirY + radius;
+  RectF arcRF0=new RectF(arcLeft,arcTop,arcRight,arcBottom);
+  MathHelper xcalc=new MathHelper();
+  float calcRadius=radius / 2;
+  Paint[] arrPaint=new Paint[6];
+  arrPaint[0]=new Paint();
+  arrPaint[0].setColor(Color.CYAN);
+  arrPaint[1]=new Paint();
+  arrPaint[1].setColor(Color.argb(255,1,73,157));
+  arrPaint[2]=new Paint();
+  arrPaint[2].setColor(Color.argb(255,0,94,196));
+  arrPaint[3]=new Paint();
+  arrPaint[3].setColor(Color.argb(255,73,172,222));
+  arrPaint[4]=new Paint();
+  arrPaint[4].setColor(Color.argb(255,145,218,255));
+  arrPaint[5]=new Paint();
+  arrPaint[5].setColor(Color.argb(255,204,238,255));
+  arrPaint[1].setAntiAlias(true);
+  arrPaint[2].setAntiAlias(true);
+  arrPaint[3].setAntiAlias(true);
+  arrPaint[4].setAntiAlias(true);
+  arrPaint[5].setAntiAlias(true);
+  Paint PaintDcred=new Paint();
+  PaintDcred.setStyle(Style.FILL);
+  PaintDcred.setARGB(255,221,19,223);
+  PaintDcred.setAntiAlias(true);
+  Paint PaintDcLine=new Paint();
+  PaintDcLine.setStyle(Style.FILL);
+  PaintDcLine.setARGB(255,36,169,199);
+  PaintDcLine.setTypeface(Typeface.DEFAULT_BOLD);
+  Paint PaintDcLabel=new Paint();
+  PaintDcLabel.setStyle(Style.FILL);
+  PaintDcLabel.setColor(Color.BLACK);
+  PaintDcLabel.setTextSize(22);
+  PaintDcLabel.setTypeface(Typeface.DEFAULT_BOLD);
+  canvas.drawText("??????????????????",60,ScrHeight - 270,PaintDcLabel);
+  canvas.drawText("author:xiongchuanliang",60,ScrHeight - 250,PaintDcLabel);
+  float pAngle=72f;
+  float pAngleOffset=18f + 36f;
+  float avgRadius=radius / DuCount;
+  for (int i=DuCount; i >= 0; i--) {
+    float curRadius=avgRadius * i;
+    canvas.drawCircle(cirX,cirY,curRadius,arrPaint[i]);
+    if (i == 5) {
+      canvas.drawArc(arcRF0,pAngleOffset + pAngle * (DuCount - 1),pAngle,true,PaintDcred);
+    }
+  }
+  String arrLabel[]=new String[]{"?????????","??????","??????","??????","?????????"};
+  for (int i=0; i < DuCount; i++) {
+    Path PathLabel=new Path();
+    PathLabel.addArc(arcRF0,pAngle * i + 18,pAngle);
+    canvas.drawTextOnPath(arrLabel[i],PathLabel,0,0,PaintDcLabel);
+  }
+  String[] arrSort3N=new String[]{"??????","?????????","??????","??????","??????"};
+  String[] arrSort3V=new String[]{"5","7","8","8","9"};
+  String[] arrSort4N=new String[]{"??????","??????","??????","??????","??????"};
+  String[] arrSort4V=new String[]{"69.2%","68%","61.8%","56%","43.1%"};
+  String[] arrSort1N=new String[]{"??????","?????????","??????","??????","??????"};
+  String[] arrSort1V=new String[]{"23","21","19","19","19"};
+  String[] arrSort2N=new String[]{"??????","??????","?????????","??????","??????"};
+  String[] arrSort2V=new String[]{"155","153","153","131","116"};
+  String[] arrSort5N=new String[]{"??????","??????","??????","?????????","??????"};
+  String[] arrSort5V=new String[]{"268","245","200","197","195"};
+  arcLeft=cirX - avgRadius;
+  arcTop=cirY - avgRadius;
+  arcRight=cirX + avgRadius;
+  arcBottom=cirY + avgRadius;
+  RectF arcRF1=new RectF(arcLeft,arcTop,arcRight,arcBottom);
+  PaintDcLabel.setTextSize(12);
+  for (int j=0; j < DuCount; j++) {
+    if (j < DuCount - 1) {
+      canvas.drawArc(arcRF1,pAngleOffset,pAngle,true,PaintDcred);
+    }
+    xcalc.calcArcEndPointXY(cirX,cirY,radius,pAngleOffset);
+    canvas.drawLine(cirX,cirY,xcalc.getPosX(),xcalc.getPosY(),PaintDcLine);
+    for (int i=0; i < DuCount; i++) {
+      xcalc.calcArcEndPointXY(cirX,cirY,avgRadius * (DuCount - i),pAngleOffset);
+      int curNm=DuCount - 1 - i;
+      if (j == 0) {
+        canvas.drawText(arrSort5N[curNm] + "(" + arrSort5V[curNm]+ ")",xcalc.getPosX(),xcalc.getPosY(),PaintDcLabel);
+      }
+ else       if (j == 1) {
+        canvas.drawText(arrSort1N[curNm] + "(" + arrSort1V[curNm]+ ")",xcalc.getPosX(),xcalc.getPosY(),PaintDcLabel);
+      }
+ else       if (j == 2) {
+        canvas.drawText(arrSort2N[curNm] + "(" + arrSort2V[curNm]+ ")",xcalc.getPosX(),xcalc.getPosY(),PaintDcLabel);
+      }
+ else       if (j == 3) {
+        canvas.drawText(arrSort3N[curNm] + "(" + arrSort3V[curNm]+ ")",xcalc.getPosX(),xcalc.getPosY(),PaintDcLabel);
+      }
+ else       if (j == 4) {
+        canvas.drawText(arrSort4N[curNm] + "(" + arrSort4V[curNm]+ ")",xcalc.getPosX(),xcalc.getPosY(),PaintDcLabel);
+      }
+    }
+    pAngleOffset+=pAngle;
+  }
+}

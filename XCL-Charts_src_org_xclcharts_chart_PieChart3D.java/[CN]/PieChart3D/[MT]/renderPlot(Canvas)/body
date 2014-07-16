@@ -62,5 +62,5 @@
     }
     mOffsetAgent=add(mOffsetAgent,currentAgent);
   }
-  PlotLegend.renderPieKey(canvas,this.getDataSource());
+  plotLegend.renderPieKey(canvas,this.getDataSource());
 }

@@ -13,6 +13,6 @@
     getLegendLabelPaint().setColor(cData.getColor());
     canvas.drawRect(keyLablesX,keyLablesY,keyLablesX - rectWidth,keyLablesY + rectHeight,getLegendLabelPaint());
     DrawHelper.getInstance().drawRotateText(key,keyLablesX - rectWidth - rectOffset,keyLablesY + rectHeight,0,canvas,getLegendLabelPaint());
-    keyLablesY+=keyTextHeight;
+    keyLablesY=MathHelper.getInstance().add(keyLablesY,keyTextHeight);
   }
 }

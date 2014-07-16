@@ -4,4 +4,5 @@
   float cirY=plotArea.getCenterY();
   calcInnerRadius();
   canvas.drawCircle(cirX,cirY,mFillRadius,mPaintFill);
+  renderCenterText(canvas);
 }

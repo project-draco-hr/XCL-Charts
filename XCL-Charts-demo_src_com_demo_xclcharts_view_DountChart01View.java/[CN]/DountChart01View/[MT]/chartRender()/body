@@ -4,11 +4,15 @@
     chart.setPadding(ltrb[0],ltrb[1],ltrb[2],ltrb[3]);
     chart.setInitialAngle(90);
     chart.setDataSource(lPieData);
+    chart.setCenterText("UNIX??????");
     chart.setLabelPosition(XEnum.SliceLabelPosition.OUTSIDE);
+    chart.getLabelPaint().setColor(Color.BLUE);
     chart.setTitle("Dount Chart");
     chart.addSubtitle("(XCL-Charts Demo)");
     chart.getPlotLegend().showLegend();
-    chart.showRoundBorder();
+    chart.setApplyBackgroundColor(true);
+    chart.setBackgroundColor(Color.rgb(19,163,224));
+    chart.getInnerPaint().setColor(Color.rgb(180,205,230));
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

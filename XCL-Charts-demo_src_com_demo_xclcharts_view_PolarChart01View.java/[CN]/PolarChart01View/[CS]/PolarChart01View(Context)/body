@@ -1,0 +1,7 @@
+{
+  super(context);
+  this.setLayerType(View.LAYER_TYPE_SOFTWARE,null);
+  DisplayMetrics dm=getResources().getDisplayMetrics();
+  ScrHeight=dm.heightPixels;
+  ScrWidth=dm.widthPixels;
+}

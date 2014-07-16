@@ -1,5 +1,0 @@
-{
-  mChartBackgroundPaint=new Paint();
-  mChartBackgroundPaint.setStyle(Style.FILL);
-  mChartBackgroundPaint.setColor(Color.WHITE);
-}

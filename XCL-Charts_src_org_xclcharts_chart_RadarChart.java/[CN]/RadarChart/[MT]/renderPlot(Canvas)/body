@@ -5,5 +5,5 @@
   renderAxisLines(canvas);
   renderDataArea(canvas);
   renderAxisLabels(canvas);
-  renderKey(canvas);
+  plotLegend.renderRdKey(canvas,mDataSet);
 }

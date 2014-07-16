@@ -9,17 +9,17 @@
   getLegendLabelPaint().setTextAlign(Align.LEFT);
   currentX=mPlotArea.getLeft();
   currentY=mPlotArea.getTop() - 5;
-  int totalTextWidth=0;
+  float totalTextWidth=0.0f;
   for (  LnData cData : dataSet) {
     String key=cData.getLineKey();
     if ("" == key)     continue;
     getLegendLabelPaint().setColor(cData.getLineColor());
-    int keyTextWidth=DrawHelper.getInstance().getTextWidth(getLegendLabelPaint(),key);
-    totalTextWidth+=keyTextWidth;
+    float keyTextWidth=DrawHelper.getInstance().getTextWidth(getLegendLabelPaint(),key);
+    totalTextWidth=MathHelper.getInstance().add(totalTextWidth,keyTextWidth);
     if (totalTextWidth > mPlotArea.getWidth()) {
       currentY-=textHeight;
       currentX=mPlotArea.getLeft();
-      totalTextWidth=0;
+      totalTextWidth=0.0f;
     }
     canvas.drawLine(currentX,currentY - textHeight / 2,currentX + rectWidth,currentY - textHeight / 2,getLegendLabelPaint());
     canvas.drawText(cData.getLineKey(),currentX + rectWidth,currentY - textHeight / 3,getLegendLabelPaint());
@@ -30,6 +30,7 @@
       PlotDot pDot=pLine.getPlotDot();
       PlotDotRender.getInstance().renderDot(canvas,pDot,dotLeft,currentY,dotRight,currentY - textHeight / 2,pLine.getDotPaint());
     }
-    currentX+=rectWidth + keyTextWidth + 10;
+    currentX=MathHelper.getInstance().add(currentX,rectWidth + 10);
+    currentX=MathHelper.getInstance().add(currentX,keyTextWidth);
   }
 }

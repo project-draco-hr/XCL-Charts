@@ -1,7 +1,13 @@
 {
   float currentX=plotArea.getLeft();
   List<String> dataSet=categoryAxis.getDataSet();
-  float XSteps=getVerticalXSteps(dataSet.size() - 1);
+  float XSteps=0.0f;
+  if (dataSet.size() == 1) {
+    XSteps=div(getAxisScreenWidth(),(dataSet.size()));
+  }
+ else {
+    XSteps=div(getAxisScreenWidth(),(dataSet.size() - 1));
+  }
   for (int i=0; i < dataSet.size(); i++) {
     currentX=MathHelper.getInstance().add(plotArea.getLeft(),(i) * XSteps);
     if (plotGrid.isShowVerticalLines()) {

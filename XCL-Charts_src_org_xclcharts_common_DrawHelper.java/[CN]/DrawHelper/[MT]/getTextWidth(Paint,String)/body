@@ -1,5 +1,4 @@
 {
-  if (str.length() == 0)   return 0;
-  int width=(int)Math.abs(paint.measureText(str,0,str.length()));
-  return width;
+  if (str.length() == 0)   return 0.0f;
+  return paint.measureText(str,0,str.length());
 }

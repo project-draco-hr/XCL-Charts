@@ -16,10 +16,20 @@ break;
 }
 switch (getBorderRectType()) {
 case RECT:
+if (type.equals("CHART")) {
+if (null != mPaintChartBackground) canvas.drawRect(rect,mPaintChartBackground);
+}
+ else {
 canvas.drawRect(rect,getLinePaint());
+}
 break;
 case ROUNDRECT:
+if (type.equals("CHART")) {
+if (null != mPaintChartBackground) canvas.drawRoundRect(rect,getRoundRadius(),getRoundRadius(),mPaintChartBackground);
+}
+ else {
 canvas.drawRoundRect(rect,getRoundRadius(),getRoundRadius(),getLinePaint());
+}
 break;
 }
 }

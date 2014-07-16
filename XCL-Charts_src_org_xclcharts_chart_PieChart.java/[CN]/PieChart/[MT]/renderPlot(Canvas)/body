@@ -24,7 +24,7 @@
       }
       mOffsetAgent=add(mOffsetAgent,currentAgent);
     }
-    PlotLegend.renderPieKey(canvas,this.mDataset);
+    plotLegend.renderPieKey(canvas,this.mDataset);
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

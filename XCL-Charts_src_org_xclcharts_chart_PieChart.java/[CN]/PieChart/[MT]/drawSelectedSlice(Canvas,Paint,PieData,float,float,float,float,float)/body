@@ -1,10 +1,7 @@
 {
   try {
-    if (0.0f >= curretAgent) {
-      Log.e(TAG,"?????????????????????????????????0???.");
-      return;
-    }
-    float newRadius=radius / SELECTED_OFFSET;
+    if (!validateAgent(curretAgent))     return;
+    float newRadius=div(radius,SELECTED_OFFSET);
     MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,newRadius,add(offsetAgent,curretAgent / 2f));
     float arcLeft=sub(MathHelper.getInstance().getPosX(),radius);
     float arcTop=sub(MathHelper.getInstance().getPosY(),radius);

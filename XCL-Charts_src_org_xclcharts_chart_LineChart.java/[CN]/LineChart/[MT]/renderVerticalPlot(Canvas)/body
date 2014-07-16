@@ -6,14 +6,20 @@
     renderVerticalDataAxisRight(canvas);
   }
   renderVerticalCategoryAxis(canvas);
-  if (null == mDataSet)   return;
-  List<LnData> lstKey=new ArrayList<LnData>();
-  for (int i=0; i < mDataSet.size(); i++) {
-    renderLine(canvas,mDataSet.get(i),"LINE");
-    renderLine(canvas,mDataSet.get(i),"DOT2LABEL");
-    String key=mDataSet.get(i).getLineKey();
-    if ("" != key)     lstKey.add(mDataSet.get(i));
+  if (null == mDataSet) {
+    Log.e(TAG,"?????????????????????.");
+    return false;
   }
-  if (null == plotLegend)   plotLegend=new PlotLegendRender(this);
+  List<LnData> lstKey=new ArrayList<LnData>();
+  String key="";
+  for (int i=0; i < mDataSet.size(); i++) {
+    if (renderLine(canvas,mDataSet.get(i),"LINE") == false)     return false;
+    ;
+    if (renderLine(canvas,mDataSet.get(i),"DOT2LABEL") == false)     return false;
+    ;
+    key=mDataSet.get(i).getLineKey();
+    if ("" != key && key.length() > 0)     lstKey.add(mDataSet.get(i));
+  }
   plotLegend.renderLineKey(canvas,lstKey);
+  return true;
 }

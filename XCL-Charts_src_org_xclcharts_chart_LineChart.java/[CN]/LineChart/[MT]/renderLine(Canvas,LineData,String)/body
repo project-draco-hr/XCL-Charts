@@ -5,14 +5,27 @@
   float lineStartY=initY;
   float lineEndX=0.0f;
   float lineEndY=0.0f;
+  List<String> dataSet=categoryAxis.getDataSet();
+  if (null == dataSet) {
+    Log.e(TAG,"?????????????????????.");
+    return false;
+  }
+  List<Double> chartValues=bd.getLinePoint();
+  if (null == chartValues) {
+    Log.e(TAG,"????????????????????????.");
+    return false;
+  }
   float axisScreenHeight=getAxisScreenHeight();
   float axisDataHeight=(float)dataAxis.getAxisRange();
-  List<String> dataSet=categoryAxis.getDataSet();
-  if (null == dataSet)   return;
-  float XSteps=div(getAxisScreenWidth(),(dataSet.size() - 1));
-  List<Double> chartValues=bd.getLinePoint();
-  if (null == chartValues)   return;
+  float XSteps=0.0f;
   int j=0;
+  if (dataSet.size() == 1) {
+    XSteps=div(getAxisScreenWidth(),(dataSet.size()));
+    j=1;
+  }
+ else {
+    XSteps=div(getAxisScreenWidth(),(dataSet.size() - 1));
+  }
   for (  Double bv : chartValues) {
     float vaxlen=(float)MathHelper.getInstance().sub(bv,dataAxis.getAxisMin());
     float fvper=div(vaxlen,axisDataHeight);
@@ -44,11 +57,13 @@
         }
       }
  else {
-        return;
+        Log.e(TAG,"????????????????????????");
+        return false;
       }
     }
     lineStartX=lineEndX;
     lineStartY=lineEndY;
     j++;
   }
+  return true;
 }

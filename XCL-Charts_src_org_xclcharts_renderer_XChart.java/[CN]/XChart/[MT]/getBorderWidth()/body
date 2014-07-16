@@ -1,8 +1,8 @@
 {
-  int borderWidth=5;
+  int borderWidth=0;
   if (mShowBorder) {
     if (null == mBorder)     mBorder=new BorderRender();
-    borderWidth+=mBorder.getBorderWidth();
+    borderWidth=mBorder.getBorderWidth();
   }
   return borderWidth;
 }

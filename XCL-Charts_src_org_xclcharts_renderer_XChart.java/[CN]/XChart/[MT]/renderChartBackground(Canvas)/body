@@ -1,3 +1,12 @@
 {
-  if (mBackgroundColorVisible)   canvas.drawRect(this.getLeft(),this.getTop(),this.getRight(),this.getBottom(),mChartBackgroundPaint);
+  if (this.mBackgroundColorVisible) {
+    if (null == mBorder)     mBorder=new BorderRender();
+    if (mShowBorder) {
+      mBorder.renderBorder("CHART",canvas,mLeft,mTop,mRight,mBottom);
+    }
+ else {
+      int borderSpadding=mBorder.getBorderSpadding();
+      mBorder.renderBorder("CHART",canvas,mLeft - borderSpadding,mTop - borderSpadding,mRight + borderSpadding,mBottom + borderSpadding);
+    }
+  }
 }

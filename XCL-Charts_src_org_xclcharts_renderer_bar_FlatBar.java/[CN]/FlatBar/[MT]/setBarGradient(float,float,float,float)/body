@@ -1,8 +1,8 @@
 {
   int barColor=getBarPaint().getColor();
   int lightColor=DrawHelper.getInstance().getLightColor(barColor,150);
-  float width=MathHelper.getInstance().sub(right,left);
-  float height=MathHelper.getInstance().sub(bottom,top);
+  float width=Math.abs(right - left);
+  float height=Math.abs(bottom - top);
   LinearGradient linearGradient=null;
   Shader.TileMode tm=Shader.TileMode.MIRROR;
   if (width > height) {

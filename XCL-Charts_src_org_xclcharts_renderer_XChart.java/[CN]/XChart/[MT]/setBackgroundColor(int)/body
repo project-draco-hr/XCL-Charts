@@ -1,4 +1,6 @@
 {
   getBackgroundPaint().setColor(color);
   getPlotArea().getBackgroundPaint().setColor(color);
+  if (null == mBorder)   mBorder=new BorderRender();
+  mBorder.getChartBackgroundPaint().setColor(color);
 }

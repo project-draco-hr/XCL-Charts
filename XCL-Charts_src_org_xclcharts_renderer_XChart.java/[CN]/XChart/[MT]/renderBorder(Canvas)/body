@@ -1,6 +1,6 @@
 {
   if (mShowBorder) {
     if (null == mBorder)     mBorder=new BorderRender();
-    mBorder.renderBorder(canvas,mLeft,mTop,mRight,mBottom);
+    mBorder.renderBorder("BORDER",canvas,mLeft,mTop,mRight,mBottom);
   }
 }

@@ -3,5 +3,9 @@
   mPaintFill=new Paint();
   mPaintFill.setColor(fillColor);
   mPaintFill.setAntiAlias(true);
+  mPaintCenterText=new Paint();
+  mPaintCenterText.setAntiAlias(true);
+  mPaintCenterText.setTextSize(28);
+  mPaintCenterText.setTextAlign(Align.CENTER);
   this.setLabelPosition(XEnum.SliceLabelPosition.OUTSIDE);
 }
