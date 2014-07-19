@@ -1,9 +1,10 @@
 {
   try {
-    if (!validateAgent(curretAgent))     return;
+    if (!validateAgent(curretAgent))     return false;
     if (getGradient())     paintArc.setShader(renderRadialGradient(paintArc,cirX,cirY,radius));
     canvas.drawArc(arcRF0,offsetAgent,curretAgent,true,paintArc);
     renderLabel(canvas,cData.getLabel(),cirX,cirY,radius,offsetAgent,curretAgent);
+    return true;
   }
  catch (  Exception e) {
     throw e;

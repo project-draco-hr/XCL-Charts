@@ -35,10 +35,10 @@
   pBase2D.reset();
   pBase2D.moveTo(baseRight2,baseBottom2);
   pBase2D.lineTo(baseRight,baseBottom);
-  pBase2D.lineTo(baseRight,(float)(baseBottom + mAxisBaseThickness));
+  pBase2D.lineTo(baseRight,MathHelper.getInstance().add(baseBottom,mAxisBaseThickness));
   pBase2D.lineTo(baseRight2,baseBottom2 + mAxisBaseThickness);
   pBase2D.close();
   canvas.drawPath(pBase2D,paint);
   paint.setColor(baseLightColor);
-  canvas.drawRect(baseLeft2,baseBottom2,baseRight2,Math.round(baseBottom2 + mAxisBaseThickness),paint);
+  canvas.drawRect(baseLeft2,baseBottom2,baseRight2,baseBottom2 + mAxisBaseThickness,paint);
 }

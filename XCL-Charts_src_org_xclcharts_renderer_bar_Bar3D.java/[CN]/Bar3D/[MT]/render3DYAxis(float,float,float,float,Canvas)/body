@@ -2,8 +2,8 @@
   int baseLightColor=DrawHelper.getInstance().getLightColor(getAxis3DBaseColor(),mAlpha);
   mPaintBase.setColor(getAxis3DBaseColor());
   mPaintBase3D.setColor(baseLightColor);
-  float offsetX=(float)getOffsetX();
-  float offsetY=(float)getOffsetY();
+  float offsetX=MathHelper.getInstance().dtof(getOffsetX());
+  float offsetY=MathHelper.getInstance().dtof(getOffsetY());
   float baseLeft2=MathHelper.getInstance().sub(baseLeft,offsetX);
   float baseTop2=MathHelper.getInstance().add(baseTop,offsetY);
   float baseBottom2=MathHelper.getInstance().add(baseBottom,offsetY);
@@ -14,12 +14,12 @@
   pBase2D.lineTo(baseLeft,baseBottom);
   pBase2D.close();
   canvas.drawPath(pBase2D,mPaintBase);
-  canvas.drawRect(baseLeft2,baseTop2,Math.round(baseLeft2 - offsetX),baseBottom2,mPaintBase3D);
+  canvas.drawRect(baseLeft2,baseTop2,MathHelper.getInstance().sub(baseLeft2,offsetX),baseBottom2,mPaintBase3D);
   pBase2D.reset();
   pBase2D.moveTo(baseLeft,baseTop);
   pBase2D.lineTo(baseLeft2,baseTop2);
-  pBase2D.lineTo(Math.round(baseLeft2 - offsetX),baseTop2);
-  pBase2D.lineTo(Math.round(baseLeft - offsetX),baseTop);
+  pBase2D.lineTo(MathHelper.getInstance().sub(baseLeft2,offsetX),baseTop2);
+  pBase2D.lineTo(MathHelper.getInstance().sub(baseLeft,offsetX),baseTop);
   pBase2D.close();
   canvas.drawPath(pBase2D,mPaintBase3D);
 }

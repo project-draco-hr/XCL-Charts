@@ -1,0 +1,29 @@
+{
+  if (line.getLabel().length() > 0) {
+    float currentX=0.0f, currentY=0.0f;
+    float capX=0.0f;
+    currentY=MathHelper.getInstance().sub(mPlotArea.getBottom(),chartPostion);
+switch (line.getLabelHorizontalPostion()) {
+case LEFT:
+      currentX=MathHelper.getInstance().sub(mPlotArea.getLeft(),line.getLabelOffset());
+    line.getLineLabelPaint().setTextAlign(Align.RIGHT);
+  capX=mPlotArea.getRight();
+break;
+case CENTER:
+float w=MathHelper.getInstance().div(MathHelper.getInstance().sub(mPlotArea.getRight(),mPlotArea.getLeft()),2);
+currentX=MathHelper.getInstance().add(mPlotArea.getLeft(),w);
+currentX=MathHelper.getInstance().sub(currentX,line.getLabelOffset());
+line.getLineLabelPaint().setTextAlign(Align.CENTER);
+float w2=MathHelper.getInstance().div(MathHelper.getInstance().sub(mPlotArea.getRight(),mPlotArea.getLeft()),2);
+capX=MathHelper.getInstance().add(mPlotArea.getLeft(),w2);
+break;
+case RIGHT:
+currentX=MathHelper.getInstance().add(mPlotArea.getRight(),line.getLabelOffset());
+line.getLineLabelPaint().setTextAlign(Align.LEFT);
+capX=mPlotArea.getLeft();
+break;
+}
+renderLineCapVerticalPlot(canvas,line,capX,currentY);
+renderLabel(canvas,line,currentX,currentY);
+}
+}

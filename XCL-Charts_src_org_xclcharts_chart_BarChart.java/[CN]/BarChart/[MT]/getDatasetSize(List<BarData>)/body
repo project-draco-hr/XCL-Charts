@@ -1,8 +1,8 @@
 {
-  if (null == chartDataSource)   return 0;
-  int ret=chartDataSource.size();
-  for (int i=0; i < chartDataSource.size(); i++) {
-    BarData bd=chartDataSource.get(i);
+  if (null == dataSource)   return 0;
+  int ret=dataSource.size();
+  for (int i=0; i < dataSource.size(); i++) {
+    BarData bd=dataSource.get(i);
     List<Double> barValues=bd.getDataSet();
     if (barValues.size() == 1) {
       if (Double.compare(barValues.get(0),dataAxis.getAxisMin()) == 0)       ret--;

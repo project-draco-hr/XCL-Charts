@@ -1,6 +1,9 @@
 {
   try {
-    if (null == mDataset)     return;
+    if (null == mDataset) {
+      Log.e(TAG,"???????????????.");
+      return false;
+    }
     float cirX=plotArea.getCenterX();
     float cirY=plotArea.getCenterY();
     float radius=getRadius();
@@ -17,10 +20,10 @@
       currentAgent=cData.getSliceAgent();
       if (Float.compare(currentAgent,0.0f) == 0 || Float.compare(currentAgent,0.0f) == -1)       continue;
       if (cData.getSelected()) {
-        drawSelectedSlice(canvas,paintArc,cData,cirX,cirY,radius,mOffsetAgent,currentAgent);
+        if (!drawSelectedSlice(canvas,paintArc,cData,cirX,cirY,radius,mOffsetAgent,currentAgent))         return false;
       }
  else {
-        drawSlice(canvas,paintArc,arcRF0,cData,cirX,cirY,radius,mOffsetAgent,(float)currentAgent);
+        if (!drawSlice(canvas,paintArc,arcRF0,cData,cirX,cirY,radius,mOffsetAgent,(float)currentAgent))         return false;
       }
       mOffsetAgent=add(mOffsetAgent,currentAgent);
     }
@@ -28,5 +31,7 @@
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());
+    return false;
   }
+  return true;
 }

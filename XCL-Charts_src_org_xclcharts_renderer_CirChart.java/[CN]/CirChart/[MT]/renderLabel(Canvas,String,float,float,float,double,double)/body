@@ -1,12 +1,12 @@
 {
-  if (XEnum.SliceLabelPosition.HIDE == mLabelPosition)   return;
-  if ("" == text || text.length() == 0)   return;
+  if (XEnum.SliceLabelPosition.HIDE == mLabelPosition)   return true;
+  if ("" == text || text.length() == 0)   return true;
   float calcRadius=0.0f;
   float calcAgent=0.0f;
   calcAgent=(float)MathHelper.getInstance().add(offsetAgent,curretAgentt / 2);
   if (Float.compare(calcAgent,0.0f) == 0 || Float.compare(calcAgent,0.0f) == -1) {
     Log.e(TAG,"??????????????????????????????0.");
-    return;
+    return false;
   }
   if (XEnum.SliceLabelPosition.INNER == mLabelPosition) {
     calcRadius=MathHelper.getInstance().sub(radius,radius / 2f);
@@ -29,8 +29,8 @@
     float stopY=MathHelper.getInstance().getPosY();
     canvas.drawLine(startX,startY,stopX,stopY,mPaintLabelLine);
     float endX=0.0f;
-    if (stopX == cirX) {
-      if (stopY > cirY) {
+    if (Float.compare(stopX,cirX) == 0) {
+      if (Float.compare(stopY,cirY) == 1) {
         mPaintLabel.setTextAlign(Align.LEFT);
         endX=stopX + mLabelBrokenLineLength;
       }
@@ -39,8 +39,8 @@
         mPaintLabel.setTextAlign(Align.RIGHT);
       }
     }
- else     if (stopY == cirY) {
-      if (stopX <= cirX) {
+ else     if (Float.compare(stopY,cirY) == 0) {
+      if (Float.compare(stopX,cirX) == 0 || Float.compare(stopX,cirX) == -1) {
         mPaintLabel.setTextAlign(Align.RIGHT);
       }
  else {
@@ -48,11 +48,11 @@
       }
       endX=stopX;
     }
- else     if (stopX + mLabelBrokenLineLength > cirX) {
+ else     if (Float.compare(stopX + mLabelBrokenLineLength,cirX) == 1) {
       mPaintLabel.setTextAlign(Align.LEFT);
       endX=stopX + mLabelBrokenLineLength;
     }
- else     if (stopX - mLabelBrokenLineLength < cirX) {
+ else     if (Float.compare(stopX - mLabelBrokenLineLength,cirX) == -1) {
       mPaintLabel.setTextAlign(Align.RIGHT);
       endX=stopX - mLabelBrokenLineLength;
     }
@@ -65,6 +65,7 @@
   }
  else {
     Log.e(TAG,"???????????????????????????.");
-    return;
+    return false;
   }
+  return true;
 }

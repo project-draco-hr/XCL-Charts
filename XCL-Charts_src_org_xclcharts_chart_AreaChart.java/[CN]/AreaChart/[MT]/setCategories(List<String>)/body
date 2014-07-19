@@ -1,3 +1,4 @@
 {
+  if (null == categories)   return;
   categoryAxis.setDataBuilding(categories);
 }

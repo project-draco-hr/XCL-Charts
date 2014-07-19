@@ -4,12 +4,13 @@
     Log.e(TAG,"???????????????????????????????????????");
     return false;
   }
-  double axisHeight=mDataAxis.getAxisMax() - mDataAxis.getAxisMin();
+  double axisHeight=MathHelper.getInstance().sub(mDataAxis.getAxisMax(),mDataAxis.getAxisMin());
   for (  CustomLineData line : mCustomLineDataset) {
     line.getCustomLinePaint().setColor(line.getColor());
     line.getCustomLinePaint().setStrokeWidth(line.getLineStroke());
-    double postion=mAxisScreenHeight * ((line.getValue() - mDataAxis.getAxisMin()) / axisHeight);
-    float currentY=(float)(mPlotArea.getBottom() - postion);
+    double per=MathHelper.getInstance().div(MathHelper.getInstance().sub(line.getValue(),mDataAxis.getAxisMin()),axisHeight);
+    float postion=MathHelper.getInstance().mul(mAxisScreenHeight,MathHelper.getInstance().dtof(per));
+    float currentY=MathHelper.getInstance().sub(mPlotArea.getBottom(),postion);
     if (line.isShowLine())     DrawHelper.getInstance().drawLine(line.getLineStyle(),mPlotArea.getLeft(),currentY,mPlotArea.getRight(),currentY,canvas,line.getCustomLinePaint());
     renderCapLabelVerticalPlot(canvas,line,postion);
   }

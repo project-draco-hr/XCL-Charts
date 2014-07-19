@@ -1,11 +1,15 @@
 {
+  if (0 == barNumber) {
+    Log.e(TAG,"??????????????????.");
+    return null;
+  }
   float labelBarTotalWidth=MathHelper.getInstance().mul(XSteps,0.9f);
-  float barTotalInnerMargin=MathHelper.getInstance().mul(labelBarTotalWidth,(float)mBarInnerMargin);
+  float barTotalInnerMargin=MathHelper.getInstance().mul(labelBarTotalWidth,MathHelper.getInstance().dtof(mBarInnerMargin));
   float barTotalWidth=MathHelper.getInstance().sub(labelBarTotalWidth,barTotalInnerMargin);
   float barInnerMargin=MathHelper.getInstance().div(barTotalInnerMargin,barNumber);
   float barWidth=MathHelper.getInstance().div(barTotalWidth,barNumber);
-  List<Float> ret=new LinkedList<Float>();
-  ret.add(barWidth);
-  ret.add(barInnerMargin);
+  float[] ret=new float[2];
+  ret[0]=barWidth;
+  ret[1]=barInnerMargin;
   return ret;
 }

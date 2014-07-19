@@ -1,21 +1,31 @@
 {
   try {
     super.postRender(canvas);
+    if (null == mDataSet) {
+      Log.e(TAG,"????????????????????????");
+      return false;
+    }
+    List<String> dataSet=categoryAxis.getDataSet();
+    if (null == dataSet) {
+      Log.e(TAG,"????????????????????????.");
+      return false;
+    }
+    boolean ret=true;
 switch (mDirection) {
 case HORIZONTAL:
 {
-        renderHorizontalBar(canvas);
+        ret=renderHorizontalBar(canvas);
         break;
       }
 case VERTICAL:
 {
-      renderVerticalBar(canvas);
+      ret=renderVerticalBar(canvas);
       break;
     }
 }
+return ret;
 }
  catch (Exception e) {
 throw e;
 }
-return true;
 }

@@ -2,10 +2,9 @@
   try {
     super.postRender(canvas);
     if (false == validateParams())     return false;
-    renderPlot(canvas);
+    return renderPlot(canvas);
   }
  catch (  Exception e) {
     throw e;
   }
-  return true;
 }

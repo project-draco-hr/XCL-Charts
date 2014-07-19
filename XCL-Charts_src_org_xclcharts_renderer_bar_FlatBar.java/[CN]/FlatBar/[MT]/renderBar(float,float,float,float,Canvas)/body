@@ -8,7 +8,7 @@
     getBarPaint().setStyle(Style.STROKE);
     getBarPaint().setColor(barColor);
     canvas.drawRect(left,bottom,right,top,getBarPaint());
-    return;
+    return true;
   }
 switch (getBarStyle()) {
 case GRADIENT:
@@ -23,8 +23,9 @@ getBarPaint().setStyle(Style.STROKE);
 break;
 default :
 Log.e(TAG,"??????????????????????????????.");
-return;
+return false;
 }
 setBarGradient(left,top,right,bottom);
 canvas.drawRect(left,bottom,right,top,getBarPaint());
+return true;
 }

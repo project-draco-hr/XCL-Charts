@@ -1,23 +1,28 @@
 {
-  Integer totalAgent=0;
-  float newRadius=Math.round(getRadius() * 0.8f);
+  float totalAgent=0.0f;
+  float newRadius=mul(getRadius(),0.8f);
   RectF rect=new RectF();
   rect.left=sub(plotArea.getCenterX(),newRadius);
   rect.top=sub(plotArea.getCenterY(),newRadius);
   rect.right=add(plotArea.getCenterX(),newRadius);
   rect.bottom=add(plotArea.getCenterY(),newRadius);
-  if (null == mPartitionDataset)   return;
+  if (null == mPartitionDataset || mPartitionDataset.size() == 0) {
+    Log.e(TAG,"???????????????.");
+    return false;
+  }
   for (  Pair pr : mPartitionDataset) {
-    Integer agentValue=(Integer)pr.first;
-    if (agentValue < 0) {
+    Float agentValue=(Float)pr.first;
+    float total=add(totalAgent,agentValue);
+    if (Float.compare(agentValue,0.0f) < 0) {
       Log.e(TAG,"????????????!!!");
     }
- else     if ((totalAgent + agentValue) > 180) {
+ else     if (Float.compare(total,180.0f) == 1) {
       Log.e(TAG,"???????????????????????????180???");
-      return;
+      return false;
     }
     mPaintPartitionFill.setColor((Integer)pr.second);
-    canvas.drawArc(rect,totalAgent + 180,agentValue,true,mPaintPartitionFill);
-    totalAgent+=agentValue;
+    canvas.drawArc(rect,add(totalAgent,180.0f),agentValue,true,mPaintPartitionFill);
+    totalAgent=add(totalAgent,agentValue);
   }
+  return false;
 }

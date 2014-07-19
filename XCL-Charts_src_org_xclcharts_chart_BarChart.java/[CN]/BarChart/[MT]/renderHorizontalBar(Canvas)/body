@@ -1,32 +1,39 @@
 {
+  if (null == mDataSet)   return false;
   renderHorizontalBarDataAxis(canvas);
   renderHorizontalBarLabelAxis(canvas);
-  if (null == mDataSet)   return;
   float YSteps=getHorizontalYSteps();
   int barNumber=getDatasetSize(mDataSet);
   int currNumber=0;
-  List<Float> ret=mFlatBar.getBarHeightAndMargin(YSteps,barNumber);
-  float barHeight=ret.get(0);
-  float barInnerMargin=ret.get(1);
+  float[] ret=mFlatBar.getBarHeightAndMargin(YSteps,barNumber);
+  if (null == ret || ret.length != 2) {
+    Log.e(TAG,"????????????????????????.");
+    return false;
+  }
+  float barHeight=ret[0];
+  float barInnerMargin=ret[1];
   float labelBarUseHeight=add(mul(barNumber,barHeight),mul(sub(barNumber,1),barInnerMargin));
   float scrWidth=getAxisScreenWidth();
   float valueWidth=(float)dataAxis.getAxisRange();
+  int barDefualtColor=0;
+  Double bv=0d;
   for (int i=0; i < barNumber; i++) {
     BarData bd=mDataSet.get(i);
     List<Double> barValues=bd.getDataSet();
     if (null == barValues)     continue;
     List<Integer> barDataColor=bd.getDataColor();
-    int barDefualtColor=bd.getColor();
+    barDefualtColor=bd.getColor();
     mFlatBar.getBarPaint().setColor(barDefualtColor);
     for (int j=0; j < barValues.size(); j++) {
-      Double bv=barValues.get(j);
+      bv=barValues.get(j);
       setBarDataColor(mFlatBar.getBarPaint(),barDataColor,j,barDefualtColor);
       float currLableY=sub(plotArea.getBottom(),mul((j + 1),YSteps));
       float drawBarButtomY=add(currLableY,labelBarUseHeight / 2);
-      drawBarButtomY=sub(drawBarButtomY,(barHeight + barInnerMargin) * currNumber);
+      float tw=add(barHeight,barInnerMargin);
+      drawBarButtomY=sub(drawBarButtomY,tw * currNumber);
       float drawBarTopY=sub(drawBarButtomY,barHeight);
-      float vaxlen=(float)MathHelper.getInstance().sub(bv,dataAxis.getAxisMin());
-      float fvper=div(vaxlen,valueWidth);
+      double vaxlen=MathHelper.getInstance().sub(bv,dataAxis.getAxisMin());
+      float fvper=div(dtof(vaxlen),valueWidth);
       float valuePostion=mul(scrWidth,fvper);
       mFlatBar.renderBar(plotArea.getLeft(),drawBarButtomY,add(plotArea.getLeft(),valuePostion),drawBarTopY,canvas);
       mFlatBar.renderBarItemLabel(getFormatterItemLabel(bv),add(plotArea.getLeft(),valuePostion),sub(drawBarButtomY,barHeight / 2),canvas);
@@ -38,4 +45,5 @@
   plotLegend.renderBarKey(canvas,this.mDataSet);
   mCustomLine.setHorizontalPlot(dataAxis,plotArea,this.getAxisScreenWidth());
   mCustomLine.renderHorizontalCustomlinesDataAxis(canvas);
+  return true;
 }

@@ -1,5 +1,5 @@
 {
-  float currentRadius=Math.round(this.getRadius() * 0.9f);
+  float currentRadius=mul(getRadius(),0.9f);
   float cirX=plotArea.getCenterX();
   float cirY=plotArea.getCenterY();
   if (Float.compare(mPointerAgent,180f) == 0 || Float.compare(mPointerAgent,180f) == 1) {

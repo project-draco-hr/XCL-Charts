@@ -5,8 +5,8 @@
   for (int i=0; i < categoryAxis.getDataSet().size(); i++) {
     currentY=sub(plotArea.getBottom(),mul((i + 1),YSteps));
     plotGrid.renderGridLinesHorizontal(canvas,plotArea.getLeft(),currentY,plotArea.getRight(),currentY);
-    float tfx=(float)(mBar3D.getOffsetX() * 2);
-    float labelX=sub(plotArea.getLeft(),tfx);
+    double tfx=(mBar3D.getOffsetX() * 2);
+    float labelX=sub(plotArea.getLeft(),dtof(tfx));
     this.categoryAxis.renderAxisHorizontalTick(this,canvas,labelX,currentY,categoryAxis.getDataSet().get(i));
   }
 }

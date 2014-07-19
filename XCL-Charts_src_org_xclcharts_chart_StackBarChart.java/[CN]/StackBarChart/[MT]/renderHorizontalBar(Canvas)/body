@@ -1,4 +1,5 @@
 {
+  if (null == categoryAxis.getDataSet())   return false;
   renderHorizontalBarDataAxis(canvas);
   renderHorizontalBarLabelAxis(canvas);
   float axisScreenWidth=getAxisScreenWidth();
@@ -6,12 +7,12 @@
   float valueWidth=axisDataRange;
   float YSteps=getHorizontalYSteps();
   int barHeight=(int)MathHelper.getInstance().round(mul(YSteps,0.5f),2);
-  if (null == categoryAxis.getDataSet())   return;
   for (int r=0; r < categoryAxis.getDataSet().size(); r++) {
     float currentX=plotArea.getLeft();
     float currentY=sub(plotArea.getBottom(),mul((r + 1),YSteps));
     double total=0d;
     List<BarData> chartDataSource=this.getDataSource();
+    if (null == chartDataSource || chartDataSource.size() == 0)     continue;
     for (int i=0; i < chartDataSource.size(); i++) {
       BarData bd=chartDataSource.get(i);
       if (null == bd.getDataSet())       continue;
@@ -21,11 +22,11 @@
       total=MathHelper.getInstance().add(total,bv);
       float valuePostion=0.0f;
       if (i == 0) {
-        float t=(float)MathHelper.getInstance().sub(bv,dataAxis.getAxisMin());
-        valuePostion=mul(axisScreenWidth,div(t,valueWidth));
+        double t=MathHelper.getInstance().sub(bv,dataAxis.getAxisMin());
+        valuePostion=mul(axisScreenWidth,div(dtof(t),valueWidth));
       }
  else {
-        float t2=(float)(bv / valueWidth);
+        float t2=div(dtof(bv),valueWidth);
         valuePostion=mul(axisScreenWidth,t2);
       }
       flatBar.renderBar(currentX,sub(currentY,barHeight / 2),add(currentX,valuePostion),add(currentY,barHeight / 2),canvas);
@@ -33,11 +34,13 @@
       currentX=add(currentX,valuePostion);
     }
     if (mTotalLabelVisible) {
-      float totalPostion=(float)(axisScreenWidth / axisDataRange * (total - dataAxis.getAxisMin()));
-      flatBar.renderBarItemLabel(getFormatterItemLabel(total),plotArea.getLeft() + totalPostion,currentY,canvas);
+      double t=MathHelper.getInstance().sub(total,dataAxis.getAxisMin());
+      float totalPostion=mul(div(axisScreenWidth,axisDataRange),dtof(t));
+      flatBar.renderBarItemLabel(getFormatterItemLabel(total),add(plotArea.getLeft(),totalPostion),currentY,canvas);
     }
   }
   dataAxis.renderAxis(canvas,plotArea.getLeft(),plotArea.getBottom(),plotArea.getLeft(),plotArea.getTop());
   categoryAxis.renderAxis(canvas,plotArea.getLeft(),plotArea.getBottom(),plotArea.getRight(),plotArea.getBottom());
   plotLegend.renderBarKey(canvas,this.getDataSource());
+  return true;
 }

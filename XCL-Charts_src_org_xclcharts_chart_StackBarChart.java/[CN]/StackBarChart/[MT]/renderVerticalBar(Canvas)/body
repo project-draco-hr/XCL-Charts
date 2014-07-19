@@ -1,14 +1,14 @@
 {
+  List<String> dataSet=categoryAxis.getDataSet();
+  if (null == dataSet)   return false;
+  List<BarData> chartDataSource=this.getDataSource();
+  if (null == chartDataSource)   return false;
   renderVerticalBarDataAxis(canvas);
   renderVerticalBarCategoryAxis(canvas);
-  List<String> dataSet=categoryAxis.getDataSet();
-  if (null == dataSet)   return;
   float XSteps=getVerticalXSteps(dataSet.size() + 1);
   float axisScreenHeight=getAxisScreenHeight();
   float axisDataHeight=(float)dataAxis.getAxisRange();
   float barWidht=mul(XSteps,0.5f);
-  List<BarData> chartDataSource=this.getDataSource();
-  if (null == chartDataSource)   return;
   for (int r=0; r < dataSet.size(); r++) {
     float currentX=add(plotArea.getLeft(),mul((r + 1),XSteps));
     float currentY=plotArea.getBottom();
@@ -22,21 +22,22 @@
       total=MathHelper.getInstance().add(total,bv);
       float valuePostion=0.0f;
       if (i == 0) {
-        float t=(float)MathHelper.getInstance().sub(bv,dataAxis.getAxisMin());
-        valuePostion=mul(axisScreenHeight,div(t,axisDataHeight));
+        double t=MathHelper.getInstance().sub(bv,dataAxis.getAxisMin());
+        valuePostion=mul(axisScreenHeight,div(dtof(t),axisDataHeight));
       }
  else {
-        float t2=(float)(bv / axisDataHeight);
-        valuePostion=mul(axisScreenHeight,t2);
+        double t2=MathHelper.getInstance().div(bv,axisDataHeight);
+        valuePostion=mul(axisScreenHeight,dtof(t2));
       }
       flatBar.renderBar(sub(currentX,barWidht / 2),sub(currentY,valuePostion),add(currentX,barWidht / 2),currentY,canvas);
       flatBar.renderBarItemLabel(getFormatterItemLabel(bv),currentX,sub(currentY,valuePostion / 2),canvas);
       currentY=sub(currentY,valuePostion);
     }
-    float per=(float)MathHelper.getInstance().sub(total,dataAxis.getAxisMin());
-    float totalPostion=MathHelper.getInstance().mul(div(axisScreenHeight,axisDataHeight),per);
-    flatBar.renderBarItemLabel(getFormatterItemLabel(total),currentX,plotArea.getBottom() - totalPostion,canvas);
+    double per=MathHelper.getInstance().sub(total,dataAxis.getAxisMin());
+    float totalPostion=MathHelper.getInstance().mul(div(axisScreenHeight,axisDataHeight),dtof(per));
+    flatBar.renderBarItemLabel(getFormatterItemLabel(total),currentX,sub(plotArea.getBottom(),totalPostion),canvas);
   }
   dataAxis.renderAxis(canvas,plotArea.getLeft(),plotArea.getBottom(),plotArea.getRight(),plotArea.getBottom());
   plotLegend.renderBarKey(canvas,this.getDataSource());
+  return true;
 }

@@ -1,6 +1,6 @@
 {
   try {
-    if (!validateAgent(curretAgent))     return;
+    if (!validateAgent(curretAgent))     return false;
     float newRadius=div(radius,SELECTED_OFFSET);
     MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,newRadius,add(offsetAgent,curretAgent / 2f));
     float arcLeft=sub(MathHelper.getInstance().getPosX(),radius);
@@ -11,6 +11,7 @@
     if (getGradient())     paintArc.setShader(renderRadialGradient(paintArc,cirX,cirY,radius));
     canvas.drawArc(arcRF1,offsetAgent,curretAgent,true,paintArc);
     renderLabel(canvas,cData.getLabel(),MathHelper.getInstance().getPosX(),MathHelper.getInstance().getPosY(),radius,offsetAgent,curretAgent);
+    return true;
   }
  catch (  Exception e) {
     throw e;

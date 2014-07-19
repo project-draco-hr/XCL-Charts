@@ -1,7 +1,7 @@
 {
-  float currentX=plotArea.getLeft();
   List<String> dataSet=categoryAxis.getDataSet();
   if (null == dataSet)   return;
+  float currentX=plotArea.getLeft();
   float XSteps=div(getAxisScreenWidth(),(dataSet.size() + 1));
   for (int i=0; i < dataSet.size(); i++) {
     currentX=add(plotArea.getLeft(),mul((i + 1),XSteps));

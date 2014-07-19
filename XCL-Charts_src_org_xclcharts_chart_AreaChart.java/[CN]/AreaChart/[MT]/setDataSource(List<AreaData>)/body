@@ -1,3 +1,4 @@
 {
+  if (null == dataset)   return;
   this.mDataset=dataset;
 }
