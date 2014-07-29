@@ -1,0 +1,19 @@
+{
+  try {
+    chart.setLabelPosition(XEnum.SliceLabelPosition.LINE);
+    int[] ltrb=new int[4];
+    ltrb[0]=DensityUtil.dip2px(getContext(),60);
+    ltrb[1]=DensityUtil.dip2px(getContext(),55);
+    ltrb[2]=DensityUtil.dip2px(getContext(),60);
+    ltrb[3]=DensityUtil.dip2px(getContext(),50);
+    chart.setPadding(ltrb[0],ltrb[1],ltrb[2],ltrb[3]);
+    chart.setDataSource(chartData);
+    chart.setTitle("???????????????");
+    chart.addSubtitle("(XCL-Charts Demo)");
+    chart.getPlotTitle().setTitlePosition(XEnum.Position.CENTER);
+    chart.ActiveListenItemClick();
+  }
+ catch (  Exception e) {
+    Log.e(TAG,e.toString());
+  }
+}

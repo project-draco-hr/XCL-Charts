@@ -1,6 +1,6 @@
 {
-  double[] xy=new double[2];
-  xy[0]=this.getLeft() + div(this.getWidth(),2f);
-  xy[1]=this.getTop() + div(this.getHeight(),2f);
-  return xy;
+  PointF point=new PointF();
+  point.x=this.getLeft() + div(this.getWidth(),2f);
+  point.y=this.getTop() + div(this.getHeight(),2f);
+  return point;
 }

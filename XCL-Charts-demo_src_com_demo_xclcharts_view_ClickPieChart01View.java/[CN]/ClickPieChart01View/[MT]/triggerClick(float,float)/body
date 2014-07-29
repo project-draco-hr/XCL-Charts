@@ -1,0 +1,7 @@
+{
+  ArcPosition record=chart.getPositionRecord(x,y);
+  if (null == record)   return;
+  PieData pData=chartData.get(record.getDataID());
+  Toast.makeText(this.getContext(),"View Info key:" + pData.getKey() + " Label:"+ pData.getLabel(),Toast.LENGTH_SHORT).show();
+  onClickListener.onClick(new PointF(x,y),record);
+}

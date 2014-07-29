@@ -1,0 +1,5 @@
+{
+  mPoint=new PointF();
+  mPoint.x=x;
+  mPoint.y=y;
+}

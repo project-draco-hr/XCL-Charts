@@ -1,0 +1,7 @@
+{
+  BarPosition record=chart.getPositionRecord(x,y);
+  if (null == record)   return;
+  BarData bData=BarDataSet.get(record.getDataID());
+  Double bValue=bData.getDataSet().get(record.getDataChildID());
+  Toast.makeText(this.getContext(),"info:" + record.getBarInfo() + " Key:"+ bData.getKey()+ " Current Value:"+ Double.toString(bValue),Toast.LENGTH_SHORT).show();
+}

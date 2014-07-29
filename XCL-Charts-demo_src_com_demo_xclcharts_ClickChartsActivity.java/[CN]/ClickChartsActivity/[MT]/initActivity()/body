@@ -1,0 +1,21 @@
+{
+  FrameLayout content=new FrameLayout(this);
+  FrameLayout.LayoutParams frameParm=new FrameLayout.LayoutParams(FrameLayout.LayoutParams.WRAP_CONTENT,FrameLayout.LayoutParams.WRAP_CONTENT);
+  frameParm.gravity=Gravity.BOTTOM | Gravity.RIGHT;
+  DisplayMetrics dm=getResources().getDisplayMetrics();
+  int scrWidth=(int)(dm.widthPixels * 0.9);
+  int scrHeight=(int)(dm.heightPixels * 0.9);
+  RelativeLayout.LayoutParams layoutParams=new RelativeLayout.LayoutParams(scrWidth,scrHeight);
+  layoutParams.addRule(RelativeLayout.CENTER_IN_PARENT);
+  final RelativeLayout chartLayout=new RelativeLayout(this);
+  chartLayout.addView(mCharts,layoutParams);
+  ((ViewGroup)content).addView(chartLayout);
+  setContentView(content);
+  mCharts.setOnPlotClickListener(new ChartArcListener(){
+    @Override public void onClick(    PointF point,    ArcPosition positionRecord){
+      if (null == positionRecord)       return;
+      Toast.makeText(ClickChartsActivity.this,"Activity Info ID:" + positionRecord.getDataID(),Toast.LENGTH_SHORT).show();
+    }
+  }
+);
+}

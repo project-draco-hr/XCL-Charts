@@ -29,7 +29,11 @@
         float t2=div(dtof(bv),valueWidth);
         valuePostion=mul(axisScreenWidth,t2);
       }
-      flatBar.renderBar(currentX,sub(currentY,barHeight / 2),add(currentX,valuePostion),add(currentY,barHeight / 2),canvas);
+      float topY=sub(currentY,barHeight / 2);
+      float rightX=add(currentX,valuePostion);
+      float bottomY=add(currentY,barHeight / 2);
+      flatBar.renderBar(currentX,topY,rightX,bottomY,canvas);
+      saveBarRectFRecord(i,r,currentX,topY,rightX,bottomY);
       flatBar.renderBarItemLabel(getFormatterItemLabel(bv),add(currentX,valuePostion / 2),currentY,canvas);
       currentX=add(currentX,valuePostion);
     }

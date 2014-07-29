@@ -1,0 +1,56 @@
+{
+  float initX=plotArea.getLeft();
+  float initY=plotArea.getBottom();
+  float lineStartX=initX;
+  float lineStartY=initY;
+  float lineEndX=0.0f;
+  float lineEndY=0.0f;
+  float axisScreenWidth=getAxisScreenWidth();
+  float axisScreenHeight=getAxisScreenHeight();
+  float axisDataHeight=(float)dataAxis.getAxisRange();
+  LinkedHashMap<Double,Double> chartValues=bd.getLineDataSet();
+  if (null == chartValues)   return;
+  int j=0, childID=0;
+  Iterator iter=chartValues.entrySet().iterator();
+  while (iter.hasNext()) {
+    Entry entry=(Entry)iter.next();
+    Double xValue=(Double)entry.getKey();
+    Double yValue=(Double)entry.getValue();
+    float YvaluePostion=(float)(axisScreenHeight * ((yValue - dataAxis.getAxisMin()) / axisDataHeight));
+    float XvaluePostion=(float)(axisScreenWidth * ((xValue - mMinValue) / (mMaxValue - mMinValue)));
+    if (j == 0) {
+      lineStartX=add(initX,XvaluePostion);
+      lineStartY=sub(initY,YvaluePostion);
+      lineEndX=lineStartX;
+      lineEndY=lineStartY;
+    }
+ else {
+      lineEndX=add(initX,XvaluePostion);
+      lineEndY=sub(initY,YvaluePostion);
+    }
+    PlotLine pLine=bd.getPlotLine();
+    if (type.equalsIgnoreCase("LINE")) {
+      canvas.drawLine(lineStartX,lineStartY,lineEndX,lineEndY,pLine.getLinePaint());
+    }
+ else     if (type.equalsIgnoreCase("DOT2LABEL")) {
+      if (!pLine.getDotStyle().equals(XEnum.DotStyle.HIDE)) {
+        float rendEndX=lineEndX;
+        PlotDot pDot=pLine.getPlotDot();
+        rendEndX=add(lineEndX,pDot.getDotRadius());
+        RectF rect=PlotDotRender.getInstance().renderDot(canvas,pDot,lineStartX,lineStartY,lineEndX,lineEndY,pLine.getDotPaint());
+        lineEndX=rendEndX;
+        savePointRecord(dataID,childID,lineEndX,lineEndY,rect);
+        childID++;
+      }
+      if (bd.getLabelVisible()) {
+        canvas.drawText(getFormatterDotLabel(Double.toString(xValue) + "," + Double.toString(yValue)),lineEndX,lineEndY,pLine.getDotLabelPaint());
+      }
+    }
+ else {
+      return;
+    }
+    lineStartX=lineEndX;
+    lineStartY=lineEndY;
+    j++;
+  }
+}

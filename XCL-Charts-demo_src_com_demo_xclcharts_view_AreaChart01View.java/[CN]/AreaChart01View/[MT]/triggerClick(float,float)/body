@@ -1,0 +1,7 @@
+{
+  PointPosition record=chart.getPositionRecord(x,y);
+  if (null == record)   return;
+  AreaData lData=mDataset.get(record.getDataID());
+  Double lValue=lData.getLinePoint().get(record.getDataChildID());
+  Toast.makeText(this.getContext(),record.getPointInfo() + " Key:" + lData.getLineKey()+ " Label:"+ lData.getLabel()+ " Current Value:"+ Double.toString(lValue),Toast.LENGTH_SHORT).show();
+}

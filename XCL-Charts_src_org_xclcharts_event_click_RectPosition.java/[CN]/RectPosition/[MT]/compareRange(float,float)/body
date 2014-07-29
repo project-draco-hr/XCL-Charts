@@ -1,0 +1,12 @@
+{
+  if (null == mRectF)   return false;
+  mRectF.left-=mExtValue;
+  mRectF.top-=mExtValue;
+  mRectF.right+=mExtValue;
+  mRectF.bottom+=mExtValue;
+  if (mRectF.contains(x,y))   return true;
+  if ((Float.compare(x,mRectF.left) == 1 || Float.compare(x,mRectF.left) == 0) && (Float.compare(x,mRectF.right) == -1 || Float.compare(x,mRectF.right) == 0) && (Float.compare(y,mRectF.bottom) == 1 || Float.compare(y,mRectF.bottom) == 0)&& (Float.compare(y,mRectF.top) == -1 || Float.compare(y,mRectF.top) == 0)) {
+    return true;
+  }
+  return false;
+}

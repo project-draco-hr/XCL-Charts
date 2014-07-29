@@ -3,34 +3,34 @@
   float arcAngle=(float)(Math.PI * div(cirAngle,180.0f));
   if (Float.compare(arcAngle,0.0f) == -1)   posX=posY=0.0f;
   if (Float.compare(cirAngle,90.0f) == -1) {
-    posX=add(cirX,(float)Math.cos(arcAngle) * mRadius);
-    posY=add(cirY,(float)Math.sin(arcAngle) * mRadius);
+    posX=add(cirX,(float)Math.cos(arcAngle) * radius);
+    posY=add(cirY,(float)Math.sin(arcAngle) * radius);
   }
  else   if (Float.compare(cirAngle,00.0f) == 0) {
     posX=cirX;
-    posY=add(cirY,mRadius);
+    posY=add(cirY,radius);
   }
  else   if (Float.compare(cirAngle,90.0f) == 1 && Float.compare(cirAngle,180.0f) == -1) {
     arcAngle=(float)(Math.PI * (sub(180f,cirAngle)) / 180.0f);
-    posX=sub(cirX,(float)(Math.cos(arcAngle) * mRadius));
-    posY=add(cirY,(float)(Math.sin(arcAngle) * mRadius));
+    posX=sub(cirX,(float)(Math.cos(arcAngle) * radius));
+    posY=add(cirY,(float)(Math.sin(arcAngle) * radius));
   }
  else   if (Float.compare(cirAngle,180.0f) == 0) {
-    posX=(float)(cirX - mRadius);
+    posX=(float)(cirX - radius);
     posY=cirY;
   }
  else   if (Float.compare(cirAngle,180.0f) == 1 && Float.compare(cirAngle,270.0f) == -1) {
     arcAngle=(float)(Math.PI * (sub(cirAngle,180.0f)) / 180.0f);
-    posX=sub(cirX,(float)(Math.cos(arcAngle) * mRadius));
-    posY=sub(cirY,(float)(Math.sin(arcAngle) * mRadius));
+    posX=sub(cirX,(float)(Math.cos(arcAngle) * radius));
+    posY=sub(cirY,(float)(Math.sin(arcAngle) * radius));
   }
  else   if (Float.compare(cirAngle,270.0f) == 0) {
     posX=cirX;
-    posY=sub(cirY,mRadius);
+    posY=sub(cirY,radius);
   }
  else {
     arcAngle=(float)(Math.PI * (sub(360.0f,cirAngle)) / 180.0f);
-    posX=add(cirX,(float)(Math.cos(arcAngle) * mRadius));
-    posY=sub(cirY,(float)(Math.sin(arcAngle) * mRadius));
+    posX=add(cirX,(float)(Math.cos(arcAngle) * radius));
+    posY=sub(cirY,(float)(Math.sin(arcAngle) * radius));
   }
 }

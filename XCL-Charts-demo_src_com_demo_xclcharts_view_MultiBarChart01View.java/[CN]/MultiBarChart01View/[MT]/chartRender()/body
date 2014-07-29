@@ -1,7 +1,7 @@
 {
   try {
     int[] ltrb=getBarLnDefaultSpadding();
-    chart.setPadding(ltrb[0],ltrb[1],DensityUtil.dip2px(getContext(),45),ltrb[3]);
+    chart.setPadding(DensityUtil.dip2px(getContext(),45),ltrb[1],ltrb[2],ltrb[3]);
     chart.setDataSource(chartData);
     chart.setCategories(chartLabels);
     chart.getDataAxis().setAxisMax(2500);

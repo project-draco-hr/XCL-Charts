@@ -1,0 +1,9 @@
+{
+  if (null == mRectF)   return "";
+  float left=mRectF.left + mExtValue;
+  float top=mRectF.top + mExtValue;
+  float right=mRectF.right - mExtValue;
+  float bottom=mRectF.bottom - mExtValue;
+  String info=" left:" + Float.toString(left) + " top:"+ Float.toString(top)+ " right:"+ Float.toString(right)+ " bottom:"+ Float.toString(bottom);
+  return info;
+}

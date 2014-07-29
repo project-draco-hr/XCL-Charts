@@ -1,0 +1,5 @@
+{
+  if (null == mPoint)   return "";
+  String info="x:" + Float.toString(mPoint.x) + " y:"+ Float.toString(mPoint.y);
+  return info;
+}

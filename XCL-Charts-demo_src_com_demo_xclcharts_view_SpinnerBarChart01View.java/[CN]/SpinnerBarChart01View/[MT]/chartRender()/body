@@ -2,7 +2,7 @@
   try {
     initChart(mChartStyle);
     int[] ltrb=getBarLnDefaultSpadding();
-    mChart.setPadding(ltrb[0],ltrb[1],DensityUtil.dip2px(getContext(),50),ltrb[3]);
+    mChart.setPadding(DensityUtil.dip2px(getContext(),50),ltrb[1],ltrb[2],ltrb[3]);
     mChart.setDataSource(chartData);
     mChart.setCategories(chartLabels);
     mChart.getDataAxis().setAxisMax(100);

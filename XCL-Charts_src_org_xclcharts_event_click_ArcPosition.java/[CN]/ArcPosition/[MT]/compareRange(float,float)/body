@@ -1,0 +1,4 @@
+{
+  if (null == mCirXY)   return false;
+  return compareRadius(x,y);
+}

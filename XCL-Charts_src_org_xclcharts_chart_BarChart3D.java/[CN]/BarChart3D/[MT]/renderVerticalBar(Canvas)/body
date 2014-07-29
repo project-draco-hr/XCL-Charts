@@ -38,7 +38,9 @@
       float drawBarStartX=sub(add(initX,mul((j + 1),XSteps)),labelBarUseWidth / 2);
       drawBarStartX=add(drawBarStartX,(barWidth + barInnerMargin) * currNumber);
       float drawBarEndX=add(drawBarStartX,barWidth);
-      mBar3D.renderVertical3DBar(drawBarStartX,sub(plotArea.getBottom(),valuePostion),drawBarEndX,plotArea.getBottom(),mBar3D.getBarPaint().getColor(),canvas);
+      float topY=sub(plotArea.getBottom(),valuePostion);
+      mBar3D.renderVertical3DBar(drawBarStartX,topY,drawBarEndX,plotArea.getBottom(),mBar3D.getBarPaint().getColor(),canvas);
+      saveBarRectFRecord(i,j,drawBarStartX,topY,drawBarEndX,plotArea.getBottom());
       mBar3D.renderBarItemLabel(getFormatterItemLabel(bv),add(drawBarStartX,barWidth / 2),sub(plotArea.getBottom(),valuePostion),canvas);
     }
     currNumber++;

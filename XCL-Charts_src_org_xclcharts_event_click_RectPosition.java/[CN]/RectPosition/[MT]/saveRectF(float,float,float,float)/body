@@ -1,0 +1,4 @@
+{
+  if (null == mRectF)   mRectF=new RectF();
+  mRectF.set(left,top,right,bottom);
+}

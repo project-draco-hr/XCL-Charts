@@ -1,0 +1,7 @@
+{
+  super.onTouchEvent(event);
+  if (event.getAction() == MotionEvent.ACTION_UP) {
+    triggerClick(event.getX(),event.getY());
+  }
+  return true;
+}

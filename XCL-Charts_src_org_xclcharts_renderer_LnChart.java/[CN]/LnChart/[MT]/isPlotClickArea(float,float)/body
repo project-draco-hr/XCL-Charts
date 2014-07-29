@@ -1,0 +1,8 @@
+{
+  if (!getListenItemClickStatus())   return false;
+  if (Float.compare(x,getLeft()) == -1)   return false;
+  if (Float.compare(x,getRight()) == 1)   return false;
+  if (Float.compare(y,getPlotArea().getTop()) == -1)   return false;
+  if (Float.compare(y,getPlotArea().getBottom()) == 1)   return false;
+  return true;
+}

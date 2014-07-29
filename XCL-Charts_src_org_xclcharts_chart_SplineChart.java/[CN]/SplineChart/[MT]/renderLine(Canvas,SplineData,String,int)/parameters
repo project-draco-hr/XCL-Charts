@@ -1,0 +1,4 @@
+Canvas canvas
+SplineData bd
+String type
+int dataID

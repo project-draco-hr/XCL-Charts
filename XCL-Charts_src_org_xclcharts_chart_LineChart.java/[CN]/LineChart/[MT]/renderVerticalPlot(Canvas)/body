@@ -13,9 +13,9 @@
   List<LnData> lstKey=new ArrayList<LnData>();
   String key="";
   for (int i=0; i < mDataSet.size(); i++) {
-    if (renderLine(canvas,mDataSet.get(i),"LINE") == false)     return false;
+    if (renderLine(canvas,mDataSet.get(i),"LINE",i) == false)     return false;
     ;
-    if (renderLine(canvas,mDataSet.get(i),"DOT2LABEL") == false)     return false;
+    if (renderLine(canvas,mDataSet.get(i),"DOT2LABEL",i) == false)     return false;
     ;
     key=mDataSet.get(i).getLineKey();
     if ("" != key && key.length() > 0)     lstKey.add(mDataSet.get(i));

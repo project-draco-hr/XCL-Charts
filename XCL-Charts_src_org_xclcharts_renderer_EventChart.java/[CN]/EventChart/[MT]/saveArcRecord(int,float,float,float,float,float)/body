@@ -1,0 +1,10 @@
+{
+  if (null == mRecordset)   mRecordset=new ArrayList<PlotArcPosition>();
+  if (this.getListenItemClickStatus()) {
+    PlotArcPosition pRecord=new PlotArcPosition();
+    pRecord.savePlotDataID(dataID);
+    pRecord.savePlotCirXY(centerX,centerY);
+    pRecord.saveAgent(radius,offsetAgent,agent);
+    mRecordset.add(pRecord);
+  }
+}

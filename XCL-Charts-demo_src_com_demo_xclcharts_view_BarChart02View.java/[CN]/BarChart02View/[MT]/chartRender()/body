@@ -1,7 +1,7 @@
 {
   try {
     int[] ltrb=getBarLnDefaultSpadding();
-    chart.setPadding(ltrb[0],ltrb[1],DensityUtil.dip2px(getContext(),50),ltrb[3]);
+    chart.setPadding(DensityUtil.dip2px(getContext(),50),ltrb[1],ltrb[2],ltrb[3]);
     chart.setTitle("??????????????????");
     chart.addSubtitle("(XCL-Charts Demo)");
     chart.setTitlePosition(XEnum.Position.CENTER);
@@ -40,4 +40,5 @@
  catch (  Exception e) {
     Log.e(TAG,e.toString());
   }
+  chart.ActiveListenItemClick();
 }

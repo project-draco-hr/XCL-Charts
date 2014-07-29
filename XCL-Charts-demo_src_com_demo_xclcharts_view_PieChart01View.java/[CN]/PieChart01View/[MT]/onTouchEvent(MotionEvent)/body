@@ -1,0 +1,9 @@
+{
+  super.onTouchEvent(event);
+  if (event.getAction() == MotionEvent.ACTION_UP) {
+    if (chart.isPlotClickArea(event.getX(),event.getY())) {
+      triggerClick(event.getX(),event.getY());
+    }
+  }
+  return true;
+}

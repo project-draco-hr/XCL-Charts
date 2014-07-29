@@ -1,7 +1,7 @@
 {
   try {
     chart.setChartRange(0,0,this.getLayoutParams().width - 10,this.getLayoutParams().height - 10);
-    chart.setPadding(120,180,70,0);
+    chart.setPadding(70,120,0,180);
     chart.render(canvas);
   }
  catch (  Exception e) {

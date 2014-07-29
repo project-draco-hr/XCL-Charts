@@ -1,0 +1,5 @@
+Canvas canvas
+AreaData bd
+String type
+int alpha
+int dataID

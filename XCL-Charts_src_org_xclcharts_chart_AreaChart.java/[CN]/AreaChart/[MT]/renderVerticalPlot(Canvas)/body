@@ -7,8 +7,8 @@
   renderVerticalCategoryAxis(canvas);
   List<LnData> lstKey=new ArrayList<LnData>();
   for (int i=0; i < mDataset.size(); i++) {
-    if (!this.renderLine(canvas,mDataset.get(i),"LINE",(int)Math.round(mDataset.size() * i)))     return false;
-    if (!this.renderLine(canvas,mDataset.get(i),"DOT2LABEL",(int)Math.round(mDataset.size() * i)))     return false;
+    if (!this.renderLine(canvas,mDataset.get(i),"LINE",(int)Math.round(mDataset.size() * i),i))     return false;
+    if (!this.renderLine(canvas,mDataset.get(i),"DOT2LABEL",(int)Math.round(mDataset.size() * i),i))     return false;
     lstKey.add(mDataset.get(i));
   }
   plotLegend.renderLineKey(canvas,lstKey);

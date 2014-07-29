@@ -1,7 +1,5 @@
 {
   try {
-    List<Double> dataSeries=new LinkedList<Double>();
-    dataSeries.add(0d);
     for (int i=0; i < chartData.size(); i++) {
       Thread.sleep(100);
       LinkedList<PieData> animationData=new LinkedList<PieData>();
@@ -12,6 +10,7 @@
       }
       animationData.add(new PieData("","",100 - sum,(int)Color.argb(1,0,0,0)));
       chart.setDataSource(animationData);
+      if (chartData.size() - 1 == i)       chart.ActiveListenItemClick();
       postInvalidate();
     }
   }

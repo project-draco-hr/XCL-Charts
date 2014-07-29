@@ -1,4 +1,4 @@
 float cirX
 float cirY
-float mRadius
+float radius
 float cirAngle

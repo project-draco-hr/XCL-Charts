@@ -1,0 +1,9 @@
+{
+  super.onCreate(savedInstanceState);
+  mCharts=new ClickPieChart01View(this);
+  Bundle bunde=this.getIntent().getExtras();
+  mSelected=bunde.getInt("selected");
+  String title=bunde.getString("title");
+  initActivity();
+  setTitle("ClickChartsActivity");
+}

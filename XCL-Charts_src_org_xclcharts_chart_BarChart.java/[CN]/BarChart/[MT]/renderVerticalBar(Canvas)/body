@@ -35,7 +35,9 @@
       float tw=add(barWidth,barInnerMargin);
       drawBarStartX=add(drawBarStartX,tw * currNumber);
       float drawBarEndX=add(drawBarStartX,barWidth);
-      mFlatBar.renderBar(drawBarStartX,plotArea.getBottom(),drawBarEndX,sub(plotArea.getBottom(),valuePostion),canvas);
+      float topY=sub(plotArea.getBottom(),valuePostion);
+      mFlatBar.renderBar(drawBarStartX,plotArea.getBottom(),drawBarEndX,topY,canvas);
+      saveBarRectFRecord(i,j,drawBarStartX,topY,drawBarEndX,plotArea.getBottom());
       mFlatBar.renderBarItemLabel(getFormatterItemLabel(bv),add(drawBarStartX,barWidth / 2),sub(plotArea.getBottom(),valuePostion),canvas);
     }
     currNumber++;

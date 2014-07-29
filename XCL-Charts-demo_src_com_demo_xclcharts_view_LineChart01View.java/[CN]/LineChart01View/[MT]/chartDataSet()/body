@@ -44,6 +44,7 @@
   valuesE.add(90d);
   LineData lineData5=new LineData("??????",valuesE,(int)Color.rgb(234,142,43));
   lineData5.setDotRadius(15);
+  lineData5.setDotStyle(XEnum.DotStyle.TRIANGLE);
   chartData.add(lineData1);
   chartData.add(lineData2);
   chartData.add(lineData3);

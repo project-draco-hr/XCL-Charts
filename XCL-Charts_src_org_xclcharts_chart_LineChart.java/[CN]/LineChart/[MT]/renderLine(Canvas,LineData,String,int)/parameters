@@ -1,0 +1,4 @@
+Canvas canvas
+LineData bd
+String type
+int dataID

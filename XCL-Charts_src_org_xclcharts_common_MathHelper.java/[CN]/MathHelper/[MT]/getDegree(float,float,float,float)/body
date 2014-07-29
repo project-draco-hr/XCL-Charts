@@ -1,0 +1,36 @@
+{
+  float nX=tx - sx;
+  float nY=ty - sy;
+  double angrad=0d, angel=0d, tpi=0d;
+  float tan=0.0f;
+  if (Float.compare(nX,0.0f) != 0) {
+    tan=Math.abs(nY / nX);
+    angel=Math.atan(tan);
+    if (Float.compare(nX,0.0f) == 1) {
+      if (Float.compare(nY,0.0f) == 1 || Float.compare(nY,0.0f) == 0) {
+        angrad=angel;
+      }
+ else {
+        angrad=2 * Math.PI - angel;
+      }
+    }
+ else {
+      if (Float.compare(nY,0.0f) == 1 || Float.compare(nY,0.0f) == 0) {
+        angrad=Math.PI - angel;
+      }
+ else {
+        angrad=Math.PI + angel;
+      }
+    }
+  }
+ else {
+    tpi=Math.PI / 2;
+    if (Float.compare(nY,0.0f) == 1) {
+      angrad=tpi;
+    }
+ else {
+      angrad=-1 * tpi;
+    }
+  }
+  return Math.toDegrees(angrad);
+}

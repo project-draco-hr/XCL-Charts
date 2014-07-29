@@ -9,6 +9,7 @@
         chart.addSubtitle("(XCL-Charts Demo)");
         chart.getPlotTitle().setTitlePosition(XEnum.Position.LOWER);
         chart.setChartRange(0.0f,0.0f,getWidth(),getHeight());
+        chart.ActiveListenItemClick();
       }
       postInvalidate();
     }

@@ -1,0 +1,14 @@
+{
+  if (!isPlotClickArea(x,y))   return null;
+  if (null == mRecordset)   return null;
+  Iterator it=mRecordset.iterator();
+  while (it.hasNext()) {
+    PlotPointPosition record=(PlotPointPosition)it.next();
+    if (record.compareF(x,y)) {
+      saveSelected(record.getRecordID());
+      return record;
+    }
+  }
+  clearSelected();
+  return null;
+}

@@ -30,6 +30,8 @@
 );
     chart.setTitle("Spline Chart");
     chart.addSubtitle("(XCL-Charts Demo)");
+    chart.ActiveListenItemClick();
+    chart.extPointClickRange(5);
   }
  catch (  Exception e) {
     e.printStackTrace();

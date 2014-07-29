@@ -35,7 +35,9 @@
       double vaxlen=MathHelper.getInstance().sub(bv,dataAxis.getAxisMin());
       float fvper=div(dtof(vaxlen),valueWidth);
       float valuePostion=mul(scrWidth,fvper);
-      mFlatBar.renderBar(plotArea.getLeft(),drawBarButtomY,add(plotArea.getLeft(),valuePostion),drawBarTopY,canvas);
+      float rightX=add(plotArea.getLeft(),valuePostion);
+      mFlatBar.renderBar(plotArea.getLeft(),drawBarTopY,rightX,drawBarButtomY,canvas);
+      saveBarRectFRecord(i,j,plotArea.getLeft(),drawBarTopY,rightX,drawBarButtomY);
       mFlatBar.renderBarItemLabel(getFormatterItemLabel(bv),add(plotArea.getLeft(),valuePostion),sub(drawBarButtomY,barHeight / 2),canvas);
     }
     currNumber++;

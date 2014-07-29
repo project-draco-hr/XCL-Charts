@@ -33,7 +33,10 @@
       drawBarButtomY=sub(drawBarButtomY,(barHeight + barInnerMargin) * currNumber);
       double tlen=MathHelper.getInstance().sub(bv,dataAxis.getAxisMin());
       float valuePostion=mul(scrWidth,div(dtof(tlen),valueWidth));
-      mBar3D.renderHorizontal3DBar(plotArea.getLeft(),sub(drawBarButtomY,barHeight),add(plotArea.getLeft(),valuePostion),drawBarButtomY,mBar3D.getBarPaint().getColor(),canvas);
+      float topY=sub(drawBarButtomY,barHeight);
+      float rightX=add(plotArea.getLeft(),valuePostion);
+      mBar3D.renderHorizontal3DBar(plotArea.getLeft(),topY,rightX,drawBarButtomY,mBar3D.getBarPaint().getColor(),canvas);
+      saveBarRectFRecord(i,j,plotArea.getLeft(),topY,rightX,drawBarButtomY);
       mBar3D.renderBarItemLabel(getFormatterItemLabel(bv),add(plotArea.getLeft(),valuePostion),sub(drawBarButtomY,barHeight / 2),canvas);
     }
     currNumber++;

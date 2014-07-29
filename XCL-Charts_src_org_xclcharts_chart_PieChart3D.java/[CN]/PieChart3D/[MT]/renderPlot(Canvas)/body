@@ -15,6 +15,7 @@
   Paint paintArc=new Paint();
   paintArc.setAntiAlias(true);
   float initOffsetAgent=mOffsetAgent;
+  float offsetAgent=initOffsetAgent;
   float currentAgent=0.0f;
   for (int i=0; i < mRender3DLevel; i++) {
     canvas.save(Canvas.MATRIX_SAVE_FLAG);
@@ -26,24 +27,24 @@
       if (Float.compare(currentAgent,0.0f) == 0 || Float.compare(currentAgent,0.0f) == -1)       continue;
       if (cData.getSelected()) {
         float newRadius=div(radius,SELECTED_OFFSET);
-        MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,newRadius,add(mOffsetAgent,div(currentAgent,2f)));
+        MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,newRadius,add(offsetAgent,div(currentAgent,2f)));
         float arcLeft2=sub(MathHelper.getInstance().getPosX(),radius);
         float arcTop2=sub(MathHelper.getInstance().getPosY(),radius);
         float arcRight2=add(MathHelper.getInstance().getPosX(),radius);
         float arcBottom2=add(MathHelper.getInstance().getPosY(),radius);
         RectF arcRF1=new RectF(arcLeft2,arcTop2,arcRight2,arcBottom2);
-        canvas.drawArc(arcRF1,mOffsetAgent,currentAgent,true,paintArc);
+        canvas.drawArc(arcRF1,offsetAgent,currentAgent,true,paintArc);
       }
  else {
-        canvas.drawArc(arcRF0,mOffsetAgent,currentAgent,true,paintArc);
+        canvas.drawArc(arcRF0,offsetAgent,currentAgent,true,paintArc);
       }
-      mOffsetAgent=add(mOffsetAgent,currentAgent);
+      offsetAgent=add(offsetAgent,currentAgent);
     }
     canvas.restore();
-    mOffsetAgent=initOffsetAgent;
+    offsetAgent=initOffsetAgent;
   }
   currentAgent=0.0f;
-  mOffsetAgent=initOffsetAgent;
+  offsetAgent=initOffsetAgent;
   for (int j=0; j < chartDataSource.size(); j++) {
     PieData cData=chartDataSource.get(j);
     currentAgent=cData.getSliceAgent();
@@ -51,20 +52,21 @@
     paintArc.setColor(darkColor);
     if (cData.getSelected()) {
       float newRadius=div(radius,SELECTED_OFFSET);
-      MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,newRadius,add(mOffsetAgent,div(currentAgent,2f)));
+      MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,newRadius,add(offsetAgent,div(currentAgent,2f)));
       float arcLeft2=sub(MathHelper.getInstance().getPosX(),radius);
       float arcTop2=sub(MathHelper.getInstance().getPosY(),radius);
       float arcRight2=add(MathHelper.getInstance().getPosX(),radius);
       float arcBottom2=add(MathHelper.getInstance().getPosY(),radius);
       RectF arcRF1=new RectF(arcLeft2,arcTop2,arcRight2,arcBottom2);
-      canvas.drawArc(arcRF1,mOffsetAgent,(float)currentAgent,true,paintArc);
-      renderLabel(canvas,cData.getLabel(),MathHelper.getInstance().getPosX(),MathHelper.getInstance().getPosY(),radius,mOffsetAgent,currentAgent);
+      canvas.drawArc(arcRF1,offsetAgent,(float)currentAgent,true,paintArc);
+      renderLabel(canvas,cData.getLabel(),MathHelper.getInstance().getPosX(),MathHelper.getInstance().getPosY(),radius,offsetAgent,currentAgent);
     }
  else {
-      canvas.drawArc(arcRF0,mOffsetAgent,(float)currentAgent,true,paintArc);
-      renderLabel(canvas,cData.getLabel(),cirX,cirY,radius,mOffsetAgent,currentAgent);
+      canvas.drawArc(arcRF0,offsetAgent,(float)currentAgent,true,paintArc);
+      renderLabel(canvas,cData.getLabel(),cirX,cirY,radius,offsetAgent,currentAgent);
     }
-    mOffsetAgent=add(mOffsetAgent,currentAgent);
+    saveArcRecord(j,cirX,cirY,radius,offsetAgent,currentAgent);
+    offsetAgent=add(offsetAgent,currentAgent);
   }
   plotLegend.renderPieKey(canvas,this.getDataSource());
   return true;

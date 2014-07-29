@@ -1,0 +1,4 @@
+{
+  getMenuInflater().inflate(R.menu.click_charts,menu);
+  return true;
+}
