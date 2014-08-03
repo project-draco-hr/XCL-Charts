@@ -1,16 +1,16 @@
 {
   Double fd=new Double(mTickSteps);
-  float stepsAgent=div(180.0f,fd.floatValue());
+  float stepsAngle=div(180.0f,fd.floatValue());
   float cirX=plotArea.getCenterX();
   float cirY=plotArea.getCenterY();
   float tickRadius=mul(getRadius(),0.9f);
   for (int i=0; i < mTickSteps; i++) {
     if (0 == i)     continue;
-    float agent=(float)MathHelper.getInstance().add(180d,i * stepsAgent);
-    MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,getRadius(),agent);
+    float Angle=(float)MathHelper.getInstance().add(180d,i * stepsAngle);
+    MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,getRadius(),Angle);
     float startX=MathHelper.getInstance().getPosX();
     float startY=MathHelper.getInstance().getPosY();
-    MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,tickRadius,agent);
+    MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,tickRadius,Angle);
     canvas.drawLine(startX,startY,MathHelper.getInstance().getPosX(),MathHelper.getInstance().getPosY(),mPaintTick);
   }
 }

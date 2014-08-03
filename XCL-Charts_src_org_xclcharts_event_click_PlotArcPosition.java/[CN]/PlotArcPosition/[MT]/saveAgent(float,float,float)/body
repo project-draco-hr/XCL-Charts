@@ -1,5 +1,0 @@
-{
-  mRadius=radius;
-  mOffsetAgent=offsetAgent;
-  mCurrentAgent=currentAgent;
-}

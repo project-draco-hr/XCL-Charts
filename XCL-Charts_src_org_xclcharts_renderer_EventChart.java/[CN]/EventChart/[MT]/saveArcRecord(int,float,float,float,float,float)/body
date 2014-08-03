@@ -4,7 +4,7 @@
     PlotArcPosition pRecord=new PlotArcPosition();
     pRecord.savePlotDataID(dataID);
     pRecord.savePlotCirXY(centerX,centerY);
-    pRecord.saveAgent(radius,offsetAgent,agent);
+    pRecord.saveAngle(radius,offsetAngle,Angle);
     mRecordset.add(pRecord);
   }
 }

@@ -1,0 +1,4 @@
+{
+  mTotalAngle=totalAngle;
+  mInitAngle=initAngle;
+}

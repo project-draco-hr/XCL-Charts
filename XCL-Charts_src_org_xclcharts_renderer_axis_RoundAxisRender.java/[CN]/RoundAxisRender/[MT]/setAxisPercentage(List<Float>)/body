@@ -1,0 +1,5 @@
+{
+  if (null != mPercentage)   mPercentage.clear();
+  if (null == mPercentage)   mPercentage=new ArrayList<Float>();
+  mPercentage=angle;
+}

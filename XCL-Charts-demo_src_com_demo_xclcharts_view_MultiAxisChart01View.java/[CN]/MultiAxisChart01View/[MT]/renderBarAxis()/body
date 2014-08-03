@@ -12,7 +12,7 @@
   }
 );
   CategoryAxis categoryAxis=chart.getCategoryAxis();
-  categoryAxis.setTickLabelRotateAgent(-15f);
+  categoryAxis.setTickLabelRotateAngle(-15f);
   categoryAxis.getTickLabelPaint().setTextSize(15);
   categoryAxis.getTickLabelPaint().setTextAlign(Align.CENTER);
   categoryAxis.setLabelFormatter(new IFormatterTextCallBack(){

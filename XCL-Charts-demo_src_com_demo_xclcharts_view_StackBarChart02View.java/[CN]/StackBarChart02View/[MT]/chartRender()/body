@@ -9,7 +9,7 @@
     chart.getDataAxis().setAxisMax(1200);
     chart.getDataAxis().setAxisMin(100);
     chart.getDataAxis().setAxisSteps(100);
-    chart.getCategoryAxis().setTickLabelRotateAgent(-45f);
+    chart.getCategoryAxis().setTickLabelRotateAngle(-45f);
     chart.setTitle("?????????????????????????????????");
     chart.addSubtitle("(XCL-Charts Demo)");
     chart.setTitleAlign(XEnum.ChartTitleAlign.CENTER);

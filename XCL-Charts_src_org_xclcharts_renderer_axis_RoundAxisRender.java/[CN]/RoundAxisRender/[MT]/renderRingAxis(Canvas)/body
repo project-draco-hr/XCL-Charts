@@ -1,0 +1,26 @@
+{
+  if (!getVisible() || !getAxisLineVisible())   return true;
+  if (null == mPercentage)   return false;
+  int angleCount=0;
+  int colorCount=0;
+  int labelsCount=0;
+  angleCount=this.mPercentage.size();
+  if (null != mColor)   colorCount=this.mColor.size();
+  if (null != mLabels)   labelsCount=this.mLabels.size();
+  float offsetAngle=this.mInitAngle;
+  int currentColor=-1;
+  String currentLabel="";
+  for (int i=0; i < angleCount; i++) {
+    if (null != mColor && colorCount > i)     currentColor=mColor.get(i);
+    if (null != mLabels && labelsCount > i)     currentLabel=mLabels.get(i);
+    float sweepAngle=MathHelper.getInstance().mul(mTotalAngle,mPercentage.get(i));
+    renderPartitions(canvas,offsetAngle,sweepAngle,currentColor,currentLabel);
+    offsetAngle=MathHelper.getInstance().add(offsetAngle,sweepAngle);
+    currentColor=-1;
+    currentLabel="";
+  }
+  if (Float.compare(getRingInnerRadiusPercentage(),0.0f) != 0 && Float.compare(getRingInnerRadiusPercentage(),0.0f) == 1) {
+    canvas.drawCircle(this.mCirX,mCirY,getRingInnerRadius(),this.getFillAxisPaint());
+  }
+  return true;
+}

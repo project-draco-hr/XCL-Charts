@@ -1,0 +1,4 @@
+float radiusPercentage
+List<Float> percentage
+List<Integer> color
+List<String> labels

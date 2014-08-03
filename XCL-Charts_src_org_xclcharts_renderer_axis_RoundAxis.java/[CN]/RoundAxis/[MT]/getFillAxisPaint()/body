@@ -1,0 +1,4 @@
+{
+  initFillAxisPaint();
+  return mPaintFillAxis;
+}

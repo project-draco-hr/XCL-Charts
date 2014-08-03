@@ -1,0 +1,3 @@
+{
+  addRingAxis(radiusPercentage,0.0f,percentage,color,null);
+}

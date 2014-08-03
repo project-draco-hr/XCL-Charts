@@ -3,5 +3,5 @@ String text
 float cirX
 float cirY
 float radius
-double offsetAgent
-double curretAgentt
+double offsetAngle
+double curretAnglet

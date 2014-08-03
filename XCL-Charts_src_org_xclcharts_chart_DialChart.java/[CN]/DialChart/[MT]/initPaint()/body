@@ -1,0 +1,15 @@
+{
+  getLabelPaint().setTextSize(18);
+  getLabelPaint().setColor(Color.BLUE);
+  getLabelPaint().setAntiAlias(true);
+  mPaintPointerLine=new Paint();
+  mPaintPointerLine.setStyle(Style.FILL);
+  mPaintPointerLine.setAntiAlias(true);
+  mPaintPointerLine.setColor(Color.BLACK);
+  mPaintPointerLine.setStrokeWidth(3);
+  mPaintPinterCircle=new Paint();
+  mPaintPinterCircle.setStyle(Style.FILL);
+  mPaintPinterCircle.setAntiAlias(true);
+  mPaintPinterCircle.setColor(Color.BLACK);
+  mPaintPinterCircle.setStrokeWidth(8);
+}

@@ -5,7 +5,7 @@
     float arcRight=add(cirX,radius);
     float arcBottom=add(cirY,radius);
     RectF arcRF0=new RectF(arcLeft,arcTop,arcRight,arcBottom);
-    canvas.drawArc(arcRF0,offsetAgent,curretAgent,true,paintArc);
+    canvas.drawArc(arcRF0,offsetAngle,curretAngle,true,paintArc);
   }
  catch (  Exception e) {
     throw e;

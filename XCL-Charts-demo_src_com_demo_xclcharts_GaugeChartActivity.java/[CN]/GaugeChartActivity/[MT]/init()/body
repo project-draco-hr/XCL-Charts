@@ -10,7 +10,7 @@
     }
     @Override public void onProgressChanged(    SeekBar seekBar,    int progress,    boolean fromUser){
       process.setText(Integer.toString(progress));
-      chart.setAgent(progress);
+      chart.setAngle(progress);
       chart.chartRender();
       chart.invalidate();
     }

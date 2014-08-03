@@ -1,0 +1,5 @@
+Canvas canvas
+float startAngle
+float sweepAngle
+int color
+String label

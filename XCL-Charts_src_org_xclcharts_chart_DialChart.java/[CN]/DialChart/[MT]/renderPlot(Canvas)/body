@@ -1,0 +1,17 @@
+{
+  try {
+    for (int i=0; i < this.mRoundAxis.size(); i++) {
+      RoundAxisRender roundAxis=(RoundAxisRender)mRoundAxis.get(i);
+      roundAxis.setCenterXY(plotArea.getCenterX(),plotArea.getCenterY());
+      roundAxis.setAngleInfo(FIX_TOTAL_ANGLE,INIT_ANGLE);
+      roundAxis.setOrgRadius(this.getRadius());
+      roundAxis.render(canvas);
+    }
+    renderAttrInfo(canvas);
+    renderPointerLine(canvas);
+    renderPinterCircle(canvas);
+  }
+ catch (  Exception e) {
+    Log.e(TAG,e.toString());
+  }
+}

@@ -15,7 +15,7 @@
     chart.getPlotGrid().showVerticalLines();
     chart.getPlotGrid().showEvenRowBgColor();
     chart.getPlotGrid().showOddRowBgColor();
-    chart.getDataAxis().setTickLabelRotateAgent(-45);
+    chart.getDataAxis().setTickLabelRotateAngle(-45);
     chart.getDataAxis().getTickMarksPaint().setColor((int)Color.rgb(186,20,26));
     chart.getDataAxis().setLabelFormatter(new IFormatterTextCallBack(){
       @Override public String textFormatter(      String value){

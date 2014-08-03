@@ -1,16 +1,16 @@
 {
   try {
-    if (!validateAgent(curretAgent))     return false;
+    if (!validateAngle(curretAngle))     return false;
     float newRadius=div(radius,SELECTED_OFFSET);
-    MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,newRadius,add(offsetAgent,curretAgent / 2f));
+    MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,newRadius,add(offsetAngle,curretAngle / 2f));
     float arcLeft=sub(MathHelper.getInstance().getPosX(),radius);
     float arcTop=sub(MathHelper.getInstance().getPosY(),radius);
     float arcRight=add(MathHelper.getInstance().getPosX(),radius);
     float arcBottom=add(MathHelper.getInstance().getPosY(),radius);
     RectF arcRF1=new RectF(arcLeft,arcTop,arcRight,arcBottom);
     if (getGradient())     paintArc.setShader(renderRadialGradient(paintArc,cirX,cirY,radius));
-    canvas.drawArc(arcRF1,offsetAgent,curretAgent,true,paintArc);
-    renderLabel(canvas,cData.getLabel(),MathHelper.getInstance().getPosX(),MathHelper.getInstance().getPosY(),radius,offsetAgent,curretAgent);
+    canvas.drawArc(arcRF1,offsetAngle,curretAngle,true,paintArc);
+    renderLabel(canvas,cData.getLabel(),MathHelper.getInstance().getPosX(),MathHelper.getInstance().getPosY(),radius,offsetAngle,curretAngle);
     return true;
   }
  catch (  Exception e) {

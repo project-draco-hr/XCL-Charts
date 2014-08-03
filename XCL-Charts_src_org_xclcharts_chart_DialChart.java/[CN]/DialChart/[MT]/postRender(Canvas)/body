@@ -1,0 +1,10 @@
+{
+  try {
+    super.postRender(canvas);
+    renderPlot(canvas);
+  }
+ catch (  Exception e) {
+    throw e;
+  }
+  return true;
+}

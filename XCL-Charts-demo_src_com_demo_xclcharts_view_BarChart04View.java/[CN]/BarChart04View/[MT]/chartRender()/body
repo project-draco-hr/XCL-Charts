@@ -24,7 +24,7 @@
       }
     }
 );
-    chart.getCategoryAxis().setTickLabelRotateAgent(45f);
+    chart.getCategoryAxis().setTickLabelRotateAngle(45f);
     chart.getCategoryAxis().getTickLabelPaint().setTextSize(15);
     chart.getBar().setItemLabelVisible(true);
     chart.setItemLabelFormatter(new IFormatterDoubleCallBack(){

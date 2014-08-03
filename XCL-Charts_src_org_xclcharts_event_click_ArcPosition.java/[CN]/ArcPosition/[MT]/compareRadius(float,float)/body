@@ -1,9 +1,9 @@
 {
   double distance=MathHelper.getInstance().getDistance(mCirXY.x,mCirXY.y,x,y);
   if (Double.compare(distance,mRadius) == 0 || Double.compare(distance,mRadius) == -1) {
-    float agent1=(float)MathHelper.getInstance().getDegree(mCirXY.x,mCirXY.y,x,y);
-    float currAgent=getAgent();
-    if (Float.compare(currAgent,agent1) == 1 || Float.compare(currAgent,agent1) == 0) {
+    float Angle1=(float)MathHelper.getInstance().getDegree(mCirXY.x,mCirXY.y,x,y);
+    float currAngle=getAngle();
+    if (Float.compare(currAngle,Angle1) == 1 || Float.compare(currAngle,Angle1) == 0) {
       return true;
     }
   }

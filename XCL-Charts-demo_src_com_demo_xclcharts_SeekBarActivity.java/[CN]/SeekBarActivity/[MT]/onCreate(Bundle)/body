@@ -31,7 +31,7 @@
     @Override public void onProgressChanged(    SeekBar seekBar,    int progress,    boolean fromUser){
       mDesc.setText(Integer.toString(progress));
       if (0 == mSelected) {
-        mGaChart.setAgent(progress);
+        mGaChart.setAngle(progress);
         mGaChart.chartRender();
         mGaChart.invalidate();
       }

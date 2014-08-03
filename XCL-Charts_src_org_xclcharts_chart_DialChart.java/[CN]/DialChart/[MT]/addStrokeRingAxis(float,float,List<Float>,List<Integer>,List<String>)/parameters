@@ -1,0 +1,5 @@
+float outerRadiusPercentage
+float innerRadiusPercentage
+List<Float> percentage
+List<Integer> color
+List<String> labels

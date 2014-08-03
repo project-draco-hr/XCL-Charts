@@ -1,0 +1,4 @@
+{
+  getMenuInflater().inflate(R.menu.dial_chart2,menu);
+  return true;
+}

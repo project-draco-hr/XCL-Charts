@@ -1,0 +1,15 @@
+{
+  try {
+    float arcLeft=cirX - radius;
+    float arcTop=cirY - radius;
+    float arcRight=cirX + radius;
+    float arcBottom=cirY + radius;
+    RectF arcRF0=new RectF(arcLeft,arcTop,arcRight,arcBottom);
+    Path path=new Path();
+    path.addArc(arcRF0,startAngle,sweepAngle);
+    canvas.drawPath(path,paintArc);
+  }
+ catch (  Exception e) {
+    throw e;
+  }
+}

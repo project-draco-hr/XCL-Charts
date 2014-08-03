@@ -1,0 +1,8 @@
+{
+  if (null == mPaintFillAxis) {
+    mPaintFillAxis=new Paint();
+    mPaintFillAxis.setStyle(Style.FILL);
+    mPaintFillAxis.setColor(Color.WHITE);
+    mPaintFillAxis.setAntiAlias(true);
+  }
+}

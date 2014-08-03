@@ -1,9 +1,9 @@
 {
   try {
-    if (!validateAgent(curretAgent))     return false;
+    if (!validateAngle(curretAngle))     return false;
     if (getGradient())     paintArc.setShader(renderRadialGradient(paintArc,cirX,cirY,radius));
-    canvas.drawArc(arcRF0,offsetAgent,curretAgent,true,paintArc);
-    renderLabel(canvas,cData.getLabel(),cirX,cirY,radius,offsetAgent,curretAgent);
+    canvas.drawArc(arcRF0,offsetAngle,curretAngle,true,paintArc);
+    renderLabel(canvas,cData.getLabel(),cirX,cirY,radius,offsetAngle,curretAngle);
     return true;
   }
  catch (  Exception e) {

@@ -3,5 +3,5 @@ Paint paintArc
 float cirX
 float cirY
 float radius
-float offsetAgent
-float curretAgent
+float offsetAngle
+float curretAngle

@@ -1,0 +1,18 @@
+{
+  chart.addArcLineAxis(1);
+  List<Float> ringPercentage=new ArrayList<Float>();
+  float rper=MathHelper.getInstance().sub(1,mPercentage);
+  ringPercentage.add(mPercentage);
+  ringPercentage.add(rper);
+  List<Integer> rcolor=new ArrayList<Integer>();
+  rcolor.add((int)Color.rgb(222,248,239));
+  rcolor.add((int)Color.rgb(99,214,173));
+  chart.addStrokeRingAxis(0.8f,0.7f,ringPercentage,rcolor);
+  chart.getPlotAxis().get(0).getAxisPaint().setColor(Color.WHITE);
+  chart.getPlotAxis().get(0).getAxisPaint().setStrokeWidth(2);
+  chart.getPlotAxis().get(1).getFillAxisPaint().setColor((int)Color.rgb(47,199,140));
+  chart.addCircleAxis(0.2f,(int)Color.rgb(62,175,135));
+  chart.addCircleAxis(0.15f,(int)Color.rgb(28,111,84));
+  chart.getPinterCirclePaint().setColor(Color.WHITE);
+  chart.getPointerLinePaint().setColor(Color.WHITE);
+}

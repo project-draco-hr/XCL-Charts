@@ -25,7 +25,7 @@
     chart.getPlotGrid().showHorizontalLines();
     chart.getPlotGrid().showVerticalLines();
     chart.getPlotGrid().showEvenRowBgColor();
-    chart.getCategoryAxis().setTickLabelRotateAgent(-45f);
+    chart.getCategoryAxis().setTickLabelRotateAngle(-45f);
     chart.setChartDirection(XEnum.Direction.HORIZONTAL);
     chart.getBar().setItemLabelVisible(true);
     chart.setItemLabelFormatter(new IFormatterDoubleCallBack(){

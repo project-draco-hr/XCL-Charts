@@ -1,0 +1,5 @@
+{
+  if (null != mColor)   mColor.clear();
+  if (null == mColor)   mColor=new ArrayList<Integer>();
+  mColor=color;
+}

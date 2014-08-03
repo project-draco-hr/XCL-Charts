@@ -25,10 +25,10 @@
     float nRight=add(cirX,newRaidus);
     float nBottom=add(cirY,newRaidus);
     RectF nRF=new RectF(nLeft,nTop,nRight,nBottom);
-    canvas.drawArc(nRF,mOffsetAgent,percentage,true,paintArc);
-    MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,radius - radius / 2 / 2,mOffsetAgent + percentage / 2);
+    canvas.drawArc(nRF,mOffsetAngle,percentage,true,paintArc);
+    MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,radius - radius / 2 / 2,mOffsetAngle + percentage / 2);
     canvas.drawText(cData.getLabel(),MathHelper.getInstance().getPosX(),MathHelper.getInstance().getPosY(),getLabelPaint());
-    mOffsetAgent=add(mOffsetAgent,percentage);
+    mOffsetAngle=add(mOffsetAngle,percentage);
   }
   return true;
 }

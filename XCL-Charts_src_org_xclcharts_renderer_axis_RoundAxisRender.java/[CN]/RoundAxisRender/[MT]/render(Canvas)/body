@@ -1,0 +1,24 @@
+{
+  boolean ret=false;
+  mRadius=getOuterRadius();
+switch (getAxisType()) {
+case TICKAXIS:
+    ret=renderTickAxis(canvas);
+  break;
+case RINGAXIS:
+ret=renderRingAxis(canvas);
+break;
+case ARCLINEAXIS:
+ret=renderArcLineAxis(canvas);
+break;
+case FILLAXIS:
+ret=renderFillAxis(canvas);
+break;
+case CIRCLEAXIS:
+ret=renderCircleAxis(canvas);
+break;
+default :
+break;
+}
+return ret;
+}

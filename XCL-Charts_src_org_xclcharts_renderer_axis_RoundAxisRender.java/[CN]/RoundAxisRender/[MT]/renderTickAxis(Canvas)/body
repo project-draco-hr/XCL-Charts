@@ -1,0 +1,8 @@
+{
+  if (!getVisible())   return false;
+  if (null == mLabels)   return false;
+  if (getAxisLineVisible()) {
+    DrawHelper.getInstance().drawPathArc(canvas,this.getAxisPaint(),this.mCirX,this.mCirY,this.mRadius,this.mInitAngle,this.mTotalAngle);
+  }
+  return renderTicks(canvas,this.mLabels);
+}

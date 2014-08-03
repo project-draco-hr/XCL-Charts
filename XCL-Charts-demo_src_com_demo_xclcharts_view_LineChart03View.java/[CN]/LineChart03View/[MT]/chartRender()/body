@@ -6,7 +6,7 @@
     chart.getDataAxis().setAxisSteps(10);
     chart.getDataAxis().setVisible(false);
     chart.getCategoryAxis().getTickLabelPaint().setTextAlign(Align.LEFT);
-    chart.getCategoryAxis().setTickLabelRotateAgent(90);
+    chart.getCategoryAxis().setTickLabelRotateAngle(90);
     chart.getAxisTitle().setLowerAxisTitle("(??????)");
     chart.setRightAxisVisible(false);
     chart.setTopAxisVisible(false);

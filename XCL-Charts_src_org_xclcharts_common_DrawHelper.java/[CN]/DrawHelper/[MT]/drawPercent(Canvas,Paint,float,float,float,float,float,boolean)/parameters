@@ -1,0 +1,8 @@
+Canvas canvas
+Paint paintArc
+float cirX
+float cirY
+float radius
+float startAngle
+float sweepAngle
+boolean useCenter

@@ -8,7 +8,7 @@
     chart.getDataAxis().setAxisMax(50);
     chart.getDataAxis().setAxisMin(10);
     chart.getDataAxis().setAxisSteps(10);
-    chart.getCategoryAxis().setTickLabelRotateAgent(-45f);
+    chart.getCategoryAxis().setTickLabelRotateAngle(-45f);
     chart.setTitle("????????????????????????");
     chart.addSubtitle("(XCL-Charts Demo)");
     chart.getAxisTitle().setLeftAxisTitle("??????");

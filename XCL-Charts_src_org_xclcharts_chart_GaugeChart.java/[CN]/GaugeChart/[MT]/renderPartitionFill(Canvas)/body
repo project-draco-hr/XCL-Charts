@@ -1,5 +1,5 @@
 {
-  float totalAgent=0.0f;
+  float totalAngle=0.0f;
   float newRadius=mul(getRadius(),0.8f);
   RectF rect=new RectF();
   rect.left=sub(plotArea.getCenterX(),newRadius);
@@ -11,9 +11,9 @@
     return false;
   }
   for (  Pair pr : mPartitionDataset) {
-    Float agentValue=(Float)pr.first;
-    float total=add(totalAgent,agentValue);
-    if (Float.compare(agentValue,0.0f) < 0) {
+    Float AngleValue=(Float)pr.first;
+    float total=add(totalAngle,AngleValue);
+    if (Float.compare(AngleValue,0.0f) < 0) {
       Log.e(TAG,"????????????!!!");
     }
  else     if (Float.compare(total,180.0f) == 1) {
@@ -21,8 +21,8 @@
       return false;
     }
     mPaintPartitionFill.setColor((Integer)pr.second);
-    canvas.drawArc(rect,add(totalAgent,180.0f),agentValue,true,mPaintPartitionFill);
-    totalAgent=add(totalAgent,agentValue);
+    canvas.drawArc(rect,add(totalAngle,180.0f),AngleValue,true,mPaintPartitionFill);
+    totalAngle=add(totalAngle,AngleValue);
   }
   return false;
 }

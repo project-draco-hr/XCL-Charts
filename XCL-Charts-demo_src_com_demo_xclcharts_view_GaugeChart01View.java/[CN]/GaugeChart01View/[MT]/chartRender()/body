@@ -3,7 +3,7 @@
     chart.setTickSteps(10d);
     chart.setCategories(mLabels);
     chart.setPartition(mPartitionSet);
-    chart.setCurrentAgent(mAgent);
+    chart.setCurrentAngle(mAngle);
     chart.showRoundBorder();
   }
  catch (  Exception e) {

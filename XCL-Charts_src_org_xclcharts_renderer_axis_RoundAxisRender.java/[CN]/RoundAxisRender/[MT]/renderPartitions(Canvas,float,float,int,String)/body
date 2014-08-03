@@ -1,0 +1,20 @@
+{
+  if (-1 != color)   getAxisPaint().setColor(color);
+  if (Float.compare(sweepAngle,0.0f) < 0) {
+    Log.e(TAG,"????????????!!!");
+    return false;
+  }
+ else   if (Float.compare(sweepAngle,0.0f) == 0) {
+    Log.w(TAG,"????????????!!!");
+    return true;
+  }
+  DrawHelper.getInstance().drawPercent(canvas,this.getAxisPaint(),this.mCirX,this.mCirY,mRadius,startAngle,sweepAngle,true);
+  if (getTickLabelVisible() && "" != label) {
+    float Angle=MathHelper.getInstance().add(startAngle,sweepAngle / 2);
+    MathHelper.getInstance().calcArcEndPointXY(this.mCirX,this.mCirY,mRadius * 0.5f,Angle);
+    float labelX=MathHelper.getInstance().getPosX();
+    float labelY=MathHelper.getInstance().getPosY();
+    DrawHelper.getInstance().drawRotateText(getFormatterLabel(label),labelX,labelY,getTickLabelRotateAngle(),canvas,getTickLabelPaint());
+  }
+  return true;
+}

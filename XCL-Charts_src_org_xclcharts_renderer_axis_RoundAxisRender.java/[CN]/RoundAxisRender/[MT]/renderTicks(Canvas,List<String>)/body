@@ -1,0 +1,59 @@
+{
+  float cirX=mCirX;
+  float cirY=mCirY;
+  float totalAngle=this.mTotalAngle;
+  float initAngle=this.mInitAngle;
+  int count=labels.size();
+  float stepsAngle=MathHelper.getInstance().div(totalAngle,count - 1);
+  float innerRadius1=mRadius;
+  float tickRadius=mRadius * 0.9f;
+  float detailsRadius=tickRadius;
+  if (1 < mDetailModeSteps)   detailsRadius=mRadius * 0.95f;
+  int steps=mDetailModeSteps;
+  float Angle=0.0f;
+  for (int i=0; i < count; i++) {
+    if (0 == i) {
+      Angle=initAngle;
+    }
+ else {
+      Angle=(float)MathHelper.getInstance().add(initAngle,i * stepsAngle);
+    }
+    MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,innerRadius1,Angle);
+    float startX=MathHelper.getInstance().getPosX();
+    float startY=MathHelper.getInstance().getPosY();
+    float stopX=0.0f, stopY=0.0f;
+    float labelX=0.0f, labelY=0.0f;
+    MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,tickRadius,Angle);
+    labelX=MathHelper.getInstance().getPosX();
+    labelY=MathHelper.getInstance().getPosY();
+    if (steps != mDetailModeSteps) {
+      MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,detailsRadius,Angle);
+      stopX=MathHelper.getInstance().getPosX();
+      stopY=MathHelper.getInstance().getPosY();
+      steps=0;
+    }
+ else {
+      stopX=labelX;
+      stopY=labelY;
+    }
+    if (getTickMarksVisible()) {
+      canvas.drawLine(startX,startY,stopX,stopY,getTickMarksPaint());
+    }
+    if (getTickLabelVisible()) {
+      String label=getFormatterLabel(labels.get(i));
+      float labelWidth=DrawHelper.getInstance().getTextWidth(getTickLabelPaint(),label);
+      if (Float.compare(totalAngle,Angle) == 0) {
+        labelY+=DrawHelper.getInstance().getPaintFontHeight(getTickLabelPaint());
+      }
+ else       if (Float.compare(totalAngle,Angle) == 1) {
+        labelX+=labelWidth / 2;
+      }
+ else {
+        labelX-=labelWidth / 2;
+      }
+      DrawHelper.getInstance().drawRotateText(label,labelX,labelY,getTickLabelRotateAngle(),canvas,getTickLabelPaint());
+    }
+    steps++;
+  }
+  return true;
+}

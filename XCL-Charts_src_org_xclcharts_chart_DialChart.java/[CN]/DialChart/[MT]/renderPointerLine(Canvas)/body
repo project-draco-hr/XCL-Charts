@@ -1,0 +1,9 @@
+{
+  float currentRadius=mul(this.getRadius(),mPointerRadiusPercentage);
+  float cirX=plotArea.getCenterX();
+  float cirY=plotArea.getCenterY();
+  MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,currentRadius,add(mPointerAngle,INIT_ANGLE));
+  float endX=MathHelper.getInstance().getPosX();
+  float endY=MathHelper.getInstance().getPosY();
+  canvas.drawLine(cirX,cirY,endX,endY,mPaintPointerLine);
+}

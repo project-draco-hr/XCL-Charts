@@ -2,7 +2,7 @@
   String label=getFormatterLabel(text);
   double txtLength=DrawHelper.getInstance().getTextWidth(getTickLabelPaint(),label);
   if (txtLength <= width) {
-    DrawHelper.getInstance().drawRotateText(label,centerX,centerY,getTickLabelRotateAgent(),canvas,getTickLabelPaint());
+    DrawHelper.getInstance().drawRotateText(label,centerX,centerY,getTickLabelRotateAngle(),canvas,getTickLabelPaint());
   }
  else {
     float txtHeight=DrawHelper.getInstance().getPaintFontHeight(getTickLabelPaint());
@@ -13,7 +13,7 @@
       charWidth=DrawHelper.getInstance().getTextWidth(getTickLabelPaint(),label.substring(i,i + 1));
       totalWidth=MathHelper.getInstance().add(totalWidth,charWidth);
       if (Float.compare(totalWidth,width) == 1) {
-        DrawHelper.getInstance().drawRotateText(lnString,centerX,renderY,getTickLabelRotateAgent(),canvas,getTickLabelPaint());
+        DrawHelper.getInstance().drawRotateText(lnString,centerX,renderY,getTickLabelRotateAngle(),canvas,getTickLabelPaint());
         totalWidth=charWidth;
         renderY=MathHelper.getInstance().add(renderY,txtHeight);
         lnString=label.substring(i,i + 1);
@@ -23,7 +23,7 @@
       }
     }
     if (lnString.length() > 0) {
-      DrawHelper.getInstance().drawRotateText(lnString,centerX,renderY,getTickLabelRotateAgent(),canvas,getTickLabelPaint());
+      DrawHelper.getInstance().drawRotateText(lnString,centerX,renderY,getTickLabelRotateAngle(),canvas,getTickLabelPaint());
     }
   }
 }

@@ -1,0 +1,12 @@
+{
+  Paint paintTB=new Paint();
+  paintTB.setColor(Color.WHITE);
+  paintTB.setTextAlign(Align.CENTER);
+  paintTB.setTextSize(30);
+  chart.addAttributeInfo(XEnum.AttributeInfoLoction.TOP,"100 K/s",1.1f,paintTB);
+  Paint paintBT=new Paint();
+  paintBT.setColor(Color.WHITE);
+  paintBT.setTextAlign(Align.CENTER);
+  paintBT.setTextSize(30);
+  chart.addAttributeInfo(XEnum.AttributeInfoLoction.BOTTOM,"????????????: " + Float.toString(mPercentage * 100) + "K/s",0.8f,paintBT);
+}

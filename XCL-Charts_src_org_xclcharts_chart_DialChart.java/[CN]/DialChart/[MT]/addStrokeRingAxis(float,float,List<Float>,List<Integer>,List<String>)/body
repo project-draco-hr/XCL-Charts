@@ -1,0 +1,3 @@
+{
+  addRingAxis(outerRadiusPercentage,innerRadiusPercentage,percentage,color,labels);
+}

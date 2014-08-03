@@ -1,0 +1,4 @@
+{
+  mPointerAngle=mul(FIX_TOTAL_ANGLE,percentage);
+  mCurrentStatusPercentage=percentage;
+}

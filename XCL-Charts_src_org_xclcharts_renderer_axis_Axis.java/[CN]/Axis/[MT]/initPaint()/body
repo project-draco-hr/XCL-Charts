@@ -3,9 +3,10 @@
   mPaintTickMarks=new Paint();
   mPaintTickLabel=new Paint();
   mPaintAxis.setColor(Color.BLACK);
-  mPaintAxis.setStrokeWidth(mAxisLineWidth);
+  mPaintAxis.setAntiAlias(true);
   mPaintTickMarks.setColor(Color.BLACK);
   mPaintTickMarks.setStrokeWidth(3);
+  mPaintTickMarks.setAntiAlias(true);
   mPaintTickLabel.setColor(Color.BLACK);
   mPaintTickLabel.setTextAlign(Align.RIGHT);
   mPaintTickLabel.setTextSize(18);

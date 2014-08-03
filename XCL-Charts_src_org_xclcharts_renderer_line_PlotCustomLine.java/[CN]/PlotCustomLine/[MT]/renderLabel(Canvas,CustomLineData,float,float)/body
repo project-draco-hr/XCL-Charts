@@ -11,5 +11,5 @@ case RIGHT:
 currentY+=txtHeight / 3;
 break;
 }
-DrawHelper.getInstance().drawRotateText(line.getLabel(),currentX,currentY,line.getLabelRotateAgent(),canvas,line.getLineLabelPaint());
+DrawHelper.getInstance().drawRotateText(line.getLabel(),currentX,currentY,line.getLabelRotateAngle(),canvas,line.getLineLabelPaint());
 }

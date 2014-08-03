@@ -1,0 +1,7 @@
+{
+  if (null != mRoundAxis)   mRoundAxis.clear();
+  if (null != mAttrInfoLocation)   mAttrInfoLocation.clear();
+  if (null != mAttrInfo)   mAttrInfo.clear();
+  if (null != mAttrInfoPostion)   mAttrInfoPostion.clear();
+  if (null != mAttrInfoPaint)   mAttrInfoPaint.clear();
+}

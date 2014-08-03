@@ -1,7 +1,7 @@
 {
   Bar bar=chart.getBar();
   bar.setItemLabelVisible(true);
-  bar.setItemLabelRotateAgent(-90);
+  bar.setItemLabelRotateAngle(-90);
   bar.getItemLabelPaint().setFakeBoldText(true);
   chart.setItemLabelFormatter(new IFormatterDoubleCallBack(){
     @Override public String doubleFormatter(    Double value){

@@ -1,0 +1,10 @@
+{
+  RoundAxisRender roundAxis=new RoundAxisRender();
+  roundAxis.setRoundAxisType(XEnum.RoundAxisType.RINGAXIS);
+  roundAxis.setRadiusPercentage(outerRadiusPercentage);
+  roundAxis.setRingInnerRadiusPercentage(innerRadiusPercentage);
+  roundAxis.setAxisPercentage(percentage);
+  roundAxis.setAxisColor(color);
+  roundAxis.setAxisLabels(labels);
+  mRoundAxis.add(roundAxis);
+}

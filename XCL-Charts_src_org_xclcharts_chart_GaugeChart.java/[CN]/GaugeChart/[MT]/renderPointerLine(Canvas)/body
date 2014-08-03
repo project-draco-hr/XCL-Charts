@@ -2,15 +2,15 @@
   float currentRadius=mul(getRadius(),0.9f);
   float cirX=plotArea.getCenterX();
   float cirY=plotArea.getCenterY();
-  if (Float.compare(mPointerAgent,180f) == 0 || Float.compare(mPointerAgent,180f) == 1) {
+  if (Float.compare(mPointerAngle,180f) == 0 || Float.compare(mPointerAngle,180f) == 1) {
     canvas.drawLine(cirX,cirY,cirX + currentRadius,cirY,mPaintPointerLine);
   }
- else   if (Float.compare(mPointerAgent,0.0f) == 0 || Float.compare(mPointerAgent,0.0f) == -1) {
+ else   if (Float.compare(mPointerAngle,0.0f) == 0 || Float.compare(mPointerAngle,0.0f) == -1) {
     canvas.drawLine(cirX,cirY,cirX - currentRadius,cirY,mPaintPointerLine);
   }
  else {
-    float calcAgent=add(mPointerAgent,mStartAgent);
-    MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,currentRadius,calcAgent);
+    float calcAngle=add(mPointerAngle,mStartAngle);
+    MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,currentRadius,calcAngle);
     float endX=MathHelper.getInstance().getPosX();
     float endY=MathHelper.getInstance().getPosY();
     if (Float.compare(endY,cirY) == 1)     endY=cirY;

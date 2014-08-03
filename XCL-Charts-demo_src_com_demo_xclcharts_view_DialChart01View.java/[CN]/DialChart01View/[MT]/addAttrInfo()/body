@@ -1,0 +1,19 @@
+{
+  Paint paintTB=new Paint();
+  paintTB.setColor(Color.GRAY);
+  paintTB.setTextAlign(Align.CENTER);
+  paintTB.setTextSize(22);
+  chart.addAttributeInfo(XEnum.AttributeInfoLoction.TOP,"TOP info",0.5f,paintTB);
+  chart.addAttributeInfo(XEnum.AttributeInfoLoction.BOTTOM,"BOTTOM info",0.5f,paintTB);
+  Paint paintLR=new Paint();
+  paintLR.setTextAlign(Align.CENTER);
+  paintLR.setTextSize(22);
+  paintLR.setColor(Color.BLUE);
+  chart.addAttributeInfo(XEnum.AttributeInfoLoction.LEFT,"LEFT info",0.5f,paintLR);
+  chart.addAttributeInfo(XEnum.AttributeInfoLoction.RIGHT,"RIGHT info",0.5f,paintLR);
+  Paint paintBase=new Paint();
+  paintBase.setTextAlign(Align.CENTER);
+  paintBase.setTextSize(22);
+  paintBase.setColor((int)Color.rgb(56,172,240));
+  chart.addAttributeInfo(XEnum.AttributeInfoLoction.BOTTOM,"?????????:" + Float.toString(mPercentage * 100),0.3f,paintBase);
+}

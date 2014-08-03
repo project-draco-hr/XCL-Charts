@@ -1,0 +1,7 @@
+{
+  RoundAxisRender roundAxis=new RoundAxisRender();
+  roundAxis.setRoundAxisType(XEnum.RoundAxisType.TICKAXIS);
+  roundAxis.setRadiusPercentage(radiusPercentage);
+  roundAxis.setAxisLabels(labels);
+  mRoundAxis.add(roundAxis);
+}

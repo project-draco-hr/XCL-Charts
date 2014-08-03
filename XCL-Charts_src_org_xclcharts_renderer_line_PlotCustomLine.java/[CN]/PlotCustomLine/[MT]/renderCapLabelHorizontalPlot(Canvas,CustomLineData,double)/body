@@ -19,6 +19,6 @@ break;
 }
 line.getLineLabelPaint().setTextAlign(Align.CENTER);
 renderLineCapHorizontalPlot(canvas,line,currentX,capY);
-DrawHelper.getInstance().drawRotateText(line.getLabel(),currentX,currentY,line.getLabelRotateAgent(),canvas,line.getLineLabelPaint());
+DrawHelper.getInstance().drawRotateText(line.getLabel(),currentX,currentY,line.getLabelRotateAngle(),canvas,line.getLineLabelPaint());
 }
 }
