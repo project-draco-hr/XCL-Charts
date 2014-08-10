@@ -1,0 +1,27 @@
+{
+  List<String> rlabels2=new ArrayList<String>();
+  for (int i=0; i < 7; i++) {
+    rlabels2.add(Integer.toString(i * 10));
+  }
+  chart.addInnerTicksAxis(0.7f,rlabels2);
+  chart.getPlotAxis().get(0).getAxisPaint().setColor(Color.WHITE);
+  chart.getPlotAxis().get(0).getAxisPaint().setStrokeWidth(8);
+  chart.getPlotAxis().get(0).getTickMarksPaint().setColor(Color.WHITE);
+  chart.getPlotAxis().get(0).getTickLabelPaint().setColor(Color.WHITE);
+  List<String> rlabels3=new ArrayList<String>();
+  for (int i=0; i < 5; i++) {
+    if (0 == i) {
+      rlabels3.add("");
+    }
+ else     rlabels3.add(Integer.toString(i * 10));
+  }
+  chart.addOuterTicksAxis(0.8f,rlabels3);
+  chart.getPlotAxis().get(1).getAxisPaint().setColor(Color.RED);
+  chart.getPlotAxis().get(1).getAxisPaint().setStrokeWidth(5);
+  chart.getPointer().setPointerStyle(XEnum.PointerStyle.TRIANGLE);
+  chart.getPointer().getPointerPaint().setStrokeWidth(3);
+  chart.getPointer().getPointerPaint().setStyle(Style.FILL);
+  chart.getPointer().getPointerPaint().setColor((int)Color.rgb(242,110,131));
+  chart.getPointer().getBaseCirclePaint().setColor((int)Color.rgb(238,204,71));
+  chart.getPointer().setBaseRadius(10f);
+}

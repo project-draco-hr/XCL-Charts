@@ -1,0 +1,17 @@
+{
+  float currentAgent1=MathHelper.getInstance().add(mPointerAngle - FIX_ANGLE,mStartAngle);
+  float currentAgent2=MathHelper.getInstance().add(mPointerAngle + FIX_ANGLE,mStartAngle);
+  float bX=0.0f, bY=0.0f, eX=0.0f, eY=0.0f;
+  MathHelper.getInstance().calcArcEndPointXY(mTailX,mTailY,mBaseRadius,currentAgent1);
+  bX=MathHelper.getInstance().getPosX();
+  bY=MathHelper.getInstance().getPosY();
+  MathHelper.getInstance().calcArcEndPointXY(mTailX,mTailY,mBaseRadius,currentAgent2);
+  eX=MathHelper.getInstance().getPosX();
+  eY=MathHelper.getInstance().getPosY();
+  Path path=new Path();
+  path.moveTo(mEndX,mEndY);
+  path.lineTo(bX,bY);
+  path.lineTo(eX,eY);
+  path.close();
+  canvas.drawPath(path,getPointerPaint());
+}

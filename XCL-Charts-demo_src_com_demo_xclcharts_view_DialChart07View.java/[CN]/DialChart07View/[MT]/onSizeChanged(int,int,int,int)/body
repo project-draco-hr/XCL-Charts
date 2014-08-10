@@ -1,0 +1,6 @@
+{
+  super.onSizeChanged(w,h,oldw,oldh);
+  chart.setChartRange(w,h);
+  chart180.setChartRange(w / 2,h / 3);
+  chart90.setChartRange(w,h / 3);
+}

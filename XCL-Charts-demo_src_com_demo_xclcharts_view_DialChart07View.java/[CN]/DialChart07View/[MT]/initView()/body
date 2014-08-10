@@ -1,0 +1,5 @@
+{
+  chartRender();
+  chartRender90();
+  chartRender180();
+}

@@ -1,0 +1,3 @@
+float radiusPercentage
+List<String> labels
+XEnum.RoundTickAxisType type

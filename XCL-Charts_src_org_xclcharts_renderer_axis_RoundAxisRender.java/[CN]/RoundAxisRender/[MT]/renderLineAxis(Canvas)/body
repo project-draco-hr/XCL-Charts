@@ -1,0 +1,20 @@
+{
+  if (!getVisible() || !getAxisLineVisible())   return true;
+switch (mLocation) {
+case TOP:
+    canvas.drawLine(mCirX,mCirY,mCirX,mCirY - mRadius,this.getAxisPaint());
+  break;
+case BOTTOM:
+canvas.drawLine(mCirX,mCirY,mCirX,mCirY + mRadius,this.getAxisPaint());
+break;
+case LEFT:
+canvas.drawLine(mCirX,mCirY,mCirX - mRadius,mCirY,this.getAxisPaint());
+break;
+case RIGHT:
+canvas.drawLine(mCirX,mCirY,mCirX + mRadius,mCirY,this.getAxisPaint());
+break;
+default :
+return false;
+}
+return true;
+}

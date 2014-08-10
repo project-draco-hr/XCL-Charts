@@ -3,10 +3,13 @@
     chart.setApplyBackgroundColor(true);
     chart.setBackgroundColor((int)Color.rgb(47,199,140));
     chart.showRoundBorder();
-    chart.setCurrentPercentage(mPercentage);
-    chart.setPointerLength(0.68f);
+    chart.getPointer().setLength(0.68f);
     addAxis();
     addAttrInfo();
+    chart.getPointer().setPercentage(mPercentage);
+    chart.getPointer().getPointerPaint().setColor(Color.WHITE);
+    chart.getPointer().getBaseCirclePaint().setColor(Color.WHITE);
+    chart.getPointer().setPercentage(mPercentage / 2);
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

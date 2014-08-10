@@ -1,0 +1,26 @@
+{
+  try {
+    chart90.setPadding(DensityUtil.dip2px(getContext(),150),0,0,0);
+    chart90.setTotalAngle(90f);
+    chart90.setStartAngle(270f);
+    List<Float> ringPercentage=new ArrayList<Float>();
+    float rper=MathHelper.getInstance().div(1,2);
+    ringPercentage.add(rper);
+    ringPercentage.add(rper);
+    List<Integer> rcolor=new ArrayList<Integer>();
+    rcolor.add((int)Color.rgb(242,110,131));
+    rcolor.add((int)Color.rgb(238,204,71));
+    chart90.addStrokeRingAxis(0.75f,0.6f,ringPercentage,rcolor);
+    chart90.getPlotAxis().get(0).getFillAxisPaint().setColor((int)Color.rgb(28,129,243));
+    chart90.getPointer().setLength(0.65f);
+    Paint paintTB=new Paint();
+    paintTB.setColor(Color.WHITE);
+    paintTB.setTextAlign(Align.CENTER);
+    paintTB.setTextSize(22);
+    paintTB.setAntiAlias(true);
+    chart90.addAttributeInfo(XEnum.Location.BOTTOM,"90????????????",0.5f,paintTB);
+  }
+ catch (  Exception e) {
+    Log.e(TAG,e.toString());
+  }
+}

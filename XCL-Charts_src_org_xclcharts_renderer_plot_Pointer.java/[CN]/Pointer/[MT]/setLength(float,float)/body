@@ -1,0 +1,4 @@
+{
+  mPointerRadiusPercentage=radiusPercentage;
+  mPointerTailRadiusPercentage=tailRadiusPercentage;
+}

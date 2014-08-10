@@ -1,0 +1,7 @@
+String label
+float defLabelX
+float defLabelY
+float cirX
+float cirY
+float totalAngle
+float Angle

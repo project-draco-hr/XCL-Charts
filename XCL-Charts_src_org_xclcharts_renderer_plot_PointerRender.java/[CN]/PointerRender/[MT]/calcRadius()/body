@@ -1,0 +1,8 @@
+{
+  if (Float.compare(mPointerRadiusPercentage,0.0f) == 1) {
+    mPointerRadius=MathHelper.getInstance().mul(mParentRadius,mPointerRadiusPercentage);
+  }
+  if (Float.compare(mPointerTailRadiusPercentage,0.0f) == 1) {
+    mPointerTailRadius=MathHelper.getInstance().mul(mParentRadius,mPointerTailRadiusPercentage);
+  }
+}

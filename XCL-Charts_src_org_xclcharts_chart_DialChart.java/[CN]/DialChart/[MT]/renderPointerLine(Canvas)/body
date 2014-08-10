@@ -1,9 +1,18 @@
 {
-  float currentRadius=mul(this.getRadius(),mPointerRadiusPercentage);
-  float cirX=plotArea.getCenterX();
-  float cirY=plotArea.getCenterY();
-  MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,currentRadius,add(mPointerAngle,INIT_ANGLE));
-  float endX=MathHelper.getInstance().getPosX();
-  float endY=MathHelper.getInstance().getPosY();
-  canvas.drawLine(cirX,cirY,endX,endY,mPaintPointerLine);
+  if (null == mPointerSet)   return;
+  float radius=getRadius();
+  for (int i=0; i < mPointerSet.size(); i++) {
+    PointerRender pointer=(PointerRender)mPointerSet.get(i);
+    pointer.setParentRadius(radius);
+    pointer.setStartXY(plotArea.getCenterX(),plotArea.getCenterY());
+    pointer.setTotalAngle(mTotalAngle);
+    pointer.setStartAngle(mStartAngle);
+    pointer.render(canvas);
+  }
+  if (null == mPointer)   mPointer=new PointerRender();
+  mPointer.setStartXY(plotArea.getCenterX(),plotArea.getCenterY());
+  mPointer.setTotalAngle(mTotalAngle);
+  mPointer.setStartAngle(mStartAngle);
+  mPointer.setParentRadius(getRadius());
+  mPointer.render(canvas);
 }

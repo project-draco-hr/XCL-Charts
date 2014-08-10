@@ -1,0 +1,17 @@
+{
+  try {
+    chart.setPadding(0,DensityUtil.dip2px(getContext(),100),0,0);
+    chart.setApplyBackgroundColor(true);
+    chart.setBackgroundColor((int)Color.rgb(28,129,243));
+    chart.showRoundBorder();
+    chart.setTotalAngle(270f);
+    chart.getPointer().setPercentage(mPercentage);
+    chart.getPointer().setLength(0.65f,0.2f);
+    addAxis();
+    addPointer();
+    addAttrInfo();
+  }
+ catch (  Exception e) {
+    Log.e(TAG,e.toString());
+  }
+}

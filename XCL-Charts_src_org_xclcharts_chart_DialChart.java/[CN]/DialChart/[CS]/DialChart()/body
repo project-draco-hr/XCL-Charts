@@ -1,4 +1,5 @@
 {
   super();
-  initPaint();
+  mStartAngle=INIT_ANGLE;
+  mTotalAngle=FIX_TOTAL_ANGLE;
 }

@@ -1,0 +1,16 @@
+{
+  calcRadius();
+  calcEndXY();
+switch (getPointerStyle()) {
+case TRIANGLE:
+    renderTriangle(canvas);
+  if (isShowBaseCircle())   renderCircle(canvas);
+break;
+case LINE:
+renerLine(canvas);
+if (isShowBaseCircle()) renderCircle(canvas);
+break;
+default :
+break;
+}
+}

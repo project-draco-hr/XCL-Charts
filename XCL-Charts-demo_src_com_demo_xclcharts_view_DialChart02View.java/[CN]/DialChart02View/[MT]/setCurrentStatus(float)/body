@@ -1,7 +1,7 @@
 {
-  chart.clearData();
+  chart.clearAll();
   mPercentage=percentage;
-  chart.setCurrentPercentage(mPercentage);
+  chart.getPointer().setPercentage(mPercentage);
   addAxis();
   addAttrInfo();
 }

@@ -1,0 +1,37 @@
+{
+  List<Float> ringPercentage=new ArrayList<Float>();
+  float rper=MathHelper.getInstance().div(1,4);
+  ringPercentage.add(rper);
+  ringPercentage.add(rper);
+  ringPercentage.add(rper);
+  ringPercentage.add(rper);
+  List<Integer> rcolor=new ArrayList<Integer>();
+  rcolor.add((int)Color.rgb(242,110,131));
+  rcolor.add((int)Color.rgb(238,204,71));
+  rcolor.add((int)Color.rgb(42,231,250));
+  rcolor.add((int)Color.rgb(140,196,27));
+  chart.addStrokeRingAxis(0.85f,0.7f,ringPercentage,rcolor);
+  chart.addCircleAxis(0.6f,Color.WHITE);
+  chart.getPlotAxis().get(1).getAxisPaint().setStyle(Style.STROKE);
+  chart.getPlotAxis().get(0).getFillAxisPaint().setColor((int)Color.rgb(28,129,243));
+  chart.getPointer().setPointerStyle(XEnum.PointerStyle.TRIANGLE);
+  chart.getPointer().getPointerPaint().setStrokeWidth(3);
+  chart.getPointer().getPointerPaint().setStyle(Style.FILL);
+  if (Float.compare(mPercentage,0.25f) == -1) {
+    chart.getPointer().getPointerPaint().setColor((int)Color.rgb(242,110,131));
+  }
+ else   if (Float.compare(mPercentage,0.5f) == -1 || Float.compare(mPercentage,0.5f) == 0) {
+    chart.getPointer().getPointerPaint().setColor((int)Color.rgb(238,204,71));
+  }
+ else   if (Float.compare(mPercentage,0.75f) == -1 || Float.compare(mPercentage,0.75f) == 0) {
+    chart.getPointer().getPointerPaint().setColor((int)Color.rgb(42,231,250));
+  }
+ else   if (Float.compare(mPercentage,1f) == -1 || Float.compare(mPercentage,1f) == 0) {
+    chart.getPointer().getPointerPaint().setColor((int)Color.rgb(140,196,27));
+  }
+ else {
+    chart.getPointer().getPointerPaint().setColor(Color.YELLOW);
+  }
+  chart.getPointer().getBaseCirclePaint().setColor(Color.GREEN);
+  chart.getPointer().setBaseRadius(10f);
+}

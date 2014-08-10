@@ -1,0 +1,3 @@
+{
+  addTicksAxis(radiusPercentage,labels,XEnum.RoundTickAxisType.INNER_TICKAXIS);
+}

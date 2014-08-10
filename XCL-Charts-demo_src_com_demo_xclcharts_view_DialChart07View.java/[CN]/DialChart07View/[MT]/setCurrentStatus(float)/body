@@ -1,0 +1,14 @@
+{
+  mPercentage=percentage;
+  chart.clearAll();
+  chart90.clearAll();
+  chart180.clearAll();
+  chart.getPointer().setPercentage(mPercentage);
+  addAxis();
+  addPointer();
+  addAttrInfo();
+  chartRender180();
+  chartRender90();
+  chart90.getPointer().setPercentage(mPercentage);
+  chart180.getPointer().setPercentage(mPercentage);
+}

@@ -1,0 +1,36 @@
+{
+  List<String> rlabels=new ArrayList<String>();
+  int j=0;
+  for (int i=0; i <= 150; ) {
+    if (0 == i || j == 4) {
+      rlabels.add(Integer.toString(i));
+      j=0;
+    }
+ else {
+      rlabels.add("");
+      j++;
+    }
+    i+=5;
+  }
+  chart.addOuterTicksAxis(0.7f,rlabels);
+  List<Float> ringPercentage=new ArrayList<Float>();
+  ringPercentage.add(0.33f);
+  ringPercentage.add(0.33f);
+  ringPercentage.add(1 - 2 * 0.33f);
+  List<Integer> rcolor=new ArrayList<Integer>();
+  rcolor.add((int)Color.rgb(133,206,130));
+  rcolor.add((int)Color.rgb(252,210,9));
+  rcolor.add((int)Color.rgb(229,63,56));
+  chart.addStrokeRingAxis(0.7f,0.6f,ringPercentage,rcolor);
+  List<String> rlabels2=new ArrayList<String>();
+  for (int i=0; i <= 8; i++) {
+    rlabels2.add(Integer.toString(i) + "MM");
+  }
+  chart.addInnerTicksAxis(0.6f,rlabels2);
+  chart.getPlotAxis().get(1).getFillAxisPaint().setColor((int)Color.rgb(28,129,243));
+  chart.getPlotAxis().get(0).setAxisLineVisible(false);
+  chart.getPlotAxis().get(2).setAxisLineVisible(false);
+  chart.getPlotAxis().get(0).getTickMarksPaint().setColor(Color.YELLOW);
+  chart.getPlotAxis().get(2).getTickMarksPaint().setColor(Color.WHITE);
+  chart.getPlotAxis().get(2).getTickLabelPaint().setColor(Color.WHITE);
+}

@@ -17,6 +17,9 @@ break;
 case CIRCLEAXIS:
 ret=renderCircleAxis(canvas);
 break;
+case LINEAXIS:
+ret=renderLineAxis(canvas);
+break;
 default :
 break;
 }

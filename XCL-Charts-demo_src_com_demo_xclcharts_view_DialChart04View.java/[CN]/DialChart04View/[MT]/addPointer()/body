@@ -1,0 +1,19 @@
+{
+  chart.addPointer();
+  chart.addPointer();
+  List<Pointer> mp=chart.getPlotPointer();
+  mp.get(0).setLength(0.85f,0.2f);
+  mp.get(0).getPointerPaint().setColor(Color.BLUE);
+  mP1=MathHelper.getInstance().round(mPercentage * 0.3f,2);
+  if (mP1 < 0 || mP1 > 1)   mP1=0.0f;
+  mp.get(0).setPercentage(mP1);
+  mp.get(1).setLength(0.8f,0.15f);
+  mp.get(1).getPointerPaint().setColor(Color.RED);
+  mP2=MathHelper.getInstance().round(mPercentage + 0.1f,2);
+  if (mP2 < 0 || mP2 > 1)   mP2=1f;
+  mp.get(1).setPercentage(mP2);
+  mp.get(0).setPointerStyle(XEnum.PointerStyle.TRIANGLE);
+  mp.get(0).setBaseRadius(15);
+  mp.get(1).setPointerStyle(XEnum.PointerStyle.TRIANGLE);
+  mp.get(1).setBaseRadius(15);
+}

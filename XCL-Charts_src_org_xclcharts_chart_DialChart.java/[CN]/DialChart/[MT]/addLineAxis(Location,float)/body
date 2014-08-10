@@ -1,0 +1,7 @@
+{
+  RoundAxisRender roundAxis=new RoundAxisRender();
+  roundAxis.setRoundAxisType(XEnum.RoundAxisType.LINEAXIS);
+  roundAxis.setRadiusPercentage(radiusPercentage);
+  roundAxis.setLineAxisLocation(location);
+  mRoundAxis.add(roundAxis);
+}

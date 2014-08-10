@@ -1,0 +1,4 @@
+{
+  mPointerAngle=MathHelper.getInstance().mul(mTotalAngle,mPercentage);
+  return mPointerAngle;
+}

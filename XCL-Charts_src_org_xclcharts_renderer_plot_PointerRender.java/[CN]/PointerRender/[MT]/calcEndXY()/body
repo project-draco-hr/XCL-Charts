@@ -1,0 +1,15 @@
+{
+  MathHelper.getInstance().calcArcEndPointXY(mCenterX,mCenterY,mPointerRadius,MathHelper.getInstance().add(getCurrentPointerAngle(),mStartAngle));
+  mEndX=MathHelper.getInstance().getPosX();
+  mEndY=MathHelper.getInstance().getPosY();
+  if (Float.compare(mPointerTailRadiusPercentage,0.0f) == 1) {
+    float tailAgent=mPointerAngle + mStartAngle - 180;
+    MathHelper.getInstance().calcArcEndPointXY(mCenterX,mCenterY,mPointerTailRadius,tailAgent);
+    mTailX=MathHelper.getInstance().getPosX();
+    mTailY=MathHelper.getInstance().getPosY();
+  }
+ else {
+    mTailX=mCenterX;
+    mTailY=mCenterY;
+  }
+}

@@ -1,0 +1,15 @@
+{
+  try {
+    chart.setApplyBackgroundColor(true);
+    chart.setBackgroundColor((int)Color.rgb(28,129,243));
+    chart.showRoundBorder();
+    chart.getPointer().setPercentage(mPercentage);
+    chart.getPointer().setLength(0.6f);
+    addAxis();
+    addPointer();
+    addAttrInfo();
+  }
+ catch (  Exception e) {
+    Log.e(TAG,e.toString());
+  }
+}

@@ -1,0 +1,10 @@
+{
+  if (null == mAttrInfoLocation)   mAttrInfoLocation=new ArrayList<Location>();
+  if (null == mAttrInfo)   mAttrInfo=new ArrayList<String>();
+  if (null == mAttrInfoPostion)   mAttrInfoPostion=new ArrayList<Float>();
+  if (null == mAttrInfoPaint)   mAttrInfoPaint=new ArrayList<Paint>();
+  mAttrInfoLocation.add(position);
+  mAttrInfo.add(info);
+  mAttrInfoPostion.add(infoPosRadiusPercentage);
+  mAttrInfoPaint.add(paint);
+}

@@ -1,0 +1,8 @@
+{
+  Paint paintTB=new Paint();
+  paintTB.setColor(Color.WHITE);
+  paintTB.setTextAlign(Align.CENTER);
+  paintTB.setTextSize(22);
+  paintTB.setAntiAlias(true);
+  chart.addAttributeInfo(XEnum.Location.BOTTOM,"270????????????",0.5f,paintTB);
+}

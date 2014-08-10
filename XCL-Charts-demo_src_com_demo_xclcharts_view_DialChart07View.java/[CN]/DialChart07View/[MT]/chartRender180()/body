@@ -1,0 +1,31 @@
+{
+  try {
+    chart180.setTotalAngle(180f);
+    chart180.setStartAngle(180f);
+    chart180.getPointer().setPercentage(mPercentage);
+    chart180.getPointer().setPointerStyle(XEnum.PointerStyle.TRIANGLE);
+    chart180.getPointer().setLength(0.65f,0.2f);
+    List<Float> ringPercentage=new ArrayList<Float>();
+    float rper=MathHelper.getInstance().div(1,4);
+    ringPercentage.add(rper);
+    ringPercentage.add(rper);
+    ringPercentage.add(rper);
+    ringPercentage.add(rper);
+    List<Integer> rcolor=new ArrayList<Integer>();
+    rcolor.add((int)Color.rgb(242,110,131));
+    rcolor.add((int)Color.rgb(238,204,71));
+    rcolor.add((int)Color.rgb(42,231,250));
+    rcolor.add((int)Color.rgb(140,196,27));
+    chart180.addStrokeRingAxis(0.75f,0.6f,ringPercentage,rcolor);
+    chart180.getPlotAxis().get(0).getFillAxisPaint().setColor((int)Color.rgb(28,129,243));
+    Paint paintTB=new Paint();
+    paintTB.setColor(Color.WHITE);
+    paintTB.setTextAlign(Align.CENTER);
+    paintTB.setTextSize(22);
+    paintTB.setAntiAlias(true);
+    chart180.addAttributeInfo(XEnum.Location.BOTTOM,"180????????????",0.5f,paintTB);
+  }
+ catch (  Exception e) {
+    Log.e(TAG,e.toString());
+  }
+}

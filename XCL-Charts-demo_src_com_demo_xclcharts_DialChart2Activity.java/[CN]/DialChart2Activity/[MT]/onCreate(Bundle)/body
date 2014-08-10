@@ -2,6 +2,7 @@
   super.onCreate(savedInstanceState);
   setContentView(R.layout.activity_dial_chart2);
   chart=(DialChart02View)findViewById(R.id.circle_view);
+  chart4=(DialChart04View)findViewById(R.id.circle_view2);
   final Button button=(Button)findViewById(R.id.button1);
   button.setOnClickListener(new OnClickListener(){
     @Override public void onClick(    View v){
@@ -12,6 +13,8 @@
       float pf=p / 100f;
       chart.setCurrentStatus(pf);
       chart.invalidate();
+      chart4.setCurrentStatus(pf);
+      chart4.invalidate();
     }
   }
 );

@@ -1,0 +1,4 @@
+{
+  mDetailModeSteps=steps;
+  mLongTickfakeBold=isLongTickfakeBold;
+}

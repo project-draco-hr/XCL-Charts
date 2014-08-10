@@ -1,0 +1,81 @@
+{
+  PointF pLabel=new PointF(defLabelX,defLabelY);
+  float labelWidth=DrawHelper.getInstance().getTextWidth(getTickLabelPaint(),label);
+  float labelHeight=DrawHelper.getInstance().getPaintFontHeight(getTickLabelPaint());
+  getTickLabelPaint().setTextAlign(Align.CENTER);
+  if (XEnum.RoundTickAxisType.INNER_TICKAXIS == mRoundTickAxisType) {
+    if (Float.compare(pLabel.y,cirY) == 0) {
+      if (Float.compare(pLabel.x,cirX) == -1) {
+        pLabel.x+=labelWidth / 2;
+      }
+ else {
+        pLabel.x-=labelWidth / 2;
+      }
+    }
+ else     if (Float.compare(pLabel.x,cirX) == 0) {
+      if (Float.compare(pLabel.y,cirY) == -1) {
+        pLabel.y+=labelHeight / 2;
+      }
+ else {
+        pLabel.y-=labelHeight / 2;
+      }
+    }
+ else     if (Float.compare(totalAngle,Angle) == 0) {
+      pLabel.y+=labelHeight;
+    }
+ else     if (Float.compare(pLabel.x,cirX) == 1) {
+      if (Float.compare(totalAngle,360f) == 0) {
+        getTickLabelPaint().setTextAlign(Align.RIGHT);
+      }
+ else {
+        pLabel.x-=labelWidth / 2;
+      }
+    }
+ else     if (Float.compare(pLabel.x,cirX) == -1) {
+      if (Float.compare(totalAngle,360f) == 0) {
+        getTickLabelPaint().setTextAlign(Align.LEFT);
+      }
+ else {
+        pLabel.x+=labelWidth / 2;
+      }
+    }
+  }
+ else {
+    if (Float.compare(pLabel.y,cirY) == 0) {
+      if (Float.compare(pLabel.x,cirX) == -1) {
+        pLabel.x-=labelWidth / 2;
+      }
+ else {
+        pLabel.x+=labelWidth / 2;
+      }
+    }
+ else     if (Float.compare(pLabel.x,cirX) == 0) {
+      if (Float.compare(pLabel.y,cirY) == -1) {
+        pLabel.y-=labelHeight / 2;
+      }
+ else {
+        pLabel.y+=labelHeight / 2;
+      }
+    }
+ else     if (Float.compare(totalAngle,Angle) == 0) {
+      pLabel.y-=labelHeight;
+    }
+ else     if (Float.compare(pLabel.x,cirX) == 1) {
+      if (Float.compare(totalAngle,360f) == 0) {
+        getTickLabelPaint().setTextAlign(Align.LEFT);
+      }
+ else {
+        pLabel.x+=labelWidth / 2;
+      }
+    }
+ else     if (Float.compare(pLabel.x,cirX) == -1) {
+      if (Float.compare(totalAngle,360f) == 0) {
+        getTickLabelPaint().setTextAlign(Align.RIGHT);
+      }
+ else {
+        pLabel.x-=labelWidth / 2;
+      }
+    }
+  }
+  return pLabel;
+}

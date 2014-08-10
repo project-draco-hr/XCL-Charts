@@ -1,0 +1,4 @@
+{
+  if (null == mPointer)   mPointer=new PointerRender();
+  return mPointer;
+}

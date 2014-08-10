@@ -1,0 +1,9 @@
+{
+  chart.addPointer();
+  List<Pointer> mp=chart.getPlotPointer();
+  mp.get(0).setPercentage(mPercentage);
+  mp.get(0).setLength(0.75f);
+  mp.get(0).getPointerPaint().setColor(Color.WHITE);
+  mp.get(0).setPointerStyle(XEnum.PointerStyle.TRIANGLE);
+  mp.get(0).hideBaseCircle();
+}

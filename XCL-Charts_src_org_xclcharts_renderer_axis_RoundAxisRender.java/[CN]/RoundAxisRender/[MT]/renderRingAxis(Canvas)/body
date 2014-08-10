@@ -1,9 +1,7 @@
 {
   if (!getVisible() || !getAxisLineVisible())   return true;
   if (null == mPercentage)   return false;
-  int angleCount=0;
-  int colorCount=0;
-  int labelsCount=0;
+  int angleCount=0, colorCount=0, labelsCount=0;
   angleCount=this.mPercentage.size();
   if (null != mColor)   colorCount=this.mColor.size();
   if (null != mLabels)   labelsCount=this.mLabels.size();
