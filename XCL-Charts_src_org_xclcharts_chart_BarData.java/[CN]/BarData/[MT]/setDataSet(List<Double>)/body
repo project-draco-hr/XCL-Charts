@@ -1,3 +1,4 @@
 {
+  if (null != mDataSet)   mDataSet.clear();
   mDataSet=dataSeries;
 }

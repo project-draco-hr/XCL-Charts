@@ -6,10 +6,12 @@
         Thread.sleep(100);
         List<BarData> animationData=new LinkedList<BarData>();
         List<Double> dataSeries=new LinkedList<Double>();
+        List<Integer> dataColorA=new LinkedList<Integer>();
         for (int k=0; k <= j; k++) {
           dataSeries.add(barData.getDataSet().get(k));
+          dataColorA.add(barData.getDataColor().get(k));
         }
-        BarData animationBarData=new BarData("",dataSeries,(int)Color.rgb(53,169,239));
+        BarData animationBarData=new BarData("",dataSeries,dataColorA,(int)Color.rgb(53,169,239));
         animationData.add(animationBarData);
         chart.setDataSource(animationData);
         postInvalidate();

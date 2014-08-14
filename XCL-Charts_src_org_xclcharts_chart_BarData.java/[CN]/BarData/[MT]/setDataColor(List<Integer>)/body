@@ -1,3 +1,4 @@
 {
+  if (null != mDataColor)   mDataColor.clear();
   mDataColor=dataColor;
 }

@@ -20,6 +20,7 @@
     chart.getAxisTitle().setLowerAxisTitle("(??????)");
     chart.ActiveListenItemClick();
     chart.extPointClickRange(5);
+    chart.setLineAxisIntersectVisible(true);
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

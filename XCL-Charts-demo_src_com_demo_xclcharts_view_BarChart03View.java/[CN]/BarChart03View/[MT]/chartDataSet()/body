@@ -4,6 +4,11 @@
   dataSeriesA.add(100d);
   dataSeriesA.add(95d);
   dataSeriesA.add(100d);
-  BarData BarDataA=new BarData("",dataSeriesA,(int)Color.rgb(53,169,239));
-  chartData.add(BarDataA);
+  List<Integer> dataColorA=new LinkedList<Integer>();
+  dataColorA.add((int)Color.RED);
+  dataColorA.add((int)Color.BLUE);
+  dataColorA.add((int)Color.GREEN);
+  dataColorA.add((int)Color.YELLOW);
+  chartData.clear();
+  chartData.add(new BarData("",dataSeriesA,dataColorA,(int)Color.rgb(53,169,239)));
 }
