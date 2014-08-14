@@ -17,6 +17,7 @@
     chart.getDataAxis().setTickLabelVisible(true);
     chart.getCategoryAxis().getAxisPaint().setStrokeWidth(2);
     chart.getCategoryAxis().setTickMarksVisible(false);
+    chart.setLineAxisIntersectVisible(true);
     chart.getDataAxis().setLabelFormatter(new IFormatterTextCallBack(){
       @Override public String textFormatter(      String value){
         Double tmp=Double.parseDouble(value);

@@ -24,7 +24,7 @@
   dataSeriesC.add(45d);
   RadarData lineData3=new RadarData("????????????",dataSeriesC,(int)Color.rgb(224,53,49),XEnum.RadarDataAreaStyle.STROKE);
   lineData3.setLineStyle(XEnum.LineStyle.DASH);
-  lineData3.getPlotLine().setDotStyle(XEnum.DotStyle.RECT);
+  lineData3.getPlotLine().setDotStyle(XEnum.DotStyle.RING);
   chartData.add(lineData1);
   chartData.add(lineData2);
   chartData.add(lineData3);

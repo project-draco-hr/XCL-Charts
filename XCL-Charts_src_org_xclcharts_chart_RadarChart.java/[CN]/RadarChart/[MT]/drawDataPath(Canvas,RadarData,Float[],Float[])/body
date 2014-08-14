@@ -13,10 +13,14 @@
       startX=arrayDataX[p];
       startY=arrayDataY[p];
     }
-    renderDotAndLabel(canvas,lineData,arrayDataX[p],arrayDataY[p],p);
   }
   pathArea.lineTo(initX,initY);
   pathArea.close();
+  int oldAlpha=lineData.getPlotLine().getLinePaint().getAlpha();
   lineData.getPlotLine().getLinePaint().setAlpha(mAreaAlpha);
   canvas.drawPath(pathArea,lineData.getPlotLine().getLinePaint());
+  lineData.getPlotLine().getLinePaint().setAlpha(oldAlpha);
+  for (int p=0; p < arrayDataX.length; p++) {
+    renderDotAndLabel(canvas,lineData,arrayDataX[p],arrayDataY[p],p);
+  }
 }
