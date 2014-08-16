@@ -1,9 +1,8 @@
 {
-  RectF rect=new RectF();
-  rect.left=left + mBorderSpadding;
-  rect.top=top + mBorderSpadding;
-  rect.right=right - mBorderSpadding;
-  rect.bottom=bottom - mBorderSpadding;
+  mRect.left=left + mBorderSpadding;
+  mRect.top=top + mBorderSpadding;
+  mRect.right=right - mBorderSpadding;
+  mRect.bottom=bottom - mBorderSpadding;
 switch (getBorderLineStyle()) {
 case SOLID:
     break;
@@ -17,18 +16,18 @@ break;
 switch (getBorderRectType()) {
 case RECT:
 if (type.equals("CHART")) {
-if (null != mPaintChartBackground) canvas.drawRect(rect,mPaintChartBackground);
+if (null != mPaintChartBackground) canvas.drawRect(mRect,mPaintChartBackground);
 }
  else {
-canvas.drawRect(rect,getLinePaint());
+canvas.drawRect(mRect,getLinePaint());
 }
 break;
 case ROUNDRECT:
 if (type.equals("CHART")) {
-if (null != mPaintChartBackground) canvas.drawRoundRect(rect,getRoundRadius(),getRoundRadius(),mPaintChartBackground);
+if (null != mPaintChartBackground) canvas.drawRoundRect(mRect,getRoundRadius(),getRoundRadius(),mPaintChartBackground);
 }
  else {
-canvas.drawRoundRect(rect,getRoundRadius(),getRoundRadius(),getLinePaint());
+canvas.drawRoundRect(mRect,getRoundRadius(),getRoundRadius(),getLinePaint());
 }
 break;
 }

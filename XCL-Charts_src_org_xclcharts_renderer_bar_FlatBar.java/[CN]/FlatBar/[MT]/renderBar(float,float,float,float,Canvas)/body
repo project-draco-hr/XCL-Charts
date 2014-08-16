@@ -2,12 +2,15 @@
   if (XEnum.BarStyle.OUTLINE == getBarStyle()) {
     int barColor=getBarPaint().getColor();
     int lightColor=DrawHelper.getInstance().getLightColor(barColor,150);
+    float pWidth=getBarPaint().getStrokeWidth();
     getBarPaint().setStyle(Style.FILL);
     getBarPaint().setColor(lightColor);
     canvas.drawRect(left,bottom,right,top,getBarPaint());
     getBarPaint().setStyle(Style.STROKE);
     getBarPaint().setColor(barColor);
+    getBarPaint().setStrokeWidth(5);
     canvas.drawRect(left,bottom,right,top,getBarPaint());
+    getBarPaint().setStrokeWidth(pWidth);
     return true;
   }
 switch (getBarStyle()) {
