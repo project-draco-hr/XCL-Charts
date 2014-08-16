@@ -1,0 +1,9 @@
+{
+  Iterator iter=mapPoints.entrySet().iterator();
+  while (iter.hasNext()) {
+    Entry entry=(Entry)iter.next();
+    PlotLine pLine=(PlotLine)entry.getKey();
+    List<PointF> lstPoints=(List<PointF>)entry.getValue();
+    renderBezierCurveLine(canvas,pLine.getLinePaint(),lstPoints);
+  }
+}

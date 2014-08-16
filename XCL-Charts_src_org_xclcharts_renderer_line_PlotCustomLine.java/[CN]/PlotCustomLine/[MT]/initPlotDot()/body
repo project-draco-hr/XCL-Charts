@@ -1,0 +1,3 @@
+{
+  if (null == mDot)   mDot=new PlotDot();
+}

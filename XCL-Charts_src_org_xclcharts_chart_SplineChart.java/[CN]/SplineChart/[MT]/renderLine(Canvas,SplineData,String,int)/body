@@ -10,6 +10,9 @@
   float axisDataHeight=(float)dataAxis.getAxisRange();
   LinkedHashMap<Double,Double> chartValues=bd.getLineDataSet();
   if (null == chartValues)   return;
+  if (type.equalsIgnoreCase("LINE") && getCrurveLineStyle() == XEnum.CrurveLineStyle.BEZIERCURVE) {
+    initLineMap();
+  }
   int j=0, childID=0;
   Iterator iter=chartValues.entrySet().iterator();
   while (iter.hasNext()) {
@@ -30,7 +33,19 @@
     }
     PlotLine pLine=bd.getPlotLine();
     if (type.equalsIgnoreCase("LINE")) {
-      canvas.drawLine(lineStartX,lineStartY,lineEndX,lineEndY,pLine.getLinePaint());
+      if (getCrurveLineStyle() == XEnum.CrurveLineStyle.BEZIERCURVE) {
+        if (0 == j) {
+          mLstPoints.add(new PointF(lineStartX,lineStartY));
+          mLstPoints.add(new PointF(lineEndX,lineEndY));
+        }
+ else {
+          mLstPoints.add(new PointF(lineEndX,lineEndY));
+        }
+        mMapPoints.put(pLine,mLstPoints);
+      }
+ else {
+        canvas.drawLine(lineStartX,lineStartY,lineEndX,lineEndY,pLine.getLinePaint());
+      }
     }
  else     if (type.equalsIgnoreCase("DOT2LABEL")) {
       if (!pLine.getDotStyle().equals(XEnum.DotStyle.HIDE)) {
@@ -52,5 +67,9 @@
     lineStartX=lineEndX;
     lineStartY=lineEndY;
     j++;
+  }
+  if (type.equalsIgnoreCase("LINE") && getCrurveLineStyle() == XEnum.CrurveLineStyle.BEZIERCURVE) {
+    renderBezierCurve(canvas,mMapPoints);
+    mMapPoints.clear();
   }
 }

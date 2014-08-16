@@ -1,7 +1,7 @@
 {
   try {
     super.postRender(canvas);
-    if (null != mRecordset)     mRecordset.clear();
+    initPositionRecord();
     return renderFocusShape(canvas);
   }
  catch (  Exception e) {

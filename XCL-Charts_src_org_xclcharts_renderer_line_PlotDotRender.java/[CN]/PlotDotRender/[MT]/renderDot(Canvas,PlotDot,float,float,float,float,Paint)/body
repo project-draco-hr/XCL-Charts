@@ -1,5 +1,4 @@
 {
-  RectF rect=new RectF();
   float radius=pDot.getDotRadius();
   float halfRadius=MathHelper.getInstance().div(radius,2f);
   float cX=0.0f;
@@ -17,33 +16,30 @@ case DOT:
 case RING:
 float ringRadius=radius * 0.7f;
 canvas.drawCircle(cX,bottom,radius,paint);
-Paint paintFill=new Paint();
-paintFill.setColor(Color.WHITE);
-paintFill.setStyle(Style.FILL);
-paintFill.setAntiAlias(true);
-canvas.drawCircle(cX,bottom,ringRadius,paintFill);
+initPaintFill();
+canvas.drawCircle(cX,bottom,ringRadius,mPaintFill);
 break;
 case TRIANGLE:
 float triganaleHeight=radius + radius / 2;
-Path path=new Path();
-path.moveTo(right - radius,bottom + halfRadius);
-path.lineTo(right,bottom - triganaleHeight);
-path.lineTo(right + radius,bottom + halfRadius);
-path.close();
-canvas.drawPath(path,paint);
+initPath();
+mPath.moveTo(right - radius,bottom + halfRadius);
+mPath.lineTo(right,bottom - triganaleHeight);
+mPath.lineTo(right + radius,bottom + halfRadius);
+mPath.close();
+canvas.drawPath(mPath,paint);
 rect.left=(right - radius);
 rect.top=(bottom - triganaleHeight);
 rect.right=(right + radius);
 rect.bottom=(bottom + halfRadius);
 break;
 case PRISMATIC:
-Path pathPir=new Path();
-pathPir.moveTo(right - radius,bottom);
-pathPir.lineTo(right,bottom - radius);
-pathPir.lineTo(right + radius,bottom);
-pathPir.lineTo(left + (right - left),bottom + radius);
-pathPir.close();
-canvas.drawPath(pathPir,paint);
+initPath();
+mPath.moveTo(right - radius,bottom);
+mPath.lineTo(right,bottom - radius);
+mPath.lineTo(right + radius,bottom);
+mPath.lineTo(left + (right - left),bottom + radius);
+mPath.close();
+canvas.drawPath(mPath,paint);
 rect.left=(right - radius);
 rect.top=(bottom - radius);
 rect.right=(right + radius);

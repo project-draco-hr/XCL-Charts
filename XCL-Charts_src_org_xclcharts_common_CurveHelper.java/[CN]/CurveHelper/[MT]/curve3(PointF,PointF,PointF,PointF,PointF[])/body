@@ -1,0 +1,12 @@
+{
+  PointF cLA=PointHelper.center(l,a);
+  PointF cAB=PointHelper.center(a,b);
+  PointF cBN=PointHelper.center(b,n);
+  float lenLA=PointHelper.distance(l,a);
+  float lenAB=PointHelper.distance(a,b);
+  float lenBN=PointHelper.distance(b,n);
+  PointF cLAB=PointHelper.percent(cLA,cAB,lenLA / (lenLA + lenAB));
+  PointF cABN=PointHelper.percent(cAB,cBN,lenAB / (lenAB + lenBN));
+  controls[0]=PointHelper.translate(cAB,a.x - cLAB.x,a.y - cLAB.y);
+  controls[1]=PointHelper.translate(cAB,b.x - cABN.x,b.y - cABN.y);
+}
