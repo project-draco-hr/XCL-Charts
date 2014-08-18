@@ -1,6 +1,6 @@
 {
-  Paint paint=new Paint();
-  paint.setColor(color);
-  paint.setAlpha(alpha);
-  return paint.getColor();
+  initPaint();
+  mPaint.setColor(color);
+  mPaint.setAlpha(alpha);
+  return mPaint.getColor();
 }

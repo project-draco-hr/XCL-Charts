@@ -3,7 +3,6 @@
   int lightColor=DrawHelper.getInstance().getLightColor(barColor,150);
   float width=Math.abs(right - left);
   float height=Math.abs(bottom - top);
-  LinearGradient linearGradient=null;
   Shader.TileMode tm=Shader.TileMode.MIRROR;
   if (width > height) {
     linearGradient=new LinearGradient(right,bottom,right,top,new int[]{lightColor,barColor},null,tm);

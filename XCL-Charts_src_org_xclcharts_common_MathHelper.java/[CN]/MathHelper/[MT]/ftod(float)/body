@@ -1,4 +1,3 @@
 {
-  Float t=new Float(f);
-  return t.doubleValue();
+  return (new Float(f).doubleValue());
 }

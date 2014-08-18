@@ -1,0 +1,4 @@
+{
+  mKeyLabelX=mKeyLabelY=0.0f;
+  mTextWidth=mTextHeight=mRectWidth=mTotalTextWidth=0.0f;
+}

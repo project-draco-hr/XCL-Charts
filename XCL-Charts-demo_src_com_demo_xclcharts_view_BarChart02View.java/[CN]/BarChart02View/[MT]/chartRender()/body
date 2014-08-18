@@ -4,7 +4,7 @@
     chart.setPadding(DensityUtil.dip2px(getContext(),50),ltrb[1],ltrb[2],ltrb[3]);
     chart.setTitle("??????????????????");
     chart.addSubtitle("(XCL-Charts Demo)");
-    chart.setTitlePosition(XEnum.Position.CENTER);
+    chart.setTitleVerticalAlign(XEnum.VerticalAlign.MIDDLE);
     chart.setTitleAlign(XEnum.ChartTitleAlign.LEFT);
     chart.setDataSource(chartData);
     chart.setCategories(chartLabels);

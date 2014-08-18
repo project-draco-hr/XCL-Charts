@@ -1,0 +1,17 @@
+{
+  if (null == mPlotArea)   mPlotArea=mXChart.getPlotArea();
+  initEnv();
+  mTextHeight=this.getLabelTextHeight();
+  mRectWidth=this.getRectWidth();
+  if (!mXChart.isVerticalScreen()) {
+    getLegendLabelPaint().setTextAlign(Align.RIGHT);
+    mKeyLabelX=mPlotArea.getRight() - mOffsetX;
+    mKeyLabelY=this.mPlotArea.getTop() + mTextHeight + mOffsetY;
+  }
+ else {
+    getLegendLabelPaint().setTextAlign(Align.LEFT);
+    mKeyLabelX=mPlotArea.getLeft() + mOffsetX;
+    mKeyLabelY=this.mPlotArea.getBottom() - mOffsetY;
+  }
+  return true;
+}

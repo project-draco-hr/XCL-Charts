@@ -1,0 +1,5 @@
+{
+  mPosX=mPosY=0.0f;
+  mPointF.x=mPosX;
+  mPointF.y=mPosY;
+}

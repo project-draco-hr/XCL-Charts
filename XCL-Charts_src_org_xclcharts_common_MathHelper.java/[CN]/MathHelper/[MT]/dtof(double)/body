@@ -1,4 +1,3 @@
 {
-  Double bd=new Double(d);
-  return bd.floatValue();
+  return (new Double(d).floatValue());
 }

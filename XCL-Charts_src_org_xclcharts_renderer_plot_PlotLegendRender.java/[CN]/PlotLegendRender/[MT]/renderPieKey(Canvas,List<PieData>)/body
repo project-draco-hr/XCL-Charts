@@ -1,49 +1,8 @@
 {
   if (isShowLegend() == false)   return;
   if (null == dataset)   return;
-  if (null == mPlotArea)   mPlotArea=mXChart.getPlotArea();
-  float textHeight=DrawHelper.getInstance().getPaintFontHeight(getLegendLabelPaint());
-  float rectWidth=2 * textHeight;
-  float currentX=0.0f;
-  float currentY=0.0f;
-  if (!mXChart.isVerticalScreen()) {
-    getLegendLabelPaint().setTextAlign(Align.RIGHT);
-    currentX=mPlotArea.getRight();
-    currentY=this.mPlotArea.getTop() + textHeight;
-  }
- else {
-    getLegendLabelPaint().setTextAlign(Align.LEFT);
-    currentX=mPlotArea.getLeft();
-    currentY=this.mPlotArea.getBottom();
-  }
-  float totalTextWidth=0.0f;
+  initRoundChartKey();
   for (  PieData cData : dataset) {
-    getLegendLabelPaint().setColor(cData.getSliceColor());
-    if (!this.mXChart.isVerticalScreen()) {
-      canvas.drawRect(currentX,currentY,currentX - rectWidth,currentY - textHeight,getLegendLabelPaint());
-      canvas.drawText(cData.getKey(),currentX - rectWidth,currentY,getLegendLabelPaint());
-      currentY=MathHelper.getInstance().add(currentY,textHeight);
-      if (Float.compare(currentY,mPlotArea.getBottom()) == 1 || Float.compare(currentY,mPlotArea.getBottom()) == 0) {
-        currentX=mPlotArea.getLeft();
-        currentX=mPlotArea.getTop() + textHeight;
-      }
-    }
- else {
-      float keyTextWidth=DrawHelper.getInstance().getTextWidth(getLegendLabelPaint(),cData.getKey());
-      float tmpX=MathHelper.getInstance().add(currentX,rectWidth);
-      tmpX=MathHelper.getInstance().add(currentX,keyTextWidth);
-      if (Float.compare(tmpX,mPlotArea.getRight()) == 1 || Float.compare(tmpX,mPlotArea.getRight()) == 0) {
-        currentY=MathHelper.getInstance().add(currentY,textHeight);
-        currentX=mPlotArea.getLeft();
-        totalTextWidth=0.0f;
-      }
- else {
-        totalTextWidth=MathHelper.getInstance().add(totalTextWidth,keyTextWidth);
-      }
-      canvas.drawRect(currentX,currentY,currentX + rectWidth,currentY - textHeight,getLegendLabelPaint());
-      canvas.drawText(cData.getKey(),currentX + rectWidth,currentY,getLegendLabelPaint());
-      currentX=MathHelper.getInstance().add(currentX,rectWidth);
-      currentX=MathHelper.getInstance().add(currentX,keyTextWidth + 5);
-    }
+    renderCirChartKey(canvas,cData.getKey(),cData.getSliceColor());
   }
 }

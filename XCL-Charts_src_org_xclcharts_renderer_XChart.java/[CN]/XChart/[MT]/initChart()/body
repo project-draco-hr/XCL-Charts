@@ -5,6 +5,6 @@
   plotArea=new PlotAreaRender();
   plotGrid=new PlotGridRender();
   plotTitle=new PlotTitleRender();
-  plotTitle.setTitlePosition(XEnum.Position.CENTER);
-  plotTitle.setTitleAlign(XEnum.ChartTitleAlign.CENTER);
+  plotTitle.setVerticalAlign(XEnum.VerticalAlign.MIDDLE);
+  plotTitle.setTitleAlign(XEnum.ChartTitleAlign.MIDDLE);
 }

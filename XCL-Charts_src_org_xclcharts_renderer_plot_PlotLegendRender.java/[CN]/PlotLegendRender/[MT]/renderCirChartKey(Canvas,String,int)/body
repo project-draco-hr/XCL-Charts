@@ -1,0 +1,30 @@
+{
+  if ("" == key)   return;
+  getLegendLabelPaint().setColor(textColor);
+  if (!this.mXChart.isVerticalScreen()) {
+    canvas.drawRect(mKeyLabelX,mKeyLabelY,mKeyLabelX - mRectWidth,mKeyLabelY - mTextHeight,getLegendLabelPaint());
+    canvas.drawText(key,mKeyLabelX - mRectWidth,mKeyLabelY,getLegendLabelPaint());
+    mKeyLabelY=MathHelper.getInstance().add(mKeyLabelY,mTextHeight);
+    if (Float.compare(mKeyLabelY,mPlotArea.getBottom()) == 1 || Float.compare(mKeyLabelY,mPlotArea.getBottom()) == 0) {
+      mKeyLabelX=mPlotArea.getLeft();
+      mKeyLabelX=mPlotArea.getTop() + mTextHeight;
+    }
+  }
+ else {
+    float keyTextWidth=this.getLabelTextWidth(key);
+    float tmpX=MathHelper.getInstance().add(mKeyLabelX,mRectWidth);
+    tmpX=MathHelper.getInstance().add(mKeyLabelX,keyTextWidth);
+    if (Float.compare(tmpX,mPlotArea.getRight()) == 1 || Float.compare(tmpX,mPlotArea.getRight()) == 0) {
+      mKeyLabelY=MathHelper.getInstance().add(mKeyLabelY,mTextHeight);
+      mKeyLabelX=mPlotArea.getLeft();
+      mTotalTextWidth=0.0f;
+    }
+ else {
+      mTotalTextWidth=MathHelper.getInstance().add(mTotalTextWidth,keyTextWidth);
+    }
+    canvas.drawRect(mKeyLabelX,mKeyLabelY,mKeyLabelX + mRectWidth,mKeyLabelY - mTextHeight,getLegendLabelPaint());
+    canvas.drawText(key,mKeyLabelX + mRectWidth,mKeyLabelY,getLegendLabelPaint());
+    mKeyLabelX=MathHelper.getInstance().add(mKeyLabelX,mRectWidth);
+    mKeyLabelX=MathHelper.getInstance().add(mKeyLabelX,keyTextWidth + 5);
+  }
+}

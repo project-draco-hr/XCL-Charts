@@ -16,14 +16,14 @@
   }
   totalHeight=titleHeight + subtitleHeight;
   float pcHeight=Math.abs(plotTop - chartTop);
-switch (this.getTitlePosition()) {
-case UP:
+switch (this.getVerticalAlign()) {
+case TOP:
     titleInitY=chartTop + titleHeight;
   break;
-case CENTER:
+case MIDDLE:
 titleInitY=Math.round(chartTop + pcHeight / 2 - totalHeight / 2);
 break;
-case LOWER:
+case BOTTOM:
 titleInitY=plotTop - titleHeight;
 break;
 }
@@ -36,7 +36,7 @@ subtitleY=titleY + subtitleHeight;
 getTitlePaint().setTextAlign(Align.LEFT);
 getSubtitlePaint().setTextAlign(Align.LEFT);
 break;
-case CENTER:
+case MIDDLE:
 titleX=(float)Math.round(chartLeft + chartWidth / 2);
 titleY=titleInitY;
 subtitleX=titleX;

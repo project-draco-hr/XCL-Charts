@@ -1,0 +1,8 @@
+{
+  if (null == mPaint) {
+    mPaint=new Paint();
+  }
+ else {
+    mPaint.reset();
+  }
+}

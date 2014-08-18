@@ -6,7 +6,7 @@
     chart.getLabelPaint().setColor(Color.WHITE);
     chart.setTitle("??????-Pie Chart");
     chart.addSubtitle("(XCL-Charts Demo)");
-    chart.getPlotTitle().setTitlePosition(XEnum.Position.LOWER);
+    chart.setTitleVerticalAlign(XEnum.VerticalAlign.BOTTOM);
     chart.getPlotLegend().showLegend();
   }
  catch (  Exception e) {

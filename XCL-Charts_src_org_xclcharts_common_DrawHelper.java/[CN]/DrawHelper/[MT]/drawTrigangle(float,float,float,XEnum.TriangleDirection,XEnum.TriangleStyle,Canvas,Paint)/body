@@ -1,30 +1,30 @@
 {
   int offset=(int)(baseLine / 2 * Math.tan(60 * Math.PI / 180));
-  Path path=new Path();
+  initPath();
 switch (direction) {
 case UP:
-    path.moveTo(baseLnCentX - baseLine / 2,baseLnCentY);
-  path.lineTo(baseLnCentX + baseLine / 2,baseLnCentY);
-path.lineTo(baseLnCentX,baseLnCentY - offset);
-path.close();
+    mPath.moveTo(baseLnCentX - baseLine / 2,baseLnCentY);
+  mPath.lineTo(baseLnCentX + baseLine / 2,baseLnCentY);
+mPath.lineTo(baseLnCentX,baseLnCentY - offset);
+mPath.close();
 break;
 case DOWN:
-path.moveTo(baseLnCentX - baseLine / 2,baseLnCentY);
-path.lineTo(baseLnCentX + baseLine / 2,baseLnCentY);
-path.lineTo(baseLnCentX,baseLnCentY + offset);
-path.close();
+mPath.moveTo(baseLnCentX - baseLine / 2,baseLnCentY);
+mPath.lineTo(baseLnCentX + baseLine / 2,baseLnCentY);
+mPath.lineTo(baseLnCentX,baseLnCentY + offset);
+mPath.close();
 break;
 case LEFT:
-path.moveTo(baseLnCentX,baseLnCentY - baseLine / 2);
-path.lineTo(baseLnCentX,baseLnCentY + baseLine / 2);
-path.lineTo(baseLnCentX - offset,baseLnCentY);
-path.close();
+mPath.moveTo(baseLnCentX,baseLnCentY - baseLine / 2);
+mPath.lineTo(baseLnCentX,baseLnCentY + baseLine / 2);
+mPath.lineTo(baseLnCentX - offset,baseLnCentY);
+mPath.close();
 break;
 case RIGHT:
-path.moveTo(baseLnCentX,baseLnCentY - baseLine / 2);
-path.lineTo(baseLnCentX,baseLnCentY + baseLine / 2);
-path.lineTo(baseLnCentX + offset,baseLnCentY);
-path.close();
+mPath.moveTo(baseLnCentX,baseLnCentY - baseLine / 2);
+mPath.lineTo(baseLnCentX,baseLnCentY + baseLine / 2);
+mPath.lineTo(baseLnCentX + offset,baseLnCentY);
+mPath.close();
 break;
 }
 switch (style) {
@@ -35,5 +35,5 @@ case FILL:
 paint.setStyle(Paint.Style.FILL);
 break;
 }
-canvas.drawPath(path,paint);
+canvas.drawPath(mPath,paint);
 }

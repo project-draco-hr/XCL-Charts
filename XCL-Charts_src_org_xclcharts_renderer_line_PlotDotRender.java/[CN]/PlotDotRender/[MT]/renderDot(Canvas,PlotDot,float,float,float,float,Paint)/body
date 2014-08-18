@@ -1,13 +1,20 @@
 {
   float radius=pDot.getDotRadius();
+  if (Float.compare(radius,0.0f) == 0 || Float.compare(radius,0.0f) == -1) {
+    mRect.left=0.0f;
+    mRect.top=0.0f;
+    mRect.right=0.0f;
+    mRect.bottom=0.0f;
+    return mRect;
+  }
   float halfRadius=MathHelper.getInstance().div(radius,2f);
   float cX=0.0f;
   if (XEnum.DotStyle.DOT == pDot.getDotStyle() || XEnum.DotStyle.RING == pDot.getDotStyle()) {
     cX=left + Math.abs(right - left);
-    rect.left=(cX - radius);
-    rect.top=(bottom + radius);
-    rect.right=(cX + radius);
-    rect.bottom=(bottom - radius);
+    mRect.left=(cX - radius);
+    mRect.top=(bottom + radius);
+    mRect.right=(cX + radius);
+    mRect.bottom=(bottom - radius);
   }
 switch (pDot.getDotStyle()) {
 case DOT:
@@ -17,6 +24,7 @@ case RING:
 float ringRadius=radius * 0.7f;
 canvas.drawCircle(cX,bottom,radius,paint);
 initPaintFill();
+mPaintFill.setColor(pDot.getRingInnerColor());
 canvas.drawCircle(cX,bottom,ringRadius,mPaintFill);
 break;
 case TRIANGLE:
@@ -27,10 +35,10 @@ mPath.lineTo(right,bottom - triganaleHeight);
 mPath.lineTo(right + radius,bottom + halfRadius);
 mPath.close();
 canvas.drawPath(mPath,paint);
-rect.left=(right - radius);
-rect.top=(bottom - triganaleHeight);
-rect.right=(right + radius);
-rect.bottom=(bottom + halfRadius);
+mRect.left=(right - radius);
+mRect.top=(bottom - triganaleHeight);
+mRect.right=(right + radius);
+mRect.bottom=(bottom + halfRadius);
 break;
 case PRISMATIC:
 initPath();
@@ -40,21 +48,21 @@ mPath.lineTo(right + radius,bottom);
 mPath.lineTo(left + (right - left),bottom + radius);
 mPath.close();
 canvas.drawPath(mPath,paint);
-rect.left=(right - radius);
-rect.top=(bottom - radius);
-rect.right=(right + radius);
-rect.bottom=(bottom + radius);
+mRect.left=(right - radius);
+mRect.top=(bottom - radius);
+mRect.right=(right + radius);
+mRect.bottom=(bottom + radius);
 break;
 case RECT:
 paint.setStyle(Style.FILL);
-rect.left=(right - radius);
-rect.top=(bottom + radius);
-rect.right=(right + radius);
-rect.bottom=(bottom - radius);
-canvas.drawRect(rect,paint);
+mRect.left=(right - radius);
+mRect.top=(bottom + radius);
+mRect.right=(right + radius);
+mRect.bottom=(bottom - radius);
+canvas.drawRect(mRect,paint);
 break;
 case HIDE:
 default :
 }
-return rect;
+return mRect;
 }

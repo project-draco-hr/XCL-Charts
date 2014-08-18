@@ -4,7 +4,7 @@ switch (line.getLabelHorizontalPostion()) {
 case LEFT:
     currentY+=txtHeight / 3;
   break;
-case CENTER:
+case MIDDLE:
 if (line.isShowLine()) currentY-=DrawHelper.getInstance().getPaintFontHeight(line.getCustomLinePaint());
 break;
 case RIGHT:

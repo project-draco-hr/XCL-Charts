@@ -2,15 +2,14 @@
   if (!isShowLegend())   return true;
   if (null == dataSet)   return false;
   if (!validateParams())   return false;
-  if (null == mDataSet)   mDataSet=dataSet;
   if (null == mPlotArea)   mPlotArea=mXChart.getPlotArea();
 switch (mXChart.getPlotTitle().getTitleAlign()) {
-case CENTER:
+case MIDDLE:
 case RIGHT:
-    renderBarKeyLeft(canvas);
+    renderBarKeyLeft(canvas,dataSet);
   break;
 case LEFT:
-renderBarKeyRight(canvas);
+renderBarKeyRight(canvas,dataSet);
 break;
 }
 return true;

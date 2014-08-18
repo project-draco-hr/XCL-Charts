@@ -1,5 +1,5 @@
 {
-  BigDecimal b1=new BigDecimal(Float.toString(v1));
-  BigDecimal b2=new BigDecimal(Float.toString(v2));
-  return b1.multiply(b2).floatValue();
+  BigDecimal bgNum1=new BigDecimal(Float.toString(v1));
+  BigDecimal bgNum2=new BigDecimal(Float.toString(v2));
+  return bgNum1.multiply(bgNum2).floatValue();
 }

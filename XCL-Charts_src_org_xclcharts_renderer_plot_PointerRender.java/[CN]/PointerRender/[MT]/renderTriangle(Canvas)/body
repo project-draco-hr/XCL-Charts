@@ -8,10 +8,15 @@
   MathHelper.getInstance().calcArcEndPointXY(mTailX,mTailY,mBaseRadius,currentAgent2);
   eX=MathHelper.getInstance().getPosX();
   eY=MathHelper.getInstance().getPosY();
-  Path path=new Path();
-  path.moveTo(mEndX,mEndY);
-  path.lineTo(bX,bY);
-  path.lineTo(eX,eY);
-  path.close();
-  canvas.drawPath(path,getPointerPaint());
+  if (null == mPath) {
+    mPath=new Path();
+  }
+ else {
+    mPath.reset();
+  }
+  mPath.moveTo(mEndX,mEndY);
+  mPath.lineTo(bX,bY);
+  mPath.lineTo(eX,eY);
+  mPath.close();
+  canvas.drawPath(mPath,getPointerPaint());
 }

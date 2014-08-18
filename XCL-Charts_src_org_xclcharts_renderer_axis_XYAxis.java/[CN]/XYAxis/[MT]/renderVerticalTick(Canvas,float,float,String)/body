@@ -4,7 +4,7 @@
   float marksStopY=centerY;
   float labelsStartY=centerY;
 switch (getVerticalTickPosition()) {
-case UP:
+case TOP:
 {
       if (getTickMarksVisible()) {
         marksStartY=MathHelper.getInstance().sub(centerY,getTickMarksLength());
@@ -15,7 +15,7 @@ case UP:
       }
       break;
     }
-case CENTER:
+case MIDDLE:
 {
     if (getTickMarksVisible()) {
       marksStartY=MathHelper.getInstance().sub(centerY,getTickMarksLength() / 2);
@@ -23,7 +23,7 @@ case CENTER:
     }
     break;
   }
-case LOWER:
+case BOTTOM:
 if (getTickMarksVisible()) {
   marksStartY=centerY;
   marksStopY=MathHelper.getInstance().add(centerY,getTickMarksLength());

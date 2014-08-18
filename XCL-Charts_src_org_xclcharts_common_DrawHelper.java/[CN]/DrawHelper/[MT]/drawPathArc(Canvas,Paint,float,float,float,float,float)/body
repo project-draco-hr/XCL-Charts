@@ -1,13 +1,13 @@
 {
   try {
-    float arcLeft=cirX - radius;
-    float arcTop=cirY - radius;
-    float arcRight=cirX + radius;
-    float arcBottom=cirY + radius;
-    RectF arcRF0=new RectF(arcLeft,arcTop,arcRight,arcBottom);
-    Path path=new Path();
-    path.addArc(arcRF0,startAngle,sweepAngle);
-    canvas.drawPath(path,paintArc);
+    initRectF();
+    mRectF.left=cirX - radius;
+    mRectF.top=cirY - radius;
+    mRectF.right=cirX + radius;
+    mRectF.bottom=cirY + radius;
+    initPath();
+    mPath.addArc(mRectF,startAngle,sweepAngle);
+    canvas.drawPath(mPath,paintArc);
   }
  catch (  Exception e) {
     throw e;

@@ -10,7 +10,7 @@
     chart.setDataSource(chartData);
     chart.setTitle("???????????????");
     chart.addSubtitle("(XCL-Charts Demo)");
-    chart.getPlotTitle().setTitlePosition(XEnum.Position.CENTER);
+    chart.setTitleVerticalAlign(XEnum.VerticalAlign.MIDDLE);
     chart.hideGradient();
     chart.ActiveListenItemClick();
   }

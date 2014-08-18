@@ -7,7 +7,7 @@
       if (1 == i) {
         chart.setTitle("????????????????????????");
         chart.addSubtitle("(XCL-Charts Demo)");
-        chart.getPlotTitle().setTitlePosition(XEnum.Position.LOWER);
+        chart.setTitleVerticalAlign(XEnum.VerticalAlign.BOTTOM);
         chart.setChartRange(0.0f,0.0f,getWidth(),getHeight());
         chart.ActiveListenItemClick();
       }
