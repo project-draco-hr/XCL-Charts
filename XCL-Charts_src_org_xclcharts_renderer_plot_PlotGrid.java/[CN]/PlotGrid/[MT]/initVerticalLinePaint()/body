@@ -1,0 +1,8 @@
+{
+  if (null == mPaintGridLineVertical) {
+    mPaintGridLineVertical=new Paint();
+    mPaintGridLineVertical.setColor((int)Color.rgb(180,205,230));
+    mPaintGridLineVertical.setStrokeWidth(1);
+    mPaintGridLineVertical.setAntiAlias(true);
+  }
+}

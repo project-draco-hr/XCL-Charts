@@ -1,0 +1,7 @@
+{
+  if (null == mPaintLeftAxisTitle) {
+    mPaintLeftAxisTitle=new Paint();
+    mPaintLeftAxisTitle.setTextAlign(Align.CENTER);
+    mPaintLeftAxisTitle.setAntiAlias(true);
+  }
+}

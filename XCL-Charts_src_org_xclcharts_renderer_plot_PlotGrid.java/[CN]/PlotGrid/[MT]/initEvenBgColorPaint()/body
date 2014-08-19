@@ -1,0 +1,8 @@
+{
+  if (null == mPaintEvenBgColor) {
+    mPaintEvenBgColor=new Paint();
+    mPaintEvenBgColor.setStyle(Style.FILL);
+    mPaintEvenBgColor.setColor((int)Color.rgb(239,239,239));
+    mPaintEvenBgColor.setAntiAlias(true);
+  }
+}

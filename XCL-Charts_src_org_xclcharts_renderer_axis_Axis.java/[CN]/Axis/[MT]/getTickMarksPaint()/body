@@ -1,3 +1,4 @@
 {
+  initTickMarksPaint();
   return mPaintTickMarks;
 }

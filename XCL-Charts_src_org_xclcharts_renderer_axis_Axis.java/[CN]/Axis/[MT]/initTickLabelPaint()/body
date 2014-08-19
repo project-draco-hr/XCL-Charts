@@ -1,0 +1,9 @@
+{
+  if (null == mPaintTickLabel) {
+    mPaintTickLabel=new Paint();
+    mPaintTickLabel.setColor(Color.BLACK);
+    mPaintTickLabel.setTextAlign(Align.RIGHT);
+    mPaintTickLabel.setTextSize(18);
+    mPaintTickLabel.setAntiAlias(true);
+  }
+}

@@ -1,3 +1,4 @@
 {
+  initLinePaint();
   return mPaintLine;
 }

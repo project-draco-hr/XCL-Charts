@@ -1,0 +1,8 @@
+{
+  if (null == mPaintOddBgColor) {
+    mPaintOddBgColor=new Paint();
+    mPaintOddBgColor.setStyle(Style.FILL);
+    mPaintOddBgColor.setColor(Color.WHITE);
+    mPaintOddBgColor.setAntiAlias(true);
+  }
+}

@@ -1,0 +1,7 @@
+{
+  if (null == mPaintAxis) {
+    mPaintAxis=new Paint();
+    mPaintAxis.setColor(Color.BLACK);
+    mPaintAxis.setAntiAlias(true);
+  }
+}

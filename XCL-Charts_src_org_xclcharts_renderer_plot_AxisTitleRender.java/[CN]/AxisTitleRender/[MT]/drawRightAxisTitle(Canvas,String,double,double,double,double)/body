@@ -1,13 +1,13 @@
 {
   if (null == canvas)   return;
   if (0 == axisTitle.length() || "" == axisTitle)   return;
-  float axisTitleTextHeight=DrawHelper.getInstance().getTextWidth(mPaintRightAxisTitle,axisTitle);
-  float axisTitleTextStartX=(float)Math.round(right - mPaintRightAxisTitle.getTextSize());
+  float axisTitleTextHeight=DrawHelper.getInstance().getTextWidth(getRightAxisTitlePaint(),axisTitle);
+  float axisTitleTextStartX=(float)Math.round(right - getRightAxisTitlePaint().getTextSize());
   float axisTitleTextStartY=(float)Math.round(top + (bottom - top - axisTitleTextHeight) / 2);
   float axisTitleCharHeight=0.0f;
   for (int i=0; i < axisTitle.length(); i++) {
-    axisTitleCharHeight=DrawHelper.getInstance().getTextWidth(mPaintRightAxisTitle,axisTitle.substring(i,i + 1));
-    DrawHelper.getInstance().drawRotateText(axisTitle.substring(i,i + 1),axisTitleTextStartX,axisTitleTextStartY,90,canvas,mPaintRightAxisTitle);
+    axisTitleCharHeight=DrawHelper.getInstance().getTextWidth(getRightAxisTitlePaint(),axisTitle.substring(i,i + 1));
+    DrawHelper.getInstance().drawRotateText(axisTitle.substring(i,i + 1),axisTitleTextStartX,axisTitleTextStartY,90,canvas,getRightAxisTitlePaint());
     axisTitleTextStartY+=axisTitleCharHeight;
   }
 }

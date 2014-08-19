@@ -1,0 +1,8 @@
+{
+  if (null == mPaintTickMarks) {
+    mPaintTickMarks=new Paint();
+    mPaintTickMarks.setColor(Color.BLACK);
+    mPaintTickMarks.setStrokeWidth(3);
+    mPaintTickMarks.setAntiAlias(true);
+  }
+}
