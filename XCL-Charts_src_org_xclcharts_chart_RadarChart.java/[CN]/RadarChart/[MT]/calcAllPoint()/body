@@ -6,22 +6,22 @@
   float pAngle=MathHelper.getInstance().div(360f,labelsCount);
   float initOffsetAgent=MathHelper.getInstance().sub(270f,pAngle);
   float avgRadius=MathHelper.getInstance().div(getRadius(),(dataAxisTickCount - 1));
-  float curRadius=0.0f;
   float offsetAgent=0.0f;
   mArrayDotX=new Float[dataAxisTickCount][labelsCount];
   mArrayDotY=new Float[dataAxisTickCount][labelsCount];
   mArrayLabelAgent=new Float[labelsCount];
   mArrayLabelX=new Float[dataAxisTickCount][labelsCount];
   mArrayLabelY=new Float[dataAxisTickCount][labelsCount];
+  mArrayRadius=new Float[dataAxisTickCount];
   int labelHeight=DrawHelper.getInstance().getPaintFontHeight(getLabelPaint());
-  float labelRadius=this.getRadius() + labelHeight;
+  float labelRadius=this.getRadius() + labelHeight + mLabelOffset;
   float currAgent=0.0f;
   for (int i=0; i < dataAxisTickCount; i++) {
-    curRadius=avgRadius * i;
+    mArrayRadius[i]=avgRadius * i;
     for (int j=0; j < labelsCount; j++) {
       offsetAgent=MathHelper.getInstance().add(initOffsetAgent,pAngle * j);
       currAgent=MathHelper.getInstance().add(offsetAgent,pAngle);
-      MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,curRadius,currAgent);
+      MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,mArrayRadius[i],currAgent);
       mArrayDotX[i][j]=MathHelper.getInstance().getPosX();
       mArrayDotY[i][j]=MathHelper.getInstance().getPosY();
       if (0 == i)       mArrayLabelAgent[j]=currAgent;

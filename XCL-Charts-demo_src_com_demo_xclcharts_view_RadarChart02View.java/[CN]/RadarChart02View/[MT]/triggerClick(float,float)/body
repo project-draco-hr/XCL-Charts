@@ -1,0 +1,9 @@
+{
+  PointPosition record=chart.getPositionRecord(x,y);
+  if (null == record)   return;
+  if (record.getDataID() < chartData.size()) {
+    RadarData lData=chartData.get(record.getDataID());
+    Double lValue=lData.getLinePoint().get(record.getDataChildID());
+    Toast.makeText(this.getContext()," Current Value:" + Double.toString(lValue) + " Point info:"+ record.getPointInfo(),Toast.LENGTH_SHORT).show();
+  }
+}

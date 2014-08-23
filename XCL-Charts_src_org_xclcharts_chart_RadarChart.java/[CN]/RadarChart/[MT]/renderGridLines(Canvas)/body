@@ -1,16 +1,12 @@
 {
-  mRdPath.reset();
-  for (int i=0; i < getAxisTickCount(); i++) {
-    for (int j=0; j < getPlotAgentNumber(); j++) {
-      if (0 == j) {
-        mRdPath.moveTo(mArrayDotX[i][j],mArrayDotY[i][j]);
-      }
- else {
-        mRdPath.lineTo(mArrayDotX[i][j],mArrayDotY[i][j]);
-      }
-    }
-    mRdPath.close();
-    canvas.drawPath(mRdPath,getLinePaint());
-    mRdPath.reset();
-  }
+switch (mRadarChartType) {
+case RADAR:
+    renderGridLinesRadar(canvas);
+  break;
+case ROUND:
+renderGridLinesRound(canvas);
+break;
+default :
+break;
+}
 }

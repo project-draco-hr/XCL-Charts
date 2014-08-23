@@ -1,0 +1,5 @@
+Canvas canvas
+RadarData lineData
+Float[] arrayDataX
+Float[] arrayDataY
+int dataID

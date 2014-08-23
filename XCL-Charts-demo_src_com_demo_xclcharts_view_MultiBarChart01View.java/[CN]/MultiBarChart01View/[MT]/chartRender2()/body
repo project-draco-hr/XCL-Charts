@@ -33,7 +33,6 @@
     }
 );
     chart2.getBar().setBarInnerMargin(0d);
-    chart2.getBar().setBarStyle(XEnum.BarStyle.FILL);
     chart2.getDataAxis().getAxisPaint().setColor(axisColor);
     chart2.getCategoryAxis().getAxisPaint().setColor(axisColor);
     chart2.getDataAxis().getTickMarksPaint().setColor(axisColor);
@@ -43,7 +42,6 @@
     chart2.getAxisTitle().getLeftAxisTitlePaint().setColor(axisColor);
     chart2.getAxisTitle().getLowerAxisTitlePaint().setColor(axisColor);
     chart2.getPlotLegend().hideLegend();
-    chart2.showRoundBorder();
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

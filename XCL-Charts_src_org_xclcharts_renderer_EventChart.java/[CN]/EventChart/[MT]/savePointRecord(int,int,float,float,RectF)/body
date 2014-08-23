@@ -5,7 +5,7 @@
     pRecord.savePlotDataID(dataID);
     pRecord.savePlotDataChildID(childID);
     pRecord.savePlotPosition(x,y);
-    pRecord.savePlotRectF(r);
+    pRecord.savePlotRectF(r.left,r.top,r.right,r.bottom);
     pRecord.extPointClickRange(mClickRangeExtValue);
     mRecordset.add(pRecord);
   }

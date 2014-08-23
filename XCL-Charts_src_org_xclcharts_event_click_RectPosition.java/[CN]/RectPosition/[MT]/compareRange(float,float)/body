@@ -1,11 +1,14 @@
 {
   if (null == mRectF)   return false;
-  mRectF.left-=mExtValue;
-  mRectF.top-=mExtValue;
-  mRectF.right+=mExtValue;
-  mRectF.bottom+=mExtValue;
-  if (mRectF.contains(x,y))   return true;
-  if ((Float.compare(x,mRectF.left) == 1 || Float.compare(x,mRectF.left) == 0) && (Float.compare(x,mRectF.right) == -1 || Float.compare(x,mRectF.right) == 0) && (Float.compare(y,mRectF.bottom) == 1 || Float.compare(y,mRectF.bottom) == 0)&& (Float.compare(y,mRectF.top) == -1 || Float.compare(y,mRectF.top) == 0)) {
+  if (null == mRectFRange)   mRectFRange=new RectF();
+  mRectFRange.setEmpty();
+  mRectFRange.set(mRectF);
+  mRectFRange.left-=mExtValue;
+  mRectFRange.top-=mExtValue;
+  mRectFRange.right+=mExtValue;
+  mRectFRange.bottom+=mExtValue;
+  if (mRectFRange.contains(x,y))   return true;
+  if ((Float.compare(x,mRectFRange.left) == 1 || Float.compare(x,mRectFRange.left) == 0) && (Float.compare(x,mRectFRange.right) == -1 || Float.compare(x,mRectFRange.right) == 0) && (Float.compare(y,mRectFRange.bottom) == 1 || Float.compare(y,mRectFRange.bottom) == 0)&& (Float.compare(y,mRectFRange.top) == -1 || Float.compare(y,mRectFRange.top) == 0)) {
     return true;
   }
   return false;

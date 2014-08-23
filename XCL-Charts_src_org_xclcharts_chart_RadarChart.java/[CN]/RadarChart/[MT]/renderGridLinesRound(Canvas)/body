@@ -1,0 +1,5 @@
+{
+  for (int i=0; i < mArrayRadius.length; i++) {
+    canvas.drawCircle(plotArea.getCenterX(),plotArea.getCenterY(),mArrayRadius[i],getLinePaint());
+  }
+}

@@ -1,0 +1,3 @@
+{
+  return getPointRecord(x,y);
+}

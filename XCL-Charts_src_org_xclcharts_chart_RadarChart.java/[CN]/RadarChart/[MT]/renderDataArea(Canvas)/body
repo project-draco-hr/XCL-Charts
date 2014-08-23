@@ -1,6 +1,7 @@
 {
   float cirX=plotArea.getCenterX();
   float cirY=plotArea.getCenterY();
+  int j=0;
   for (  RadarData lineData : mDataSet) {
     List<Double> dataset=lineData.getLinePoint();
     int dataSize=dataset.size();
@@ -21,13 +22,14 @@
     }
 switch (lineData.getAreaStyle()) {
 case FILL:
-      drawDataPath(canvas,lineData,arrayDataX,arrayDataY);
+      drawDataPath(canvas,lineData,arrayDataX,arrayDataY,j);
     break;
 case STROKE:
-  renderDataLine(canvas,lineData,arrayDataX,arrayDataY);
+  renderDataLine(canvas,lineData,arrayDataX,arrayDataY,j);
 break;
 default :
 Log.e(TAG,"??????????????????.");
 }
+j++;
 }
 }

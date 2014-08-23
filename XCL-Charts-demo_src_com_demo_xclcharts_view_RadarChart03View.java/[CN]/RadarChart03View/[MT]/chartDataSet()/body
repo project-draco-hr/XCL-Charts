@@ -1,0 +1,12 @@
+{
+  LinkedList<Double> dataSeriesA=new LinkedList<Double>();
+  dataSeriesA.add(0d);
+  dataSeriesA.add(0d);
+  dataSeriesA.add(0d);
+  dataSeriesA.add(0d);
+  dataSeriesA.add(0d);
+  RadarData lineData1=new RadarData("",dataSeriesA,(int)Color.rgb(234,83,71),XEnum.RadarDataAreaStyle.FILL);
+  lineData1.setLabelVisible(false);
+  lineData1.getPlotLine().getDotLabelPaint().setTextAlign(Align.LEFT);
+  chartData.add(lineData1);
+}

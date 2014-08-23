@@ -1,10 +1,10 @@
 {
   float radius=pDot.getDotRadius();
+  mRect.left=0.0f;
+  mRect.top=0.0f;
+  mRect.right=0.0f;
+  mRect.bottom=0.0f;
   if (Float.compare(radius,0.0f) == 0 || Float.compare(radius,0.0f) == -1) {
-    mRect.left=0.0f;
-    mRect.top=0.0f;
-    mRect.right=0.0f;
-    mRect.bottom=0.0f;
     return mRect;
   }
   float halfRadius=MathHelper.getInstance().div(radius,2f);
@@ -12,9 +12,9 @@
   if (XEnum.DotStyle.DOT == pDot.getDotStyle() || XEnum.DotStyle.RING == pDot.getDotStyle()) {
     cX=left + Math.abs(right - left);
     mRect.left=(cX - radius);
-    mRect.top=(bottom + radius);
+    mRect.top=(bottom - radius);
     mRect.right=(cX + radius);
-    mRect.bottom=(bottom - radius);
+    mRect.bottom=(bottom + radius);
   }
 switch (pDot.getDotStyle()) {
 case DOT:
@@ -35,6 +35,7 @@ mPath.lineTo(right,bottom - triganaleHeight);
 mPath.lineTo(right + radius,bottom + halfRadius);
 mPath.close();
 canvas.drawPath(mPath,paint);
+mPath.reset();
 mRect.left=(right - radius);
 mRect.top=(bottom - triganaleHeight);
 mRect.right=(right + radius);
@@ -48,6 +49,7 @@ mPath.lineTo(right + radius,bottom);
 mPath.lineTo(left + (right - left),bottom + radius);
 mPath.close();
 canvas.drawPath(mPath,paint);
+mPath.reset();
 mRect.left=(right - radius);
 mRect.top=(bottom - radius);
 mRect.right=(right + radius);
@@ -56,9 +58,9 @@ break;
 case RECT:
 paint.setStyle(Style.FILL);
 mRect.left=(right - radius);
-mRect.top=(bottom + radius);
+mRect.top=(bottom - radius);
 mRect.right=(right + radius);
-mRect.bottom=(bottom - radius);
+mRect.bottom=(bottom + radius);
 canvas.drawRect(mRect,paint);
 break;
 case HIDE:

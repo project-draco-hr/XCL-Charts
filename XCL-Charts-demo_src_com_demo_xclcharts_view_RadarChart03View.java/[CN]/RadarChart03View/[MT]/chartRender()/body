@@ -1,0 +1,37 @@
+{
+  try {
+    int[] ltrb=getPieDefaultSpadding();
+    chart.setPadding(ltrb[0],ltrb[1],ltrb[2],ltrb[3]);
+    chart.setTitle("?????????????????????");
+    chart.addSubtitle("(XCL-Charts Demo)");
+    chart.setCategories(labels);
+    chart.setDataSource(chartData);
+    chart.setChartType(XEnum.RadarChartType.ROUND);
+    chart.getDataAxis().setAxisMax(100);
+    chart.getDataAxis().setAxisSteps(20);
+    chart.getLinePaint().setColor(Color.parseColor("#7579C3"));
+    chart.getLabelPaint().setColor(Color.parseColor("#3EABEF"));
+    chart.getLabelPaint().setFakeBoldText(true);
+    chart.getDataAxis().setTickLabelVisible(false);
+    chart.getDataAxis().setLabelFormatter(new IFormatterTextCallBack(){
+      @Override public String textFormatter(      String value){
+        Double tmp=Double.parseDouble(value);
+        DecimalFormat df=new DecimalFormat("#0");
+        String label=df.format(tmp).toString();
+        return (label);
+      }
+    }
+);
+    chart.setDotLabelFormatter(new IFormatterDoubleCallBack(){
+      @Override public String doubleFormatter(      Double value){
+        DecimalFormat df=new DecimalFormat("#0");
+        String label="[" + df.format(value).toString() + "]";
+        return label;
+      }
+    }
+);
+  }
+ catch (  Exception e) {
+    Log.e(TAG,e.toString());
+  }
+}

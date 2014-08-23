@@ -1,0 +1,11 @@
+{
+  PlotLine plotLine=lineData.getPlotLine();
+  if (!plotLine.getDotStyle().equals(XEnum.DotStyle.HIDE)) {
+    PlotDot pDot=plotLine.getPlotDot();
+    RectF rect=PlotDotRender.getInstance().renderDot(canvas,pDot,currentX - pDot.getDotRadius(),currentY - pDot.getDotRadius(),currentX,currentY,lineData.getPlotLine().getDotPaint());
+    savePointRecord(dataID,childID,currentX,currentY,rect);
+  }
+  if (lineData.getLabelVisible()) {
+    canvas.drawText(getFormatterDotLabel(lineData.getLinePoint().get(childID)),currentX,currentY,lineData.getPlotLine().getDotLabelPaint());
+  }
+}
