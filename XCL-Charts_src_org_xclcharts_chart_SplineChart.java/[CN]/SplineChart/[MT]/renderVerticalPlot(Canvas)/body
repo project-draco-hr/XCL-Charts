@@ -9,12 +9,27 @@
   }
   renderVerticalDataAxis(canvas);
   renderVerticalCategoryAxis(canvas);
-  List<LnData> lstKey=new ArrayList<LnData>();
   for (int i=0; i < mDataset.size(); i++) {
-    renderLine(canvas,mDataset.get(i),"LINE",i);
-    renderLine(canvas,mDataset.get(i),"DOT2LABEL",i);
-    lstKey.add(mDataset.get(i));
-  }
-  plotLegend.renderLineKey(canvas,lstKey);
-  return true;
+    SplineData spData=mDataset.get(i);
+    calcAllPoints(spData,mLstDots,mLstPoints);
+switch (getCrurveLineStyle()) {
+case BEZIERCURVE:
+      renderBezierCurveLine(canvas,mBezierPath,spData,mLstPoints);
+    break;
+case BEELINE:
+  renderLine(canvas,spData,mLstPoints);
+break;
+default :
+Log.e(TAG,"?????????????????????.");
+continue;
+}
+renderDotAndLabel(canvas,spData,i,mLstDots);
+mLstKey.add(mDataset.get(i));
+mLstPoints.clear();
+mLstDots.clear();
+mBezierPath.reset();
+}
+plotLegend.renderLineKey(canvas,mLstKey);
+mLstKey.clear();
+return true;
 }

@@ -1,0 +1,4 @@
+{
+  renderBezierCurveLine(canvas,areaData.getLinePaint(),bezierPath,lstPoints);
+  return true;
+}

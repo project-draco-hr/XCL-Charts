@@ -1,0 +1,3 @@
+SplineData bd
+List<RectF> lstDots
+List<PointF> lstPoints

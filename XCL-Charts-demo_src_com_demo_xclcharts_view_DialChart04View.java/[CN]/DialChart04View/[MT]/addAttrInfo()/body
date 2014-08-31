@@ -1,20 +1,21 @@
 {
+  PlotAttrInfo plotAttrInfo=chart.getPlotAttrInfo();
   Paint paintTB=new Paint();
   paintTB.setColor(Color.WHITE);
   paintTB.setTextAlign(Align.CENTER);
   paintTB.setTextSize(30);
   paintTB.setAntiAlias(true);
-  chart.addAttributeInfo(XEnum.Location.TOP,Float.toString(MathHelper.getInstance().round(mPercentage * 100,2)) + "%",0.3f,paintTB);
+  plotAttrInfo.addAttributeInfo(XEnum.Location.TOP,Float.toString(MathHelper.getInstance().round(mPercentage * 100,2)) + "%",0.3f,paintTB);
   Paint paintBT=new Paint();
   paintBT.setColor(Color.BLUE);
   paintBT.setTextAlign(Align.CENTER);
   paintBT.setTextSize(22);
   paintBT.setAntiAlias(true);
-  chart.addAttributeInfo(XEnum.Location.BOTTOM,"???:" + Float.toString(MathHelper.getInstance().round(mP1 * 100,2)) + "%",0.4f,paintBT);
+  plotAttrInfo.addAttributeInfo(XEnum.Location.BOTTOM,"???:" + Float.toString(MathHelper.getInstance().round(mP1 * 100,2)) + "%",0.4f,paintBT);
   Paint paintBT2=new Paint();
   paintBT2.setColor(Color.RED);
   paintBT2.setTextAlign(Align.CENTER);
   paintBT2.setTextSize(22);
   paintBT2.setAntiAlias(true);
-  chart.addAttributeInfo(XEnum.Location.BOTTOM,"???:" + Float.toString(MathHelper.getInstance().round(mP2 * 100,2)) + "%",0.5f,paintBT2);
+  plotAttrInfo.addAttributeInfo(XEnum.Location.BOTTOM,"???:" + Float.toString(MathHelper.getInstance().round(mP2 * 100,2)) + "%",0.5f,paintBT2);
 }

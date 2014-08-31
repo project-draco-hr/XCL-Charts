@@ -1,16 +1,10 @@
 {
   try {
-    if (!validateAngle(curretAngle))     return false;
     float newRadius=div(radius,SELECTED_OFFSET);
-    MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,newRadius,add(offsetAngle,curretAngle / 2f));
-    float arcLeft=sub(MathHelper.getInstance().getPosX(),radius);
-    float arcTop=sub(MathHelper.getInstance().getPosY(),radius);
-    float arcRight=add(MathHelper.getInstance().getPosX(),radius);
-    float arcBottom=add(MathHelper.getInstance().getPosY(),radius);
-    initRectF(arcLeft,arcTop,arcRight,arcBottom);
+    PointF point=MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,newRadius,add(offsetAngle,currentAngle / 2f));
+    initRectF("mRectF",sub(point.x,radius),sub(point.y,radius),add(point.x,radius),add(point.y,radius));
     if (getGradient())     paintArc.setShader(renderRadialGradient(paintArc,cirX,cirY,radius));
-    canvas.drawArc(mRectF,offsetAngle,curretAngle,true,paintArc);
-    renderLabel(canvas,cData.getLabel(),MathHelper.getInstance().getPosX(),MathHelper.getInstance().getPosY(),radius,offsetAngle,curretAngle);
+    canvas.drawArc(mRectF,offsetAngle,currentAngle,true,paintArc);
     return true;
   }
  catch (  Exception e) {

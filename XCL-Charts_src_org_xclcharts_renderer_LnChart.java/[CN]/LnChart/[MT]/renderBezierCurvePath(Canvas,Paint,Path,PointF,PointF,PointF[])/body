@@ -1,0 +1,8 @@
+{
+  if (null == bezierPath)   bezierPath=new Path();
+  bezierPath.reset();
+  bezierPath.moveTo(start.x,start.y);
+  bezierPath.cubicTo(bezierControls[0].x,bezierControls[0].y,bezierControls[1].x,bezierControls[1].y,stop.x,stop.y);
+  canvas.drawPath(bezierPath,paint);
+  bezierPath.reset();
+}

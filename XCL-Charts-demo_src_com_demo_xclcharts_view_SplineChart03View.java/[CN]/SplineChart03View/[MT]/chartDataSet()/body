@@ -24,7 +24,16 @@
   linePoint2.put(85d,68d);
   SplineData dataSeries2=new SplineData("??????",linePoint2,(int)Color.rgb(255,165,132));
   dataSeries2.setDotStyle(XEnum.DotStyle.RING);
-  dataSeries2.getDotLabelPaint().setColor(Color.RED);
+  LinkedHashMap<Double,Double> linePoint3=new LinkedHashMap<Double,Double>();
+  linePoint3.put(30d,60d);
+  linePoint3.put(45d,65d);
+  linePoint3.put(50d,75d);
+  linePoint3.put(65d,95d);
+  SplineData dataSeries3=new SplineData("??????",linePoint3,(int)Color.rgb(84,206,231));
+  dataSeries3.setDotStyle(XEnum.DotStyle.RING);
+  dataSeries3.getDotPaint().setColor((int)Color.rgb(75,166,51));
+  dataSeries3.getPlotLine().getPlotDot().setRingInnerColor((int)Color.rgb(123,89,168));
   chartData.add(dataSeries1);
   chartData.add(dataSeries2);
+  chartData.add(dataSeries3);
 }

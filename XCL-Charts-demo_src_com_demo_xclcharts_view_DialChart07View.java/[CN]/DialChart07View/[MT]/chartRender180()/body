@@ -23,7 +23,7 @@
     paintTB.setTextAlign(Align.CENTER);
     paintTB.setTextSize(22);
     paintTB.setAntiAlias(true);
-    chart180.addAttributeInfo(XEnum.Location.BOTTOM,"180????????????",0.5f,paintTB);
+    chart180.getPlotAttrInfo().addAttributeInfo(XEnum.Location.BOTTOM,"180????????????",0.5f,paintTB);
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

@@ -1,0 +1,4 @@
+Canvas canvas
+Path bezierPath
+AreaData areaData
+List<PointF> lstPoints

@@ -5,12 +5,31 @@
   }
   renderVerticalDataAxis(canvas);
   renderVerticalCategoryAxis(canvas);
-  List<LnData> lstKey=new ArrayList<LnData>();
+  initPaint();
+  if (null == mPathArea)   mPathArea=new Path();
   for (int i=0; i < mDataset.size(); i++) {
-    if (!this.renderLine(canvas,mDataset.get(i),"LINE",(int)Math.round(mDataset.size() * i),i))     return false;
-    if (!this.renderLine(canvas,mDataset.get(i),"DOT2LABEL",(int)Math.round(mDataset.size() * i),i))     return false;
-    lstKey.add(mDataset.get(i));
-  }
-  plotLegend.renderLineKey(canvas,lstKey);
-  return true;
+    AreaData areaData=mDataset.get(i);
+    calcAllPoints(areaData,mLstDots,mLstPoints,mLstPathPoints);
+switch (getCrurveLineStyle()) {
+case BEZIERCURVE:
+      renderBezierArea(canvas,mPaintAreaFill,mPathArea,areaData,mLstPathPoints);
+    renderBezierCurveLine(canvas,mPathArea,areaData,mLstPoints);
+  break;
+case BEELINE:
+renderArea(canvas,mPaintAreaFill,mPathArea,areaData,mLstPathPoints);
+renderLine(canvas,areaData,mLstPoints);
+break;
+default :
+Log.e(TAG,"?????????????????????.");
+continue;
+}
+renderDotAndLabel(canvas,areaData,i,mLstDots);
+mLstKey.add(areaData);
+mLstDots.clear();
+mLstPoints.clear();
+mLstPathPoints.clear();
+}
+plotLegend.renderLineKey(canvas,mLstKey);
+mLstKey.clear();
+return true;
 }

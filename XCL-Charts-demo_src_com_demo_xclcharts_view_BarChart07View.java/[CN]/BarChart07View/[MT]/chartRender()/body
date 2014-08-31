@@ -8,15 +8,6 @@
     chart.getDataAxis().setAxisSteps(5);
     chart.getDataAxis().setDetailModeSteps(2);
     chart.getPlotGrid().showHorizontalLines();
-    chart.getDataAxis().setLabelFormatter(new IFormatterTextCallBack(){
-      @Override public String textFormatter(      String value){
-        Double tmp=Double.parseDouble(value);
-        DecimalFormat df=new DecimalFormat("#0");
-        String label=df.format(tmp).toString();
-        return (label);
-      }
-    }
-);
     chart.getCategoryAxis().getTickLabelPaint().setTextSize(15);
     chart.getBar().setItemLabelVisible(true);
     chart.setItemLabelFormatter(new IFormatterDoubleCallBack(){
@@ -31,6 +22,8 @@
     chart.getBar().setBarInnerMargin(0.1d);
     chart.getPlotGrid().showEvenRowBgColor();
     chart.getPlotGrid().getEvenRowsBgColorPaint().setColor((int)Color.rgb(225,230,246));
+    chart.getDataAxis().setVisible(false);
+    chart.getCategoryAxis().setTickMarksVisible(false);
   }
  catch (  Exception e) {
     e.printStackTrace();

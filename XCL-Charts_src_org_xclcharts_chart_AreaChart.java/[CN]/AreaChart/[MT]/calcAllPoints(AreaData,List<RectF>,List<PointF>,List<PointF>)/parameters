@@ -1,0 +1,4 @@
+AreaData bd
+List<RectF> lstDots
+List<PointF> lstPoints
+List<PointF> lstPathPoints

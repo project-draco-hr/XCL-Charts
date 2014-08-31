@@ -3,9 +3,6 @@
   mPaintFill=new Paint();
   mPaintFill.setColor(fillColor);
   mPaintFill.setAntiAlias(true);
-  mPaintCenterText=new Paint();
-  mPaintCenterText.setAntiAlias(true);
-  mPaintCenterText.setTextSize(28);
-  mPaintCenterText.setTextAlign(Align.CENTER);
+  plotAttrInfoRender=new PlotAttrInfoRender();
   this.setLabelPosition(XEnum.SliceLabelPosition.OUTSIDE);
 }

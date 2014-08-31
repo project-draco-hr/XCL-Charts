@@ -1,0 +1,4 @@
+Canvas canvas
+AreaData bd
+int dataID
+List<RectF> lstDots

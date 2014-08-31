@@ -2,4 +2,5 @@
   super();
   mStartAngle=INIT_ANGLE;
   mTotalAngle=FIX_TOTAL_ANGLE;
+  plotAttrInfoRender=new PlotAttrInfoRender();
 }

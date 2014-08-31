@@ -1,0 +1,8 @@
+{
+  if (null != mArrayDotX)   mArrayDotX=null;
+  if (null != mArrayDotY)   mArrayDotY=null;
+  if (null != mArrayLabelX)   mArrayLabelX=null;
+  if (null != mArrayLabelY)   mArrayLabelY=null;
+  if (null != mArrayLabelAgent)   mArrayLabelAgent=null;
+  if (null != mArrayRadius)   mArrayRadius=null;
+}

@@ -6,4 +6,4 @@ float cirX
 float cirY
 float radius
 float offsetAngle
-float curretAngle
+float currentAngle

@@ -13,6 +13,7 @@
     chart.setApplyBackgroundColor(true);
     chart.setBackgroundColor(Color.rgb(19,163,224));
     chart.getInnerPaint().setColor(Color.rgb(180,205,230));
+    addAttrInfo();
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

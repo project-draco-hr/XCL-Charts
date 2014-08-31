@@ -1,3 +1,4 @@
 {
+  initCenterTextPaint();
   return mPaintCenterText;
 }

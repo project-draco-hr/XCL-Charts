@@ -1,0 +1,17 @@
+{
+  for (int i=0; i < lstPathPoints.size(); i++) {
+    PointF point=lstPathPoints.get(i);
+    if (0 == i) {
+      pathArea.moveTo(point.x,point.y);
+    }
+ else {
+      pathArea.lineTo(point.x,point.y);
+    }
+  }
+  pathArea.close();
+  paintAreaFill.setColor(areaData.getAreaFillColor());
+  paintAreaFill.setAlpha(this.mAreaAlpha);
+  canvas.drawPath(pathArea,paintAreaFill);
+  pathArea.reset();
+  return true;
+}

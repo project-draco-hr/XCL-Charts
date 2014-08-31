@@ -8,8 +8,11 @@
       roundAxis.setOrgRadius(radius);
       roundAxis.render(canvas);
     }
-    renderAttrInfo(canvas);
+    plotAttrInfoRender.renderAttrInfo(canvas,plotArea.getCenterX(),plotArea.getCenterY(),this.getRadius());
     renderPointerLine(canvas);
+    mRoundAxis.clear();
+    mPointerSet.clear();
+    plotAttrInfoRender.clearPlotAttrInfo();
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

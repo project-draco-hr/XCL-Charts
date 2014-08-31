@@ -1,0 +1,4 @@
+Canvas canvas
+SplineData spData
+int dataID
+List<RectF> lstDots

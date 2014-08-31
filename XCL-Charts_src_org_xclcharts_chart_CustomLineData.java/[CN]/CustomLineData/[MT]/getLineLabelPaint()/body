@@ -1,3 +1,10 @@
 {
+  if (null == mPaintLineLabel) {
+    mPaintLineLabel=new Paint();
+    mPaintLineLabel.setAntiAlias(true);
+    mPaintLineLabel.setStrokeWidth(3);
+    mPaintLineLabel.setTextSize(18);
+    mPaintLineLabel.setTextAlign(Align.LEFT);
+  }
   return mPaintLineLabel;
 }

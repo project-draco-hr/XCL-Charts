@@ -1,0 +1,8 @@
+{
+  if (null == mPaintAreaFill) {
+    mPaintAreaFill=new Paint();
+    mPaintAreaFill.setStyle(Style.FILL);
+    mPaintAreaFill.setAntiAlias(true);
+    mPaintAreaFill.setColor((int)Color.rgb(73,172,72));
+  }
+}

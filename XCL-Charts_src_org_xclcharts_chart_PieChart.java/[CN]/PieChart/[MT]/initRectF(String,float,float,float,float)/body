@@ -1,0 +1,21 @@
+{
+  if (type.equalsIgnoreCase("mRectF")) {
+    if (null == mRectF) {
+      mRectF=new RectF(left,top,right,bottom);
+    }
+ else {
+      mRectF.set(left,top,right,bottom);
+    }
+  }
+ else   if (type.equalsIgnoreCase("mArcRF0")) {
+    if (null == mArcRF0) {
+      mArcRF0=new RectF(left,top,right,bottom);
+    }
+ else {
+      mArcRF0.set(left,top,right,bottom);
+    }
+  }
+ else {
+    Log.e(TAG,"?????????RectF.");
+  }
+}

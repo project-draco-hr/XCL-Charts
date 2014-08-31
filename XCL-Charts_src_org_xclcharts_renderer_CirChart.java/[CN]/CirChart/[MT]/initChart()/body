@@ -5,8 +5,4 @@
   mPaintLabel.setTextSize(18);
   mPaintLabel.setAntiAlias(true);
   mPaintLabel.setTextAlign(Align.CENTER);
-  mPaintLabelLine=new Paint();
-  mPaintLabelLine.setColor(Color.BLACK);
-  mPaintLabelLine.setAntiAlias(true);
-  mPaintLabelLine.setStrokeWidth(2);
 }

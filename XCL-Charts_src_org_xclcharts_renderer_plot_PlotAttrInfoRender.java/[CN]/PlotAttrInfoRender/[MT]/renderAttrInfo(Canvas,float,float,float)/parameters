@@ -1,0 +1,4 @@
+Canvas canvas
+float centerX
+float centerY
+float plotRadius

@@ -1,4 +1,3 @@
 {
-  mCenterY=((float)Math.abs(mBottom - (mBottom - mTop) / 2));
-  return mCenterY;
+  return ((float)Math.abs(mBottom - (mBottom - mTop) / 2));
 }

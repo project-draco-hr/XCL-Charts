@@ -14,7 +14,7 @@
   mCharts.setOnPlotClickListener(new ChartArcListener(){
     @Override public void onClick(    PointF point,    ArcPosition positionRecord){
       if (null == positionRecord)       return;
-      Toast.makeText(ClickChartsActivity.this,"Activity Info ID:" + positionRecord.getDataID(),Toast.LENGTH_SHORT).show();
+      Toast.makeText(ClickChartsActivity.this,"[?????????Activity???????????????] ID:" + positionRecord.getDataID(),Toast.LENGTH_SHORT).show();
     }
   }
 );

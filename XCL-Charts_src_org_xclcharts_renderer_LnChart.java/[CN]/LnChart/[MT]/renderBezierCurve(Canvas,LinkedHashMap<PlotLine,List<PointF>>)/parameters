@@ -1,2 +1,0 @@
-Canvas canvas
-LinkedHashMap<PlotLine,List<PointF>> mapPoints

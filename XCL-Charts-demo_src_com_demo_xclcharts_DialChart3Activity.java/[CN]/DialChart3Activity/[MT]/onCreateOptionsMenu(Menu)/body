@@ -1,4 +1,6 @@
 {
-  getMenuInflater().inflate(R.menu.dial_chart3,menu);
+  super.onCreateOptionsMenu(menu);
+  menu.add(Menu.NONE,Menu.FIRST + 1,0,"??????");
+  menu.add(Menu.NONE,Menu.FIRST + 2,0,"??????XCL-Charts");
   return true;
 }

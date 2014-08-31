@@ -1,0 +1,46 @@
+{
+  try {
+    int[] ltrb=getBarLnDefaultSpadding();
+    chart.setPadding(ltrb[0],ltrb[1],ltrb[2],ltrb[3]);
+    chart.setCategories(mLabels);
+    chart.setDataSource(mDataset);
+    chart.getDataAxis().setAxisMax(100);
+    chart.getDataAxis().setAxisSteps(10);
+    chart.getPlotGrid().showHorizontalLines();
+    chart.getPlotGrid().showVerticalLines();
+    chart.setTopAxisVisible(false);
+    chart.setRightAxisVisible(false);
+    chart.getDataAxis().setAxisLineVisible(false);
+    chart.getDataAxis().setTickMarksVisible(false);
+    chart.getCategoryAxis().setAxisLineVisible(false);
+    chart.getCategoryAxis().setTickMarksVisible(false);
+    chart.setTitle("???????????????");
+    chart.addSubtitle("(XCL-Charts Demo)");
+    chart.getAxisTitle().setLowerAxisTitle("(??????)");
+    chart.setAreaAlpha(130);
+    chart.getPlotLegend().showLegend();
+    chart.ActiveListenItemClick();
+    chart.extPointClickRange(5);
+    chart.getDataAxis().setLabelFormatter(new IFormatterTextCallBack(){
+      @Override public String textFormatter(      String value){
+        Double tmp=Double.parseDouble(value);
+        DecimalFormat df=new DecimalFormat("#0");
+        String label=df.format(tmp).toString();
+        return (label);
+      }
+    }
+);
+    chart.setItemLabelFormatter(new IFormatterDoubleCallBack(){
+      @Override public String doubleFormatter(      Double value){
+        DecimalFormat df=new DecimalFormat("#0");
+        String label=df.format(value).toString();
+        return label;
+      }
+    }
+);
+  }
+ catch (  Exception e) {
+    e.printStackTrace();
+    Log.e(TAG,e.toString());
+  }
+}

@@ -6,4 +6,5 @@
   renderDataArea(canvas);
   renderAxisLabels(canvas);
   plotLegend.renderRdKey(canvas,mDataSet);
+  clearArray();
 }

@@ -1,12 +1,13 @@
 {
+  PlotAttrInfo plotAttrInfo=chart.getPlotAttrInfo();
   Paint paintTB=new Paint();
   paintTB.setColor(Color.WHITE);
   paintTB.setTextAlign(Align.CENTER);
   paintTB.setTextSize(30);
-  chart.addAttributeInfo(XEnum.Location.TOP,"100 K/s",0.9f,paintTB);
+  plotAttrInfo.addAttributeInfo(XEnum.Location.TOP,"100 K/s",0.9f,paintTB);
   Paint paintBT=new Paint();
   paintBT.setColor(Color.WHITE);
   paintBT.setTextAlign(Align.CENTER);
   paintBT.setTextSize(30);
-  chart.addAttributeInfo(XEnum.Location.BOTTOM,"????????????: " + Float.toString(mPercentage * 100) + "K/s",0.8f,paintBT);
+  plotAttrInfo.addAttributeInfo(XEnum.Location.BOTTOM,"????????????: " + Float.toString(mPercentage * 100) + "K/s",0.8f,paintBT);
 }

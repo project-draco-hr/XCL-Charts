@@ -1,3 +1,10 @@
 {
+  if (null == mPaintCustomLine) {
+    mPaintCustomLine=new Paint();
+    mPaintCustomLine.setAntiAlias(true);
+    mPaintCustomLine.setStrokeWidth(3);
+    mPaintCustomLine.setTextSize(18);
+    mPaintCustomLine.setTextAlign(Align.LEFT);
+  }
   return mPaintCustomLine;
 }

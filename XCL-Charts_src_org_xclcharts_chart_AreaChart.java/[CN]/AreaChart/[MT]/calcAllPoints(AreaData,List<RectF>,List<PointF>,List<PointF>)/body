@@ -1,0 +1,50 @@
+{
+  List<Double> chartValues=bd.getLinePoint();
+  if (null == chartValues) {
+    Log.e(TAG,"?????????????????????.");
+    return false;
+  }
+  float initX=plotArea.getLeft();
+  float initY=plotArea.getBottom();
+  float lineStartX=initX;
+  float lineStartY=initY;
+  float lineStopX=0.0f;
+  float lineStopY=0.0f;
+  float axisScreenHeight=getAxisScreenHeight();
+  float axisDataHeight=(float)dataAxis.getAxisRange();
+  float currLablesSteps=div(getAxisScreenWidth(),(categoryAxis.getDataSet().size() - 1));
+  lstPathPoints.add(new PointF(initX,initY));
+  double dper=0d;
+  int j=0;
+  for (  Double bv : chartValues) {
+    dper=MathHelper.getInstance().sub(bv,dataAxis.getAxisMin());
+    float valuePosition=mul(axisScreenHeight,div(dtof(dper),axisDataHeight));
+    if (j == 0) {
+      lineStartX=initX;
+      lineStartY=sub(initY,valuePosition);
+      lineStopX=lineStartX;
+      lineStopY=lineStartY;
+    }
+ else {
+      lineStopX=add(initX,(j) * currLablesSteps);
+      lineStopY=sub(initY,valuePosition);
+    }
+    if (0 == j) {
+      lstPoints.add(new PointF(lineStartX,lineStartY));
+      lstPoints.add(new PointF(lineStopX,lineStopY));
+      lstPathPoints.add(new PointF(lineStartX,lineStartY));
+      lstPathPoints.add(new PointF(lineStopX,lineStopY));
+    }
+ else {
+      lstPoints.add(new PointF(lineStopX,lineStopY));
+      lstPathPoints.add(new PointF(lineStopX,lineStopY));
+    }
+    lstDots.add(new RectF(lineStartX,lineStartY,lineStopX,lineStopY));
+    lineStartX=lineStopX;
+    lineStartY=lineStopY;
+    j++;
+  }
+  lstPathPoints.add(new PointF(lineStartX,lineStartY));
+  lstPathPoints.add(new PointF(lineStartX,initY));
+  return true;
+}

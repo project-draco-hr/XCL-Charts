@@ -1,0 +1,4 @@
+{
+  renderBezierCurveLine(canvas,spData.getLinePaint(),bezierPath,lstPoints);
+  return true;
+}

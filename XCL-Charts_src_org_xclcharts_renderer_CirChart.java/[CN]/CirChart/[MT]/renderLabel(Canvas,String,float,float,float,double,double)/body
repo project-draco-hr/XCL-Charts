@@ -10,15 +10,16 @@
   }
   if (XEnum.SliceLabelPosition.INNER == mLabelPosition) {
     calcRadius=MathHelper.getInstance().sub(radius,radius / 2f);
-    MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,calcRadius,calcAngle);
-    canvas.drawText(text,MathHelper.getInstance().getPosX(),MathHelper.getInstance().getPosY(),mPaintLabel);
+    PointF point=MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,calcRadius,calcAngle);
+    canvas.drawText(text,point.x,point.y,mPaintLabel);
   }
  else   if (XEnum.SliceLabelPosition.OUTSIDE == mLabelPosition) {
     calcRadius=MathHelper.getInstance().add(radius,radius / 10f);
-    MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,calcRadius,calcAngle);
-    canvas.drawText(text,MathHelper.getInstance().getPosX(),MathHelper.getInstance().getPosY(),mPaintLabel);
+    PointF point=MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,calcRadius,calcAngle);
+    canvas.drawText(text,point.x,point.y,mPaintLabel);
   }
  else   if (XEnum.SliceLabelPosition.LINE == mLabelPosition) {
+    initLabelLinePaint();
     calcRadius=MathHelper.getInstance().sub(radius,radius / 4f);
     MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,calcRadius,calcAngle);
     float startX=MathHelper.getInstance().getPosX();

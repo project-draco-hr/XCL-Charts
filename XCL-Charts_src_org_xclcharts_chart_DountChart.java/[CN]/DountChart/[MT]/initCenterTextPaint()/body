@@ -1,0 +1,8 @@
+{
+  if (null == mPaintCenterText) {
+    mPaintCenterText=new Paint();
+    mPaintCenterText.setAntiAlias(true);
+    mPaintCenterText.setTextSize(28);
+    mPaintCenterText.setTextAlign(Align.CENTER);
+  }
+}

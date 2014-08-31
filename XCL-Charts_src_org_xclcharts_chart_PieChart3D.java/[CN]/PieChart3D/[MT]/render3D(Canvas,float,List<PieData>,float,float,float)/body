@@ -1,0 +1,28 @@
+{
+  float offsetAngle=initOffsetAngle;
+  float currentAngle=0.0f;
+  float newRadius=0.0f;
+  for (int i=0; i < mRender3DLevel; i++) {
+    canvas.save(Canvas.MATRIX_SAVE_FLAG);
+    canvas.translate(0,mRender3DLevel - i);
+    for (int j=0; j < chartDataSource.size(); j++) {
+      PieData cData=chartDataSource.get(j);
+      currentAngle=cData.getSliceAngle();
+      if (!validateAngle(currentAngle))       continue;
+      geArcPaint().setColor(cData.getSliceColor());
+      if (cData.getSelected()) {
+        newRadius=div(radius,SELECTED_OFFSET);
+        PointF point=MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,newRadius,add(offsetAngle,div(currentAngle,2f)));
+        initRectF("mRectF",sub(point.x,radius),sub(point.y,radius),add(point.x,radius),add(point.y,radius));
+        canvas.drawArc(mRectF,offsetAngle,currentAngle,true,geArcPaint());
+      }
+ else {
+        canvas.drawArc(mArcRF0,offsetAngle,currentAngle,true,geArcPaint());
+      }
+      offsetAngle=add(offsetAngle,currentAngle);
+    }
+    canvas.restore();
+    offsetAngle=initOffsetAngle;
+  }
+  return true;
+}

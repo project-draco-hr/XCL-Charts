@@ -1,0 +1,3 @@
+Canvas canvas
+SplineData spData
+List<PointF> lstPoints

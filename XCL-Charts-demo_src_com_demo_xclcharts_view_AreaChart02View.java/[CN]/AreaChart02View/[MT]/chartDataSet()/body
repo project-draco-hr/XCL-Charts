@@ -1,0 +1,31 @@
+{
+  List<Double> dataSeries1=new LinkedList<Double>();
+  dataSeries1.add((double)25);
+  dataSeries1.add((double)50);
+  dataSeries1.add((double)51);
+  dataSeries1.add((double)60);
+  dataSeries1.add((double)45);
+  List<Double> dataSeries2=new LinkedList<Double>();
+  dataSeries2.add((double)40);
+  dataSeries2.add((double)22);
+  dataSeries2.add((double)30);
+  dataSeries2.add((double)30);
+  dataSeries2.add((double)15);
+  List<Double> dataSeries3=new LinkedList<Double>();
+  dataSeries3.add((double)50);
+  dataSeries3.add((double)62);
+  dataSeries3.add((double)70);
+  dataSeries3.add((double)80);
+  dataSeries3.add((double)75);
+  AreaData line1=new AreaData("??????",dataSeries1,Color.parseColor("#4CA200"),Color.parseColor("#80C007"));
+  line1.setDotStyle(XEnum.DotStyle.HIDE);
+  AreaData line2=new AreaData("?????????",dataSeries2,(int)Color.rgb(182,23,123),(int)Color.rgb(255,191,235));
+  line2.getDotLabelPaint().setColor(Color.rgb(83,148,235));
+  line2.setLabelVisible(true);
+  line2.getDotLabelPaint().setTextAlign(Align.LEFT);
+  AreaData line3=new AreaData("????????????",dataSeries3,Color.parseColor("#B6D3FD"),Color.parseColor("#5394EB"));
+  line3.setDotStyle(XEnum.DotStyle.HIDE);
+  mDataset.add(line3);
+  mDataset.add(line1);
+  mDataset.add(line2);
+}

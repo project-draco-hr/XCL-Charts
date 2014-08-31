@@ -1,0 +1,20 @@
+{
+  if (null == bezierPath)   bezierPath=new Path();
+  bezierPath.moveTo(plotArea.getLeft(),plotArea.getBottom());
+  for (int i=0; i < lstPathPoints.size(); i++) {
+    if (i < 3)     continue;
+    CurveHelper.curve3(lstPathPoints.get(i - 2),lstPathPoints.get(i - 1),lstPathPoints.get(i - 3),lstPathPoints.get(i),mBezierControls);
+    bezierPath.cubicTo(mBezierControls[0].x,mBezierControls[0].y,mBezierControls[1].x,mBezierControls[1].y,lstPathPoints.get(i - 1).x,lstPathPoints.get(i - 1).y);
+  }
+  if (lstPathPoints.size() > 3) {
+    PointF stop=lstPathPoints.get(lstPathPoints.size() - 1);
+    CurveHelper.curve3(lstPathPoints.get(lstPathPoints.size() - 2),stop,lstPathPoints.get(lstPathPoints.size() - 3),stop,mBezierControls);
+    bezierPath.cubicTo(mBezierControls[0].x,mBezierControls[0].y,mBezierControls[1].x,mBezierControls[1].y,lstPathPoints.get(lstPathPoints.size() - 1).x,lstPathPoints.get(lstPathPoints.size() - 1).y);
+  }
+  bezierPath.close();
+  paintAreaFill.setColor(areaData.getAreaFillColor());
+  paintAreaFill.setAlpha(this.mAreaAlpha);
+  canvas.drawPath(bezierPath,paintAreaFill);
+  bezierPath.reset();
+  return true;
+}

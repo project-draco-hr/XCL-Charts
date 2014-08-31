@@ -1,0 +1,4 @@
+Canvas canvas
+Path bezierPath
+SplineData spData
+List<PointF> lstPoints

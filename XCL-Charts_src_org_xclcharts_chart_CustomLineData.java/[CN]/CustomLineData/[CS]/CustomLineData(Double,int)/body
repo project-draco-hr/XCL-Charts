@@ -1,5 +1,4 @@
 {
-  init();
   setValue(value);
   setColor(color);
 }

@@ -4,5 +4,5 @@
   paintTB.setTextAlign(Align.CENTER);
   paintTB.setTextSize(22);
   paintTB.setAntiAlias(true);
-  chart.addAttributeInfo(XEnum.Location.BOTTOM,"270????????????",0.5f,paintTB);
+  chart.getPlotAttrInfo().addAttributeInfo(XEnum.Location.BOTTOM,"270????????????",0.5f,paintTB);
 }

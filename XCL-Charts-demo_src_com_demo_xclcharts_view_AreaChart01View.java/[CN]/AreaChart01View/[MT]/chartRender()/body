@@ -4,6 +4,7 @@
     chart.setPadding(ltrb[0],ltrb[1],ltrb[2],ltrb[3]);
     chart.setCategories(mLabels);
     chart.setDataSource(mDataset);
+    chart.setCrurveLineStyle(XEnum.CrurveLineStyle.BEELINE);
     chart.getDataAxis().setAxisMax(100);
     chart.getDataAxis().setAxisSteps(10);
     chart.getPlotGrid().showHorizontalLines();

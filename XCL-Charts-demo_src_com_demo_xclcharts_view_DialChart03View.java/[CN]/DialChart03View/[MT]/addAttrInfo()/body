@@ -1,22 +1,23 @@
 {
+  PlotAttrInfo plotAttrInfo=chart.getPlotAttrInfo();
   Paint paintTB=new Paint();
   paintTB.setColor(Color.WHITE);
   paintTB.setTextAlign(Align.CENTER);
   paintTB.setTextSize(30);
   paintTB.setAntiAlias(true);
-  chart.addAttributeInfo(XEnum.Location.TOP,"????????????",0.3f,paintTB);
+  plotAttrInfo.addAttributeInfo(XEnum.Location.TOP,"????????????",0.3f,paintTB);
   Paint paintBT=new Paint();
   paintBT.setColor(Color.WHITE);
   paintBT.setTextAlign(Align.CENTER);
   paintBT.setTextSize(35);
   paintBT.setFakeBoldText(true);
   paintBT.setAntiAlias(true);
-  chart.addAttributeInfo(XEnum.Location.BOTTOM,Float.toString(MathHelper.getInstance().round(mPercentage * 100,2)),0.3f,paintBT);
+  plotAttrInfo.addAttributeInfo(XEnum.Location.BOTTOM,Float.toString(MathHelper.getInstance().round(mPercentage * 100,2)),0.3f,paintBT);
   Paint paintBT2=new Paint();
   paintBT2.setColor(Color.WHITE);
   paintBT2.setTextAlign(Align.CENTER);
   paintBT2.setTextSize(30);
   paintBT2.setFakeBoldText(true);
   paintBT2.setAntiAlias(true);
-  chart.addAttributeInfo(XEnum.Location.BOTTOM,"MB/S",0.4f,paintBT2);
+  plotAttrInfo.addAttributeInfo(XEnum.Location.BOTTOM,"MB/S",0.4f,paintBT2);
 }

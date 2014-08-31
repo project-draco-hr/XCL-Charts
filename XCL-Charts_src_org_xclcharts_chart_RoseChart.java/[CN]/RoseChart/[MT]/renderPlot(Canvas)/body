@@ -20,14 +20,10 @@
     double p=cData.getPercentage() / 100;
     newRaidus=mul(radius,dtof(p));
     newRaidus=div(mul(newRaidus,100),100);
-    float nLeft=sub(cirX,newRaidus);
-    float nTop=sub(cirY,newRaidus);
-    float nRight=add(cirX,newRaidus);
-    float nBottom=add(cirY,newRaidus);
-    RectF nRF=new RectF(nLeft,nTop,nRight,nBottom);
+    RectF nRF=new RectF(sub(cirX,newRaidus),sub(cirY,newRaidus),add(cirX,newRaidus),add(cirY,newRaidus));
     canvas.drawArc(nRF,mOffsetAngle,percentage,true,paintArc);
-    MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,radius - radius / 2 / 2,mOffsetAngle + percentage / 2);
-    canvas.drawText(cData.getLabel(),MathHelper.getInstance().getPosX(),MathHelper.getInstance().getPosY(),getLabelPaint());
+    PointF point=MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,radius - radius / 2 / 2,mOffsetAngle + percentage / 2);
+    canvas.drawText(cData.getLabel(),point.x,point.y,getLabelPaint());
     mOffsetAngle=add(mOffsetAngle,percentage);
   }
   return true;

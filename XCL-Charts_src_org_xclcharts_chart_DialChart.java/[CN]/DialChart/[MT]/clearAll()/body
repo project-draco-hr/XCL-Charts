@@ -1,5 +1,5 @@
 {
   clearPlotPointer();
   clearPlotAxis();
-  clearPlotAttrInfo();
+  this.plotAttrInfoRender.clearPlotAttrInfo();
 }

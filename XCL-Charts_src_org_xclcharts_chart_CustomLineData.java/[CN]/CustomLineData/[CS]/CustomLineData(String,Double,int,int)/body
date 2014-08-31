@@ -1,5 +1,4 @@
 {
-  init();
   setLabel(label);
   setValue(value);
   setColor(color);

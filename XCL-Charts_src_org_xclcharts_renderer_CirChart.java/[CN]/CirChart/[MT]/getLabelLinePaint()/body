@@ -1,3 +1,4 @@
 {
+  initLabelLinePaint();
   return mPaintLabelLine;
 }
