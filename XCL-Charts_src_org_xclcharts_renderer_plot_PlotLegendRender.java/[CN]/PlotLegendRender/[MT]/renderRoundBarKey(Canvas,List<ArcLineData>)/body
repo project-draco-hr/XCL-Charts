@@ -1,0 +1,8 @@
+{
+  if (isShowLegend() == false)   return;
+  if (null == dataset)   return;
+  initRoundChartKey();
+  for (  ArcLineData cData : dataset) {
+    renderCirChartKey(canvas,cData.getKey(),cData.getBarColor());
+  }
+}

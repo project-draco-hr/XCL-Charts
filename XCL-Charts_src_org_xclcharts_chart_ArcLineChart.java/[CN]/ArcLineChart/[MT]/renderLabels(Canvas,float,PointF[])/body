@@ -1,0 +1,13 @@
+{
+  int i=0;
+  float currentAngle=0.0f;
+  float txtHeight=DrawHelper.getInstance().getPaintFontHeight(getLabelPaint()) / 3;
+  for (  ArcLineData cData : mDataset) {
+    currentAngle=cData.getSliceAngle();
+    if (!validateAngle(currentAngle))     continue;
+    getLabelPaint().setColor(cData.getBarColor());
+    canvas.drawText(cData.getLabel(),arrPoint[i].x - mLabelOffsetX,arrPoint[i].y + txtHeight,getLabelPaint());
+    i++;
+  }
+  return true;
+}

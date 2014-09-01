@@ -2,12 +2,14 @@
   int tickCount=dataAxis.getAixTickCount();
   float YSteps=getVerticalYSteps(tickCount);
   float currentY=plotArea.getBottom();
+  double slen=0d;
+  double currentTickLabel=0d;
   for (int i=0; i <= tickCount; i++) {
     if (i == 0)     continue;
     dataAxis.setAxisTickCurrentID(i);
     currentY=sub(plotArea.getBottom(),mul(i,YSteps));
-    double slen=i * dataAxis.getAxisSteps();
-    double currentTickLabel=MathHelper.getInstance().add(dataAxis.getAxisMin(),slen);
+    slen=i * dataAxis.getAxisSteps();
+    currentTickLabel=MathHelper.getInstance().add(dataAxis.getAxisMin(),slen);
     if (i % 2 != 0) {
       plotGrid.renderOddRowsFill(canvas,plotArea.getLeft(),add(currentY,YSteps),plotArea.getRight(),currentY);
     }

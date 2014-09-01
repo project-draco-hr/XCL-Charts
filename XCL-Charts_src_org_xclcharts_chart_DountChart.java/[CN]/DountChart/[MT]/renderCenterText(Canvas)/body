@@ -1,6 +1,5 @@
 {
   if (mCenterText.length() > 0) {
-    if (null == mPaintCenterText)     initCenterTextPaint();
-    canvas.drawText(mCenterText,plotArea.getCenterX(),plotArea.getCenterY(),mPaintCenterText);
+    canvas.drawText(mCenterText,plotArea.getCenterX(),plotArea.getCenterY(),getCenterTextPaint());
   }
 }

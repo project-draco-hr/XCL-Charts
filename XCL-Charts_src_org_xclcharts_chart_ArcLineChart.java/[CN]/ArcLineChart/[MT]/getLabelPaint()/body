@@ -1,0 +1,10 @@
+{
+  if (null == mPaintLabel) {
+    mPaintLabel=new Paint();
+    mPaintLabel.setColor(Color.BLACK);
+    mPaintLabel.setTextSize(18);
+    mPaintLabel.setAntiAlias(true);
+    mPaintLabel.setTextAlign(Align.RIGHT);
+  }
+  return mPaintLabel;
+}

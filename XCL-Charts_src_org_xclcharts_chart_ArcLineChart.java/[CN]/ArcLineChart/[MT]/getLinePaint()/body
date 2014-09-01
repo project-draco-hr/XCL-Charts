@@ -1,0 +1,10 @@
+{
+  if (null == mPaintLine) {
+    mPaintLine=new Paint();
+    mPaintLine.setColor((int)Color.rgb(180,205,230));
+    mPaintLine.setAntiAlias(true);
+    mPaintLine.setStrokeWidth(3);
+    mPaintLine.setStyle(Style.FILL);
+  }
+  return mPaintLine;
+}

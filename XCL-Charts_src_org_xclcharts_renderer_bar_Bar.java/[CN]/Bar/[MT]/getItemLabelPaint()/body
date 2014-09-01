@@ -1,3 +1,9 @@
 {
+  if (null == mPaintItemLabel) {
+    mPaintItemLabel=new Paint();
+    mPaintItemLabel.setTextSize(12);
+    mPaintItemLabel.setColor(Color.BLACK);
+    mPaintItemLabel.setTextAlign(Align.CENTER);
+  }
   return mPaintItemLabel;
 }

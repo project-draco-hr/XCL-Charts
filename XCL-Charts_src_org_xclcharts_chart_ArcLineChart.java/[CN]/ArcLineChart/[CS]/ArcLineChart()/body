@@ -1,0 +1,8 @@
+{
+  super();
+  int fillColor=this.plotArea.getBackgroundPaint().getColor();
+  mPaintFill=new Paint();
+  mPaintFill.setColor(fillColor);
+  mPaintFill.setAntiAlias(true);
+  plotAttrInfoRender=new PlotAttrInfoRender();
+}

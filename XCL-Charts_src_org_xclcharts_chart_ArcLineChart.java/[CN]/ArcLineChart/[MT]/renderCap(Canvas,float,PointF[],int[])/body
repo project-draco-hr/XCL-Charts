@@ -1,0 +1,8 @@
+{
+  getLinePaint().setColor(Color.RED);
+  for (int i=0; i < arrCapPoint.length; i++) {
+    getLinePaint().setColor(arrCapColor[i]);
+    canvas.drawCircle(arrCapPoint[i].x,arrCapPoint[i].y,radius,getLinePaint());
+  }
+  return true;
+}

@@ -1,0 +1,17 @@
+{
+  try {
+    super.postRender(canvas);
+    calcPlotRange();
+    if (renderPlot(canvas)) {
+      plotAttrInfoRender.renderAttrInfo(canvas,plotArea.getCenterX(),plotArea.getCenterY(),this.getRadius());
+      renderTitle(canvas);
+      return true;
+    }
+ else {
+      return false;
+    }
+  }
+ catch (  Exception e) {
+    throw e;
+  }
+}

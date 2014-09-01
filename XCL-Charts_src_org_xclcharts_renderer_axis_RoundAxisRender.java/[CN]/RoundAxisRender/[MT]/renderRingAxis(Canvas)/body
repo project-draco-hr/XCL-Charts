@@ -8,10 +8,11 @@
   float offsetAngle=this.mInitAngle;
   int currentColor=-1;
   String currentLabel="";
+  float sweepAngle=0.0f;
   for (int i=0; i < angleCount; i++) {
     if (null != mColor && colorCount > i)     currentColor=mColor.get(i);
     if (null != mLabels && labelsCount > i)     currentLabel=mLabels.get(i);
-    float sweepAngle=MathHelper.getInstance().mul(mTotalAngle,mPercentage.get(i));
+    sweepAngle=MathHelper.getInstance().mul(mTotalAngle,mPercentage.get(i));
     renderPartitions(canvas,offsetAngle,sweepAngle,currentColor,currentLabel);
     offsetAngle=MathHelper.getInstance().add(offsetAngle,sweepAngle);
     currentColor=-1;

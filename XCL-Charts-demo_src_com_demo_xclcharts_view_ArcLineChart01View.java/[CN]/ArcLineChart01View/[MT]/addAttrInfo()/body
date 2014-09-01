@@ -1,0 +1,15 @@
+{
+  Paint paintLib=new Paint();
+  paintLib.setColor(Color.rgb(46,164,212));
+  paintLib.setTextAlign(Align.CENTER);
+  paintLib.setTextSize(30);
+  paintLib.setAntiAlias(true);
+  chart.getPlotAttrInfo().addAttributeInfo(XEnum.Location.TOP,"??????????????????",0.1f,paintLib);
+  chart.getPlotAttrInfo().addAttributeInfo(XEnum.Location.BOTTOM,"XCL-Charts",0.4f,paintLib);
+  Paint paintSrc=new Paint();
+  paintSrc.setTextAlign(Align.CENTER);
+  paintSrc.setTextSize(25);
+  paintSrc.setAntiAlias(true);
+  paintSrc.setColor((int)Color.rgb(41,34,102));
+  chart.getPlotAttrInfo().addAttributeInfo(XEnum.Location.BOTTOM,"ExcelPro",0.2f,paintSrc);
+}

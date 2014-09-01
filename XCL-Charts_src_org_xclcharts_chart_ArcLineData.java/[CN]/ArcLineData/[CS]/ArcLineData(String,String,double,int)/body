@@ -1,0 +1,6 @@
+{
+  setLabel(label);
+  setPercentage(percent);
+  setBarColor(color);
+  setKey(key);
+}
