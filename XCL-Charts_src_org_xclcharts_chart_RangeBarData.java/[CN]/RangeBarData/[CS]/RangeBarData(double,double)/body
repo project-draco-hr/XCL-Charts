@@ -1,0 +1,4 @@
+{
+  setMax(max);
+  setMin(min);
+}

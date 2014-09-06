@@ -17,7 +17,8 @@
   float barWidth=ret[0];
   float barInnerMargin=ret[1];
   float labelBarUseWidth=add(mul(barNumber,barWidth),mul(sub(barNumber,1),barInnerMargin));
-  for (int i=0; i < mDataSet.size(); i++) {
+  int size=mDataSet.size();
+  for (int i=0; i < size; i++) {
     BarData bd=mDataSet.get(i);
     List<Double> barValues=bd.getDataSet();
     if (null == barValues)     continue;

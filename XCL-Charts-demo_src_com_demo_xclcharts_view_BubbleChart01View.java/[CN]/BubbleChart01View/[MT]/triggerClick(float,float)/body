@@ -1,0 +1,19 @@
+{
+  PointPosition record=chart.getPositionRecord(x,y);
+  if (null == record)   return;
+  BubbleData lData=chartData.get(record.getDataID());
+  LinkedHashMap<Double,Double> mapPoint=lData.getDataSet();
+  int pos=record.getDataChildID();
+  int i=0;
+  Iterator it=mapPoint.entrySet().iterator();
+  while (it.hasNext()) {
+    Entry entry=(Entry)it.next();
+    if (pos == i) {
+      Double xValue=(Double)entry.getKey();
+      Double yValue=(Double)entry.getValue();
+      Toast.makeText(this.getContext(),record.getPointInfo() + " Key:" + lData.getKey()+ " Current Value(key,value):"+ Double.toString(xValue)+ ","+ Double.toString(yValue),Toast.LENGTH_SHORT).show();
+      break;
+    }
+    i++;
+  }
+}

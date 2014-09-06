@@ -1,0 +1,7 @@
+{
+  if (null == mPlotDot) {
+    mPlotDot=new PlotDot();
+    mPlotDot.setDotStyle(XEnum.DotStyle.DOT);
+  }
+  return mPlotDot;
+}

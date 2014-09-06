@@ -7,9 +7,8 @@
   if (Float.compare(radius,0.0f) == 0 || Float.compare(radius,0.0f) == -1) {
     return mRect;
   }
-  float halfRadius=MathHelper.getInstance().div(radius,2f);
   float cX=0.0f;
-  if (XEnum.DotStyle.DOT == pDot.getDotStyle() || XEnum.DotStyle.RING == pDot.getDotStyle()) {
+  if (XEnum.DotStyle.DOT == pDot.getDotStyle() || XEnum.DotStyle.RING == pDot.getDotStyle() || XEnum.DotStyle.X == pDot.getDotStyle()) {
     cX=left + Math.abs(right - left);
     mRect.left=(cX - radius);
     mRect.top=(bottom - radius);
@@ -21,47 +20,19 @@ case DOT:
     canvas.drawCircle(cX,bottom,radius,paint);
   break;
 case RING:
-float ringRadius=radius * 0.7f;
-canvas.drawCircle(cX,bottom,radius,paint);
-initPaintFill();
-mPaintFill.setColor(pDot.getRingInnerColor());
-canvas.drawCircle(cX,bottom,ringRadius,mPaintFill);
+renderRing(canvas,paint,radius,pDot,cX,bottom);
 break;
 case TRIANGLE:
-float triganaleHeight=radius + radius / 2;
-initPath();
-mPath.moveTo(right - radius,bottom + halfRadius);
-mPath.lineTo(right,bottom - triganaleHeight);
-mPath.lineTo(right + radius,bottom + halfRadius);
-mPath.close();
-canvas.drawPath(mPath,paint);
-mPath.reset();
-mRect.left=(right - radius);
-mRect.top=(bottom - triganaleHeight);
-mRect.right=(right + radius);
-mRect.bottom=(bottom + halfRadius);
+renderTriangle(canvas,paint,radius,right,bottom);
 break;
 case PRISMATIC:
-initPath();
-mPath.moveTo(right - radius,bottom);
-mPath.lineTo(right,bottom - radius);
-mPath.lineTo(right + radius,bottom);
-mPath.lineTo(left + (right - left),bottom + radius);
-mPath.close();
-canvas.drawPath(mPath,paint);
-mPath.reset();
-mRect.left=(right - radius);
-mRect.top=(bottom - radius);
-mRect.right=(right + radius);
-mRect.bottom=(bottom + radius);
+renderPrismatic(canvas,paint,radius,right,bottom,left);
 break;
 case RECT:
-paint.setStyle(Style.FILL);
-mRect.left=(right - radius);
-mRect.top=(bottom - radius);
-mRect.right=(right + radius);
-mRect.bottom=(bottom + radius);
-canvas.drawRect(mRect,paint);
+renderRect(canvas,paint,radius,right,bottom);
+break;
+case X:
+renderX(canvas,paint);
 break;
 case HIDE:
 default :

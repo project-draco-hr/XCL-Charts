@@ -2,7 +2,7 @@
   boolean ret=true;
   try {
     super.postRender(canvas);
-    if ((ret=renderVerticalPlot(canvas)) == true) {
+    if ((ret=renderPlot(canvas)) == true) {
       mCustomLine.setVerticalPlot(dataAxis,plotArea,getAxisScreenHeight());
       ret=mCustomLine.renderVerticalCustomlinesDataAxis(canvas);
     }

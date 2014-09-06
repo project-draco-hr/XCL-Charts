@@ -1,4 +1,0 @@
-{
-  initDotPaint();
-  return mPaintDot;
-}

@@ -7,13 +7,16 @@
   float valueWidth=axisDataRange;
   float YSteps=getHorizontalYSteps();
   int barHeight=(int)MathHelper.getInstance().round(mul(YSteps,0.5f),2);
-  for (int r=0; r < categoryAxis.getDataSet().size(); r++) {
+  int cateSize=categoryAxis.getDataSet().size();
+  int dataSize=0;
+  for (int r=0; r < cateSize; r++) {
     float currentX=plotArea.getLeft();
     float currentY=sub(plotArea.getBottom(),mul((r + 1),YSteps));
     double total=0d;
     List<BarData> chartDataSource=this.getDataSource();
     if (null == chartDataSource || chartDataSource.size() == 0)     continue;
-    for (int i=0; i < chartDataSource.size(); i++) {
+    dataSize=chartDataSource.size();
+    for (int i=0; i < dataSize; i++) {
       BarData bd=chartDataSource.get(i);
       if (null == bd.getDataSet())       continue;
       flatBar.getBarPaint().setColor(bd.getColor());

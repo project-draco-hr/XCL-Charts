@@ -1,0 +1,9 @@
+{
+  labels.add("1");
+  labels.add("2");
+  labels.add("3");
+  labels.add("4");
+  labels.add("5");
+  labels.add("6");
+  labels.add("7");
+}

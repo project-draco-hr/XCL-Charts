@@ -1,0 +1,38 @@
+{
+  LinkedHashMap<Double,Double> linePoint1=new LinkedHashMap<Double,Double>();
+  linePoint1.put(5d,8d);
+  linePoint1.put(12d,12d);
+  linePoint1.put(25d,15d);
+  linePoint1.put(30d,30d);
+  linePoint1.put(45d,25d);
+  linePoint1.put(55d,33d);
+  linePoint1.put(62d,45d);
+  ArrayList<Double> linePoint1_bubble=new ArrayList<Double>();
+  linePoint1_bubble.add(55d);
+  linePoint1_bubble.add(60d);
+  linePoint1_bubble.add(65d);
+  linePoint1_bubble.add(95d);
+  linePoint1_bubble.add(75d);
+  linePoint1_bubble.add(78d);
+  BubbleData dataSeries1=new BubbleData("??????????????????",linePoint1,linePoint1_bubble,(int)Color.rgb(54,141,238));
+  dataSeries1.setLabelVisible(true);
+  dataSeries1.getDotLabelPaint().setTextAlign(Align.CENTER);
+  LinkedHashMap<Double,Double> linePoint2=new LinkedHashMap<Double,Double>();
+  linePoint2.put(40d,50d);
+  linePoint2.put(55d,55d);
+  linePoint2.put(60d,65d);
+  linePoint2.put(65d,85d);
+  linePoint2.put(72d,70d);
+  linePoint2.put(85d,68d);
+  ArrayList<Double> linePoint2_bubble=new ArrayList<Double>();
+  linePoint2_bubble.add(55d);
+  linePoint2_bubble.add(60d);
+  linePoint2_bubble.add(65d);
+  linePoint2_bubble.add(95d);
+  linePoint2_bubble.add(75d);
+  linePoint2_bubble.add(78d);
+  BubbleData dataSeries2=new BubbleData("?????????",linePoint2,linePoint2_bubble,(int)Color.rgb(255,165,132));
+  dataSeries2.setLabelVisible(true);
+  chartData.add(dataSeries1);
+  chartData.add(dataSeries2);
+}

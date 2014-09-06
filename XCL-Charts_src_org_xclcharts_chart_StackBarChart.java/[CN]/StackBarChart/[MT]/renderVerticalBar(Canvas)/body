@@ -9,11 +9,15 @@
   float axisScreenHeight=getAxisScreenHeight();
   float axisDataHeight=(float)dataAxis.getAxisRange();
   float barWidht=mul(XSteps,0.5f);
-  for (int r=0; r < dataSet.size(); r++) {
-    float currentX=add(plotArea.getLeft(),mul((r + 1),XSteps));
-    float currentY=plotArea.getBottom();
+  float currentX=0.0f, currentY=0.0f;
+  int dataSize=dataSet.size();
+  int sourceSize=0;
+  for (int r=0; r < dataSize; r++) {
+    currentX=add(plotArea.getLeft(),mul((r + 1),XSteps));
+    currentY=plotArea.getBottom();
     Double total=0d;
-    for (int i=0; i < chartDataSource.size(); i++) {
+    sourceSize=chartDataSource.size();
+    for (int i=0; i < sourceSize; i++) {
       BarData bd=chartDataSource.get(i);
       if (null == bd.getDataSet())       continue;
       flatBar.getBarPaint().setColor(bd.getColor());

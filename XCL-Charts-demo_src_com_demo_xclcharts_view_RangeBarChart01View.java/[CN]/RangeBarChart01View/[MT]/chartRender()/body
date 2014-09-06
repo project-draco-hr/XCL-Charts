@@ -1,0 +1,60 @@
+{
+  try {
+    int[] ltrb=getBarLnDefaultSpadding();
+    chart.setPadding(ltrb[0],ltrb[1],ltrb[2],DensityUtil.dip2px(getContext(),55));
+    chart.setCategories(chartLabels);
+    chart.setDataSource(BarDataSet);
+    chart.getDataAxis().setAxisMax(1024);
+    chart.getDataAxis().setAxisMin(0);
+    chart.getDataAxis().setAxisSteps(64);
+    chart.getDataAxis().setDetailModeSteps(4);
+    chart.getCategoryAxis().setTickLabelRotateAngle(-45f);
+    chart.getDataAxis().getAxisPaint().setColor(Color.rgb(79,200,100));
+    chart.getCategoryAxis().getAxisPaint().setColor(Color.rgb(79,200,100));
+    chart.getDataAxis().getTickMarksPaint().setColor(Color.rgb(79,200,100));
+    chart.getCategoryAxis().getTickMarksPaint().setColor(Color.rgb(79,200,100));
+    chart.getPlotTitle().getTitlePaint().setColor(Color.rgb(79,200,100));
+    chart.getPlotTitle().getSubtitlePaint().setColor(Color.rgb(79,200,100));
+    chart.getDataAxis().getTickLabelPaint().setColor(Color.rgb(79,200,100));
+    chart.getCategoryAxis().getTickLabelPaint().setColor(Color.rgb(79,200,100));
+    chart.setTitle("???????????????");
+    chart.addSubtitle("(XCL-Charts Demo)");
+    chart.setTitleAlign(XEnum.ChartTitleAlign.MIDDLE);
+    chart.setTitleVerticalAlign(XEnum.VerticalAlign.MIDDLE);
+    chart.getPlotGrid().showEvenRowBgColor();
+    chart.getPlotGrid().showOddRowBgColor();
+    chart.getDataAxis().setLabelFormatter(new IFormatterTextCallBack(){
+      @Override public String textFormatter(      String value){
+        DecimalFormat df=new DecimalFormat("#0");
+        Double tmp=Double.parseDouble(value);
+        String label=df.format(tmp).toString();
+        return label;
+      }
+    }
+);
+    chart.getCategoryAxis().setLabelFormatter(new IFormatterTextCallBack(){
+      @Override public String textFormatter(      String value){
+        String label="***" + value + "***";
+        return label;
+      }
+    }
+);
+    chart.getBar().setItemLabelVisible(true);
+    chart.setItemLabelFormatter(new IFormatterDoubleCallBack(){
+      @Override public String doubleFormatter(      Double value){
+        DecimalFormat df=new DecimalFormat("#0");
+        String label=df.format(value).toString();
+        return label;
+      }
+    }
+);
+    chart.getBar().getItemLabelPaint().setColor(Color.rgb(77,184,73));
+    chart.getBar().getItemLabelPaint().setTypeface(Typeface.DEFAULT_BOLD);
+    chart.getBar().getBarPaint().setColor(Color.rgb(79,200,100));
+    chart.setKey("??????");
+    chart.ActiveListenItemClick();
+  }
+ catch (  Exception e) {
+    Log.e(TAG,e.toString());
+  }
+}

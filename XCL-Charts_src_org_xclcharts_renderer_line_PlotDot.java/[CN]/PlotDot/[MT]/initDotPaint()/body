@@ -1,7 +1,0 @@
-{
-  if (null == mPaintDot) {
-    mPaintDot=new Paint();
-    mPaintDot.setColor(Color.BLUE);
-    mPaintDot.setAntiAlias(true);
-  }
-}

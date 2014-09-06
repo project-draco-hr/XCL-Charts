@@ -1,0 +1,6 @@
+{
+  setKey(key);
+  setDataSet(dataSeries);
+  getPlotDot().setColor(color);
+  getPlotDot().setDotStyle(dotStyle);
+}

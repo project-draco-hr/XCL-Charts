@@ -1,5 +1,5 @@
 {
-  mLabelPosition=XEnum.SliceLabelPosition.INNER;
+  mLabelPosition=XEnum.SliceLabelPosition.INSIDE;
   mPaintLabel=new Paint();
   mPaintLabel.setColor(Color.BLACK);
   mPaintLabel.setTextSize(18);

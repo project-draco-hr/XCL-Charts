@@ -1,0 +1,69 @@
+{
+  float initX=plotArea.getLeft();
+  float initY=plotArea.getBottom();
+  float lineStartX=initX;
+  float lineStartY=initY;
+  float lineStopX=0.0f;
+  float lineStopY=0.0f;
+  float axisScreenWidth=getAxisScreenWidth();
+  float axisScreenHeight=getAxisScreenHeight();
+  float axisDataHeight=(float)dataAxis.getAxisRange();
+  LinkedHashMap<Double,Double> chartValues=bd.getDataSet();
+  if (null == chartValues)   return;
+  int j=0;
+  int childID=0;
+  float YvaluePostion=0.0f, XvaluePostion=0.0f;
+  if (Float.compare(mBubbleScaleMax,mBubbleScaleMin) == 0) {
+    Log.e(TAG,"?????????????????????????????????????????????????????????????????????");
+    return;
+  }
+  if (Float.compare(mBubbleMaxSize,mBubbleMinSize) == 0) {
+    Log.e(TAG,"????????????????????????????????????????????????");
+    return;
+  }
+  float scale=mBubbleScaleMax - mBubbleScaleMin;
+  float size=mBubbleMaxSize - mBubbleMinSize;
+  List<Double> lstBubble=bd.getBubble();
+  int bubbleSize=lstBubble.size();
+  double bubble=0;
+  float curRadius=0.0f;
+  getPointPaint().setColor(bd.getColor());
+  Iterator iter=chartValues.entrySet().iterator();
+  while (iter.hasNext()) {
+    Entry entry=(Entry)iter.next();
+    Double xValue=(Double)entry.getKey();
+    Double yValue=(Double)entry.getValue();
+    YvaluePostion=(float)(axisScreenHeight * ((yValue - dataAxis.getAxisMin()) / axisDataHeight));
+    XvaluePostion=(float)(axisScreenWidth * ((xValue - mMinValue) / (mMaxValue - mMinValue)));
+    if (j == 0) {
+      lineStartX=add(initX,XvaluePostion);
+      lineStartY=sub(initY,YvaluePostion);
+      lineStopX=lineStartX;
+      lineStopY=lineStartY;
+    }
+ else {
+      lineStopX=add(initX,XvaluePostion);
+      lineStopY=sub(initY,YvaluePostion);
+    }
+    if (j >= bubbleSize) {
+      continue;
+    }
+ else {
+      bubble=lstBubble.get(j);
+    }
+    curRadius=calcRaidus(scale,size,(float)bubble);
+    if (Float.compare(curRadius,0.0f) == 0 || Float.compare(curRadius,0.0f) == -1) {
+      continue;
+    }
+    mPlotDot.setDotRadius(curRadius);
+    RectF rect=PlotDotRender.getInstance().renderDot(canvas,mPlotDot,lineStartX,lineStartY,lineStopX,lineStopY,getPointPaint());
+    savePointRecord(dataID,childID,lineStopX,lineStopY,rect);
+    childID++;
+    if (bd.getLabelVisible()) {
+      canvas.drawText(getFormatterDotLabel(Double.toString(xValue) + "," + Double.toString(yValue)+ " : "+ Double.toString(bubble)),lineStopX,lineStopY,bd.getDotLabelPaint());
+    }
+    lineStartX=lineStopX;
+    lineStartY=lineStopY;
+    j++;
+  }
+}

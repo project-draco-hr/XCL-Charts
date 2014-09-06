@@ -1,0 +1,5 @@
+{
+  float calcRadius=mFillRadius + (radius - mFillRadius) / 2;
+  PointF point=MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,calcRadius,calcAngle);
+  canvas.drawText(text,point.x,point.y,this.getLabelPaint());
+}

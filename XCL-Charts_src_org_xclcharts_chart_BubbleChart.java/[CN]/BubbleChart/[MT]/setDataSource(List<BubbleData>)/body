@@ -1,0 +1,4 @@
+{
+  if (null != mDataset)   mDataset.clear();
+  this.mDataset=dataSeries;
+}

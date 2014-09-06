@@ -1,0 +1,38 @@
+{
+  try {
+    int[] ltrb=getBarLnDefaultSpadding();
+    chart.setPadding(ltrb[0],ltrb[1],ltrb[2],ltrb[3]);
+    chart.showRoundBorder();
+    chart.setCategories(labels);
+    chart.setDataSource(chartData);
+    chart.getDataAxis().setAxisMax(100);
+    chart.getDataAxis().setAxisSteps(10);
+    chart.setCategoryAxisMax(100);
+    chart.setCategoryAxisMin(0);
+    chart.setBubbleMaxSize(200);
+    chart.setBubbleMinSize(10);
+    chart.setBubbleScaleMax(100);
+    chart.setBubbleScaleMin(0);
+    chart.getDataAxis().getAxisPaint().setStrokeWidth(3);
+    chart.getCategoryAxis().getAxisPaint().setStrokeWidth(3);
+    chart.getDataAxis().getAxisPaint().setColor((int)Color.rgb(127,204,204));
+    chart.getCategoryAxis().getAxisPaint().setColor((int)Color.rgb(127,204,204));
+    chart.getDataAxis().getTickMarksPaint().setColor((int)Color.rgb(127,204,204));
+    chart.getCategoryAxis().getTickMarksPaint().setColor((int)Color.rgb(127,204,204));
+    chart.setDotLabelFormatter(new IFormatterTextCallBack(){
+      @Override public String textFormatter(      String value){
+        String label="(" + value + ")";
+        return (label);
+      }
+    }
+);
+    chart.setTitle("?????????");
+    chart.addSubtitle("(XCL-Charts Demo)");
+    chart.ActiveListenItemClick();
+    chart.extPointClickRange(5);
+  }
+ catch (  Exception e) {
+    e.printStackTrace();
+    Log.e(TAG,e.toString());
+  }
+}

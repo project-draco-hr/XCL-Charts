@@ -1,0 +1,15 @@
+{
+  float halfRadius=MathHelper.getInstance().div(radius,2f);
+  float triganaleHeight=radius + radius / 2;
+  initPath();
+  mPath.moveTo(right - radius,bottom + halfRadius);
+  mPath.lineTo(right,bottom - triganaleHeight);
+  mPath.lineTo(right + radius,bottom + halfRadius);
+  mPath.close();
+  canvas.drawPath(mPath,paint);
+  mPath.reset();
+  mRect.left=(right - radius);
+  mRect.top=(bottom - triganaleHeight);
+  mRect.right=(right + radius);
+  mRect.bottom=(bottom + halfRadius);
+}

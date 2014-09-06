@@ -1,8 +1,0 @@
-{
-  if (null == mPaintFill) {
-    mPaintFill=new Paint();
-    mPaintFill.setColor(Color.WHITE);
-    mPaintFill.setStyle(Style.FILL);
-    mPaintFill.setAntiAlias(true);
-  }
-}

@@ -1,0 +1,9 @@
+{
+  labels.add("b1");
+  labels.add("b2");
+  labels.add("b3");
+  labels.add("b4");
+  labels.add("b5");
+  labels.add("b6");
+  labels.add("b7");
+}

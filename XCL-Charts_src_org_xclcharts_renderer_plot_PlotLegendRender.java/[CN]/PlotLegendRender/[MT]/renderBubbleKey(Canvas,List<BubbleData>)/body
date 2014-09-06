@@ -1,0 +1,34 @@
+{
+  if (isShowLegend() == false)   return;
+  if (null == dataSet)   return;
+  if (null == mPlotArea)   mPlotArea=mXChart.getPlotArea();
+  initEnv();
+  mTextHeight=this.getLabelTextHeight();
+  mRectWidth=this.getRectWidth();
+  mKeyLabelX=mPlotArea.getLeft() + mOffsetX;
+  mKeyLabelY=mPlotArea.getTop() - mOffsetY - 5;
+  getLegendLabelPaint().setTextAlign(Align.LEFT);
+  PlotDot pDot=new PlotDot();
+  pDot.setDotStyle(XEnum.DotStyle.DOT);
+  float dotLeft=0.0f;
+  float dotRight=0.0f;
+  String key="";
+  for (  BubbleData cData : dataSet) {
+    key=cData.getKey();
+    if ("" == key)     continue;
+    mTextWidth=this.getLabelTextWidth(key);
+    mTotalTextWidth=MathHelper.getInstance().add(mTotalTextWidth,mTextWidth);
+    if (mTotalTextWidth > mPlotArea.getWidth()) {
+      mKeyLabelY-=mTextHeight;
+      mKeyLabelX=mPlotArea.getLeft();
+      mTotalTextWidth=0.0f;
+    }
+    canvas.drawText(cData.getKey(),mKeyLabelX + mRectWidth,mKeyLabelY - mTextHeight / 3,getLegendLabelPaint());
+    dotLeft=mKeyLabelX + mRectWidth / 4;
+    dotRight=mKeyLabelX + 2 * (mRectWidth / 4);
+    getLegendLabelPaint().setColor(cData.getColor());
+    PlotDotRender.getInstance().renderDot(canvas,pDot,dotLeft,mKeyLabelY,dotRight,mKeyLabelY - mTextHeight / 2,getLegendLabelPaint());
+    mKeyLabelX=MathHelper.getInstance().add(mKeyLabelX,mRectWidth + 10);
+    mKeyLabelX=MathHelper.getInstance().add(mKeyLabelX,mTextWidth);
+  }
+}

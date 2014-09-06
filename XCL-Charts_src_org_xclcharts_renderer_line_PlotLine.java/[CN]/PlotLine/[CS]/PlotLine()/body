@@ -1,3 +1,7 @@
 {
   mPlotDot=new PlotDot();
+  mPaintDot=new Paint();
+  mPaintDot.setColor(Color.BLUE);
+  mPaintDot.setAntiAlias(true);
+  mPaintDot.setStrokeWidth(5);
 }

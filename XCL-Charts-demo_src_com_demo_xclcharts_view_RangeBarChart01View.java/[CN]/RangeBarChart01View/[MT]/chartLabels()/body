@@ -1,0 +1,8 @@
+{
+  chartLabels.add("a");
+  chartLabels.add("b");
+  chartLabels.add("cc");
+  chartLabels.add("e");
+  chartLabels.add("f");
+  chartLabels.add("g");
+}

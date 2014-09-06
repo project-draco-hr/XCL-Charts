@@ -1,0 +1,6 @@
+Canvas canvas
+Paint paint
+float radius
+float right
+float bottom
+float left

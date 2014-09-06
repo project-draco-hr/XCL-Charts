@@ -1,0 +1,4 @@
+String key
+LinkedHashMap<Double,Double> dataSeries
+int color
+XEnum.DotStyle dotStyle

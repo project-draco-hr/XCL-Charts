@@ -1,0 +1,46 @@
+{
+  initLabelLinePaint();
+  float calcRadius=MathHelper.getInstance().sub(radius,radius / 4f);
+  MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,calcRadius,calcAngle);
+  float startX=MathHelper.getInstance().getPosX();
+  float startY=MathHelper.getInstance().getPosY();
+  calcRadius=radius / 2f;
+  MathHelper.getInstance().calcArcEndPointXY(startX,startY,calcRadius,calcAngle);
+  float stopX=MathHelper.getInstance().getPosX();
+  float stopY=MathHelper.getInstance().getPosY();
+  canvas.drawLine(startX,startY,stopX,stopY,mPaintLabelLine);
+  float endX=0.0f;
+  if (Float.compare(stopX,cirX) == 0) {
+    if (Float.compare(stopY,cirY) == 1) {
+      mPaintLabel.setTextAlign(Align.LEFT);
+      endX=stopX + mLabelBrokenLineLength;
+    }
+ else {
+      endX=stopX - mLabelBrokenLineLength;
+      mPaintLabel.setTextAlign(Align.RIGHT);
+    }
+  }
+ else   if (Float.compare(stopY,cirY) == 0) {
+    if (Float.compare(stopX,cirX) == 0 || Float.compare(stopX,cirX) == -1) {
+      mPaintLabel.setTextAlign(Align.RIGHT);
+    }
+ else {
+      mPaintLabel.setTextAlign(Align.LEFT);
+    }
+    endX=stopX;
+  }
+ else   if (Float.compare(stopX + mLabelBrokenLineLength,cirX) == 1) {
+    mPaintLabel.setTextAlign(Align.LEFT);
+    endX=stopX + mLabelBrokenLineLength;
+  }
+ else   if (Float.compare(stopX - mLabelBrokenLineLength,cirX) == -1) {
+    mPaintLabel.setTextAlign(Align.RIGHT);
+    endX=stopX - mLabelBrokenLineLength;
+  }
+ else {
+    endX=stopX;
+    mPaintLabel.setTextAlign(Align.CENTER);
+  }
+  canvas.drawLine(stopX,stopY,endX,stopY,mPaintLabelLine);
+  canvas.drawText(text,endX,stopY,mPaintLabel);
+}

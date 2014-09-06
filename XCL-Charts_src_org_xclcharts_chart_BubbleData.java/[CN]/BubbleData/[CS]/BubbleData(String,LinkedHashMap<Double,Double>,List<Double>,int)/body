@@ -1,0 +1,6 @@
+{
+  setKey(key);
+  setDataSet(dataSeries);
+  setBubble(bubble);
+  setColor(color);
+}

@@ -1,0 +1,4 @@
+{
+  canvas.drawLine(mRect.left,mRect.top,mRect.right,mRect.bottom,paint);
+  canvas.drawLine(mRect.left,mRect.bottom,mRect.right,mRect.top,paint);
+}

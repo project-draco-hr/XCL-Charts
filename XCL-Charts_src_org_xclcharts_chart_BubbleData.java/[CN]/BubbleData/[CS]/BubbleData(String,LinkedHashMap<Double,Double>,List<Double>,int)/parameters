@@ -1,0 +1,4 @@
+String key
+LinkedHashMap<Double,Double> dataSeries
+List<Double> bubble
+int color

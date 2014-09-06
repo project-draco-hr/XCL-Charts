@@ -1,18 +1,19 @@
 {
   try {
     int[] ltrb=getPieDefaultSpadding();
-    chart.setPadding(ltrb[0],ltrb[1],ltrb[2],ltrb[3]);
+    chart.setPadding(ltrb[0],ltrb[1] + 100,ltrb[2],ltrb[3]);
     chart.setInitialAngle(90);
     chart.setDataSource(lPieData);
-    chart.setCenterText("UNIX??????");
-    chart.setLabelPosition(XEnum.SliceLabelPosition.OUTSIDE);
-    chart.getLabelPaint().setColor(Color.BLUE);
-    chart.setTitle("Dount Chart");
+    chart.setCenterText("????????????!!!");
+    chart.getCenterTextPaint().setColor(Color.rgb(242,167,69));
+    chart.setLabelPosition(XEnum.SliceLabelPosition.INSIDE);
+    chart.getLabelPaint().setColor(Color.WHITE);
+    chart.setTitle("?????????");
     chart.addSubtitle("(XCL-Charts Demo)");
     chart.getPlotLegend().showLegend();
     chart.setApplyBackgroundColor(true);
     chart.setBackgroundColor(Color.rgb(19,163,224));
-    chart.getInnerPaint().setColor(Color.rgb(180,205,230));
+    chart.getInnerPaint().setColor(Color.rgb(19,163,224));
     addAttrInfo();
   }
  catch (  Exception e) {

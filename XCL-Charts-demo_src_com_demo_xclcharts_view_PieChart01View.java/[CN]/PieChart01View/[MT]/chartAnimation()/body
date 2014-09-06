@@ -1,14 +1,15 @@
 {
   try {
+    float sum=0.0f;
     for (int i=0; i < chartData.size(); i++) {
       Thread.sleep(100);
       LinkedList<PieData> animationData=new LinkedList<PieData>();
-      int sum=0;
+      sum=0.0f;
       for (int j=0; j <= i; j++) {
         animationData.add(chartData.get(j));
-        sum+=chartData.get(j).getPercentage();
+        sum=(float)MathHelper.getInstance().add(sum,chartData.get(j).getPercentage());
       }
-      animationData.add(new PieData("","",100 - sum,(int)Color.argb(1,0,0,0)));
+      animationData.add(new PieData("","",MathHelper.getInstance().sub(100.0f,sum),(int)Color.argb(1,0,0,0)));
       chart.setDataSource(animationData);
       if (chartData.size() - 1 == i)       chart.ActiveListenItemClick();
       postInvalidate();

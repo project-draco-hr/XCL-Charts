@@ -1,0 +1,8 @@
+{
+  paint.setStyle(Style.FILL);
+  mRect.left=(right - radius);
+  mRect.top=(bottom - radius);
+  mRect.right=(right + radius);
+  mRect.bottom=(bottom + radius);
+  canvas.drawRect(mRect,paint);
+}

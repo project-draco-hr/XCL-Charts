@@ -1,0 +1,5 @@
+{
+  super();
+  plotLegend.showLegend();
+  defaultAxisSetting();
+}
