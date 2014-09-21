@@ -1,16 +1,9 @@
 {
-  if (XEnum.LineDataAxisLocation.LEFT == mDataAxisPosition) {
-    renderVerticalDataAxis(canvas);
-  }
- else {
-    renderVerticalDataAxisRight(canvas);
-  }
-  renderVerticalCategoryAxis(canvas);
   if (null == mDataSet) {
     Log.e(TAG,"?????????????????????.");
     return false;
   }
-  List<LnData> lstKey=new ArrayList<LnData>();
+  mLstKey.clear();
   String key="";
   for (int i=0; i < mDataSet.size(); i++) {
     if (renderLine(canvas,mDataSet.get(i),"LINE",i) == false)     return false;
@@ -18,8 +11,7 @@
     if (renderLine(canvas,mDataSet.get(i),"DOT2LABEL",i) == false)     return false;
     ;
     key=mDataSet.get(i).getLineKey();
-    if ("" != key && key.length() > 0)     lstKey.add(mDataSet.get(i));
+    if ("" != key && key.length() > 0)     mLstKey.add(mDataSet.get(i));
   }
-  plotLegend.renderLineKey(canvas,lstKey);
   return true;
 }

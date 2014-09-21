@@ -3,8 +3,6 @@
   if (null == dataSet)   return false;
   List<BarData> chartDataSource=this.getDataSource();
   if (null == chartDataSource)   return false;
-  renderVerticalBarDataAxis(canvas);
-  renderVerticalBarCategoryAxis(canvas);
   float XSteps=getVerticalXSteps(dataSet.size() + 1);
   float axisScreenHeight=getAxisScreenHeight();
   float axisDataHeight=(float)dataAxis.getAxisRange();
@@ -37,7 +35,7 @@
       float topY=sub(currentY,valuePostion);
       float rightX=add(currentX,barWidht / 2);
       flatBar.renderBar(leftX,topY,rightX,currentY,canvas);
-      saveBarRectFRecord(i,r,leftX,topY,rightX,currentY);
+      saveBarRectFRecord(i,r,leftX + mMoveX,topY + mMoveY,rightX + mMoveX,currentY + mMoveY);
       flatBar.renderBarItemLabel(getFormatterItemLabel(bv),currentX,sub(currentY,valuePostion / 2),canvas);
       currentY=sub(currentY,valuePostion);
     }
@@ -45,7 +43,5 @@
     float totalPostion=MathHelper.getInstance().mul(div(axisScreenHeight,axisDataHeight),dtof(per));
     flatBar.renderBarItemLabel(getFormatterItemLabel(total),currentX,sub(plotArea.getBottom(),totalPostion),canvas);
   }
-  dataAxis.renderAxis(canvas,plotArea.getLeft(),plotArea.getBottom(),plotArea.getRight(),plotArea.getBottom());
-  plotLegend.renderBarKey(canvas,this.getDataSource());
   return true;
 }

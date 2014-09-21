@@ -1,11 +1,9 @@
 {
   List<BarData> chartDataSource=this.getDataSource();
   if (null == chartDataSource)   return false;
-  renderHorizontalBarDataAxis(canvas);
-  dataAxis.renderAxis(canvas,plotArea.getLeft(),plotArea.getBottom(),plotArea.getRight(),plotArea.getBottom());
-  renderHorizontalBarLabelAxis(canvas);
-  mBar3D.render3DYAxis(plotArea.getLeft(),plotArea.getTop(),plotArea.getRight(),plotArea.getBottom(),canvas);
   float YSteps=getHorizontalYSteps();
+  float barInitX=plotArea.getLeft() + this.mMoveX;
+  float barInitY=plotArea.getBottom();
   int barNumber=getDatasetSize(chartDataSource);
   int currNumber=0;
   float[] ret=mBar3D.getBarHeightAndMargin(YSteps,barNumber);
@@ -29,18 +27,17 @@
       Double bv=barValues.get(j);
       setBarDataColor(mBar3D.getBarPaint(),barDataColor,j,barDefualtColor);
       float ty1=mul((j + 1),YSteps);
-      float drawBarButtomY=add(sub(plotArea.getBottom(),ty1),labelBarUseHeight / 2);
+      float drawBarButtomY=add(sub(barInitY,ty1),labelBarUseHeight / 2);
       drawBarButtomY=sub(drawBarButtomY,(barHeight + barInnerMargin) * currNumber);
       double tlen=MathHelper.getInstance().sub(bv,dataAxis.getAxisMin());
       float valuePostion=mul(scrWidth,div(dtof(tlen),valueWidth));
       float topY=sub(drawBarButtomY,barHeight);
-      float rightX=add(plotArea.getLeft(),valuePostion);
-      mBar3D.renderHorizontal3DBar(plotArea.getLeft(),topY,rightX,drawBarButtomY,mBar3D.getBarPaint().getColor(),canvas);
-      saveBarRectFRecord(i,j,plotArea.getLeft(),topY,rightX,drawBarButtomY);
-      mBar3D.renderBarItemLabel(getFormatterItemLabel(bv),add(plotArea.getLeft(),valuePostion),sub(drawBarButtomY,barHeight / 2),canvas);
+      float rightX=add(barInitX,valuePostion);
+      mBar3D.renderHorizontal3DBar(barInitX,topY,rightX,drawBarButtomY,mBar3D.getBarPaint().getColor(),canvas);
+      saveBarRectFRecord(i,j,barInitX + mMoveX,topY + mMoveY,rightX + mMoveX,drawBarButtomY + mMoveY);
+      mBar3D.renderBarItemLabel(getFormatterItemLabel(bv),rightX,sub(drawBarButtomY,barHeight / 2),canvas);
     }
     currNumber++;
   }
-  plotLegend.renderBarKey(canvas,this.getDataSource());
   return true;
 }

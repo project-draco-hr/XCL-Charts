@@ -2,8 +2,6 @@
   if (null == mDataSet)   return false;
   List<String> dataSet=categoryAxis.getDataSet();
   if (null == dataSet)   return false;
-  renderVerticalBarDataAxis(canvas);
-  renderVerticalBarCategoryAxis(canvas);
   float axisScreenHeight=getAxisScreenHeight();
   float axisDataHeight=(float)dataAxis.getAxisRange();
   float XSteps=getVerticalXSteps(dataSet.size() + 1);
@@ -38,13 +36,11 @@
       float drawBarEndX=add(drawBarStartX,barWidth);
       float topY=sub(plotArea.getBottom(),valuePostion);
       mFlatBar.renderBar(drawBarStartX,plotArea.getBottom(),drawBarEndX,topY,canvas);
-      saveBarRectFRecord(i,j,drawBarStartX,topY,drawBarEndX,plotArea.getBottom());
+      saveBarRectFRecord(i,j,drawBarStartX + mMoveX,topY + mMoveY,drawBarEndX + mMoveX,plotArea.getBottom() + mMoveY);
       mFlatBar.renderBarItemLabel(getFormatterItemLabel(bv),add(drawBarStartX,barWidth / 2),sub(plotArea.getBottom(),valuePostion),canvas);
     }
     currNumber++;
   }
-  dataAxis.renderAxis(canvas,plotArea.getLeft(),plotArea.getBottom(),plotArea.getRight(),plotArea.getBottom());
-  plotLegend.renderBarKey(canvas,this.mDataSet);
   mCustomLine.setVerticalPlot(dataAxis,plotArea,getAxisScreenHeight());
   mCustomLine.renderVerticalCustomlinesDataAxis(canvas);
   return true;

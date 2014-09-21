@@ -1,7 +1,5 @@
 {
   if (null == categoryAxis.getDataSet())   return false;
-  renderHorizontalBarDataAxis(canvas);
-  renderHorizontalBarLabelAxis(canvas);
   float axisScreenWidth=getAxisScreenWidth();
   float axisDataRange=(float)dataAxis.getAxisRange();
   float valueWidth=axisDataRange;
@@ -36,7 +34,7 @@
       float rightX=add(currentX,valuePostion);
       float bottomY=add(currentY,barHeight / 2);
       flatBar.renderBar(currentX,topY,rightX,bottomY,canvas);
-      saveBarRectFRecord(i,r,currentX,topY,rightX,bottomY);
+      saveBarRectFRecord(i,r,currentX + mMoveX,topY + mMoveY,rightX + mMoveX,bottomY + mMoveY);
       flatBar.renderBarItemLabel(getFormatterItemLabel(bv),add(currentX,valuePostion / 2),currentY,canvas);
       currentX=add(currentX,valuePostion);
     }
@@ -46,8 +44,5 @@
       flatBar.renderBarItemLabel(getFormatterItemLabel(total),add(plotArea.getLeft(),totalPostion),currentY,canvas);
     }
   }
-  dataAxis.renderAxis(canvas,plotArea.getLeft(),plotArea.getBottom(),plotArea.getLeft(),plotArea.getTop());
-  categoryAxis.renderAxis(canvas,plotArea.getLeft(),plotArea.getBottom(),plotArea.getRight(),plotArea.getBottom());
-  plotLegend.renderBarKey(canvas,this.getDataSource());
   return true;
 }

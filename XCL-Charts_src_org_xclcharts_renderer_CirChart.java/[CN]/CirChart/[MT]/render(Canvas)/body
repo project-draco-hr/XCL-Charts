@@ -1,0 +1,28 @@
+{
+  try {
+    if (null == canvas)     return false;
+    if (getPanModeStatus()) {
+      canvas.save();
+switch (this.getPlotPanMode()) {
+case HORIZONTAL:
+        canvas.translate(mTranslateXY[0],0);
+      break;
+case VERTICAL:
+    canvas.translate(0,mTranslateXY[1]);
+  break;
+default :
+canvas.translate(mTranslateXY[0],mTranslateXY[1]);
+break;
+}
+super.render(canvas);
+canvas.restore();
+}
+ else {
+super.render(canvas);
+}
+return true;
+}
+ catch (Exception e) {
+throw e;
+}
+}

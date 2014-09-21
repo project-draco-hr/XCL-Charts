@@ -1,0 +1,6 @@
+{
+  if (!mEnableScale)   return;
+  if (Float.compare(mCenterX,0.0f) == 1 || Float.compare(mCenterY,0.0f) == 1) {
+    canvas.scale(mXScale,mYScale,mCenterX,mCenterY);
+  }
+}

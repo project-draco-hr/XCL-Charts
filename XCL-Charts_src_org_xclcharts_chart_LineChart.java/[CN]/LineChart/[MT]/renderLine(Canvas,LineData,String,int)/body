@@ -55,9 +55,10 @@
  else       if (type.equalsIgnoreCase("DOT2LABEL")) {
         if (!pLine.getDotStyle().equals(XEnum.DotStyle.HIDE)) {
           PlotDot pDot=pLine.getPlotDot();
-          float rendEndX=lineEndX + pDot.getDotRadius();
-          RectF rect=PlotDotRender.getInstance().renderDot(canvas,pDot,lineStartX,lineStartY,lineEndX,lineEndY,pLine.getDotPaint());
-          savePointRecord(dataID,childID,lineEndX,lineEndY,rect);
+          float radius=pDot.getDotRadius();
+          float rendEndX=lineEndX + radius;
+          PlotDotRender.getInstance().renderDot(canvas,pDot,lineStartX,lineStartY,lineEndX,lineEndY,pLine.getDotPaint());
+          savePointRecord(dataID,childID,lineEndX + mMoveX,lineEndY + mMoveY,lineEndX - radius + mMoveX,lineEndY - radius + mMoveY,lineEndX + radius + mMoveX,lineEndY + radius + mMoveY);
           childID++;
           lineEndX=rendEndX;
         }

@@ -13,6 +13,9 @@
     chart.setBubbleMinSize(10);
     chart.setBubbleScaleMax(100);
     chart.setBubbleScaleMin(0);
+    chart.getCategoryAxis().setTickMarksVisible(false);
+    chart.getDataAxis().setHorizontalTickAlign(Align.RIGHT);
+    chart.getDataAxis().getTickLabelPaint().setTextAlign(Align.LEFT);
     chart.getDataAxis().getAxisPaint().setStrokeWidth(3);
     chart.getCategoryAxis().getAxisPaint().setStrokeWidth(3);
     chart.getDataAxis().getAxisPaint().setColor((int)Color.rgb(127,204,204));

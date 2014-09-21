@@ -1,0 +1,6 @@
+{
+  if (Float.compare(currentY,plotArea.getTop() - moveY) == -1 || Float.compare(currentY,plotArea.getBottom() - moveY) == 1) {
+    return true;
+  }
+  return false;
+}

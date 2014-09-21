@@ -1,12 +1,3 @@
 {
-  if (null == mRecordset)   mRecordset=new ArrayList<PlotPointPosition>();
-  if (this.getListenItemClickStatus()) {
-    PlotPointPosition pRecord=new PlotPointPosition();
-    pRecord.savePlotDataID(dataID);
-    pRecord.savePlotDataChildID(childID);
-    pRecord.savePlotPosition(x,y);
-    pRecord.savePlotRectF(r.left,r.top,r.right,r.bottom);
-    pRecord.extPointClickRange(mClickRangeExtValue);
-    mRecordset.add(pRecord);
-  }
+  savePointRecord(dataID,childID,x,y,r.left,r.top,r.right,r.bottom);
 }

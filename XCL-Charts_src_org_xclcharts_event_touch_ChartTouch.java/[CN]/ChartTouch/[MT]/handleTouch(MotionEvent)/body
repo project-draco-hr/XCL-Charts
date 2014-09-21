@@ -1,25 +1,10 @@
 {
-  int action=event.getAction();
-  if (action == MotionEvent.ACTION_MOVE) {
-    if (oldX >= 0 || oldY >= 0) {
-      float newX=event.getX(0);
-      float newY=event.getY(0);
-      if (newX - oldX == 0 || newY - oldY == 0)       return;
-      setLocation(oldX,oldY,newX,newY);
-      oldX=newX;
-      oldY=newY;
-    }
+  if (event.getPointerCount() == 1) {
+    handleTouch_PanMode(event);
   }
- else   if (action == MotionEvent.ACTION_DOWN) {
-    oldX=event.getX(0);
-    oldY=event.getY(0);
+ else   if (event.getPointerCount() == 2) {
+    if (mChart.getScaleStatus())     handleTouch_Scale(event);
   }
- else   if (action == MotionEvent.ACTION_UP || action == MotionEvent.ACTION_POINTER_UP) {
-    oldX=0.0f;
-    oldY=0.0f;
-    if (action == MotionEvent.ACTION_POINTER_UP) {
-      oldX=-1f;
-      oldY=-1f;
-    }
+ else {
   }
 }

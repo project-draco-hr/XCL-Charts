@@ -1,0 +1,18 @@
+{
+  if (XEnum.LineDataAxisLocation.LEFT == mDataAxisPosition) {
+    renderVerticalDataAxis(canvas);
+  }
+ else {
+    renderVerticalDataAxisRight(canvas);
+  }
+  renderVerticalCategoryAxis(canvas);
+  if (renderVerticalPlot(canvas) == true) {
+    mCustomLine.setVerticalPlot(dataAxis,plotArea,getAxisScreenHeight());
+    mCustomLine.renderVerticalCustomlinesDataAxis(canvas);
+  }
+  renderVerticalDataAxisLine(canvas);
+  renderVerticalDataAxisRightLine(canvas);
+  renderVerticalCategoryAxisLine(canvas);
+  plotLegend.renderLineKey(canvas,mLstKey);
+  return true;
+}

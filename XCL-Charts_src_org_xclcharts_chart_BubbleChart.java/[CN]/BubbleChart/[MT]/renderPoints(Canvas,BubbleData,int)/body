@@ -28,6 +28,7 @@
   double bubble=0;
   float curRadius=0.0f;
   getPointPaint().setColor(bd.getColor());
+  if (bd.getBorderColor() != -1)   getPointBorderPaint().setColor(bd.getBorderColor());
   Iterator iter=chartValues.entrySet().iterator();
   while (iter.hasNext()) {
     Entry entry=(Entry)iter.next();
@@ -56,8 +57,11 @@
       continue;
     }
     mPlotDot.setDotRadius(curRadius);
-    RectF rect=PlotDotRender.getInstance().renderDot(canvas,mPlotDot,lineStartX,lineStartY,lineStopX,lineStopY,getPointPaint());
-    savePointRecord(dataID,childID,lineStopX,lineStopY,rect);
+    PlotDotRender.getInstance().renderDot(canvas,mPlotDot,lineStartX,lineStartY,lineStopX,lineStopY,getPointPaint());
+    savePointRecord(dataID,childID,lineStopX + mMoveX,lineStopY + mMoveY,lineStopX - 2 * curRadius + mMoveX,lineStopY - curRadius + mMoveY,lineStopX + curRadius + mMoveX,lineStopY + curRadius + mMoveY);
+    if (bd.getBorderColor() != -1) {
+      canvas.drawCircle(lineStopX,lineStopY,curRadius,getPointBorderPaint());
+    }
     childID++;
     if (bd.getLabelVisible()) {
       canvas.drawText(getFormatterDotLabel(Double.toString(xValue) + "," + Double.toString(yValue)+ " : "+ Double.toString(bubble)),lineStopX,lineStopY,bd.getDotLabelPaint());

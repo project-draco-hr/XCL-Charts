@@ -1,0 +1,12 @@
+{
+  float YSteps=div(getAxisScreenHeight(),(categoryAxis.getDataSet().size() + 1));
+  float currentY=0.0f;
+  float axisX=plotArea.getLeft();
+  float axisY=plotArea.getBottom();
+  for (int i=0; i < categoryAxis.getDataSet().size(); i++) {
+    currentY=sub(axisY,mul((i + 1),YSteps));
+    if (categoryAxis.getTickLabelVisible() && isRenderHorizontalCategoryAxisTick(currentY,this.mMoveY))     continue;
+    plotGrid.renderGridLinesHorizontal(canvas,axisX,currentY,plotArea.getRight(),currentY);
+    categoryAxis.renderAxisHorizontalTick(this,canvas,axisX,currentY,categoryAxis.getDataSet().get(i));
+  }
+}

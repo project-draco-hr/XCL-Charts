@@ -1,0 +1,60 @@
+{
+  float offsetX=mTranslateXY[0];
+  float offsetY=mTranslateXY[1];
+  initMoveXY();
+  canvas.save();
+  canvas.clipRect(this.getLeft(),this.getTop(),this.getRight(),this.getBottom());
+  if (XEnum.PanMode.VERTICAL == this.getPlotPanMode() || XEnum.PanMode.FREE == this.getPlotPanMode()) {
+    float yMargin=getDrawClipVerticalYMargin();
+    canvas.save();
+    canvas.clipRect(this.getLeft(),plotArea.getTop() - yMargin,this.getRight(),plotArea.getBottom() + yMargin);
+    canvas.translate(0,offsetY);
+    if (XEnum.LineDataAxisLocation.LEFT == mDataAxisPosition) {
+      renderVerticalDataAxis(canvas);
+    }
+ else {
+      renderVerticalDataAxisRight(canvas);
+    }
+    canvas.restore();
+  }
+ else {
+    if (XEnum.LineDataAxisLocation.LEFT == mDataAxisPosition) {
+      renderVerticalDataAxis(canvas);
+    }
+ else {
+      renderVerticalDataAxisRight(canvas);
+    }
+  }
+  if (XEnum.PanMode.HORIZONTAL == this.getPlotPanMode() || XEnum.PanMode.FREE == this.getPlotPanMode()) {
+    float xMargin=getDrawClipVerticalXMargin();
+    canvas.save();
+    canvas.clipRect(plotArea.getLeft() - xMargin,plotArea.getTop(),plotArea.getRight() + xMargin,this.getBottom());
+    canvas.translate(offsetX,0);
+    renderVerticalCategoryAxis(canvas);
+    canvas.restore();
+  }
+ else {
+    renderVerticalCategoryAxis(canvas);
+  }
+  canvas.save();
+  if (getRightAxisVisible()) {
+    canvas.clipRect(plotArea.getLeft(),plotArea.getTop(),plotArea.getRight(),plotArea.getBottom());
+  }
+ else {
+    canvas.clipRect(plotArea.getLeft(),plotArea.getTop(),this.getRight(),plotArea.getBottom());
+  }
+  canvas.save();
+  canvas.translate(mMoveX,mMoveY);
+  if (renderVerticalPlot(canvas) == true) {
+    mCustomLine.setVerticalPlot(dataAxis,plotArea,getAxisScreenHeight());
+    mCustomLine.renderVerticalCustomlinesDataAxis(canvas);
+  }
+  canvas.restore();
+  canvas.restore();
+  canvas.restore();
+  renderVerticalDataAxisLine(canvas);
+  renderVerticalDataAxisRightLine(canvas);
+  renderVerticalCategoryAxisLine(canvas);
+  plotLegend.renderLineKey(canvas,mLstKey);
+  return true;
+}

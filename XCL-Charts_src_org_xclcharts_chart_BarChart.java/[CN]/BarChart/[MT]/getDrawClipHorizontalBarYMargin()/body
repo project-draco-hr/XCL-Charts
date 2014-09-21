@@ -1,0 +1,7 @@
+{
+  float yMargin=0.0f;
+  if (categoryAxis.getTickLabelVisible()) {
+    yMargin=DrawHelper.getInstance().getPaintFontHeight(categoryAxis.getTickLabelPaint()) / 2;
+  }
+  return yMargin;
+}

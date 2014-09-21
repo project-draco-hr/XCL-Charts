@@ -7,13 +7,10 @@
     Log.e(TAG,"???????????????.");
     return false;
   }
-  renderVerticalDataAxis(canvas);
-  renderVerticalCategoryAxis(canvas);
   int size=mDataset.size();
   for (int i=0; i < size; i++) {
     BubbleData bd=mDataset.get(i);
     renderPoints(canvas,bd,i);
   }
-  plotLegend.renderBubbleKey(canvas,mDataset);
   return true;
 }

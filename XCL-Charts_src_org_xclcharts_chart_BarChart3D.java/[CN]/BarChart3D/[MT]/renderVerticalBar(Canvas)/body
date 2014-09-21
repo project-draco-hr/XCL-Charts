@@ -1,12 +1,10 @@
 {
-  renderVerticalBarDataAxis(canvas);
-  renderVerticalBarCategoryAxis(canvas);
   float currentX=0.0f;
-  float initX=currentX=plotArea.getLeft();
+  float barInitX=plotArea.getLeft();
+  float barInitY=plotArea.getBottom();
   List<String> dataSet=categoryAxis.getDataSet();
   if (null == dataSet)   return false;
   float XSteps=div(plotArea.getWidth(),(dataSet.size() + 1));
-  mBar3D.render3DXAxis(plotArea.getLeft(),plotArea.getBottom(),plotArea.getRight(),plotArea.getBottom(),canvas);
   List<BarData> chartDataSource=this.getDataSource();
   if (null == chartDataSource)   return false;
   int barNumber=getDatasetSize(chartDataSource);
@@ -22,7 +20,7 @@
   double axisRange=dataAxis.getAxisRange();
   double axisMin=dataAxis.getAxisMin();
   for (int i=0; i < barNumber; i++) {
-    currentX=add(initX,mul((i + 1),XSteps));
+    currentX=add(barInitX,mul((i + 1),XSteps));
     BarData bd=chartDataSource.get(i);
     List<Double> barValues=bd.getDataSet();
     if (null == barValues)     continue;
@@ -35,16 +33,15 @@
       double tlen=MathHelper.getInstance().sub(bv,axisMin);
       float valuePostion=dtof(MathHelper.getInstance().div(tlen,axisRange));
       valuePostion=mul(plotArea.getHeight(),valuePostion);
-      float drawBarStartX=sub(add(initX,mul((j + 1),XSteps)),labelBarUseWidth / 2);
+      float drawBarStartX=sub(add(barInitX,mul((j + 1),XSteps)),labelBarUseWidth / 2);
       drawBarStartX=add(drawBarStartX,(barWidth + barInnerMargin) * currNumber);
       float drawBarEndX=add(drawBarStartX,barWidth);
-      float topY=sub(plotArea.getBottom(),valuePostion);
-      mBar3D.renderVertical3DBar(drawBarStartX,topY,drawBarEndX,plotArea.getBottom(),mBar3D.getBarPaint().getColor(),canvas);
-      saveBarRectFRecord(i,j,drawBarStartX,topY,drawBarEndX,plotArea.getBottom());
-      mBar3D.renderBarItemLabel(getFormatterItemLabel(bv),add(drawBarStartX,barWidth / 2),sub(plotArea.getBottom(),valuePostion),canvas);
+      float topY=sub(barInitY,valuePostion);
+      mBar3D.renderVertical3DBar(drawBarStartX,topY,drawBarEndX,barInitY,mBar3D.getBarPaint().getColor(),canvas);
+      saveBarRectFRecord(i,j,drawBarStartX + mMoveX,topY + mMoveY,drawBarEndX + mMoveX,plotArea.getBottom() + mMoveY);
+      mBar3D.renderBarItemLabel(getFormatterItemLabel(bv),add(drawBarStartX,barWidth / 2),topY,canvas);
     }
     currNumber++;
   }
-  plotLegend.renderBarKey(canvas,this.getDataSource());
   return true;
 }

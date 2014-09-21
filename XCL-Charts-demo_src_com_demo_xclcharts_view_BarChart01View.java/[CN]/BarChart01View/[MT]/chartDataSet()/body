@@ -14,7 +14,13 @@
   dataSeriesC.add(91d);
   dataSeriesC.add(65d);
   BarData BarDataC=new BarData("MySQL",dataSeriesC,(int)Color.rgb(0,75,106));
+  List<Double> dataSeriesD=new LinkedList<Double>();
+  dataSeriesD.add(52d);
+  dataSeriesD.add(45d);
+  dataSeriesD.add(35d);
+  BarData BarDataD=new BarData("Other",dataSeriesD,(int)Color.rgb(17,3,111));
   chartData.add(BarDataA);
   chartData.add(BarDataB);
   chartData.add(BarDataC);
+  chartData.add(BarDataD);
 }

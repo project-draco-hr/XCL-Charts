@@ -1,0 +1,11 @@
+{
+  renderVerticalDataAxis(canvas);
+  renderVerticalCategoryAxis(canvas);
+  renderVerticalPlot(canvas);
+  renderVerticalDataAxisLine(canvas);
+  renderVerticalDataAxisRightLine(canvas);
+  renderVerticalCategoryAxisLine(canvas);
+  plotLegend.renderLineKey(canvas,mLstKey);
+  mLstKey.clear();
+  return true;
+}

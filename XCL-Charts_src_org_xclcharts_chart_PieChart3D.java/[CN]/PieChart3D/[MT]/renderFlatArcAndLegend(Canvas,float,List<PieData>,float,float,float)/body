@@ -20,7 +20,7 @@
       canvas.drawArc(mArcRF0,offsetAngle,currentAngle,true,geArcPaint());
       arrPoint[j]=new PointF(cirX,cirY);
     }
-    saveArcRecord(j,cirX,cirY,radius,offsetAngle,currentAngle);
+    saveArcRecord(j,cirX + this.mTranslateXY[0],cirY + this.mTranslateXY[1],radius,offsetAngle,currentAngle);
     offsetAngle=add(offsetAngle,currentAngle);
   }
   renderLabels(canvas,initOffsetAngle,radius,arrPoint);

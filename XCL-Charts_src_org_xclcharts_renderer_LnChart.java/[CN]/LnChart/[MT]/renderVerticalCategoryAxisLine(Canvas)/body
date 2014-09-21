@@ -1,0 +1,11 @@
+{
+  if (mRightAxisVisible) {
+    categoryAxis.renderAxis(canvas,plotArea.getRight(),plotArea.getBottom(),plotArea.getRight(),plotArea.getTop());
+  }
+ else {
+  }
+  categoryAxis.renderAxis(canvas,plotArea.getLeft(),plotArea.getBottom(),plotArea.getRight(),plotArea.getBottom());
+  if (!categoryAxis.getAxisLineVisible() || !categoryAxis.getVisible()) {
+    plotGrid.renderGridLinesVertical(canvas,plotArea.getLeft(),plotArea.getBottom(),plotArea.getLeft(),plotArea.getTop());
+  }
+}

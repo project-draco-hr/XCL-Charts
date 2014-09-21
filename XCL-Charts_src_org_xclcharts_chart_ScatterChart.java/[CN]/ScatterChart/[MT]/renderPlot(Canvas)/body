@@ -7,8 +7,6 @@
     Log.e(TAG,"???????????????.");
     return false;
   }
-  renderVerticalDataAxis(canvas);
-  renderVerticalCategoryAxis(canvas);
   for (int i=0; i < mDataset.size(); i++) {
     ScatterData bd=mDataset.get(i);
     if (bd.getPlotDot().getDotStyle().equals(XEnum.DotStyle.HIDE) == true && bd.getLabelVisible() == false) {
@@ -16,6 +14,5 @@
     }
     renderPoints(canvas,bd,i);
   }
-  plotLegend.renderPointKey(canvas,mDataset);
   return true;
 }

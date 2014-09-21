@@ -36,6 +36,7 @@
 );
     chart.setAxis3DBaseColor((int)Color.rgb(132,162,197));
     chart.ActiveListenItemClick();
+    chart.setPlotPanMode(XEnum.PanMode.VERTICAL);
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

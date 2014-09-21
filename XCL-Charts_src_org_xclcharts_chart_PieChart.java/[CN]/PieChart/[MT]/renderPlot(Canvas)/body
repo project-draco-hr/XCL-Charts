@@ -24,7 +24,7 @@
         if (!drawSlice(canvas,mPaintArc,mArcRF0,cData,cirX,cirY,radius,offsetAngle,(float)currentAngle))         return false;
         arrPoint[i]=new PointF(cirX,cirY);
       }
-      saveArcRecord(i,cirX,cirY,radius,offsetAngle,currentAngle);
+      saveArcRecord(i,cirX + this.mTranslateXY[0],cirY + this.mTranslateXY[1],radius,offsetAngle,currentAngle);
       offsetAngle=add(offsetAngle,currentAngle);
       i++;
     }

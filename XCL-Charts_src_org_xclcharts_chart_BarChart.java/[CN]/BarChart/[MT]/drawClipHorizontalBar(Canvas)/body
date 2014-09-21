@@ -1,0 +1,40 @@
+{
+  float offsetX=mTranslateXY[0];
+  float offsetY=mTranslateXY[1];
+  initMoveXY();
+  canvas.save();
+  canvas.clipRect(this.getLeft(),this.getTop(),this.getRight(),this.getBottom());
+  if (XEnum.PanMode.HORIZONTAL == this.getPlotPanMode() || XEnum.PanMode.FREE == this.getPlotPanMode()) {
+    float xMargin=getDrawClipHorizontalBarXMargin();
+    canvas.save();
+    canvas.clipRect(plotArea.getLeft() - xMargin,plotArea.getTop(),plotArea.getRight() + xMargin,this.getBottom());
+    canvas.translate(offsetX,0);
+    renderHorizontalBarDataAxis(canvas);
+    canvas.restore();
+  }
+ else {
+    renderHorizontalBarDataAxis(canvas);
+  }
+  if (XEnum.PanMode.VERTICAL == this.getPlotPanMode() || XEnum.PanMode.FREE == this.getPlotPanMode()) {
+    float yMargin=getDrawClipHorizontalBarYMargin();
+    canvas.save();
+    canvas.clipRect(this.getLeft(),plotArea.getTop() - yMargin,this.getRight(),plotArea.getBottom() + yMargin);
+    canvas.translate(0,offsetY);
+    renderHorizontalBarCategoryAxis(canvas);
+    canvas.restore();
+  }
+ else {
+    renderHorizontalBarCategoryAxis(canvas);
+  }
+  canvas.save();
+  canvas.clipRect(plotArea.getLeft(),plotArea.getTop(),this.getRight(),plotArea.getBottom());
+  canvas.save();
+  canvas.translate(mMoveX,mMoveY);
+  renderHorizontalBar(canvas);
+  canvas.restore();
+  canvas.restore();
+  canvas.restore();
+  renderHorizontalBarAxis(canvas);
+  plotLegend.renderBarKey(canvas,this.mDataSet);
+  return true;
+}

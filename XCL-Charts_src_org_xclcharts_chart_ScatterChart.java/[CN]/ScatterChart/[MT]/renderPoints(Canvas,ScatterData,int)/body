@@ -35,7 +35,8 @@
       getPointPaint().setColor(dot.getColor());
       getPointPaint().setAlpha(dot.getAlpha());
       RectF rect=PlotDotRender.getInstance().renderDot(canvas,bd.getPlotDot(),lineStartX,lineStartY,lineStopX,lineStopY,getPointPaint());
-      savePointRecord(dataID,childID,lineStopX,lineStopY,rect);
+      float radius=dot.getDotRadius();
+      savePointRecord(dataID,childID,lineStopX + mMoveX,lineStopY + mMoveY,lineStopX - radius + mMoveX,lineStopY - radius + mMoveY,lineStopX + radius + mMoveX,lineStopY + radius + mMoveY);
       childID++;
     }
     if (bd.getLabelVisible()) {

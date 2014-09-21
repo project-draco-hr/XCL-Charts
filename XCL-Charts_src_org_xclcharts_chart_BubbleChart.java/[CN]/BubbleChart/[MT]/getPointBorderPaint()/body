@@ -1,0 +1,8 @@
+{
+  if (null == mPaintBorderPoint) {
+    mPaintBorderPoint=new Paint(Paint.ANTI_ALIAS_FLAG);
+    mPaintBorderPoint.setStyle(Style.STROKE);
+    mPaintBorderPoint.setStrokeWidth(2);
+  }
+  return mPaintBorderPoint;
+}

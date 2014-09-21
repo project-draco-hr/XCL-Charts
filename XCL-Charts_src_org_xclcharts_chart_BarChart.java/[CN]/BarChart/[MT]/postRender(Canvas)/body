@@ -14,12 +14,22 @@
 switch (mDirection) {
 case HORIZONTAL:
 {
-        ret=renderHorizontalBar(canvas);
+        if (getPanModeStatus()) {
+          ret=drawClipHorizontalBar(canvas);
+        }
+ else {
+          ret=drawHorizontalBar(canvas);
+        }
         break;
       }
 case VERTICAL:
 {
-      ret=renderVerticalBar(canvas);
+      if (getPanModeStatus()) {
+        ret=drawClipVerticalBar(canvas);
+      }
+ else {
+        ret=drawVerticalBar(canvas);
+      }
       break;
     }
 }

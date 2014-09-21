@@ -1,0 +1,9 @@
+{
+  this.mMoveX=this.mMoveY=0.0f;
+  renderVerticalBarDataAxis(canvas);
+  renderVerticalBarCategoryAxis(canvas);
+  renderVerticalBar(canvas);
+  renderVerticalBarAxis(canvas);
+  plotLegend.renderBarKey(canvas,this.mDataSet);
+  return true;
+}

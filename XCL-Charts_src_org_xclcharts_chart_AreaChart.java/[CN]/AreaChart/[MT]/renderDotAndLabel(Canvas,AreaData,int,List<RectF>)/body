@@ -14,10 +14,11 @@
     RectF dot=lstDots.get(i);
     if (!pLine.getDotStyle().equals(XEnum.DotStyle.HIDE)) {
       PlotDot pDot=pLine.getPlotDot();
-      float rendEndX=add(dot.right,pDot.getDotRadius());
-      RectF rect=PlotDotRender.getInstance().renderDot(canvas,pDot,dot.left,dot.top,dot.right,dot.bottom,pLine.getDotPaint());
+      float radius=pDot.getDotRadius();
+      float rendEndX=add(dot.right,radius);
+      PlotDotRender.getInstance().renderDot(canvas,pDot,dot.left,dot.top,dot.right,dot.bottom,pLine.getDotPaint());
       dot.right=rendEndX;
-      this.savePointRecord(dataID,childID,dot.right,dot.bottom,rect);
+      savePointRecord(dataID,childID,dot.right + mMoveX,dot.bottom + mMoveY,dot.right - 2 * radius + mMoveX,dot.bottom - radius + mMoveY,dot.right + mMoveX,dot.bottom + radius + mMoveY);
       childID++;
     }
     if (bd.getLabelVisible()) {

@@ -1,11 +1,14 @@
 {
-  boolean ret=true;
   try {
     super.postRender(canvas);
-    ret=renderPlot(canvas);
+    if (getPanModeStatus()) {
+      return drawClipVerticalPlot(canvas);
+    }
+ else {
+      return drawVerticalPlot(canvas);
+    }
   }
  catch (  Exception e) {
     throw e;
   }
-  return ret;
 }

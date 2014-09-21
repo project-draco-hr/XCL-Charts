@@ -7,14 +7,13 @@
     if (i == 0)     continue;
     dataAxis.setAxisTickCurrentID(i);
     currentY=MathHelper.getInstance().sub(plotArea.getBottom(),i * YSteps);
+    if (dataAxis.getTickLabelVisible() && isrenderVerticalBarDataAxisTick(currentY,mMoveY))     continue;
     Double currentTickLabel=MathHelper.getInstance().add(dataAxis.getAxisMin(),(i * dataAxis.getAxisSteps()));
     if (i == tickCount) {
       dataAxis.renderAxisHorizontalTick(this,canvas,plotArea.getRight(),plotArea.getTop(),Double.toString(currentTickLabel));
     }
  else {
-      this.dataAxis.renderAxisHorizontalTick(this,canvas,plotArea.getRight(),MathHelper.getInstance().add(currentY,markHeight),Double.toString(currentTickLabel));
+      dataAxis.renderAxisHorizontalTick(this,canvas,plotArea.getRight(),MathHelper.getInstance().add(currentY,markHeight),Double.toString(currentTickLabel));
     }
   }
-  float paintWidth=MathHelper.getInstance().div(dataAxis.getAxisPaint().getStrokeWidth(),2f);
-  dataAxis.renderAxis(canvas,plotArea.getRight() + paintWidth,plotArea.getBottom(),plotArea.getRight() + paintWidth,plotArea.getTop());
 }

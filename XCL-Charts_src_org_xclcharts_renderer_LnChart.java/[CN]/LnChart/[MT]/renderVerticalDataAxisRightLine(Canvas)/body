@@ -1,0 +1,6 @@
+{
+  if (mRightAxisVisible) {
+    float paintWidth=MathHelper.getInstance().div(dataAxis.getAxisPaint().getStrokeWidth(),2f);
+    dataAxis.renderAxis(canvas,plotArea.getRight() + paintWidth,plotArea.getBottom(),plotArea.getRight() + paintWidth,plotArea.getTop());
+  }
+}

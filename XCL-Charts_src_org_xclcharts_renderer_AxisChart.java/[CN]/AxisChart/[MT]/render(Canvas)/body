@@ -1,9 +1,0 @@
-{
-  try {
-    super.render(canvas);
-  }
- catch (  Exception e) {
-    throw e;
-  }
-  return true;
-}

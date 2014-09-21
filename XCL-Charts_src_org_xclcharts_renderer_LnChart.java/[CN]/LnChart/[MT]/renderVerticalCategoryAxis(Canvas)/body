@@ -10,6 +10,7 @@
   }
   for (int i=0; i < dataSet.size(); i++) {
     currentX=MathHelper.getInstance().add(plotArea.getLeft(),(i) * XSteps);
+    if (categoryAxis.getTickLabelVisible() && isRenderVerticalCategoryAxisTick(currentX,this.mMoveX))     continue;
     if (plotGrid.isShowVerticalLines()) {
       if (i > 0 && i + 1 < dataSet.size())       plotGrid.renderGridLinesVertical(canvas,currentX,plotArea.getBottom(),currentX,plotArea.getTop());
     }
@@ -20,14 +21,7 @@
       categoryAxis.renderAxisVerticalTick(canvas,currentX,plotArea.getBottom(),dataSet.get(i));
     }
   }
-  if (mRightAxisVisible) {
-    categoryAxis.renderAxis(canvas,plotArea.getRight(),plotArea.getBottom(),plotArea.getRight(),plotArea.getTop());
-  }
- else {
+  if (!mRightAxisVisible) {
     plotGrid.renderGridLinesVertical(canvas,plotArea.getRight(),plotArea.getBottom(),plotArea.getRight(),plotArea.getTop());
-  }
-  categoryAxis.renderAxis(canvas,plotArea.getLeft(),plotArea.getBottom(),plotArea.getRight(),plotArea.getBottom());
-  if (!categoryAxis.getAxisLineVisible() || !categoryAxis.getVisible()) {
-    plotGrid.renderGridLinesVertical(canvas,plotArea.getLeft(),plotArea.getBottom(),plotArea.getLeft(),plotArea.getTop());
   }
 }

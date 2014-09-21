@@ -1,0 +1,13 @@
+{
+  float xMargin=0.0f;
+  if (categoryAxis.getTickLabelVisible()) {
+    if (categoryAxis.getHorizontalTickAlign() != Align.LEFT) {
+      String str=categoryAxis.getDataSet().get(0);
+      xMargin=DrawHelper.getInstance().getTextWidth(categoryAxis.getTickLabelPaint(),str);
+      if (categoryAxis.getHorizontalTickAlign() == Align.CENTER) {
+        xMargin=div(xMargin,2);
+      }
+    }
+  }
+  return xMargin;
+}

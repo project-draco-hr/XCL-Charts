@@ -1,0 +1,6 @@
+{
+  mXScale=xScale;
+  mYScale=yScale;
+  mCenterX=centerX;
+  mCenterY=centerY;
+}

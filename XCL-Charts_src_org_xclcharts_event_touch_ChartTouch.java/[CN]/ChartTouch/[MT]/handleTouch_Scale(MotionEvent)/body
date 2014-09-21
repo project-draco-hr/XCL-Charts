@@ -1,0 +1,25 @@
+{
+switch (event.getActionMasked()) {
+case MotionEvent.ACTION_DOWN:
+    scaleRate=1.0f;
+  break;
+case MotionEvent.ACTION_UP:
+break;
+case MotionEvent.ACTION_POINTER_UP:
+break;
+case MotionEvent.ACTION_POINTER_DOWN:
+oldDist=this.spacing(event);
+break;
+case MotionEvent.ACTION_MOVE:
+newDist=spacing(event);
+halfDist=newDist / 2;
+if (Float.compare(newDist,10.0f) == 1) {
+scaleRate=newDist / oldDist;
+mChart.setScale(scaleRate,scaleRate,event.getX() - halfDist,event.getY() - halfDist);
+mView.invalidate();
+}
+break;
+default :
+break;
+}
+}

@@ -1,0 +1,10 @@
+{
+  try {
+    if (null == canvas)     return false;
+    super.render(canvas);
+    return true;
+  }
+ catch (  Exception e) {
+    throw e;
+  }
+}
