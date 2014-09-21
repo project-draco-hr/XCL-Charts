@@ -17,7 +17,6 @@
       arrPoint[j]=new PointF(point.x,point.y);
     }
  else {
-      canvas.drawArc(mArcRF0,offsetAngle,currentAngle,true,geArcPaint());
       arrPoint[j]=new PointF(cirX,cirY);
     }
     saveArcRecord(j,cirX + this.mTranslateXY[0],cirY + this.mTranslateXY[1],radius,offsetAngle,currentAngle);

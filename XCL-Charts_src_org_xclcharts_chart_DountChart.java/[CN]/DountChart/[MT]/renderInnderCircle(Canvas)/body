@@ -1,0 +1,5 @@
+{
+  float cirX=plotArea.getCenterX();
+  float cirY=plotArea.getCenterY();
+  canvas.drawCircle(cirX,cirY,mFillRadius,mPaintFill);
+}

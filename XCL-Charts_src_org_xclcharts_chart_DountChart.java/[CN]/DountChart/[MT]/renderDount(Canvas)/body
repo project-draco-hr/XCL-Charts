@@ -1,0 +1,5 @@
+{
+  renderInnderCircle(canvas);
+  plotAttrInfoRender.renderAttrInfo(canvas,plotArea.getCenterX(),plotArea.getCenterY(),this.getRadius());
+  renderCenterText(canvas);
+}
