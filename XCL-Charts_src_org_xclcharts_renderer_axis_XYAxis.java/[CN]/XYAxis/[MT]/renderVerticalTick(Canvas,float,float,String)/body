@@ -11,7 +11,7 @@ case TOP:
         marksStopY=centerY;
       }
       if (this.getTickLabelVisible()) {
-        labelsStartY=MathHelper.getInstance().sub(marksStartY,getTickLabelMargin() + DrawHelper.getInstance().getPaintFontHeight(getTickLabelPaint()));
+        labelsStartY=MathHelper.getInstance().sub(marksStartY,getTickLabelMargin());
       }
       break;
     }

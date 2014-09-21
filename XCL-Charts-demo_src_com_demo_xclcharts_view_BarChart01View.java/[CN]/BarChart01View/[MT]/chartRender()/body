@@ -37,6 +37,7 @@
     chart.getCategoryAxis().getTickMarksPaint().setColor(axisColor);
     chart.getDataAxis().setDetailModeSteps(5);
     chart.ActiveListenItemClick();
+    chart.getPlotArea().extWidth(200f);
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

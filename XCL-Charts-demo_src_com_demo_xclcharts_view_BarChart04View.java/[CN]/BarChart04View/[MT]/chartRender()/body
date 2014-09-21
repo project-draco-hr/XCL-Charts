@@ -37,6 +37,7 @@
 );
     chart.getPlotLegend().hideLegend();
     chart.getBar().setBarInnerMargin(0.1d);
+    chart.disablePanMode();
   }
  catch (  Exception e) {
     e.printStackTrace();

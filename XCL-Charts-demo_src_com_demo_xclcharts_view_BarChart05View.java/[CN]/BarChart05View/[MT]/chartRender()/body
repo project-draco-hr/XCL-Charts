@@ -33,6 +33,7 @@
     }
 );
     chart.getPlotLegend().hideLegend();
+    chart.disablePanMode();
   }
  catch (  Exception e) {
     e.printStackTrace();
