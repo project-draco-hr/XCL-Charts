@@ -41,4 +41,5 @@
     Log.e(TAG,e.toString());
   }
   chart.ActiveListenItemClick();
+  chart.showClikedFocus();
 }

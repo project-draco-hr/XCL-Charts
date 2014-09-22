@@ -2,9 +2,9 @@
   try {
     super.postRender(canvas);
     initPositionRecord();
-    return renderFocusShape(canvas);
   }
  catch (  Exception e) {
     throw e;
   }
+  return true;
 }

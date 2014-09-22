@@ -29,6 +29,7 @@
   float curRadius=0.0f;
   getPointPaint().setColor(bd.getColor());
   if (bd.getBorderColor() != -1)   getPointBorderPaint().setColor(bd.getBorderColor());
+  float itemAngle=bd.getItemLabelRotateAngle();
   Iterator iter=chartValues.entrySet().iterator();
   while (iter.hasNext()) {
     Entry entry=(Entry)iter.next();
@@ -64,7 +65,7 @@
     }
     childID++;
     if (bd.getLabelVisible()) {
-      canvas.drawText(getFormatterDotLabel(Double.toString(xValue) + "," + Double.toString(yValue)+ " : "+ Double.toString(bubble)),lineStopX,lineStopY,bd.getDotLabelPaint());
+      DrawHelper.getInstance().drawRotateText(getFormatterDotLabel(Double.toString(xValue) + "," + Double.toString(yValue)+ " : "+ Double.toString(bubble)),lineStopX,lineStopY,itemAngle,canvas,bd.getDotLabelPaint());
     }
     lineStartX=lineStopX;
     lineStartY=lineStopY;

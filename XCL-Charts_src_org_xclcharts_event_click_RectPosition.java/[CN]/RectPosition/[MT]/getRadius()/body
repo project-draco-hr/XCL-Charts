@@ -1,0 +1,5 @@
+{
+  float radius=0.0f;
+  radius=(mRectF.bottom - mExtValue) - (mRectF.top + mExtValue);
+  return radius;
+}

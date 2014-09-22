@@ -1,0 +1,4 @@
+{
+  if (null == mFocusPaint)   mFocusPaint=new Paint(Paint.ANTI_ALIAS_FLAG);
+  return mFocusPaint;
+}

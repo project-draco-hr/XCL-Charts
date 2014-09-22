@@ -1,4 +1,5 @@
 {
+  setX(x);
   setMax(max);
   setMin(min);
 }

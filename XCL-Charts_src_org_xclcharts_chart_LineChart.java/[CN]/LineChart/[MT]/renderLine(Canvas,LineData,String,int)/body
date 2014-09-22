@@ -26,6 +26,7 @@
  else {
     XSteps=div(getAxisScreenWidth(),(dataSet.size() - 1));
   }
+  float itemAngle=bd.getItemLabelRotateAngle();
   for (  Double bv : chartValues) {
     float vaxlen=(float)MathHelper.getInstance().sub(bv,dataAxis.getAxisMin());
     float fvper=div(vaxlen,axisDataHeight);
@@ -63,7 +64,7 @@
           lineEndX=rendEndX;
         }
         if (bd.getLabelVisible()) {
-          canvas.drawText(this.getFormatterItemLabel(bv),lineEndX,lineEndY,pLine.getDotLabelPaint());
+          DrawHelper.getInstance().drawRotateText(this.getFormatterItemLabel(bv),lineEndX,lineEndY,itemAngle,canvas,pLine.getDotLabelPaint());
         }
       }
  else {

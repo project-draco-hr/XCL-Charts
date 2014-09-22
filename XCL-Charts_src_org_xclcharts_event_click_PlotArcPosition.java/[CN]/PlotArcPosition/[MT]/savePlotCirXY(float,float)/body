@@ -1,5 +1,5 @@
 {
-  mCirXY=new PointF();
+  if (null == mCirXY)   mCirXY=new PointF();
   mCirXY.x=x;
   mCirXY.y=y;
 }

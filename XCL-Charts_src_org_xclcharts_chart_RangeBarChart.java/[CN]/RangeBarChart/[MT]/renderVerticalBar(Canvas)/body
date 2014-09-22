@@ -7,11 +7,13 @@
   float XSteps=getVerticalXSteps(cateDataSet.size() + 1);
   float currentX=0.0f, barMaxPos=0.0f, barMinPos=0.0f;
   float barWidthHalf=mBarWidth / 2;
+  float axisScreenWidth=getAxisScreenWidth();
   float fontHeight=DrawHelper.getInstance().getPaintFontHeight(mFlatBar.getItemLabelPaint());
   int dataSetSize=mDataSet.size();
   for (int i=0; i < dataSetSize; i++) {
     RangeBarData bd=mDataSet.get(i);
-    currentX=add(plotArea.getLeft(),mul((i + 1),XSteps));
+    currentX=(float)(axisScreenWidth * ((bd.getX() - mMinValue) / (mMaxValue - mMinValue)));
+    currentX=add(plotArea.getLeft(),currentX);
     float[] pos=cataPosition(bd.getMin(),bd.getMax());
     barMaxPos=sub(plotArea.getBottom(),pos[0]);
     barMinPos=sub(plotArea.getBottom(),pos[1]);

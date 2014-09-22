@@ -6,6 +6,7 @@
   int childID=0;
   LinkedHashMap<Double,Double> chartValues=spData.getLineDataSet();
   if (null == chartValues)   return false;
+  float itemAngle=spData.getItemLabelRotateAngle();
   int i=0;
   Iterator iter=chartValues.entrySet().iterator();
   while (iter.hasNext()) {
@@ -24,7 +25,7 @@
       childID++;
     }
     if (spData.getLabelVisible()) {
-      canvas.drawText(getFormatterDotLabel(Double.toString(xValue) + "," + Double.toString(yValue)),dot.right,dot.bottom,pLine.getDotLabelPaint());
+      DrawHelper.getInstance().drawRotateText(getFormatterDotLabel(Double.toString(xValue) + "," + Double.toString(yValue)),dot.right,dot.bottom,itemAngle,canvas,pLine.getDotLabelPaint());
     }
     i++;
   }

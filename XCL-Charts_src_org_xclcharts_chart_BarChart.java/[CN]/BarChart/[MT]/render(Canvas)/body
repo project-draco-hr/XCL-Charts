@@ -2,6 +2,7 @@
   try {
     if (null == canvas)     return false;
     super.render(canvas);
+    renderFocusShape(canvas);
     return true;
   }
  catch (  Exception e) {

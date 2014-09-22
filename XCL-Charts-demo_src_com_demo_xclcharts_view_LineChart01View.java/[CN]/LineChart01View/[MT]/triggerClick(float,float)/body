@@ -4,4 +4,15 @@
   LineData lData=chartData.get(record.getDataID());
   Double lValue=lData.getLinePoint().get(record.getDataChildID());
   Toast.makeText(this.getContext(),record.getPointInfo() + " Key:" + lData.getLineKey()+ " Label:"+ lData.getLabel()+ " Current Value:"+ Double.toString(lValue),Toast.LENGTH_SHORT).show();
+  float r=record.getRadius();
+  chart.showFocusPointF(record.getPosition(),r + r * 0.5f);
+  chart.getFocusPaint().setStyle(Style.STROKE);
+  chart.getFocusPaint().setStrokeWidth(3);
+  if (record.getDataID() >= 3) {
+    chart.getFocusPaint().setColor(Color.BLUE);
+  }
+ else {
+    chart.getFocusPaint().setColor(Color.RED);
+  }
+  this.invalidate();
 }

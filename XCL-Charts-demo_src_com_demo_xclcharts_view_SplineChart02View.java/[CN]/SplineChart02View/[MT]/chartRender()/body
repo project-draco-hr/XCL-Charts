@@ -31,6 +31,8 @@
 );
     chart.setTitle("?????????????????????");
     chart.addSubtitle("(XCL-Charts Demo)");
+    chart.ActiveListenItemClick();
+    chart.showClikedFocus();
   }
  catch (  Exception e) {
     e.printStackTrace();

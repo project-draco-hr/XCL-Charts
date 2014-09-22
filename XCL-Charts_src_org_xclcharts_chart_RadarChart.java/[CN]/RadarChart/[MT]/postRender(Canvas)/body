@@ -5,6 +5,7 @@
     plotArea.render(canvas);
     renderTitle(canvas);
     renderPlot(canvas);
+    renderFocusShape(canvas);
   }
  catch (  Exception e) {
     throw e;

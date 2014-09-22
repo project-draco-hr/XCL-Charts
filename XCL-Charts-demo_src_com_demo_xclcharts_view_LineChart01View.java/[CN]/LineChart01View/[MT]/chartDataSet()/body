@@ -11,6 +11,7 @@
   lineData1.getDotLabelPaint().setColor(Color.BLUE);
   lineData1.getDotLabelPaint().setTextSize(22);
   lineData1.getDotLabelPaint().setTextAlign(Align.LEFT);
+  lineData1.setItemLabelRotateAngle(45.f);
   LinkedList<Double> dataSeries2=new LinkedList<Double>();
   dataSeries2.add((double)30);
   dataSeries2.add((double)42);

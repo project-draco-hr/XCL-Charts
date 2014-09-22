@@ -1,4 +1,17 @@
 {
   if (!mShowClikedFocus)   return true;
+  if (null != mFocusPoint) {
+    canvas.drawCircle(mFocusPoint.x,mFocusPoint.y,mFocusRadius,getFocusPaint());
+    mFocusPoint=null;
+  }
+ else   if (null != mFocusRect) {
+    canvas.save();
+    canvas.clipRect(plotArea.getLeft(),plotArea.getTop(),plotArea.getRight(),plotArea.getBottom());
+    canvas.drawRect(mFocusRect,getFocusPaint());
+    canvas.restore();
+    mFocusRect=null;
+  }
+ else {
+  }
   return true;
 }

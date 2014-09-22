@@ -2,13 +2,15 @@
   RangeBarData data1=new RangeBarData();
   data1.setMin(200d);
   data1.setMax(270d);
+  data1.setX(10d);
   RangeBarData data2=new RangeBarData();
   data2.setMin(300d);
   data2.setMax(570d);
+  data2.setX(20d);
   BarDataSet.add(data1);
   BarDataSet.add(data2);
-  BarDataSet.add(new RangeBarData(400d,700d));
-  BarDataSet.add(new RangeBarData(350d,650d));
-  BarDataSet.add(new RangeBarData(500d,780d));
-  BarDataSet.add(new RangeBarData(720d,980d));
+  BarDataSet.add(new RangeBarData(30d,400d,700d));
+  BarDataSet.add(new RangeBarData(40d,350d,650d));
+  BarDataSet.add(new RangeBarData(60d,500d,780d));
+  BarDataSet.add(new RangeBarData(90d,720d,980d));
 }

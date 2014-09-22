@@ -8,6 +8,8 @@
     chart.getDataAxis().setAxisMin(0);
     chart.getDataAxis().setAxisSteps(64);
     chart.getDataAxis().setDetailModeSteps(4);
+    chart.setCategoryAxisMax(100);
+    chart.setCategoryAxisMin(0);
     chart.getCategoryAxis().setTickLabelRotateAngle(-45f);
     chart.getDataAxis().getAxisPaint().setColor(Color.rgb(79,200,100));
     chart.getCategoryAxis().getAxisPaint().setColor(Color.rgb(79,200,100));

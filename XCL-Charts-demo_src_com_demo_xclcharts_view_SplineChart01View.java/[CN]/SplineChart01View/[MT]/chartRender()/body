@@ -32,6 +32,7 @@
     chart.addSubtitle("(XCL-Charts Demo)");
     chart.ActiveListenItemClick();
     chart.extPointClickRange(5);
+    chart.showClikedFocus();
   }
  catch (  Exception e) {
     e.printStackTrace();

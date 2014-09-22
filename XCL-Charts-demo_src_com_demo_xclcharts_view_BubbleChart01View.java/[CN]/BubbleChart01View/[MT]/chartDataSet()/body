@@ -35,6 +35,7 @@
   BubbleData dataSeries2=new BubbleData("?????????",linePoint2,linePoint2_bubble,(int)Color.rgb(255,165,132));
   dataSeries2.setLabelVisible(true);
   dataSeries2.getDotLabelPaint().setColor(Color.rgb(69,199,101));
+  dataSeries2.setItemLabelRotateAngle(45.f);
   LinkedHashMap<Double,Double> linePoint3=new LinkedHashMap<Double,Double>();
   linePoint3.put(10d,70d);
   linePoint3.put(25d,85d);

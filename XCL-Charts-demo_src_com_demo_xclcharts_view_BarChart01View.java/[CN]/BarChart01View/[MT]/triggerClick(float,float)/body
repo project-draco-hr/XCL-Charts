@@ -4,4 +4,9 @@
   BarData bData=chartData.get(record.getDataID());
   Double bValue=bData.getDataSet().get(record.getDataChildID());
   Toast.makeText(this.getContext()," Key:" + bData.getKey() + " Current Value:"+ Double.toString(bValue)+ " info:"+ record.getRectInfo(),Toast.LENGTH_SHORT).show();
+  chart.showFocusRectF(record.getRectF());
+  chart.getFocusPaint().setStyle(Style.STROKE);
+  chart.getFocusPaint().setStrokeWidth(3);
+  chart.getFocusPaint().setColor(Color.GREEN);
+  this.invalidate();
 }

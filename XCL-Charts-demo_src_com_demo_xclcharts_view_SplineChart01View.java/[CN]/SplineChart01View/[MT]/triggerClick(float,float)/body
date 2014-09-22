@@ -12,6 +12,17 @@
       Double xValue=(Double)entry.getKey();
       Double yValue=(Double)entry.getValue();
       Toast.makeText(this.getContext(),record.getPointInfo() + " Key:" + lData.getLineKey()+ " Current Value(key,value):"+ Double.toString(xValue)+ ","+ Double.toString(yValue),Toast.LENGTH_SHORT).show();
+      float r=record.getRadius();
+      chart.showFocusPointF(record.getPosition(),r * 2);
+      chart.getFocusPaint().setStyle(Style.STROKE);
+      chart.getFocusPaint().setStrokeWidth(3);
+      if (record.getDataID() >= 2) {
+        chart.getFocusPaint().setColor(Color.BLUE);
+      }
+ else {
+        chart.getFocusPaint().setColor(Color.RED);
+      }
+      this.invalidate();
       break;
     }
     i++;

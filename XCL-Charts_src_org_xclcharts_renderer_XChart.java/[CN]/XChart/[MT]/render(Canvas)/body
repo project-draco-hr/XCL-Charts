@@ -2,9 +2,11 @@
   boolean ret=true;
   try {
     if (null == canvas)     return false;
+    canvas.save();
     scaleChart(canvas);
     ret=postRender(canvas);
     renderBorder(canvas);
+    canvas.restore();
     return ret;
   }
  catch (  Exception e) {
