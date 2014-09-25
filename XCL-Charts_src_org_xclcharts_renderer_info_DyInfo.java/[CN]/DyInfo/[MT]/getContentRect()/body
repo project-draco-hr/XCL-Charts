@@ -1,0 +1,33 @@
+{
+  int countDots=mClickedDotStyle.size();
+  int countPaint=mClickedPaint.size();
+  int countText=mClickedText.size();
+  float textWidth=0.0f, textHeight=0.0f;
+  float maxWidth=0.0f;
+  float maxHeight=0.0f;
+  float rowWidth=0.0f;
+  Paint paint=null;
+  String text="";
+  for (int i=0; i < countText; i++) {
+    if (countPaint > i)     paint=mClickedPaint.get(i);
+    if (null == paint)     break;
+    text=mClickedText.get(i);
+    textHeight=DrawHelper.getInstance().getPaintFontHeight(paint);
+    if (text.length() > 0)     textWidth=DrawHelper.getInstance().getTextWidth(paint,text);
+ else     textWidth=0;
+    rowWidth=textWidth;
+    PlotDot plot=mClickedDotStyle.get(i);
+    if (countDots > i && plot.getDotStyle() != XEnum.DotStyle.HIDE) {
+      rowWidth+=textHeight + mColSpan;
+    }
+    if (Float.compare(rowWidth,maxWidth) == 1) {
+      maxWidth=rowWidth;
+    }
+    maxHeight+=textHeight;
+  }
+  maxHeight+=2 * mMargin + countText * mRowSpan;
+  maxWidth+=2 * mMargin;
+  mRectWidth=maxWidth;
+  mRectHeight=maxHeight;
+  getInfoRect();
+}

@@ -1,0 +1,4 @@
+{
+  if (null == mDyLegend)   mDyLegend=new LegendRender();
+  return mDyLegend;
+}

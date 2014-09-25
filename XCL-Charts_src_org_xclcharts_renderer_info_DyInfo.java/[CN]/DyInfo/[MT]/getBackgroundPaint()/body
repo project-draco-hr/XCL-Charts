@@ -1,0 +1,8 @@
+{
+  if (null == mPaintBackground) {
+    mPaintBackground=new Paint(Paint.ANTI_ALIAS_FLAG);
+    mPaintBackground.setAlpha(100);
+    mPaintBackground.setColor(Color.YELLOW);
+  }
+  return mPaintBackground;
+}

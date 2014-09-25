@@ -1,4 +1,0 @@
-{
-  if (null != mChartTouch)   return true;
-  return initArray(INIT_TOUCH);
-}

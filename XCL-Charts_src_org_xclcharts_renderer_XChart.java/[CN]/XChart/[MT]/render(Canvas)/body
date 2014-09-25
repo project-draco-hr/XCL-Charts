@@ -6,6 +6,10 @@
     scaleChart(canvas);
     ret=postRender(canvas);
     renderBorder(canvas);
+    if (null != mDyLegend) {
+      mDyLegend.setPlotWH(this.getWidth(),this.getHeight());
+      mDyLegend.renderInfo(canvas);
+    }
     canvas.restore();
     return ret;
   }

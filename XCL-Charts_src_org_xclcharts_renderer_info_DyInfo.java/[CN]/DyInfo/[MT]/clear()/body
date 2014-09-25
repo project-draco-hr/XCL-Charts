@@ -1,0 +1,5 @@
+{
+  if (null != mClickedDotStyle)   mClickedDotStyle.clear();
+  if (null != mClickedText)   mClickedText.clear();
+  if (null != mClickedPaint)   mClickedPaint.clear();
+}

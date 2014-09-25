@@ -1,0 +1,5 @@
+{
+  PlotDot dot=new PlotDot();
+  dot.setDotStyle(XEnum.DotStyle.HIDE);
+  addInfo(dot,text,paint);
+}

@@ -1,0 +1,5 @@
+{
+  setStyle(XEnum.DyInfoStyle.ROUNDRECT);
+  setRoundRectX(x);
+  setRoundRectY(y);
+}

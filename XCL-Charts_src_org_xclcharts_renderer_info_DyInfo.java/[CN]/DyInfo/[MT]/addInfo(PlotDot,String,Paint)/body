@@ -1,0 +1,8 @@
+{
+  if (null == mClickedDotStyle)   mClickedDotStyle=new ArrayList<PlotDot>();
+  if (null == mClickedText)   mClickedText=new ArrayList<String>();
+  if (null == mClickedPaint)   mClickedPaint=new ArrayList<Paint>();
+  mClickedDotStyle.add(dotStyle);
+  mClickedText.add(text);
+  mClickedPaint.add(paint);
+}

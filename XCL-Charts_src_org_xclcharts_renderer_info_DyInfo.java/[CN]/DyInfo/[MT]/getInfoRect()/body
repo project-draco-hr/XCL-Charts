@@ -1,0 +1,25 @@
+{
+switch (mPositionAlign) {
+case LEFT:
+    mRect.left=mCenterXY.x - mRectWidth;
+  mRect.right=mCenterXY.x;
+mRect.top=mCenterXY.y - mRectHeight;
+mRect.bottom=mCenterXY.y;
+break;
+case CENTER:
+float halfWidth=mRectWidth / 2;
+mRect.left=mCenterXY.x - halfWidth;
+mRect.right=mCenterXY.x + halfWidth;
+mRect.top=mCenterXY.y - mRectHeight;
+mRect.bottom=mCenterXY.y;
+break;
+case RIGHT:
+mRect.left=mCenterXY.x;
+mRect.right=mCenterXY.x + mRectWidth;
+mRect.top=mCenterXY.y - mRectHeight;
+mRect.bottom=mCenterXY.y;
+break;
+default :
+break;
+}
+}

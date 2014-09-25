@@ -39,6 +39,26 @@
     chart.ActiveListenItemClick();
     chart.showClikedFocus();
     chart.getPlotArea().extWidth(200f);
+    chart.disableScale();
+    Paint pDyLegend=new Paint(Paint.ANTI_ALIAS_FLAG);
+    PlotDot dotDyLegend=new PlotDot();
+    chart.getDyLegend().setPosition(0.8f,0.3f);
+    chart.getDyLegend().getBackgroundPaint().setColor(Color.BLACK);
+    chart.getDyLegend().getBackgroundPaint().setAlpha(100);
+    chart.getDyLegend().setRowSpan(20.f);
+    pDyLegend.setColor(Color.GREEN);
+    dotDyLegend.setDotStyle(XEnum.DotStyle.RECT);
+    chart.getDyLegend().setStyle(XEnum.DyInfoStyle.ROUNDRECT);
+    chart.getDyLegend().addLegend(dotDyLegend,"?????????",pDyLegend);
+    Paint pDyLegend2=new Paint(Paint.ANTI_ALIAS_FLAG);
+    pDyLegend2.setColor(Color.RED);
+    chart.getDyLegend().addLegend(dotDyLegend,"?????????",pDyLegend2);
+    Paint pDyLegend3=new Paint(Paint.ANTI_ALIAS_FLAG);
+    pDyLegend3.setColor(Color.CYAN);
+    chart.getDyLegend().addLegend(dotDyLegend,"?????????",pDyLegend3);
+    Paint pDyLegend4=new Paint(Paint.ANTI_ALIAS_FLAG);
+    pDyLegend4.setColor(Color.YELLOW);
+    chart.getDyLegend().addLegend(dotDyLegend,"?????????",pDyLegend4);
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

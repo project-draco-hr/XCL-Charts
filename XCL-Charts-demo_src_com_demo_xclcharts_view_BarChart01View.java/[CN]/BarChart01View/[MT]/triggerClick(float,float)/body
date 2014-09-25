@@ -3,10 +3,15 @@
   if (null == record)   return;
   BarData bData=chartData.get(record.getDataID());
   Double bValue=bData.getDataSet().get(record.getDataChildID());
-  Toast.makeText(this.getContext()," Key:" + bData.getKey() + " Current Value:"+ Double.toString(bValue)+ " info:"+ record.getRectInfo(),Toast.LENGTH_SHORT).show();
   chart.showFocusRectF(record.getRectF());
   chart.getFocusPaint().setStyle(Style.STROKE);
   chart.getFocusPaint().setStrokeWidth(3);
   chart.getFocusPaint().setColor(Color.GREEN);
+  pToolTip.setColor(Color.RED);
+  dotToolTip.setDotStyle(XEnum.DotStyle.RECT);
+  chart.getToolTip().setCurrentXY(x,y);
+  chart.getToolTip().setStyle(XEnum.DyInfoStyle.ROUNDRECT);
+  chart.getToolTip().addToolTip(dotToolTip,bData.getKey(),pToolTip);
+  chart.getToolTip().addToolTip(" Current Value:" + Double.toString(bValue),pToolTip);
   this.invalidate();
 }

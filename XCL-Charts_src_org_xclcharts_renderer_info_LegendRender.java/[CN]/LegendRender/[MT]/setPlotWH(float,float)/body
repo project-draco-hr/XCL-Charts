@@ -1,0 +1,3 @@
+{
+  setCenterXY(width * mXPercentage,height * mYPercentage);
+}

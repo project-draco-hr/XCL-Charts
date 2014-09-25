@@ -1,0 +1,4 @@
+{
+  touchChart(event);
+  return true;
+}

@@ -1,7 +1,0 @@
-{
-  if (!initArrayZoom())   return;
-  if (null == mChartZoom)   return;
-  for (int i=0; i < mChartZoom.length; i++) {
-    mChartZoom[i].setZoomRate(rate);
-  }
-}

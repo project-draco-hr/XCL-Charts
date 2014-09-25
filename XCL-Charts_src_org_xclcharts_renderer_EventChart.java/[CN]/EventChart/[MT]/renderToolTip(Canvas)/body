@@ -1,0 +1,4 @@
+{
+  if (null == mToolTip)   return;
+  mToolTip.renderInfo(canvas);
+}

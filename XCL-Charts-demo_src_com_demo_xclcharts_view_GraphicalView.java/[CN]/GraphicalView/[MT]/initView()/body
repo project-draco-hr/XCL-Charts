@@ -1,4 +1,0 @@
-{
-  disableHardwareAccelerated();
-  getScreenInfo();
-}

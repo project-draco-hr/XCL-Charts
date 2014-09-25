@@ -1,4 +1,0 @@
-{
-  if (null != mChartZoom)   return true;
-  return initArray(INIT_ZOOM);
-}

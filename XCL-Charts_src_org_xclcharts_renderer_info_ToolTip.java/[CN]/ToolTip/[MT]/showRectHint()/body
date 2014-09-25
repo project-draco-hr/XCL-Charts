@@ -1,0 +1,3 @@
+{
+  setStyle(XEnum.DyInfoStyle.RECT);
+}

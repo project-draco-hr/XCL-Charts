@@ -1,0 +1,4 @@
+{
+  if (null == mToolTip)   mToolTip=new ToolTipRender();
+  return mToolTip;
+}
