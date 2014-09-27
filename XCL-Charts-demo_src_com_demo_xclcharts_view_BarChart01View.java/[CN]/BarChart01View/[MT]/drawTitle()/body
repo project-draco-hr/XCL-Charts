@@ -1,0 +1,12 @@
+{
+  chart.setTitle("???????????????????????????");
+  chart.addSubtitle("(XCL-Charts Demo)");
+  chart.getPlotTitle().getTitlePaint().setColor(Color.BLUE);
+  chart.getPlotTitle().getSubtitlePaint().setColor(Color.BLUE);
+  chart.ActiveListenItemClick();
+  chart.showClikedFocus();
+  chart.setPlotPanMode(XEnum.PanMode.HORIZONTAL);
+  chart.disableScale();
+  chart.getDataAxis().setVisible(true);
+  chart.getPlotLegend().showLegend();
+}

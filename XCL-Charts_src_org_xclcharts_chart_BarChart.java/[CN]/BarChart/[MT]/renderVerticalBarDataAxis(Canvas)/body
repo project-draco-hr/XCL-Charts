@@ -6,9 +6,14 @@
   double currentTickLabel=0d;
   float axisX=plotArea.getLeft();
   for (int i=0; i <= tickCount; i++) {
-    if (i == 0)     continue;
     dataAxis.setAxisTickCurrentID(i);
-    currentY=sub(plotArea.getBottom(),mul(i,YSteps));
+    if (0 == i) {
+      currentY=plotArea.getBottom();
+      currentTickLabel=dataAxis.getAxisMin();
+      dataAxis.renderAxisHorizontalTick(this,canvas,axisX,currentY,Double.toString(currentTickLabel));
+      continue;
+    }
+ else     currentY=sub(plotArea.getBottom(),mul(i,YSteps));
     if (dataAxis.getTickLabelVisible() && isrenderVerticalBarDataAxisTick(currentY,mMoveY))     continue;
     slen=i * dataAxis.getAxisSteps();
     currentTickLabel=MathHelper.getInstance().add(dataAxis.getAxisMin(),slen);

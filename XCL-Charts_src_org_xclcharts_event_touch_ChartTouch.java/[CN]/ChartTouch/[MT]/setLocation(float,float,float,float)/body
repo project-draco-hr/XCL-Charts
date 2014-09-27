@@ -8,5 +8,5 @@
     yy=(float)(txy[1] + newY - oldY);
   }
   mChart.setTranslateXY(xx,yy);
-  mView.invalidate();
+  mView.invalidate((int)mChart.getLeft(),(int)mChart.getTop(),(int)mChart.getRight(),(int)mChart.getBottom());
 }

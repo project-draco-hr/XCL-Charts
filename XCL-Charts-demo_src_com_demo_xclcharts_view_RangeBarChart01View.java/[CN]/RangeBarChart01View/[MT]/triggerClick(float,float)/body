@@ -1,6 +1,9 @@
 {
   BarPosition record=chart.getPositionRecord(x,y);
   if (null == record)   return;
-  RangeBarData bData=BarDataSet.get(record.getDataID());
-  Toast.makeText(this.getContext(),"info:" + record.getRectInfo() + " Min:"+ Double.toString(bData.getMin())+ " Max:"+ Double.toString(bData.getMax()),Toast.LENGTH_SHORT).show();
+  chart.showFocusRectF(record.getRectF());
+  chart.getFocusPaint().setStyle(Style.STROKE);
+  chart.getFocusPaint().setStrokeWidth(3);
+  chart.getFocusPaint().setColor(Color.RED);
+  this.invalidate();
 }

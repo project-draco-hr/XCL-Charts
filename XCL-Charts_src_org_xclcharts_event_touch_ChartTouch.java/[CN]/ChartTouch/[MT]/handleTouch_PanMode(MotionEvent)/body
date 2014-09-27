@@ -1,18 +1,21 @@
 {
-  int action=event.getAction();
+  action=event.getAction();
   if (action == MotionEvent.ACTION_MOVE) {
     if (oldX > 0 && oldY > 0) {
-      float newX=event.getX(0);
-      float newY=event.getY(0);
-      if (newX - oldX == 0 || newY - oldY == 0)       return;
-      setLocation(oldX,oldY,newX,newY);
-      oldX=newX;
-      oldY=newY;
+      newX=event.getX(0);
+      newY=event.getY(0);
+      if (Float.compare(Math.abs(newX - oldX),10.f) == 1 && Float.compare(Math.abs(newY - oldY),10.f) == 1) {
+        setLocation(oldX,oldY,newX,newY);
+        oldX=newX;
+        oldY=newY;
+      }
     }
   }
  else   if (action == MotionEvent.ACTION_DOWN) {
     oldX=event.getX(0);
     oldY=event.getY(0);
+  }
+ else   if (action == MotionEvent.ACTION_POINTER_DOWN) {
   }
  else   if (action == MotionEvent.ACTION_UP || action == MotionEvent.ACTION_POINTER_UP) {
     oldX=0.0f;

@@ -1,0 +1,8 @@
+{
+  chart.setTitle("?????????(Area Chart)");
+  chart.addSubtitle("(XCL-Charts Demo)");
+  chart.getAxisTitle().setLowerAxisTitle("(??????)");
+  chart.getPlotLegend().showLegend();
+  chart.ActiveListenItemClick();
+  chart.extPointClickRange(5);
+}

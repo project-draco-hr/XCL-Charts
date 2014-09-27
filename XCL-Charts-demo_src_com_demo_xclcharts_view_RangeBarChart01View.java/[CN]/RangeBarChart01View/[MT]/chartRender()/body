@@ -55,6 +55,7 @@
     chart.getBar().getBarPaint().setColor(Color.rgb(79,200,100));
     chart.setKey("??????");
     chart.ActiveListenItemClick();
+    chart.showClikedFocus();
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

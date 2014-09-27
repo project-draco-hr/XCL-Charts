@@ -36,6 +36,7 @@
   canvas.save();
   canvas.translate(mMoveX,mMoveY);
   if (renderPlot(canvas) == true) {
+    execGC();
   }
   canvas.restore();
   canvas.restore();

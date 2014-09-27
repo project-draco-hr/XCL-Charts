@@ -4,7 +4,7 @@
   float barInitY=plotArea.getBottom();
   List<String> dataSet=categoryAxis.getDataSet();
   if (null == dataSet)   return false;
-  float XSteps=div(plotArea.getWidth(),(dataSet.size() + 1));
+  float XSteps=div(plotArea.getPlotWidth(),(dataSet.size() + 1));
   List<BarData> chartDataSource=this.getDataSource();
   if (null == chartDataSource)   return false;
   int barNumber=getDatasetSize(chartDataSource);

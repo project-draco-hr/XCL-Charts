@@ -14,7 +14,10 @@
       Log.e(TAG,"????????????????????????.");
       return false;
     }
-    return renderVerticalBar(canvas);
+    renderVerticalBar(canvas);
+    renderFocusShape(canvas);
+    renderToolTip(canvas);
+    return true;
   }
  catch (  Exception e) {
     throw e;

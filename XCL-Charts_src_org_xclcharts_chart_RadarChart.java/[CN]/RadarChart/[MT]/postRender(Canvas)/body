@@ -6,6 +6,7 @@
     renderTitle(canvas);
     renderPlot(canvas);
     renderFocusShape(canvas);
+    renderToolTip(canvas);
   }
  catch (  Exception e) {
     throw e;

@@ -16,6 +16,7 @@
     if (mKeyLabelX + 2 * mRectWidth + strWidth > mXChart.getRight()) {
       mKeyLabelX=mPlotArea.getLeft();
       mKeyLabelY=mKeyLabelY + rectHeight * 2;
+      mKeyLabelY+=mRowSpan;
     }
     canvas.drawRect(mKeyLabelX,mKeyLabelY,mKeyLabelX + mRectWidth,mKeyLabelY - rectHeight,getLegendLabelPaint());
     getLegendLabelPaint().setTextAlign(Align.LEFT);

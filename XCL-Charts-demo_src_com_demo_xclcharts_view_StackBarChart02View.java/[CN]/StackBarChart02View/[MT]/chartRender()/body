@@ -37,6 +37,8 @@
 );
     chart.getBar().getItemLabelPaint().setColor(Color.rgb(225,43,44));
     chart.ActiveListenItemClick();
+    chart.showClikedFocus();
+    chart.setPlotPanMode(XEnum.PanMode.VERTICAL);
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

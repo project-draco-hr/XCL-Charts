@@ -5,6 +5,7 @@
     canvas.drawRect(mKeyLabelX,mKeyLabelY,mKeyLabelX - mRectWidth,mKeyLabelY - mTextHeight,getLegendLabelPaint());
     canvas.drawText(key,mKeyLabelX - mRectWidth,mKeyLabelY,getLegendLabelPaint());
     mKeyLabelY=MathHelper.getInstance().add(mKeyLabelY,mTextHeight);
+    mKeyLabelY+=mRowSpan;
     if (Float.compare(mKeyLabelY,mPlotArea.getBottom()) == 1 || Float.compare(mKeyLabelY,mPlotArea.getBottom()) == 0) {
       mKeyLabelX=mPlotArea.getLeft();
       mKeyLabelX=mPlotArea.getTop() + mTextHeight;
@@ -16,6 +17,7 @@
     tmpX=MathHelper.getInstance().add(mKeyLabelX,keyTextWidth);
     if (Float.compare(tmpX,mPlotArea.getRight()) == 1 || Float.compare(tmpX,mPlotArea.getRight()) == 0) {
       mKeyLabelY=MathHelper.getInstance().add(mKeyLabelY,mTextHeight);
+      mKeyLabelY+=mRowSpan;
       mKeyLabelX=mPlotArea.getLeft();
       mTotalTextWidth=0.0f;
     }

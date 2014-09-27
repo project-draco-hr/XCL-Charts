@@ -44,6 +44,7 @@
 );
     chart.ActiveListenItemClick();
     chart.setPlotPanMode(XEnum.PanMode.HORIZONTAL);
+    chart.getPlotArea().extWidth(200f);
   }
  catch (  Exception e) {
     e.printStackTrace();

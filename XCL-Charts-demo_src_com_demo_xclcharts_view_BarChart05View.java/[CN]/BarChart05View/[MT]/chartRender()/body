@@ -24,6 +24,7 @@
     }
 );
     chart.getBar().setItemLabelVisible(true);
+    chart.getBar().setBarStyle(XEnum.BarStyle.FILL);
     chart.setItemLabelFormatter(new IFormatterDoubleCallBack(){
       @Override public String doubleFormatter(      Double value){
         DecimalFormat df=new DecimalFormat("#0");

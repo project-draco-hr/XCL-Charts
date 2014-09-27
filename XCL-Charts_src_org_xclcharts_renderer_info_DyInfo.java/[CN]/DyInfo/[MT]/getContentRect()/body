@@ -16,9 +16,11 @@
     if (text.length() > 0)     textWidth=DrawHelper.getInstance().getTextWidth(paint,text);
  else     textWidth=0;
     rowWidth=textWidth;
-    PlotDot plot=mClickedDotStyle.get(i);
-    if (countDots > i && plot.getDotStyle() != XEnum.DotStyle.HIDE) {
-      rowWidth+=textHeight + mColSpan;
+    if (countDots > i) {
+      PlotDot plot=mClickedDotStyle.get(i);
+      if (plot.getDotStyle() != XEnum.DotStyle.HIDE) {
+        rowWidth+=textHeight + mColSpan;
+      }
     }
     if (Float.compare(rowWidth,maxWidth) == 1) {
       maxWidth=rowWidth;

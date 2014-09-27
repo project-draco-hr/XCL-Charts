@@ -31,6 +31,7 @@
   canvas.save();
   canvas.translate(mMoveX,mMoveY);
   renderVerticalBar(canvas);
+  execGC();
   canvas.restore();
   canvas.restore();
   canvas.restore();

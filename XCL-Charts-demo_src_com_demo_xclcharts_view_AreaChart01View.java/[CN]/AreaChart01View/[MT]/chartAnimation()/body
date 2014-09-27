@@ -1,0 +1,17 @@
+{
+  try {
+    chart.getPlotLegend().hideLegend();
+    int[] ltrb=getBarLnDefaultSpadding();
+    for (int i=8; i > 0; i--) {
+      Thread.sleep(100);
+      chart.setPadding(ltrb[0],ltrb[1],i * ltrb[2],ltrb[3]);
+      if (1 == i) {
+        drawTitle();
+      }
+      postInvalidate();
+    }
+  }
+ catch (  Exception e) {
+    Thread.currentThread().interrupt();
+  }
+}

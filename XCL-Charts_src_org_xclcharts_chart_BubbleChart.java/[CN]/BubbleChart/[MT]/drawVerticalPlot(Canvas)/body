@@ -2,6 +2,7 @@
   renderVerticalDataAxis(canvas);
   renderVerticalCategoryAxis(canvas);
   if (renderPlot(canvas) == true) {
+    execGC();
   }
   renderVerticalDataAxisLine(canvas);
   renderVerticalDataAxisRightLine(canvas);

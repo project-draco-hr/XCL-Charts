@@ -12,11 +12,11 @@ oldDist=this.spacing(event);
 break;
 case MotionEvent.ACTION_MOVE:
 newDist=spacing(event);
-halfDist=newDist / 2;
 if (Float.compare(newDist,10.0f) == 1) {
+halfDist=newDist / 2;
 scaleRate=newDist / oldDist;
 mChart.setScale(scaleRate,scaleRate,event.getX() - halfDist,event.getY() - halfDist);
-mView.invalidate();
+mView.invalidate((int)mChart.getLeft(),(int)mChart.getTop(),(int)mChart.getRight(),(int)mChart.getBottom());
 }
 break;
 default :

@@ -20,6 +20,7 @@
     mTotalTextWidth=MathHelper.getInstance().add(mTotalTextWidth,mTextWidth);
     if (mTotalTextWidth > mPlotArea.getWidth()) {
       mKeyLabelY-=mTextHeight;
+      mKeyLabelY-=mRowSpan;
       mKeyLabelX=mPlotArea.getLeft();
       mTotalTextWidth=0.0f;
     }

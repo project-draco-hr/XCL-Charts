@@ -48,6 +48,8 @@
     chart.getBar().getItemLabelPaint().setColor(Color.rgb(77,184,73));
     chart.getBar().getItemLabelPaint().setTypeface(Typeface.DEFAULT_BOLD);
     chart.ActiveListenItemClick();
+    chart.showClikedFocus();
+    chart.setPlotPanMode(XEnum.PanMode.HORIZONTAL);
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

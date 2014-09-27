@@ -11,7 +11,6 @@
     if (pos == i) {
       Double xValue=(Double)entry.getKey();
       Double yValue=(Double)entry.getValue();
-      Toast.makeText(this.getContext(),record.getPointInfo() + " Key:" + lData.getLineKey()+ " Current Value(key,value):"+ Double.toString(xValue)+ ","+ Double.toString(yValue),Toast.LENGTH_SHORT).show();
       float r=record.getRadius();
       chart.showFocusPointF(record.getPosition(),r * 2);
       chart.getFocusPaint().setStyle(Style.STROKE);
@@ -22,6 +21,11 @@
  else {
         chart.getFocusPaint().setColor(Color.RED);
       }
+      pToolTip.setColor(Color.RED);
+      chart.getToolTip().setCurrentXY(x,y);
+      chart.getToolTip().addToolTip(" Key:" + lData.getLineKey(),pToolTip);
+      chart.getToolTip().addToolTip(" Label:" + lData.getLabel(),pToolTip);
+      chart.getToolTip().addToolTip(" Current Value:" + Double.toString(xValue) + ","+ Double.toString(yValue),pToolTip);
       this.invalidate();
       break;
     }

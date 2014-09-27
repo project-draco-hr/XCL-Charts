@@ -31,6 +31,7 @@
   canvas.save();
   canvas.translate(mMoveX,mMoveY);
   renderHorizontalBar(canvas);
+  execGC();
   canvas.restore();
   canvas.restore();
   canvas.restore();

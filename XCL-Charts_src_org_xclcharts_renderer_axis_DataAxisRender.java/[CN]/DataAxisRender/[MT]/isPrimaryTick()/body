@@ -1,5 +1,6 @@
 {
   if (isDetailMode()) {
+    if (0 == mCurrentId && mShowFirstTick)     return true;
     if (mCurrentId < getDetailModeSteps() || mCurrentId % getDetailModeSteps() != 0)     return false;
   }
   return true;

@@ -15,13 +15,7 @@
     chart.getDataAxis().setTickMarksVisible(false);
     chart.getCategoryAxis().setAxisLineVisible(false);
     chart.getCategoryAxis().setTickMarksVisible(false);
-    chart.setTitle("?????????(Area Chart)");
-    chart.addSubtitle("(XCL-Charts Demo)");
-    chart.getAxisTitle().setLowerAxisTitle("(??????)");
     chart.setAreaAlpha(100);
-    chart.getPlotLegend().showLegend();
-    chart.ActiveListenItemClick();
-    chart.extPointClickRange(5);
     chart.getDataAxis().setLabelFormatter(new IFormatterTextCallBack(){
       @Override public String textFormatter(      String value){
         Double tmp=Double.parseDouble(value);
