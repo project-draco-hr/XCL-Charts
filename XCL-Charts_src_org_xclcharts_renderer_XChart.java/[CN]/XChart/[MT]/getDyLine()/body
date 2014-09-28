@@ -1,0 +1,4 @@
+{
+  if (null == mDyLine)   mDyLine=new DyLineRender();
+  return mDyLine;
+}

@@ -1,30 +1,39 @@
 {
-  PointPosition record=chart.getPositionRecord(x,y);
-  if (null == record)   return;
-  BubbleData lData=chartData.get(record.getDataID());
-  LinkedHashMap<Double,Double> mapPoint=lData.getDataSet();
-  int pos=record.getDataChildID();
-  int i=0;
-  Iterator it=mapPoint.entrySet().iterator();
-  while (it.hasNext()) {
-    Entry entry=(Entry)it.next();
-    if (pos == i) {
-      Double xValue=(Double)entry.getKey();
-      Double yValue=(Double)entry.getValue();
-      Toast.makeText(this.getContext(),record.getPointInfo() + " Key:" + lData.getKey()+ " Current Value(key,value):"+ Double.toString(xValue)+ ","+ Double.toString(yValue),Toast.LENGTH_SHORT).show();
-      float r=record.getRadius();
-      chart.showFocusPointF(record.getPosition(),r + r * 0.5f);
-      chart.getFocusPaint().setStyle(Style.STROKE);
-      chart.getFocusPaint().setStrokeWidth(3);
-      if (record.getDataID() >= 3) {
-        chart.getFocusPaint().setColor(Color.WHITE);
-      }
+  if (chart.getDyLineVisible())   chart.getDyLine().setCenterXY(x,y);
+  if (!chart.getListenItemClickStatus()) {
+    if (chart.getDyLineVisible() && chart.getDyLine().isInvalidate())     this.invalidate();
+  }
  else {
-        chart.getFocusPaint().setColor(Color.RED);
+    PointPosition record=chart.getPositionRecord(x,y);
+    if (null == record)     return;
+    BubbleData lData=chartData.get(record.getDataID());
+    LinkedHashMap<Double,Double> mapPoint=lData.getDataSet();
+    int pos=record.getDataChildID();
+    int i=0;
+    Iterator it=mapPoint.entrySet().iterator();
+    while (it.hasNext()) {
+      Entry entry=(Entry)it.next();
+      if (pos == i) {
+        Double xValue=(Double)entry.getKey();
+        Double yValue=(Double)entry.getValue();
+        float r=record.getRadius();
+        chart.showFocusPointF(record.getPosition(),r + r * 0.5f);
+        chart.getFocusPaint().setStyle(Style.STROKE);
+        chart.getFocusPaint().setStrokeWidth(3);
+        if (record.getDataID() >= 3) {
+          chart.getFocusPaint().setColor(Color.WHITE);
+        }
+ else {
+          chart.getFocusPaint().setColor(Color.RED);
+        }
+        mPaintTooltips.setColor(Color.RED);
+        chart.getToolTip().setCurrentXY(x,y);
+        chart.getToolTip().addToolTip(" Key:" + lData.getKey(),mPaintTooltips);
+        chart.getToolTip().addToolTip(Double.toString(xValue) + "," + Double.toString(yValue),mPaintTooltips);
+        this.invalidate();
+        break;
       }
-      this.invalidate();
-      break;
+      i++;
     }
-    i++;
   }
 }

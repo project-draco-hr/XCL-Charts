@@ -1,22 +1,31 @@
 {
-  PointPosition record=chart.getPositionRecord(x,y);
-  if (null == record)   return;
-  LineData lData=chartData.get(record.getDataID());
-  Double lValue=lData.getLinePoint().get(record.getDataChildID());
-  float r=record.getRadius();
-  chart.showFocusPointF(record.getPosition(),r + r * 0.5f);
-  chart.getFocusPaint().setStyle(Style.STROKE);
-  chart.getFocusPaint().setStrokeWidth(3);
-  if (record.getDataID() >= 3) {
-    chart.getFocusPaint().setColor(Color.BLUE);
+  if (chart.getDyLineVisible())   chart.getDyLine().setCenterXY(x,y);
+  if (!chart.getListenItemClickStatus()) {
+    if (chart.getDyLineVisible())     this.invalidate();
   }
  else {
-    chart.getFocusPaint().setColor(Color.RED);
+    PointPosition record=chart.getPositionRecord(x,y);
+    if (null == record) {
+      if (chart.getDyLineVisible())       this.invalidate();
+      return;
+    }
+    LineData lData=chartData.get(record.getDataID());
+    Double lValue=lData.getLinePoint().get(record.getDataChildID());
+    float r=record.getRadius();
+    chart.showFocusPointF(record.getPosition(),r + r * 0.5f);
+    chart.getFocusPaint().setStyle(Style.STROKE);
+    chart.getFocusPaint().setStrokeWidth(3);
+    if (record.getDataID() >= 3) {
+      chart.getFocusPaint().setColor(Color.BLUE);
+    }
+ else {
+      chart.getFocusPaint().setColor(Color.RED);
+    }
+    mPaintTooltips.setColor(Color.RED);
+    chart.getToolTip().setCurrentXY(x,y);
+    chart.getToolTip().addToolTip(" Key:" + lData.getLineKey(),mPaintTooltips);
+    chart.getToolTip().addToolTip(" Label:" + lData.getLabel(),mPaintTooltips);
+    chart.getToolTip().addToolTip(" Current Value:" + Double.toString(lValue),mPaintTooltips);
+    this.invalidate();
   }
-  pToolTip.setColor(Color.RED);
-  chart.getToolTip().setCurrentXY(x,y);
-  chart.getToolTip().addToolTip(" Key:" + lData.getLineKey(),pToolTip);
-  chart.getToolTip().addToolTip(" Label:" + lData.getLabel(),pToolTip);
-  chart.getToolTip().addToolTip(" Current Value:" + Double.toString(lValue),pToolTip);
-  this.invalidate();
 }

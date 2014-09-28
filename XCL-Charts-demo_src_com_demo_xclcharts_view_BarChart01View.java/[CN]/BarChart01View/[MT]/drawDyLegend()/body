@@ -2,7 +2,7 @@
   Paint pDyLegend=new Paint(Paint.ANTI_ALIAS_FLAG);
   PlotDot dotDyLegend=new PlotDot();
   Legend dyLegend=chart.getDyLegend();
-  dyLegend.setPosition(0.6f,0.3f);
+  dyLegend.setPosition(0.7f,0.3f);
   dyLegend.setColSpan(30.f);
   dyLegend.getBackgroundPaint().setColor(Color.BLACK);
   dyLegend.getBackgroundPaint().setAlpha(100);

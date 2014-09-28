@@ -1,4 +1,5 @@
 {
+  if (!chart.getListenItemClickStatus())   return;
   PointPosition record=chart.getPositionRecord(x,y);
   if (null == record)   return;
   SplineData lData=chartData.get(record.getDataID());
@@ -11,7 +12,21 @@
     if (pos == i) {
       Double xValue=(Double)entry.getKey();
       Double yValue=(Double)entry.getValue();
-      Toast.makeText(this.getContext(),record.getPointInfo() + " Key:" + lData.getLineKey()+ " Current Value(key,value):"+ Double.toString(xValue)+ ","+ Double.toString(yValue),Toast.LENGTH_SHORT).show();
+      float r=record.getRadius();
+      chart.showFocusPointF(record.getPosition(),r + r * 0.8f);
+      chart.getFocusPaint().setStyle(Style.FILL);
+      chart.getFocusPaint().setStrokeWidth(3);
+      if (record.getDataID() >= 2) {
+        chart.getFocusPaint().setColor(Color.BLUE);
+      }
+ else {
+        chart.getFocusPaint().setColor(Color.RED);
+      }
+      mPaintTooltips.setColor(Color.RED);
+      chart.getToolTip().setCurrentXY(x,y);
+      chart.getToolTip().addToolTip(" Key:" + lData.getLineKey(),mPaintTooltips);
+      chart.getToolTip().addToolTip(" Current Value:" + Double.toString(xValue) + ","+ Double.toString(yValue),mPaintTooltips);
+      this.invalidate();
       break;
     }
     i++;

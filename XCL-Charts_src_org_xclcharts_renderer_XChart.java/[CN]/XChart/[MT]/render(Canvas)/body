@@ -6,6 +6,7 @@
     scaleChart(canvas);
     ret=postRender(canvas);
     renderBorder(canvas);
+    renderDyLine(canvas);
     if (null != mDyLegend) {
       mDyLegend.setPlotWH(this.getWidth(),this.getHeight());
       mDyLegend.renderInfo(canvas);

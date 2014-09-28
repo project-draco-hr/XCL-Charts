@@ -1,0 +1,12 @@
+{
+  float startX=mCenterXY.x;
+  float startY=mCenterXY.y;
+  float stopX=mCenterXY.x;
+  float stopY=mArea.getBottom();
+  canvas.drawLine(startX,startY,stopX,stopY,getLinePaint());
+  startX=mArea.getLeft();
+  startY=mCenterXY.y;
+  stopX=mCenterXY.x;
+  stopY=mCenterXY.y;
+  canvas.drawLine(startX,startY,stopX,stopY,getLinePaint());
+}

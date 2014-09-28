@@ -1,7 +1,13 @@
 {
+  if (!chart.getListenItemClickStatus())   return;
   BarPosition record=chart.getPositionRecord(x,y);
   if (null == record)   return;
   BarData bData=BarDataset.get(record.getDataID());
   Double bValue=bData.getDataSet().get(record.getDataChildID());
-  Toast.makeText(this.getContext(),"info:" + record.getRectInfo() + " Key:"+ bData.getKey()+ " Current Value:"+ Double.toString(bValue),Toast.LENGTH_SHORT).show();
+  mPaintToolTip.setColor(Color.WHITE);
+  chart.getToolTip().getBackgroundPaint().setColor(Color.rgb(75,202,255));
+  chart.getToolTip().getBorderPaint().setColor(Color.RED);
+  chart.getToolTip().setCurrentXY(x,y);
+  chart.getToolTip().addToolTip(" Current Value:" + Double.toString(bValue),mPaintToolTip);
+  this.invalidate();
 }

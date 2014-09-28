@@ -1,11 +1,11 @@
 {
+  renderVerticalDataAxisLine(canvas);
+  renderVerticalDataAxisRightLine(canvas);
+  renderVerticalCategoryAxisLine(canvas);
   renderVerticalDataAxis(canvas);
   renderVerticalCategoryAxis(canvas);
   if (renderPlot(canvas) == true) {
   }
-  renderVerticalDataAxisLine(canvas);
-  renderVerticalDataAxisRightLine(canvas);
-  renderVerticalCategoryAxisLine(canvas);
   plotLegend.renderPointKey(canvas,mDataset);
   return true;
 }

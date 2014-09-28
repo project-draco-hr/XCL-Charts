@@ -2,6 +2,9 @@
   float offsetX=mTranslateXY[0];
   float offsetY=mTranslateXY[1];
   initMoveXY();
+  renderVerticalDataAxisLine(canvas);
+  renderVerticalDataAxisRightLine(canvas);
+  renderVerticalCategoryAxisLine(canvas);
   canvas.save();
   canvas.clipRect(this.getLeft(),this.getTop(),this.getRight(),this.getBottom());
   if (XEnum.PanMode.VERTICAL == this.getPlotPanMode() || XEnum.PanMode.FREE == this.getPlotPanMode()) {
@@ -41,9 +44,6 @@
   canvas.restore();
   canvas.restore();
   canvas.restore();
-  renderVerticalDataAxisLine(canvas);
-  renderVerticalDataAxisRightLine(canvas);
-  renderVerticalCategoryAxisLine(canvas);
   plotLegend.renderPointKey(canvas,mDataset);
   return true;
 }

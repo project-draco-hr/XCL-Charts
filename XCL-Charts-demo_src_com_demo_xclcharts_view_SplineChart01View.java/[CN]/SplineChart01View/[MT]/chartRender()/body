@@ -33,6 +33,7 @@
     chart.ActiveListenItemClick();
     chart.extPointClickRange(5);
     chart.showClikedFocus();
+    chart.showDyLine();
   }
  catch (  Exception e) {
     e.printStackTrace();

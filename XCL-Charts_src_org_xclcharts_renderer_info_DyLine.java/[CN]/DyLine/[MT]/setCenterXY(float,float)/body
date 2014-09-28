@@ -1,0 +1,5 @@
+{
+  if (null == mCenterXY)   mCenterXY=new PointF();
+  mCenterXY.x=x;
+  mCenterXY.y=y;
+}

@@ -14,5 +14,7 @@
   renderVerticalDataAxisRightLine(canvas);
   renderVerticalCategoryAxisLine(canvas);
   plotLegend.renderLineKey(canvas,mLstKey);
+  mLstKey.clear();
+  mLstKey=null;
   return true;
 }

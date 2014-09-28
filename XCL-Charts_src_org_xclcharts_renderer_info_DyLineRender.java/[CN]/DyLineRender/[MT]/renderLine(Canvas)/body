@@ -1,0 +1,16 @@
+{
+switch (getDyLineStyle()) {
+case Cross:
+    drawCross(canvas);
+  break;
+case BackwardDiagonal:
+drawBackwardDiagonal(canvas);
+break;
+case Vertical:
+drawVertical(canvas);
+break;
+case Horizontal:
+drawHorizontal(canvas);
+break;
+}
+}

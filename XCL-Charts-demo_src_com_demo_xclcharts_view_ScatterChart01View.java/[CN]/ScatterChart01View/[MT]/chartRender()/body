@@ -8,7 +8,8 @@
     chart.getDataAxis().setAxisSteps(10);
     chart.setCategoryAxisMax(100);
     chart.setCategoryAxisMin(0);
-    chart.getDataAxis().setDetailModeSteps(4);
+    chart.getDataAxis().setHorizontalTickAlign(Align.CENTER);
+    chart.getDataAxis().getTickLabelPaint().setTextAlign(Align.CENTER);
     chart.getDataAxis().getAxisPaint().setColor(Color.rgb(127,204,204));
     chart.getCategoryAxis().getAxisPaint().setColor(Color.rgb(127,204,204));
     chart.getDataAxis().getTickMarksPaint().setColor(Color.rgb(127,204,204));
@@ -25,6 +26,8 @@
     chart.ActiveListenItemClick();
     chart.extPointClickRange(5);
     chart.getPointPaint().setStrokeWidth(6);
+    chart.showDyLine();
+    chart.getDyLine().setDyLineStyle(XEnum.DyLineStyle.BackwardDiagonal);
   }
  catch (  Exception e) {
     e.printStackTrace();
