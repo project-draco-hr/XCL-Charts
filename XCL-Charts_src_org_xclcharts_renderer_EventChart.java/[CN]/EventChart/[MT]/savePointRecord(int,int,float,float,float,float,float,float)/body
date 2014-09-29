@@ -1,4 +1,5 @@
 {
+  if (!getListenItemClickStatus())   return;
   if (null == mRecordset)   mRecordset=new ArrayList<PlotPointPosition>();
   if (this.getListenItemClickStatus()) {
     PlotPointPosition pRecord=new PlotPointPosition();

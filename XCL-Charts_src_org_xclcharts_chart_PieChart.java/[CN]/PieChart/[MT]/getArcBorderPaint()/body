@@ -1,0 +1,8 @@
+{
+  if (null == mPaintArcBorder) {
+    mPaintArcBorder=new Paint(Paint.ANTI_ALIAS_FLAG);
+    mPaintArcBorder.setStyle(Style.STROKE);
+    mPaintArcBorder.setColor(Color.WHITE);
+  }
+  return mPaintArcBorder;
+}

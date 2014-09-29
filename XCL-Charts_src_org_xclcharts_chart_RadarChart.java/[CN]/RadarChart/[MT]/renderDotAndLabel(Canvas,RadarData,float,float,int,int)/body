@@ -1,11 +1,13 @@
 {
   PlotLine plotLine=lineData.getPlotLine();
+  float itemAngle=lineData.getItemLabelRotateAngle();
   if (!plotLine.getDotStyle().equals(XEnum.DotStyle.HIDE)) {
     PlotDot pDot=plotLine.getPlotDot();
-    RectF rect=PlotDotRender.getInstance().renderDot(canvas,pDot,currentX - pDot.getDotRadius(),currentY - pDot.getDotRadius(),currentX,currentY,lineData.getPlotLine().getDotPaint());
-    savePointRecord(dataID,childID,currentX,currentY,rect);
+    float radius=pDot.getDotRadius();
+    PlotDotRender.getInstance().renderDot(canvas,pDot,currentX - radius,currentY - radius,currentX,currentY,lineData.getPlotLine().getDotPaint());
+    savePointRecord(dataID,childID,currentX,currentY,currentX - radius,currentY - radius,currentX + radius,currentY + radius);
   }
   if (lineData.getLabelVisible()) {
-    canvas.drawText(getFormatterDotLabel(lineData.getLinePoint().get(childID)),currentX,currentY,lineData.getPlotLine().getDotLabelPaint());
+    DrawHelper.getInstance().drawRotateText(this.getFormatterDotLabel(lineData.getLinePoint().get(childID)),currentX,currentY,itemAngle,canvas,lineData.getPlotLine().getDotLabelPaint());
   }
 }

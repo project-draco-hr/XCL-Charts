@@ -21,7 +21,7 @@
       rendEndX=add(dot.right,radius);
       PlotDotRender.getInstance().renderDot(canvas,pDot,dot.left,dot.top,dot.right,dot.bottom,pLine.getDotPaint());
       dot.right=rendEndX;
-      savePointRecord(dataID,childID,dot.right + mMoveX,dot.bottom + mMoveY,dot.right - 2 * radius + mMoveX,dot.bottom - radius + mMoveY,dot.right + mMoveX,dot.bottom + radius + mMoveY);
+      savePointRecord(dataID,childID,dot.right - radius + mMoveX,dot.bottom + mMoveY,dot.right - 2 * radius + mMoveX,dot.bottom - radius + mMoveY,dot.right + mMoveX,dot.bottom + radius + mMoveY);
       childID++;
     }
     if (spData.getLabelVisible()) {

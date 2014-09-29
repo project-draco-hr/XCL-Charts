@@ -50,7 +50,7 @@
       PlotLine pLine=bd.getPlotLine();
       if (type.equalsIgnoreCase("LINE")) {
         if (getLineAxisIntersectVisible() == true || Float.compare(lineStartY,initY) != 0) {
-          canvas.drawLine(lineStartX,lineStartY,lineEndX,lineEndY,pLine.getLinePaint());
+          DrawHelper.getInstance().drawLine(bd.getLineStyle(),lineStartX,lineStartY,lineEndX,lineEndY,canvas,pLine.getLinePaint());
         }
       }
  else       if (type.equalsIgnoreCase("DOT2LABEL")) {

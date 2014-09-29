@@ -5,4 +5,5 @@
   chart.getPlotLegend().showLegend();
   chart.ActiveListenItemClick();
   chart.extPointClickRange(5);
+  chart.showClikedFocus();
 }

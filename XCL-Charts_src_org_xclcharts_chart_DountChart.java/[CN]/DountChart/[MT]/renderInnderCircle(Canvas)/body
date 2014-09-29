@@ -2,4 +2,7 @@
   float cirX=plotArea.getCenterX();
   float cirY=plotArea.getCenterY();
   canvas.drawCircle(cirX,cirY,mFillRadius,mPaintFill);
+  if (null != mPaintArcBorder) {
+    canvas.drawCircle(cirX,cirY,mFillRadius,mPaintArcBorder);
+  }
 }

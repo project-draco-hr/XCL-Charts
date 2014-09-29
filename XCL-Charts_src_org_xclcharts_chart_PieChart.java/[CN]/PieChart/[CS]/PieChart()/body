@@ -1,5 +1,3 @@
 {
   super();
-  mPaintArc=new Paint();
-  mPaintArc.setAntiAlias(true);
 }

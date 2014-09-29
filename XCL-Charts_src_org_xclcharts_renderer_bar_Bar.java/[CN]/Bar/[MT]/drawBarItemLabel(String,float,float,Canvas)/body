@@ -1,5 +1,17 @@
 {
   if (getItemLabelsVisible()) {
-    DrawHelper.getInstance().drawRotateText(text,x,y,getItemLabelRotateAngle(),canvas,getItemLabelPaint());
-  }
+    float cx=x;
+    float cy=y;
+switch (mBarDirection) {
+case VERTICAL:
+      cy-=this.mItemLabelAnchorOffset;
+    break;
+case HORIZONTAL:
+  cx+=this.mItemLabelAnchorOffset;
+break;
+default :
+break;
+}
+DrawHelper.getInstance().drawRotateText(text,cx,cy,getItemLabelRotateAngle(),canvas,getItemLabelPaint());
+}
 }

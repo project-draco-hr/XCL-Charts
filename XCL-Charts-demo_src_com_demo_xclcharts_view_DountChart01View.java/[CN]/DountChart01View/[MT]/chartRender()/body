@@ -14,6 +14,7 @@
     chart.setApplyBackgroundColor(true);
     chart.setBackgroundColor(Color.rgb(19,163,224));
     chart.getInnerPaint().setColor(Color.rgb(19,163,224));
+    chart.getArcBorderPaint().setColor(Color.YELLOW);
     addAttrInfo();
   }
  catch (  Exception e) {

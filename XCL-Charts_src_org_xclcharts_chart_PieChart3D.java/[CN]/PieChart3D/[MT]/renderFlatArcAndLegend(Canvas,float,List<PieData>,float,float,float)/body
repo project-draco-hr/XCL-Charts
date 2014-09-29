@@ -25,6 +25,7 @@
   }
   renderLabels(canvas,initOffsetAngle,radius,arrPoint);
   plotLegend.renderPieKey(canvas,this.getDataSource());
+  plotLegend=null;
   arrPoint=null;
   return true;
 }

@@ -3,5 +3,5 @@
   float startY=mArea.getTop();
   float stopX=mCenterXY.x;
   float stopY=mArea.getBottom();
-  canvas.drawLine(startX,startY,stopX,stopY,getLinePaint());
+  DrawHelper.getInstance().drawLine(getLineDrawStyle(),startX,startY,stopX,stopY,canvas,getLinePaint());
 }

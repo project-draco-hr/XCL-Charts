@@ -8,6 +8,7 @@
     chart.setDataSource(chartData);
     chart.ActiveListenItemClick();
     chart.extPointClickRange(50);
+    chart.showClikedFocus();
     chart.getDataAxis().setAxisMax(50);
     chart.getDataAxis().setAxisSteps(10);
     chart.getDataAxis().setTickLabelMargin(50);

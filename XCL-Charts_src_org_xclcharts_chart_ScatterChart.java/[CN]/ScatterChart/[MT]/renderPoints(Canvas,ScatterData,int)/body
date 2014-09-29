@@ -13,6 +13,7 @@
   int j=0;
   int childID=0;
   float YvaluePostion=0.0f, XvaluePostion=0.0f;
+  float itemAngle=bd.getItemLabelRotateAngle();
   Iterator iter=chartValues.entrySet().iterator();
   while (iter.hasNext()) {
     Entry entry=(Entry)iter.next();
@@ -34,13 +35,13 @@
     if (!dot.getDotStyle().equals(XEnum.DotStyle.HIDE)) {
       getPointPaint().setColor(dot.getColor());
       getPointPaint().setAlpha(dot.getAlpha());
-      RectF rect=PlotDotRender.getInstance().renderDot(canvas,bd.getPlotDot(),lineStartX,lineStartY,lineStopX,lineStopY,getPointPaint());
+      PlotDotRender.getInstance().renderDot(canvas,bd.getPlotDot(),lineStartX,lineStartY,lineStopX,lineStopY,getPointPaint());
       float radius=dot.getDotRadius();
       savePointRecord(dataID,childID,lineStopX + mMoveX,lineStopY + mMoveY,lineStopX - radius + mMoveX,lineStopY - radius + mMoveY,lineStopX + radius + mMoveX,lineStopY + radius + mMoveY);
       childID++;
     }
     if (bd.getLabelVisible()) {
-      canvas.drawText(getFormatterDotLabel(Double.toString(xValue) + "," + Double.toString(yValue)),lineStopX,lineStopY,bd.getDotLabelPaint());
+      DrawHelper.getInstance().drawRotateText(getFormatterDotLabel(Double.toString(xValue) + "," + Double.toString(yValue)),lineStopX,lineStopY,itemAngle,canvas,bd.getDotLabelPaint());
     }
     lineStartX=lineStopX;
     lineStartY=lineStopY;

@@ -1,4 +1,7 @@
 {
-  if (null != mRecordset)   mRecordset.clear();
+  if (null != mRecordset) {
+    mRecordset.clear();
+    mRecordset=null;
+  }
   mSelectID=-1;
 }

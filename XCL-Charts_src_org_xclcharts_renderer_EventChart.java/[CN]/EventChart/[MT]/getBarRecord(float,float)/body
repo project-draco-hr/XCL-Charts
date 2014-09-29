@@ -1,4 +1,5 @@
 {
+  if (!getListenItemClickStatus())   return null;
   if (!isPlotClickArea(x,y))   return null;
   if (null == mRecordset)   return null;
   Iterator it=mRecordset.iterator();

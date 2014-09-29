@@ -15,13 +15,13 @@
     for (    PieData cData : mDataset) {
       currentAngle=cData.getSliceAngle();
       if (!validateAngle(currentAngle))       continue;
-      mPaintArc.setColor(cData.getSliceColor());
+      geArcPaint().setColor(cData.getSliceColor());
       if (cData.getSelected()) {
-        if (!drawSelectedSlice(canvas,mPaintArc,cData,cirX,cirY,radius,offsetAngle,currentAngle))         return false;
+        if (!drawSelectedSlice(canvas,geArcPaint(),cData,cirX,cirY,radius,offsetAngle,currentAngle))         return false;
         arrPoint[i]=new PointF(MathHelper.getInstance().getPosX(),MathHelper.getInstance().getPosY());
       }
  else {
-        if (!drawSlice(canvas,mPaintArc,mArcRF0,cData,cirX,cirY,radius,offsetAngle,(float)currentAngle))         return false;
+        if (!drawSlice(canvas,geArcPaint(),mArcRF0,cData,cirX,cirY,radius,offsetAngle,(float)currentAngle))         return false;
         arrPoint[i]=new PointF(cirX,cirY);
       }
       saveArcRecord(i,cirX + this.mTranslateXY[0],cirY + this.mTranslateXY[1],radius,offsetAngle,currentAngle);

@@ -8,6 +8,7 @@ case HORIZONTAL:
         dataAxis.setHorizontalTickAlign(Align.CENTER);
         dataAxis.getTickLabelPaint().setTextAlign(Align.CENTER);
         getBar().getItemLabelPaint().setTextAlign(Align.LEFT);
+        getBar().setBarDirection(XEnum.Direction.HORIZONTAL);
         break;
       }
 case VERTICAL:
@@ -17,6 +18,7 @@ case VERTICAL:
       categoryAxis.setHorizontalTickAlign(Align.CENTER);
       categoryAxis.getTickLabelPaint().setTextAlign(Align.CENTER);
       categoryAxis.setVerticalTickPosition(XEnum.VerticalAlign.BOTTOM);
+      getBar().setBarDirection(XEnum.Direction.VERTICAL);
       break;
     }
 }

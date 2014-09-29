@@ -1,3 +1,9 @@
 {
+  if (null == mPaintDot) {
+    mPaintDot=new Paint();
+    mPaintDot.setColor(Color.BLUE);
+    mPaintDot.setAntiAlias(true);
+    mPaintDot.setStrokeWidth(5);
+  }
   return mPaintDot;
 }

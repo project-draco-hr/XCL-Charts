@@ -10,7 +10,7 @@
   for (int i=0; i <= tickCount; i++) {
     dataAxis.setAxisTickCurrentID(i);
     currentY=MathHelper.getInstance().sub(plotBottom,i * YSteps);
-    if (dataAxis.getTickLabelVisible() && isrenderVerticalBarDataAxisTick(currentY,mMoveY))     continue;
+    if (dataAxis.getTickLabelVisible() && isRenderVerticalBarDataAxisTick(currentY,mMoveY))     continue;
     currentTickLabel=MathHelper.getInstance().add(dataAxis.getAxisMin(),i * dataAxis.getAxisSteps());
     if (i > 0) {
       if (i % 2 != 0) {

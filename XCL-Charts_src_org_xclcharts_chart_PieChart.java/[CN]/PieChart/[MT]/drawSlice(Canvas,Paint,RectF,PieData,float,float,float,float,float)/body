@@ -2,6 +2,7 @@
   try {
     if (getGradient())     paintArc.setShader(renderRadialGradient(paintArc,cirX,cirY,radius));
     canvas.drawArc(arcRF0,offsetAngle,currentAngle,true,paintArc);
+    renderArcBorder(canvas,arcRF0,offsetAngle,currentAngle);
   }
  catch (  Exception e) {
     throw e;

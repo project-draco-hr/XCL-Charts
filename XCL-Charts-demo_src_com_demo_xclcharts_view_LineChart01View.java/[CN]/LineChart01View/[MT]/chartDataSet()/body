@@ -23,6 +23,7 @@
   lineData2.getPlotLine().getDotPaint().setColor(Color.RED);
   lineData2.setLabelVisible(true);
   lineData2.getPlotLine().getPlotDot().setRingInnerColor(Color.GREEN);
+  lineData2.setLineStyle(XEnum.LineStyle.DASH);
   LinkedList<Double> dataSeries3=new LinkedList<Double>();
   dataSeries3.add(65d);
   dataSeries3.add(75d);

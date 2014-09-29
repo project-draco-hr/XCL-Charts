@@ -26,6 +26,7 @@
       chart.getToolTip().setCurrentXY(x,y);
       chart.getToolTip().addToolTip(" Key:" + lData.getLineKey(),mPaintTooltips);
       chart.getToolTip().addToolTip(" Current Value:" + Double.toString(xValue) + ","+ Double.toString(yValue),mPaintTooltips);
+      chart.getToolTip().getBackgroundPaint().setAlpha(100);
       this.invalidate();
       break;
     }

@@ -3,7 +3,7 @@
     if (0 == i)     continue;
     PointF pointStart=lstPoints.get(i - 1);
     PointF pointStop=lstPoints.get(i);
-    canvas.drawLine(pointStart.x,pointStart.y,pointStop.x,pointStop.y,areaData.getLinePaint());
+    DrawHelper.getInstance().drawLine(areaData.getLineStyle(),pointStart.x,pointStart.y,pointStop.x,pointStop.y,canvas,areaData.getLinePaint());
   }
   return true;
 }

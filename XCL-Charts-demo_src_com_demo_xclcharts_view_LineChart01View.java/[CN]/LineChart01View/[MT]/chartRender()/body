@@ -23,6 +23,7 @@
     chart.showClikedFocus();
     chart.setLineAxisIntersectVisible(true);
     chart.showDyLine();
+    chart.getDyLine().setDyLineStyle(XEnum.DyLineStyle.Horizontal);
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

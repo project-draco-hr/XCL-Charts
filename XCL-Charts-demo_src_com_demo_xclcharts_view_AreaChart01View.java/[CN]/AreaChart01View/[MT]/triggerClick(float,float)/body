@@ -3,5 +3,17 @@
   if (null == record)   return;
   AreaData lData=mDataset.get(record.getDataID());
   Double lValue=lData.getLinePoint().get(record.getDataChildID());
-  Toast.makeText(this.getContext(),record.getPointInfo() + " Key:" + lData.getLineKey()+ " Label:"+ lData.getLabel()+ " Current Value:"+ Double.toString(lValue),Toast.LENGTH_SHORT).show();
+  float r=record.getRadius();
+  chart.showFocusPointF(record.getPosition(),r + r * 0.5f);
+  chart.getFocusPaint().setStrokeWidth(3);
+  chart.getFocusPaint().setColor(Color.RED);
+  chart.getFocusPaint().setTextAlign(Align.CENTER);
+  mPaintTooltips.setColor(Color.YELLOW);
+  chart.getToolTip().getBackgroundPaint().setColor(Color.GRAY);
+  chart.getToolTip().setCurrentXY(x,y);
+  chart.getToolTip().addToolTip(" Key:" + lData.getLineKey(),mPaintTooltips);
+  chart.getToolTip().addToolTip(" Label:" + lData.getLabel(),mPaintTooltips);
+  chart.getToolTip().addToolTip(" Current Value:" + Double.toString(lValue),mPaintTooltips);
+  chart.getToolTip().setAlign(Align.LEFT);
+  this.invalidate();
 }

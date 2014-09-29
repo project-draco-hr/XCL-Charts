@@ -7,7 +7,7 @@
     if (i == 0)     continue;
     dataAxis.setAxisTickCurrentID(i);
     currentY=MathHelper.getInstance().sub(plotArea.getBottom(),i * YSteps);
-    if (dataAxis.getTickLabelVisible() && isrenderVerticalBarDataAxisTick(currentY,mMoveY))     continue;
+    if (dataAxis.getTickLabelVisible() && isRenderVerticalBarDataAxisTick(currentY,mMoveY))     continue;
     Double currentTickLabel=MathHelper.getInstance().add(dataAxis.getAxisMin(),(i * dataAxis.getAxisSteps()));
     if (i == tickCount) {
       dataAxis.renderAxisHorizontalTick(this,canvas,plotArea.getRight(),plotArea.getTop(),Double.toString(currentTickLabel));

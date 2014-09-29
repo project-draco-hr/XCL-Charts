@@ -4,6 +4,15 @@
   if (record.getDataID() < chartData.size()) {
     RadarData lData=chartData.get(record.getDataID());
     Double lValue=lData.getLinePoint().get(record.getDataChildID());
-    Toast.makeText(this.getContext()," Current Value:" + Double.toString(lValue) + " Point info:"+ record.getPointInfo(),Toast.LENGTH_SHORT).show();
+    float r=record.getRadius();
+    chart.showFocusPointF(record.getPosition(),r + r * 0.5f);
+    chart.getFocusPaint().setStyle(Style.STROKE);
+    chart.getFocusPaint().setStrokeWidth(3);
+    chart.getFocusPaint().setColor(Color.YELLOW);
+    mPaintTooltips.setColor(Color.RED);
+    chart.getToolTip().setCurrentXY(x,y);
+    chart.getToolTip().addToolTip(" ??????",mPaintTooltips);
+    chart.getToolTip().addToolTip(" Current Value:" + Double.toString(lValue),mPaintTooltips);
+    this.invalidate();
   }
 }

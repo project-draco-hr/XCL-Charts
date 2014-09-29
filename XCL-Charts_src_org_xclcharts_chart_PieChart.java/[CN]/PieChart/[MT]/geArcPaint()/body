@@ -1,3 +1,7 @@
 {
+  if (null == mPaintArc) {
+    mPaintArc=new Paint();
+    mPaintArc.setAntiAlias(true);
+  }
   return mPaintArc;
 }

@@ -11,12 +11,21 @@
   dataSeries2.add((double)30);
   dataSeries2.add((double)30);
   dataSeries2.add((double)15);
+  List<Double> dataSeries3=new LinkedList<Double>();
+  dataSeries3.add((double)35);
+  dataSeries3.add((double)45);
+  dataSeries3.add((double)65);
+  dataSeries3.add((double)75);
+  dataSeries3.add((double)55);
   AreaData line1=new AreaData("??????",dataSeries1,Color.BLUE,Color.YELLOW);
   line1.setDotStyle(XEnum.DotStyle.HIDE);
   AreaData line2=new AreaData("?????????",dataSeries2,(int)Color.rgb(79,200,100),Color.GREEN);
   line2.getDotLabelPaint().setColor(Color.RED);
   line2.setLabelVisible(true);
   line2.getDotLabelPaint().setTextAlign(Align.LEFT);
+  AreaData line3=new AreaData("????????????",dataSeries3,Color.rgb(246,134,31),Color.rgb(213,198,126));
+  line3.setLineStyle(XEnum.LineStyle.DOT);
   mDataset.add(line1);
   mDataset.add(line2);
+  mDataset.add(line3);
 }

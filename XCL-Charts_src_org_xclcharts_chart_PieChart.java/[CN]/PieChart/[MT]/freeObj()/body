@@ -1,0 +1,5 @@
+{
+  if (null != mPaintArc)   mPaintArc=null;
+  if (null != mRectF)   mRectF=null;
+  if (null != mRectF)   mRectF=null;
+}

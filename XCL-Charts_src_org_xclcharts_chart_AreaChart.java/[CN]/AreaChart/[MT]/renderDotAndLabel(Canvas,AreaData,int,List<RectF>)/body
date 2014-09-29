@@ -9,6 +9,7 @@
     Log.e(TAG,"?????????????????????.");
     return false;
   }
+  float itemAngle=bd.getItemLabelRotateAngle();
   for (int i=0; i < lstDots.size(); i++) {
     Double dv=chartValues.get(i);
     RectF dot=lstDots.get(i);
@@ -18,11 +19,11 @@
       float rendEndX=add(dot.right,radius);
       PlotDotRender.getInstance().renderDot(canvas,pDot,dot.left,dot.top,dot.right,dot.bottom,pLine.getDotPaint());
       dot.right=rendEndX;
-      savePointRecord(dataID,childID,dot.right + mMoveX,dot.bottom + mMoveY,dot.right - 2 * radius + mMoveX,dot.bottom - radius + mMoveY,dot.right + mMoveX,dot.bottom + radius + mMoveY);
+      savePointRecord(dataID,childID,dot.right - radius + mMoveX,dot.bottom + mMoveY,dot.right - 2 * radius + mMoveX,dot.bottom - radius + mMoveY,dot.right + mMoveX,dot.bottom + radius + mMoveY);
       childID++;
     }
     if (bd.getLabelVisible()) {
-      canvas.drawText(this.getFormatterItemLabel(dv),dot.right,dot.bottom,pLine.getDotLabelPaint());
+      DrawHelper.getInstance().drawRotateText(getFormatterItemLabel(dv),dot.right,dot.bottom,itemAngle,canvas,pLine.getDotLabelPaint());
     }
   }
   return true;

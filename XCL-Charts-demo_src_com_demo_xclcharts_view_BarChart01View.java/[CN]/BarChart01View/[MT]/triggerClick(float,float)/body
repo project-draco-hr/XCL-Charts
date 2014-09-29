@@ -21,6 +21,7 @@
     chart.getToolTip().setStyle(XEnum.DyInfoStyle.ROUNDRECT);
     chart.getToolTip().addToolTip(mDotToolTip,bData.getKey(),mPaintToolTip);
     chart.getToolTip().addToolTip(" Current Value:" + Double.toString(bValue),mPaintToolTip);
+    chart.getToolTip().getBackgroundPaint().setAlpha(100);
     this.invalidate();
   }
 }

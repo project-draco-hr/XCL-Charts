@@ -5,6 +5,7 @@
     initRectF("mRectF",sub(point.x,radius),sub(point.y,radius),add(point.x,radius),add(point.y,radius));
     if (getGradient())     paintArc.setShader(renderRadialGradient(paintArc,cirX,cirY,radius));
     canvas.drawArc(mRectF,offsetAngle,currentAngle,true,paintArc);
+    renderArcBorder(canvas,mRectF,offsetAngle,currentAngle);
     return true;
   }
  catch (  Exception e) {
