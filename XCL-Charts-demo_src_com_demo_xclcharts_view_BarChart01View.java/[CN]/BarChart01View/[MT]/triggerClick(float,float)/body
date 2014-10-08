@@ -9,7 +9,9 @@
       if (chart.getDyLineVisible())       this.invalidate();
       return;
     }
+    if (record.getDataID() >= chartData.size())     return;
     BarData bData=chartData.get(record.getDataID());
+    if (record.getDataChildID() >= bData.getDataSet().size())     return;
     Double bValue=bData.getDataSet().get(record.getDataChildID());
     chart.showFocusRectF(record.getRectF());
     chart.getFocusPaint().setStyle(Style.STROKE);

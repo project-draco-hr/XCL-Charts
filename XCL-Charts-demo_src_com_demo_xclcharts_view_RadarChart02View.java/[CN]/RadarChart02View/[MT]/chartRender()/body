@@ -12,7 +12,7 @@
     chart.getDataAxis().setAxisMax(100);
     chart.getDataAxis().setAxisSteps(10);
     chart.getDataAxis().setTickLabelMargin(20);
-    chart.getLinePaint().setColor(Color.parseColor("#BFE154"));
+    chart.getLinePaint().setColor(Color.rgb(133,194,2));
     chart.getLabelPaint().setColor(Color.parseColor("#E94D43"));
     chart.getLabelPaint().setFakeBoldText(true);
     chart.getDataAxis().setLabelFormatter(new IFormatterTextCallBack(){

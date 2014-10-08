@@ -1,5 +1,5 @@
 {
   float nx=Math.abs(tx - sx);
   float ny=Math.abs(ty - sy);
-  return Math.sqrt(Math.hypot(nx,ny));
+  return Math.hypot(nx,ny);
 }

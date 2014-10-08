@@ -1,5 +1,6 @@
 {
   try {
+    setLayerType(View.LAYER_TYPE_SOFTWARE,null);
     chart.setDataSource(chartData);
     chart.setCategories(chartLabels);
     chart.setCustomLines(mCustomLineDataset);

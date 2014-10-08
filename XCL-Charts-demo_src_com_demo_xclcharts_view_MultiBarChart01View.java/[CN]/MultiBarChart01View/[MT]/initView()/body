@@ -1,4 +1,5 @@
 {
+  mOffset=DensityUtil.dip2px(getContext(),45);
   chartLabels();
   chartDataSet();
   chartDataSet2();

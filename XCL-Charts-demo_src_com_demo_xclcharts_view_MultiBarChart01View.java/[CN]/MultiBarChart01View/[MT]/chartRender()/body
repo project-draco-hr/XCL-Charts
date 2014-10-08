@@ -1,7 +1,11 @@
 {
   try {
     int[] ltrb=getBarLnDefaultSpadding();
-    chart.setPadding(DensityUtil.dip2px(getContext(),45),ltrb[1],ltrb[2],ltrb[3]);
+    chart.setPadding(mOffset,ltrb[1],ltrb[2],ltrb[3]);
+    chart.getBar().setBarStyle(XEnum.BarStyle.FILL);
+    chart.setApplyBackgroundColor(true);
+    chart.setBackgroundColor(Color.rgb(19,163,224));
+    chart.showRoundBorder();
     chart.setDataSource(chartData);
     chart.setCategories(chartLabels);
     chart.getDataAxis().setAxisMax(2500);
@@ -10,10 +14,6 @@
     chart.getBar().setBarInnerMargin(0d);
     chart.getDataAxis().setVisible(false);
     chart.getCategoryAxis().setVisible(false);
-    chart.getBar().setBarStyle(XEnum.BarStyle.FILL);
-    chart.setApplyBackgroundColor(true);
-    chart.setBackgroundColor(Color.rgb(19,163,224));
-    chart.showRoundBorder();
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

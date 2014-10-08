@@ -1,3 +1,3 @@
 {
-  return mOffsetAngle + mCurrentAngle;
+  return MathHelper.getInstance().add(mOffsetAngle,mCurrentAngle);
 }

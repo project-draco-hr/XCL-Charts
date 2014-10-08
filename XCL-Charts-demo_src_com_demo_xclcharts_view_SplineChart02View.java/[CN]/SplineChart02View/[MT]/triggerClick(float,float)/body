@@ -2,6 +2,7 @@
   if (!chart.getListenItemClickStatus())   return;
   PointPosition record=chart.getPositionRecord(x,y);
   if (null == record)   return;
+  if (record.getDataID() >= chartData.size())   return;
   SplineData lData=chartData.get(record.getDataID());
   LinkedHashMap<Double,Double> linePoint=lData.getLineDataSet();
   int pos=record.getDataChildID();
@@ -13,7 +14,6 @@
       Double xValue=(Double)entry.getKey();
       Double yValue=(Double)entry.getValue();
       Toast.makeText(this.getContext(),record.getPointInfo() + " Key:" + lData.getLineKey()+ " Current Value(key,value):"+ Double.toString(xValue)+ ","+ Double.toString(yValue),Toast.LENGTH_SHORT).show();
-      this.invalidate();
       break;
     }
     i++;

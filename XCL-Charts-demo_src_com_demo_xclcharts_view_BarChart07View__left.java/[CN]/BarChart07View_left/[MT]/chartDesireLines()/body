@@ -1,6 +1,6 @@
 {
   CustomLineData cl=new CustomLineData("??????",18.5d,(int)Color.rgb(77,184,73),3);
-  cl.setLabelHorizontalPostion(XEnum.LabelAlign.LEFT);
+  cl.setLabelHorizontalPostion(Align.LEFT);
   cl.hideLine();
   mCustomLineDataset.add(cl);
 }

@@ -34,6 +34,7 @@
       }
     }
 );
+    chart.getBar().getItemLabelPaint().setTextSize(22);
     chart.setAxis3DBaseColor((int)Color.rgb(132,162,197));
     chart.ActiveListenItemClick();
     chart.setPlotPanMode(XEnum.PanMode.VERTICAL);
