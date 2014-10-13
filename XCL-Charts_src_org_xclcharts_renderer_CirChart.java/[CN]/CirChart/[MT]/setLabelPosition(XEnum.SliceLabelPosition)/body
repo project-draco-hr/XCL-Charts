@@ -2,7 +2,7 @@
   mLabelPosition=position;
 switch (position) {
 case INSIDE:
-    mPaintLabel.setTextAlign(Align.CENTER);
+    getLabelPaint().setTextAlign(Align.CENTER);
   break;
 case OUTSIDE:
 break;

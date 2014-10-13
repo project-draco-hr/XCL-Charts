@@ -1,8 +1,0 @@
-{
-  if (null == mPaintLabelLine) {
-    mPaintLabelLine=new Paint();
-    mPaintLabelLine.setColor(Color.BLACK);
-    mPaintLabelLine.setAntiAlias(true);
-    mPaintLabelLine.setStrokeWidth(2);
-  }
-}

@@ -1,5 +1,6 @@
 Canvas canvas
 String text
+float itemAngle
 float cirX
 float cirY
 float radius

@@ -4,7 +4,7 @@
   for (  PieData cData : mDataset) {
     currentAngle=cData.getSliceAngle();
     if (!validateAngle(currentAngle))     continue;
-    renderLabel(canvas,cData.getLabel(),arrPoint[i].x,arrPoint[i].y,radius,offsetAngle,currentAngle);
+    renderLabel(canvas,cData,arrPoint[i].x,arrPoint[i].y,radius,offsetAngle,currentAngle);
     offsetAngle=add(offsetAngle,currentAngle);
     i++;
   }

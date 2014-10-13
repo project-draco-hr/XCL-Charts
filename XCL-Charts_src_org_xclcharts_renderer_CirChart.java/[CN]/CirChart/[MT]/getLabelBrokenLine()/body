@@ -1,0 +1,4 @@
+{
+  if (null == mLabelLine)   mLabelLine=new LabelBrokenLineRender();
+  return mLabelLine;
+}

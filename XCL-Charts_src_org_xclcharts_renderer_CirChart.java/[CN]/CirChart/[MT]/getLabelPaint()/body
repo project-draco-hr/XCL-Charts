@@ -1,3 +1,9 @@
 {
+  if (null == mPaintLabel) {
+    mPaintLabel=new Paint(Paint.ANTI_ALIAS_FLAG);
+    mPaintLabel.setColor(Color.BLACK);
+    mPaintLabel.setAntiAlias(true);
+    mPaintLabel.setTextAlign(Align.CENTER);
+  }
   return mPaintLabel;
 }
