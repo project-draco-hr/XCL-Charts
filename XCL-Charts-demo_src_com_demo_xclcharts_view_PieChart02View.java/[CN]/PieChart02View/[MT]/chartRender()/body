@@ -1,6 +1,6 @@
 {
   try {
-    chart.setLabelPosition(XEnum.SliceLabelPosition.LINE);
+    chart.setLabelStyle(XEnum.SliceLabelStyle.BROKENLINE);
     chart.getLabelBrokenLine().setLinePointStyle(XEnum.LabelLinePoint.END);
     chart.syncLabelColor();
     chart.syncLabelPointColor();

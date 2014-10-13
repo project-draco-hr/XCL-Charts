@@ -4,5 +4,5 @@
   mPaintFill.setColor(fillColor);
   mPaintFill.setAntiAlias(true);
   plotAttrInfoRender=new PlotAttrInfoRender();
-  this.setLabelPosition(XEnum.SliceLabelPosition.OUTSIDE);
+  this.setLabelStyle(XEnum.SliceLabelStyle.OUTSIDE);
 }

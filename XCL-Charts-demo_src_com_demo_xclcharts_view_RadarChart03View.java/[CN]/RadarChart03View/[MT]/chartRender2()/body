@@ -5,7 +5,7 @@
     chartRose.setDataSource(roseData);
     chartRose.getInnerPaint().setStyle(Style.STROKE);
     chartRose.setInitialAngle(270 + 72 / 2);
-    chartRose.setLabelPosition(XEnum.SliceLabelPosition.OUTSIDE);
+    chartRose.setLabelStyle(XEnum.SliceLabelStyle.OUTSIDE);
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

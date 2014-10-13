@@ -1,0 +1,18 @@
+{
+switch (getLinePointStyle()) {
+case NONE:
+    break;
+case BEGIN:
+  canvas.drawCircle(startX,startY,pointRadius,getPointPaint());
+break;
+case END:
+canvas.drawCircle(endX,stopY,pointRadius,getPointPaint());
+break;
+case ALL:
+canvas.drawCircle(startX,startY,pointRadius,getPointPaint());
+canvas.drawCircle(endX,stopY,pointRadius,getPointPaint());
+break;
+default :
+break;
+}
+}

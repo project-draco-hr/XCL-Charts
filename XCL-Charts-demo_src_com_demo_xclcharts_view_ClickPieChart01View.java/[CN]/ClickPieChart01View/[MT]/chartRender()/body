@@ -1,6 +1,6 @@
 {
   try {
-    chart.setLabelPosition(XEnum.SliceLabelPosition.INSIDE);
+    chart.setLabelStyle(XEnum.SliceLabelStyle.INSIDE);
     int[] ltrb=new int[4];
     ltrb[0]=DensityUtil.dip2px(getContext(),30);
     ltrb[1]=DensityUtil.dip2px(getContext(),55);

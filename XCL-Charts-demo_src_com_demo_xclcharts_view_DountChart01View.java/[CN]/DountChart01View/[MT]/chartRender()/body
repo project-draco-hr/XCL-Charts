@@ -6,7 +6,7 @@
     chart.setDataSource(lPieData);
     chart.setCenterText("????????????!!!");
     chart.getCenterTextPaint().setColor(Color.rgb(242,167,69));
-    chart.setLabelPosition(XEnum.SliceLabelPosition.INSIDE);
+    chart.setLabelStyle(XEnum.SliceLabelStyle.INSIDE);
     chart.getLabelPaint().setColor(Color.WHITE);
     chart.setTitle("?????????");
     chart.addSubtitle("(XCL-Charts Demo)");

@@ -1,0 +1,8 @@
+{
+  if (null == mPaintLabelLine) {
+    mPaintLabelLine=new Paint(Paint.ANTI_ALIAS_FLAG);
+    mPaintLabelLine.setColor(Color.BLACK);
+    mPaintLabelLine.setStrokeWidth(2);
+  }
+  return mPaintLabelLine;
+}

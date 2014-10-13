@@ -9,7 +9,7 @@
     chart.addSubtitle("(XCL-Charts)");
     chart.getPlotTitle().getTitlePaint().setColor(Color.WHITE);
     chart.getPlotTitle().getSubtitlePaint().setColor(Color.WHITE);
-    chart.setLabelPosition(XEnum.SliceLabelPosition.OUTSIDE);
+    chart.setLabelStyle(XEnum.SliceLabelStyle.OUTSIDE);
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

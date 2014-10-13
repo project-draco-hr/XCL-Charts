@@ -2,7 +2,7 @@
   try {
     int[] ltrb=getPieDefaultSpadding();
     chart.setPadding(ltrb[0],ltrb[1],ltrb[2],ltrb[3]);
-    chart.setLabelPosition(XEnum.SliceLabelPosition.INSIDE);
+    chart.setLabelStyle(XEnum.SliceLabelStyle.INSIDE);
     chart.getLabelPaint().setColor(Color.WHITE);
     chart.setTitle("??????-Pie Chart");
     chart.addSubtitle("(XCL-Charts Demo)");
