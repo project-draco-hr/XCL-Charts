@@ -1,5 +1,5 @@
 {
-  if (false == getVisible())   return;
+  if (false == isShow())   return;
   float marksStartX=centerX;
   float markeStopX=centerX;
   float labelStartX=centerX;
@@ -7,40 +7,40 @@
 switch (getHorizontalTickAlign()) {
 case LEFT:
 {
-      if (getTickMarksVisible()) {
+      if (isShowTickMarks()) {
         marksStartX=MathHelper.getInstance().sub(centerX,getTickMarksLength());
         markeStopX=centerX;
       }
-      if (this.getTickLabelVisible())       labelStartX=MathHelper.getInstance().sub(marksStartX,getTickLabelMargin());
+      if (this.isShowAxisLabels())       labelStartX=MathHelper.getInstance().sub(marksStartX,getTickLabelMargin());
       break;
     }
 case CENTER:
 {
-    if (getTickMarksVisible()) {
+    if (isShowTickMarks()) {
       marksStartX=MathHelper.getInstance().sub(centerX,getTickMarksLength() / 2);
       markeStopX=MathHelper.getInstance().add(centerX,getTickMarksLength() / 2);
     }
     break;
   }
 case RIGHT:
-if (getTickMarksVisible()) {
+if (isShowTickMarks()) {
   marksStartX=centerX;
   markeStopX=MathHelper.getInstance().add(centerX,getTickMarksLength());
 }
-if (this.getTickLabelVisible()) labelStartX=MathHelper.getInstance().add(markeStopX,getTickLabelMargin());
+if (this.isShowAxisLabels()) labelStartX=MathHelper.getInstance().add(markeStopX,getTickLabelMargin());
 break;
 default :
 break;
 }
-if (getTickMarksVisible()) {
+if (isShowTickMarks()) {
 canvas.drawLine(marksStartX,centerY,MathHelper.getInstance().add(markeStopX,this.getAxisPaint().getStrokeWidth() / 2),centerY,getTickMarksPaint());
 }
-if (getTickLabelVisible()) {
+if (isShowAxisLabels()) {
 int textHeight=DrawHelper.getInstance().getPaintFontHeight(getTickLabelPaint());
 textHeight/=4;
 if (Align.LEFT == getHorizontalTickAlign()) {
 float width=0.0f;
-if (getTickMarksVisible()) {
+if (isShowTickMarks()) {
 width=markeStopX - xchart.getLeft();
 }
  else {

@@ -14,7 +14,7 @@
       continue;
     }
  else     currentY=sub(plotArea.getBottom(),mul(i,YSteps));
-    if (dataAxis.getTickLabelVisible() && isRenderVerticalBarDataAxisTick(currentY,mMoveY))     continue;
+    if (dataAxis.isShowAxisLabels() && isRenderVerticalBarDataAxisTick(currentY,mMoveY))     continue;
     slen=i * dataAxis.getAxisSteps();
     currentTickLabel=MathHelper.getInstance().add(dataAxis.getAxisMin(),slen);
     if (i % 2 != 0) {

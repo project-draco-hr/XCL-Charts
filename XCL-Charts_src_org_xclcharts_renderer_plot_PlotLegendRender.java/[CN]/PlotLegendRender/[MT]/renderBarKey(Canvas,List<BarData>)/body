@@ -1,5 +1,5 @@
 {
-  if (!isShowLegend())   return true;
+  if (!isShow())   return true;
   if (null == dataSet)   return false;
   if (!validateParams())   return false;
   if (null == mPlotArea)   mPlotArea=mXChart.getPlotArea();

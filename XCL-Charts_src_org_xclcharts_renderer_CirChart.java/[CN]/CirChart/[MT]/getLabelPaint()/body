@@ -4,6 +4,7 @@
     mPaintLabel.setColor(Color.BLACK);
     mPaintLabel.setAntiAlias(true);
     mPaintLabel.setTextAlign(Align.CENTER);
+    mPaintLabel.setTextSize(18);
   }
   return mPaintLabel;
 }

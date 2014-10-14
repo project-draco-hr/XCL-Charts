@@ -1,0 +1,4 @@
+{
+  canvas.drawLine(startX,startY,stopX,stopY,getLabelLinePaint());
+  canvas.drawLine(stopX,stopY,endX,stopY,getLabelLinePaint());
+}

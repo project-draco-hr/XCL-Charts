@@ -1,6 +1,6 @@
 {
   lnChart.setCategories(chartLabelsLn);
-  lnChart.getCategoryAxis().setVisible(false);
+  lnChart.getCategoryAxis().hide();
   lnChart.setDataSource(chartDatasetLn);
   DataAxis dataAxis=lnChart.getDataAxis();
   dataAxis.setHorizontalTickAlign(Align.RIGHT);
@@ -10,7 +10,7 @@
   dataAxis.getTickMarksPaint().setColor((int)Color.rgb(51,204,204));
   dataAxis.getTickLabelPaint().setTextAlign(Align.LEFT);
   dataAxis.getTickLabelPaint().setColor((int)Color.rgb(51,204,204));
-  lnChart.setTopAxisVisible(false);
+  lnChart.hideTopAxis();
   lnChart.getDataAxis().setLabelFormatter(new IFormatterTextCallBack(){
     @Override public String textFormatter(    String value){
       double label=Double.parseDouble(value);

@@ -1,7 +1,4 @@
 {
-  if (null == dataSet || dataSet.size() == 0) {
-    Log.e(TAG,"?????????????????????.");
-  }
- else   if (null != mDataSet)   mDataSet.clear();
+  if (null != mDataSet)   mDataSet.clear();
   this.mDataSet=dataSet;
 }

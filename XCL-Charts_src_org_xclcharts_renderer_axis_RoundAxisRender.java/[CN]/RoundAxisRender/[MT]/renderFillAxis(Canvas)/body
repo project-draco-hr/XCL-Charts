@@ -1,5 +1,5 @@
 {
-  if (getVisible() && getAxisLineVisible()) {
+  if (isShow() && isShowAxisLine()) {
     if (null != mColor)     getFillAxisPaint().setColor(mColor.get(0));
     DrawHelper.getInstance().drawPercent(canvas,this.getFillAxisPaint(),mCirX,mCirY,mRadius,mInitAngle,mTotalAngle,true);
   }

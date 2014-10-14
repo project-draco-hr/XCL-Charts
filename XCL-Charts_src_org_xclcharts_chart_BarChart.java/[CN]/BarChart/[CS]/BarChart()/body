@@ -1,6 +1,5 @@
 {
   super();
-  mCustomLine=new PlotCustomLine();
-  plotLegend.showLegend();
+  plotLegend.show();
   defaultAxisSetting();
 }

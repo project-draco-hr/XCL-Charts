@@ -1,6 +1,6 @@
 {
   lnChart.setCategories(chartLabelsLn);
-  lnChart.getCategoryAxis().setVisible(false);
+  lnChart.getCategoryAxis().hide();
   lnChart.setDataSource(chartDataLn);
   lnChart.setDataAxisLocation(XEnum.LineDataAxisLocation.RIGHT);
   DataAxis dataAxis=lnChart.getDataAxis();

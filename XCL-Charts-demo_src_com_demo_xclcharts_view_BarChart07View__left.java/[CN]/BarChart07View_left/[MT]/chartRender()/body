@@ -20,9 +20,9 @@
       }
     }
 );
-    chart.getDataAxis().setAxisLineVisible(false);
-    chart.getPlotLegend().hideLegend();
-    chart.getCategoryAxis().setVisible(false);
+    chart.getDataAxis().hideAxisLine();
+    chart.getPlotLegend().hide();
+    chart.getCategoryAxis().hide();
   }
  catch (  Exception e) {
     e.printStackTrace();

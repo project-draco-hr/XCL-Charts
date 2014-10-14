@@ -12,7 +12,7 @@
     chart.getLinePaint().setColor(Color.parseColor("#7579C3"));
     chart.getLabelPaint().setColor(Color.parseColor("#3EABEF"));
     chart.getLabelPaint().setFakeBoldText(true);
-    chart.getDataAxis().setTickLabelVisible(false);
+    chart.getDataAxis().hideAxisLabels();
     chart.getDataAxis().setLabelFormatter(new IFormatterTextCallBack(){
       @Override public String textFormatter(      String value){
         Double tmp=Double.parseDouble(value);

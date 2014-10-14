@@ -1,5 +1,5 @@
 {
-  if (getVisible() && getAxisLineVisible()) {
+  if (isShow() && isShowAxisLine()) {
     if (null != mColor)     getAxisPaint().setColor(mColor.get(0));
     canvas.drawCircle(mCirX,mCirY,mRadius,this.getAxisPaint());
   }

@@ -19,12 +19,12 @@
       }
     }
 );
-    chart.getPlotLegend().hideLegend();
+    chart.getPlotLegend().hide();
     chart.getBar().setBarInnerMargin(0.1d);
     chart.getPlotGrid().showEvenRowBgColor();
     chart.getPlotGrid().getEvenRowsBgColorPaint().setColor((int)Color.rgb(225,230,246));
-    chart.getDataAxis().setVisible(false);
-    chart.getCategoryAxis().setTickMarksVisible(false);
+    chart.getDataAxis().hide();
+    chart.getCategoryAxis().hideTickMarks();
   }
  catch (  Exception e) {
     e.printStackTrace();

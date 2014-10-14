@@ -33,7 +33,7 @@
       }
     }
 );
-    chart.getPlotLegend().hideLegend();
+    chart.getPlotLegend().hide();
     chart.disablePanMode();
   }
  catch (  Exception e) {

@@ -1,5 +1,5 @@
 {
-  if (getVisible() && getAxisLineVisible()) {
+  if (isShow() && isShowAxisLine()) {
     DrawHelper.getInstance().drawPathArc(canvas,this.getAxisPaint(),mCirX,mCirY,mRadius,this.mInitAngle,this.mTotalAngle);
   }
   return true;

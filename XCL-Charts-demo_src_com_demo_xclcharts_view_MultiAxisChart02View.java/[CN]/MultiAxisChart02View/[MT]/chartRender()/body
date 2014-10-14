@@ -40,7 +40,7 @@
     chart.getPlotGrid().showHorizontalLines();
     chart.getPlotGrid().showEvenRowBgColor();
     chart.getPlotGrid().showOddRowBgColor();
-    chart.getPlotLegend().hideLegend();
+    chart.getPlotLegend().hide();
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

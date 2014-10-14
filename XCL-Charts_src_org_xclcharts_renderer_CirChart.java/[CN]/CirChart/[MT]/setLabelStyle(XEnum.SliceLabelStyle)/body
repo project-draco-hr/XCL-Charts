@@ -1,6 +1,6 @@
 {
-  mLabelPosition=position;
-switch (position) {
+  mLabelStyle=style;
+switch (style) {
 case INSIDE:
     getLabelPaint().setTextAlign(Align.CENTER);
   break;

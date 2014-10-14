@@ -10,7 +10,7 @@
   }
   for (int i=0; i < dataSet.size(); i++) {
     currentX=MathHelper.getInstance().add(plotArea.getLeft(),(i) * XSteps);
-    if (categoryAxis.getTickLabelVisible() && isRenderVerticalCategoryAxisTick(currentX,this.mMoveX))     continue;
+    if (categoryAxis.isShowAxisLabels() && isRenderVerticalCategoryAxisTick(currentX,this.mMoveX))     continue;
     if (plotGrid.isShowVerticalLines()) {
       if (i > 0 && i + 1 < dataSet.size())       plotGrid.renderGridLinesVertical(canvas,currentX,plotArea.getBottom(),currentX,plotArea.getTop());
     }

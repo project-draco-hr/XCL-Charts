@@ -7,7 +7,7 @@
     chart.setTitle("??????-Pie Chart");
     chart.addSubtitle("(XCL-Charts Demo)");
     chart.setTitleVerticalAlign(XEnum.VerticalAlign.BOTTOM);
-    chart.getPlotLegend().showLegend();
+    chart.getPlotLegend().show();
     chart.ActiveListenItemClick();
     chart.showClikedFocus();
   }

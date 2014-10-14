@@ -1,5 +1,5 @@
 {
-  if (!getVisible() || !getAxisLineVisible())   return true;
+  if (!isShow() || !isShowAxisLine())   return true;
 switch (mLocation) {
 case TOP:
     canvas.drawLine(mCirX,mCirY,mCirX,mCirY - mRadius,this.getAxisPaint());

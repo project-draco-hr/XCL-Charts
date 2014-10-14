@@ -43,7 +43,9 @@
     }
     currNumber++;
   }
-  mCustomLine.setHorizontalPlot(dataAxis,plotArea,this.getAxisScreenWidth());
-  mCustomLine.renderHorizontalCustomlinesDataAxis(canvas);
+  if (null != mCustomLine) {
+    mCustomLine.setHorizontalPlot(dataAxis,plotArea,this.getAxisScreenWidth());
+    mCustomLine.renderHorizontalCustomlinesDataAxis(canvas);
+  }
   return true;
 }

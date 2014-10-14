@@ -1,3 +1,9 @@
 {
+  if (null == mSubtitlePaint) {
+    mSubtitlePaint=new Paint();
+    mSubtitlePaint.setTextSize(22);
+    mSubtitlePaint.setColor(Color.BLACK);
+    mSubtitlePaint.setAntiAlias(true);
+  }
   return mSubtitlePaint;
 }

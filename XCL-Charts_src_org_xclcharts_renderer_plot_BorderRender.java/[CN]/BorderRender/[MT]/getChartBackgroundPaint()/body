@@ -1,6 +1,8 @@
 {
-  if (null == mPaintChartBackground)   mPaintChartBackground=new Paint();
-  mPaintChartBackground.setStyle(Style.FILL);
-  mPaintChartBackground.setColor(Color.WHITE);
+  if (null == mPaintChartBackground) {
+    mPaintChartBackground=new Paint();
+    mPaintChartBackground.setStyle(Style.FILL);
+    mPaintChartBackground.setColor(Color.WHITE);
+  }
   return mPaintChartBackground;
 }

@@ -10,13 +10,13 @@
     chart.getPlotGrid().showHorizontalLines();
     chart.setTitle("??????????????????????????????");
     chart.addSubtitle("(XCL-Charts Demo)");
-    chart.setTopAxisVisible(false);
-    chart.setRightAxisVisible(false);
+    chart.hideTopAxis();
+    chart.hideRightAxis();
     chart.getDataAxis().getAxisPaint().setStrokeWidth(2);
     chart.getDataAxis().getTickMarksPaint().setStrokeWidth(2);
-    chart.getDataAxis().setTickLabelVisible(true);
+    chart.getDataAxis().showAxisLabels();
     chart.getCategoryAxis().getAxisPaint().setStrokeWidth(2);
-    chart.getCategoryAxis().setTickMarksVisible(false);
+    chart.getCategoryAxis().hideTickMarks();
     chart.getDataAxis().setLabelFormatter(new IFormatterTextCallBack(){
       @Override public String textFormatter(      String value){
         Double tmp=Double.parseDouble(value);

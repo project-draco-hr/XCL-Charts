@@ -1,7 +1,7 @@
 {
   float pointRadius=0.0f;
   if (getLinePointStyle() == XEnum.LabelLinePoint.END || getLinePointStyle() == XEnum.LabelLinePoint.ALL)   pointRadius=getRadius();
-  float calcRadius=MathHelper.getInstance().sub(radius,radius / 4f);
+  float calcRadius=MathHelper.getInstance().sub(radius,radius / mBrokenStartPoint);
   MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,calcRadius,calcAngle);
   float startX=MathHelper.getInstance().getPosX();
   float startY=MathHelper.getInstance().getPosY();
@@ -9,7 +9,6 @@
   MathHelper.getInstance().calcArcEndPointXY(startX,startY,calcRadius,calcAngle);
   float stopX=MathHelper.getInstance().getPosX();
   float stopY=MathHelper.getInstance().getPosY();
-  canvas.drawLine(startX,startY,stopX,stopY,getLabelLinePaint());
   float borkenline=getBrokenLine();
   float endX=0.0f, endLabelX=0.0f;
   if (Float.compare(stopX,cirX) == 0) {
@@ -49,7 +48,12 @@
     endLabelX=endX=stopX;
     paintLabel.setTextAlign(Align.CENTER);
   }
-  canvas.drawLine(stopX,stopY,endX,stopY,getLabelLinePaint());
+  if (mIsBZLine) {
+    drawBZLine(startX,startY,stopX,stopY,endX,canvas);
+  }
+ else {
+    drawBrokenLine(startX,startY,stopX,stopY,endX,canvas);
+  }
   drawPoint(startX,startY,stopX,stopY,endX,pointRadius,canvas);
   DrawHelper.getInstance().drawRotateText(text,endLabelX,stopY,itemAngle,canvas,paintLabel);
 }

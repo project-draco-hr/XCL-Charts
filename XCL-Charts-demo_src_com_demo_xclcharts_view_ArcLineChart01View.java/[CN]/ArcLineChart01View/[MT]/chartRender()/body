@@ -9,7 +9,7 @@
     chart.setTitle("???????????????");
     chart.addSubtitle("(XCL-Charts Demo)");
     chart.setTitleVerticalAlign(XEnum.VerticalAlign.BOTTOM);
-    chart.getPlotLegend().showLegend();
+    chart.getPlotLegend().show();
     chart.setDataSource(chartData);
     chart.setLabelOffsetX(30f);
     addAttrInfo();

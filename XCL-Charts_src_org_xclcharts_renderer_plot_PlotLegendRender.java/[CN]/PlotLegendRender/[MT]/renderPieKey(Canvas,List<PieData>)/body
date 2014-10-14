@@ -1,5 +1,5 @@
 {
-  if (isShowLegend() == false)   return;
+  if (isShow() == false)   return;
   if (null == dataset)   return;
   initRoundChartKey();
   for (  PieData cData : dataset) {

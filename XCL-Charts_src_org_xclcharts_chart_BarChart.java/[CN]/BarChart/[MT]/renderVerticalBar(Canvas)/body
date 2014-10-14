@@ -41,7 +41,9 @@
     }
     currNumber++;
   }
-  mCustomLine.setVerticalPlot(dataAxis,plotArea,getAxisScreenHeight());
-  mCustomLine.renderVerticalCustomlinesDataAxis(canvas);
+  if (null != mCustomLine) {
+    mCustomLine.setVerticalPlot(dataAxis,plotArea,getAxisScreenHeight());
+    mCustomLine.renderVerticalCustomlinesDataAxis(canvas);
+  }
   return true;
 }

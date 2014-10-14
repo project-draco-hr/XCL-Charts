@@ -43,7 +43,7 @@
     chart2.getCategoryAxis().getTickLabelPaint().setColor(axisColor);
     chart2.getAxisTitle().getLeftAxisTitlePaint().setColor(axisColor);
     chart2.getAxisTitle().getLowerAxisTitlePaint().setColor(axisColor);
-    chart2.getPlotLegend().hideLegend();
+    chart2.getPlotLegend().hide();
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

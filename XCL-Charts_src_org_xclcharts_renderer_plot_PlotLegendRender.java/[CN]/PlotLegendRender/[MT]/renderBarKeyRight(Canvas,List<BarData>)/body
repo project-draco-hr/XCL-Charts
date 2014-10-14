@@ -1,5 +1,5 @@
 {
-  if (false == isShowLegend())   return;
+  if (false == isShow())   return;
   initEnv();
   mTextHeight=this.getLabelTextHeight();
   mRectWidth=this.getRectWidth();

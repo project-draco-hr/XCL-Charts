@@ -35,7 +35,7 @@
       }
     }
 );
-    chart.getPlotLegend().hideLegend();
+    chart.getPlotLegend().hide();
     chart.getBar().setBarInnerMargin(0.1d);
     chart.disablePanMode();
   }

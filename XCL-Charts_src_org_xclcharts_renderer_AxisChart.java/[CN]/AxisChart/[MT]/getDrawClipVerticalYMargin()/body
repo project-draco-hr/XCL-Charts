@@ -1,6 +1,6 @@
 {
   float yMargin=0.0f;
-  if (dataAxis.getTickLabelVisible()) {
+  if (dataAxis.isShowAxisLabels()) {
     yMargin=DrawHelper.getInstance().getPaintFontHeight(dataAxis.getTickLabelPaint()) / 2;
   }
   return yMargin;

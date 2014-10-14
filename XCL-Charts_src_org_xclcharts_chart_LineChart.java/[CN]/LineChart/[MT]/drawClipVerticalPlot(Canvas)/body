@@ -37,7 +37,7 @@
     renderVerticalCategoryAxis(canvas);
   }
   canvas.save();
-  if (getRightAxisVisible()) {
+  if (isShowRightAxis()) {
     canvas.clipRect(plotArea.getLeft(),plotArea.getTop(),plotArea.getRight(),plotArea.getBottom());
   }
  else {
@@ -46,8 +46,10 @@
   canvas.save();
   canvas.translate(mMoveX,mMoveY);
   if (renderVerticalPlot(canvas) == true) {
-    mCustomLine.setVerticalPlot(dataAxis,plotArea,getAxisScreenHeight());
-    mCustomLine.renderVerticalCustomlinesDataAxis(canvas);
+    if (null != mCustomLine) {
+      mCustomLine.setVerticalPlot(dataAxis,plotArea,getAxisScreenHeight());
+      mCustomLine.renderVerticalCustomlinesDataAxis(canvas);
+    }
     execGC();
   }
   canvas.restore();

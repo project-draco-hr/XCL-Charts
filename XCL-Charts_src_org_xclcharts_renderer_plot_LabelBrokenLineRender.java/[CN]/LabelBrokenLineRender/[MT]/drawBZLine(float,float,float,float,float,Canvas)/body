@@ -1,0 +1,8 @@
+{
+  if (null == mBzLine)   mBzLine=new Path();
+  getLabelLinePaint().setStyle(Style.STROKE);
+  mBzLine.reset();
+  mBzLine.moveTo(startX,startY);
+  mBzLine.quadTo(stopX,stopY,endX,stopY);
+  canvas.drawPath(mBzLine,getLabelLinePaint());
+}

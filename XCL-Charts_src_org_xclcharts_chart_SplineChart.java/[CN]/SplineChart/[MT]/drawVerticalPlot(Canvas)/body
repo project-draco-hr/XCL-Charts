@@ -2,8 +2,10 @@
   renderVerticalDataAxis(canvas);
   renderVerticalCategoryAxis(canvas);
   if (renderPlot(canvas) == true) {
-    mCustomLine.setVerticalPlot(dataAxis,plotArea,getAxisScreenHeight());
-    mCustomLine.renderVerticalCustomlinesDataAxis(canvas);
+    if (null != mCustomLine) {
+      mCustomLine.setVerticalPlot(dataAxis,plotArea,getAxisScreenHeight());
+      mCustomLine.renderVerticalCustomlinesDataAxis(canvas);
+    }
   }
   renderVerticalDataAxisLine(canvas);
   renderVerticalDataAxisRightLine(canvas);

@@ -1,3 +1,9 @@
 {
+  if (null == mTitlePaint) {
+    mTitlePaint=new Paint();
+    mTitlePaint.setTextSize(32);
+    mTitlePaint.setColor(Color.BLACK);
+    mTitlePaint.setAntiAlias(true);
+  }
   return mTitlePaint;
 }

@@ -1,3 +1,0 @@
-{
-  return (!isPrimaryTick() ? false : super.getTickLabelVisible());
-}

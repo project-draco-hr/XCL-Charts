@@ -12,8 +12,8 @@
     chart.getDataAxis().setAxisMin(0);
     chart.getDataAxis().setAxisSteps(500);
     chart.getBar().setBarInnerMargin(0d);
-    chart.getDataAxis().setVisible(false);
-    chart.getCategoryAxis().setVisible(false);
+    chart.getDataAxis().hide();
+    chart.getCategoryAxis().hide();
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

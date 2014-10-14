@@ -32,7 +32,7 @@
       }
     }
 );
-    chart.getPlotLegend().hideLegend();
+    chart.getPlotLegend().hide();
   }
  catch (  Exception e) {
     e.printStackTrace();

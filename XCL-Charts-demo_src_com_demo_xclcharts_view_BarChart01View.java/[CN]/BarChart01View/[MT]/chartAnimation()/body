@@ -1,7 +1,7 @@
 {
   try {
-    chart.getDataAxis().setVisible(false);
-    chart.getPlotLegend().hideLegend();
+    chart.getDataAxis().hide();
+    chart.getPlotLegend().hide();
     int[] ltrb=getBarLnDefaultSpadding();
     for (int i=8; i > 0; i--) {
       Thread.sleep(100);

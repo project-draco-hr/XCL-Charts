@@ -9,7 +9,7 @@
  else {
   }
   dataAxis.renderAxis(canvas,plotLeft,plotBottom,plotLeft,plotTop);
-  if (!dataAxis.getAxisLineVisible() || !dataAxis.getVisible()) {
+  if (!dataAxis.isShowAxisLine() || !dataAxis.isShow()) {
     plotGrid.renderGridLinesHorizontal(canvas,plotLeft,plotBottom,plotRight,plotBottom);
   }
 }

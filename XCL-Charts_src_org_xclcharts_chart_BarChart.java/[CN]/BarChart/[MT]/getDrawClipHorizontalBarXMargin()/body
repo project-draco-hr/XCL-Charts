@@ -1,6 +1,6 @@
 {
   float XMargin=0.0f;
-  if (dataAxis.getTickLabelVisible()) {
+  if (dataAxis.isShowAxisLabels()) {
     if (dataAxis.getHorizontalTickAlign() != Align.LEFT) {
       String str=Double.toString(dataAxis.getAxisMin());
       XMargin=DrawHelper.getInstance().getTextWidth(dataAxis.getTickLabelPaint(),str);

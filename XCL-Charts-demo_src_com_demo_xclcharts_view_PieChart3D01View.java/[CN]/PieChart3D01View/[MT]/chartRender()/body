@@ -2,7 +2,7 @@
   try {
     int[] ltrb=getPieDefaultSpadding();
     chart.setPadding(ltrb[0],ltrb[1],ltrb[2],ltrb[3]);
-    chart.getPlotLegend().hideLegend();
+    chart.getPlotLegend().hide();
     chart.getLabelPaint().setColor(Color.WHITE);
   }
  catch (  Exception e) {

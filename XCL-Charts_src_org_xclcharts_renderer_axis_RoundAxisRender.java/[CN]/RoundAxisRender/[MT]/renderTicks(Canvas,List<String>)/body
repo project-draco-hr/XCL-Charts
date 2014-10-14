@@ -53,7 +53,7 @@
       stopY=MathHelper.getInstance().getPosY();
       steps++;
     }
-    if (getTickMarksVisible()) {
+    if (isShowTickMarks()) {
       if (0 == steps && mLongTickfakeBold) {
         getTickMarksPaint().setStrokeWidth(tickMarkWidth + 1);
       }
@@ -62,7 +62,7 @@
       }
       canvas.drawLine(startX,startY,stopX,stopY,getTickMarksPaint());
     }
-    if (getTickLabelVisible()) {
+    if (isShowAxisLabels()) {
       String label=getFormatterLabel(labels.get(i));
       PointF pLabel=getLabelXY(label,labelX,labelY,cirX,cirY,mTotalAngle,Angle);
       DrawHelper.getInstance().drawRotateText(label,pLabel.x,pLabel.y,getTickLabelRotateAngle(),canvas,getTickLabelPaint());

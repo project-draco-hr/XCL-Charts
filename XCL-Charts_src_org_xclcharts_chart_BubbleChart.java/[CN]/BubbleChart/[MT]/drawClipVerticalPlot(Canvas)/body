@@ -27,7 +27,7 @@
     renderVerticalCategoryAxis(canvas);
   }
   canvas.save();
-  if (getRightAxisVisible()) {
+  if (isShowRightAxis()) {
     canvas.clipRect(plotArea.getLeft(),plotArea.getTop(),plotArea.getRight(),plotArea.getBottom());
   }
  else {

@@ -1,4 +1,4 @@
 {
   super();
-  plotLegend.showLegend();
+  plotLegend.show();
 }

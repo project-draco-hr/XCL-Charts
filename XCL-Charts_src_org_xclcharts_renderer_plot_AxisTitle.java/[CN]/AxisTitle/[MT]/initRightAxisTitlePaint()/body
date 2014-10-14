@@ -3,5 +3,7 @@
     mPaintRightAxisTitle=new Paint();
     mPaintRightAxisTitle.setTextAlign(Align.CENTER);
     mPaintRightAxisTitle.setAntiAlias(true);
+    mPaintRightAxisTitle.setTextSize(26);
+    mPaintRightAxisTitle.setColor((int)Color.rgb(51,204,204));
   }
 }

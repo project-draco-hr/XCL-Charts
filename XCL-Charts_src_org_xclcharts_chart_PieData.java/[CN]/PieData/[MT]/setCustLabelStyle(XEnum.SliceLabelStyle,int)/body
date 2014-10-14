@@ -1,0 +1,5 @@
+{
+  mLabelStyle=style;
+  mCustLabelStyle=true;
+  mCustLabelColor=color;
+}
