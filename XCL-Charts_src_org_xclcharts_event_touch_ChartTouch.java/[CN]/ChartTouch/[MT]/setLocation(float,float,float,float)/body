@@ -1,12 +1,13 @@
 {
+  if (null == mChart)   return;
+  if (null == mView)   return;
   float xx=0.0f, yy=0.0f;
   float[] txy=mChart.getTranslateXY();
+  if (null == txy)   return;
   xx=txy[0];
   yy=txy[1];
-  if (newX < oldX || newY < oldY) {
-    xx=(float)(txy[0] + newX - oldX);
-    yy=(float)(txy[1] + newY - oldY);
-  }
+  xx=(float)(txy[0] + newX - oldX);
+  yy=(float)(txy[1] + newY - oldY);
   mChart.setTranslateXY(xx,yy);
   mView.invalidate((int)mChart.getLeft(),(int)mChart.getTop(),(int)mChart.getRight(),(int)mChart.getBottom());
 }

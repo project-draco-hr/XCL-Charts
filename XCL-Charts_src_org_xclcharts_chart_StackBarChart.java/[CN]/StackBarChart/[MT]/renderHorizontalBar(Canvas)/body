@@ -1,6 +1,6 @@
 {
   if (null == categoryAxis.getDataSet())   return false;
-  float axisScreenWidth=getAxisScreenWidth();
+  float axisScreenWidth=getPlotScreenWidth();
   float axisDataRange=(float)dataAxis.getAxisRange();
   float valueWidth=axisDataRange;
   float YSteps=getHorizontalYSteps();

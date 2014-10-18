@@ -1,16 +1,17 @@
 {
-  Paint pDyLegend=new Paint(Paint.ANTI_ALIAS_FLAG);
-  PlotDot dotDyLegend=new PlotDot();
   Legend dyLegend=chart.getDyLegend();
+  if (null == dyLegend)   return;
   dyLegend.setPosition(0.7f,0.3f);
   dyLegend.setColSpan(30.f);
   dyLegend.getBackgroundPaint().setColor(Color.BLACK);
   dyLegend.getBackgroundPaint().setAlpha(100);
   dyLegend.setRowSpan(20.f);
   dyLegend.setMargin(15.f);
-  pDyLegend.setColor(Color.GREEN);
-  dotDyLegend.setDotStyle(XEnum.DotStyle.RECT);
   dyLegend.setStyle(XEnum.DyInfoStyle.ROUNDRECT);
+  Paint pDyLegend=new Paint(Paint.ANTI_ALIAS_FLAG);
+  pDyLegend.setColor(Color.GREEN);
+  PlotDot dotDyLegend=new PlotDot();
+  dotDyLegend.setDotStyle(XEnum.DotStyle.RECT);
   dyLegend.addLegend(dotDyLegend,"???????????????",pDyLegend);
   Paint pDyLegend2=new Paint(Paint.ANTI_ALIAS_FLAG);
   pDyLegend2.setColor(Color.RED);

@@ -1,0 +1,9 @@
+{
+  initEnv();
+  if (null == mLstKey)   mLstKey=new ArrayList<String>();
+ else   mLstKey.clear();
+  if (null == mLstDotStyle)   mLstDotStyle=new ArrayList<PlotDot>();
+ else   mLstDotStyle.clear();
+  if (null == mLstColor)   mLstColor=new ArrayList<Integer>();
+ else   mLstColor.clear();
+}

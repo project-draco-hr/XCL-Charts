@@ -1,0 +1,13 @@
+{
+  if (null == dataSet)   return;
+  String key="";
+  for (  PieData cData : dataSet) {
+    key=cData.getKey();
+    if ("" == key || key.length() == 0)     continue;
+    mLstKey.add(key);
+    mLstColor.add(cData.getSliceColor());
+    PlotDot dot=new PlotDot();
+    dot.setDotStyle(XEnum.DotStyle.RECT);
+    mLstDotStyle.add(dot);
+  }
+}

@@ -1,0 +1,4 @@
+float radius
+float offsetAngle
+float currentAngle
+float selectedOffset

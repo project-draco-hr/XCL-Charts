@@ -1,14 +1,11 @@
 {
-  if ("" == key)   return;
-  if (null == mPlotArea)   mPlotArea=mXChart.getPlotArea();
-  initEnv();
-  mTextHeight=this.getLabelTextHeight();
-  mRectWidth=this.getRectWidth();
-  mKeyLabelX=mPlotArea.getLeft() + mOffsetX + 10;
-  mKeyLabelY=mPlotArea.getTop() - mOffsetY - 5;
-  getLegendLabelPaint().setTextAlign(Align.LEFT);
-  getLegendLabelPaint().setColor(textColor);
-  getLegendLabelPaint().setStyle(Style.FILL);
-  canvas.drawRect(mKeyLabelX,mKeyLabelY,mKeyLabelX + mRectWidth,mKeyLabelY - mTextHeight,getLegendLabelPaint());
-  canvas.drawText(key,mKeyLabelX + mRectWidth,mKeyLabelY,getLegendLabelPaint());
+  if (isShow() == false)   return;
+  if ("" == key || key.length() == 0)   return;
+  refreshLst();
+  mLstKey.add(key);
+  mLstColor.add(textColor);
+  PlotDot pDot=new PlotDot();
+  pDot.setDotStyle(XEnum.DotStyle.RECT);
+  mLstDotStyle.add(pDot);
+  render(canvas);
 }

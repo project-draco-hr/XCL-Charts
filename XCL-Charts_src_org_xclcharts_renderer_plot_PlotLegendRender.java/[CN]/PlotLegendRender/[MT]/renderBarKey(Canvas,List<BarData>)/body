@@ -1,16 +1,7 @@
 {
-  if (!isShow())   return true;
-  if (null == dataSet)   return false;
-  if (!validateParams())   return false;
-  if (null == mPlotArea)   mPlotArea=mXChart.getPlotArea();
-switch (mXChart.getPlotTitle().getTitleAlign()) {
-case MIDDLE:
-case RIGHT:
-    renderBarKeyLeft(canvas,dataSet);
-  break;
-case LEFT:
-renderBarKeyRight(canvas,dataSet);
-break;
-}
-return true;
+  if (isShow() == false)   return false;
+  refreshLst();
+  convertArrayBarKey(dataSet);
+  render(canvas);
+  return true;
 }

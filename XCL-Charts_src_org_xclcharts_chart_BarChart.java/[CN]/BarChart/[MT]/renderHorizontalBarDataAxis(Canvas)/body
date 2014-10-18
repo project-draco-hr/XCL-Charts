@@ -1,6 +1,6 @@
 {
   int tickCount=dataAxis.getAixTickCount();
-  float XSteps=div(this.getAxisScreenWidth(),tickCount);
+  float XSteps=div(this.getPlotScreenWidth(),tickCount);
   float currentX=0.0f;
   float axisX=plotArea.getLeft();
   double currentTickLabel=0d;

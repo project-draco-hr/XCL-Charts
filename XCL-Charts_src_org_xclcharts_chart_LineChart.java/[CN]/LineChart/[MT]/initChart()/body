@@ -1,7 +1,11 @@
 {
   defaultAxisSetting();
-  getDataAxis().getAxisPaint().setStrokeWidth(2);
-  getDataAxis().getTickMarksPaint().setStrokeWidth(2);
-  getCategoryAxis().getAxisPaint().setStrokeWidth(2);
-  getCategoryAxis().getTickMarksPaint().setStrokeWidth(2);
+  if (null != getDataAxis()) {
+    getDataAxis().getAxisPaint().setStrokeWidth(2);
+    getDataAxis().getTickMarksPaint().setStrokeWidth(2);
+  }
+  if (null != getCategoryAxis()) {
+    getCategoryAxis().getAxisPaint().setStrokeWidth(2);
+    getCategoryAxis().getTickMarksPaint().setStrokeWidth(2);
+  }
 }

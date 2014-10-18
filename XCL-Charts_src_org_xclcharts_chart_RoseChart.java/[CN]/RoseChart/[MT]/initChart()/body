@@ -1,9 +1,13 @@
 {
-  mPaintInner=new Paint();
-  mPaintInner.setColor(Color.DKGRAY);
-  mPaintInner.setStyle(Style.FILL);
-  mPaintInner.setAntiAlias(true);
-  getLabelPaint().setColor(Color.WHITE);
-  getLabelPaint().setTextSize(22);
-  getLabelPaint().setTextAlign(Align.CENTER);
+  if (null == mPaintInner) {
+    mPaintInner=new Paint();
+    mPaintInner.setColor(Color.DKGRAY);
+    mPaintInner.setStyle(Style.FILL);
+    mPaintInner.setAntiAlias(true);
+  }
+  if (null != getLabelPaint()) {
+    getLabelPaint().setColor(Color.WHITE);
+    getLabelPaint().setTextSize(22);
+    getLabelPaint().setTextAlign(Align.CENTER);
+  }
 }

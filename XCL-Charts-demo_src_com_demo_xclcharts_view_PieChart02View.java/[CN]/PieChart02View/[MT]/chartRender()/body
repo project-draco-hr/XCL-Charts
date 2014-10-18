@@ -16,6 +16,11 @@
     chart.hideGradient();
     chart.ActiveListenItemClick();
     chart.showClikedFocus();
+    PlotLegend legend=chart.getPlotLegend();
+    legend.show();
+    legend.setHorizontalAlign(XEnum.HorizontalAlign.CENTER);
+    legend.setVerticalAlign(XEnum.VerticalAlign.BOTTOM);
+    legend.showBox();
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

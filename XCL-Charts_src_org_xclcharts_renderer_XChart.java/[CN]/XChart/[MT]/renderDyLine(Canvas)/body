@@ -1,6 +1,0 @@
-{
-  if (!mDyLineVisible)   return;
-  if (null == mDyLine)   return;
-  mDyLine.setPlotArea(this.plotArea);
-  mDyLine.renderLine(canvas);
-}

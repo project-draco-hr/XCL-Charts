@@ -1,0 +1,9 @@
+{
+  if (null == mKeyPaint) {
+    mKeyPaint=new Paint();
+    mKeyPaint.setColor(Color.BLACK);
+    mKeyPaint.setAntiAlias(true);
+    mKeyPaint.setTextSize(15);
+  }
+  return mKeyPaint;
+}

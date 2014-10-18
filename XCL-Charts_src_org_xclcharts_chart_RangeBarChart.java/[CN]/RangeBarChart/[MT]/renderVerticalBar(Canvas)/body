@@ -7,7 +7,7 @@
   float XSteps=getVerticalXSteps(cateDataSet.size() + 1);
   float currentX=0.0f, barMaxPos=0.0f, barMinPos=0.0f;
   float barWidthHalf=mBarWidth / 2;
-  float axisScreenWidth=getAxisScreenWidth();
+  float axisScreenWidth=getPlotScreenWidth();
   float fontHeight=DrawHelper.getInstance().getPaintFontHeight(mFlatBar.getItemLabelPaint());
   int dataSetSize=mDataSet.size();
   for (int i=0; i < dataSetSize; i++) {
@@ -24,7 +24,7 @@
       mFlatBar.renderBarItemLabel(getFormatterItemLabel(bd.getMin()),currentX,barMaxPos + fontHeight + fontHeight / 2,canvas);
     }
   }
-  dataAxis.renderAxis(canvas,plotArea.getLeft(),plotArea.getBottom(),plotArea.getRight(),plotArea.getBottom());
+  dataAxis.renderAxis(canvas,plotArea.getLeft(),plotArea.getBottom(),plotArea.getPlotRight(),plotArea.getBottom());
   plotLegend.renderRangeBarKey(canvas,getKey(),mFlatBar.getBarPaint().getColor());
   return true;
 }

@@ -10,7 +10,13 @@
     chart.getLabelPaint().setColor(Color.WHITE);
     chart.setTitle("?????????");
     chart.addSubtitle("(XCL-Charts Demo)");
-    chart.getPlotLegend().show();
+    PlotLegend legend=chart.getPlotLegend();
+    legend.show();
+    legend.setType(XEnum.LegendType.ROW);
+    legend.setHorizontalAlign(XEnum.HorizontalAlign.CENTER);
+    legend.setVerticalAlign(XEnum.VerticalAlign.BOTTOM);
+    legend.showBox();
+    legend.getBox().setBorderRectType(XEnum.RectType.RECT);
     chart.setApplyBackgroundColor(true);
     chart.setBackgroundColor(Color.rgb(19,163,224));
     chart.getInnerPaint().setColor(Color.rgb(19,163,224));

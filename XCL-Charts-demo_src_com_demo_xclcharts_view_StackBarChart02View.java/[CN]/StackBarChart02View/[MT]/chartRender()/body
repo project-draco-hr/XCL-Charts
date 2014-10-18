@@ -12,7 +12,7 @@
     chart.getCategoryAxis().setTickLabelRotateAngle(-45f);
     chart.setTitle("?????????????????????????????????");
     chart.addSubtitle("(XCL-Charts Demo)");
-    chart.setTitleAlign(XEnum.ChartTitleAlign.MIDDLE);
+    chart.setTitleAlign(XEnum.HorizontalAlign.CENTER);
     chart.getAxisTitle().setLowerAxisTitle("?????????(W)");
     chart.getPlotGrid().showVerticalLines();
     chart.getPlotGrid().setVerticalLineStyle(XEnum.LineStyle.DOT);

@@ -1,4 +1,5 @@
 {
+  if (null == chartDataSource)   return false;
   float offsetAngle=initOffsetAngle;
   float currentAngle=0.0f;
   float newRadius=0.0f;
@@ -9,11 +10,12 @@
     size=chartDataSource.size();
     for (int j=0; j < size; j++) {
       PieData cData=chartDataSource.get(j);
+      if (null == cData)       continue;
       currentAngle=cData.getSliceAngle();
       if (!validateAngle(currentAngle))       continue;
       geArcPaint().setColor(cData.getSliceColor());
       if (cData.getSelected()) {
-        newRadius=div(radius,SELECTED_OFFSET);
+        newRadius=div(radius,getSelectedOffset());
         PointF point=MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,newRadius,add(offsetAngle,div(currentAngle,2f)));
         initRectF("mRectF",sub(point.x,radius),sub(point.y,radius),add(point.x,radius),add(point.y,radius));
         canvas.drawArc(mRectF,offsetAngle,currentAngle,true,geArcPaint());

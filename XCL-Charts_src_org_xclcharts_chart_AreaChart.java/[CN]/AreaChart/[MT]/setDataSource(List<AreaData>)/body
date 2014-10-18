@@ -1,4 +1,3 @@
 {
-  if (null != mDataset)   mDataset.clear();
   this.mDataset=dataset;
 }

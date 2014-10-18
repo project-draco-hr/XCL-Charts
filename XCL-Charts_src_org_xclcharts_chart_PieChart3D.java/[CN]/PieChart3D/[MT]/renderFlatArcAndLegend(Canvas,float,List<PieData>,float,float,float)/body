@@ -1,16 +1,18 @@
 {
+  if (null == chartDataSource)   return false;
   float offsetAngle=initOffsetAngle;
   float currentAngle=0.0f;
   float newRadius=0.0f;
-  PointF[] arrPoint=new PointF[chartDataSource.size()];
   int size=chartDataSource.size();
+  PointF[] arrPoint=new PointF[size];
   for (int j=0; j < size; j++) {
     PieData cData=chartDataSource.get(j);
+    if (null == cData)     continue;
     currentAngle=cData.getSliceAngle();
     if (!validateAngle(currentAngle))     continue;
     geArcPaint().setColor(DrawHelper.getInstance().getDarkerColor((int)cData.getSliceColor()));
     if (cData.getSelected()) {
-      newRadius=div(radius,SELECTED_OFFSET);
+      newRadius=div(radius,getSelectedOffset());
       PointF point=MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,newRadius,add(offsetAngle,div(currentAngle,2f)));
       initRectF("mRectF",sub(point.x,radius),sub(point.y,radius),add(point.x,radius),add(point.y,radius));
       canvas.drawArc(mRectF,offsetAngle,currentAngle,true,geArcPaint());
@@ -20,12 +22,10 @@
       canvas.drawArc(mArcRF0,offsetAngle,currentAngle,true,geArcPaint());
       arrPoint[j]=new PointF(cirX,cirY);
     }
-    saveArcRecord(j,cirX + this.mTranslateXY[0],cirY + this.mTranslateXY[1],radius,offsetAngle,currentAngle);
+    saveArcRecord(j,cirX + this.mTranslateXY[0],cirY + this.mTranslateXY[1],radius,offsetAngle,currentAngle,getSelectedOffset());
     offsetAngle=add(offsetAngle,currentAngle);
   }
   renderLabels(canvas,initOffsetAngle,radius,arrPoint);
-  plotLegend.renderPieKey(canvas,this.getDataSource());
-  plotLegend=null;
-  arrPoint=null;
+  plotLegend.renderPieKey(canvas,chartDataSource);
   return true;
 }

@@ -1,3 +1,4 @@
 {
+  if (null == dataAxis)   dataAxis=new DataAxisRender();
   return dataAxis;
 }

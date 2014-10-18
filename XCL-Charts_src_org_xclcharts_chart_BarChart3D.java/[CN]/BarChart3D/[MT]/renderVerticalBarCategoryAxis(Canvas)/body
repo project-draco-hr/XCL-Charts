@@ -2,7 +2,7 @@
   float currentX=plotArea.getLeft();
   List<String> dataSet=categoryAxis.getDataSet();
   if (null == dataSet)   return;
-  float XSteps=div(getAxisScreenWidth(),(dataSet.size() + 1));
+  float XSteps=div(getPlotScreenWidth(),(dataSet.size() + 1));
   double baseTickness=mBar3D.getAxis3DBaseThickness();
   double baseAngle=mBar3D.getAngle();
   double baseOffsetX=mBar3D.getOffsetX(baseTickness,baseAngle);

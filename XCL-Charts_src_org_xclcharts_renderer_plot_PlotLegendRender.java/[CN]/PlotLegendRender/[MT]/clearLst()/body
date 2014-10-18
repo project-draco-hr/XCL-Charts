@@ -1,0 +1,14 @@
+{
+  if (null != mLstDotStyle) {
+    mLstDotStyle.clear();
+    mLstDotStyle=null;
+  }
+  if (null != mLstKey) {
+    mLstKey.clear();
+    mLstKey=null;
+  }
+  if (null != mLstColor) {
+    mLstColor.clear();
+    mLstColor=null;
+  }
+}

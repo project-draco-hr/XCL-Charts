@@ -1,0 +1,6 @@
+{
+  mRadius=radius;
+  mOffsetAngle=offsetAngle;
+  mCurrentAngle=currentAngle;
+  mSelectedOffset=selectedOffset;
+}

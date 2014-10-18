@@ -1,0 +1,60 @@
+{
+  float mBoxLineSize=BOX_LINE_SIZE;
+  if (!this.mShowBox)   mBoxLineSize=0.0f;
+switch (getHorizontalAlign()) {
+case LEFT:
+    if (EnumChartType.CIR == mType) {
+      mKeyLabelX=mXChart.getLeft() + mOffsetX;
+    }
+ else {
+      mKeyLabelX=mPlotArea.getLeft() + mOffsetX;
+    }
+  mKeyLabelX+=mBoxLineSize;
+break;
+case CENTER:
+mKeyLabelX=this.mXChart.getLeft() + (mXChart.getWidth() - mRectWidth) / 2 + mOffsetX;
+break;
+case RIGHT:
+if (EnumChartType.CIR == mType) {
+mKeyLabelX=mXChart.getRight() - mOffsetX - mRectWidth;
+}
+ else {
+mKeyLabelX=mPlotArea.getRight() - mOffsetX - mRectWidth;
+}
+mKeyLabelX-=mBoxLineSize;
+break;
+default :
+break;
+}
+switch (getVerticalAlign()) {
+case TOP:
+if (XEnum.LegendType.COLUMN == getType()) {
+mKeyLabelY=mPlotArea.getTop() + mOffsetY;
+mKeyLabelY+=mXChart.getBorderWidth();
+mKeyLabelY+=mBoxLineSize;
+}
+ else {
+mKeyLabelY=mPlotArea.getTop() - mRectHeight - mOffsetY;
+mKeyLabelY-=mXChart.getBorderWidth();
+mKeyLabelY-=mBoxLineSize;
+}
+break;
+case MIDDLE:
+mKeyLabelY=mPlotArea.getTop() + (mPlotArea.getHeight() - mRectHeight) / 2;
+break;
+case BOTTOM:
+if (XEnum.LegendType.COLUMN == getType()) {
+mKeyLabelY=mXChart.getBottom() + mOffsetY;
+mKeyLabelY+=mXChart.getBorderWidth();
+mKeyLabelY+=mBoxLineSize;
+}
+ else {
+mKeyLabelY=mXChart.getBottom() - mRectHeight - mOffsetY;
+mKeyLabelY-=mXChart.getBorderWidth();
+mKeyLabelY-=mBoxLineSize;
+}
+break;
+default :
+break;
+}
+}

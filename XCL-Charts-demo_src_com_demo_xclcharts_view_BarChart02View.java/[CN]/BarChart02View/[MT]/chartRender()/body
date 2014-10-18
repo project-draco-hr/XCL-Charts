@@ -5,7 +5,7 @@
     chart.setTitle("??????????????????");
     chart.addSubtitle("(XCL-Charts Demo)");
     chart.setTitleVerticalAlign(XEnum.VerticalAlign.MIDDLE);
-    chart.setTitleAlign(XEnum.ChartTitleAlign.LEFT);
+    chart.setTitleAlign(XEnum.HorizontalAlign.LEFT);
     chart.setDataSource(chartData);
     chart.setCategories(chartLabels);
     chart.getAxisTitle().setLeftAxisTitle("????????????");
@@ -36,10 +36,10 @@
       }
     }
 );
+    chart.ActiveListenItemClick();
+    chart.showClikedFocus();
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());
   }
-  chart.ActiveListenItemClick();
-  chart.showClikedFocus();
 }

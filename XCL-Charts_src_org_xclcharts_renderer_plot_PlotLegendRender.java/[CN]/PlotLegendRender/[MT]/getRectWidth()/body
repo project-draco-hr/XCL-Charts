@@ -1,3 +1,11 @@
 {
-  return 2 * getLabelTextHeight();
+  float rectWidth=0.0f;
+  float textHeight=getLabelTextHeight();
+  if (mIsLnChart) {
+    rectWidth=2 * textHeight;
+  }
+ else {
+    rectWidth=textHeight / 2 + textHeight;
+  }
+  return rectWidth;
 }

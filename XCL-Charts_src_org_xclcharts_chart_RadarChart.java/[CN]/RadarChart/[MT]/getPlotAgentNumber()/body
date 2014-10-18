@@ -1,3 +1,4 @@
 {
-  return CategoryAxis.getDataSet().size();
+  if (null == categoryAxis)   return 0;
+  return categoryAxis.getDataSet().size();
 }

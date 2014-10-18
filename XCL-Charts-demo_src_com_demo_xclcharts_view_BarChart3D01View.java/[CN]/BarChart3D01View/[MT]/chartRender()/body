@@ -11,7 +11,7 @@
     chart.getDataAxis().hideAxisLine();
     chart.setTitle("????????????????????????");
     chart.addSubtitle("(XCL-Charts Demo)");
-    chart.setTitleAlign(XEnum.ChartTitleAlign.RIGHT);
+    chart.setTitleAlign(XEnum.HorizontalAlign.RIGHT);
     chart.getPlotGrid().showHorizontalLines();
     chart.getPlotGrid().showVerticalLines();
     chart.getPlotGrid().showEvenRowBgColor();

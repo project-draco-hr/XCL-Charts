@@ -6,6 +6,6 @@
   renderVerticalCategoryAxis(canvas);
   if (renderPlot(canvas) == true) {
   }
-  plotLegend.renderPointKey(canvas,mDataset);
+  if (null != plotLegend)   plotLegend.renderPointKey(canvas,mDataset);
   return true;
 }

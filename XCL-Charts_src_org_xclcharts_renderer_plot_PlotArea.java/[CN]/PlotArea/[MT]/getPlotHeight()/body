@@ -1,0 +1,4 @@
+{
+  mHeight=Math.abs(getPlotBottom() - getPlotTop());
+  return mHeight;
+}

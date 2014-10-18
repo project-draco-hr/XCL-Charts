@@ -1,4 +1,4 @@
 {
   super.defaultAxisSetting();
-  categoryAxis.hideTickMarks();
+  if (null != categoryAxis)   categoryAxis.hideTickMarks();
 }

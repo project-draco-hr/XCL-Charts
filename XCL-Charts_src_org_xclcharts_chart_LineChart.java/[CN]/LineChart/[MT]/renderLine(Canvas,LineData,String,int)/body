@@ -1,4 +1,9 @@
 {
+  if (null == categoryAxis || null == dataAxis)   return false;
+  if (null == bd) {
+    Log.e(TAG,"???????????????????????????????????????.");
+    return false;
+  }
   float initX=plotArea.getLeft();
   float initY=plotArea.getBottom();
   float lineStartX=initX;
@@ -12,7 +17,7 @@
   }
   List<Double> chartValues=bd.getLinePoint();
   if (null == chartValues) {
-    Log.e(TAG,"????????????????????????.");
+    Log.e(TAG,"??????????????????????????????.");
     return false;
   }
   float axisScreenHeight=getAxisScreenHeight();
@@ -20,11 +25,11 @@
   float XSteps=0.0f;
   int j=0, childID=0;
   if (dataSet.size() == 1) {
-    XSteps=div(getAxisScreenWidth(),(dataSet.size()));
+    XSteps=div(getPlotScreenWidth(),(dataSet.size()));
     j=1;
   }
  else {
-    XSteps=div(getAxisScreenWidth(),(dataSet.size() - 1));
+    XSteps=div(getPlotScreenWidth(),(dataSet.size() - 1));
   }
   float itemAngle=bd.getItemLabelRotateAngle();
   for (  Double bv : chartValues) {

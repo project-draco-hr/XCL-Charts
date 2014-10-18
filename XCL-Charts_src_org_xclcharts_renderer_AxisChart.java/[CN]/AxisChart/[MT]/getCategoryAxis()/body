@@ -1,3 +1,4 @@
 {
+  if (null == categoryAxis)   categoryAxis=new CategoryAxisRender();
   return categoryAxis;
 }

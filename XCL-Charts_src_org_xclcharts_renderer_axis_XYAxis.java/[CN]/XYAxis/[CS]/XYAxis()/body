@@ -1,4 +1,2 @@
 {
-  super();
-  this.getAxisPaint().setStrokeWidth(mAxisLineWidth);
 }

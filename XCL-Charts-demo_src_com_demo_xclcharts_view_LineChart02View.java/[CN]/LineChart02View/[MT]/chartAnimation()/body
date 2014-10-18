@@ -6,12 +6,7 @@
       Thread.sleep(150);
       LinkedList<LineData> animationData=new LinkedList<LineData>();
       for (int j=0; j < chartData.size(); j++) {
-        if (j > i) {
-          animationData.add(new LineData());
-        }
- else {
-          animationData.add(chartData.get(j));
-        }
+        if (j < i)         animationData.add(chartData.get(j));
       }
       chart.setDataSource(animationData);
       postInvalidate();

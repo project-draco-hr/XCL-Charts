@@ -35,8 +35,11 @@
     chart.getDataAxis().setDetailModeSteps(5);
     chart.getPlotArea().extWidth(200f);
     chart.showDyLine();
-    chart.getDyLine().setDyLineStyle(XEnum.DyLineStyle.Horizontal);
-    chart.getDyLine().setLineDrawStyle(XEnum.LineStyle.DASH);
+    DyLine dyl=chart.getDyLine();
+    if (null != dyl) {
+      dyl.setDyLineStyle(XEnum.DyLineStyle.Horizontal);
+      dyl.setLineDrawStyle(XEnum.LineStyle.DASH);
+    }
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

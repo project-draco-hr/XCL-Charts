@@ -1,6 +1,3 @@
 {
-  if (null == categories || categories.size() == 0) {
-    Log.e(TAG,"?????????????????????.");
-  }
- else   categoryAxis.setDataBuilding(categories);
+  if (null != categoryAxis)   categoryAxis.setDataBuilding(categories);
 }

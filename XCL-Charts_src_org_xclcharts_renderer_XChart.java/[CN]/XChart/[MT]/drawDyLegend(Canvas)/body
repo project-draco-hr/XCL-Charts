@@ -1,0 +1,6 @@
+{
+  if (null != mDyLegend) {
+    mDyLegend.setPlotWH(this.getWidth(),this.getHeight());
+    mDyLegend.renderInfo(canvas);
+  }
+}

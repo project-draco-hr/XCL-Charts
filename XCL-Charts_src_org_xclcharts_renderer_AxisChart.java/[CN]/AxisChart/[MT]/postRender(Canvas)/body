@@ -4,8 +4,10 @@
     calcPlotRange();
     plotArea.render(canvas);
     renderTitle(canvas);
-    axisTitle.setRange(this);
-    axisTitle.render(canvas);
+    if (null != axisTitle) {
+      axisTitle.setRange(this);
+      axisTitle.render(canvas);
+    }
   }
  catch (  Exception e) {
     throw e;

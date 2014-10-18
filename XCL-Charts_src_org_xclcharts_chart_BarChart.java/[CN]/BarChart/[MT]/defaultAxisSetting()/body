@@ -3,27 +3,37 @@
 switch (mDirection) {
 case HORIZONTAL:
 {
-        categoryAxis.setHorizontalTickAlign(Align.LEFT);
-        categoryAxis.getTickLabelPaint().setTextAlign(Align.RIGHT);
-        dataAxis.setHorizontalTickAlign(Align.CENTER);
-        dataAxis.getTickLabelPaint().setTextAlign(Align.CENTER);
-        getBar().getItemLabelPaint().setTextAlign(Align.LEFT);
-        getBar().setBarDirection(XEnum.Direction.HORIZONTAL);
+        if (null != categoryAxis) {
+          categoryAxis.setHorizontalTickAlign(Align.LEFT);
+          categoryAxis.getTickLabelPaint().setTextAlign(Align.RIGHT);
+        }
+        if (null != dataAxis) {
+          dataAxis.setHorizontalTickAlign(Align.CENTER);
+          dataAxis.getTickLabelPaint().setTextAlign(Align.CENTER);
+        }
+        if (null != getBar()) {
+          getBar().getItemLabelPaint().setTextAlign(Align.LEFT);
+          getBar().setBarDirection(XEnum.Direction.HORIZONTAL);
+        }
         break;
       }
 case VERTICAL:
 {
-      dataAxis.setHorizontalTickAlign(Align.LEFT);
-      dataAxis.getTickLabelPaint().setTextAlign(Align.RIGHT);
-      categoryAxis.setHorizontalTickAlign(Align.CENTER);
-      categoryAxis.getTickLabelPaint().setTextAlign(Align.CENTER);
-      categoryAxis.setVerticalTickPosition(XEnum.VerticalAlign.BOTTOM);
-      getBar().setBarDirection(XEnum.Direction.VERTICAL);
+      if (null != dataAxis) {
+        dataAxis.setHorizontalTickAlign(Align.LEFT);
+        dataAxis.getTickLabelPaint().setTextAlign(Align.RIGHT);
+      }
+      if (null != categoryAxis) {
+        categoryAxis.setHorizontalTickAlign(Align.CENTER);
+        categoryAxis.getTickLabelPaint().setTextAlign(Align.CENTER);
+        categoryAxis.setVerticalTickPosition(XEnum.VerticalAlign.BOTTOM);
+      }
+      if (null != getBar())       getBar().setBarDirection(XEnum.Direction.VERTICAL);
       break;
     }
 }
 }
  catch (Exception ex) {
-Log.e(TAG,ex.toString());
+Log.e(TAG,"defaultAxisSetting() " + ex.toString());
 }
 }

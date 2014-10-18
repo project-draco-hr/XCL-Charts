@@ -1,4 +1,5 @@
 {
   int borderWidth=getBorderWidth();
+  if (null == plotTitle)   return;
   this.plotTitle.renderTitle(mLeft + borderWidth,mRight - borderWidth,mTop + borderWidth,mWidth,this.plotArea.getTop(),canvas);
 }

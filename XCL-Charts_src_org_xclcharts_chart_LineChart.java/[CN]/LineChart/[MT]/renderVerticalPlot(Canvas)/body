@@ -5,7 +5,8 @@
   }
   mLstKey.clear();
   String key="";
-  for (int i=0; i < mDataSet.size(); i++) {
+  int count=mDataSet.size();
+  for (int i=0; i < count; i++) {
     if (renderLine(canvas,mDataSet.get(i),"LINE",i) == false)     return false;
     ;
     if (renderLine(canvas,mDataSet.get(i),"DOT2LABEL",i) == false)     return false;

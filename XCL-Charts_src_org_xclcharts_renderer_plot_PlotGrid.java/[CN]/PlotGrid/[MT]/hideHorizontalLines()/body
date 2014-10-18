@@ -1,3 +1,4 @@
 {
   mGridLinesHorizontalVisible=false;
+  if (null != mPaintGridLineHorizontal)   mPaintGridLineHorizontal=null;
 }

@@ -1,8 +1,18 @@
 {
-  super();
-  int fillColor=this.plotArea.getBackgroundPaint().getColor();
-  mPaintFill=new Paint();
-  mPaintFill.setColor(fillColor);
-  mPaintFill.setAntiAlias(true);
-  plotAttrInfoRender=new PlotAttrInfoRender();
+  int fillColor=Color.BLACK;
+  if (null != plotArea)   fillColor=this.plotArea.getBackgroundPaint().getColor();
+  if (null == mPaintFill) {
+    mPaintFill=new Paint();
+    mPaintFill.setColor(fillColor);
+    mPaintFill.setAntiAlias(true);
+  }
+  if (null == plotAttrInfoRender)   plotAttrInfoRender=new PlotAttrInfoRender();
+  if (null != plotLegend) {
+    plotLegend.show();
+    plotLegend.setType(XEnum.LegendType.ROW);
+    plotLegend.setHorizontalAlign(XEnum.HorizontalAlign.CENTER);
+    plotLegend.setVerticalAlign(XEnum.VerticalAlign.BOTTOM);
+    plotLegend.showBox();
+    plotLegend.hideBackground();
+  }
 }

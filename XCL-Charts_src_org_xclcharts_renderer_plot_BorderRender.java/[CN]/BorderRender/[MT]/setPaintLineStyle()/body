@@ -1,0 +1,12 @@
+{
+switch (getBorderLineStyle()) {
+case SOLID:
+    break;
+case DOT:
+  getLinePaint().setPathEffect(DrawHelper.getInstance().getDotLineStyle());
+break;
+case DASH:
+getLinePaint().setPathEffect(DrawHelper.getInstance().getDashLineStyle());
+break;
+}
+}

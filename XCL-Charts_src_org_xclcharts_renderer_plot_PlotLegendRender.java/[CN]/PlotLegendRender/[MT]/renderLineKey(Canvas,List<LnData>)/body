@@ -1,36 +1,7 @@
 {
   if (isShow() == false)   return;
-  if (null == dataSet)   return;
-  if (null == mPlotArea)   mPlotArea=mXChart.getPlotArea();
-  initEnv();
-  mTextHeight=this.getLabelTextHeight();
-  mRectWidth=this.getRectWidth();
-  mKeyLabelX=mPlotArea.getLeft() + mOffsetX;
-  mKeyLabelY=mPlotArea.getTop() - mOffsetY - 5;
-  getLegendLabelPaint().setTextAlign(Align.LEFT);
-  String key="";
-  for (  LnData cData : dataSet) {
-    key=cData.getLineKey();
-    if ("" == key)     continue;
-    getLegendLabelPaint().setColor(cData.getLineColor());
-    mTextWidth=this.getLabelTextWidth(key);
-    mTotalTextWidth=MathHelper.getInstance().add(mTotalTextWidth,mTextWidth);
-    if (mTotalTextWidth > mPlotArea.getWidth()) {
-      mKeyLabelY-=mTextHeight;
-      mKeyLabelY-=mRowSpan;
-      mKeyLabelX=mPlotArea.getLeft();
-      mTotalTextWidth=0.0f;
-    }
-    canvas.drawLine(mKeyLabelX,mKeyLabelY - mTextHeight / 2,mKeyLabelX + mRectWidth,mKeyLabelY - mTextHeight / 2,getLegendLabelPaint());
-    canvas.drawText(cData.getLineKey(),mKeyLabelX + mRectWidth,mKeyLabelY - mTextHeight / 3,getLegendLabelPaint());
-    float dotLeft=mKeyLabelX + mRectWidth / 4;
-    float dotRight=mKeyLabelX + 2 * (mRectWidth / 4);
-    PlotLine pLine=cData.getPlotLine();
-    if (!pLine.getDotStyle().equals(XEnum.DotStyle.HIDE)) {
-      PlotDot pDot=pLine.getPlotDot();
-      PlotDotRender.getInstance().renderDot(canvas,pDot,dotLeft,mKeyLabelY,dotRight,mKeyLabelY - mTextHeight / 2,pLine.getDotPaint());
-    }
-    mKeyLabelX=MathHelper.getInstance().add(mKeyLabelX,mRectWidth + 10);
-    mKeyLabelX=MathHelper.getInstance().add(mKeyLabelX,mTextWidth);
-  }
+  setLnChartStatus();
+  refreshLst();
+  convertArrayLineKey(dataSet);
+  render(canvas);
 }

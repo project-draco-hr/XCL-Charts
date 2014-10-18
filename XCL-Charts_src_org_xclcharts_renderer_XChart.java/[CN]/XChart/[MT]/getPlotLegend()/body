@@ -1,3 +1,4 @@
 {
+  if (null == plotLegend)   plotLegend=new PlotLegendRender(this);
   return plotLegend;
 }

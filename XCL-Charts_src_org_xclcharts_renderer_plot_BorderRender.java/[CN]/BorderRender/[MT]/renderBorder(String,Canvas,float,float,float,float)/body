@@ -3,31 +3,22 @@
   mRect.top=top + mBorderSpadding;
   mRect.right=right - mBorderSpadding;
   mRect.bottom=bottom - mBorderSpadding;
-switch (getBorderLineStyle()) {
-case SOLID:
-    break;
-case DOT:
-  getLinePaint().setPathEffect(DrawHelper.getInstance().getDotLineStyle());
-break;
-case DASH:
-getLinePaint().setPathEffect(DrawHelper.getInstance().getDashLineStyle());
-break;
-}
+  setPaintLineStyle();
 switch (getBorderRectType()) {
 case RECT:
-if (type.equals("CHART")) {
-if (null != mPaintChartBackground) canvas.drawRect(mRect,mPaintChartBackground);
-}
+    if (type.equals("CHART")) {
+      if (null != mPaintBackground)       canvas.drawRect(mRect,mPaintBackground);
+    }
  else {
-canvas.drawRect(mRect,getLinePaint());
-}
-break;
+      canvas.drawRect(mRect,getLinePaint());
+    }
+  break;
 case ROUNDRECT:
 if (type.equals("CHART")) {
-if (null != mPaintChartBackground) canvas.drawRoundRect(mRect,getRoundRadius(),getRoundRadius(),mPaintChartBackground);
+  if (null != mPaintBackground)   canvas.drawRoundRect(mRect,getRoundRadius(),getRoundRadius(),mPaintBackground);
 }
  else {
-canvas.drawRoundRect(mRect,getRoundRadius(),getRoundRadius(),getLinePaint());
+  canvas.drawRoundRect(mRect,getRoundRadius(),getRoundRadius(),getLinePaint());
 }
 break;
 }

@@ -1,17 +1,25 @@
 {
-  mPaintBgCircle=new Paint();
-  mPaintBgCircle.setColor((int)Color.rgb(148,159,181));
-  mPaintBgCircle.setAntiAlias(true);
-  mPaintFillCircle=new Paint();
-  mPaintFillCircle.setColor((int)Color.rgb(77,83,97));
-  mPaintFillCircle.setAntiAlias(true);
-  getLabelPaint().setColor(Color.WHITE);
-  getLabelPaint().setTextSize(36);
-  getLabelPaint().setTextAlign(Align.CENTER);
-  mPaintDataInfo=new Paint();
-  mPaintDataInfo.setTextSize(22);
-  mPaintDataInfo.setColor(Color.WHITE);
-  mPaintDataInfo.setTextAlign(Align.CENTER);
-  mPaintDataInfo.setAntiAlias(true);
+  if (null == mPaintBgCircle) {
+    mPaintBgCircle=new Paint();
+    mPaintBgCircle.setColor((int)Color.rgb(148,159,181));
+    mPaintBgCircle.setAntiAlias(true);
+  }
+  if (null == mPaintFillCircle) {
+    mPaintFillCircle=new Paint();
+    mPaintFillCircle.setColor((int)Color.rgb(77,83,97));
+    mPaintFillCircle.setAntiAlias(true);
+  }
+  if (null != getLabelPaint()) {
+    getLabelPaint().setColor(Color.WHITE);
+    getLabelPaint().setTextSize(36);
+    getLabelPaint().setTextAlign(Align.CENTER);
+  }
+  if (null == mPaintDataInfo) {
+    mPaintDataInfo=new Paint();
+    mPaintDataInfo.setTextSize(22);
+    mPaintDataInfo.setColor(Color.WHITE);
+    mPaintDataInfo.setTextAlign(Align.CENTER);
+    mPaintDataInfo.setAntiAlias(true);
+  }
   setInitialAngle(180);
 }

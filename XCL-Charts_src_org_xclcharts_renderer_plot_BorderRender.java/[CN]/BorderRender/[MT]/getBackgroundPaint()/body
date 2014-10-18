@@ -1,0 +1,9 @@
+{
+  if (null == mPaintBackground) {
+    mPaintBackground=new Paint();
+    mPaintBackground.setAntiAlias(true);
+    mPaintBackground.setStyle(Style.FILL);
+    mPaintBackground.setColor(Color.WHITE);
+  }
+  return mPaintBackground;
+}

@@ -1,0 +1,13 @@
+{
+  if (null == dataSet)   return;
+  String key="";
+  for (  BubbleData cData : dataSet) {
+    key=cData.getKey();
+    if ("" == key || key.length() == 0)     continue;
+    mLstKey.add(key);
+    mLstColor.add(cData.getColor());
+    PlotDot pDot=new PlotDot();
+    pDot.setDotStyle(XEnum.DotStyle.DOT);
+    mLstDotStyle.add(pDot);
+  }
+}

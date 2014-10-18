@@ -1,8 +1,7 @@
 {
   if (isShow() == false)   return;
-  if (null == dataset)   return;
-  initRoundChartKey();
-  for (  PieData cData : dataset) {
-    renderCirChartKey(canvas,cData.getKey(),cData.getSliceColor());
-  }
+  refreshLst();
+  mType=EnumChartType.CIR;
+  convertArrayPieKey(dataSet);
+  render(canvas);
 }

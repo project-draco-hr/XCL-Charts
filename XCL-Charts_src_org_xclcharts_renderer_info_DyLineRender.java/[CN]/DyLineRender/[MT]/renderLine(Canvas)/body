@@ -1,4 +1,6 @@
 {
+  if (null == mArea)   return;
+  if (null == mCenterXY)   return;
 switch (getDyLineStyle()) {
 case Cross:
     drawCross(canvas);

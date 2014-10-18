@@ -1,4 +1,5 @@
 {
+  if (null == mTranslateXY)   mTranslateXY=new float[2];
   mTranslateXY[0]=x;
   mTranslateXY[1]=y;
 }

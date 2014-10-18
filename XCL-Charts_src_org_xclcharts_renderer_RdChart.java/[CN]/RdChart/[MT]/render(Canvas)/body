@@ -1,5 +1,4 @@
 {
-  boolean ret=true;
   try {
     if (null == canvas)     return false;
     canvas.save();

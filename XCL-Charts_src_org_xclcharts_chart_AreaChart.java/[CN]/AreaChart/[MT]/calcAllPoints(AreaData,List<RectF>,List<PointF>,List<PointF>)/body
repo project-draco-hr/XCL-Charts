@@ -12,7 +12,7 @@
   float lineStopY=0.0f;
   float axisScreenHeight=getAxisScreenHeight();
   float axisDataHeight=(float)dataAxis.getAxisRange();
-  float currLablesSteps=div(getAxisScreenWidth(),(categoryAxis.getDataSet().size() - 1));
+  float currLablesSteps=div(getPlotScreenWidth(),(categoryAxis.getDataSet().size() - 1));
   lstPathPoints.add(new PointF(initX,initY));
   double dper=0d;
   int j=0;

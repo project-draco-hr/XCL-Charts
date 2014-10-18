@@ -34,6 +34,8 @@
     chart.extPointClickRange(5);
     chart.showClikedFocus();
     chart.setCrurveLineStyle(XEnum.CrurveLineStyle.BEZIERCURVE);
+    chart.getPlotLegend().setVerticalAlign(XEnum.VerticalAlign.BOTTOM);
+    chart.getPlotLegend().setHorizontalAlign(XEnum.HorizontalAlign.CENTER);
   }
  catch (  Exception e) {
     e.printStackTrace();

@@ -1,8 +1,11 @@
 {
-  int fillColor=this.plotArea.getBackgroundPaint().getColor();
-  mPaintFill=new Paint();
-  mPaintFill.setColor(fillColor);
-  mPaintFill.setAntiAlias(true);
-  plotAttrInfoRender=new PlotAttrInfoRender();
+  int fillColor=Color.BLACK;
+  if (null != plotArea)   fillColor=plotArea.getBackgroundPaint().getColor();
+  if (null == mPaintFill) {
+    mPaintFill=new Paint();
+    mPaintFill.setColor(fillColor);
+    mPaintFill.setAntiAlias(true);
+  }
+  if (null == plotAttrInfoRender)   plotAttrInfoRender=new PlotAttrInfoRender();
   this.setLabelStyle(XEnum.SliceLabelStyle.OUTSIDE);
 }

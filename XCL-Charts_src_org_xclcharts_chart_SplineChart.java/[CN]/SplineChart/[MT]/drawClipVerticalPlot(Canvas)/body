@@ -37,7 +37,7 @@
   canvas.translate(mMoveX,mMoveY);
   if (renderPlot(canvas) == true) {
     if (null != mCustomLine) {
-      mCustomLine.setVerticalPlot(dataAxis,plotArea,getAxisScreenHeight());
+      mCustomLine.setVerticalPlot(dataAxis,plotArea,getPlotScreenHeight());
       mCustomLine.renderVerticalCustomlinesDataAxis(canvas);
     }
     execGC();

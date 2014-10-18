@@ -5,8 +5,8 @@
   float lineStartY=initY;
   float lineStopX=0.0f;
   float lineStopY=0.0f;
-  float axisScreenWidth=getAxisScreenWidth();
-  float axisScreenHeight=getAxisScreenHeight();
+  float axisScreenWidth=getPlotScreenWidth();
+  float axisScreenHeight=getPlotScreenHeight();
   float axisDataHeight=(float)dataAxis.getAxisRange();
   LinkedHashMap<Double,Double> chartValues=bd.getLineDataSet();
   if (null == chartValues)   return;

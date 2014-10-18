@@ -1,4 +1,3 @@
 {
-  initBorderLinePaint();
-  mPaintBorderLine.setColor(color);
+  getLinePaint().setColor(color);
 }

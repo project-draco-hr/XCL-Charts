@@ -1,2 +1,2 @@
 Canvas canvas
-List<PieData> dataset
+List<PieData> dataSet

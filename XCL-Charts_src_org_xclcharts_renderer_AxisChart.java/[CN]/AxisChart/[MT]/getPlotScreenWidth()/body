@@ -1,0 +1,4 @@
+{
+  if (null == plotArea)   return 0.0f;
+  return (Math.abs(plotArea.getPlotRight() - plotArea.getPlotLeft()));
+}

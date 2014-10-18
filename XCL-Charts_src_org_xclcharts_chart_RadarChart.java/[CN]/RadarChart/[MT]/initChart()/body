@@ -1,8 +1,10 @@
 {
-  dataAxis=new DataAxisRender();
-  CategoryAxis=new CategoryAxisRender();
-  dataAxis.setHorizontalTickAlign(Align.LEFT);
-  dataAxis.getTickLabelPaint().setTextAlign(Align.RIGHT);
-  dataAxis.hideTickMarks();
-  this.plotLegend.show();
+  if (null == dataAxis)   dataAxis=new DataAxisRender();
+  if (null != dataAxis) {
+    dataAxis.setHorizontalTickAlign(Align.LEFT);
+    dataAxis.getTickLabelPaint().setTextAlign(Align.RIGHT);
+    dataAxis.hideTickMarks();
+  }
+  if (null == categoryAxis)   categoryAxis=new CategoryAxisRender();
+  if (null == plotLegend)   this.plotLegend.show();
 }

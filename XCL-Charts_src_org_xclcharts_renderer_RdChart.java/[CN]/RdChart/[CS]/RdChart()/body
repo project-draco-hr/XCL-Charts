@@ -1,4 +1,10 @@
 {
-  super();
-  initChart();
+  if (null != plotLegend) {
+    plotLegend.show();
+    plotLegend.setType(XEnum.LegendType.ROW);
+    plotLegend.setHorizontalAlign(XEnum.HorizontalAlign.CENTER);
+    plotLegend.setVerticalAlign(XEnum.VerticalAlign.BOTTOM);
+    plotLegend.showBox();
+    plotLegend.hideBackground();
+  }
 }

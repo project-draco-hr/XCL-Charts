@@ -15,7 +15,7 @@
     labelPaint.setColor((int)Color.rgb(0,75,106));
     chart.setTitle("?????????????????????????????????");
     chart.addSubtitle("(XCL-Charts Demo)");
-    chart.setTitleAlign(XEnum.ChartTitleAlign.MIDDLE);
+    chart.setTitleAlign(XEnum.HorizontalAlign.CENTER);
     chart.setTitleVerticalAlign(XEnum.VerticalAlign.MIDDLE);
     chart.getAxisTitle().setLeftAxisTitle("??????(TB)");
     chart.getPlotGrid().showEvenRowBgColor();

@@ -1,5 +1,11 @@
 {
-  dataAxis=new DataAxisRender();
-  categoryAxis=new CategoryAxisRender();
-  axisTitle=new AxisTitleRender();
+  if (null == dataAxis)   dataAxis=new DataAxisRender();
+  if (null == categoryAxis)   categoryAxis=new CategoryAxisRender();
+  if (null != plotLegend) {
+    plotLegend.show();
+    plotLegend.setType(XEnum.LegendType.ROW);
+    plotLegend.setHorizontalAlign(XEnum.HorizontalAlign.LEFT);
+    plotLegend.setVerticalAlign(XEnum.VerticalAlign.TOP);
+    plotLegend.hideBox();
+  }
 }

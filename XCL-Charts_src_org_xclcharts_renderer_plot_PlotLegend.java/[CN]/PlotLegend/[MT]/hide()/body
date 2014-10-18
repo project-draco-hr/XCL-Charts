@@ -1,3 +1,4 @@
 {
-  mKeyLabelVisible=false;
+  mVisible=false;
+  if (null != mKeyPaint)   mKeyPaint=null;
 }

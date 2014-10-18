@@ -21,7 +21,6 @@
     chart.ActiveListenItemClick();
     chart.extPointClickRange(5);
     chart.showClikedFocus();
-    chart.setLineAxisIntersectVisible(true);
     chart.showDyLine();
     chart.getDyLine().setDyLineStyle(XEnum.DyLineStyle.Horizontal);
   }

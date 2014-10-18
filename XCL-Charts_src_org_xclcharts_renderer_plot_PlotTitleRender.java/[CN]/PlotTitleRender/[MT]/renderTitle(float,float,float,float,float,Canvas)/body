@@ -36,7 +36,7 @@ subtitleY=titleY + subtitleHeight;
 getTitlePaint().setTextAlign(Align.LEFT);
 getSubtitlePaint().setTextAlign(Align.LEFT);
 break;
-case MIDDLE:
+case CENTER:
 titleX=(float)Math.round(chartLeft + chartWidth / 2);
 titleY=titleInitY;
 subtitleX=titleX;

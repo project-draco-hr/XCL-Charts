@@ -1,9 +1,9 @@
 {
   if (XEnum.SliceLabelStyle.HIDE == mLabelStyle)   return true;
+  if (null == cData)   return false;
   String text=cData.getLabel();
   if ("" == text || text.length() == 0)   return true;
-  float calcAngle=0.0f;
-  calcAngle=(float)MathHelper.getInstance().add(offsetAngle,curretAnglet / 2);
+  float calcAngle=(float)MathHelper.getInstance().add(offsetAngle,curretAnglet / 2);
   if (Float.compare(calcAngle,0.0f) == 0 || Float.compare(calcAngle,0.0f) == -1) {
     Log.e(TAG,"??????????????????????????????0.");
     return false;

@@ -21,7 +21,7 @@
     chart.getCategoryAxis().getTickLabelPaint().setColor(Color.rgb(79,200,100));
     chart.setTitle("???????????????");
     chart.addSubtitle("(XCL-Charts Demo)");
-    chart.setTitleAlign(XEnum.ChartTitleAlign.MIDDLE);
+    chart.setTitleAlign(XEnum.HorizontalAlign.CENTER);
     chart.setTitleVerticalAlign(XEnum.VerticalAlign.MIDDLE);
     chart.getPlotGrid().showEvenRowBgColor();
     chart.getPlotGrid().showOddRowBgColor();

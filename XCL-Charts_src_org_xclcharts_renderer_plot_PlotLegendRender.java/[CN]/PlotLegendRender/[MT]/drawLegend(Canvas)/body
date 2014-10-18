@@ -1,0 +1,52 @@
+{
+  int countDots=(null != mLstDotStyle) ? mLstDotStyle.size() : 0;
+  int countText=(null != mLstKey) ? mLstKey.size() : 0;
+  if (0 == countText && 0 == countDots)   return;
+  int countColor=(null != mLstColor) ? mLstColor.size() : 0;
+  float currDotsX=mKeyLabelX + mMargin;
+  float currRowX=currDotsX;
+  float currRowY=mKeyLabelY + mMargin;
+  float textHeight=getLabelTextHeight();
+  float rowHeight=textHeight;
+  float rectWidth=getRectWidth();
+  int currRowID=0;
+  Iterator iter=this.mMapID.entrySet().iterator();
+  drawBox(canvas);
+  while (iter.hasNext()) {
+    Entry entry=(Entry)iter.next();
+    Integer id=(Integer)entry.getKey();
+    Integer row=(Integer)entry.getValue();
+    if (row > currRowID) {
+      if (0 < currRowID)       currRowY+=rowHeight + mRowSpan;
+      currRowX=mKeyLabelX + mMargin;
+      currRowID=row;
+    }
+    if (countColor > id) {
+      this.getPaint().setColor(mLstColor.get(id));
+      if (mIsLnChart)       mPaintLine.setColor(mLstColor.get(id));
+    }
+ else {
+      this.getPaint().setColor(Color.BLACK);
+      if (mIsLnChart)       mPaintLine.setColor(Color.BLACK);
+    }
+    if (countDots > id) {
+      PlotDot plot=mLstDotStyle.get(id);
+      if (mIsLnChart) {
+        canvas.drawLine(currRowX,currRowY + rowHeight / 2,currRowX + rectWidth,currRowY + rowHeight / 2,this.mPaintLine);
+        PlotDotRender.getInstance().renderDot(canvas,plot,currRowX + rectWidth / 4,currRowY,currRowX + rectWidth / 4 * 2,currRowY + rowHeight / 2,this.getPaint());
+        currRowX+=rectWidth + mColSpan;
+      }
+ else {
+        if (plot.getDotStyle() != XEnum.DotStyle.HIDE) {
+          PlotDotRender.getInstance().renderDot(canvas,plot,currRowX,currRowY,currRowX + rectWidth / 2,currRowY + rowHeight / 2,this.getPaint());
+          currRowX+=rectWidth + mColSpan;
+        }
+      }
+    }
+    String label=mLstKey.get(id);
+    if ("" != label)     canvas.drawText(label,currRowX,currRowY + rowHeight,this.getPaint());
+    currRowX+=this.getLabelTextWidth(label);
+    currRowX+=mColSpan;
+  }
+  clearLst();
+}

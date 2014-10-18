@@ -1,4 +1,10 @@
 {
-  initBorderLinePaint();
+  if (null == mPaintBorderLine) {
+    mPaintBorderLine=new Paint();
+    mPaintBorderLine.setAntiAlias(true);
+    mPaintBorderLine.setColor(Color.BLACK);
+    mPaintBorderLine.setStyle(Style.STROKE);
+    mPaintBorderLine.setStrokeWidth(2);
+  }
   return mPaintBorderLine;
 }

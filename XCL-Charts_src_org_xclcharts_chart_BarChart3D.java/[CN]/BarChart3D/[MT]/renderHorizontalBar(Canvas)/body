@@ -26,8 +26,7 @@
     for (int j=0; j < barValues.size(); j++) {
       Double bv=barValues.get(j);
       setBarDataColor(mBar3D.getBarPaint(),barDataColor,j,barDefualtColor);
-      float ty1=mul((j + 1),YSteps);
-      float drawBarButtomY=add(sub(barInitY,ty1),labelBarUseHeight / 2);
+      float drawBarButtomY=add(sub(barInitY,mul((j + 1),YSteps)),labelBarUseHeight / 2);
       drawBarButtomY=sub(drawBarButtomY,(barHeight + barInnerMargin) * currNumber);
       double tlen=MathHelper.getInstance().sub(bv,dataAxis.getAxisMin());
       float valuePostion=mul(scrWidth,div(dtof(tlen),valueWidth));

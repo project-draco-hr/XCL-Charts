@@ -1,3 +1,4 @@
 {
   mEvenRowBgColorVisible=false;
+  if (null != mPaintEvenBgColor)   mPaintEvenBgColor=null;
 }

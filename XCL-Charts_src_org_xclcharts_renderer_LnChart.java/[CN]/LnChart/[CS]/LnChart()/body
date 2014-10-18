@@ -1,4 +1,9 @@
 {
-  super();
-  initChart();
+  if (null != plotLegend) {
+    plotLegend.show();
+    plotLegend.setType(XEnum.LegendType.ROW);
+    plotLegend.setHorizontalAlign(XEnum.HorizontalAlign.LEFT);
+    plotLegend.setVerticalAlign(XEnum.VerticalAlign.TOP);
+    plotLegend.hideBox();
+  }
 }

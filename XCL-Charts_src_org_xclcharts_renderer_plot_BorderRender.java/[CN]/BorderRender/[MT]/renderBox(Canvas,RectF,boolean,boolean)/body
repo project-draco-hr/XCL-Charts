@@ -1,0 +1,13 @@
+{
+  setPaintLineStyle();
+switch (getBorderRectType()) {
+case RECT:
+    if (showBackground)     canvas.drawRect(rect,getBackgroundPaint());
+  if (showBoxBorder)   canvas.drawRect(rect,getLinePaint());
+break;
+case ROUNDRECT:
+if (showBackground) canvas.drawRoundRect(rect,getRoundRadius(),getRoundRadius(),getBackgroundPaint());
+if (showBoxBorder) canvas.drawRoundRect(rect,getRoundRadius(),getRoundRadius(),getLinePaint());
+break;
+}
+}

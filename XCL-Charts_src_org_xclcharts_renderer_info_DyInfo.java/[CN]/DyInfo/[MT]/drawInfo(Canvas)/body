@@ -1,10 +1,11 @@
 {
   if (validateParams() == false)   return;
-  int countDots=mClickedDotStyle.size();
-  int countPaint=mClickedPaint.size();
-  int countText=mClickedText.size();
-  if (countText == 0)   return;
+  int countDots=(null != mClickedDotStyle) ? mClickedDotStyle.size() : 0;
+  int countPaint=(null != mClickedPaint) ? mClickedPaint.size() : 0;
+  int countText=(null != mClickedPaint) ? mClickedPaint.size() : 0;
+  if (0 == countText && 0 == countDots)   return;
   getContentRect();
+  if (null == mRect)   return;
   if (XEnum.DyInfoStyle.RECT == mStyle) {
     canvas.drawRect(mRect,this.getBackgroundPaint());
     canvas.drawRect(mRect,this.getBorderPaint());
@@ -22,12 +23,14 @@
     if (countPaint > i)     paint=mClickedPaint.get(i);
     if (null == paint)     break;
     textHeight=DrawHelper.getInstance().getPaintFontHeight(paint);
-    PlotDot plot=mClickedDotStyle.get(i);
-    if (countDots > i && plot.getDotStyle() != XEnum.DotStyle.HIDE) {
-      PlotDotRender.getInstance().renderDot(canvas,plot,currDotsX,currRowY,currDotsX + textHeight,currRowY + textHeight,paint);
-      currTextX=currDotsX + textHeight + mColSpan;
+    if (countDots > i) {
+      PlotDot plot=mClickedDotStyle.get(i);
+      if (plot.getDotStyle() != XEnum.DotStyle.HIDE) {
+        PlotDotRender.getInstance().renderDot(canvas,plot,currDotsX,currRowY,currDotsX + textHeight,currRowY + textHeight,paint);
+        currTextX=currDotsX + textHeight + mColSpan;
+      }
     }
-    canvas.drawText(mClickedText.get(i),currTextX,currRowY + textHeight,paint);
+    if (countText > i)     canvas.drawText(mClickedText.get(i),currTextX,currRowY + textHeight,paint);
     currRowY+=textHeight + mRowSpan;
     currTextX=currDotsX;
   }

@@ -1,0 +1,4 @@
+{
+  mShowBorder=false;
+  if (null != mBorder)   mBorder=null;
+}

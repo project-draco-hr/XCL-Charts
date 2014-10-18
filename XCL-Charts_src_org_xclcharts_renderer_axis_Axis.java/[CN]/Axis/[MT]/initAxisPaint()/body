@@ -3,5 +3,6 @@
     mPaintAxis=new Paint();
     mPaintAxis.setColor(Color.BLACK);
     mPaintAxis.setAntiAlias(true);
+    mPaintAxis.setStrokeWidth(5);
   }
 }

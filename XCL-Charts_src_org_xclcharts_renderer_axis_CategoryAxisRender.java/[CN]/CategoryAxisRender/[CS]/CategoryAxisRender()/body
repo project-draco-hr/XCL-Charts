@@ -1,5 +1,2 @@
 {
-  super();
-  getTickLabelPaint().setTextAlign(Align.CENTER);
-  setVerticalTickPosition(XEnum.VerticalAlign.BOTTOM);
 }

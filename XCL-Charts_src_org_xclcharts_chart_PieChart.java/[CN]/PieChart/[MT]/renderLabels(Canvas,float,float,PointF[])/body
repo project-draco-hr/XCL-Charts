@@ -1,10 +1,13 @@
 {
   int i=0;
   float currentAngle=0.0f, offsetAngle=offset;
+  if (null == arrPoint)   return false;
   for (  PieData cData : mDataset) {
     currentAngle=cData.getSliceAngle();
     if (!validateAngle(currentAngle))     continue;
-    renderLabel(canvas,cData,arrPoint[i].x,arrPoint[i].y,radius,offsetAngle,currentAngle);
+    if (arrPoint.length > i) {
+      renderLabel(canvas,cData,arrPoint[i].x,arrPoint[i].y,radius,offsetAngle,currentAngle);
+    }
     offsetAngle=add(offsetAngle,currentAngle);
     i++;
   }

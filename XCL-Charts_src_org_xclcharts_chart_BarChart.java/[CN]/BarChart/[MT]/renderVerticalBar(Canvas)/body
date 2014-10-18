@@ -2,7 +2,7 @@
   if (null == mDataSet)   return false;
   List<String> dataSet=categoryAxis.getDataSet();
   if (null == dataSet)   return false;
-  float axisScreenHeight=getAxisScreenHeight();
+  float axisScreenHeight=getPlotScreenHeight();
   float axisDataHeight=(float)dataAxis.getAxisRange();
   float XSteps=getVerticalXSteps(dataSet.size() + 1);
   int barNumber=getDatasetSize(mDataSet);
@@ -27,12 +27,10 @@
       Double bv=barValues.get(j);
       setBarDataColor(mFlatBar.getBarPaint(),barDataColor,j,barDefualtColor);
       float vaxlen=(float)MathHelper.getInstance().sub(bv,dataAxis.getAxisMin());
-      float fvper=div(vaxlen,axisDataHeight);
-      float valuePostion=mul(axisScreenHeight,fvper);
+      float valuePostion=mul(axisScreenHeight,div(vaxlen,axisDataHeight));
       float currLableX=add(plotArea.getLeft(),mul((j + 1),XSteps));
       float drawBarStartX=sub(currLableX,labelBarUseWidth / 2);
-      float tw=add(barWidth,barInnerMargin);
-      drawBarStartX=add(drawBarStartX,tw * currNumber);
+      drawBarStartX=add(drawBarStartX,add(barWidth,barInnerMargin) * currNumber);
       float drawBarEndX=add(drawBarStartX,barWidth);
       float topY=sub(plotArea.getBottom(),valuePostion);
       mFlatBar.renderBar(drawBarStartX,plotArea.getBottom(),drawBarEndX,topY,canvas);

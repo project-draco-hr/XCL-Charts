@@ -1,0 +1,54 @@
+{
+  int countDots=(null != mLstDotStyle) ? mLstDotStyle.size() : 0;
+  int countText=(null != mLstKey) ? mLstKey.size() : 0;
+  if (0 == countText && 0 == countDots)   return;
+  String text="";
+  float textHeight=getLabelTextHeight();
+  int row=1;
+  mMapID.clear();
+  float areaWidth=mPlotArea.getWidth() - 2 * mMargin;
+  float rectWidth=getRectWidth();
+  float rowWidth=0.0f;
+  float rowHeight=textHeight;
+  float maxHeight=rowHeight;
+  float maxWidth=0.0f;
+  for (int i=0; i < countText; i++) {
+    if (countDots > i) {
+      PlotDot plot=mLstDotStyle.get(i);
+      if (mIsLnChart) {
+        rowWidth+=rectWidth + mColSpan;
+      }
+ else {
+        if (plot.getDotStyle() != XEnum.DotStyle.HIDE)         rowWidth+=rectWidth + mColSpan;
+      }
+    }
+    text=mLstKey.get(i);
+    float labelWidth=getLabelTextWidth(text);
+    rowWidth+=labelWidth;
+switch (getType()) {
+case ROW:
+      if (Float.compare(rowWidth,areaWidth) == 1) {
+        rowWidth=rectWidth + mColSpan + labelWidth;
+        maxHeight+=rowHeight + mRowSpan;
+        row++;
+      }
+ else {
+        rowWidth+=mColSpan;
+        if (Float.compare(rowWidth,maxWidth) == 1)         maxWidth=rowWidth;
+      }
+    break;
+case COLUMN:
+  if (Float.compare(rowWidth,maxWidth) == 1)   maxWidth=rowWidth;
+maxHeight+=rowHeight + mRowSpan;
+rowWidth=0.0f;
+row++;
+break;
+default :
+break;
+}
+mMapID.put(i,row);
+}
+mRectWidth=maxWidth + 2 * mMargin;
+mRectHeight=maxHeight + 2 * mMargin;
+if (XEnum.LegendType.COLUMN == getType()) mRectHeight-=2 * mRowSpan;
+}

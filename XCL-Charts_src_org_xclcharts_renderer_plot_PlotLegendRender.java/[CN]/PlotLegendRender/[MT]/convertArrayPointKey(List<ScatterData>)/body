@@ -1,0 +1,11 @@
+{
+  if (null == dataSet)   return;
+  String key="";
+  for (  ScatterData cData : dataSet) {
+    key=cData.getKey();
+    if ("" == key || key.length() == 0)     continue;
+    mLstKey.add(key);
+    mLstColor.add(cData.getPlotDot().getColor());
+    mLstDotStyle.add(cData.getPlotDot());
+  }
+}

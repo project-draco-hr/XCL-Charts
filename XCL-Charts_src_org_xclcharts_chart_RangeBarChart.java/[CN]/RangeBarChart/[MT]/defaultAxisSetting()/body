@@ -1,10 +1,14 @@
 {
   try {
-    dataAxis.setHorizontalTickAlign(Align.LEFT);
-    dataAxis.getTickLabelPaint().setTextAlign(Align.RIGHT);
-    categoryAxis.setHorizontalTickAlign(Align.CENTER);
-    categoryAxis.getTickLabelPaint().setTextAlign(Align.CENTER);
-    categoryAxis.setVerticalTickPosition(XEnum.VerticalAlign.BOTTOM);
+    if (null != dataAxis) {
+      dataAxis.setHorizontalTickAlign(Align.LEFT);
+      dataAxis.getTickLabelPaint().setTextAlign(Align.RIGHT);
+    }
+    if (null != categoryAxis) {
+      categoryAxis.setHorizontalTickAlign(Align.CENTER);
+      categoryAxis.getTickLabelPaint().setTextAlign(Align.CENTER);
+      categoryAxis.setVerticalTickPosition(XEnum.VerticalAlign.BOTTOM);
+    }
   }
  catch (  Exception ex) {
     Log.e(TAG,ex.toString());

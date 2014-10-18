@@ -17,8 +17,7 @@
       float cirX=pointCir.x, cirY=pointCir.y;
       float radius=mFocusArcPosition.getRadius();
       if (mFocusArcSelect) {
-        float SELECTED_OFFSET=10.0f;
-        float newRadius=div(radius,SELECTED_OFFSET);
+        float newRadius=div(radius,mFocusArcPosition.getSelectedOffset());
         PointF point=MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,newRadius,add(mFocusArcPosition.getStartAngle(),mFocusArcPosition.getSweepAngle() / 2f));
         cirX=point.x;
         cirY=point.y;

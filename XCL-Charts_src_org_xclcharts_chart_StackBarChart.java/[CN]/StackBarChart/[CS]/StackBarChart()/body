@@ -1,4 +1,3 @@
 {
-  super();
-  flatBar=new FlatBar();
+  if (null == flatBar)   flatBar=new FlatBar();
 }

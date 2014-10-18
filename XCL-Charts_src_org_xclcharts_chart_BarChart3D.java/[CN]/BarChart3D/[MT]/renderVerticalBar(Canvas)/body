@@ -1,5 +1,4 @@
 {
-  float currentX=0.0f;
   float barInitX=plotArea.getLeft();
   float barInitY=plotArea.getBottom();
   List<String> dataSet=categoryAxis.getDataSet();
@@ -20,7 +19,7 @@
   double axisRange=dataAxis.getAxisRange();
   double axisMin=dataAxis.getAxisMin();
   for (int i=0; i < barNumber; i++) {
-    currentX=add(barInitX,mul((i + 1),XSteps));
+    float currentX=add(barInitX,mul((i + 1),XSteps));
     BarData bd=chartDataSource.get(i);
     List<Double> barValues=bd.getDataSet();
     if (null == barValues)     continue;
@@ -32,7 +31,7 @@
       setBarDataColor(mBar3D.getBarPaint(),barDataColor,j,barDefualtColor);
       double tlen=MathHelper.getInstance().sub(bv,axisMin);
       float valuePostion=dtof(MathHelper.getInstance().div(tlen,axisRange));
-      valuePostion=mul(plotArea.getHeight(),valuePostion);
+      valuePostion=mul(plotArea.getPlotHeight(),valuePostion);
       float drawBarStartX=sub(add(barInitX,mul((j + 1),XSteps)),labelBarUseWidth / 2);
       drawBarStartX=add(drawBarStartX,(barWidth + barInnerMargin) * currNumber);
       float drawBarEndX=add(drawBarStartX,barWidth);

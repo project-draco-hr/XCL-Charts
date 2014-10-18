@@ -1,10 +1,8 @@
 {
   mTranslateXY[0]=0.0f;
   mTranslateXY[1]=0.0f;
-  plotLegend=new PlotLegendRender(this);
-  plotArea=new PlotAreaRender();
-  plotGrid=new PlotGridRender();
-  plotTitle=new PlotTitleRender();
-  plotTitle.setVerticalAlign(XEnum.VerticalAlign.MIDDLE);
-  plotTitle.setTitleAlign(XEnum.ChartTitleAlign.MIDDLE);
+  if (null == plotLegend)   plotLegend=new PlotLegendRender(this);
+  if (null == plotArea)   plotArea=new PlotAreaRender();
+  if (null == plotGrid)   plotGrid=new PlotGridRender();
+  if (null == plotTitle)   plotTitle=new PlotTitleRender();
 }

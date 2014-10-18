@@ -13,7 +13,7 @@
   float barHeight=ret[0];
   float barInnerMargin=ret[1];
   float labelBarUseHeight=add(mul(barNumber,barHeight),mul(sub(barNumber,1),barInnerMargin));
-  float scrWidth=getAxisScreenWidth();
+  float scrWidth=getPlotScreenWidth();
   float valueWidth=(float)dataAxis.getAxisRange();
   int barDefualtColor=0, vSize=0;
   Double bv=0d;
@@ -30,12 +30,10 @@
       setBarDataColor(mFlatBar.getBarPaint(),barDataColor,j,barDefualtColor);
       float currLableY=sub(barInitY,mul((j + 1),YSteps));
       float drawBarButtomY=add(currLableY,labelBarUseHeight / 2);
-      float tw=add(barHeight,barInnerMargin);
-      drawBarButtomY=sub(drawBarButtomY,tw * currNumber);
+      drawBarButtomY=sub(drawBarButtomY,add(barHeight,barInnerMargin) * currNumber);
       float drawBarTopY=sub(drawBarButtomY,barHeight);
       double vaxlen=MathHelper.getInstance().sub(bv,dataAxis.getAxisMin());
-      float fvper=div(dtof(vaxlen),valueWidth);
-      float valuePostion=mul(scrWidth,fvper);
+      float valuePostion=mul(scrWidth,div(dtof(vaxlen),valueWidth));
       float rightX=add(barInitX,valuePostion);
       mFlatBar.renderBar(barInitX,drawBarTopY,rightX,drawBarButtomY,canvas);
       saveBarRectFRecord(i,j,barInitX + mMoveX,drawBarTopY + mMoveY,rightX + mMoveX,drawBarButtomY + mMoveY);

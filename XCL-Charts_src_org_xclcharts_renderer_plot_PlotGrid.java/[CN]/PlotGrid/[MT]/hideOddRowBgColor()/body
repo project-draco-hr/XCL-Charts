@@ -1,3 +1,4 @@
 {
   mOddRowBgColorVisible=false;
+  if (null != mPaintOddBgColor)   mPaintOddBgColor=null;
 }

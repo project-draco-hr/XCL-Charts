@@ -1,8 +1,7 @@
 {
   if (isShow() == false)   return;
-  if (null == dataset)   return;
-  initRoundChartKey();
-  for (  RadarData cData : dataset) {
-    renderCirChartKey(canvas,cData.getLineKey(),cData.getLineColor());
-  }
+  setLnChartStatus();
+  refreshLst();
+  convertArrayRadarKey(dataSet);
+  render(canvas);
 }

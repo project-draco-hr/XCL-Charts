@@ -1,0 +1,5 @@
+{
+  if (null == mPaintLine)   mPaintLine=new Paint(Paint.ANTI_ALIAS_FLAG);
+  this.mPaintLine.setStrokeWidth(2);
+  mIsLnChart=true;
+}

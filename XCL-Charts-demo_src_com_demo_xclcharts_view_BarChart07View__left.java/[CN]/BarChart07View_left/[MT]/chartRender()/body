@@ -2,7 +2,7 @@
   try {
     chart.setTitle("???????????????????????????");
     chart.addSubtitle("(XCL-Charts Demo)");
-    chart.setTitleAlign(XEnum.ChartTitleAlign.LEFT);
+    chart.setTitleAlign(XEnum.HorizontalAlign.LEFT);
     chart.setDataSource(chartData);
     chart.setCategories(chartLabels);
     chart.setCustomLines(mCustomLineDataset);

@@ -4,6 +4,10 @@
     lnChart.setPadding(ltrb[0],ltrb[1],ltrb[2],ltrb[3]);
     renderLnAxis();
     lnChart.getPlotLegend().show();
+    lnChart.getPlotLegend().setType(XEnum.LegendType.COLUMN);
+    lnChart.getPlotLegend().setVerticalAlign(XEnum.VerticalAlign.TOP);
+    lnChart.getPlotLegend().setHorizontalAlign(XEnum.HorizontalAlign.LEFT);
+    lnChart.getPlotLegend().hideBackground();
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

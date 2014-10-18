@@ -1,0 +1,7 @@
+{
+  if (null == mXChart)   return;
+  if (null == mPlotArea)   mPlotArea=mXChart.getPlotArea();
+  calcContentRect();
+  getStartXY();
+  drawLegend(canvas);
+}

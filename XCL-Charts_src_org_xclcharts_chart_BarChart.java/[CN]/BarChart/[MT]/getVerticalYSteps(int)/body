@@ -1,3 +1,3 @@
 {
-  return (div(getAxisScreenHeight(),tickCount));
+  return (div(getPlotScreenHeight(),tickCount));
 }

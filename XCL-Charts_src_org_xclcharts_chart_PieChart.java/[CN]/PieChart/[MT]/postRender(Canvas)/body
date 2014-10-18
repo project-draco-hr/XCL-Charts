@@ -3,7 +3,6 @@
     super.postRender(canvas);
     if (false == validateParams())     return false;
     renderPlot(canvas);
-    freeObj();
     renderFocusShape(canvas);
     renderToolTip(canvas);
     return true;

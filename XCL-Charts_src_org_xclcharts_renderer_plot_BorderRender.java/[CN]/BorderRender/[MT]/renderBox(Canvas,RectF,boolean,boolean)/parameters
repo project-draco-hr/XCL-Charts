@@ -1,0 +1,4 @@
+Canvas canvas
+RectF rect
+boolean showBoxBorder
+boolean showBackground

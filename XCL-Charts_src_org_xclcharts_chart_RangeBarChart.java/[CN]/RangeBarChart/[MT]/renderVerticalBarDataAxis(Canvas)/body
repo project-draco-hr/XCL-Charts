@@ -11,13 +11,13 @@
     slen=i * dataAxis.getAxisSteps();
     currentTickLabel=MathHelper.getInstance().add(dataAxis.getAxisMin(),slen);
     if (i % 2 != 0) {
-      plotGrid.renderOddRowsFill(canvas,plotArea.getLeft(),add(currentY,YSteps),plotArea.getRight(),currentY);
+      plotGrid.renderOddRowsFill(canvas,plotArea.getLeft(),add(currentY,YSteps),plotArea.getPlotRight(),currentY);
     }
  else {
-      plotGrid.renderEvenRowsFill(canvas,plotArea.getLeft(),add(currentY,YSteps),plotArea.getRight(),currentY);
+      plotGrid.renderEvenRowsFill(canvas,plotArea.getLeft(),add(currentY,YSteps),plotArea.getPlotRight(),currentY);
     }
     plotGrid.setPrimaryTickLine(dataAxis.isPrimaryTick());
-    plotGrid.renderGridLinesHorizontal(canvas,plotArea.getLeft(),currentY,plotArea.getRight(),currentY);
+    plotGrid.renderGridLinesHorizontal(canvas,plotArea.getLeft(),currentY,plotArea.getPlotRight(),currentY);
     if (i == tickCount) {
       dataAxis.renderAxisHorizontalTick(this,canvas,plotArea.getLeft(),plotArea.getTop(),Double.toString(currentTickLabel));
     }

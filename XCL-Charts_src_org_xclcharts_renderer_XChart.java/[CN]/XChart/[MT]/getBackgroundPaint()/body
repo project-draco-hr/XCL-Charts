@@ -1,4 +1,4 @@
 {
   if (null == mBorder)   mBorder=new BorderRender();
-  return mBorder.getChartBackgroundPaint();
+  return mBorder.getBackgroundPaint();
 }

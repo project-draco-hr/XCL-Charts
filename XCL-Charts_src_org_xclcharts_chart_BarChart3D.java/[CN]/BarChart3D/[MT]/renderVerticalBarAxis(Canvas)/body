@@ -1,4 +1,4 @@
 {
   dataAxis.renderAxis(canvas,plotArea.getLeft(),plotArea.getTop(),plotArea.getLeft(),plotArea.getBottom());
-  mBar3D.render3DXAxis(plotArea.getLeft(),plotArea.getBottom(),plotArea.getRight(),plotArea.getBottom(),canvas);
+  mBar3D.render3DXAxis(plotArea.getLeft(),plotArea.getBottom(),plotArea.getPlotRight(),plotArea.getBottom(),canvas);
 }
