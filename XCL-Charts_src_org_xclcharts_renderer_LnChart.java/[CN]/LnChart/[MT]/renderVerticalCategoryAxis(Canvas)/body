@@ -3,10 +3,10 @@
   List<String> dataSet=categoryAxis.getDataSet();
   float XSteps=0.0f;
   if (dataSet.size() == 1) {
-    XSteps=div(getAxisScreenWidth(),(dataSet.size()));
+    XSteps=div(getPlotScreenWidth(),(dataSet.size()));
   }
  else {
-    XSteps=div(getAxisScreenWidth(),(dataSet.size() - 1));
+    XSteps=div(getPlotScreenWidth(),(dataSet.size() - 1));
   }
   for (int i=0; i < dataSet.size(); i++) {
     currentX=MathHelper.getInstance().add(plotArea.getLeft(),(i) * XSteps);
@@ -15,13 +15,13 @@
       if (i > 0 && i + 1 < dataSet.size())       plotGrid.renderGridLinesVertical(canvas,currentX,plotArea.getBottom(),currentX,plotArea.getTop());
     }
     if (dataSet.size() == i + 1) {
-      categoryAxis.renderAxisVerticalTick(canvas,plotArea.getRight(),plotArea.getBottom(),dataSet.get(i));
+      categoryAxis.renderAxisVerticalTick(canvas,plotArea.getPlotRight(),plotArea.getBottom(),dataSet.get(i));
     }
  else {
       categoryAxis.renderAxisVerticalTick(canvas,currentX,plotArea.getBottom(),dataSet.get(i));
     }
   }
   if (!mRightAxisVisible) {
-    plotGrid.renderGridLinesVertical(canvas,plotArea.getRight(),plotArea.getBottom(),plotArea.getRight(),plotArea.getTop());
+    plotGrid.renderGridLinesVertical(canvas,plotArea.getPlotRight(),plotArea.getBottom(),plotArea.getPlotRight(),plotArea.getTop());
   }
 }

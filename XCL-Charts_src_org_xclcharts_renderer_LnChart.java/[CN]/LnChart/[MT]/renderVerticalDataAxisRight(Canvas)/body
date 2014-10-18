@@ -10,10 +10,10 @@
     if (dataAxis.isShowAxisLabels() && isRenderVerticalBarDataAxisTick(currentY,mMoveY))     continue;
     Double currentTickLabel=MathHelper.getInstance().add(dataAxis.getAxisMin(),(i * dataAxis.getAxisSteps()));
     if (i == tickCount) {
-      dataAxis.renderAxisHorizontalTick(this,canvas,plotArea.getRight(),plotArea.getTop(),Double.toString(currentTickLabel));
+      dataAxis.renderAxisHorizontalTick(this,canvas,plotArea.getPlotRight(),plotArea.getTop(),Double.toString(currentTickLabel));
     }
  else {
-      dataAxis.renderAxisHorizontalTick(this,canvas,plotArea.getRight(),MathHelper.getInstance().add(currentY,markHeight),Double.toString(currentTickLabel));
+      dataAxis.renderAxisHorizontalTick(this,canvas,plotArea.getPlotRight(),MathHelper.getInstance().add(currentY,markHeight),Double.toString(currentTickLabel));
     }
   }
 }

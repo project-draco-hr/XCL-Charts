@@ -1,7 +1,7 @@
 {
   if (null == mPaintInner) {
     mPaintInner=new Paint();
-    mPaintInner.setColor(Color.DKGRAY);
+    mPaintInner.setColor(Color.rgb(68,68,68));
     mPaintInner.setStyle(Style.FILL);
     mPaintInner.setAntiAlias(true);
   }

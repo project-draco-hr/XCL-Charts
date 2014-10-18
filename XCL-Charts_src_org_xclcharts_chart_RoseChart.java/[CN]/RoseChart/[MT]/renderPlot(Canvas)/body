@@ -2,9 +2,6 @@
   float cirX=plotArea.getCenterX();
   float cirY=plotArea.getCenterY();
   float radius=getRadius();
-  Paint paintArc=new Paint();
-  paintArc.setAntiAlias(true);
-  paintArc.setStyle(Style.FILL);
   canvas.drawCircle(cirX,cirY,radius,mPaintInner);
   float percentage=0.0f;
   float newRaidus=0.0f;
@@ -16,14 +13,17 @@
   percentage=360 / chartDataSource.size();
   percentage=div(mul(percentage,100),100);
   for (  PieData cData : chartDataSource) {
-    paintArc.setColor(cData.getSliceColor());
+    geArcPaint().setColor(cData.getSliceColor());
     double p=cData.getPercentage() / 100;
     newRaidus=mul(radius,dtof(p));
     newRaidus=div(mul(newRaidus,100),100);
     RectF nRF=new RectF(sub(cirX,newRaidus),sub(cirY,newRaidus),add(cirX,newRaidus),add(cirY,newRaidus));
-    canvas.drawArc(nRF,mOffsetAngle,percentage,true,paintArc);
-    PointF point=MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,radius - radius / 2 / 2,mOffsetAngle + percentage / 2);
-    canvas.drawText(cData.getLabel(),point.x,point.y,getLabelPaint());
+    canvas.drawArc(nRF,mOffsetAngle,percentage,true,geArcPaint());
+    String label=cData.getLabel();
+    if ("" != label) {
+      PointF point=MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,radius - radius / 2 / 2,mOffsetAngle + percentage / 2);
+      DrawHelper.getInstance().drawRotateText(label,point.x,point.y,cData.getItemLabelRotateAngle(),canvas,getLabelPaint());
+    }
     mOffsetAngle=add(mOffsetAngle,percentage);
   }
   return true;

@@ -35,7 +35,7 @@
     chart.showClikedFocus();
     chart.showDyLine();
     chart.getDyLine().setDyLineStyle(XEnum.DyLineStyle.Vertical);
-    chart.getPlotArea().extWidth(100.f);
+    chart.getPlotArea().extWidth(500.f);
   }
  catch (  Exception e) {
     e.printStackTrace();

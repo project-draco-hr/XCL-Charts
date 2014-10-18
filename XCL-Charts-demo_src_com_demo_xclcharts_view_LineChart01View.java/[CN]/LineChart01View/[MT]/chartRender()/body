@@ -23,6 +23,7 @@
     chart.showClikedFocus();
     chart.showDyLine();
     chart.getDyLine().setDyLineStyle(XEnum.DyLineStyle.Horizontal);
+    chart.getPlotArea().extWidth(100.f);
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());
