@@ -1,0 +1,10 @@
+{
+  if (!mEnableScale)   return true;
+  if (Float.compare(mXScale,0.0f) == 0)   return true;
+  if (Float.compare(mXScale,0.95f) == 1 && Float.compare(mXScale,1.1f) == -1) {
+    return true;
+  }
+ else {
+    return false;
+  }
+}

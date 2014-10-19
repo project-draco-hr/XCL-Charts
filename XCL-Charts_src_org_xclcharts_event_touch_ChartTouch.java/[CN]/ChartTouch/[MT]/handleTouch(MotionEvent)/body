@@ -5,6 +5,4 @@
  else   if (event.getPointerCount() == 2) {
     if (null != mChart && mChart.getScaleStatus())     handleTouch_Scale(event);
   }
- else {
-  }
 }
