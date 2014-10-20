@@ -10,6 +10,7 @@
   renderVerticalDataAxisLine(canvas);
   renderVerticalDataAxisRightLine(canvas);
   renderVerticalCategoryAxisLine(canvas);
+  renderAxesTick(canvas);
   plotLegend.renderLineKey(canvas,mLstKey);
   mLstKey.clear();
   return true;

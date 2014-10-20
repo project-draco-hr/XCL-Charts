@@ -8,6 +8,6 @@
     plotGrid.renderGridLinesHorizontal(canvas,plotArea.getLeft(),currentY,plotArea.getPlotRight(),currentY);
     double tfx=(mBar3D.getOffsetX() * 2);
     float labelX=sub(plotArea.getLeft(),dtof(tfx));
-    this.categoryAxis.renderAxisHorizontalTick(this,canvas,labelX,currentY,categoryAxis.getDataSet().get(i));
+    mLstCateTick.add(new AxisTick(labelX,currentY,categoryAxis.getDataSet().get(i)));
   }
 }

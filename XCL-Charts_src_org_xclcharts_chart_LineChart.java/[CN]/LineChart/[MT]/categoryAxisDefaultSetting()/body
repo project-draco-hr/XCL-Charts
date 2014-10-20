@@ -1,0 +1,10 @@
+{
+  if (null == mDataAxisPosition)   return;
+  if (null == categoryAxis)   return;
+  if (!categoryAxis.isShow())   return;
+  if (XEnum.LineDataAxisLocation.LEFT == mDataAxisPosition) {
+    categoryAxis.setHorizontalTickAlign(Align.CENTER);
+  }
+  getCategoryAxis().getAxisPaint().setStrokeWidth(2);
+  getCategoryAxis().getTickMarksPaint().setStrokeWidth(2);
+}

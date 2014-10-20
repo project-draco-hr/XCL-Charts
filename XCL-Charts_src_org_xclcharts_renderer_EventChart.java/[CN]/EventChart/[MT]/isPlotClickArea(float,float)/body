@@ -1,6 +1,5 @@
 {
   if (!getListenItemClickStatus())   return false;
-  if (!getClikedScaleStatus())   return false;
   if (Float.compare(x,getPlotArea().getLeft()) == -1)   return false;
   if (Float.compare(x,getPlotArea().getRight()) == 1)   return false;
   if (Float.compare(y,getPlotArea().getTop()) == -1)   return false;

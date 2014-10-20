@@ -10,6 +10,6 @@
     if (plotGrid.isShowVerticalLines()) {
       canvas.drawLine(currentX,plotArea.getBottom(),currentX,plotArea.getTop(),plotGrid.getVerticalLinePaint());
     }
-    categoryAxis.renderAxisVerticalTick(canvas,currentX,plotArea.getBottom(),dataSet.get(i));
+    mLstCateTick.add(new AxisTick(currentX,plotArea.getBottom(),dataSet.get(i)));
   }
 }

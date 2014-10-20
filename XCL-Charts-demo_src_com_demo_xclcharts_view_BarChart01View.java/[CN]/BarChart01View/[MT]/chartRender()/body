@@ -4,7 +4,7 @@
     chart.setPadding(ltrb[0],ltrb[1],ltrb[2],ltrb[3]);
     chart.setDataSource(chartData);
     chart.setCategories(chartLabels);
-    chart.getAxisTitle().setLeftAxisTitle("???????????????");
+    chart.getAxisTitle().setLeftAxisTitle("?????????");
     chart.getAxisTitle().setLowerAxisTitle("????????????");
     chart.getDataAxis().setAxisMax(100);
     chart.getDataAxis().setAxisMin(0);

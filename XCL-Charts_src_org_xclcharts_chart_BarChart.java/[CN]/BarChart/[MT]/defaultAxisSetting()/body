@@ -1,39 +1,15 @@
 {
-  try {
+  categoryAxisDefaultSetting();
+  dataAxisDefaultSetting();
+  if (null != getBar()) {
 switch (mDirection) {
 case HORIZONTAL:
-{
-        if (null != categoryAxis) {
-          categoryAxis.setHorizontalTickAlign(Align.LEFT);
-          categoryAxis.getTickLabelPaint().setTextAlign(Align.RIGHT);
-        }
-        if (null != dataAxis) {
-          dataAxis.setHorizontalTickAlign(Align.CENTER);
-          dataAxis.getTickLabelPaint().setTextAlign(Align.CENTER);
-        }
-        if (null != getBar()) {
-          getBar().getItemLabelPaint().setTextAlign(Align.LEFT);
-          getBar().setBarDirection(XEnum.Direction.HORIZONTAL);
-        }
-        break;
-      }
+      getBar().getItemLabelPaint().setTextAlign(Align.LEFT);
+    getBar().setBarDirection(XEnum.Direction.HORIZONTAL);
+  break;
 case VERTICAL:
-{
-      if (null != dataAxis) {
-        dataAxis.setHorizontalTickAlign(Align.LEFT);
-        dataAxis.getTickLabelPaint().setTextAlign(Align.RIGHT);
-      }
-      if (null != categoryAxis) {
-        categoryAxis.setHorizontalTickAlign(Align.CENTER);
-        categoryAxis.getTickLabelPaint().setTextAlign(Align.CENTER);
-        categoryAxis.setVerticalTickPosition(XEnum.VerticalAlign.BOTTOM);
-      }
-      if (null != getBar())       getBar().setBarDirection(XEnum.Direction.VERTICAL);
-      break;
-    }
+getBar().setBarDirection(XEnum.Direction.VERTICAL);
+break;
 }
-}
- catch (Exception ex) {
-Log.e(TAG,"defaultAxisSetting() " + ex.toString());
 }
 }

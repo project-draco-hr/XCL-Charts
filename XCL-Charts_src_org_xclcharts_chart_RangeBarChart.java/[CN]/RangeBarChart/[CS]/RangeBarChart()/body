@@ -1,4 +1,4 @@
 {
-  if (null != plotLegend)   plotLegend.show();
-  defaultAxisSetting();
+  categoryAxisDefaultSetting();
+  dataAxisDefaultSetting();
 }

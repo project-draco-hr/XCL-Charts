@@ -1,6 +1,6 @@
 {
-  if (null == dataAxis)   dataAxis=new DataAxisRender();
-  if (null == categoryAxis)   categoryAxis=new CategoryAxisRender();
+  if (null == dataAxis)   initDataAxis();
+  if (null == categoryAxis)   initCategoryAxis();
   if (null != plotLegend) {
     plotLegend.show();
     plotLegend.setType(XEnum.LegendType.ROW);

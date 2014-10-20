@@ -1,0 +1,4 @@
+{
+  renderCategoryAxisTick(canvas);
+  renderDataAxisTick(canvas);
+}

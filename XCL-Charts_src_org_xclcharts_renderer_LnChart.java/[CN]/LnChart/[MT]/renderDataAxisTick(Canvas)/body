@@ -1,0 +1,4 @@
+{
+  drawDataAxisLabels(canvas,XEnum.Direction.VERTICAL,mLstDataTick);
+  mLstDataTick.clear();
+}

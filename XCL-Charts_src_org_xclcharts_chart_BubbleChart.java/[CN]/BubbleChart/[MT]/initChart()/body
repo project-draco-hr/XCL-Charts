@@ -1,5 +1,5 @@
 {
-  if (null != categoryAxis)   categoryAxis.setHorizontalTickAlign(Align.CENTER);
-  if (null != dataAxis)   dataAxis.setHorizontalTickAlign(Align.LEFT);
   if (null != mPlotDot)   mPlotDot.setDotStyle(XEnum.DotStyle.DOT);
+  categoryAxisDefaultSetting();
+  dataAxisDefaultSetting();
 }

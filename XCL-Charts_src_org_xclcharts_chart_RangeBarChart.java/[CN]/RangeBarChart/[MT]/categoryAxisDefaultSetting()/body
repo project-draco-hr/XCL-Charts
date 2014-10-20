@@ -1,0 +1,7 @@
+{
+  if (null != categoryAxis) {
+    categoryAxis.setHorizontalTickAlign(Align.CENTER);
+    categoryAxis.getTickLabelPaint().setTextAlign(Align.CENTER);
+    categoryAxis.setVerticalTickPosition(XEnum.VerticalAlign.BOTTOM);
+  }
+}

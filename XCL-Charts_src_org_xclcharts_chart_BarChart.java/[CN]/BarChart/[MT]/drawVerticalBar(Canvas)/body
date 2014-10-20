@@ -4,6 +4,7 @@
   renderVerticalBarCategoryAxis(canvas);
   renderVerticalBar(canvas);
   renderVerticalBarAxis(canvas);
+  renderAxesTick(canvas);
   plotLegend.renderBarKey(canvas,this.mDataSet);
   return true;
 }

@@ -16,6 +16,6 @@
     double th=MathHelper.getInstance().add(MathHelper.getInstance().add(baseOffsetY,baseTickness),labelHeight);
     float currentY=add(plotArea.getBottom(),dtof(th));
     currentX=sub(currentX,dtof(baseOffsetX));
-    categoryAxis.renderAxisVerticalTick(canvas,currentX,currentY,dataSet.get(i));
+    mLstCateTick.add(new AxisTick(currentX,currentY,dataSet.get(i)));
   }
 }

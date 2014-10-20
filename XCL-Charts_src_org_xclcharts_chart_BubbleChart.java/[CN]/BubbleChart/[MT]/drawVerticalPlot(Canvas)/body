@@ -2,11 +2,12 @@
   renderVerticalDataAxis(canvas);
   renderVerticalCategoryAxis(canvas);
   if (renderPlot(canvas) == true) {
-    execGC();
   }
   renderVerticalDataAxisLine(canvas);
   renderVerticalDataAxisRightLine(canvas);
   renderVerticalCategoryAxisLine(canvas);
+  renderAxesTick(canvas);
   plotLegend.renderBubbleKey(canvas,mDataset);
+  execGC();
   return true;
 }

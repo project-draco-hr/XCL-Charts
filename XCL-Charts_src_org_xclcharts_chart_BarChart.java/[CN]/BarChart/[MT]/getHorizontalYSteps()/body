@@ -1,4 +1,4 @@
 {
   int count=categoryAxis.getDataSet().size() + 1;
-  return div(getAxisScreenHeight(),count);
+  return div(getPlotScreenHeight(),count);
 }

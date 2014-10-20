@@ -1,0 +1,6 @@
+{
+  if (null != dataAxis) {
+    dataAxis.setHorizontalTickAlign(Align.LEFT);
+    dataAxis.getTickLabelPaint().setTextAlign(Align.RIGHT);
+  }
+}

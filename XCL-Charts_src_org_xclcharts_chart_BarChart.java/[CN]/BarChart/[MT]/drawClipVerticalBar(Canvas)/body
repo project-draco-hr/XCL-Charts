@@ -7,7 +7,7 @@
   if (XEnum.PanMode.VERTICAL == this.getPlotPanMode() || XEnum.PanMode.FREE == this.getPlotPanMode()) {
     float yMargin=getDrawClipVerticalYMargin();
     canvas.save();
-    canvas.clipRect(this.getLeft(),plotArea.getTop() - yMargin,this.getRight(),plotArea.getBottom() + yMargin);
+    canvas.clipRect(plotArea.getLeft(),plotArea.getTop() - yMargin,plotArea.getRight(),plotArea.getBottom() + yMargin);
     canvas.translate(0,offsetY);
     renderVerticalBarDataAxis(canvas);
     canvas.restore();
@@ -31,11 +31,33 @@
   canvas.save();
   canvas.translate(mMoveX,mMoveY);
   renderVerticalBar(canvas);
-  execGC();
   canvas.restore();
   canvas.restore();
   canvas.restore();
   renderVerticalBarAxis(canvas);
+  if (XEnum.PanMode.VERTICAL == this.getPlotPanMode() || XEnum.PanMode.FREE == this.getPlotPanMode()) {
+    float yMargin=getDrawClipVerticalYMargin();
+    canvas.save();
+    canvas.clipRect(this.getLeft(),plotArea.getTop() - yMargin,this.getRight(),plotArea.getBottom() + yMargin);
+    canvas.translate(0,offsetY);
+    renderDataAxisTick(canvas);
+    canvas.restore();
+  }
+ else {
+    renderDataAxisTick(canvas);
+  }
+  if (XEnum.PanMode.HORIZONTAL == this.getPlotPanMode() || XEnum.PanMode.FREE == this.getPlotPanMode()) {
+    float xMargin=getDrawClipVerticalXMargin();
+    canvas.save();
+    canvas.clipRect(plotArea.getLeft() - xMargin,plotArea.getTop(),plotArea.getRight() + xMargin,this.getBottom());
+    canvas.translate(offsetX,0);
+    renderCategoryAxisTick(canvas);
+    canvas.restore();
+  }
+ else {
+    renderCategoryAxisTick(canvas);
+  }
   plotLegend.renderBarKey(canvas,this.mDataSet);
+  execGC();
   return true;
 }

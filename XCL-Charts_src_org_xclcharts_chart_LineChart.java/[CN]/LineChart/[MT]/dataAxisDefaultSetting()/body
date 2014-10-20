@@ -1,0 +1,14 @@
+{
+  if (null == mDataAxisPosition)   return;
+  if (null == dataAxis)   return;
+  if (!dataAxis.isShow())   return;
+  if (XEnum.LineDataAxisLocation.LEFT == mDataAxisPosition) {
+    dataAxis.setHorizontalTickAlign(Align.LEFT);
+  }
+ else {
+    dataAxis.setHorizontalTickAlign(Align.RIGHT);
+    if (dataAxis.isShowAxisLabels())     dataAxis.getTickLabelPaint().setTextAlign(Align.LEFT);
+  }
+  if (dataAxis.isShowAxisLine())   getDataAxis().getAxisPaint().setStrokeWidth(2);
+  if (dataAxis.isShowTickMarks())   getDataAxis().getTickMarksPaint().setStrokeWidth(2);
+}

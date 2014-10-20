@@ -48,5 +48,6 @@
     currRowX+=this.getLabelTextWidth(label);
     currRowX+=mColSpan;
   }
+  mMapID.clear();
   clearLst();
 }

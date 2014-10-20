@@ -4,10 +4,11 @@
   float currentY=0.0f;
   float axisX=plotArea.getLeft();
   float axisY=plotArea.getBottom();
-  for (int i=0; i < categoryAxis.getDataSet().size(); i++) {
+  int count=categoryAxis.getDataSet().size();
+  for (int i=0; i < count; i++) {
     currentY=sub(axisY,mul((i + 1),YSteps));
     if (categoryAxis.isShowAxisLabels() && isRenderHorizontalCategoryAxisTick(currentY,this.mMoveY))     continue;
     plotGrid.renderGridLinesHorizontal(canvas,axisX,currentY,plotArea.getPlotRight(),currentY);
-    categoryAxis.renderAxisHorizontalTick(this,canvas,axisX,currentY,categoryAxis.getDataSet().get(i));
+    mLstCateTick.add(new AxisTick(axisX,currentY,categoryAxis.getDataSet().get(i)));
   }
 }

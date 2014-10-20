@@ -35,6 +35,9 @@
 );
     chart.getPlotLegend().hide();
     chart.disablePanMode();
+    chart.getCategoryAxis().setHorizontalTickAlign(Align.RIGHT);
+    chart.getCategoryAxis().getTickLabelPaint().setTextAlign(Align.LEFT);
+    chart.getCategoryAxis().getTickLabelPaint().setColor((int)Color.rgb(199,88,122));
   }
  catch (  Exception e) {
     e.printStackTrace();

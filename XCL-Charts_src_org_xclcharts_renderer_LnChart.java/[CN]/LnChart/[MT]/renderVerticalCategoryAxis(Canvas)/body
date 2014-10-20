@@ -15,10 +15,10 @@
       if (i > 0 && i + 1 < dataSet.size())       plotGrid.renderGridLinesVertical(canvas,currentX,plotArea.getBottom(),currentX,plotArea.getTop());
     }
     if (dataSet.size() == i + 1) {
-      categoryAxis.renderAxisVerticalTick(canvas,plotArea.getPlotRight(),plotArea.getBottom(),dataSet.get(i));
+      mLstCateTick.add(new AxisTick(plotArea.getPlotRight(),plotArea.getBottom(),dataSet.get(i)));
     }
  else {
-      categoryAxis.renderAxisVerticalTick(canvas,currentX,plotArea.getBottom(),dataSet.get(i));
+      mLstCateTick.add(new AxisTick(currentX,plotArea.getBottom(),dataSet.get(i)));
     }
   }
   if (!mRightAxisVisible) {

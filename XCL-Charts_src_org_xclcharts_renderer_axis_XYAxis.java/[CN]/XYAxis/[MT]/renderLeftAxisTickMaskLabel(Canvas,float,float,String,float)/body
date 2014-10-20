@@ -1,4 +1,5 @@
 {
+  if (!isShowAxisLabels())   return;
   String label=getFormatterLabel(text);
   double txtLength=DrawHelper.getInstance().getTextWidth(getTickLabelPaint(),label);
   if (txtLength <= width) {

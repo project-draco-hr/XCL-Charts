@@ -36,7 +36,8 @@ default :
 break;
 }
 if (isShowTickMarks()) {
-canvas.drawLine(centerX,MathHelper.getInstance().sub(marksStartY,getAxisPaint().getStrokeWidth() / 2),centerX,marksStopY,getTickMarksPaint());
+float mstartX=MathHelper.getInstance().sub(marksStartY,getAxisPaint().getStrokeWidth() / 2);
+canvas.drawLine(centerX,mstartX,centerX,marksStopY,getTickMarksPaint());
 }
 if (isShowAxisLabels()) {
 DrawHelper.getInstance().drawRotateText(getFormatterLabel(text),centerX,labelsStartY,getTickLabelRotateAngle(),canvas,getTickLabelPaint());

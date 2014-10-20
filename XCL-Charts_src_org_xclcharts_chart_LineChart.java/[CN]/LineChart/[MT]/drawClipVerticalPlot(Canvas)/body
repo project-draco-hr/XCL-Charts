@@ -7,7 +7,7 @@
   if (XEnum.PanMode.VERTICAL == this.getPlotPanMode() || XEnum.PanMode.FREE == this.getPlotPanMode()) {
     float yMargin=getDrawClipVerticalYMargin();
     canvas.save();
-    canvas.clipRect(this.getLeft(),plotArea.getTop() - yMargin,this.getRight(),plotArea.getBottom() + yMargin);
+    canvas.clipRect(plotArea.getLeft(),plotArea.getTop() - yMargin,plotArea.getRight(),plotArea.getBottom() + yMargin);
     canvas.translate(0,offsetY);
     if (XEnum.LineDataAxisLocation.LEFT == mDataAxisPosition) {
       renderVerticalDataAxis(canvas);
@@ -50,7 +50,6 @@
       mCustomLine.setVerticalPlot(dataAxis,plotArea,getAxisScreenHeight());
       mCustomLine.renderVerticalCustomlinesDataAxis(canvas);
     }
-    execGC();
   }
   canvas.restore();
   canvas.restore();
@@ -58,6 +57,29 @@
   renderVerticalDataAxisLine(canvas);
   renderVerticalDataAxisRightLine(canvas);
   renderVerticalCategoryAxisLine(canvas);
+  if (XEnum.PanMode.VERTICAL == this.getPlotPanMode() || XEnum.PanMode.FREE == this.getPlotPanMode()) {
+    float yMargin=getDrawClipVerticalYMargin();
+    canvas.save();
+    canvas.clipRect(this.getLeft(),plotArea.getTop() - yMargin,this.getRight(),plotArea.getBottom() + yMargin);
+    canvas.translate(0,offsetY);
+    renderDataAxisTick(canvas);
+    canvas.restore();
+  }
+ else {
+    renderDataAxisTick(canvas);
+  }
+  if (XEnum.PanMode.HORIZONTAL == this.getPlotPanMode() || XEnum.PanMode.FREE == this.getPlotPanMode()) {
+    float xMargin=getDrawClipVerticalXMargin();
+    canvas.save();
+    canvas.clipRect(plotArea.getLeft() - xMargin,plotArea.getTop(),plotArea.getRight() + xMargin,this.getBottom());
+    canvas.translate(offsetX,0);
+    renderCategoryAxisTick(canvas);
+    canvas.restore();
+  }
+ else {
+    renderCategoryAxisTick(canvas);
+  }
   plotLegend.renderLineKey(canvas,mLstKey);
+  execGC();
   return true;
 }

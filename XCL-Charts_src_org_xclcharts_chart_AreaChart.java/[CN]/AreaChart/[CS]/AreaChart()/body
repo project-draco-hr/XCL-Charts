@@ -1,4 +1,4 @@
 {
-  if (null != categoryAxis)   categoryAxis.setHorizontalTickAlign(Align.CENTER);
-  if (null != dataAxis)   dataAxis.setHorizontalTickAlign(Align.LEFT);
+  categoryAxisDefaultSetting();
+  dataAxisDefaultSetting();
 }

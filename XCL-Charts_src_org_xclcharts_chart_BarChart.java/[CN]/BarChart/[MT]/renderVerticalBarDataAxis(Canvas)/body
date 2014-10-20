@@ -6,11 +6,10 @@
   double currentTickLabel=0d;
   float axisX=plotArea.getLeft();
   for (int i=0; i <= tickCount; i++) {
-    dataAxis.setAxisTickCurrentID(i);
     if (0 == i) {
       currentY=plotArea.getBottom();
       currentTickLabel=dataAxis.getAxisMin();
-      dataAxis.renderAxisHorizontalTick(this,canvas,axisX,currentY,Double.toString(currentTickLabel));
+      mLstDataTick.add(new AxisTick(i,axisX,currentY,Double.toString(currentTickLabel)));
       continue;
     }
  else     currentY=sub(plotArea.getBottom(),mul(i,YSteps));
@@ -23,13 +22,14 @@
  else {
       plotGrid.renderEvenRowsFill(canvas,axisX,add(currentY,YSteps),plotArea.getPlotRight(),currentY);
     }
+    dataAxis.setAxisTickCurrentID(i);
     plotGrid.setPrimaryTickLine(dataAxis.isPrimaryTick());
     plotGrid.renderGridLinesHorizontal(canvas,axisX,currentY,plotArea.getPlotRight(),currentY);
     if (i == tickCount) {
-      dataAxis.renderAxisHorizontalTick(this,canvas,axisX,plotArea.getTop(),Double.toString(currentTickLabel));
+      mLstDataTick.add(new AxisTick(i,axisX,plotArea.getTop(),Double.toString(currentTickLabel)));
     }
  else {
-      dataAxis.renderAxisHorizontalTick(this,canvas,axisX,currentY,Double.toString(currentTickLabel));
+      mLstDataTick.add(new AxisTick(i,axisX,currentY,Double.toString(currentTickLabel)));
     }
   }
 }

@@ -1,0 +1,3 @@
+{
+  if (null != dataAxis)   dataAxis.setHorizontalTickAlign(Align.LEFT);
+}

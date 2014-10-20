@@ -1,0 +1,3 @@
+{
+  if (null != categoryAxis)   categoryAxis.setHorizontalTickAlign(Align.CENTER);
+}
