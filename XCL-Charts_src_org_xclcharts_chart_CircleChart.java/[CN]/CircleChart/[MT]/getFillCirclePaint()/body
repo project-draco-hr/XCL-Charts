@@ -1,0 +1,8 @@
+{
+  if (null == mPaintFillCircle) {
+    mPaintFillCircle=new Paint();
+    mPaintFillCircle.setColor((int)Color.rgb(77,83,97));
+    mPaintFillCircle.setAntiAlias(true);
+  }
+  return mPaintFillCircle;
+}

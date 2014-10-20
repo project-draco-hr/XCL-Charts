@@ -1,6 +1,7 @@
 {
   halfchart=(com.demo.xclcharts.view.CircleChart01View)findViewById(R.id.halfcircle_view);
   chart=(com.demo.xclcharts.view.CircleChart02View)findViewById(R.id.circle_view);
+  halfchart2=(com.demo.xclcharts.view.CircleChart03View)findViewById(R.id.halfcircle_view2);
   process=(TextView)findViewById(R.id.tv_process);
   SeekBar seekBar=(SeekBar)this.findViewById(R.id.seekBar1);
   seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener(){
@@ -16,6 +17,9 @@
       chart.setPercentage(progress);
       chart.chartRender();
       chart.invalidate();
+      halfchart2.setPercentage(progress);
+      halfchart2.chartRender();
+      halfchart2.invalidate();
     }
   }
 );

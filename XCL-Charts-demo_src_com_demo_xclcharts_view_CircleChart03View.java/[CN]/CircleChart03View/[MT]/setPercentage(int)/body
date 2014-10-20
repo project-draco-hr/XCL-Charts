@@ -6,7 +6,7 @@
   }
  else   if (per < 70) {
     mDataInfo="????????????";
-    chart.getLabelPaint().setColor((int)Color.rgb(72,201,176));
+    chart.getLabelPaint().setColor((int)Color.rgb(85,41,124));
     chart.getDataInfoPaint().setColor(Color.WHITE);
   }
  else {

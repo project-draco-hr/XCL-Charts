@@ -11,30 +11,47 @@
     Paint paintArc=new Paint();
     paintArc.setAntiAlias(true);
     float currentAngle=0.0f;
-    int infoHeight=DrawHelper.getInstance().getPaintFontHeight(mPaintDataInfo);
+    int infoHeight=DrawHelper.getInstance().getPaintFontHeight(getDataInfoPaint());
     int LabelHeight=DrawHelper.getInstance().getPaintFontHeight(getLabelPaint());
     int textHeight=LabelHeight + infoHeight;
     for (    PieData cData : mDataSet) {
       paintArc.setColor(cData.getSliceColor());
       if (XEnum.CircleType.HALF == mDisplayType) {
         setInitialAngle(180);
-        drawPercent(canvas,mPaintBgCircle,cirX,cirY,radius,180f,180f);
-        drawPercent(canvas,mPaintFillCircle,cirX,cirY,MathHelper.getInstance().round(mul(radius,0.9f),2),180f,180f);
+        float hRadius=this.getWidth() / 2.f;
+        float hCirY=this.getBottom();
+        if (this.isShowBorder()) {
+          hRadius-=this.getBorderWidth();
+          hCirY-=this.getBorderWidth() / 2;
+        }
+        float oRadius=MathHelper.getInstance().round(mul(hRadius,0.9f),2);
+        float iRadius=MathHelper.getInstance().round(mul(hRadius,0.8f),2);
+        if (isShowInnerBG()) {
+          drawPercent(canvas,getBgCirclePaint(),cirX,hCirY,hRadius,180f,180f);
+        }
+ else {
+          oRadius=iRadius=hRadius;
+        }
+        if (isShowInnerFill()) {
+          drawPercent(canvas,getFillCirclePaint(),cirX,hCirY,oRadius,180f,180f);
+        }
         float per=(float)cData.getPercentage();
         currentAngle=MathHelper.getInstance().round(mul(180f,div(per,100f)),2);
-        drawPercent(canvas,paintArc,cirX,cirY,radius,180f,currentAngle);
-        drawPercent(canvas,mPaintFillCircle,cirX,cirY,MathHelper.getInstance().round(mul(radius,0.8f),2),180f,180f);
-        canvas.drawText(cData.getLabel(),cirX,cirY - textHeight,getLabelPaint());
-        canvas.drawText(mDataInfo,cirX,cirY - infoHeight,mPaintDataInfo);
+        drawPercent(canvas,paintArc,cirX,hCirY,hRadius,180f,currentAngle);
+        if (isShowInnerFill()) {
+          drawPercent(canvas,getFillCirclePaint(),cirX,hCirY,iRadius,180f,180f);
+        }
+        if ("" != cData.getLabel())         canvas.drawText(cData.getLabel(),cirX,hCirY - textHeight,getLabelPaint());
+        if ("" != mDataInfo)         canvas.drawText(mDataInfo,cirX,hCirY - infoHeight,getDataInfoPaint());
       }
  else {
         currentAngle=cData.getSliceAngle();
-        canvas.drawCircle(cirX,cirY,radius,mPaintBgCircle);
-        canvas.drawCircle(cirX,cirY,MathHelper.getInstance().round(mul(radius,0.9f),2),mPaintFillCircle);
+        if (isShowInnerBG())         canvas.drawCircle(cirX,cirY,radius,getBgCirclePaint());
+        if (isShowInnerFill())         canvas.drawCircle(cirX,cirY,MathHelper.getInstance().round(mul(radius,0.9f),2),getFillCirclePaint());
         canvas.drawArc(arcRF0,mOffsetAngle,currentAngle,true,paintArc);
-        canvas.drawCircle(cirX,cirY,MathHelper.getInstance().round(mul(radius,0.8f),2),mPaintFillCircle);
-        canvas.drawText(cData.getLabel(),cirX,cirY,getLabelPaint());
-        if (mDataInfo.length() > 0)         canvas.drawText(mDataInfo,cirX,add(cirY,LabelHeight),mPaintDataInfo);
+        if (isShowInnerFill())         canvas.drawCircle(cirX,cirY,MathHelper.getInstance().round(mul(radius,0.8f),2),getFillCirclePaint());
+        if ("" != cData.getLabel())         canvas.drawText(cData.getLabel(),cirX,cirY,getLabelPaint());
+        if ("" != mDataInfo)         canvas.drawText(mDataInfo,cirX,add(cirY,LabelHeight),getDataInfoPaint());
       }
       break;
     }

@@ -1,0 +1,10 @@
+{
+  if (null == mPaintDataInfo) {
+    mPaintDataInfo=new Paint();
+    mPaintDataInfo.setTextSize(22);
+    mPaintDataInfo.setColor(Color.WHITE);
+    mPaintDataInfo.setTextAlign(Align.CENTER);
+    mPaintDataInfo.setAntiAlias(true);
+  }
+  return mPaintDataInfo;
+}

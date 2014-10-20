@@ -1,0 +1,12 @@
+{
+  try {
+    chart.setAttributeInfo(mDataInfo);
+    chart.setCircleType(XEnum.CircleType.HALF);
+    chart.setDataSource(mlPieData);
+    chart.hideInnerFill();
+    chart.showRoundBorder();
+  }
+ catch (  Exception e) {
+    e.printStackTrace();
+  }
+}
