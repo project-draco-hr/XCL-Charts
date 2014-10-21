@@ -1,4 +1,3 @@
 {
-  float xMargin=getDrawClipVerticalXMargin();
-  return xMargin;
+  return getDrawClipVerticalXMargin();
 }

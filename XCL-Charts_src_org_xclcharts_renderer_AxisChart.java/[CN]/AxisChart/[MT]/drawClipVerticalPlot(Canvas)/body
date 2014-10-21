@@ -28,10 +28,10 @@
   }
   canvas.save();
   if (isShowRightAxis()) {
-    canvas.clipRect(plotArea.getLeft(),plotArea.getTop(),plotArea.getRight(),plotArea.getBottom());
+    canvas.clipRect(plotArea.getLeft(),plotArea.getTop(),plotArea.getRight(),plotArea.getBottom() + 0.5f);
   }
  else {
-    canvas.clipRect(plotArea.getLeft(),plotArea.getTop(),this.getRight(),plotArea.getBottom());
+    canvas.clipRect(plotArea.getLeft(),plotArea.getTop(),this.getRight(),plotArea.getBottom() + 0.5f);
   }
   canvas.save();
   canvas.translate(mMoveX,mMoveY);

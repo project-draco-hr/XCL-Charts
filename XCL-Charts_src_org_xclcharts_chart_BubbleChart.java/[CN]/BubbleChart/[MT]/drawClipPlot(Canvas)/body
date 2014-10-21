@@ -1,4 +1,3 @@
 {
-  if (renderPlot(canvas) == true) {
-  }
+  renderPlot(canvas);
 }
