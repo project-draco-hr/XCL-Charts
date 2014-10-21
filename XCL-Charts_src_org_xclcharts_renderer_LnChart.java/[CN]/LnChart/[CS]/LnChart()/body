@@ -6,4 +6,6 @@
     plotLegend.setVerticalAlign(XEnum.VerticalAlign.TOP);
     plotLegend.hideBox();
   }
+  categoryAxisDefaultSetting();
+  dataAxisDefaultSetting();
 }

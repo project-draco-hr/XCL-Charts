@@ -1,0 +1,4 @@
+{
+  if (renderVerticalPlot(canvas) == true) {
+  }
+}

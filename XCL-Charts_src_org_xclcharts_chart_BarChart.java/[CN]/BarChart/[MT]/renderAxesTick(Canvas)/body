@@ -1,4 +1,12 @@
 {
-  renderCategoryAxisTick(canvas);
-  renderDataAxisTick(canvas);
+switch (mDirection) {
+case HORIZONTAL:
+    renderHorizontalBarDataAxis(canvas);
+  renderHorizontalBarCategoryAxis(canvas);
+break;
+case VERTICAL:
+drawClipDataAxisTick(canvas);
+drawClipCategoryAxisTick(canvas);
+break;
+}
 }

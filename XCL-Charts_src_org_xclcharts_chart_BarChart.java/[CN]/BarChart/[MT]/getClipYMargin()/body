@@ -1,0 +1,12 @@
+{
+  float yMargin=0.0f;
+switch (mDirection) {
+case HORIZONTAL:
+    yMargin=getDrawClipHorizontalBarXMargin();
+  break;
+case VERTICAL:
+yMargin=getDrawClipVerticalYMargin();
+break;
+}
+return yMargin;
+}

@@ -11,27 +11,22 @@
       return false;
     }
     boolean ret=true;
+    if (getPanModeStatus()) {
 switch (mDirection) {
 case HORIZONTAL:
 {
-        if (getPanModeStatus()) {
-          ret=drawClipHorizontalBar(canvas);
+          ret=drawClipHorizontalPlot(canvas);
+          break;
         }
- else {
-          ret=drawHorizontalBar(canvas);
-        }
-        break;
-      }
 case VERTICAL:
 {
-      if (getPanModeStatus()) {
-        ret=drawClipVerticalBar(canvas);
+        ret=drawClipVerticalPlot(canvas);
+        break;
       }
+  }
+}
  else {
-        ret=drawVerticalBar(canvas);
-      }
-      break;
-    }
+  ret=drawFixedPlot(canvas);
 }
 return ret;
 }

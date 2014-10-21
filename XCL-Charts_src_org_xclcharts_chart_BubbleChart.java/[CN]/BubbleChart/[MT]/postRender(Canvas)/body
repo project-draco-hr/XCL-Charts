@@ -5,7 +5,7 @@
       drawClipVerticalPlot(canvas);
     }
  else {
-      drawVerticalPlot(canvas);
+      drawFixedPlot(canvas);
     }
     renderFocusShape(canvas);
     renderToolTip(canvas);

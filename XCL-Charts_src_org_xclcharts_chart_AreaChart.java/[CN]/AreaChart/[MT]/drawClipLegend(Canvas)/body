@@ -1,0 +1,4 @@
+{
+  plotLegend.renderLineKey(canvas,mLstKey);
+  mLstKey.clear();
+}

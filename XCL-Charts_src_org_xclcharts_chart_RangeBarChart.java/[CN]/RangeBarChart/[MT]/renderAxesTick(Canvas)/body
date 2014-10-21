@@ -1,0 +1,6 @@
+{
+  drawCategoryAxisLabels(canvas,XEnum.Direction.VERTICAL,mLstCateTick);
+  mLstCateTick.clear();
+  drawDataAxisLabels(canvas,XEnum.Direction.VERTICAL,mLstDataTick);
+  mLstDataTick.clear();
+}

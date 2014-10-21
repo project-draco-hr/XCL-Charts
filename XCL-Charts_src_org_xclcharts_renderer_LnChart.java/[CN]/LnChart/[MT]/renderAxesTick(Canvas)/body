@@ -1,4 +1,4 @@
 {
-  renderCategoryAxisTick(canvas);
-  renderDataAxisTick(canvas);
+  drawClipDataAxisTick(canvas);
+  drawClipCategoryAxisTick(canvas);
 }

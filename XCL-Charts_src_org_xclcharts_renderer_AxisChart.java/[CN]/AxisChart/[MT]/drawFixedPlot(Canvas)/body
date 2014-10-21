@@ -1,0 +1,11 @@
+{
+  this.mMoveX=this.mMoveY=0.0f;
+  drawClipDataAxis(canvas);
+  drawClipCategoryAxis(canvas);
+  drawClipPlot(canvas);
+  drawClipAxisLine(canvas);
+  drawClipDataAxisTick(canvas);
+  drawClipCategoryAxisTick(canvas);
+  drawClipLegend(canvas);
+  return true;
+}

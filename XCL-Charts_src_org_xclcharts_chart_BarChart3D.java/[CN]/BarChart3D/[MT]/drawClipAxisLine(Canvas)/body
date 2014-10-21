@@ -1,0 +1,12 @@
+{
+switch (getChartDirection()) {
+case HORIZONTAL:
+    dataAxis.renderAxis(canvas,plotArea.getLeft(),plotArea.getBottom(),plotArea.getPlotRight(),plotArea.getBottom());
+  mBar3D.render3DYAxis(plotArea.getLeft(),plotArea.getTop(),plotArea.getPlotRight(),plotArea.getBottom(),canvas);
+break;
+case VERTICAL:
+dataAxis.renderAxis(canvas,plotArea.getLeft(),plotArea.getTop(),plotArea.getLeft(),plotArea.getBottom());
+mBar3D.render3DXAxis(plotArea.getLeft(),plotArea.getBottom(),plotArea.getPlotRight(),plotArea.getBottom(),canvas);
+break;
+}
+}

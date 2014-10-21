@@ -1,0 +1,8 @@
+{
+  if (XEnum.LineDataAxisLocation.LEFT == mDataAxisPosition) {
+    renderVerticalDataAxis(canvas);
+  }
+ else {
+    renderVerticalDataAxisRight(canvas);
+  }
+}

@@ -1,0 +1,61 @@
+{
+  float offsetX=mTranslateXY[0];
+  float offsetY=mTranslateXY[1];
+  initMoveXY();
+  float yMargin=getClipYMargin();
+  float xMargin=getClipXMargin();
+  canvas.save();
+  canvas.clipRect(this.getLeft(),this.getTop(),this.getRight(),this.getBottom());
+  if (XEnum.PanMode.HORIZONTAL == this.getPlotPanMode() || XEnum.PanMode.FREE == this.getPlotPanMode()) {
+    canvas.save();
+    canvas.clipRect(plotArea.getLeft() - xMargin,plotArea.getTop(),plotArea.getRight() + xMargin,this.getBottom());
+    canvas.translate(offsetX,0);
+    drawClipDataAxis(canvas);
+    canvas.restore();
+  }
+ else {
+    drawClipDataAxis(canvas);
+  }
+  if (XEnum.PanMode.VERTICAL == this.getPlotPanMode() || XEnum.PanMode.FREE == this.getPlotPanMode()) {
+    canvas.save();
+    canvas.clipRect(plotArea.getLeft(),plotArea.getTop() - yMargin,plotArea.getRight(),plotArea.getBottom() + yMargin);
+    canvas.translate(0,offsetY);
+    drawClipCategoryAxis(canvas);
+    canvas.restore();
+  }
+ else {
+    drawClipCategoryAxis(canvas);
+  }
+  canvas.save();
+  canvas.clipRect(plotArea.getLeft(),plotArea.getTop(),this.getRight(),plotArea.getBottom());
+  canvas.save();
+  canvas.translate(mMoveX,mMoveY);
+  drawClipPlot(canvas);
+  canvas.restore();
+  canvas.restore();
+  canvas.restore();
+  drawClipAxisLine(canvas);
+  if (XEnum.PanMode.HORIZONTAL == this.getPlotPanMode() || XEnum.PanMode.FREE == this.getPlotPanMode()) {
+    canvas.save();
+    canvas.clipRect(plotArea.getLeft() - xMargin,plotArea.getTop(),plotArea.getRight() + xMargin,this.getBottom());
+    canvas.translate(offsetX,0);
+    drawClipDataAxisTick(canvas);
+    canvas.restore();
+  }
+ else {
+    drawClipDataAxisTick(canvas);
+  }
+  if (XEnum.PanMode.VERTICAL == this.getPlotPanMode() || XEnum.PanMode.FREE == this.getPlotPanMode()) {
+    canvas.save();
+    canvas.clipRect(this.getLeft(),plotArea.getTop() - yMargin,this.getRight(),plotArea.getBottom() + yMargin);
+    canvas.translate(0,offsetY);
+    drawClipCategoryAxisTick(canvas);
+    canvas.restore();
+  }
+ else {
+    drawClipCategoryAxisTick(canvas);
+  }
+  drawClipLegend(canvas);
+  execGC();
+  return true;
+}

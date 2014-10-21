@@ -1,9 +1,0 @@
-{
-  renderHorizontalBarDataAxis(canvas);
-  renderHorizontalBarCategoryAxis(canvas);
-  renderHorizontalBar(canvas);
-  renderHorizontalBarAxis(canvas);
-  renderAxesTick(canvas);
-  plotLegend.renderBarKey(canvas,this.mDataSet);
-  return true;
-}

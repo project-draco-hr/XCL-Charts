@@ -19,10 +19,10 @@
     plotGrid.setPrimaryTickLine(dataAxis.isPrimaryTick());
     plotGrid.renderGridLinesHorizontal(canvas,plotArea.getLeft(),currentY,plotArea.getPlotRight(),currentY);
     if (i == tickCount) {
-      dataAxis.renderAxisHorizontalTick(this,canvas,plotArea.getLeft(),plotArea.getTop(),Double.toString(currentTickLabel));
+      mLstDataTick.add(new AxisTick(i,plotArea.getLeft(),plotArea.getTop(),Double.toString(currentTickLabel)));
     }
  else {
-      dataAxis.renderAxisHorizontalTick(this,canvas,plotArea.getLeft(),currentY,Double.toString(currentTickLabel));
+      mLstDataTick.add(new AxisTick(i,plotArea.getLeft(),currentY,Double.toString(currentTickLabel)));
     }
   }
   dataAxis.renderAxis(canvas,plotArea.getLeft(),plotArea.getBottom(),plotArea.getLeft(),plotArea.getTop());

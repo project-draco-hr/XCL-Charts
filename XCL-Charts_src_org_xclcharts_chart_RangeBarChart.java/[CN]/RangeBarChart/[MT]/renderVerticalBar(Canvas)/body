@@ -25,6 +25,7 @@
     }
   }
   dataAxis.renderAxis(canvas,plotArea.getLeft(),plotArea.getBottom(),plotArea.getPlotRight(),plotArea.getBottom());
+  renderAxesTick(canvas);
   plotLegend.renderRangeBarKey(canvas,getKey(),mFlatBar.getBarPaint().getColor());
   return true;
 }

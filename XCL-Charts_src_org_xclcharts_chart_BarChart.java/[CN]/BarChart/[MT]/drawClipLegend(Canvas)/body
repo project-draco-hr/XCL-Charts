@@ -1,0 +1,3 @@
+{
+  plotLegend.renderBarKey(canvas,this.mDataSet);
+}
