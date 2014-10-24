@@ -1,16 +1,33 @@
 {
   try {
     super.postRender(canvas);
+    boolean ret=true;
     calcPlotRange();
     plotArea.render(canvas);
-    renderTitle(canvas);
-    if (null != axisTitle) {
-      axisTitle.setRange(this);
-      axisTitle.render(canvas);
-    }
-  }
- catch (  Exception e) {
-    throw e;
-  }
-  return true;
+    if (getPanModeStatus()) {
+switch (mDirection) {
+case HORIZONTAL:
+        ret=drawClipHorizontalPlot(canvas);
+      break;
+case VERTICAL:
+    ret=drawClipVerticalPlot(canvas);
+  break;
+}
+}
+ else {
+ret=drawFixedPlot(canvas);
+}
+if (!ret) return ret;
+renderTitle(canvas);
+if (null != axisTitle) {
+axisTitle.setRange(this);
+axisTitle.render(canvas);
+}
+renderFocusShape(canvas);
+renderToolTip(canvas);
+return ret;
+}
+ catch (Exception e) {
+throw e;
+}
 }

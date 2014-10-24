@@ -1,0 +1,7 @@
+{
+  if (isDetailMode()) {
+    if (0 == id && mShowFirstTick)     return true;
+    if (id < getDetailModeSteps() || id % getDetailModeSteps() != 0)     return false;
+  }
+  return true;
+}

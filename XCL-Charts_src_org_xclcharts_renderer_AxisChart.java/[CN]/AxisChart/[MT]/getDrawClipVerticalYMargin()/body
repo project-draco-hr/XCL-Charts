@@ -1,7 +1,11 @@
 {
   float yMargin=0.0f;
-  if (dataAxis.isShowAxisLabels()) {
+  if (XEnum.DataAxisPosition.LEFT == mDataAxisPosition || XEnum.DataAxisPosition.RIGHT == mDataAxisPosition) {
     yMargin=DrawHelper.getInstance().getPaintFontHeight(dataAxis.getTickLabelPaint()) / 2;
   }
+  if (XEnum.CategoryAxisPosition.LEFT == mCategoryAxisPosition || XEnum.CategoryAxisPosition.RIGHT == mCategoryAxisPosition) {
+    yMargin=DrawHelper.getInstance().getPaintFontHeight(categoryAxis.getTickLabelPaint()) / 2;
+  }
+  yMargin+=this.myMargin;
   return yMargin;
 }

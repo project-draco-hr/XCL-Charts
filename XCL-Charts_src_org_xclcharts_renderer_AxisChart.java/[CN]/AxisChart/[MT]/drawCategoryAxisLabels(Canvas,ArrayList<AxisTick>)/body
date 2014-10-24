@@ -1,0 +1,15 @@
+{
+  if (null == lstLabels)   return;
+  for (  AxisTick t : lstLabels) {
+switch (mCategoryAxisPosition) {
+case LEFT:
+case RIGHT:
+      categoryAxis.renderAxisHorizontalTick(this,canvas,t.X,t.Y,t.Label);
+    break;
+case TOP:
+case BOTTOM:
+  categoryAxis.renderAxisVerticalTick(canvas,t.X,t.Y,t.Label);
+break;
+}
+}
+}

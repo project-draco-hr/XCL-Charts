@@ -1,0 +1,13 @@
+{
+  if (tickID <= 0)   return;
+  if (tickID % 2 != 0) {
+    plotGrid.renderOddRowsFill(canvas,plotLeft,add(currentY,YSteps),plotRight,currentY);
+  }
+ else {
+    plotGrid.renderEvenRowsFill(canvas,plotLeft,add(currentY,YSteps),plotRight,currentY);
+  }
+  if (tickID > 0 && tickID < tickCount) {
+    plotGrid.setPrimaryTickLine(dataAxis.isPrimaryTick(tickID));
+    plotGrid.renderGridLinesHorizontal(canvas,plotLeft,currentY,plotRight,currentY);
+  }
+}

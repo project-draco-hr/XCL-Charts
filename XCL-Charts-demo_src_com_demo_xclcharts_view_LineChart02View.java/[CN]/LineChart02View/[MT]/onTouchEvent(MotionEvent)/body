@@ -2,7 +2,7 @@
   super.onTouchEvent(event);
   if (event.getAction() == MotionEvent.ACTION_UP) {
     if (chart.getDyLineVisible()) {
-      chart.getDyLine().setCenterXY(event.getX(),event.getY());
+      chart.getDyLine().setCurrentXY(event.getX(),event.getY());
       if (chart.getDyLine().isInvalidate())       this.invalidate();
     }
   }

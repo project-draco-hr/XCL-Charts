@@ -1,2 +1,42 @@
 {
+  float plotLeft=plotArea.getLeft();
+  float plotTop=plotArea.getTop();
+  float plotRight=plotArea.getRight();
+  float plotBottom=plotArea.getBottom();
+switch (mDataAxisPosition) {
+case LEFT:
+    dataAxis.renderAxis(canvas,plotLeft,plotBottom,plotLeft,plotTop);
+  if (getAxesClosedStatus())   dataAxis.renderAxis(canvas,plotRight,plotTop,plotRight,plotBottom);
+break;
+case RIGHT:
+dataAxis.renderAxis(canvas,plotRight,plotTop,plotRight,plotBottom);
+if (getAxesClosedStatus()) dataAxis.renderAxis(canvas,plotRight,plotTop,plotRight,plotBottom);
+break;
+case TOP:
+dataAxis.renderAxis(canvas,plotLeft,plotTop,plotRight,plotTop);
+if (getAxesClosedStatus()) dataAxis.renderAxis(canvas,plotLeft,plotBottom,plotRight,plotBottom);
+break;
+case BOTTOM:
+dataAxis.renderAxis(canvas,plotLeft,plotBottom,plotRight,plotBottom);
+if (getAxesClosedStatus()) dataAxis.renderAxis(canvas,plotLeft,plotTop,plotRight,plotTop);
+break;
+}
+switch (mCategoryAxisPosition) {
+case LEFT:
+categoryAxis.renderAxis(canvas,plotLeft,plotBottom,plotLeft,plotTop);
+if (getAxesClosedStatus()) categoryAxis.renderAxis(canvas,plotRight,plotTop,plotRight,plotBottom);
+break;
+case RIGHT:
+categoryAxis.renderAxis(canvas,plotRight,plotTop,plotRight,plotBottom);
+if (getAxesClosedStatus()) categoryAxis.renderAxis(canvas,plotLeft,plotBottom,plotLeft,plotTop);
+break;
+case TOP:
+categoryAxis.renderAxis(canvas,plotLeft,plotTop,plotRight,plotTop);
+if (getAxesClosedStatus()) categoryAxis.renderAxis(canvas,plotLeft,plotBottom,plotRight,plotBottom);
+break;
+case BOTTOM:
+categoryAxis.renderAxis(canvas,plotLeft,plotBottom,plotRight,plotBottom);
+if (getAxesClosedStatus()) categoryAxis.renderAxis(canvas,plotLeft,plotTop,plotRight,plotTop);
+break;
+}
 }

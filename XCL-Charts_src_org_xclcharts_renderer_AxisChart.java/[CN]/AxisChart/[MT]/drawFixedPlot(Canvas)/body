@@ -1,11 +1,11 @@
 {
   this.mMoveX=this.mMoveY=0.0f;
-  drawClipDataAxis(canvas);
-  drawClipCategoryAxis(canvas);
+  drawClipDataAxisGridlines(canvas);
+  drawClipCategoryAxisGridlines(canvas);
   drawClipPlot(canvas);
   drawClipAxisLine(canvas);
-  drawClipDataAxisTick(canvas);
-  drawClipCategoryAxisTick(canvas);
+  drawClipDataAxisTickMarks(canvas);
+  drawClipCategoryAxisTickMarks(canvas);
   drawClipLegend(canvas);
   return true;
 }

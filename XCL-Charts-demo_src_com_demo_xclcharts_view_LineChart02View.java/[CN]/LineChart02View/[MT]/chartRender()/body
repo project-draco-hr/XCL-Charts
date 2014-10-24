@@ -10,8 +10,6 @@
     chart.getPlotGrid().showHorizontalLines();
     chart.setTitle("??????????????????????????????");
     chart.addSubtitle("(XCL-Charts Demo)");
-    chart.hideTopAxis();
-    chart.hideRightAxis();
     chart.getDataAxis().getAxisPaint().setStrokeWidth(2);
     chart.getDataAxis().getTickMarksPaint().setStrokeWidth(2);
     chart.getDataAxis().showAxisLabels();
@@ -36,6 +34,7 @@
 );
     chart.setLineAxisIntersectVisible(false);
     chart.showDyLine();
+    chart.setAxesClosed(false);
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

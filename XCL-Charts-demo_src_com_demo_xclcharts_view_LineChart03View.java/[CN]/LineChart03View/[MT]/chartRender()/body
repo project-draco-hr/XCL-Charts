@@ -9,8 +9,6 @@
     chart.getCategoryAxis().getTickLabelPaint().setTextAlign(Align.LEFT);
     chart.getCategoryAxis().setTickLabelRotateAngle(90);
     chart.getAxisTitle().setLowerAxisTitle("(??????)");
-    chart.hideRightAxis();
-    chart.hideTopAxis();
     chart.getPlotLegend().hide();
   }
  catch (  Exception e) {

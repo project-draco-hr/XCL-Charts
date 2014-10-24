@@ -1,4 +1,5 @@
 {
+  if (null == mDirection)   return;
   categoryAxisDefaultSetting();
   dataAxisDefaultSetting();
   if (null != getBar()) {

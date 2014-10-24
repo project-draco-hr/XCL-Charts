@@ -1,6 +1,6 @@
 {
   if (!validateParams())   return;
-  calcAllPoint();
+  calcAllPoints();
   renderGridLines(canvas);
   renderAxisLines(canvas);
   renderDataArea(canvas);

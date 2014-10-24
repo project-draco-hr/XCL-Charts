@@ -1,13 +1,16 @@
 {
   float xMargin=0.0f;
-  if (categoryAxis.isShowAxisLabels()) {
-    if (categoryAxis.getHorizontalTickAlign() != Align.LEFT) {
-      String str=categoryAxis.getDataSet().get(0);
-      xMargin=DrawHelper.getInstance().getTextWidth(categoryAxis.getTickLabelPaint(),str);
-      if (categoryAxis.getHorizontalTickAlign() == Align.CENTER) {
-        xMargin=div(xMargin,2);
-      }
-    }
+  if (XEnum.DataAxisPosition.BOTTOM == mDataAxisPosition || XEnum.DataAxisPosition.TOP == mDataAxisPosition) {
+    if (!dataAxis.isShowAxisLabels())     return 0.0f;
+    xMargin=DrawHelper.getInstance().getTextWidth(dataAxis.getTickLabelPaint(),"1234567890");
   }
+  if (XEnum.CategoryAxisPosition.BOTTOM == mCategoryAxisPosition || XEnum.CategoryAxisPosition.TOP == mCategoryAxisPosition) {
+    if (!categoryAxis.isShowAxisLabels())     return 0.0f;
+    int count=categoryAxis.getDataSet().size();
+    if (0 == count)     return 0.0f;
+    String str=categoryAxis.getDataSet().get(0);
+    xMargin=DrawHelper.getInstance().getTextWidth(categoryAxis.getTickLabelPaint(),str);
+  }
+  xMargin+=this.mxMargin;
   return xMargin;
 }

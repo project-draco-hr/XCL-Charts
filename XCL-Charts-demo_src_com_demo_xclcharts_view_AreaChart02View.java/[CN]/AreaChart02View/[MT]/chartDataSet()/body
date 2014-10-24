@@ -1,6 +1,6 @@
 {
   List<Double> dataSeries1=new LinkedList<Double>();
-  dataSeries1.add((double)25);
+  dataSeries1.add((double)0.001);
   dataSeries1.add((double)50);
   dataSeries1.add((double)51);
   dataSeries1.add((double)60);
@@ -10,7 +10,7 @@
   dataSeries2.add((double)22);
   dataSeries2.add((double)30);
   dataSeries2.add((double)30);
-  dataSeries2.add((double)15);
+  dataSeries2.add((double)10);
   List<Double> dataSeries3=new LinkedList<Double>();
   dataSeries3.add((double)50);
   dataSeries3.add((double)62);

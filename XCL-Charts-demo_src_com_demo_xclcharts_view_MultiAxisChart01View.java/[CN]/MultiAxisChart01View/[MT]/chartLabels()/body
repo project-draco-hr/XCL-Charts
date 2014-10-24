@@ -1,4 +1,4 @@
 {
-  chartLabels.add("4 Cores Per Node");
-  chartLabels.add("8 Cores per Node");
+  chartLabels.add("14 Cores Per Node");
+  chartLabels.add("18 Cores per Node");
 }

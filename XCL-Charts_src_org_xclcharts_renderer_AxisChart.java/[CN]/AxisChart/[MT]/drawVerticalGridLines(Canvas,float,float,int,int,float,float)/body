@@ -1,0 +1,5 @@
+{
+  if (plotGrid.isShowVerticalLines()) {
+    plotGrid.renderGridLinesVertical(canvas,currentX,plotBottom,currentX,plotTop);
+  }
+}

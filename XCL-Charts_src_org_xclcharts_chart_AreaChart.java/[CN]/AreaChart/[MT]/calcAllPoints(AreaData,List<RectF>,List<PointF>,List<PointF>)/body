@@ -20,6 +20,8 @@
   lstPathPoints.add(new PointF(initX,initY));
   double dper=0d;
   int j=0;
+  int count=chartValues.size();
+  if (count <= 0)   return false;
   for (  Double bv : chartValues) {
     dper=MathHelper.getInstance().sub(bv,dataAxis.getAxisMin());
     float valuePosition=mul(axisScreenHeight,div(dtof(dper),axisDataHeight));
@@ -36,7 +38,9 @@
     if (0 == j) {
       lstPoints.add(new PointF(lineStartX,lineStartY));
       lstPoints.add(new PointF(lineStopX,lineStopY));
-      lstPathPoints.add(new PointF(lineStartX,lineStartY));
+      if (Double.compare(bv,dataAxis.getAxisMin()) != 0) {
+        lstPathPoints.add(new PointF(lineStartX,lineStartY));
+      }
       lstPathPoints.add(new PointF(lineStopX,lineStopY));
     }
  else {
@@ -49,6 +53,8 @@
     j++;
   }
   lstPathPoints.add(new PointF(lineStartX,lineStartY));
-  lstPathPoints.add(new PointF(lineStartX,initY));
+  if (Double.compare(chartValues.get(count - 1),dataAxis.getAxisMin()) != 0) {
+    lstPathPoints.add(new PointF(lineStartX,initY));
+  }
   return true;
 }

@@ -1,4 +1,6 @@
 {
+  if (null == mLstDataTick)   mLstDataTick=new ArrayList<AxisTick>();
+  if (null == mLstCateTick)   mLstCateTick=new ArrayList<AxisTick>();
   if (null != plotLegend) {
     plotLegend.show();
     plotLegend.setType(XEnum.LegendType.ROW);
@@ -8,4 +10,5 @@
   }
   categoryAxisDefaultSetting();
   dataAxisDefaultSetting();
+  setAxesClosed(true);
 }

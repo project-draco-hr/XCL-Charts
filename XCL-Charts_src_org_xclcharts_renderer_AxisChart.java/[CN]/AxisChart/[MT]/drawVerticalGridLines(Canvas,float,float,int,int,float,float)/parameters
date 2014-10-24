@@ -1,0 +1,7 @@
+Canvas canvas
+float plotTop
+float plotBottom
+int tickID
+int tickCount
+float XSteps
+float currentX

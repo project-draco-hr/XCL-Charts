@@ -21,4 +21,8 @@
     }
   }
 );
+  chart.getPlotGrid().hideEvenRowBgColor();
+  chart.getPlotGrid().hideHorizontalLines();
+  chart.getPlotGrid().hideOddRowBgColor();
+  chart.getPlotGrid().hideVerticalLines();
 }

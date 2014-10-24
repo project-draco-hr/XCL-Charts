@@ -7,8 +7,6 @@
     chart.getDataAxis().setAxisMax(100);
     chart.getDataAxis().setAxisSteps(10);
     chart.getCategoryAxis().hide();
-    chart.hideTopAxis();
-    chart.hideRightAxis();
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

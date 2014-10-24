@@ -9,8 +9,6 @@
     chart.getDataAxis().setAxisSteps(10);
     chart.getPlotGrid().showHorizontalLines();
     chart.getPlotGrid().showVerticalLines();
-    chart.hideTopAxis();
-    chart.hideRightAxis();
     chart.getDataAxis().hideAxisLine();
     chart.getDataAxis().hideTickMarks();
     chart.getCategoryAxis().hideAxisLine();

@@ -1,0 +1,28 @@
+{
+  if (null == mDataAxisPosition)   return;
+  if (null == dataAxis)   return;
+  if (!dataAxis.isShow())   return;
+  if (null != mDirection) {
+switch (mDirection) {
+case HORIZONTAL:
+{
+        this.setDataAxisPosition(XEnum.DataAxisPosition.BOTTOM);
+        break;
+      }
+case VERTICAL:
+{
+      this.setDataAxisPosition(XEnum.DataAxisPosition.LEFT);
+      break;
+    }
+}
+}
+if (XEnum.DataAxisPosition.LEFT == mDataAxisPosition) {
+dataAxis.setHorizontalTickAlign(Align.LEFT);
+}
+ else {
+dataAxis.setHorizontalTickAlign(Align.RIGHT);
+if (dataAxis.isShowAxisLabels()) dataAxis.getTickLabelPaint().setTextAlign(Align.LEFT);
+}
+if (dataAxis.isShowAxisLine()) dataAxis.getAxisPaint().setStrokeWidth(2);
+if (dataAxis.isShowTickMarks()) dataAxis.getTickMarksPaint().setStrokeWidth(2);
+}

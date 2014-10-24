@@ -1,5 +1,0 @@
-{
-  mDataAxisPosition=position;
-  categoryAxisDefaultSetting();
-  dataAxisDefaultSetting();
-}

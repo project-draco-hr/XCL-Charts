@@ -11,7 +11,6 @@
       continue;
     }
  else     currentX=add(axisX,mul(i,XSteps));
-    if (dataAxis.isShowAxisLabels() && isRenderHorizontalDataAxisTick(currentX,this.mMoveX))     continue;
     currentTickLabel=MathHelper.getInstance().add(dataAxis.getAxisMin(),i * dataAxis.getAxisSteps());
     if (i % 2 != 0) {
       plotGrid.renderOddRowsFill(canvas,currentX,plotArea.getTop(),sub(currentX,XSteps),plotArea.getBottom());

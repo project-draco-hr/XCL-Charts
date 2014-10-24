@@ -1,4 +1,0 @@
-{
-  drawDataAxisLabels(canvas,mDirection,mLstDataTick);
-  mLstDataTick.clear();
-}
