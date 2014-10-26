@@ -8,6 +8,6 @@
   for (int i=0; i < tickCount; i++) {
     currentX=add(plotArea.getLeft(),mul((i + 1),XSteps));
     drawVerticalGridLines(canvas,plotArea.getTop(),plotArea.getBottom(),i,tickCount,XSteps,currentX);
-    mLstCateTick.add(new AxisTick(currentX,plotArea.getBottom(),dataSet.get(i)));
+    mLstCateTick.add(new PlotAxisTick(currentX,plotArea.getBottom(),dataSet.get(i)));
   }
 }

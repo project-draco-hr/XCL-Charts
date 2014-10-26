@@ -1,0 +1,6 @@
+int id
+float x
+float y
+float radius
+float offsetAngle
+float currentAngle

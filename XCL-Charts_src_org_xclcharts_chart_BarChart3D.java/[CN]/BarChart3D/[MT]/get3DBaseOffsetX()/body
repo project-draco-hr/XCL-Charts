@@ -1,0 +1,6 @@
+{
+  double baseTickness=mBar3D.getAxis3DBaseThickness();
+  double baseAngle=mBar3D.getAngle();
+  double baseOffsetX=mBar3D.getOffsetX(baseTickness,baseAngle);
+  return (float)baseOffsetX;
+}

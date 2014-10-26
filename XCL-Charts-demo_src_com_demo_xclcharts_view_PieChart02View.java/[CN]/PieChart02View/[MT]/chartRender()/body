@@ -16,6 +16,7 @@
     chart.hideGradient();
     chart.ActiveListenItemClick();
     chart.showClikedFocus();
+    chart.disablePanMode();
     PlotLegend legend=chart.getPlotLegend();
     legend.show();
     legend.setHorizontalAlign(XEnum.HorizontalAlign.CENTER);

@@ -1,0 +1,41 @@
+{
+  if (XEnum.SliceLabelStyle.HIDE == mLabelStyle)   return true;
+  if (null == cData)   return false;
+  String text=cData.getLabel();
+  if ("" == text || text.length() == 0)   return true;
+  float cirX=info.getX();
+  float cirY=info.getY();
+  float radius=info.getRadius();
+  double offsetAngle=info.getOffsetAngle();
+  double curretAnglet=info.getCurrentAngle();
+  float calcAngle=(float)MathHelper.getInstance().add(offsetAngle,curretAnglet / 2);
+  if (Float.compare(calcAngle,0.0f) == 0 || Float.compare(calcAngle,0.0f) == -1) {
+    Log.e(TAG,"??????????????????????????????0.");
+    return false;
+  }
+  PointF position=null;
+  if (mIsLabelSyncColor)   this.getLabelPaint().setColor(cData.getSliceColor());
+  int color=getLabelPaint().getColor();
+  XEnum.SliceLabelStyle labelStyle=mLabelStyle;
+  if (cData.getCustLabelStyleStatus()) {
+    labelStyle=cData.getLabelStyle();
+    if (XEnum.SliceLabelStyle.INSIDE == labelStyle)     getLabelPaint().setTextAlign(Align.CENTER);
+    getLabelPaint().setColor(cData.getCustLabelColor());
+  }
+  if (XEnum.SliceLabelStyle.INSIDE == labelStyle) {
+    position=renderLabelInside(canvas,text,cData.getItemLabelRotateAngle(),cirX,cirY,radius,calcAngle,showLabel);
+  }
+ else   if (XEnum.SliceLabelStyle.OUTSIDE == labelStyle) {
+    position=renderLabelOutside(canvas,text,cData.getItemLabelRotateAngle(),cirX,cirY,radius,calcAngle,showLabel);
+  }
+ else   if (XEnum.SliceLabelStyle.BROKENLINE == labelStyle) {
+    position=renderLabelLine(canvas,cData,cirX,cirY,radius,calcAngle,showLabel);
+  }
+ else {
+    Log.e(TAG,"???????????????????????????.");
+    return false;
+  }
+  getLabelPaint().setColor(color);
+  if (savePosition)   info.setLabelPointF(position);
+  return true;
+}

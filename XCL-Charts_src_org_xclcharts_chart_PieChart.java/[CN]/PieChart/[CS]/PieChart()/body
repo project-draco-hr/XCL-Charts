@@ -1,2 +1,3 @@
 {
+  if (null == mLstLabels)   mLstLabels=new ArrayList<PlotArcLabelInfo>();
 }

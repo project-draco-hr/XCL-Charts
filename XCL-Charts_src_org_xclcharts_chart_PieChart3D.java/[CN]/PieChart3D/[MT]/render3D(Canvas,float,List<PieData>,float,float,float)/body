@@ -17,11 +17,12 @@
       if (cData.getSelected()) {
         newRadius=div(radius,getSelectedOffset());
         PointF point=MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,newRadius,add(offsetAngle,div(currentAngle,2f)));
-        initRectF("mRectF",sub(point.x,radius),sub(point.y,radius),add(point.x,radius),add(point.y,radius));
+        initRectF(sub(point.x,radius),sub(point.y,radius),add(point.x,radius),add(point.y,radius));
         canvas.drawArc(mRectF,offsetAngle,currentAngle,true,geArcPaint());
       }
  else {
-        canvas.drawArc(mArcRF0,offsetAngle,currentAngle,true,geArcPaint());
+        initRectF(sub(cirX,radius),sub(cirY,radius),add(cirX,radius),add(cirY,radius));
+        canvas.drawArc(mRectF,offsetAngle,currentAngle,true,geArcPaint());
       }
       offsetAngle=add(offsetAngle,currentAngle);
     }

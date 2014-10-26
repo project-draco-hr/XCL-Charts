@@ -1,0 +1,4 @@
+{
+  float tfx=(float)(mBar3D.getOffsetX() * 2);
+  return tfx;
+}

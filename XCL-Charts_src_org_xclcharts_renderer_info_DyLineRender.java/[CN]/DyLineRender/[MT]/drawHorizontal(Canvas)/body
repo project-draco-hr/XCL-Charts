@@ -1,7 +1,3 @@
 {
-  float startX=mArea.getLeft();
-  float startY=mCenterXY.y;
-  float stopX=mArea.getRight();
-  float stopY=mCenterXY.y;
-  DrawHelper.getInstance().drawLine(getLineDrawStyle(),startX,startY,stopX,stopY,canvas,getLinePaint());
+  DrawHelper.getInstance().drawLine(getLineDrawStyle(),mLeft,mCenterXY.y,mRight,mCenterXY.y,canvas,getLinePaint());
 }

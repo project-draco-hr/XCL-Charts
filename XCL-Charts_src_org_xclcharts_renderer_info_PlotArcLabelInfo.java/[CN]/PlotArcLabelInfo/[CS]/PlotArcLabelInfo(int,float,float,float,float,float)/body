@@ -1,0 +1,8 @@
+{
+  ID=id;
+  X=x;
+  Y=y;
+  Radius=radius;
+  OffsetAngle=offsetAngle;
+  CurrentAngle=currentAngle;
+}

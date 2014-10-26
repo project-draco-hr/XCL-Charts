@@ -1,8 +1,5 @@
 {
   if (!mDyLineVisible)   return;
-  if (null == mDyLine) {
-    mDyLine=new DyLineRender();
-    mDyLine.setPlotArea(this.getPlotArea());
-  }
-  mDyLine.renderLine(canvas);
+  if (null == mDyLine)   mDyLine=new DyLineRender();
+  mDyLine.renderLine(canvas,plotArea.getLeft(),plotArea.getTop(),plotArea.getRight(),plotArea.getBottom());
 }

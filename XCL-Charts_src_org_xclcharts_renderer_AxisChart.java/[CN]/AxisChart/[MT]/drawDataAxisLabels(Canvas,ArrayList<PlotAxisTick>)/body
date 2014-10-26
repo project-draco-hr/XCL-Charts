@@ -1,0 +1,16 @@
+{
+  if (null == lstLabels)   return;
+  for (  PlotAxisTick t : lstLabels) {
+    dataAxis.setAxisTickCurrentID(t.ID);
+switch (mDataAxisPosition) {
+case LEFT:
+case RIGHT:
+      dataAxis.renderAxisHorizontalTick(this,canvas,t.X,t.Y,t.Label,isDrawYAxisTickMarks(t.Y,mMoveY));
+    break;
+case TOP:
+case BOTTOM:
+  dataAxis.renderAxisVerticalTick(canvas,t.X,t.Y,t.Label,isDrawXAxisTickMarks(t.X,mMoveX));
+break;
+}
+}
+}

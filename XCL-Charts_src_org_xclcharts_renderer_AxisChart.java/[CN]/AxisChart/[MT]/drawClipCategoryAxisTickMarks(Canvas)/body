@@ -1,2 +1,4 @@
 {
+  drawCategoryAxisLabels(canvas,mLstCateTick);
+  mLstCateTick.clear();
 }

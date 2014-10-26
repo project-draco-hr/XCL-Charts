@@ -12,9 +12,8 @@
   float initY=plotArea.getBottom();
   float lineStartX=initX;
   float lineStartY=initY;
-  float lineStopX=0.0f;
-  float lineStopY=0.0f;
-  float axisScreenHeight=getAxisScreenHeight();
+  float lineStopX=0.0f, lineStopY=0.0f;
+  float axisScreenHeight=getPlotScreenHeight();
   float axisDataHeight=(float)dataAxis.getAxisRange();
   float currLablesSteps=div(getPlotScreenWidth(),(categoryAxis.getDataSet().size() - 1));
   lstPathPoints.add(new PointF(initX,initY));

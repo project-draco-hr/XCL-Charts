@@ -1,0 +1,7 @@
+Canvas canvas
+PieData cData
+float cirX
+float cirY
+float radius
+float calcAngle
+boolean showLabel

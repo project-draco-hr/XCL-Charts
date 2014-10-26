@@ -9,7 +9,7 @@
       }
       if (0 == j) {
         double tick=this.dataAxis.getAxisSteps() * i + dataAxis.getAxisMin();
-        dataAxis.renderAxisHorizontalTick(this,canvas,mArrayDotX[i][j],mArrayDotY[i][j],Double.toString(tick));
+        dataAxis.renderAxisHorizontalTick(this,canvas,mArrayDotX[i][j],mArrayDotY[i][j],Double.toString(tick),true);
       }
     }
   }

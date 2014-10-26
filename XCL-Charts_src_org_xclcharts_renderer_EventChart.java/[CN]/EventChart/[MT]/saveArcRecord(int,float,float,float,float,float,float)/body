@@ -1,11 +1,9 @@
 {
   if (!getListenItemClickStatus())   return;
   if (null == mRecordset)   mRecordset=new ArrayList<PlotArcPosition>();
-  if (this.getListenItemClickStatus()) {
-    PlotArcPosition pRecord=new PlotArcPosition();
-    pRecord.savePlotDataID(dataID);
-    pRecord.savePlotCirXY(centerX,centerY);
-    pRecord.saveAngle(radius,offsetAngle,Angle,selectedOffset);
-    mRecordset.add(pRecord);
-  }
+  PlotArcPosition pRecord=new PlotArcPosition();
+  pRecord.savePlotDataID(dataID);
+  pRecord.savePlotCirXY(centerX,centerY);
+  pRecord.saveAngle(radius,offsetAngle,Angle,selectedOffset);
+  mRecordset.add(pRecord);
 }

@@ -38,8 +38,6 @@
 );
     chart.ActiveListenItemClick();
     chart.showClikedFocus();
-    chart.getDataAxis().setVerticalTickPosition(XEnum.VerticalAlign.BOTTOM);
-    chart.getDataAxis().setHorizontalTickAlign(Align.RIGHT);
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

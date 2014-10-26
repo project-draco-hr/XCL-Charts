@@ -1,11 +1,12 @@
 {
+  if (null == mLabels)   return;
   float stepsAngle=Math.round(180 / (mLabels.size() - 1));
-  float calcRadius=add(this.getRadius(),div(getRadius(),10f));
+  float radius=getRadius();
+  float calcRadius=add(radius,div(radius,10f));
   float cirX=plotArea.getCenterX();
-  float cirY=plotArea.getCenterY();
+  float cirY=getCirY();
   getLabelPaint().setTextAlign(Align.CENTER);
   int i=0;
-  if (null == mLabels)   return;
   for (  String label : mLabels) {
     if (0 == i) {
       canvas.drawText(label,cirX - calcRadius,cirY,this.getLabelPaint());

@@ -1,0 +1,7 @@
+{
+  mLabelSaveType=type;
+  if (XEnum.LabelSaveType.NONE == type) {
+    mSaveLabelsPosition=false;
+  }
+ else   mSaveLabelsPosition=true;
+}

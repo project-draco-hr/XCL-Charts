@@ -5,11 +5,13 @@ case HORIZONTAL:
     dataAxis.setHorizontalTickAlign(Align.CENTER);
   dataAxis.getTickLabelPaint().setTextAlign(Align.CENTER);
 dataAxis.setVerticalTickPosition(XEnum.VerticalAlign.BOTTOM);
+setDataAxisPosition(XEnum.DataAxisPosition.BOTTOM);
 break;
 case VERTICAL:
 dataAxis.setHorizontalTickAlign(Align.LEFT);
 dataAxis.getTickLabelPaint().setTextAlign(Align.RIGHT);
 dataAxis.setVerticalTickPosition(XEnum.VerticalAlign.MIDDLE);
+setDataAxisPosition(XEnum.DataAxisPosition.LEFT);
 break;
 }
 }

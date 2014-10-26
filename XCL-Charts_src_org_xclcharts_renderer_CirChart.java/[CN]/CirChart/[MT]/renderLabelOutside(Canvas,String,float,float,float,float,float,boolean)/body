@@ -1,0 +1,6 @@
+{
+  float calcRadius=MathHelper.getInstance().add(radius,radius / 10f);
+  PointF point=MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,calcRadius,calcAngle);
+  if (showLabel)   DrawHelper.getInstance().drawRotateText(text,point.x,point.y,itemAngle,canvas,getLabelPaint());
+  return (new PointF(point.x,point.y));
+}

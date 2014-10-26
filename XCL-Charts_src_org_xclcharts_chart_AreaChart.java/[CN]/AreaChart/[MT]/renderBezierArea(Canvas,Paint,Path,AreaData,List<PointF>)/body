@@ -1,41 +1,33 @@
 {
   if (null == bezierPath)   bezierPath=new Path();
-  bezierPath.moveTo(plotArea.getLeft(),plotArea.getBottom());
   int count=lstPathPoints.size();
-  float x=0.0f, y=0.0f;
-switch (count) {
-case 0:
-    return false;
-case 1:
-  bezierPath.lineTo(lstPathPoints.get(0).x,lstPathPoints.get(0).y);
-break;
-case 2:
-x=(lstPathPoints.get(1).x + lstPathPoints.get(0).x) / 2;
-y=(lstPathPoints.get(1).y + lstPathPoints.get(0).y) / 2;
-bezierPath.quadTo(x,y,lstPathPoints.get(1).x,lstPathPoints.get(1).y);
-break;
-case 3:
-x=(lstPathPoints.get(1).x + lstPathPoints.get(0).x) / 2;
-y=(lstPathPoints.get(1).y + lstPathPoints.get(0).y) / 2;
-bezierPath.quadTo(x,y,lstPathPoints.get(1).x,lstPathPoints.get(1).y);
-x=(lstPathPoints.get(2).x + lstPathPoints.get(1).x) / 2;
-y=(lstPathPoints.get(2).y + lstPathPoints.get(1).y) / 2;
-bezierPath.quadTo(x,y,lstPathPoints.get(2).x,lstPathPoints.get(2).y);
-break;
-default :
-for (int i=0; i < count; i++) {
-if (i < 3) continue;
-CurveHelper.curve3(lstPathPoints.get(i - 2),lstPathPoints.get(i - 1),lstPathPoints.get(i - 3),lstPathPoints.get(i),mBezierControls);
-bezierPath.cubicTo(mBezierControls[0].x,mBezierControls[0].y,mBezierControls[1].x,mBezierControls[1].y,lstPathPoints.get(i - 1).x,lstPathPoints.get(i - 1).y);
-}
-PointF stop=lstPathPoints.get(lstPathPoints.size() - 1);
-CurveHelper.curve3(lstPathPoints.get(lstPathPoints.size() - 2),stop,lstPathPoints.get(lstPathPoints.size() - 3),stop,mBezierControls);
-bezierPath.cubicTo(mBezierControls[0].x,mBezierControls[0].y,mBezierControls[1].x,mBezierControls[1].y,lstPathPoints.get(lstPathPoints.size() - 1).x,lstPathPoints.get(lstPathPoints.size() - 1).y);
-}
-bezierPath.close();
-paintAreaFill.setColor(areaData.getAreaFillColor());
-paintAreaFill.setAlpha(this.mAreaAlpha);
-canvas.drawPath(bezierPath,paintAreaFill);
-bezierPath.reset();
-return true;
+  if (count <= 1)   return true;
+  if (count <= 3) {
+    bezierPath.moveTo(lstPathPoints.get(0).x,lstPathPoints.get(0).y);
+    bezierPath.lineTo(lstPathPoints.get(1).x,lstPathPoints.get(1).y);
+    if (3 == count)     bezierPath.lineTo(lstPathPoints.get(2).x,lstPathPoints.get(2).y);
+    bezierPath.close();
+    paintAreaFill.setColor(areaData.getAreaFillColor());
+    paintAreaFill.setAlpha(this.mAreaAlpha);
+    canvas.drawPath(bezierPath,paintAreaFill);
+    bezierPath.reset();
+    return true;
+  }
+  bezierPath.moveTo(plotArea.getLeft(),plotArea.getBottom());
+  for (int i=0; i < count; i++) {
+    if (i < 3)     continue;
+    CurveHelper.curve3(lstPathPoints.get(i - 2),lstPathPoints.get(i - 1),lstPathPoints.get(i - 3),lstPathPoints.get(i),mBezierControls);
+    bezierPath.cubicTo(mBezierControls[0].x,mBezierControls[0].y,mBezierControls[1].x,mBezierControls[1].y,lstPathPoints.get(i - 1).x,lstPathPoints.get(i - 1).y);
+  }
+  if (count > 3) {
+    PointF stop=lstPathPoints.get(lstPathPoints.size() - 1);
+    CurveHelper.curve3(lstPathPoints.get(lstPathPoints.size() - 2),stop,lstPathPoints.get(lstPathPoints.size() - 3),stop,mBezierControls);
+    bezierPath.cubicTo(mBezierControls[0].x,mBezierControls[0].y,mBezierControls[1].x,mBezierControls[1].y,lstPathPoints.get(lstPathPoints.size() - 1).x,lstPathPoints.get(lstPathPoints.size() - 1).y);
+  }
+  bezierPath.close();
+  paintAreaFill.setColor(areaData.getAreaFillColor());
+  paintAreaFill.setAlpha(this.mAreaAlpha);
+  canvas.drawPath(bezierPath,paintAreaFill);
+  bezierPath.reset();
+  return true;
 }

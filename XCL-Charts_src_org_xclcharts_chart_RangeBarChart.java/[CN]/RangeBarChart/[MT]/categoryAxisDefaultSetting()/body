@@ -1,7 +1,17 @@
 {
-  if (null != categoryAxis) {
-    categoryAxis.setHorizontalTickAlign(Align.CENTER);
-    categoryAxis.getTickLabelPaint().setTextAlign(Align.CENTER);
-    categoryAxis.setVerticalTickPosition(XEnum.VerticalAlign.BOTTOM);
-  }
+  if (null == categoryAxis)   return;
+switch (mDirection) {
+case HORIZONTAL:
+    categoryAxis.setHorizontalTickAlign(Align.LEFT);
+  categoryAxis.getTickLabelPaint().setTextAlign(Align.RIGHT);
+categoryAxis.setVerticalTickPosition(XEnum.VerticalAlign.MIDDLE);
+setCategoryAxisPosition(XEnum.CategoryAxisPosition.LEFT);
+break;
+case VERTICAL:
+categoryAxis.setHorizontalTickAlign(Align.CENTER);
+categoryAxis.getTickLabelPaint().setTextAlign(Align.CENTER);
+categoryAxis.setVerticalTickPosition(XEnum.VerticalAlign.BOTTOM);
+setCategoryAxisPosition(XEnum.CategoryAxisPosition.BOTTOM);
+break;
+}
 }

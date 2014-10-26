@@ -1,0 +1,5 @@
+Canvas canvas
+PieData cData
+PlotArcLabelInfo info
+boolean savePosition
+boolean showLabel

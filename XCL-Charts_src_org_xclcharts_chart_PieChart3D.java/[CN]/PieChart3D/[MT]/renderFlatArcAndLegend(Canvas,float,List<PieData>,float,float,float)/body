@@ -4,7 +4,11 @@
   float currentAngle=0.0f;
   float newRadius=0.0f;
   int size=chartDataSource.size();
-  PointF[] arrPoint=new PointF[size];
+  mLstLabels.clear();
+  float left=sub(cirX,radius);
+  float top=sub(cirY,radius);
+  float right=add(cirX,radius);
+  float bottom=add(cirY,radius);
   for (int j=0; j < size; j++) {
     PieData cData=chartDataSource.get(j);
     if (null == cData)     continue;
@@ -14,18 +18,19 @@
     if (cData.getSelected()) {
       newRadius=div(radius,getSelectedOffset());
       PointF point=MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,newRadius,add(offsetAngle,div(currentAngle,2f)));
-      initRectF("mRectF",sub(point.x,radius),sub(point.y,radius),add(point.x,radius),add(point.y,radius));
+      initRectF(sub(point.x,radius),sub(point.y,radius),add(point.x,radius),add(point.y,radius));
       canvas.drawArc(mRectF,offsetAngle,currentAngle,true,geArcPaint());
-      arrPoint[j]=new PointF(point.x,point.y);
+      mLstLabels.add(new PlotArcLabelInfo(j,point.x,point.y,radius,offsetAngle,currentAngle));
     }
  else {
-      canvas.drawArc(mArcRF0,offsetAngle,currentAngle,true,geArcPaint());
-      arrPoint[j]=new PointF(cirX,cirY);
+      initRectF(left,top,right,bottom);
+      canvas.drawArc(mRectF,offsetAngle,currentAngle,true,geArcPaint());
+      mLstLabels.add(new PlotArcLabelInfo(j,cirX,cirY,radius,offsetAngle,currentAngle));
     }
     saveArcRecord(j,cirX + this.mTranslateXY[0],cirY + this.mTranslateXY[1],radius,offsetAngle,currentAngle,getSelectedOffset());
     offsetAngle=add(offsetAngle,currentAngle);
   }
-  renderLabels(canvas,initOffsetAngle,radius,arrPoint);
+  renderLabels(canvas);
   plotLegend.renderPieKey(canvas,chartDataSource);
   return true;
 }

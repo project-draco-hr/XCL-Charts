@@ -1,0 +1,9 @@
+{
+  double baseTickness=mBar3D.getAxis3DBaseThickness();
+  double baseAngle=mBar3D.getAngle();
+  double baseOffsetX=mBar3D.getOffsetX(baseTickness,baseAngle);
+  double baseOffsetY=mBar3D.getOffsetY(baseTickness,baseAngle);
+  double labelHeight=DrawHelper.getInstance().getPaintFontHeight(categoryAxis.getTickLabelPaint());
+  double th=MathHelper.getInstance().add(MathHelper.getInstance().add(baseOffsetY,baseTickness),labelHeight);
+  return (float)th;
+}

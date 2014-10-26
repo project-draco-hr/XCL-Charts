@@ -1,4 +1,5 @@
 {
+  if (!chart.getListenItemClickStatus())   return;
   ArcPosition record=chart.getPositionRecord(x,y);
   if (null == record)   return;
   PieData pData=chartData.get(record.getDataID());

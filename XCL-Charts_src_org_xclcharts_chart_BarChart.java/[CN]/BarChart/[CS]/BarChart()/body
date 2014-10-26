@@ -1,5 +1,3 @@
 {
-  if (null == mLstDataTick)   mLstDataTick=new ArrayList<AxisTick>();
-  if (null == mLstCateTick)   mLstCateTick=new ArrayList<AxisTick>();
   defaultAxisSetting();
 }

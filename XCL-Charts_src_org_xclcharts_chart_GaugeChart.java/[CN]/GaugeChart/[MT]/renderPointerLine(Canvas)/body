@@ -1,7 +1,7 @@
 {
   float currentRadius=mul(getRadius(),0.9f);
   float cirX=plotArea.getCenterX();
-  float cirY=plotArea.getCenterY();
+  float cirY=getCirY();
   if (Float.compare(mPointerAngle,180f) == 0 || Float.compare(mPointerAngle,180f) == 1) {
     canvas.drawLine(cirX,cirY,cirX + currentRadius,cirY,mPaintPointerLine);
   }

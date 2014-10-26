@@ -1,0 +1,22 @@
+{
+  if (null == mCenterXY)   return;
+  if (Float.compare(left,0.0f) == 0 && Float.compare(top,0.0f) == 0 && Float.compare(right,0.0f) == 0 && Float.compare(bottom,0.0f) == 0)   return;
+  mLeft=left;
+  mTop=top;
+  mRight=right;
+  mBottom=bottom;
+switch (getDyLineStyle()) {
+case Cross:
+    drawCross(canvas);
+  break;
+case BackwardDiagonal:
+drawBackwardDiagonal(canvas);
+break;
+case Vertical:
+drawVertical(canvas);
+break;
+case Horizontal:
+drawHorizontal(canvas);
+break;
+}
+}

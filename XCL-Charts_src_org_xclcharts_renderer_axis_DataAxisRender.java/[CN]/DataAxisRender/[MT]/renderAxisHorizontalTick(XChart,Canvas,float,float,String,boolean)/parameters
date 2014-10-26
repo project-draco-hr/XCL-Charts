@@ -1,0 +1,6 @@
+XChart xchart
+Canvas canvas
+float centerX
+float centerY
+String text
+boolean isTickVisible

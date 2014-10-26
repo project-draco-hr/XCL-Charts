@@ -1,3 +1,3 @@
 {
-  drawPercent(canvas,mPaintDount,plotArea.getCenterX(),plotArea.getCenterY(),getRadius(),180,180);
+  drawPercent(canvas,mPaintDount,plotArea.getCenterX(),getCirY(),getRadius(),180,180);
 }

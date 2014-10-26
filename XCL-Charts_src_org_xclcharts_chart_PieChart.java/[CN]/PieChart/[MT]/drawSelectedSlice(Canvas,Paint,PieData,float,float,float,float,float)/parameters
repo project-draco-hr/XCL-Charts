@@ -1,8 +1,0 @@
-Canvas canvas
-Paint paintArc
-PieData cData
-float cirX
-float cirY
-float radius
-float offsetAngle
-float currentAngle

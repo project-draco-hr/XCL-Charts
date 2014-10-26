@@ -1,0 +1,14 @@
+{
+  if (null == mLstLabels)   return false;
+  boolean showLabel=true;
+  if (mSaveLabelsPosition) {
+    if (XEnum.LabelSaveType.ONLYPOSITION == mLabelSaveType)     showLabel=false;
+  }
+  int count=mLstLabels.size();
+  for (int i=0; i < count; i++) {
+    PlotArcLabelInfo info=mLstLabels.get(i);
+    renderLabel(canvas,mDataset.get(info.getID()),info,mSaveLabelsPosition,showLabel);
+  }
+  if (!mSaveLabelsPosition)   mLstLabels.clear();
+  return true;
+}

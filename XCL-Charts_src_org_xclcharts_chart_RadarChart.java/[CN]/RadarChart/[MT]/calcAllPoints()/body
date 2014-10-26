@@ -21,9 +21,15 @@
     for (int j=0; j < labelsCount; j++) {
       offsetAgent=MathHelper.getInstance().add(initOffsetAgent,pAngle * j);
       currAgent=MathHelper.getInstance().add(offsetAgent,pAngle);
-      MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,mArrayRadius[i],currAgent);
-      mArrayDotX[i][j]=MathHelper.getInstance().getPosX();
-      mArrayDotY[i][j]=MathHelper.getInstance().getPosY();
+      if (Float.compare(0.f,mArrayRadius[i]) == 0) {
+        mArrayDotX[i][j]=cirX;
+        mArrayDotY[i][j]=cirY;
+      }
+ else {
+        MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,mArrayRadius[i],currAgent);
+        mArrayDotX[i][j]=MathHelper.getInstance().getPosX();
+        mArrayDotY[i][j]=MathHelper.getInstance().getPosY();
+      }
       if (0 == i)       mArrayLabelAgent[j]=currAgent;
       MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,labelRadius,currAgent);
       mArrayLabelX[i][j]=MathHelper.getInstance().getPosX();

@@ -1,15 +1,16 @@
 {
-  float totalAngle=0.0f;
-  float newRadius=mul(getRadius(),0.8f);
-  RectF rect=new RectF();
-  rect.left=sub(plotArea.getCenterX(),newRadius);
-  rect.top=sub(plotArea.getCenterY(),newRadius);
-  rect.right=add(plotArea.getCenterX(),newRadius);
-  rect.bottom=add(plotArea.getCenterY(),newRadius);
   if (null == mPartitionDataset || mPartitionDataset.size() == 0) {
     Log.e(TAG,"???????????????.");
     return false;
   }
+  float totalAngle=0.0f;
+  float newRadius=mul(getRadius(),0.8f);
+  float cy=getCirY();
+  RectF rect=new RectF();
+  rect.left=sub(plotArea.getCenterX(),newRadius);
+  rect.top=sub(cy,newRadius);
+  rect.right=add(plotArea.getCenterX(),newRadius);
+  rect.bottom=add(cy,newRadius);
   for (  Pair pr : mPartitionDataset) {
     Float AngleValue=(Float)pr.first;
     float total=add(totalAngle,AngleValue);
@@ -24,5 +25,6 @@
     canvas.drawArc(rect,add(totalAngle,180.0f),AngleValue,true,mPaintPartitionFill);
     totalAngle=add(totalAngle,AngleValue);
   }
+  rect=null;
   return false;
 }

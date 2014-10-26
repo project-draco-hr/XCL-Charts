@@ -1,6 +1,6 @@
 {
   List<Double> dataSeries1=new LinkedList<Double>();
-  dataSeries1.add((double)0.001);
+  dataSeries1.add((double)0);
   dataSeries1.add((double)50);
   dataSeries1.add((double)51);
   dataSeries1.add((double)60);

@@ -7,7 +7,6 @@
   float cirX=plotArea.getCenterX();
   float cirY=plotArea.getCenterY();
   float radius=getRadius();
-  initRectF("mArcRF0",sub(cirX,radius),sub(cirY,radius),add(cirX,radius),add(cirY,radius));
   if (render3D(canvas,mOffsetAngle,chartDataSource,cirX,cirY,radius)) {
     return renderFlatArcAndLegend(canvas,mOffsetAngle,chartDataSource,cirX,cirY,radius);
   }

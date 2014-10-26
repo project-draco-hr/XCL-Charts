@@ -2,36 +2,23 @@
   if (null == BezierControls)   BezierControls=new PointF[2];
   paint.setStyle(Style.STROKE);
   int count=lstPoints.size();
-  float x=0.0f, y=0.0f;
-switch (count) {
-case 0:
+  if (count <= 1)   return;
+  if (count <= 3) {
+    bezierPath.moveTo(lstPoints.get(0).x,lstPoints.get(0).y);
+    bezierPath.lineTo(lstPoints.get(1).x,lstPoints.get(1).y);
+    if (3 == count)     bezierPath.lineTo(lstPoints.get(2).x,lstPoints.get(2).y);
+    canvas.drawPath(bezierPath,paint);
+    bezierPath.reset();
     return;
-case 1:
-  bezierPath.lineTo(lstPoints.get(0).x,lstPoints.get(0).y);
-break;
-case 2:
-x=(lstPoints.get(1).x + lstPoints.get(0).x) / 2;
-y=(lstPoints.get(1).y + lstPoints.get(0).y) / 2;
-bezierPath.quadTo(x,y,lstPoints.get(1).x,lstPoints.get(1).y);
-break;
-case 3:
-x=(lstPoints.get(1).x + lstPoints.get(0).x) / 2;
-y=(lstPoints.get(1).y + lstPoints.get(0).y) / 2;
-bezierPath.quadTo(x,y,lstPoints.get(1).x,lstPoints.get(1).y);
-x=(lstPoints.get(2).x + lstPoints.get(1).x) / 2;
-y=(lstPoints.get(2).y + lstPoints.get(1).y) / 2;
-bezierPath.quadTo(x,y,lstPoints.get(2).x,lstPoints.get(2).y);
-break;
-default :
-for (int i=0; i < count; i++) {
-if (i < 3) continue;
-CurveHelper.curve3(lstPoints.get(i - 2),lstPoints.get(i - 1),lstPoints.get(i - 3),lstPoints.get(i),BezierControls);
-renderBezierCurvePath(canvas,paint,bezierPath,lstPoints.get(i - 2),lstPoints.get(i - 1),BezierControls);
-}
-if (count > 3) {
-PointF stop=lstPoints.get(lstPoints.size() - 1);
-CurveHelper.curve3(lstPoints.get(lstPoints.size() - 2),stop,lstPoints.get(lstPoints.size() - 3),stop,BezierControls);
-renderBezierCurvePath(canvas,paint,bezierPath,lstPoints.get(lstPoints.size() - 2),lstPoints.get(lstPoints.size() - 1),BezierControls);
-}
-}
+  }
+  for (int i=0; i < count; i++) {
+    if (i < 3)     continue;
+    CurveHelper.curve3(lstPoints.get(i - 2),lstPoints.get(i - 1),lstPoints.get(i - 3),lstPoints.get(i),BezierControls);
+    renderBezierCurvePath(canvas,paint,bezierPath,lstPoints.get(i - 2),lstPoints.get(i - 1),BezierControls);
+  }
+  if (count > 3) {
+    PointF stop=lstPoints.get(lstPoints.size() - 1);
+    CurveHelper.curve3(lstPoints.get(lstPoints.size() - 2),stop,lstPoints.get(lstPoints.size() - 3),stop,BezierControls);
+    renderBezierCurvePath(canvas,paint,bezierPath,lstPoints.get(lstPoints.size() - 2),lstPoints.get(lstPoints.size() - 1),BezierControls);
+  }
 }

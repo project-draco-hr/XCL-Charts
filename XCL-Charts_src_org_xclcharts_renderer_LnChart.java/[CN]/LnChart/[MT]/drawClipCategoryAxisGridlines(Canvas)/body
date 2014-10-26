@@ -46,14 +46,14 @@ case RIGHT:
 currentY=sub(plotArea.getBottom(),j * YSteps);
 drawHorizontalGridLines(canvas,plotArea.getLeft(),plotArea.getRight(),i,tickCount,YSteps,currentY);
 if (!categoryAxis.isShowAxisLabels()) continue;
-mLstCateTick.add(new AxisTick(axisX,currentY,dataSet.get(i)));
+mLstCateTick.add(new PlotAxisTick(axisX,currentY,dataSet.get(i)));
 break;
 case TOP:
 case BOTTOM:
 currentX=add(plotArea.getLeft(),(j) * XSteps);
 drawVerticalGridLines(canvas,plotArea.getTop(),plotArea.getBottom(),i,tickCount,XSteps,currentX);
 if (!categoryAxis.isShowAxisLabels()) continue;
-mLstCateTick.add(new AxisTick(currentX,axisY,dataSet.get(i)));
+mLstCateTick.add(new PlotAxisTick(currentX,axisY,dataSet.get(i)));
 break;
 }
 j++;

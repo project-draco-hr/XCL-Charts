@@ -1,7 +1,0 @@
-Canvas canvas
-PieData cData
-float cirX
-float cirY
-float radius
-double offsetAngle
-double curretAnglet

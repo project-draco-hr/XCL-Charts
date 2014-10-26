@@ -2,7 +2,7 @@
   Double fd=new Double(mTickSteps);
   float stepsAngle=div(180.0f,fd.floatValue());
   float cirX=plotArea.getCenterX();
-  float cirY=plotArea.getCenterY();
+  float cirY=getCirY();
   float tickRadius=mul(getRadius(),0.9f);
   for (int i=0; i < mTickSteps; i++) {
     if (0 == i)     continue;

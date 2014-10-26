@@ -1,0 +1,9 @@
+{
+switch (mDirection) {
+case HORIZONTAL:
+    break;
+case VERTICAL:
+  renderVerticalBar(canvas);
+break;
+}
+}

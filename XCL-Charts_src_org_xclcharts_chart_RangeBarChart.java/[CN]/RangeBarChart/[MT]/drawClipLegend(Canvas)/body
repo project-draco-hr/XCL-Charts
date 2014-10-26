@@ -1,0 +1,3 @@
+{
+  plotLegend.renderRangeBarKey(canvas,getKey(),mFlatBar.getBarPaint().getColor());
+}

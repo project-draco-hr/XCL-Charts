@@ -18,4 +18,6 @@
   }
 );
   lnChart.setLineAxisIntersectVisible(false);
+  lnChart.getDataAxis().setHorizontalTickAlign(Align.RIGHT);
+  lnChart.getDataAxis().getTickLabelPaint().setTextAlign(Align.LEFT);
 }

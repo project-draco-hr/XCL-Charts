@@ -7,17 +7,6 @@
   float gWidth=0.0f;
   canvas.save();
   canvas.clipRect(this.getLeft(),this.getTop(),this.getRight(),this.getBottom());
-  if (XEnum.PanMode.HORIZONTAL == this.getPlotPanMode() || XEnum.PanMode.FREE == this.getPlotPanMode()) {
-    if (getPlotGrid().isShowHorizontalLines())     gWidth=this.getPlotGrid().getHorizontalLinePaint().getStrokeWidth();
-    canvas.save();
-    canvas.clipRect(plotArea.getLeft() - gWidth,plotArea.getTop() - gWidth,plotArea.getRight() + gWidth,plotArea.getBottom() + gWidth);
-    canvas.translate(offsetX,0);
-    drawClipDataAxisGridlines(canvas);
-    canvas.restore();
-  }
- else {
-    drawClipDataAxisGridlines(canvas);
-  }
   if (XEnum.PanMode.VERTICAL == this.getPlotPanMode() || XEnum.PanMode.FREE == this.getPlotPanMode()) {
     if (getPlotGrid().isShowVerticalLines())     gWidth=this.getPlotGrid().getVerticalLinePaint().getStrokeWidth();
     canvas.save();
@@ -28,6 +17,17 @@
   }
  else {
     drawClipCategoryAxisGridlines(canvas);
+  }
+  if (XEnum.PanMode.HORIZONTAL == this.getPlotPanMode() || XEnum.PanMode.FREE == this.getPlotPanMode()) {
+    if (getPlotGrid().isShowHorizontalLines())     gWidth=this.getPlotGrid().getHorizontalLinePaint().getStrokeWidth();
+    canvas.save();
+    canvas.clipRect(plotArea.getLeft() - gWidth,plotArea.getTop() - gWidth,plotArea.getRight() + gWidth,plotArea.getBottom() + gWidth);
+    canvas.translate(offsetX,0);
+    drawClipDataAxisGridlines(canvas);
+    canvas.restore();
+  }
+ else {
+    drawClipDataAxisGridlines(canvas);
   }
   canvas.save();
   canvas.clipRect(plotArea.getLeft(),plotArea.getTop(),this.getRight(),plotArea.getBottom());
@@ -40,7 +40,7 @@
   drawClipAxisLine(canvas);
   if (XEnum.PanMode.HORIZONTAL == this.getPlotPanMode() || XEnum.PanMode.FREE == this.getPlotPanMode()) {
     canvas.save();
-    canvas.clipRect(plotArea.getLeft() - xMargin,this.getTop(),plotArea.getRight() + xMargin,this.getBottom());
+    canvas.clipRect(this.getLeft() + xMargin,this.getTop(),this.getRight() - xMargin,this.getBottom());
     canvas.translate(offsetX,0);
     drawClipDataAxisTickMarks(canvas);
     canvas.restore();
@@ -50,7 +50,7 @@
   }
   if (XEnum.PanMode.VERTICAL == this.getPlotPanMode() || XEnum.PanMode.FREE == this.getPlotPanMode()) {
     canvas.save();
-    canvas.clipRect(this.getLeft(),plotArea.getTop() - yMargin,this.getRight(),plotArea.getBottom() + yMargin);
+    canvas.clipRect(this.getLeft(),this.getTop() + yMargin,this.getRight(),this.getBottom() - yMargin);
     canvas.translate(0,offsetY);
     drawClipCategoryAxisTickMarks(canvas);
     canvas.restore();

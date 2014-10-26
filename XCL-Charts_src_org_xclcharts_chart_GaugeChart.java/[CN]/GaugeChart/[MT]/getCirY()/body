@@ -1,0 +1,8 @@
+{
+  float cirY=this.getBottom();
+  if (this.isShowBorder()) {
+    cirY-=this.getBorderWidth() / 2;
+  }
+  cirY-=mul(getRadius(),0.05f);
+  return cirY;
+}

@@ -7,28 +7,36 @@
     float cirX=plotArea.getCenterX();
     float cirY=plotArea.getCenterY();
     float radius=getRadius();
-    initRectF("mArcRF0",sub(cirX,radius),sub(cirY,radius),add(cirX,radius),add(cirY,radius));
     float currentAngle=0.0f;
     float offsetAngle=mOffsetAngle;
     int i=0;
-    PointF[] arrPoint=new PointF[mDataset.size()];
+    mLstLabels.clear();
+    float left=sub(cirX,radius);
+    float top=sub(cirY,radius);
+    float right=add(cirX,radius);
+    float bottom=add(cirY,radius);
     for (    PieData cData : mDataset) {
       currentAngle=cData.getSliceAngle();
       if (!validateAngle(currentAngle))       continue;
       geArcPaint().setColor(cData.getSliceColor());
+      if (getGradient())       geArcPaint().setShader(renderRadialGradient(geArcPaint(),cirX,cirY,radius));
       if (cData.getSelected()) {
-        if (!drawSelectedSlice(canvas,geArcPaint(),cData,cirX,cirY,radius,offsetAngle,currentAngle))         return false;
-        arrPoint[i]=new PointF(MathHelper.getInstance().getPosX(),MathHelper.getInstance().getPosY());
+        float newRadius=div(radius,mSelectedOffset);
+        PointF point=MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,newRadius,add(offsetAngle,currentAngle / 2f));
+        initRectF(sub(point.x,radius),sub(point.y,radius),add(point.x,radius),add(point.y,radius));
+        mLstLabels.add(new PlotArcLabelInfo(i,point.x,point.y,radius,offsetAngle,currentAngle));
       }
  else {
-        if (!drawSlice(canvas,geArcPaint(),mArcRF0,cData,cirX,cirY,radius,offsetAngle,(float)currentAngle))         return false;
-        arrPoint[i]=new PointF(cirX,cirY);
+        initRectF(left,top,right,bottom);
+        mLstLabels.add(new PlotArcLabelInfo(i,cirX,cirY,radius,offsetAngle,currentAngle));
       }
+      canvas.drawArc(mRectF,offsetAngle,currentAngle,true,geArcPaint());
+      renderArcBorder(canvas,mRectF,offsetAngle,currentAngle);
       saveArcRecord(i,cirX + this.mTranslateXY[0],cirY + this.mTranslateXY[1],radius,offsetAngle,currentAngle,mSelectedOffset);
       offsetAngle=add(offsetAngle,currentAngle);
       i++;
     }
-    renderLabels(canvas,mOffsetAngle,radius,arrPoint);
+    renderLabels(canvas);
     plotLegend.renderPieKey(canvas,this.mDataset);
   }
  catch (  Exception e) {

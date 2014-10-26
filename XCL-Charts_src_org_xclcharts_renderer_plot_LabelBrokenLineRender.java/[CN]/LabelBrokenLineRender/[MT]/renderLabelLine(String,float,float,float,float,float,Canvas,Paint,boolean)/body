@@ -1,0 +1,60 @@
+{
+  float pointRadius=0.0f;
+  if (getLinePointStyle() == XEnum.LabelLinePoint.END || getLinePointStyle() == XEnum.LabelLinePoint.ALL)   pointRadius=getRadius();
+  float calcRadius=MathHelper.getInstance().sub(radius,radius / mBrokenStartPoint);
+  MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,calcRadius,calcAngle);
+  float startX=MathHelper.getInstance().getPosX();
+  float startY=MathHelper.getInstance().getPosY();
+  calcRadius=radius / 2f;
+  MathHelper.getInstance().calcArcEndPointXY(startX,startY,calcRadius,calcAngle);
+  float stopX=MathHelper.getInstance().getPosX();
+  float stopY=MathHelper.getInstance().getPosY();
+  float borkenline=getBrokenLine();
+  float endX=0.0f, endLabelX=0.0f;
+  if (Float.compare(stopX,cirX) == 0) {
+    if (Float.compare(stopY,cirY) == 1) {
+      paintLabel.setTextAlign(Align.LEFT);
+      endX=stopX + borkenline;
+      endLabelX=endX + pointRadius;
+    }
+ else {
+      paintLabel.setTextAlign(Align.RIGHT);
+      endX=stopX - borkenline;
+      endLabelX=endX - pointRadius;
+    }
+  }
+ else   if (Float.compare(stopY,cirY) == 0) {
+    endX=stopX;
+    if (Float.compare(stopX,cirX) == 0 || Float.compare(stopX,cirX) == -1) {
+      paintLabel.setTextAlign(Align.RIGHT);
+      endLabelX=endX - pointRadius;
+    }
+ else {
+      paintLabel.setTextAlign(Align.LEFT);
+      endLabelX=endX + pointRadius;
+    }
+  }
+ else   if (Float.compare(stopX + borkenline,cirX) == 1) {
+    paintLabel.setTextAlign(Align.LEFT);
+    endX=stopX + borkenline;
+    endLabelX=endX + pointRadius;
+  }
+ else   if (Float.compare(stopX - borkenline,cirX) == -1) {
+    paintLabel.setTextAlign(Align.RIGHT);
+    endX=stopX - borkenline;
+    endLabelX=endX - pointRadius;
+  }
+ else {
+    endLabelX=endX=stopX;
+    paintLabel.setTextAlign(Align.CENTER);
+  }
+  if (mIsBZLine) {
+    drawBZLine(startX,startY,stopX,stopY,endX,canvas);
+  }
+ else {
+    drawBrokenLine(startX,startY,stopX,stopY,endX,canvas);
+  }
+  drawPoint(startX,startY,stopX,stopY,endX,pointRadius,canvas);
+  if (showLabel)   DrawHelper.getInstance().drawRotateText(text,endLabelX,stopY,itemAngle,canvas,paintLabel);
+  return (new PointF(endLabelX,stopY));
+}
