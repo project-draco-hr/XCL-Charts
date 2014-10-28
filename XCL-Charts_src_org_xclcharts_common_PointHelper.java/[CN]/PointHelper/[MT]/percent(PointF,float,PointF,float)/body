@@ -1,0 +1,5 @@
+{
+  float x=(p2.x - p1.x) * percent1 + p1.x;
+  float y=(p2.y - p1.y) * percent2 + p1.y;
+  return new PointF(x,y);
+}

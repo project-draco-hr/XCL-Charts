@@ -35,19 +35,19 @@ currentX=axisX=plotArea.getLeft();
 break;
 }
 mLstDataTick.clear();
-for (int i=0; i < tickCount; i++) {
+for (int i=0; i < tickCount + 1; i++) {
 switch (pos) {
 case LEFT:
 case RIGHT:
 currentY=sub(plotArea.getBottom(),i * YSteps);
-drawHorizontalGridLines(canvas,plotArea.getLeft(),plotArea.getRight(),i,tickCount,YSteps,currentY);
+drawHorizontalGridLines(canvas,plotArea.getLeft(),plotArea.getRight(),i,tickCount + 1,YSteps,currentY);
 currentTickLabel=MathHelper.getInstance().add(dataAxis.getAxisMin(),i * dataAxis.getAxisSteps());
 mLstDataTick.add(new PlotAxisTick(i,axisX,currentY,Double.toString(currentTickLabel)));
 break;
 case TOP:
 case BOTTOM:
-currentX=add(plotArea.getLeft(),(i) * XSteps);
-drawVerticalGridLines(canvas,plotArea.getTop(),plotArea.getBottom(),i,tickCount,XSteps,currentX);
+currentX=add(plotArea.getLeft(),i * XSteps);
+drawVerticalGridLines(canvas,plotArea.getTop(),plotArea.getBottom(),i,tickCount + 1,XSteps,currentX);
 currentTickLabel=MathHelper.getInstance().add(dataAxis.getAxisMin(),i * dataAxis.getAxisSteps());
 mLstDataTick.add(new PlotAxisTick(i,currentX,axisY,Double.toString(currentTickLabel)));
 break;

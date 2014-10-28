@@ -2,11 +2,12 @@
   if (null == BezierControls)   BezierControls=new PointF[2];
   paint.setStyle(Style.STROKE);
   int count=lstPoints.size();
-  if (count <= 1)   return;
-  if (count <= 3) {
+  if (count <= 2)   return;
+  if (count == 3) {
+    if (null == bezierPath)     bezierPath=new Path();
     bezierPath.moveTo(lstPoints.get(0).x,lstPoints.get(0).y);
-    bezierPath.lineTo(lstPoints.get(1).x,lstPoints.get(1).y);
-    if (3 == count)     bezierPath.lineTo(lstPoints.get(2).x,lstPoints.get(2).y);
+    PointF ctl3=PointHelper.percent(lstPoints.get(1),0.5f,lstPoints.get(2),0.8f);
+    bezierPath.quadTo(ctl3.x,ctl3.y,lstPoints.get(2).x,lstPoints.get(2).y);
     canvas.drawPath(bezierPath,paint);
     bezierPath.reset();
     return;

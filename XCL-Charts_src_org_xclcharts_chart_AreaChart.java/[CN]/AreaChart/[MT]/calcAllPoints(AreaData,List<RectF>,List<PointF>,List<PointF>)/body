@@ -10,13 +10,11 @@
   }
   float initX=plotArea.getLeft();
   float initY=plotArea.getBottom();
-  float lineStartX=initX;
-  float lineStartY=initY;
+  float lineStartX=initX, lineStartY=initY;
   float lineStopX=0.0f, lineStopY=0.0f;
   float axisScreenHeight=getPlotScreenHeight();
   float axisDataHeight=(float)dataAxis.getAxisRange();
   float currLablesSteps=div(getPlotScreenWidth(),(categoryAxis.getDataSet().size() - 1));
-  lstPathPoints.add(new PointF(initX,initY));
   double dper=0d;
   int j=0;
   int count=chartValues.size();
@@ -24,36 +22,27 @@
   for (  Double bv : chartValues) {
     dper=MathHelper.getInstance().sub(bv,dataAxis.getAxisMin());
     float valuePosition=mul(axisScreenHeight,div(dtof(dper),axisDataHeight));
-    if (j == 0) {
-      lineStartX=initX;
-      lineStartY=sub(initY,valuePosition);
-      lineStopX=lineStartX;
-      lineStopY=lineStartY;
-    }
- else {
-      lineStopX=add(initX,(j) * currLablesSteps);
-      lineStopY=sub(initY,valuePosition);
-    }
+    lineStopX=add(initX,j * currLablesSteps);
+    lineStopY=sub(initY,valuePosition);
     if (0 == j) {
-      lstPoints.add(new PointF(lineStartX,lineStartY));
-      lstPoints.add(new PointF(lineStopX,lineStopY));
-      if (Double.compare(bv,dataAxis.getAxisMin()) != 0) {
-        lstPathPoints.add(new PointF(lineStartX,lineStartY));
+      lineStartX=lineStopX;
+      lineStartY=lineStopY;
+      if (2 < count) {
+        if (Double.compare(bv,dataAxis.getAxisMin()) != 0)         lstPathPoints.add(new PointF(initX,initY));
       }
-      lstPathPoints.add(new PointF(lineStopX,lineStopY));
+      lstPathPoints.add(new PointF(lineStartX,lineStartY));
+      lstPoints.add(new PointF(lineStartX,lineStartY));
     }
- else {
-      lstPoints.add(new PointF(lineStopX,lineStopY));
-      lstPathPoints.add(new PointF(lineStopX,lineStopY));
-    }
+    lstPathPoints.add(new PointF(lineStopX,lineStopY));
+    lstPoints.add(new PointF(lineStopX,lineStopY));
     lstDots.add(new RectF(lineStartX,lineStartY,lineStopX,lineStopY));
     lineStartX=lineStopX;
     lineStartY=lineStopY;
     j++;
   }
-  lstPathPoints.add(new PointF(lineStartX,lineStartY));
-  if (Double.compare(chartValues.get(count - 1),dataAxis.getAxisMin()) != 0) {
-    lstPathPoints.add(new PointF(lineStartX,initY));
+  if (count > 2) {
+    lstPathPoints.add(new PointF(lineStartX,lineStartY));
+    if (Double.compare(chartValues.get(count - 1),dataAxis.getAxisMin()) != 0)     lstPathPoints.add(new PointF(lineStartX,initY));
   }
   return true;
 }

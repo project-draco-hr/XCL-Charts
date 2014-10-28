@@ -2,19 +2,15 @@
   if (!chart.getListenItemClickStatus())   return;
   ArcPosition record=chart.getPositionRecord(x,y);
   if (null == record)   return;
-  boolean isInvaldate=true;
-  for (int i=0; i < chartData.size(); i++) {
-    PieData cData=chartData.get(i);
-    if (i == record.getDataID()) {
-      if (cData.getSelected()) {
-        isInvaldate=false;
-        break;
-      }
- else {
-        cData.setSelected(true);
-      }
-    }
- else     cData.setSelected(false);
+  PieData pData=chartData.get(record.getDataID());
+  if (record.getDataID() == mSelectedID) {
+    boolean bStatus=chartData.get(mSelectedID).getSelected();
+    chartData.get(mSelectedID).setSelected(!bStatus);
   }
-  if (isInvaldate)   this.invalidate();
+ else {
+    if (mSelectedID >= 0)     chartData.get(mSelectedID).setSelected(false);
+    pData.setSelected(true);
+  }
+  mSelectedID=record.getDataID();
+  this.invalidate();
 }

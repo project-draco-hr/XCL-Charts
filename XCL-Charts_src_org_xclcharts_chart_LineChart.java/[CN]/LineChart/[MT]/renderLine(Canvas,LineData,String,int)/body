@@ -6,17 +6,15 @@
   }
   float initX=plotArea.getLeft();
   float initY=plotArea.getBottom();
-  float lineStartX=initX;
-  float lineStartY=initY;
-  float lineEndX=0.0f;
-  float lineEndY=0.0f;
+  float lineStartX=initX, lineStartY=initY;
+  float lineStopX=0.0f, lineStopY=0.0f;
   List<String> dataSet=categoryAxis.getDataSet();
-  if (null == dataSet) {
+  if (null == dataSet || dataSet.size() == 0) {
     Log.e(TAG,"?????????????????????.");
     return false;
   }
   List<Double> chartValues=bd.getLinePoint();
-  if (null == chartValues) {
+  if (null == chartValues || chartValues.size() == 0) {
     Log.e(TAG,"???????????????????????????????????????.");
     return false;
   }
@@ -24,60 +22,59 @@
   float axisDataHeight=(float)dataAxis.getAxisRange();
   float XSteps=0.0f;
   int j=0, childID=0;
-  if (dataSet.size() == 1) {
-    XSteps=div(getPlotScreenWidth(),(dataSet.size()));
+  int tickCount=dataSet.size();
+  if (0 == tickCount) {
+    Log.e(TAG,"?????????????????????0!");
+    return false;
+  }
+ else   if (1 == tickCount) {
     j=1;
   }
- else {
-    XSteps=div(getPlotScreenWidth(),(dataSet.size() - 1));
-  }
+  int labeltickCount=getCategoryAxisCount();
+  XSteps=getVerticalXSteps(labeltickCount);
   float itemAngle=bd.getItemLabelRotateAngle();
   for (  Double bv : chartValues) {
     float vaxlen=(float)MathHelper.getInstance().sub(bv,dataAxis.getAxisMin());
     float fvper=div(vaxlen,axisDataHeight);
     float valuePostion=mul(axisScreenHeight,fvper);
-    if (j == 0) {
-      lineStartX=initX;
-      lineStartY=sub(initY,valuePostion);
-      lineEndX=lineStartX;
-      lineEndY=lineStartY;
-    }
- else {
-      lineEndX=initX + (j) * XSteps;
-      lineEndY=sub(initY,valuePostion);
+    lineStopX=add(initX,j * XSteps);
+    lineStopY=sub(initY,valuePostion);
+    if (0 == j) {
+      lineStartX=lineStopX;
+      lineStartY=lineStopY;
     }
     if (getLineAxisIntersectVisible() == false && Double.compare(bv,dataAxis.getAxisMin()) == 0) {
-      lineStartX=lineEndX;
-      lineStartY=lineEndY;
+      lineStartX=lineStopX;
+      lineStartY=lineStopY;
       j++;
     }
  else {
       PlotLine pLine=bd.getPlotLine();
       if (type.equalsIgnoreCase("LINE")) {
         if (getLineAxisIntersectVisible() == true || Float.compare(lineStartY,initY) != 0) {
-          DrawHelper.getInstance().drawLine(bd.getLineStyle(),lineStartX,lineStartY,lineEndX,lineEndY,canvas,pLine.getLinePaint());
+          DrawHelper.getInstance().drawLine(bd.getLineStyle(),lineStartX,lineStartY,lineStopX,lineStopY,canvas,pLine.getLinePaint());
         }
       }
  else       if (type.equalsIgnoreCase("DOT2LABEL")) {
         if (!pLine.getDotStyle().equals(XEnum.DotStyle.HIDE)) {
           PlotDot pDot=pLine.getPlotDot();
           float radius=pDot.getDotRadius();
-          float rendEndX=lineEndX + radius;
-          PlotDotRender.getInstance().renderDot(canvas,pDot,lineStartX,lineStartY,lineEndX,lineEndY,pLine.getDotPaint());
-          savePointRecord(dataID,childID,lineEndX + mMoveX,lineEndY + mMoveY,lineEndX - radius + mMoveX,lineEndY - radius + mMoveY,lineEndX + radius + mMoveX,lineEndY + radius + mMoveY);
+          float rendEndX=lineStopX + radius;
+          PlotDotRender.getInstance().renderDot(canvas,pDot,lineStartX,lineStartY,lineStopX,lineStopY,pLine.getDotPaint());
+          savePointRecord(dataID,childID,lineStopX + mMoveX,lineStopY + mMoveY,lineStopX - radius + mMoveX,lineStopY - radius + mMoveY,lineStopX + radius + mMoveX,lineStopY + radius + mMoveY);
           childID++;
-          lineEndX=rendEndX;
+          lineStopX=rendEndX;
         }
         if (bd.getLabelVisible()) {
-          DrawHelper.getInstance().drawRotateText(this.getFormatterItemLabel(bv),lineEndX,lineEndY,itemAngle,canvas,pLine.getDotLabelPaint());
+          DrawHelper.getInstance().drawRotateText(this.getFormatterItemLabel(bv),lineStopX,lineStopY,itemAngle,canvas,pLine.getDotLabelPaint());
         }
       }
  else {
         Log.e(TAG,"????????????????????????");
         return false;
       }
-      lineStartX=lineEndX;
-      lineStartY=lineEndY;
+      lineStartX=lineStopX;
+      lineStartY=lineStopY;
       j++;
     }
   }

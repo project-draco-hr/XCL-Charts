@@ -1,11 +1,13 @@
 {
-  if (null == bezierPath)   bezierPath=new Path();
   int count=lstPathPoints.size();
-  if (count <= 1)   return true;
-  if (count <= 3) {
-    bezierPath.moveTo(lstPathPoints.get(0).x,lstPathPoints.get(0).y);
-    bezierPath.lineTo(lstPathPoints.get(1).x,lstPathPoints.get(1).y);
-    if (3 == count)     bezierPath.lineTo(lstPathPoints.get(2).x,lstPathPoints.get(2).y);
+  if (count < 3)   return false;
+  if (count == 3) {
+    if (null == bezierPath)     bezierPath=new Path();
+    bezierPath.moveTo(lstPathPoints.get(0).x,plotArea.getBottom());
+    bezierPath.lineTo(lstPathPoints.get(0).x,lstPathPoints.get(0).y);
+    PointF ctl3=PointHelper.percent(lstPathPoints.get(1),0.5f,lstPathPoints.get(2),0.8f);
+    bezierPath.quadTo(ctl3.x,ctl3.y,lstPathPoints.get(2).x,lstPathPoints.get(2).y);
+    bezierPath.lineTo(lstPathPoints.get(2).x,plotArea.getBottom());
     bezierPath.close();
     paintAreaFill.setColor(areaData.getAreaFillColor());
     paintAreaFill.setAlpha(this.mAreaAlpha);
@@ -19,10 +21,13 @@
     CurveHelper.curve3(lstPathPoints.get(i - 2),lstPathPoints.get(i - 1),lstPathPoints.get(i - 3),lstPathPoints.get(i),mBezierControls);
     bezierPath.cubicTo(mBezierControls[0].x,mBezierControls[0].y,mBezierControls[1].x,mBezierControls[1].y,lstPathPoints.get(i - 1).x,lstPathPoints.get(i - 1).y);
   }
-  if (count > 3) {
-    PointF stop=lstPathPoints.get(lstPathPoints.size() - 1);
-    CurveHelper.curve3(lstPathPoints.get(lstPathPoints.size() - 2),stop,lstPathPoints.get(lstPathPoints.size() - 3),stop,mBezierControls);
-    bezierPath.cubicTo(mBezierControls[0].x,mBezierControls[0].y,mBezierControls[1].x,mBezierControls[1].y,lstPathPoints.get(lstPathPoints.size() - 1).x,lstPathPoints.get(lstPathPoints.size() - 1).y);
+  PointF stop=lstPathPoints.get(count - 1);
+  if (Float.compare(stop.y,plotArea.getBottom()) == 0) {
+    bezierPath.lineTo(stop.x,stop.y);
+  }
+ else {
+    CurveHelper.curve3(lstPathPoints.get(count - 2),stop,lstPathPoints.get(count - 3),stop,mBezierControls);
+    bezierPath.cubicTo(mBezierControls[0].x,mBezierControls[0].y,mBezierControls[1].x,mBezierControls[1].y,stop.x,stop.y);
   }
   bezierPath.close();
   paintAreaFill.setColor(areaData.getAreaFillColor());

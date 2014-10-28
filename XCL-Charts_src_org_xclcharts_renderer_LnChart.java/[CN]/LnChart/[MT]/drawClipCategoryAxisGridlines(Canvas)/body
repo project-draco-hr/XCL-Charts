@@ -3,15 +3,14 @@
   float XSteps=0.0f, YSteps=0.0f;
   int j=0;
   int tickCount=dataSet.size();
-  int labeltickCount=tickCount;
   if (0 == tickCount) {
     Log.e(TAG,"?????????????????????0!");
     return;
   }
  else   if (1 == tickCount) {
-    labeltickCount=tickCount - 1;
     j=1;
   }
+  int labeltickCount=getCategoryAxisCount();
   float axisX=0.0f, axisY=0.0f, currentX=0.0f, currentY=0.0f;
   XEnum.CategoryAxisPosition pos=getCategoryAxisPosition();
   if (XEnum.CategoryAxisPosition.LEFT == pos || XEnum.CategoryAxisPosition.RIGHT == pos) {

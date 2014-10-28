@@ -1,13 +1,13 @@
 {
-  if (null == mDataset) {
+  if (null == mDataSet) {
     Log.e(TAG,"???????????????.");
     return false;
   }
   initPaint();
   if (null == mPathArea)   mPathArea=new Path();
-  int count=mDataset.size();
+  int count=mDataSet.size();
   for (int i=0; i < count; i++) {
-    AreaData areaData=mDataset.get(i);
+    AreaData areaData=mDataSet.get(i);
     calcAllPoints(areaData,mLstDots,mLstPoints,mLstPathPoints);
 switch (getCrurveLineStyle()) {
 case BEZIERCURVE:

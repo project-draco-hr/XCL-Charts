@@ -5,10 +5,8 @@
   }
   float initX=plotArea.getLeft();
   float initY=plotArea.getBottom();
-  float lineStartX=initX;
-  float lineStartY=initY;
-  float lineStopX=0.0f;
-  float lineStopY=0.0f;
+  float lineStartX=initX, lineStartY=initY;
+  float lineStopX=0.0f, lineStopY=0.0f;
   float axisScreenWidth=getPlotScreenWidth();
   float axisScreenHeight=getPlotScreenHeight();
   float axisDataHeight=(float)dataAxis.getAxisRange();
@@ -22,17 +20,11 @@
     Double yValue=(Double)entry.getValue();
     float YvaluePostion=(float)(axisScreenHeight * ((yValue - dataAxis.getAxisMin()) / axisDataHeight));
     float XvaluePostion=(float)(axisScreenWidth * ((xValue - mMinValue) / (mMaxValue - mMinValue)));
-    if (j == 0) {
-      lineStartX=add(initX,XvaluePostion);
-      lineStartY=sub(initY,YvaluePostion);
-      lineStopX=lineStartX;
-      lineStopY=lineStartY;
-    }
- else {
-      lineStopX=add(initX,XvaluePostion);
-      lineStopY=sub(initY,YvaluePostion);
-    }
+    lineStopX=add(initX,XvaluePostion);
+    lineStopY=sub(initY,YvaluePostion);
     if (0 == j) {
+      lineStartX=lineStopX;
+      lineStartY=lineStopY;
       lstPoints.add(new PointF(lineStartX,lineStartY));
       lstPoints.add(new PointF(lineStopX,lineStopY));
     }
