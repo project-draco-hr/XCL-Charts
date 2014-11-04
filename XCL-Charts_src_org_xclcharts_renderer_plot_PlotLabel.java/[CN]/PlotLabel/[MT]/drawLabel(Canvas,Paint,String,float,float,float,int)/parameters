@@ -1,0 +1,7 @@
+Canvas canvas
+Paint paint
+String label
+float cX
+float cY
+float itemAngle
+int borderColor

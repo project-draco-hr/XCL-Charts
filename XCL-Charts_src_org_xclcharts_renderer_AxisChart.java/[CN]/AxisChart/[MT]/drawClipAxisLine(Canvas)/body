@@ -3,7 +3,7 @@
   float plotTop=plotArea.getTop();
   float plotRight=plotArea.getRight();
   float plotBottom=plotArea.getBottom();
-switch (mDataAxisPosition) {
+switch (mDataAxisLocation) {
 case LEFT:
     dataAxis.renderAxis(canvas,plotLeft,plotBottom,plotLeft,plotTop);
   if (getAxesClosedStatus())   dataAxis.renderAxis(canvas,plotRight,plotTop,plotRight,plotBottom);
@@ -21,7 +21,7 @@ dataAxis.renderAxis(canvas,plotLeft,plotBottom,plotRight,plotBottom);
 if (getAxesClosedStatus()) dataAxis.renderAxis(canvas,plotLeft,plotTop,plotRight,plotTop);
 break;
 }
-switch (mCategoryAxisPosition) {
+switch (mCategoryAxisLocation) {
 case LEFT:
 categoryAxis.renderAxis(canvas,plotLeft,plotBottom,plotLeft,plotTop);
 if (getAxesClosedStatus()) categoryAxis.renderAxis(canvas,plotRight,plotTop,plotRight,plotBottom);

@@ -56,9 +56,10 @@
         }
       }
  else       if (type.equalsIgnoreCase("DOT2LABEL")) {
+        float radius=0.0f;
         if (!pLine.getDotStyle().equals(XEnum.DotStyle.HIDE)) {
           PlotDot pDot=pLine.getPlotDot();
-          float radius=pDot.getDotRadius();
+          radius=pDot.getDotRadius();
           float rendEndX=lineStopX + radius;
           PlotDotRender.getInstance().renderDot(canvas,pDot,lineStartX,lineStartY,lineStopX,lineStopY,pLine.getDotPaint());
           savePointRecord(dataID,childID,lineStopX + mMoveX,lineStopY + mMoveY,lineStopX - radius + mMoveX,lineStopY - radius + mMoveY,lineStopX + radius + mMoveX,lineStopY + radius + mMoveY);
@@ -66,7 +67,7 @@
           lineStopX=rendEndX;
         }
         if (bd.getLabelVisible()) {
-          DrawHelper.getInstance().drawRotateText(this.getFormatterItemLabel(bv),lineStopX,lineStopY,itemAngle,canvas,pLine.getDotLabelPaint());
+          bd.getPlotLabel().drawLabel(canvas,pLine.getDotLabelPaint(),getFormatterItemLabel(bv),lineStopX - radius,lineStopY,itemAngle,bd.getLineColor());
         }
       }
  else {

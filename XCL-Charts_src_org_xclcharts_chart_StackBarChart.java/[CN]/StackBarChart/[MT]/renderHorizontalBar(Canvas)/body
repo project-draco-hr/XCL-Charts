@@ -35,6 +35,7 @@
       float bottomY=add(currentY,barHeight / 2);
       flatBar.renderBar(currentX,topY,rightX,bottomY,canvas);
       saveBarRectFRecord(i,r,currentX + mMoveX,topY + mMoveY,rightX + mMoveX,bottomY + mMoveY);
+      drawFocusRect(canvas,i,r,currentX,topY,rightX,bottomY);
       flatBar.renderBarItemLabel(getFormatterItemLabel(bv),add(currentX,valuePostion / 2),currentY,canvas);
       currentX=add(currentX,valuePostion);
     }

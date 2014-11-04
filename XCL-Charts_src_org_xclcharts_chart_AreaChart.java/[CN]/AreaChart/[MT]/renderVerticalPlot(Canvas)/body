@@ -3,7 +3,7 @@
     Log.e(TAG,"???????????????.");
     return false;
   }
-  initPaint();
+  this.initPaint();
   if (null == mPathArea)   mPathArea=new Path();
   int count=mDataSet.size();
   for (int i=0; i < count; i++) {

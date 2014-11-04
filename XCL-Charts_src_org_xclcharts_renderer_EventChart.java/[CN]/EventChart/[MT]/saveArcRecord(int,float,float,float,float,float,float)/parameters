@@ -1,7 +1,0 @@
-int dataID
-float centerX
-float centerY
-float radius
-float offsetAngle
-float Angle
-float selectedOffset

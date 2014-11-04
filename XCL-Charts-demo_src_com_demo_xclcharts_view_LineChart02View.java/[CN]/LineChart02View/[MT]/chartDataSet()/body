@@ -19,7 +19,6 @@
   lineData2.getPlotLine().getDotPaint().setColor((int)Color.rgb(234,142,43));
   lineData2.getDotLabelPaint().setColor((int)Color.rgb(234,142,43));
   lineData2.setLabelVisible(true);
-  lineData2.getDotLabelPaint().setTextAlign(Align.LEFT);
   LinkedList<Double> dataSeries3=new LinkedList<Double>();
   dataSeries3.add(0d);
   dataSeries3.add(0d);

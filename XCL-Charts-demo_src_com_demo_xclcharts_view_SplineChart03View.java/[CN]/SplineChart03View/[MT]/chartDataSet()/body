@@ -14,7 +14,6 @@
   SplineData dataSeries1=new SplineData("??????",linePoint1,(int)Color.rgb(54,141,238));
   dataSeries1.getLinePaint().setStrokeWidth(2);
   dataSeries1.setLabelVisible(true);
-  dataSeries1.getDotLabelPaint().setTextAlign(Align.LEFT);
   LinkedHashMap<Double,Double> linePoint2=new LinkedHashMap<Double,Double>();
   linePoint2.put(40d,50d);
   linePoint2.put(55d,55d);

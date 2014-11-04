@@ -30,7 +30,8 @@
     drawClipDataAxisGridlines(canvas);
   }
   canvas.save();
-  canvas.clipRect(plotArea.getLeft(),plotArea.getTop(),this.getRight(),plotArea.getBottom());
+  getClipExt().calc(getType());
+  canvas.clipRect(plotArea.getLeft() - getClipExt().getExtLeft(),plotArea.getTop() - getClipExt().getExtTop(),plotArea.getRight() + getClipExt().getExtRight(),plotArea.getBottom() + getClipExt().getExtBottom());
   canvas.save();
   canvas.translate(mMoveX,mMoveY);
   drawClipPlot(canvas);

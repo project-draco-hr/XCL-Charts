@@ -1,0 +1,12 @@
+{
+  chartLabels();
+  chartLabelsAxes();
+  chartDataSetPie();
+  chartDataSet();
+  chartDataSetLn();
+  chartDataSetAxes();
+  chartRender();
+  chartRenderLn();
+  chartRenderLnAxes();
+  chartRenderPie();
+}

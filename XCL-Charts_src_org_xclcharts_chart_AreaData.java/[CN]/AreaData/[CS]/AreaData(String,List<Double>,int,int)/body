@@ -3,4 +3,6 @@
   setLinePoint(dataSeries);
   setLineColor(lineColor);
   setAreaFillColor(areaColor);
+  setAreaBeginColor(areaColor);
+  setAreaEndColor(Color.WHITE);
 }

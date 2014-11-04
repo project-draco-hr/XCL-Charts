@@ -1,0 +1,10 @@
+{
+  mLabelsAxes.add("0");
+  mLabelsAxes.add("10");
+  mLabelsAxes.add("20");
+  mLabelsAxes.add("30");
+  mLabelsAxes.add("40");
+  mLabelsAxes.add("50");
+  mLabelsAxes.add("60");
+  mLabelsAxes.add("70");
+}

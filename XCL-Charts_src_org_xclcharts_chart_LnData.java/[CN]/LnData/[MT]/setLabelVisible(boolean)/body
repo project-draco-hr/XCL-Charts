@@ -1,3 +1,5 @@
 {
   mLabelVisible=visible;
+  getPlotLabel().setOffsetY(15.f);
+  getPlotLabel().showBox();
 }

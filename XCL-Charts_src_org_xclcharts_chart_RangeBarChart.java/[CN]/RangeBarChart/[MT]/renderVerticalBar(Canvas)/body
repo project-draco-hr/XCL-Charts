@@ -30,6 +30,7 @@
     barMinPos=sub(plotArea.getBottom(),pos[1]);
     mFlatBar.renderBar(currentX - barWidthHalf,barMaxPos,currentX + barWidthHalf,barMinPos,canvas);
     saveBarRectFRecord(i,0,currentX - barWidthHalf + mMoveX,barMaxPos + mMoveY,currentX + barWidthHalf + mMoveX,barMinPos + mMoveY);
+    drawFocusRect(canvas,i,0,currentX - barWidthHalf,barMaxPos,currentX + barWidthHalf,barMinPos);
     if (getLabelVisible()) {
       mFlatBar.renderBarItemLabel(getFormatterItemLabel(bd.getMax()),currentX,barMinPos - fontHeight / 2,canvas);
       mFlatBar.renderBarItemLabel(getFormatterItemLabel(bd.getMin()),currentX,barMaxPos + fontHeight + fontHeight / 2,canvas);

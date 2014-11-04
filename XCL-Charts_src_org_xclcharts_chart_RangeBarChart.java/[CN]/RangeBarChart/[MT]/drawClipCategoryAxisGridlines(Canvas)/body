@@ -8,8 +8,8 @@
     return;
   }
   float axisX=0.0f, axisY=0.0f, currentX=0.0f, currentY=0.0f;
-  XEnum.CategoryAxisPosition pos=getCategoryAxisPosition();
-  if (XEnum.CategoryAxisPosition.LEFT == pos || XEnum.CategoryAxisPosition.RIGHT == pos) {
+  XEnum.Location pos=getCategoryAxisLocation();
+  if (XEnum.Location.LEFT == pos || XEnum.Location.RIGHT == pos) {
     YSteps=getVerticalYSteps(labeltickCount);
 switch (pos) {
 case LEFT:

@@ -13,7 +13,7 @@
     chart.getDataAxis().hideTickMarks();
     chart.getCategoryAxis().hideAxisLine();
     chart.getCategoryAxis().hideTickMarks();
-    chart.setAreaAlpha(100);
+    chart.setAreaAlpha(200);
     chart.getDataAxis().setLabelFormatter(new IFormatterTextCallBack(){
       @Override public String textFormatter(      String value){
         Double tmp=Double.parseDouble(value);

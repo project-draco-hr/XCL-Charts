@@ -1,0 +1,4 @@
+{
+  mBorderColor=borderColor;
+  return drawLabel(canvas,paint,label,cX,cY,itemAngle);
+}

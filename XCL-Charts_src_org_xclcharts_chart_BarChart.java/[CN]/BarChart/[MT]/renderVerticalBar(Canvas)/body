@@ -23,7 +23,8 @@
     List<Integer> barDataColor=bd.getDataColor();
     int barDefualtColor=bd.getColor();
     mFlatBar.getBarPaint().setColor(barDefualtColor);
-    for (int j=0; j < barValues.size(); j++) {
+    int countChild=barValues.size();
+    for (int j=0; j < countChild; j++) {
       Double bv=barValues.get(j);
       setBarDataColor(mFlatBar.getBarPaint(),barDataColor,j,barDefualtColor);
       float vaxlen=(float)MathHelper.getInstance().sub(bv,dataAxis.getAxisMin());
@@ -33,8 +34,9 @@
       drawBarStartX=add(drawBarStartX,add(barWidth,barInnerMargin) * currNumber);
       float drawBarEndX=add(drawBarStartX,barWidth);
       float topY=sub(plotArea.getBottom(),valuePostion);
-      mFlatBar.renderBar(drawBarStartX,plotArea.getBottom(),drawBarEndX,topY,canvas);
+      mFlatBar.renderBar(drawBarStartX,topY,drawBarEndX,plotArea.getBottom(),canvas);
       saveBarRectFRecord(i,j,drawBarStartX + mMoveX,topY + mMoveY,drawBarEndX + mMoveX,plotArea.getBottom() + mMoveY);
+      drawFocusRect(canvas,i,j,drawBarStartX,topY,drawBarEndX,plotArea.getBottom());
       mFlatBar.renderBarItemLabel(getFormatterItemLabel(bv),add(drawBarStartX,barWidth / 2),sub(plotArea.getBottom(),valuePostion),canvas);
     }
     currNumber++;

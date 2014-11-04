@@ -1,0 +1,9 @@
+{
+  setLabel(key);
+  setLinePoint(dataSeries);
+  setLineColor(lineColor);
+  setAreaFillColor(areaBeginColor);
+  setApplayGradient(true);
+  setAreaBeginColor(areaBeginColor);
+  setAreaEndColor(areaEndColor);
+}

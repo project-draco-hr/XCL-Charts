@@ -1,0 +1,24 @@
+{
+  float lineMaxY=0.0f;
+  float lineMinY=0.0f;
+  int count=lstPathPoints.size();
+  for (int i=0; i < count; i++) {
+    if (Y_MAX == type) {
+      if (lineMaxY < lstPathPoints.get(i).y)       lineMaxY=lstPathPoints.get(i).y;
+    }
+ else     if (Y_MIN == type) {
+      if (0 == i) {
+        lineMinY=lstPathPoints.get(0).y;
+      }
+ else {
+        if (lineMinY > lstPathPoints.get(i).y)         lineMinY=lstPathPoints.get(i).y;
+      }
+    }
+  }
+  if (Y_MAX == type) {
+    return lineMaxY;
+  }
+ else {
+    return lineMinY;
+  }
+}

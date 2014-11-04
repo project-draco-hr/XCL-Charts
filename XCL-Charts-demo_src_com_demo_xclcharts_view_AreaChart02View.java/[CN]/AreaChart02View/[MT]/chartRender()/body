@@ -16,7 +16,7 @@
     chart.setTitle("???????????????");
     chart.addSubtitle("(XCL-Charts Demo)");
     chart.getAxisTitle().setLowerAxisTitle("(??????)");
-    chart.setAreaAlpha(130);
+    chart.setAreaAlpha(180);
     chart.getPlotLegend().show();
     chart.ActiveListenItemClick();
     chart.extPointClickRange(5);

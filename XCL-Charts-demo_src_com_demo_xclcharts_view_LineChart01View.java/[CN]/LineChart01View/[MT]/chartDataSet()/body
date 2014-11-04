@@ -12,6 +12,7 @@
   lineData1.getDotLabelPaint().setTextSize(22);
   lineData1.getDotLabelPaint().setTextAlign(Align.LEFT);
   lineData1.setItemLabelRotateAngle(45.f);
+  lineData1.getPlotLabel().hideBox();
   LinkedList<Double> dataSeries2=new LinkedList<Double>();
   dataSeries2.add((double)30);
   dataSeries2.add((double)42);
@@ -40,6 +41,7 @@
   dataSeries4.add(90d);
   LineData lineData4=new LineData("??????",dataSeries4,(int)Color.rgb(84,206,231));
   lineData4.setDotStyle(XEnum.DotStyle.PRISMATIC);
+  lineData4.getLinePaint().setStrokeWidth(2);
   LinkedList<Double> valuesE=new LinkedList<Double>();
   valuesE.add(0d);
   valuesE.add(80d);

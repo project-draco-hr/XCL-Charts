@@ -1,0 +1,34 @@
+{
+switch (type) {
+case LINE:
+case SPLINE:
+case AREA:
+    if (Float.compare(mClipExtLeft,-1f) == 0) {
+      clipExtLeft=10.f;
+    }
+ else {
+      clipExtLeft=mClipExtLeft;
+    }
+  if (Float.compare(mClipExtTop,-1f) == 0) {
+    clipExtTop=0.5f;
+  }
+ else {
+    clipExtTop=mClipExtTop;
+  }
+if (Float.compare(mClipExtRight,-1f) == 0) {
+  clipExtRight=10.f;
+}
+ else {
+  clipExtRight=mClipExtRight;
+}
+if (Float.compare(mClipExtBottom,-1f) == 0) {
+clipExtBottom=10.f;
+}
+ else {
+clipExtBottom=mClipExtBottom;
+}
+break;
+default :
+break;
+}
+}

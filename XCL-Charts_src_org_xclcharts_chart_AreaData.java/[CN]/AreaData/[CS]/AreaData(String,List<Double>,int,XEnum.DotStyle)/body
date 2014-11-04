@@ -4,4 +4,6 @@
   setLinePoint(dataSeries);
   setDotStyle(dotStyle);
   setAreaFillColor(color);
+  setAreaBeginColor(color);
+  setAreaEndColor(Color.WHITE);
 }

@@ -1,6 +1,7 @@
 {
   int count=lstPathPoints.size();
   if (count < 3)   return false;
+  paintAreaFill.setColor(areaData.getAreaFillColor());
   if (count == 3) {
     if (null == bezierPath)     bezierPath=new Path();
     bezierPath.moveTo(lstPathPoints.get(0).x,plotArea.getBottom());
@@ -9,8 +10,21 @@
     bezierPath.quadTo(ctl3.x,ctl3.y,lstPathPoints.get(2).x,lstPathPoints.get(2).y);
     bezierPath.lineTo(lstPathPoints.get(2).x,plotArea.getBottom());
     bezierPath.close();
-    paintAreaFill.setColor(areaData.getAreaFillColor());
-    paintAreaFill.setAlpha(this.mAreaAlpha);
+    if (areaData.getApplayGradient()) {
+      LinearGradient linearGradient;
+      if (areaData.getGradientDirection() == XEnum.Direction.VERTICAL) {
+        float lineMaxY=getLineMaxMinY(Y_MAX,lstPathPoints);
+        linearGradient=new LinearGradient(0,0,0,lineMaxY,areaData.getAreaBeginColor(),areaData.getAreaEndColor(),areaData.getGradientMode());
+      }
+ else {
+        float lineMinY=getLineMaxMinY(Y_MIN,lstPathPoints);
+        linearGradient=new LinearGradient(plotArea.getLeft(),plotArea.getBottom(),lstPathPoints.get(2).x,lineMinY,areaData.getAreaBeginColor(),areaData.getAreaEndColor(),areaData.getGradientMode());
+      }
+      paintAreaFill.setShader(linearGradient);
+    }
+ else {
+      paintAreaFill.setShader(null);
+    }
     canvas.drawPath(bezierPath,paintAreaFill);
     bezierPath.reset();
     return true;
@@ -30,8 +44,22 @@
     bezierPath.cubicTo(mBezierControls[0].x,mBezierControls[0].y,mBezierControls[1].x,mBezierControls[1].y,stop.x,stop.y);
   }
   bezierPath.close();
-  paintAreaFill.setColor(areaData.getAreaFillColor());
   paintAreaFill.setAlpha(this.mAreaAlpha);
+  if (areaData.getApplayGradient()) {
+    LinearGradient linearGradient;
+    if (areaData.getGradientDirection() == XEnum.Direction.VERTICAL) {
+      float lineMaxY=getLineMaxMinY(Y_MAX,lstPathPoints);
+      linearGradient=new LinearGradient(0,0,0,lineMaxY,areaData.getAreaBeginColor(),areaData.getAreaEndColor(),areaData.getGradientMode());
+    }
+ else {
+      float lineMinY=getLineMaxMinY(Y_MIN,lstPathPoints);
+      linearGradient=new LinearGradient(plotArea.getLeft(),plotArea.getBottom(),stop.x,lineMinY,areaData.getAreaBeginColor(),areaData.getAreaEndColor(),areaData.getGradientMode());
+    }
+    paintAreaFill.setShader(linearGradient);
+  }
+ else {
+    paintAreaFill.setShader(null);
+  }
   canvas.drawPath(bezierPath,paintAreaFill);
   bezierPath.reset();
   return true;

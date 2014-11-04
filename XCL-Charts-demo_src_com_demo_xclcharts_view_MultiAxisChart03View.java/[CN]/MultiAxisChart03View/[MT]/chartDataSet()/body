@@ -1,0 +1,21 @@
+{
+  List<Double> dataSeries2=new LinkedList<Double>();
+  dataSeries2.add((double)140);
+  dataSeries2.add((double)122);
+  dataSeries2.add((double)130);
+  dataSeries2.add((double)135);
+  dataSeries2.add((double)115);
+  AreaData line2=new AreaData("?????????",dataSeries2,Color.RED,Color.YELLOW);
+  line2.getDotLabelPaint().setColor(Color.rgb(83,148,235));
+  line2.setLabelVisible(true);
+  line2.getPlotLabel().showBox();
+  line2.getPlotLabel().setOffsetY(20.f);
+  line2.setApplayGradient(true);
+  line2.setGradientMode(Shader.TileMode.MIRROR);
+  line2.setAreaBeginColor(Color.WHITE);
+  line2.setAreaEndColor(Color.rgb(224,65,10));
+  line2.setDotStyle(XEnum.DotStyle.RING);
+  line2.getPlotLine().getDotPaint().setColor(Color.WHITE);
+  line2.getPlotLine().getPlotDot().setRingInnerColor(Color.RED);
+  mDataset.add(line2);
+}

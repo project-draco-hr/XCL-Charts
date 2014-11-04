@@ -24,8 +24,9 @@
     chart.showDyLine();
     chart.getDyLine().setDyLineStyle(XEnum.DyLineStyle.Horizontal);
     chart.getPlotArea().extWidth(100.f);
-    chart.setDataAxisPosition(XEnum.DataAxisPosition.RIGHT);
-    chart.setCategoryAxisPosition(XEnum.CategoryAxisPosition.TOP);
+    chart.setDataAxisLocation(XEnum.Location.RIGHT);
+    chart.setCategoryAxisLocation(XEnum.Location.TOP);
+    chart.getClipExt().setExtRight(0.f);
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

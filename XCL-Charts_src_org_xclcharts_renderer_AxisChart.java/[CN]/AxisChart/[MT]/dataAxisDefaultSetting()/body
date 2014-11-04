@@ -1,22 +1,22 @@
 {
-  if (null == mDataAxisPosition)   return;
+  if (null == mDataAxisLocation)   return;
   if (null == dataAxis)   return;
   if (!dataAxis.isShow())   return;
   if (null != mDirection) {
 switch (mDirection) {
 case HORIZONTAL:
 {
-        this.setDataAxisPosition(XEnum.DataAxisPosition.BOTTOM);
+        this.setDataAxisLocation(XEnum.Location.BOTTOM);
         break;
       }
 case VERTICAL:
 {
-      this.setDataAxisPosition(XEnum.DataAxisPosition.LEFT);
+      this.setDataAxisLocation(XEnum.Location.LEFT);
       break;
     }
 }
 }
-if (XEnum.DataAxisPosition.LEFT == mDataAxisPosition) {
+if (XEnum.Location.LEFT == mDataAxisLocation) {
 dataAxis.setHorizontalTickAlign(Align.LEFT);
 }
  else {

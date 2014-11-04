@@ -1,0 +1,21 @@
+{
+  if (!chart.getListenItemClickStatus())   return;
+  ArcPosition record=chart.getPositionRecord(x,y);
+  if (null == record)   return;
+  PieData pData=lPieData.get(record.getDataID());
+  boolean isInvaldate=true;
+  for (int i=0; i < lPieData.size(); i++) {
+    PieData cData=lPieData.get(i);
+    if (i == record.getDataID()) {
+      if (cData.getSelected()) {
+        isInvaldate=false;
+        break;
+      }
+ else {
+        cData.setSelected(true);
+      }
+    }
+ else     cData.setSelected(false);
+  }
+  if (isInvaldate)   this.invalidate();
+}

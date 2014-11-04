@@ -27,7 +27,7 @@
       canvas.drawArc(mRectF,offsetAngle,currentAngle,true,geArcPaint());
       mLstLabels.add(new PlotArcLabelInfo(j,cirX,cirY,radius,offsetAngle,currentAngle));
     }
-    saveArcRecord(j,cirX + this.mTranslateXY[0],cirY + this.mTranslateXY[1],radius,offsetAngle,currentAngle,getSelectedOffset());
+    saveArcRecord(j,cirX + this.mTranslateXY[0],cirY + this.mTranslateXY[1],radius,offsetAngle,currentAngle,getSelectedOffset(),this.getInitialAngle());
     offsetAngle=add(offsetAngle,currentAngle);
   }
   renderLabels(canvas);

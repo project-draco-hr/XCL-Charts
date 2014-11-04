@@ -10,12 +10,14 @@
     return false;
   }
   float itemAngle=bd.getItemLabelRotateAngle();
-  for (int i=0; i < lstDots.size(); i++) {
+  int count=lstDots.size();
+  for (int i=0; i < count; i++) {
     Double dv=chartValues.get(i);
     RectF dot=lstDots.get(i);
+    float radius=0.0f;
     if (!pLine.getDotStyle().equals(XEnum.DotStyle.HIDE)) {
       PlotDot pDot=pLine.getPlotDot();
-      float radius=pDot.getDotRadius();
+      radius=pDot.getDotRadius();
       float rendEndX=add(dot.right,radius);
       PlotDotRender.getInstance().renderDot(canvas,pDot,dot.left,dot.top,dot.right,dot.bottom,pLine.getDotPaint());
       dot.right=rendEndX;
@@ -23,7 +25,7 @@
       childID++;
     }
     if (bd.getLabelVisible()) {
-      DrawHelper.getInstance().drawRotateText(getFormatterItemLabel(dv),dot.right,dot.bottom,itemAngle,canvas,pLine.getDotLabelPaint());
+      bd.getPlotLabel().drawLabel(canvas,pLine.getDotLabelPaint(),getFormatterItemLabel(dv),dot.right - radius,dot.bottom,itemAngle,bd.getLineColor());
     }
   }
   return true;

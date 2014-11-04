@@ -8,7 +8,7 @@
     chart.setCustomLines(mCustomLineDataset);
     chart.getAxisTitle().setLeftAxisTitle("??????");
     chart.getAxisTitle().setLowerAxisTitle("??????");
-    chart.getDataAxis().setAxisMax(100);
+    chart.getDataAxis().setAxisMax(105);
     chart.getDataAxis().setAxisMin(0);
     chart.getDataAxis().setAxisSteps(5);
     chart.getDataAxis().setDetailModeSteps(5);
@@ -24,6 +24,7 @@
 );
     chart.getBar().setItemLabelVisible(true);
     chart.getBar().setBarStyle(XEnum.BarStyle.OUTLINE);
+    chart.disablePanMode();
     chart.setItemLabelFormatter(new IFormatterDoubleCallBack(){
       @Override public String doubleFormatter(      Double value){
         DecimalFormat df=new DecimalFormat("#0");
@@ -33,6 +34,7 @@
     }
 );
     chart.getPlotLegend().hide();
+    chart.getClipExt().setExtTop(150.f);
   }
  catch (  Exception e) {
     e.printStackTrace();

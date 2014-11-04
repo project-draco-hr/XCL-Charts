@@ -1,0 +1,4 @@
+{
+  if (null == mClipExt)   mClipExt=new ClipExt();
+  return mClipExt;
+}

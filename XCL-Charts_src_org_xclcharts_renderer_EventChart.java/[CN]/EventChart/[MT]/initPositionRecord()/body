@@ -3,5 +3,4 @@
     mRecordset.clear();
     mRecordset=null;
   }
-  mSelectID=-1;
 }

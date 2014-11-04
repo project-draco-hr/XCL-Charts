@@ -6,7 +6,6 @@
   chart.ActiveListenItemClick();
   chart.showClikedFocus();
   chart.setPlotPanMode(XEnum.PanMode.HORIZONTAL);
-  chart.disableScale();
   chart.getDataAxis().show();
   chart.getPlotLegend().show();
 }

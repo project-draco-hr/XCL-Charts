@@ -32,7 +32,7 @@
       }
       canvas.drawArc(mRectF,offsetAngle,currentAngle,true,geArcPaint());
       renderArcBorder(canvas,mRectF,offsetAngle,currentAngle);
-      saveArcRecord(i,cirX + this.mTranslateXY[0],cirY + this.mTranslateXY[1],radius,offsetAngle,currentAngle,mSelectedOffset);
+      saveArcRecord(i,cirX + this.mTranslateXY[0],cirY + this.mTranslateXY[1],radius,offsetAngle,currentAngle,mSelectedOffset,getInitialAngle());
       offsetAngle=add(offsetAngle,currentAngle);
       i++;
     }

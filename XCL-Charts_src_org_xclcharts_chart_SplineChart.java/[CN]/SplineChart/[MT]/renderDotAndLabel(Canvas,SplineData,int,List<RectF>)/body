@@ -14,10 +14,11 @@
     Double xValue=(Double)entry.getKey();
     Double yValue=(Double)entry.getValue();
     RectF dot=lstDots.get(i);
+    float radius=0.0f;
     if (!pLine.getDotStyle().equals(XEnum.DotStyle.HIDE)) {
       float rendEndX=dot.right;
       PlotDot pDot=pLine.getPlotDot();
-      float radius=pDot.getDotRadius();
+      radius=pDot.getDotRadius();
       rendEndX=add(dot.right,radius);
       PlotDotRender.getInstance().renderDot(canvas,pDot,dot.left,dot.top,dot.right,dot.bottom,pLine.getDotPaint());
       dot.right=rendEndX;
@@ -25,7 +26,7 @@
       childID++;
     }
     if (spData.getLabelVisible()) {
-      DrawHelper.getInstance().drawRotateText(getFormatterDotLabel(Double.toString(xValue) + "," + Double.toString(yValue)),dot.right,dot.bottom,itemAngle,canvas,pLine.getDotLabelPaint());
+      spData.getPlotLabel().drawLabel(canvas,pLine.getDotLabelPaint(),Double.toString(xValue) + "," + Double.toString(yValue),dot.right - radius,dot.bottom,itemAngle,spData.getLineColor());
     }
     i++;
   }

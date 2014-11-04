@@ -7,8 +7,7 @@
   float initY=plotArea.getBottom();
   float lineStartX=initX;
   float lineStartY=initY;
-  float lineStopX=0.0f;
-  float lineStopY=0.0f;
+  float lineStopX=0.0f, lineStopY=0.0f;
   float axisScreenWidth=getPlotScreenWidth();
   float axisScreenHeight=getPlotScreenHeight();
   float axisDataHeight=(float)dataAxis.getAxisRange();

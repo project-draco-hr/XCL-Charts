@@ -1,7 +1,7 @@
 {
   if (null == lstLabels)   return;
   for (  PlotAxisTick t : lstLabels) {
-switch (mCategoryAxisPosition) {
+switch (mCategoryAxisLocation) {
 case LEFT:
 case RIGHT:
       categoryAxis.renderAxisHorizontalTick(this,canvas,t.X,t.Y,t.Label,isDrawYAxisTickMarks(t.Y,mMoveY));

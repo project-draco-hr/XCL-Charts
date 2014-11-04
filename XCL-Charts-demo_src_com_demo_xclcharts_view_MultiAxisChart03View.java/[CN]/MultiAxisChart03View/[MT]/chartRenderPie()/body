@@ -1,0 +1,7 @@
+{
+  chartPie.setPadding(0,0,0,0);
+  chartPie.setLabelStyle(XEnum.SliceLabelStyle.INSIDE);
+  chartPie.getLabelPaint().setColor(Color.WHITE);
+  chartPie.setDataSource(chartDataPie);
+  chartPie.getPlotLegend().hide();
+}

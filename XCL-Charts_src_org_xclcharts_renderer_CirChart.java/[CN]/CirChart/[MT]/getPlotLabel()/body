@@ -1,0 +1,6 @@
+{
+  if (null == mPlotLabel) {
+    mPlotLabel=new PlotLabelRender();
+  }
+  return mPlotLabel;
+}

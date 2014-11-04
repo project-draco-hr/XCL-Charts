@@ -1,0 +1,5 @@
+{
+  mShowBox=true;
+  showBorder();
+  showBackground();
+}

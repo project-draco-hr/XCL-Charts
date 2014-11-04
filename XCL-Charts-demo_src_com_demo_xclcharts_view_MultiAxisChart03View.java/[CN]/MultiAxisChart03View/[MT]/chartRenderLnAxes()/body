@@ -1,0 +1,34 @@
+{
+  try {
+    int[] ltrb=getBarLnDefaultSpadding();
+    float left=DensityUtil.dip2px(getContext(),20);
+    float right=DensityUtil.dip2px(getContext(),20);
+    chartLnAxes.setPadding(left,ltrb[1],right,ltrb[3]);
+    chartLnAxes.setCategories(mLabelsAxes);
+    chartLnAxes.setDataSource(chartDataAxes);
+    chartLnAxes.getDataAxis().setAxisMax(70);
+    chartLnAxes.getDataAxis().setAxisSteps(10);
+    chartLnAxes.setCategoryAxisMax(70);
+    chartLnAxes.setCategoryAxisMin(0);
+    chartLnAxes.getPlotLegend().hide();
+    chartLnAxes.getPlotGrid().hideEvenRowBgColor();
+    chartLnAxes.getPlotGrid().hideHorizontalLines();
+    chartLnAxes.getPlotGrid().hideOddRowBgColor();
+    chartLnAxes.getPlotGrid().hideVerticalLines();
+    chartLnAxes.getDataAxis().hideAxisLine();
+    chartLnAxes.getDataAxis().hideTickMarks();
+    chartLnAxes.getCategoryAxis().hideAxisLine();
+    chartLnAxes.getCategoryAxis().hideTickMarks();
+    chartLnAxes.getCategoryAxis().setTickLabelRotateAngle(-90);
+    chartLnAxes.getDataAxis().setTickLabelRotateAngle(-90);
+    chartLnAxes.getDataAxis().getTickLabelPaint().setColor((int)Color.rgb(48,145,255));
+    chartLnAxes.getCategoryAxis().getTickLabelPaint().setColor((int)Color.rgb(199,64,219));
+    chartLnAxes.getDataAxis().setHorizontalTickAlign(Align.RIGHT);
+    chartLnAxes.getDataAxis().getTickLabelPaint().setTextAlign(Align.LEFT);
+    chartLnAxes.setDataAxisLocation(XEnum.Location.RIGHT);
+    chartLnAxes.setCategoryAxisLocation(XEnum.Location.LEFT);
+  }
+ catch (  Exception e) {
+    Log.e(TAG,e.toString());
+  }
+}

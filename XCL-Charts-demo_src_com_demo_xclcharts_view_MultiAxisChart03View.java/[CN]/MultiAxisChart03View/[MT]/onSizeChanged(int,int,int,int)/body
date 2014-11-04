@@ -1,0 +1,10 @@
+{
+  super.onSizeChanged(w,h,oldw,oldh);
+  chart.setChartRange(w,h);
+  chartLn.setChartRange(w,h);
+  chartLnAxes.setChartRange(w,h);
+  float left=DensityUtil.dip2px(getContext(),42);
+  float top=DensityUtil.dip2px(getContext(),62);
+  float piewidth=Math.min(w,h) / 4;
+  chartPie.setChartRange(left,top,piewidth,piewidth);
+}

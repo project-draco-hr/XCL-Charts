@@ -1,0 +1,17 @@
+{
+  if (!mShowClikedFocus)   return true;
+  if (-1 == mSelectID)   return false;
+  if (null == mFocusRect)   return false;
+  if (mSelectDataID == dataID && mSelectDataChildID == childID) {
+    mFocusRect.left=left;
+    mFocusRect.top=top;
+    mFocusRect.right=right;
+    mFocusRect.bottom=bottom;
+    canvas.drawRect(mFocusRect,getFocusPaint());
+    mFocusRect=null;
+    mSelectID=-1;
+    mSelectDataID=-1;
+    mSelectDataChildID=-1;
+  }
+  return true;
+}

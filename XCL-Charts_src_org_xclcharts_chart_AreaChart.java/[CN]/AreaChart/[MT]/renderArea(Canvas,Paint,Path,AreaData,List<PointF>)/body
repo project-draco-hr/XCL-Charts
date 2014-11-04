@@ -1,5 +1,7 @@
 {
-  for (int i=0; i < lstPathPoints.size(); i++) {
+  int count=lstPathPoints.size();
+  if (count <= 0)   return false;
+  for (int i=0; i < count; i++) {
     PointF point=lstPathPoints.get(i);
     if (0 == i) {
       pathArea.moveTo(point.x,point.y);
@@ -10,6 +12,21 @@
   }
   pathArea.close();
   paintAreaFill.setColor(areaData.getAreaFillColor());
+  if (areaData.getApplayGradient()) {
+    LinearGradient linearGradient;
+    if (areaData.getGradientDirection() == XEnum.Direction.VERTICAL) {
+      float lineMaxY=getLineMaxMinY(Y_MAX,lstPathPoints);
+      linearGradient=new LinearGradient(0,0,0,lineMaxY,areaData.getAreaBeginColor(),areaData.getAreaEndColor(),areaData.getGradientMode());
+    }
+ else {
+      float lineMinY=getLineMaxMinY(Y_MIN,lstPathPoints);
+      linearGradient=new LinearGradient(plotArea.getLeft(),plotArea.getBottom(),lstPathPoints.get(count - 1).x,lineMinY,areaData.getAreaBeginColor(),areaData.getAreaEndColor(),areaData.getGradientMode());
+    }
+    paintAreaFill.setShader(linearGradient);
+  }
+ else {
+    paintAreaFill.setShader(null);
+  }
   paintAreaFill.setAlpha(this.mAreaAlpha);
   canvas.drawPath(pathArea,paintAreaFill);
   pathArea.reset();

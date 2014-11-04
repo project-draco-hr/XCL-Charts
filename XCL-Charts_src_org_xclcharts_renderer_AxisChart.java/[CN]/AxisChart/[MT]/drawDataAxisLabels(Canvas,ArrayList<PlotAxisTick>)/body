@@ -2,7 +2,7 @@
   if (null == lstLabels)   return;
   for (  PlotAxisTick t : lstLabels) {
     dataAxis.setAxisTickCurrentID(t.ID);
-switch (mDataAxisPosition) {
+switch (mDataAxisLocation) {
 case LEFT:
 case RIGHT:
       dataAxis.renderAxisHorizontalTick(this,canvas,t.X,t.Y,t.Label,isDrawYAxisTickMarks(t.Y,mMoveY));

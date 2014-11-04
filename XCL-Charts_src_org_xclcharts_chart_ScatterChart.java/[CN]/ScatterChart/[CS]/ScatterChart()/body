@@ -1,4 +1,5 @@
 {
   categoryAxisDefaultSetting();
   dataAxisDefaultSetting();
+  this.setAxesClosed(true);
 }

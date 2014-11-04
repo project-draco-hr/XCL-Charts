@@ -9,12 +9,12 @@
  else   if (1 == tickCount)   labeltickCount=tickCount - 1;
   float axisX=0.0f, axisY=0.0f, currentX=0.0f, currentY=0.0f;
   double currentTickLabel=0d;
-  XEnum.DataAxisPosition pos=getDataAxisPosition();
+  XEnum.Location pos=getDataAxisLocation();
 switch (pos) {
 case LEFT:
 case RIGHT:
     YSteps=getVerticalYSteps(labeltickCount);
-  if (XEnum.DataAxisPosition.RIGHT == pos) {
+  if (XEnum.Location.RIGHT == pos) {
     currentX=axisX=plotArea.getRight();
   }
  else {
@@ -25,7 +25,7 @@ break;
 case TOP:
 case BOTTOM:
 XSteps=getVerticalXSteps(labeltickCount);
-if (XEnum.DataAxisPosition.TOP == pos) {
+if (XEnum.Location.TOP == pos) {
 currentY=axisY=plotArea.getTop();
 }
  else {

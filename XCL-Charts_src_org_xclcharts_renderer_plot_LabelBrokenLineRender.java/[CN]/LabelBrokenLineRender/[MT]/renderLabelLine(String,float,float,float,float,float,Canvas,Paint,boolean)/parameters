@@ -1,9 +1,0 @@
-String text
-float itemAngle
-float cirX
-float cirY
-float radius
-float calcAngle
-Canvas canvas
-Paint paintLabel
-boolean showLabel

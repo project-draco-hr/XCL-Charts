@@ -2,5 +2,5 @@
   if (null == mLabelLine)   mLabelLine=new LabelBrokenLineRender();
   if (mIsLabelLineSyncColor)   mLabelLine.getLabelLinePaint().setColor(cData.getSliceColor());
   if (mIsLabelPointSyncColor)   mLabelLine.getPointPaint().setColor(cData.getSliceColor());
-  return (mLabelLine.renderLabelLine(cData.getLabel(),cData.getItemLabelRotateAngle(),cirX,cirY,radius,calcAngle,canvas,getLabelPaint(),showLabel));
+  return (mLabelLine.renderLabelLine(cData.getLabel(),cData.getItemLabelRotateAngle(),cirX,cirY,radius,calcAngle,canvas,getLabelPaint(),showLabel,mPlotLabel));
 }

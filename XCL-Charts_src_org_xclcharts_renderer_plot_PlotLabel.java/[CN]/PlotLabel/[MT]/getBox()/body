@@ -1,0 +1,4 @@
+{
+  initBox();
+  return mBorder;
+}

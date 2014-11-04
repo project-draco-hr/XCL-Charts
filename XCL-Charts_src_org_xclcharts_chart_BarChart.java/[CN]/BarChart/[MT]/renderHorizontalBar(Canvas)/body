@@ -38,6 +38,7 @@
       mFlatBar.renderBar(barInitX,drawBarTopY,rightX,drawBarButtomY,canvas);
       saveBarRectFRecord(i,j,barInitX + mMoveX,drawBarTopY + mMoveY,rightX + mMoveX,drawBarButtomY + mMoveY);
       mFlatBar.renderBarItemLabel(getFormatterItemLabel(bv),rightX,sub(drawBarButtomY,barHeight / 2),canvas);
+      drawFocusRect(canvas,i,j,barInitX,drawBarTopY,rightX,drawBarButtomY);
     }
     currNumber++;
   }

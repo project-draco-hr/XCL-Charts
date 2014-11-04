@@ -2,4 +2,5 @@
   if (null != mPlotDot)   mPlotDot.setDotStyle(XEnum.DotStyle.DOT);
   categoryAxisDefaultSetting();
   dataAxisDefaultSetting();
+  this.setAxesClosed(true);
 }

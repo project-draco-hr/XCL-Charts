@@ -1,0 +1,11 @@
+{
+  if (!mShowBox)   return;
+  if (null == mRectBox)   mRectBox=new RectF();
+  mRectBox.left=left;
+  mRectBox.right=right;
+  mRectBox.top=top;
+  mRectBox.bottom=bottom;
+  initBox();
+  if (mBorderColor != -1)   mBorder.setBorderLineColor(mBorderColor);
+  mBorder.renderBox(canvas,mRectBox,mShowBoxBorder,mShowBackground);
+}

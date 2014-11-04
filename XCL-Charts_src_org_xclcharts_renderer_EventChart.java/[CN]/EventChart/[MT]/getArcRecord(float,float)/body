@@ -7,7 +7,7 @@
   while (it.hasNext()) {
     PlotArcPosition record=(PlotArcPosition)it.next();
     if (record.compareF(x,y)) {
-      saveSelected(record.getRecordID());
+      saveSelected(record.getRecordID(),record.getDataID(),record.getDataChildID());
       return record;
     }
   }

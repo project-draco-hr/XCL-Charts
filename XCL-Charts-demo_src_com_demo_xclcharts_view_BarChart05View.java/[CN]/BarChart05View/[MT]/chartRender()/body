@@ -8,11 +8,10 @@
     chart.setCustomLines(mCustomLineDataset);
     chart.getAxisTitle().setLeftAxisTitle("??????");
     chart.getAxisTitle().setLowerAxisTitle("??????");
-    chart.getDataAxis().setAxisMax(100);
+    chart.getDataAxis().setAxisMax(110);
     chart.getDataAxis().setAxisMin(0);
     chart.getDataAxis().setAxisSteps(5);
     chart.getDataAxis().setDetailModeSteps(5);
-    chart.getPlotGrid().showHorizontalLines();
     chart.setChartDirection(XEnum.Direction.HORIZONTAL);
     chart.getDataAxis().setLabelFormatter(new IFormatterTextCallBack(){
       @Override public String textFormatter(      String value){
@@ -24,7 +23,7 @@
     }
 );
     chart.getBar().setItemLabelVisible(true);
-    chart.getBar().setBarStyle(XEnum.BarStyle.FILL);
+    chart.getBar().getItemLabelPaint().setTextSize(18);
     chart.setItemLabelFormatter(new IFormatterDoubleCallBack(){
       @Override public String doubleFormatter(      Double value){
         DecimalFormat df=new DecimalFormat("#0");
@@ -35,9 +34,12 @@
 );
     chart.getPlotLegend().hide();
     chart.disablePanMode();
+    chart.getBar().setBarStyle(XEnum.BarStyle.TRIANGLE);
     chart.getCategoryAxis().setHorizontalTickAlign(Align.RIGHT);
     chart.getCategoryAxis().getTickLabelPaint().setTextAlign(Align.LEFT);
     chart.getCategoryAxis().getTickLabelPaint().setColor((int)Color.rgb(199,88,122));
+    chart.getClipExt().setExtTop(10.f);
+    chart.getClipExt().setExtRight(100.f);
   }
  catch (  Exception e) {
     e.printStackTrace();

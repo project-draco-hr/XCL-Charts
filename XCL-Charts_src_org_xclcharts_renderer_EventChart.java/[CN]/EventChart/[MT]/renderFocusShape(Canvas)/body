@@ -6,11 +6,6 @@
       mFocusPoint=null;
     }
  else     if (null != mFocusRect) {
-      canvas.save();
-      canvas.clipRect(plotArea.getLeft(),plotArea.getTop(),plotArea.getRight(),plotArea.getBottom());
-      canvas.drawRect(mFocusRect,getFocusPaint());
-      canvas.restore();
-      mFocusRect=null;
     }
  else     if (null != mFocusArcPosition) {
       PointF pointCir=mFocusArcPosition.getPointF();

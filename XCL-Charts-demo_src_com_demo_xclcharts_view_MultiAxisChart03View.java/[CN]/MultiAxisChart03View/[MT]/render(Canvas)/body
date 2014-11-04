@@ -1,0 +1,11 @@
+{
+  try {
+    chart.render(canvas);
+    chartLn.render(canvas);
+    chartLnAxes.render(canvas);
+    chartPie.render(canvas);
+  }
+ catch (  Exception e) {
+    Log.e(TAG,e.toString());
+  }
+}

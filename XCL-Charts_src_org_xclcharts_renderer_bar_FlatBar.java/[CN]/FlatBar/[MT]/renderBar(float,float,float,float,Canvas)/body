@@ -1,5 +1,6 @@
 {
-  if (XEnum.BarStyle.OUTLINE == getBarStyle()) {
+  XEnum.BarStyle style=getBarStyle();
+  if (XEnum.BarStyle.OUTLINE == style) {
     int barColor=getBarPaint().getColor();
     int lightColor=DrawHelper.getInstance().getLightColor(barColor,150);
     float pWidth=getBarPaint().getStrokeWidth();
@@ -13,16 +14,46 @@
     getBarPaint().setStrokeWidth(pWidth);
     return true;
   }
-switch (getBarStyle()) {
+ else   if (XEnum.BarStyle.TRIANGLE == style) {
+    float mid=0.0f;
+    if (null == mPath)     mPath=new Path();
+switch (this.getBarDirection()) {
+case HORIZONTAL:
+      mid=top + (bottom - top) / 2;
+    mPath.moveTo(left,top);
+  mPath.lineTo(right,mid);
+mPath.lineTo(left,bottom);
+mPath.close();
+canvas.drawPath(mPath,getBarPaint());
+canvas.drawCircle(right,mid,radius,getBarPaint());
+break;
+default :
+mid=left + (right - left) / 2;
+mPath.moveTo(left,bottom);
+mPath.lineTo(mid,top);
+mPath.lineTo(right,bottom);
+mPath.close();
+canvas.drawPath(mPath,getBarPaint());
+canvas.drawCircle(mid,top,radius,getBarPaint());
+break;
+}
+mPath.reset();
+return true;
+}
+ else {
+switch (style) {
 case GRADIENT:
-    setBarGradient(left,top,right,bottom);
-  break;
+setBarGradient(left,top,right,bottom);
+break;
 case FILL:
 getBarPaint().setStyle(Style.FILL);
 break;
 case STROKE:
 if (Float.compare(1f,getBarPaint().getStrokeWidth()) == 0) getBarPaint().setStrokeWidth(3);
 getBarPaint().setStyle(Style.STROKE);
+break;
+case TRIANGLE:
+case OUTLINE:
 break;
 default :
 Log.e(TAG,"??????????????????????????????.");
@@ -32,5 +63,6 @@ if (getBarStyle() != XEnum.BarStyle.FILL) {
 setBarGradient(left,top,right,bottom);
 }
 canvas.drawRect(left,bottom,right,top,getBarPaint());
+}
 return true;
 }
