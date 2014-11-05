@@ -14,7 +14,7 @@
       LinearGradient linearGradient;
       if (areaData.getGradientDirection() == XEnum.Direction.VERTICAL) {
         float lineMaxY=getLineMaxMinY(Y_MAX,lstPathPoints);
-        linearGradient=new LinearGradient(0,0,0,lineMaxY,areaData.getAreaBeginColor(),areaData.getAreaEndColor(),areaData.getGradientMode());
+        linearGradient=new LinearGradient(0,0,0,plotArea.getBottom() - lineMaxY,areaData.getAreaBeginColor(),areaData.getAreaEndColor(),areaData.getGradientMode());
       }
  else {
         float lineMinY=getLineMaxMinY(Y_MIN,lstPathPoints);
@@ -29,9 +29,42 @@
     bezierPath.reset();
     return true;
   }
+  paintAreaFill.setAlpha(this.mAreaAlpha);
   bezierPath.moveTo(plotArea.getLeft(),plotArea.getBottom());
+  float axisMinValue=plotArea.getBottom();
   for (int i=0; i < count; i++) {
     if (i < 3)     continue;
+    if (lstPathPoints.get(i - 1).y >= axisMinValue && lstPathPoints.get(i).y >= axisMinValue) {
+      CurveHelper.curve3(lstPathPoints.get(i - 2),lstPathPoints.get(i - 1),lstPathPoints.get(i - 3),lstPathPoints.get(i),mBezierControls);
+      if (null == bezierPath) {
+        bezierPath=new Path();
+        bezierPath.moveTo(lstPathPoints.get(i - 2).x,lstPathPoints.get(i - 2).y);
+      }
+ else {
+        bezierPath.lineTo(lstPathPoints.get(i - 2).x,lstPathPoints.get(i - 2).y);
+      }
+      bezierPath.quadTo(mBezierControls[0].x,mBezierControls[0].y,lstPathPoints.get(i - 1).x,lstPathPoints.get(i - 1).y);
+      bezierPath.close();
+      if (areaData.getApplayGradient()) {
+        LinearGradient linearGradient;
+        if (areaData.getGradientDirection() == XEnum.Direction.VERTICAL) {
+          float lineMaxY=getLineMaxMinY(Y_MAX,lstPathPoints);
+          linearGradient=new LinearGradient(0,0,0,lineMaxY,areaData.getAreaBeginColor(),areaData.getAreaEndColor(),areaData.getGradientMode());
+        }
+ else {
+          float lineMinY=getLineMaxMinY(Y_MIN,lstPathPoints);
+          linearGradient=new LinearGradient(plotArea.getLeft(),plotArea.getBottom(),lstPathPoints.get(i - 1).x,lineMinY,areaData.getAreaBeginColor(),areaData.getAreaEndColor(),areaData.getGradientMode());
+        }
+        paintAreaFill.setShader(linearGradient);
+      }
+ else {
+        paintAreaFill.setShader(null);
+      }
+      canvas.drawPath(bezierPath,paintAreaFill);
+      bezierPath.reset();
+      bezierPath.moveTo(lstPathPoints.get(i).x,lstPathPoints.get(i).y);
+      continue;
+    }
     CurveHelper.curve3(lstPathPoints.get(i - 2),lstPathPoints.get(i - 1),lstPathPoints.get(i - 3),lstPathPoints.get(i),mBezierControls);
     bezierPath.cubicTo(mBezierControls[0].x,mBezierControls[0].y,mBezierControls[1].x,mBezierControls[1].y,lstPathPoints.get(i - 1).x,lstPathPoints.get(i - 1).y);
   }
@@ -44,7 +77,6 @@
     bezierPath.cubicTo(mBezierControls[0].x,mBezierControls[0].y,mBezierControls[1].x,mBezierControls[1].y,stop.x,stop.y);
   }
   bezierPath.close();
-  paintAreaFill.setAlpha(this.mAreaAlpha);
   if (areaData.getApplayGradient()) {
     LinearGradient linearGradient;
     if (areaData.getGradientDirection() == XEnum.Direction.VERTICAL) {

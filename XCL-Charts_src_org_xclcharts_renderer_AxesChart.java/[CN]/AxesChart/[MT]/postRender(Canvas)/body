@@ -23,6 +23,7 @@ if (null != axisTitle) {
 axisTitle.setRange(this);
 axisTitle.render(canvas);
 }
+renderFocusShape(canvas);
 renderToolTip(canvas);
 return ret;
 }

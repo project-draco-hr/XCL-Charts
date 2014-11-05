@@ -1,9 +1,14 @@
 {
   if (!mShowClikedFocus)   return true;
+  XEnum.ChartType ctype=this.getType();
+  if (XEnum.ChartType.BAR == ctype || XEnum.ChartType.BAR3D == ctype || XEnum.ChartType.STACKBAR == ctype) {
+    return true;
+  }
   try {
     if (null != mFocusPoint) {
       canvas.drawCircle(mFocusPoint.x,mFocusPoint.y,mFocusRadius,getFocusPaint());
       mFocusPoint=null;
+      mFocusRadius=0.0f;
     }
  else     if (null != mFocusRect) {
     }

@@ -1,3 +1,5 @@
 {
   mSelectID=-1;
+  mSelectDataID=-1;
+  mSelectDataChildID=-1;
 }

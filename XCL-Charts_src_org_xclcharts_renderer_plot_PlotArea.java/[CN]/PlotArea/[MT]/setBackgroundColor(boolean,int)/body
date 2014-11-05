@@ -1,4 +1,6 @@
 {
   mBackgroundColorVisible=visible;
   getBackgroundPaint().setColor(color);
+  setBeginColor(color);
+  setEndColor(color);
 }

@@ -1,16 +1,6 @@
 {
   int count=lstPathPoints.size();
-  if (count <= 0)   return false;
-  for (int i=0; i < count; i++) {
-    PointF point=lstPathPoints.get(i);
-    if (0 == i) {
-      pathArea.moveTo(point.x,point.y);
-    }
- else {
-      pathArea.lineTo(point.x,point.y);
-    }
-  }
-  pathArea.close();
+  if (count < 3)   return false;
   paintAreaFill.setColor(areaData.getAreaFillColor());
   if (areaData.getApplayGradient()) {
     LinearGradient linearGradient;
@@ -28,6 +18,28 @@
     paintAreaFill.setShader(null);
   }
   paintAreaFill.setAlpha(this.mAreaAlpha);
+  if (count == 3) {
+    if (null == pathArea)     pathArea=new Path();
+    pathArea.moveTo(lstPathPoints.get(0).x,plotArea.getBottom());
+    pathArea.lineTo(lstPathPoints.get(0).x,lstPathPoints.get(0).y);
+    pathArea.lineTo(lstPathPoints.get(1).x,lstPathPoints.get(1).y);
+    pathArea.lineTo(lstPathPoints.get(2).x,lstPathPoints.get(2).y);
+    pathArea.lineTo(lstPathPoints.get(2).x,plotArea.getBottom());
+    pathArea.close();
+    canvas.drawPath(pathArea,paintAreaFill);
+    pathArea.reset();
+    return true;
+  }
+  for (int i=0; i < count; i++) {
+    PointF point=lstPathPoints.get(i);
+    if (0 == i) {
+      pathArea.moveTo(point.x,point.y);
+    }
+ else {
+      pathArea.lineTo(point.x,point.y);
+    }
+  }
+  pathArea.close();
   canvas.drawPath(pathArea,paintAreaFill);
   pathArea.reset();
   return true;

@@ -1,7 +1,7 @@
 {
   try {
     int[] ltrb=getBarLnDefaultSpadding();
-    chart.setPadding(ltrb[0],ltrb[1],ltrb[2],ltrb[3]);
+    chart.setPadding(10,ltrb[1],10,ltrb[3]);
     chart.showRoundBorder();
     chart.setCategories(labels);
     chart.setDataSource(chartData);
@@ -34,6 +34,11 @@
     chart.ActiveListenItemClick();
     chart.extPointClickRange(5);
     chart.showClikedFocus();
+    chart.getPlotArea().setBackgroundColor(true,Color.rgb(163,69,213));
+    chart.getPlotArea().setApplayGradient(true);
+    chart.getPlotArea().setEndColor(Color.WHITE);
+    chart.getPlotLegend().setVerticalAlign(XEnum.VerticalAlign.BOTTOM);
+    chart.getPlotLegend().setHorizontalAlign(XEnum.HorizontalAlign.RIGHT);
   }
  catch (  Exception e) {
     e.printStackTrace();

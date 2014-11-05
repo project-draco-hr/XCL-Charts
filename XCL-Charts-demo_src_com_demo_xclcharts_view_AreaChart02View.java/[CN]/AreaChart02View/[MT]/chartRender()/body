@@ -37,7 +37,6 @@
       }
     }
 );
-    chart.getPlotArea().extWidth(100f);
   }
  catch (  Exception e) {
     e.printStackTrace();
