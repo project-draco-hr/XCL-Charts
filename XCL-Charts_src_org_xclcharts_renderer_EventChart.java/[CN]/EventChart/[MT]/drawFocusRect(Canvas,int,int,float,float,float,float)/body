@@ -9,9 +9,7 @@
     mFocusRect.bottom=bottom;
     canvas.drawRect(mFocusRect,getFocusPaint());
     mFocusRect=null;
-    mSelectID=-1;
-    mSelectDataID=-1;
-    mSelectDataChildID=-1;
+    clearSelected();
   }
   return true;
 }
