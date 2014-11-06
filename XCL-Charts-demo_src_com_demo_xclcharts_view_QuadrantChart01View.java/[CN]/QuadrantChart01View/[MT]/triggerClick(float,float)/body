@@ -1,0 +1,35 @@
+{
+  if (chart.getDyLineVisible())   chart.getDyLine().setCurrentXY(x,y);
+  if (!chart.getListenItemClickStatus()) {
+    if (chart.getDyLineVisible() && chart.getDyLine().isInvalidate())     this.invalidate();
+  }
+ else {
+    PointPosition record=chart.getPositionRecord(x,y);
+    if (null == record)     return;
+    BubbleData lData=chartData.get(record.getDataID());
+    LinkedHashMap<Double,Double> mapPoint=lData.getDataSet();
+    int pos=record.getDataChildID();
+    int i=0;
+    Iterator it=mapPoint.entrySet().iterator();
+    while (it.hasNext()) {
+      Entry entry=(Entry)it.next();
+      if (pos == i) {
+        Double xValue=(Double)entry.getKey();
+        Double yValue=(Double)entry.getValue();
+        float r=record.getRadius();
+        chart.showFocusPointF(record.getPosition(),r + r * 0.5f);
+        chart.getFocusPaint().setStyle(Style.STROKE);
+        chart.getFocusPaint().setStrokeWidth(3);
+        if (record.getDataID() >= 3) {
+          chart.getFocusPaint().setColor(Color.WHITE);
+        }
+ else {
+          chart.getFocusPaint().setColor(Color.RED);
+        }
+        this.invalidate();
+        break;
+      }
+      i++;
+    }
+  }
+}

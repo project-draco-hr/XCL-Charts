@@ -40,9 +40,11 @@
       flatBar.renderBarItemLabel(getFormatterItemLabel(bv),currentX,sub(currentY,valuePostion / 2),canvas);
       currentY=sub(currentY,valuePostion);
     }
-    double per=MathHelper.getInstance().sub(total,dataAxis.getAxisMin());
-    float totalPostion=MathHelper.getInstance().mul(div(axisScreenHeight,axisDataHeight),dtof(per));
-    flatBar.renderBarItemLabel(getFormatterItemLabel(total),currentX,sub(plotArea.getBottom(),totalPostion),canvas);
+    if (mTotalLabelVisible) {
+      double per=MathHelper.getInstance().sub(total,dataAxis.getAxisMin());
+      float totalPostion=MathHelper.getInstance().mul(div(axisScreenHeight,axisDataHeight),dtof(per));
+      flatBar.renderBarItemLabel(getFormatterItemLabel(total),currentX,sub(plotArea.getBottom(),totalPostion),canvas);
+    }
   }
   return true;
 }

@@ -29,6 +29,8 @@
     chart.getDataAxis().getTickMarksPaint().setColor(plot.getHorizontalLinePaint().getColor());
     chart.getCategoryAxis().getTickMarksPaint().setColor(plot.getHorizontalLinePaint().getColor());
     plot.hideHorizontalLines();
+    chart.ActiveListenItemClick();
+    chart.extPointClickRange(10);
   }
  catch (  Exception e) {
     e.printStackTrace();

@@ -1,0 +1,14 @@
+{
+  PointPosition record=chart.getPositionRecord(x,y);
+  if (null == record)   return;
+  AreaData lData=mDataset.get(record.getDataID());
+  Double lValue=lData.getLinePoint().get(record.getDataChildID());
+  mPaintTooltips.setColor(Color.rgb(240,73,119));
+  chart.getToolTip().getBackgroundPaint().setColor(Color.GREEN);
+  chart.getToolTip().setCurrentXY(x,y);
+  chart.getToolTip().addToolTip(" Key:" + lData.getLineKey(),mPaintTooltips);
+  chart.getToolTip().addToolTip(" Label:" + lData.getLabel(),mPaintTooltips);
+  chart.getToolTip().addToolTip(" Current Value:" + Double.toString(lValue),mPaintTooltips);
+  chart.getToolTip().setAlign(Align.LEFT);
+  this.invalidate();
+}

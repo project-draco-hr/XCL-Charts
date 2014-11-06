@@ -1,0 +1,4 @@
+{
+  if (null == mPaintHorizontalLine)   mPaintHorizontalLine=new Paint(Paint.ANTI_ALIAS_FLAG);
+  return mPaintHorizontalLine;
+}

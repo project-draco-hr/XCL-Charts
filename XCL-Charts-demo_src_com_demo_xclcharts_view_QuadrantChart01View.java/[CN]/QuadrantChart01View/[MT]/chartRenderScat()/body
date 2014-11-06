@@ -1,0 +1,18 @@
+{
+  try {
+    int[] ltrb=getBarLnDefaultSpadding();
+    chartScat.setPadding(10,ltrb[1],10,ltrb[3]);
+    chartScat.setCategories(labels);
+    chartScat.setDataSource(chartDataScat);
+    chartScat.getDataAxis().setAxisMax(100);
+    chartScat.getDataAxis().setAxisSteps(10);
+    chartScat.setCategoryAxisMax(100);
+    chartScat.setCategoryAxisMin(0);
+    chartScat.getDataAxis().hide();
+    chartScat.getCategoryAxis().hide();
+  }
+ catch (  Exception e) {
+    e.printStackTrace();
+    Log.e(TAG,e.toString());
+  }
+}

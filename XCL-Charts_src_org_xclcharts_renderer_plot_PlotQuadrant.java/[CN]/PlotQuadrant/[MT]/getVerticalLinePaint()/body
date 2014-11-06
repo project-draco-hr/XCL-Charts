@@ -1,0 +1,4 @@
+{
+  if (null == mPaintVerticalLine)   mPaintVerticalLine=new Paint(Paint.ANTI_ALIAS_FLAG);
+  return mPaintVerticalLine;
+}

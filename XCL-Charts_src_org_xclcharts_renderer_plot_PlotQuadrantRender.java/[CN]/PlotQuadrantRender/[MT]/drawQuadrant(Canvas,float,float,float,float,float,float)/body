@@ -1,0 +1,18 @@
+{
+  if (mShowBgColor) {
+    getBgColorPaint().setColor(mFirstColor);
+    canvas.drawRect(centerX,top,right,centerY,getBgColorPaint());
+    getBgColorPaint().setColor(mSecondColor);
+    canvas.drawRect(centerX,centerY,right,bottom,getBgColorPaint());
+    getBgColorPaint().setColor(mThirdColor);
+    canvas.drawRect(left,centerY,centerX,bottom,getBgColorPaint());
+    getBgColorPaint().setColor(mFourthColor);
+    canvas.drawRect(left,top,centerX,centerY,getBgColorPaint());
+  }
+  if (mShowVerticalLine) {
+    canvas.drawLine(centerX,top,centerX,bottom,getVerticalLinePaint());
+  }
+  if (mShowHorizontalLine) {
+    canvas.drawLine(left,centerY,right,centerY,getVerticalLinePaint());
+  }
+}

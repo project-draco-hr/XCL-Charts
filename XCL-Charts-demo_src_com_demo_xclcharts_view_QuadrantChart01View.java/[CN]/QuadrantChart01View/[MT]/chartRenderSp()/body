@@ -1,0 +1,20 @@
+{
+  try {
+    int[] ltrb=getBarLnDefaultSpadding();
+    chartSp.setPadding(10,ltrb[1],10,ltrb[3]);
+    chartSp.showRoundBorder();
+    chartSp.setCategories(labels);
+    chartSp.setDataSource(chartDataSp);
+    chartSp.getDataAxis().setAxisMax(100);
+    chartSp.getDataAxis().setAxisSteps(10);
+    chartSp.setCategoryAxisMax(100);
+    chartSp.setCategoryAxisMin(0);
+    chartSp.getPlotLegend().hide();
+    chartSp.getDataAxis().hide();
+    chartSp.getCategoryAxis().hide();
+  }
+ catch (  Exception e) {
+    e.printStackTrace();
+    Log.e(TAG,e.toString());
+  }
+}

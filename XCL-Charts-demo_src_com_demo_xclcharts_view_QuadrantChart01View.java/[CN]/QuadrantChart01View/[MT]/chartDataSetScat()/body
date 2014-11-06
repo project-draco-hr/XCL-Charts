@@ -1,0 +1,17 @@
+{
+  LinkedHashMap<Double,Double> linePoint1=new LinkedHashMap<Double,Double>();
+  linePoint1.put(15d,68d);
+  linePoint1.put(32d,62d);
+  linePoint1.put(25d,55d);
+  linePoint1.put(60d,80d);
+  ScatterData dataSeries1=new ScatterData("??????1",linePoint1,Color.rgb(41,161,64),XEnum.DotStyle.DOT);
+  dataSeries1.setLabelVisible(true);
+  dataSeries1.getDotLabelPaint().setColor((int)Color.rgb(41,161,64));
+  LinkedHashMap<Double,Double> linePoint2=new LinkedHashMap<Double,Double>();
+  linePoint2.put(43d,70d);
+  linePoint2.put(56d,85d);
+  linePoint2.put(37d,65d);
+  ScatterData dataSeries2=new ScatterData("??????2",linePoint2,Color.YELLOW,XEnum.DotStyle.PRISMATIC);
+  chartDataScat.add(dataSeries1);
+  chartDataScat.add(dataSeries2);
+}

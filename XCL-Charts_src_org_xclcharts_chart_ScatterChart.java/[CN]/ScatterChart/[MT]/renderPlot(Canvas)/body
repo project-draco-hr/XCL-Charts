@@ -7,6 +7,7 @@
     Log.e(TAG,"???????????????.");
     return false;
   }
+  drawQuadrant(canvas);
   int count=mDataset.size();
   for (int i=0; i < count; i++) {
     ScatterData bd=mDataset.get(i);

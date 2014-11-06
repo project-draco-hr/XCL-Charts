@@ -1,0 +1,15 @@
+{
+  LinkedHashMap<Double,Double> linePoint1=new LinkedHashMap<Double,Double>();
+  linePoint1.put(25d,15d);
+  linePoint1.put(45d,35d);
+  linePoint1.put(50d,40d);
+  linePoint1.put(65d,45d);
+  linePoint1.put(70d,50d);
+  linePoint1.put(75d,65d);
+  linePoint1.put(85d,73d);
+  linePoint1.put(92d,85d);
+  SplineData dataSeries1=new SplineData("?????????",linePoint1,Color.RED);
+  dataSeries1.getLinePaint().setStrokeWidth(10);
+  dataSeries1.setDotStyle(XEnum.DotStyle.HIDE);
+  chartDataSp.add(dataSeries1);
+}

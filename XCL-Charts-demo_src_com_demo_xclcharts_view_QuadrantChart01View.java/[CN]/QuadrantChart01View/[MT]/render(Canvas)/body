@@ -1,0 +1,10 @@
+{
+  try {
+    chart.render(canvas);
+    chartScat.render(canvas);
+    chartSp.render(canvas);
+  }
+ catch (  Exception e) {
+    Log.e(TAG,e.toString());
+  }
+}

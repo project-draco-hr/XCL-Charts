@@ -1,0 +1,4 @@
+{
+  mQuadrantXValue=xValue;
+  mQuadrantYValue=yValue;
+}

@@ -1,0 +1,4 @@
+{
+  if (null == mPlotQuadrant)   mPlotQuadrant=new PlotQuadrantRender();
+  return mPlotQuadrant;
+}

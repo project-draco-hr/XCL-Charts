@@ -1,0 +1,50 @@
+{
+  try {
+    int[] ltrb=getBarLnDefaultSpadding();
+    chart.setPadding(10,ltrb[1],10,ltrb[3]);
+    chart.showRoundBorder();
+    chart.setCategories(labels);
+    chart.setDataSource(chartData);
+    chart.getDataAxis().setAxisMax(100);
+    chart.getDataAxis().setAxisSteps(10);
+    chart.setCategoryAxisMax(100);
+    chart.setCategoryAxisMin(0);
+    chart.setBubbleMaxSize(200);
+    chart.setBubbleMinSize(10);
+    chart.setBubbleScaleMax(100);
+    chart.setBubbleScaleMin(0);
+    chart.getCategoryAxis().hideTickMarks();
+    chart.getDataAxis().setHorizontalTickAlign(Align.RIGHT);
+    chart.getDataAxis().getTickLabelPaint().setTextAlign(Align.LEFT);
+    chart.getDataAxis().getAxisPaint().setStrokeWidth(3);
+    chart.getCategoryAxis().getAxisPaint().setStrokeWidth(3);
+    chart.getDataAxis().getAxisPaint().setColor((int)Color.rgb(127,204,204));
+    chart.getCategoryAxis().getAxisPaint().setColor((int)Color.rgb(127,204,204));
+    chart.getDataAxis().getTickMarksPaint().setColor((int)Color.rgb(127,204,204));
+    chart.getCategoryAxis().getTickMarksPaint().setColor((int)Color.rgb(127,204,204));
+    chart.setDotLabelFormatter(new IFormatterTextCallBack(){
+      @Override public String textFormatter(      String value){
+        String label="(" + value + ")";
+        return (label);
+      }
+    }
+);
+    chart.setTitle("?????????");
+    chart.addSubtitle("(XCL-Charts Demo)");
+    chart.ActiveListenItemClick();
+    chart.extPointClickRange(5);
+    chart.showClikedFocus();
+    chart.getPlotLegend().setVerticalAlign(XEnum.VerticalAlign.BOTTOM);
+    chart.getPlotLegend().setHorizontalAlign(XEnum.HorizontalAlign.RIGHT);
+    chart.getPlotQuadrant().show(45d,55d);
+    chart.getPlotQuadrant().setBgColor(Color.rgb(106,79,193),Color.rgb(34,174,215),Color.rgb(82,187,197),Color.rgb(217,78,69));
+    chart.getPlotQuadrant().getHorizontalLinePaint().setColor((int)Color.rgb(127,204,204));
+    chart.getPlotQuadrant().getVerticalLinePaint().setColor((int)Color.rgb(127,204,204));
+    chart.getPlotQuadrant().getHorizontalLinePaint().setStrokeWidth(8);
+    chart.getPlotQuadrant().getVerticalLinePaint().setStrokeWidth(8);
+  }
+ catch (  Exception e) {
+    e.printStackTrace();
+    Log.e(TAG,e.toString());
+  }
+}
