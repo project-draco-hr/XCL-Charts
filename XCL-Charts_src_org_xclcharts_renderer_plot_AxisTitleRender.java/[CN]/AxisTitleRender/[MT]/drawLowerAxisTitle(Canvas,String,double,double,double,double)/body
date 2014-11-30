@@ -1,0 +1,19 @@
+{
+  if (null == canvas)   return;
+  if ("" == axisTitle || 0 == axisTitle.length())   return;
+  double axisTitleTextHeight=DrawHelper.getInstance().getPaintFontHeight(getLowerAxisTitlePaint());
+  float axisTitleTextStartX=0.0f;
+  float axisTitleY=(float)MathHelper.getInstance().sub(mChart.getBottom(),axisTitleTextHeight / 2);
+  if (mAxisTitleStyle == XEnum.AxisTitleStyle.ENDPOINT) {
+    axisTitleTextStartX=(float)right;
+    if (mCrossPointTitle.length() > 0) {
+      getLowerAxisTitlePaint().setTextAlign(Align.LEFT);
+      DrawHelper.getInstance().drawRotateText(mCrossPointTitle,(float)left,axisTitleY,0,canvas,getLowerAxisTitlePaint());
+    }
+    getLowerAxisTitlePaint().setTextAlign(Align.RIGHT);
+  }
+ else {
+    axisTitleTextStartX=(float)Math.round(left + (right - left) / 2);
+  }
+  DrawHelper.getInstance().drawRotateText(axisTitle,axisTitleTextStartX,axisTitleY,0,canvas,getLowerAxisTitlePaint());
+}

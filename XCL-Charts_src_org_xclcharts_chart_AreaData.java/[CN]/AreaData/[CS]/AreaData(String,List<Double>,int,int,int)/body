@@ -1,6 +1,6 @@
 {
   setLabel(key);
-  setLinePoint(dataSeries);
+  setDataSet(dataSeries);
   setLineColor(lineColor);
   setAreaFillColor(areaBeginColor);
   setApplayGradient(true);

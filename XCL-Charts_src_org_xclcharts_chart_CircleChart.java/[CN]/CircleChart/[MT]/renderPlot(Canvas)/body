@@ -24,8 +24,8 @@
           hRadius-=this.getBorderWidth();
           hCirY-=this.getBorderWidth() / 2;
         }
-        float oRadius=MathHelper.getInstance().round(mul(hRadius,0.9f),2);
-        float iRadius=MathHelper.getInstance().round(mul(hRadius,0.8f),2);
+        float oRadius=MathHelper.getInstance().round(mul(hRadius,moRadius),2);
+        float iRadius=MathHelper.getInstance().round(mul(hRadius,miRadius),2);
         if (isShowInnerBG()) {
           drawPercent(canvas,getBgCirclePaint(),cirX,hCirY,hRadius,180f,180f);
         }
@@ -47,9 +47,9 @@
  else {
         currentAngle=cData.getSliceAngle();
         if (isShowInnerBG())         canvas.drawCircle(cirX,cirY,radius,getBgCirclePaint());
-        if (isShowInnerFill())         canvas.drawCircle(cirX,cirY,MathHelper.getInstance().round(mul(radius,0.9f),2),getFillCirclePaint());
+        if (isShowInnerFill())         canvas.drawCircle(cirX,cirY,MathHelper.getInstance().round(mul(radius,moRadius),2),getFillCirclePaint());
         canvas.drawArc(arcRF0,mOffsetAngle,currentAngle,true,paintArc);
-        if (isShowInnerFill())         canvas.drawCircle(cirX,cirY,MathHelper.getInstance().round(mul(radius,0.8f),2),getFillCirclePaint());
+        if (isShowInnerFill())         canvas.drawCircle(cirX,cirY,MathHelper.getInstance().round(mul(radius,miRadius),2),getFillCirclePaint());
         if ("" != cData.getLabel())         canvas.drawText(cData.getLabel(),cirX,cirY,getLabelPaint());
         if ("" != mDataInfo)         canvas.drawText(mDataInfo,cirX,add(cirY,LabelHeight),getDataInfoPaint());
       }

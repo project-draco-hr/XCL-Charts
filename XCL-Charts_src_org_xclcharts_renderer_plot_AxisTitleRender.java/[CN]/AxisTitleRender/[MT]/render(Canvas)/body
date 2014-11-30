@@ -1,13 +1,26 @@
 {
   if (null == mChart)   return false;
+  float left=0.0f, top=0.0f, right=0.0f, bottom=0.0f;
+  if (mAxisTitleStyle == XEnum.AxisTitleStyle.ENDPOINT) {
+    left=mChart.getLeft();
+    top=mChart.getPlotArea().getTop();
+    right=mChart.getPlotArea().getRight();
+    bottom=mChart.getPlotArea().getBottom();
+  }
+ else {
+    left=mChart.getLeft();
+    top=mChart.getTop();
+    right=mChart.getRight();
+    bottom=mChart.getBottom();
+  }
   if (this.getLeftAxisTitle().length() > 0) {
-    drawLeftAxisTitle(canvas,getLeftAxisTitle(),mChart.getLeft(),mChart.getTop(),mChart.getRight(),mChart.getBottom());
+    drawLeftAxisTitle(canvas,getLeftAxisTitle(),left,top,right,bottom);
   }
   if (this.getLowerAxisTitle().length() > 0) {
-    drawAxisTitleLower(canvas,getLowerAxisTitle(),mChart.getLeft(),mChart.getTop(),mChart.getRight(),mChart.getBottom());
+    drawLowerAxisTitle(canvas,getLowerAxisTitle(),left,top,right,bottom);
   }
   if (this.getRightAxisTitle().length() > 0) {
-    drawRightAxisTitle(canvas,getRightAxisTitle(),mChart.getLeft(),mChart.getTop(),mChart.getRight(),mChart.getBottom());
+    drawRightAxisTitle(canvas,getRightAxisTitle(),left,top,right,bottom);
   }
   return true;
 }

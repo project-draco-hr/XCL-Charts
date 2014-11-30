@@ -2,6 +2,6 @@
   setLabel(key);
   setLineKey(key);
   setLineColor(color);
-  setLinePoint(dataSeries);
+  setDataSet(dataSeries);
   setDotStyle(dotStyle);
 }

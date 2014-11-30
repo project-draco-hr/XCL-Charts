@@ -3,7 +3,13 @@
   if (0 == axisTitle.length() || "" == axisTitle)   return;
   double axisTitleTextHeight=DrawHelper.getInstance().getTextWidth(getLeftAxisTitlePaint(),axisTitle);
   float axisTitleTextStartX=(float)Math.round(left + getLeftAxisTitlePaint().getTextSize());
-  float axisTitleTextStartY=Math.round(top + (bottom - top) / 2 + axisTitleTextHeight / 2);
+  float axisTitleTextStartY=0.0f;
+  if (mAxisTitleStyle == XEnum.AxisTitleStyle.ENDPOINT) {
+    axisTitleTextStartY=Math.round(top + axisTitleTextHeight);
+  }
+ else {
+    axisTitleTextStartY=Math.round(top + (bottom - top) / 2 + axisTitleTextHeight / 2);
+  }
   double axisTitleCharHeight=0d;
   for (int i=0; i < axisTitle.length(); i++) {
     axisTitleCharHeight=DrawHelper.getInstance().getTextWidth(getLeftAxisTitlePaint(),axisTitle.substring(i,i + 1));

@@ -2,7 +2,6 @@
   try {
     int[] ltrb=getBarLnDefaultSpadding();
     chartSp.setPadding(10,ltrb[1],10,ltrb[3]);
-    chartSp.showRoundBorder();
     chartSp.setCategories(labels);
     chartSp.setDataSource(chartDataSp);
     chartSp.getDataAxis().setAxisMax(100);
