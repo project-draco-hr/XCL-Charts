@@ -10,7 +10,7 @@
   int count=mDataSet.size();
   for (int i=0; i < count; i++) {
     SplineData spData=mDataSet.get(i);
-    calcAllPoints(spData,mLstDots,mLstPoints);
+    calcAllPoints(spData,mLstPoints,mLstDotInfo);
 switch (getCrurveLineStyle()) {
 case BEZIERCURVE:
       renderBezierCurveLine(canvas,mBezierPath,spData,mLstPoints);
@@ -22,10 +22,10 @@ default :
 Log.e(TAG,"?????????????????????.");
 continue;
 }
-renderDotAndLabel(canvas,spData,i,mLstDots);
+renderDotAndLabel(canvas,spData,i,mLstPoints);
 mLstKey.add(mDataSet.get(i));
+mLstDotInfo.clear();
 mLstPoints.clear();
-mLstDots.clear();
 mBezierPath.reset();
 }
 return true;

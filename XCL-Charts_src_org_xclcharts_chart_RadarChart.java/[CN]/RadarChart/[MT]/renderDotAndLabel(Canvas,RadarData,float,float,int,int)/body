@@ -4,7 +4,7 @@
   if (!plotLine.getDotStyle().equals(XEnum.DotStyle.HIDE)) {
     PlotDot pDot=plotLine.getPlotDot();
     float radius=pDot.getDotRadius();
-    PlotDotRender.getInstance().renderDot(canvas,pDot,currentX - radius,currentY - radius,currentX,currentY,lineData.getPlotLine().getDotPaint());
+    PlotDotRender.getInstance().renderDot(canvas,pDot,currentX,currentY,lineData.getPlotLine().getDotPaint());
     savePointRecord(dataID,childID,currentX,currentY,currentX - radius,currentY - radius,currentX + radius,currentY + radius);
   }
   if (lineData.getLabelVisible()) {

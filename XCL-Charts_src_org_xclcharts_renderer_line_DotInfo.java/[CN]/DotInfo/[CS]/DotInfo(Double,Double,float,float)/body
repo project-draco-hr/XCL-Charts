@@ -1,0 +1,6 @@
+{
+  mXValue=xValue;
+  mYValue=yValue;
+  mX=x;
+  mY=y;
+}

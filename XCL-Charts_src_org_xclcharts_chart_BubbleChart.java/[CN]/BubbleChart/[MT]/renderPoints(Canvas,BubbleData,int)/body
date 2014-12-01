@@ -1,10 +1,6 @@
 {
   float initX=plotArea.getLeft();
   float initY=plotArea.getBottom();
-  float lineStartX=initX;
-  float lineStartY=initY;
-  float lineStopX=0.0f;
-  float lineStopY=0.0f;
   float axisScreenWidth=getPlotScreenWidth();
   float axisScreenHeight=getPlotScreenHeight();
   float axisDataHeight=(float)dataAxis.getAxisRange();
@@ -12,7 +8,7 @@
   if (null == chartValues)   return;
   int j=0;
   int childID=0;
-  float YvaluePostion=0.0f, XvaluePostion=0.0f;
+  float YvaluePos=0.0f, XvaluePos=0.0f;
   if (Float.compare(mBubbleScaleMax,mBubbleScaleMin) == 0) {
     Log.e(TAG,"?????????????????????????????????????????????????????????????????????");
     return;
@@ -21,6 +17,15 @@
     Log.e(TAG,"????????????????????????????????????????????????");
     return;
   }
+  if (Double.compare(mMaxValue,mMinValue) == -1) {
+    Log.e(TAG,"???????????????????????????.");
+    return;
+  }
+  if (Double.compare(mMaxValue,mMinValue) == 0) {
+    Log.e(TAG,"??????????????????????????????.");
+    return;
+  }
+  double xMM=MathHelper.getInstance().sub(mMaxValue,mMinValue);
   float scale=mBubbleScaleMax - mBubbleScaleMin;
   float size=mBubbleMaxSize - mBubbleMinSize;
   List<Double> lstBubble=bd.getBubble();
@@ -35,18 +40,12 @@
     Entry entry=(Entry)iter.next();
     Double xValue=(Double)entry.getKey();
     Double yValue=(Double)entry.getValue();
-    YvaluePostion=(float)(axisScreenHeight * ((yValue - dataAxis.getAxisMin()) / axisDataHeight));
-    XvaluePostion=(float)(axisScreenWidth * ((xValue - mMinValue) / (mMaxValue - mMinValue)));
-    if (j == 0) {
-      lineStartX=add(initX,XvaluePostion);
-      lineStartY=sub(initY,YvaluePostion);
-      lineStopX=lineStartX;
-      lineStopY=lineStartY;
-    }
- else {
-      lineStopX=add(initX,XvaluePostion);
-      lineStopY=sub(initY,YvaluePostion);
-    }
+    double yScale=MathHelper.getInstance().div(MathHelper.getInstance().sub(yValue,dataAxis.getAxisMin()),axisDataHeight);
+    YvaluePos=mul(axisScreenHeight,(float)yScale);
+    double xScale=MathHelper.getInstance().div(MathHelper.getInstance().sub(xValue,mMinValue),xMM);
+    XvaluePos=mul(axisScreenWidth,(float)xScale);
+    XvaluePos=add(plotArea.getLeft(),XvaluePos);
+    YvaluePos=sub(plotArea.getBottom(),YvaluePos);
     if (j >= bubbleSize) {
       continue;
     }
@@ -58,17 +57,15 @@
       continue;
     }
     mPlotDot.setDotRadius(curRadius);
-    PlotDotRender.getInstance().renderDot(canvas,mPlotDot,lineStartX,lineStartY,lineStopX,lineStopY,getPointPaint());
-    savePointRecord(dataID,childID,lineStopX + mMoveX,lineStopY + mMoveY,lineStopX - 2 * curRadius + mMoveX,lineStopY - curRadius + mMoveY,lineStopX + curRadius + mMoveX,lineStopY + curRadius + mMoveY);
+    PlotDotRender.getInstance().renderDot(canvas,mPlotDot,XvaluePos,YvaluePos,getPointPaint());
+    savePointRecord(dataID,childID,XvaluePos + mMoveX,YvaluePos + mMoveY,XvaluePos - curRadius + mMoveX,YvaluePos - curRadius + mMoveY,XvaluePos + curRadius + mMoveX,YvaluePos + curRadius + mMoveY);
     if (bd.getBorderColor() != -1) {
-      canvas.drawCircle(lineStopX,lineStopY,curRadius,getPointBorderPaint());
+      canvas.drawCircle(XvaluePos,YvaluePos,curRadius,getPointBorderPaint());
     }
     childID++;
     if (bd.getLabelVisible()) {
-      DrawHelper.getInstance().drawRotateText(getFormatterDotLabel(Double.toString(xValue) + "," + Double.toString(yValue)+ " : "+ Double.toString(bubble)),lineStopX,lineStopY,itemAngle,canvas,bd.getDotLabelPaint());
+      DrawHelper.getInstance().drawRotateText(getFormatterDotLabel(Double.toString(xValue) + "," + Double.toString(yValue)+ " : "+ Double.toString(bubble)),XvaluePos,YvaluePos,itemAngle,canvas,bd.getDotLabelPaint());
     }
-    lineStartX=lineStopX;
-    lineStartY=lineStopY;
     j++;
   }
 }

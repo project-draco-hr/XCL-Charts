@@ -1,0 +1,20 @@
+{
+  initPath();
+  float left=cirX - radius;
+  float right=cirX + radius;
+  float centerX=left + (right - left) / 2;
+  float top=cirY - radius;
+  float bottom=cirY + radius;
+  mPath.moveTo(centerX,top);
+  mPath.lineTo(left,cirY);
+  mPath.lineTo(centerX,bottom);
+  mPath.lineTo(right,cirY);
+  mPath.lineTo(centerX,top);
+  mPath.close();
+  canvas.drawPath(mPath,paint);
+  mPath.reset();
+  mRect.left=left;
+  mRect.top=top;
+  mRect.right=right;
+  mRect.bottom=bottom;
+}

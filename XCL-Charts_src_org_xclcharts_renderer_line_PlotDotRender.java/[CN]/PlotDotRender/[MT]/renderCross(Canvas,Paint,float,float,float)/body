@@ -1,0 +1,4 @@
+{
+  canvas.drawLine(cirX - radius,cirY,cirX + radius,cirY,paint);
+  canvas.drawLine(cirX,cirY - radius,cirX,cirY + radius,paint);
+}

@@ -35,7 +35,7 @@
     }
     lstPathPoints.add(new PointF(lineStopX,lineStopY));
     lstPoints.add(new PointF(lineStopX,lineStopY));
-    lstDots.add(new RectF(lineStartX,lineStartY,lineStopX,lineStopY));
+    lstDotInfo.add(new DotInfo(bv,lineStopX,lineStopY));
     lineStartX=lineStopX;
     lineStartY=lineStopY;
     j++;

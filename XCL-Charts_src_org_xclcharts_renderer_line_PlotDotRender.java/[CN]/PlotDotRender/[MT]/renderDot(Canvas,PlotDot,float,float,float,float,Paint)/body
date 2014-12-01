@@ -34,6 +34,9 @@ break;
 case X:
 renderX(canvas,paint);
 break;
+case CROSS:
+renderCross(canvas,paint,radius,right,bottom);
+break;
 case HIDE:
 default :
 }

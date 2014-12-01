@@ -3,6 +3,14 @@
     Log.e(TAG,"?????????????????????????????????.");
     return;
   }
+  if (Double.compare(mMaxValue,mMinValue) == -1) {
+    Log.e(TAG,"???????????????????????????.");
+    return;
+  }
+  if (Double.compare(mMaxValue,mMinValue) == 0) {
+    Log.e(TAG,"??????????????????????????????.");
+    return;
+  }
   float initX=plotArea.getLeft();
   float initY=plotArea.getBottom();
   float lineStartX=initX, lineStartY=initY;
@@ -12,16 +20,19 @@
   float axisDataHeight=(float)dataAxis.getAxisRange();
   LinkedHashMap<Double,Double> chartValues=bd.getLineDataSet();
   if (null == chartValues)   return;
+  double xMM=MathHelper.getInstance().sub(mMaxValue,mMinValue);
   int j=0;
   Iterator iter=chartValues.entrySet().iterator();
   while (iter.hasNext()) {
     Entry entry=(Entry)iter.next();
     Double xValue=(Double)entry.getKey();
     Double yValue=(Double)entry.getValue();
-    float YvaluePostion=(float)(axisScreenHeight * ((yValue - dataAxis.getAxisMin()) / axisDataHeight));
-    float XvaluePostion=(float)(axisScreenWidth * ((xValue - mMinValue) / (mMaxValue - mMinValue)));
-    lineStopX=add(initX,XvaluePostion);
-    lineStopY=sub(initY,YvaluePostion);
+    double yScale=MathHelper.getInstance().div(MathHelper.getInstance().sub(yValue,dataAxis.getAxisMin()),axisDataHeight);
+    float YvaluePos=mul(axisScreenHeight,(float)yScale);
+    double xScale=MathHelper.getInstance().div(MathHelper.getInstance().sub(xValue,mMinValue),xMM);
+    float XvaluePos=mul(axisScreenWidth,(float)xScale);
+    lineStopX=add(initX,XvaluePos);
+    lineStopY=sub(initY,YvaluePos);
     if (0 == j) {
       lineStartX=lineStopX;
       lineStartY=lineStopY;
@@ -31,7 +42,7 @@
  else {
       lstPoints.add(new PointF(lineStopX,lineStopY));
     }
-    lstDots.add(new RectF(lineStartX,lineStartY,lineStopX,lineStopY));
+    lstDotInfo.add(new DotInfo(xValue,yValue,lineStopX,lineStopY));
     lineStartX=lineStopX;
     lineStartY=lineStopY;
     j++;

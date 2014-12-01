@@ -1,4 +1,4 @@
 AreaData bd
-List<RectF> lstDots
+List<DotInfo> lstDotInfo
 List<PointF> lstPoints
 List<PointF> lstPathPoints

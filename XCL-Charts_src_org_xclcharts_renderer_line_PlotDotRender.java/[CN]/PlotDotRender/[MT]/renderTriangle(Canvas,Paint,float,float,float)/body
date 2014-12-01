@@ -2,14 +2,14 @@
   float halfRadius=MathHelper.getInstance().div(radius,2f);
   float triganaleHeight=radius + radius / 2;
   initPath();
-  mPath.moveTo(right - radius,bottom + halfRadius);
-  mPath.lineTo(right,bottom - triganaleHeight);
-  mPath.lineTo(right + radius,bottom + halfRadius);
+  mPath.moveTo(cirX - radius,cirY + halfRadius);
+  mPath.lineTo(cirX,cirY - triganaleHeight);
+  mPath.lineTo(cirX + radius,cirY + halfRadius);
   mPath.close();
   canvas.drawPath(mPath,paint);
   mPath.reset();
-  mRect.left=(right - radius);
-  mRect.top=(bottom - triganaleHeight);
-  mRect.right=(right + radius);
-  mRect.bottom=(bottom + halfRadius);
+  mRect.left=(cirX - radius);
+  mRect.top=(cirY - triganaleHeight);
+  mRect.right=(cirX + radius);
+  mRect.bottom=(cirY + halfRadius);
 }

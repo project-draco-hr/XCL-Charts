@@ -1,0 +1,42 @@
+{
+  float radius=pDot.getDotRadius();
+  if (Float.compare(radius,0.0f) == 0 || Float.compare(radius,0.0f) == -1) {
+    return new RectF(0.0f,0.0f,0.0f,0.0f);
+  }
+  float left=cirX - radius;
+  float top=cirY - radius;
+  float right=cirX + radius;
+  float bottom=cirY + radius;
+  if (XEnum.DotStyle.DOT == pDot.getDotStyle() || XEnum.DotStyle.RING == pDot.getDotStyle() || XEnum.DotStyle.X == pDot.getDotStyle()) {
+    mRect.left=left;
+    mRect.top=top;
+    mRect.right=right;
+    mRect.bottom=bottom;
+  }
+switch (pDot.getDotStyle()) {
+case DOT:
+    canvas.drawCircle(cirX,cirY,radius,paint);
+  break;
+case RING:
+renderRing(canvas,paint,radius,pDot,cirX,cirY);
+break;
+case TRIANGLE:
+renderTriangle(canvas,paint,radius,cirX,cirY);
+break;
+case PRISMATIC:
+renderPrismatic(canvas,paint,radius,cirX,cirY);
+break;
+case RECT:
+renderRect(canvas,paint,radius,cirX,cirY);
+break;
+case X:
+renderX(canvas,paint);
+break;
+case CROSS:
+renderCross(canvas,paint,radius,cirX,cirY);
+break;
+case HIDE:
+default :
+}
+return mRect;
+}

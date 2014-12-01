@@ -6,14 +6,15 @@
     chart.setDataSource(chartData);
     chart.getDataAxis().setAxisMax(100);
     chart.getDataAxis().setAxisSteps(10);
-    chart.setCategoryAxisMax(100);
-    chart.setCategoryAxisMin(0);
+    chart.setCategoryAxisMax(7);
+    chart.setCategoryAxisMin(1);
     chart.getDataAxis().setHorizontalTickAlign(Align.CENTER);
     chart.getDataAxis().getTickLabelPaint().setTextAlign(Align.CENTER);
     chart.getDataAxis().getAxisPaint().setColor(Color.rgb(127,204,204));
     chart.getCategoryAxis().getAxisPaint().setColor(Color.rgb(127,204,204));
     chart.getDataAxis().getTickMarksPaint().setColor(Color.rgb(127,204,204));
     chart.getCategoryAxis().getTickMarksPaint().setColor(Color.rgb(127,204,204));
+    chart.getDataAxis().getTickLabelPaint().setTextAlign(Align.LEFT);
     chart.setDotLabelFormatter(new IFormatterTextCallBack(){
       @Override public String textFormatter(      String value){
         String label="(" + value + ")";
@@ -24,7 +25,7 @@
     chart.setTitle("?????????");
     chart.addSubtitle("(XCL-Charts Demo)");
     chart.ActiveListenItemClick();
-    chart.extPointClickRange(5);
+    chart.extPointClickRange(10);
     chart.getPointPaint().setStrokeWidth(6);
     chart.showDyLine();
     chart.getDyLine().setDyLineStyle(XEnum.DyLineStyle.BackwardDiagonal);
@@ -37,6 +38,7 @@
     chart.getPlotLegend().setHorizontalAlign(XEnum.HorizontalAlign.RIGHT);
     chart.getPlotLegend().getBox().setBorderRectType(XEnum.RectType.RECT);
     chart.getPlotLegend().showBox();
+    chart.disableScale();
   }
  catch (  Exception e) {
     e.printStackTrace();

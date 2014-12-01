@@ -8,7 +8,7 @@
   int count=mDataSet.size();
   for (int i=0; i < count; i++) {
     AreaData areaData=mDataSet.get(i);
-    calcAllPoints(areaData,mLstDots,mLstPoints,mLstPathPoints);
+    calcAllPoints(areaData,mLstDotInfo,mLstPoints,mLstPathPoints);
 switch (getCrurveLineStyle()) {
 case BEZIERCURVE:
       renderBezierArea(canvas,mPaintAreaFill,mPathArea,areaData,mLstPathPoints);
@@ -22,9 +22,9 @@ default :
 Log.e(TAG,"?????????????????????.");
 continue;
 }
-renderDotAndLabel(canvas,areaData,i,mLstDots);
+renderDotAndLabel(canvas,areaData,i,mLstDotInfo);
 mLstKey.add(areaData);
-mLstDots.clear();
+mLstDotInfo.clear();
 mLstPoints.clear();
 mLstPathPoints.clear();
 }

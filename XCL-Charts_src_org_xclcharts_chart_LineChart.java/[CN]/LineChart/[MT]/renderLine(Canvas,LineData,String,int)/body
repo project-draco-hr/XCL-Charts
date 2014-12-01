@@ -29,6 +29,9 @@
   int labeltickCount=getCategoryAxisCount();
   XSteps=getVerticalXSteps(labeltickCount);
   float itemAngle=bd.getItemLabelRotateAngle();
+  PlotLine pLine=bd.getPlotLine();
+  PlotDot pDot=pLine.getPlotDot();
+  float radius=pDot.getDotRadius();
   for (  Double bv : chartValues) {
     float vaxlen=(float)MathHelper.getInstance().sub(bv,dataAxis.getAxisMin());
     float fvper=div(vaxlen,axisDataHeight);
@@ -45,25 +48,20 @@
       j++;
     }
  else {
-      PlotLine pLine=bd.getPlotLine();
       if (type.equalsIgnoreCase("LINE")) {
         if (getLineAxisIntersectVisible() == true || Float.compare(lineStartY,initY) != 0) {
           DrawHelper.getInstance().drawLine(bd.getLineStyle(),lineStartX,lineStartY,lineStopX,lineStopY,canvas,pLine.getLinePaint());
         }
       }
  else       if (type.equalsIgnoreCase("DOT2LABEL")) {
-        float radius=0.0f;
         if (!pLine.getDotStyle().equals(XEnum.DotStyle.HIDE)) {
-          PlotDot pDot=pLine.getPlotDot();
-          radius=pDot.getDotRadius();
-          float rendEndX=lineStopX + radius;
-          PlotDotRender.getInstance().renderDot(canvas,pDot,lineStartX,lineStartY,lineStopX,lineStopY,pLine.getDotPaint());
+          PlotDotRender.getInstance().renderDot(canvas,pDot,lineStopX,lineStopY,pLine.getDotPaint());
           savePointRecord(dataID,childID,lineStopX + mMoveX,lineStopY + mMoveY,lineStopX - radius + mMoveX,lineStopY - radius + mMoveY,lineStopX + radius + mMoveX,lineStopY + radius + mMoveY);
           childID++;
-          lineStopX=rendEndX;
+          lineStopX=lineStopX + radius;
         }
         if (bd.getLabelVisible()) {
-          bd.getPlotLabel().drawLabel(canvas,pLine.getDotLabelPaint(),getFormatterItemLabel(bv),lineStopX - radius,lineStopY,itemAngle,bd.getLineColor());
+          bd.getPlotLabel().drawLabel(canvas,pLine.getDotLabelPaint(),getFormatterItemLabel(bv),lineStopX,lineStopY,itemAngle,bd.getLineColor());
         }
       }
  else {
