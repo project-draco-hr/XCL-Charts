@@ -2,7 +2,6 @@
   float cirX=plotArea.getCenterX();
   float cirY=plotArea.getCenterY();
   float radius=getRadius();
-  canvas.drawCircle(cirX,cirY,radius,mPaintInner);
   float percentage=0.0f;
   float newRaidus=0.0f;
   List<PieData> chartDataSource=this.getDataSource();
@@ -10,21 +9,36 @@
     Log.e(TAG,"???????????????.");
     return false;
   }
-  percentage=360 / chartDataSource.size();
+  if (mShowInner)   canvas.drawCircle(cirX,cirY,radius,getInnerPaint());
+  if (mShowBgCircle)   drawBGCircle(canvas);
+  int totalAngle=360 - mIntervalAngle * chartDataSource.size();
+  percentage=totalAngle / chartDataSource.size();
   percentage=div(mul(percentage,100),100);
+  float labelRadius=0.f;
+  if (mShowOuterLabels) {
+    labelRadius=radius + DrawHelper.getInstance().getPaintFontHeight(this.getLabelPaint());
+  }
+ else {
+    labelRadius=radius - radius / 2 / 2;
+  }
   for (  PieData cData : chartDataSource) {
     geArcPaint().setColor(cData.getSliceColor());
     double p=cData.getPercentage() / 100;
     newRaidus=mul(radius,dtof(p));
     newRaidus=div(mul(newRaidus,100),100);
+    PointF pointbg=MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,radius,mOffsetAngle + mIntervalAngle + percentage / 2);
+    if (mShowBgLines) {
+      getBgPaint().setColor(mShowBgLineColor);
+      canvas.drawLine(plotArea.getCenterX(),plotArea.getCenterY(),pointbg.x,pointbg.y,getBgPaint());
+    }
     RectF nRF=new RectF(sub(cirX,newRaidus),sub(cirY,newRaidus),add(cirX,newRaidus),add(cirY,newRaidus));
-    canvas.drawArc(nRF,mOffsetAngle,percentage,true,geArcPaint());
+    canvas.drawArc(nRF,mOffsetAngle + mIntervalAngle,percentage,true,geArcPaint());
     String label=cData.getLabel();
     if ("" != label) {
-      PointF point=MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,radius - radius / 2 / 2,mOffsetAngle + percentage / 2);
+      PointF point=MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,labelRadius,mOffsetAngle + mIntervalAngle + percentage / 2);
       DrawHelper.getInstance().drawRotateText(label,point.x,point.y,cData.getItemLabelRotateAngle(),canvas,getLabelPaint());
     }
-    mOffsetAngle=add(mOffsetAngle,percentage);
+    mOffsetAngle=add(add(mOffsetAngle,percentage),mIntervalAngle);
   }
   return true;
 }

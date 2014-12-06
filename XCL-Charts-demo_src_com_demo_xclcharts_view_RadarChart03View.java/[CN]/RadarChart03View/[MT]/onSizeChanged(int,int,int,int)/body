@@ -1,6 +1,6 @@
 {
   super.onSizeChanged(w,h,oldw,oldh);
-  chart.setChartRange(w,h);
   chartRose.setChartRange(w,h);
   chartRose3.setChartRange(w,h);
+  chartRose1.setChartRange(w,h);
 }

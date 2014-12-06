@@ -5,7 +5,13 @@
     chartRose.setDataSource(roseData);
     chartRose.getInnerPaint().setStyle(Style.STROKE);
     chartRose.setInitialAngle(270 + 72 / 2);
-    chartRose.setLabelStyle(XEnum.SliceLabelStyle.OUTSIDE);
+    chartRose.setIntervalAngle(3);
+    Map<Float,Integer> mapBgSeg=new HashMap<Float,Integer>();
+    mapBgSeg.put(0.8f,Color.rgb(39,161,237));
+    mapBgSeg.put(0.6f,Color.rgb(246,137,31));
+    chartRose.showBgCircle(mapBgSeg);
+    chartRose.showBgLines(Color.BLUE);
+    chartRose.showOuterLabels();
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

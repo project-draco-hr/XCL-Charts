@@ -1,0 +1,10 @@
+{
+  roseData1.add(new PieData("",7,Color.rgb(190,254,175)));
+  roseData1.add(new PieData("",12,Color.rgb(190,254,175)));
+  roseData1.add(new PieData("",13,Color.rgb(190,254,175)));
+  roseData1.add(new PieData("",15,Color.rgb(190,254,175)));
+  roseData1.add(new PieData("",27,Color.rgb(190,254,175)));
+  roseData1.add(new PieData("",32,Color.rgb(190,254,175)));
+  roseData1.add(new PieData("",55,Color.rgb(190,254,175)));
+  roseData1.add(new PieData("",35,Color.rgb(190,254,175)));
+}

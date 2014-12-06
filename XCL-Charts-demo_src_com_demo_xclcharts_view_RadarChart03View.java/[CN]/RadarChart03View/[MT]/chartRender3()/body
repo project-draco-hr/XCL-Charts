@@ -5,8 +5,9 @@
     chartRose3.setDataSource(roseData3);
     chartRose3.getInnerPaint().setStyle(Style.STROKE);
     chartRose3.setInitialAngle(270 + 72 / 2);
-    chartRose3.setLabelStyle(XEnum.SliceLabelStyle.INSIDE);
     chartRose3.getLabelPaint().setColor(Color.parseColor("#D92222"));
+    chartRose3.setIntervalAngle(3);
+    chartRose3.showOuterLabels();
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

@@ -1,10 +1,4 @@
 {
-  if (null == mPaintInner) {
-    mPaintInner=new Paint();
-    mPaintInner.setColor(Color.rgb(68,68,68));
-    mPaintInner.setStyle(Style.FILL);
-    mPaintInner.setAntiAlias(true);
-  }
   if (null != getLabelPaint()) {
     getLabelPaint().setColor(Color.WHITE);
     getLabelPaint().setTextSize(22);

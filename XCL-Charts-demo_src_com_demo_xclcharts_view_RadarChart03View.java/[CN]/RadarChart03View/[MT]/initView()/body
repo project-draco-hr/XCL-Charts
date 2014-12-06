@@ -1,7 +1,7 @@
 {
   chartLabels();
-  chartDataSet();
-  chartRender();
+  chartRender1();
+  chartDataSet1();
   chartRender2();
   chartDataSet2();
   chartRender3();

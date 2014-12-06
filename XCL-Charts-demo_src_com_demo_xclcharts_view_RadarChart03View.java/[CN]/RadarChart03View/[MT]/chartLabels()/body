@@ -1,7 +1,10 @@
 {
-  labels.add("???");
-  labels.add("???");
-  labels.add("???");
-  labels.add("???");
-  labels.add("???");
+  labels.add("A1");
+  labels.add("A2");
+  labels.add("A3");
+  labels.add("A4");
+  labels.add("A5");
+  labels.add("A6");
+  labels.add("A7");
+  labels.add("A8");
 }

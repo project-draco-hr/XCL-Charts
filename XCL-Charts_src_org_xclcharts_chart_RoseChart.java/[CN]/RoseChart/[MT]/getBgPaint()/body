@@ -1,0 +1,8 @@
+{
+  if (mPaintBg == null) {
+    mPaintBg=new Paint(Paint.ANTI_ALIAS_FLAG);
+    mPaintBg.setStyle(Style.STROKE);
+    mPaintBg.setAntiAlias(true);
+  }
+  return mPaintBg;
+}

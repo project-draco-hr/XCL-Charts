@@ -1,0 +1,12 @@
+{
+  if (mListBgSeg == null)   return;
+  float radius=getRadius();
+  for (  Map.Entry<Float,Integer> entry : mListBgSeg.entrySet()) {
+    float newRadius=mul(radius,entry.getKey());
+    if (Float.compare(newRadius,0.0f) == 0 || Float.compare(newRadius,0.0f) == -1) {
+      continue;
+    }
+    getBgPaint().setColor(entry.getValue());
+    canvas.drawCircle(plotArea.getCenterX(),plotArea.getCenterY(),newRadius,getBgPaint());
+  }
+}
