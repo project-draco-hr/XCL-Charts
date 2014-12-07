@@ -10,7 +10,8 @@
     return false;
   }
   if (mShowInner)   canvas.drawCircle(cirX,cirY,radius,getInnerPaint());
-  if (mShowBgCircle)   drawBGCircle(canvas);
+  drawBGCircle(canvas);
+  drawBGLines(canvas);
   int totalAngle=360 - mIntervalAngle * chartDataSource.size();
   percentage=totalAngle / chartDataSource.size();
   percentage=div(mul(percentage,100),100);
@@ -28,8 +29,6 @@
     newRaidus=div(mul(newRaidus,100),100);
     PointF pointbg=MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,radius,mOffsetAngle + mIntervalAngle + percentage / 2);
     if (mShowBgLines) {
-      getBgPaint().setColor(mShowBgLineColor);
-      canvas.drawLine(plotArea.getCenterX(),plotArea.getCenterY(),pointbg.x,pointbg.y,getBgPaint());
     }
     RectF nRF=new RectF(sub(cirX,newRaidus),sub(cirY,newRaidus),add(cirX,newRaidus),add(cirY,newRaidus));
     canvas.drawArc(nRF,mOffsetAngle + mIntervalAngle,percentage,true,geArcPaint());

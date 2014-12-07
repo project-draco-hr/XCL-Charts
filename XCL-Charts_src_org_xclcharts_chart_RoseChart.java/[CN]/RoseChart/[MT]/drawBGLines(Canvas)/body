@@ -1,0 +1,14 @@
+{
+  if (!mShowBgLines)   return;
+  if (0 == mBgLines)   return;
+  int totalAngle=360 - mIntervalAngle * mBgLines;
+  float currAngle=totalAngle / mBgLines;
+  float radius=getRadius();
+  float offsetAngle=mOffsetAngle;
+  for (int i=0; i < mBgLines; i++) {
+    PointF pointbg=MathHelper.getInstance().calcArcEndPointXY(plotArea.getCenterX(),plotArea.getCenterY(),radius,offsetAngle + mIntervalAngle + currAngle / 2);
+    getBgPaint().setColor(mShowBgLineColor);
+    canvas.drawLine(plotArea.getCenterX(),plotArea.getCenterY(),pointbg.x,pointbg.y,getBgPaint());
+    offsetAngle=add(add(offsetAngle,currAngle),mIntervalAngle);
+  }
+}

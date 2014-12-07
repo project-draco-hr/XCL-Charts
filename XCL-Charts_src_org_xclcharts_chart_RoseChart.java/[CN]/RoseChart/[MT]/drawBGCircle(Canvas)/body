@@ -1,4 +1,5 @@
 {
+  if (!mShowBgCircle)   return;
   if (mListBgSeg == null)   return;
   float radius=getRadius();
   for (  Map.Entry<Float,Integer> entry : mListBgSeg.entrySet()) {
