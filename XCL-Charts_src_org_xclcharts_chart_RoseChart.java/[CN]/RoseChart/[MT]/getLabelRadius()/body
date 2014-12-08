@@ -1,0 +1,11 @@
+{
+  float labelRadius=0.f;
+  float radius=getRadius();
+  if (mShowOuterLabels) {
+    labelRadius=radius + DrawHelper.getInstance().getPaintFontHeight(this.getLabelPaint());
+  }
+ else {
+    labelRadius=radius - radius / 2 / 2;
+  }
+  return labelRadius;
+}
