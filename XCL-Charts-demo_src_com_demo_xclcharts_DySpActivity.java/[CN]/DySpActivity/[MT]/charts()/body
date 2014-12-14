@@ -1,0 +1,19 @@
+{
+  DySplineChart chartView=(DySplineChart)findViewById(R.id.ln_view);
+  int minY=30;
+  int maxY=100;
+  int minX=10;
+  int maxX=50;
+  Random random=new Random();
+  linePoint1.clear();
+  linePoint2.clear();
+  double x=random.nextInt(maxX) % (maxX - minX + 1) + minX;
+  double y=random.nextInt(maxY) % (maxY - minY + 1) + minY;
+  for (int i=0; i < 10; i++) {
+    x+=i * 10;
+    y+=i * 10;
+    linePoint1.add(new PointD(x + 50,y + 50));
+    linePoint2.add(new PointD(x,y));
+  }
+  chartView.refreshChart(linePoint1,linePoint2);
+}

@@ -1,0 +1,5 @@
+{
+  for (int i=0; i < 60; i+=10) {
+    labels.add(Integer.toString(i));
+  }
+}

@@ -1,0 +1,48 @@
+{
+  try {
+    chart1.setCategories(labels);
+    chart1.setDataSource(chartData);
+    chart1.getDataAxis().setAxisMax(240);
+    chart1.getDataAxis().setAxisMin(30);
+    chart1.getDataAxis().setAxisSteps(10);
+    chart1.setCategoryAxisMax(CHART1_X_TIME);
+    chart1.setCategoryAxisMin(0);
+    chart1.getDataAxis().getAxisPaint().setColor((int)Color.rgb(127,204,204));
+    chart1.getCategoryAxis().getAxisPaint().setColor((int)Color.rgb(127,204,204));
+    chart1.getDataAxis().getTickMarksPaint().setColor((int)Color.rgb(127,204,204));
+    chart1.getCategoryAxis().getTickMarksPaint().setColor((int)Color.rgb(127,204,204));
+    chart1.getDataAxis().setHorizontalTickAlign(Align.CENTER);
+    chart1.getDataAxis().getTickLabelPaint().setTextAlign(Align.CENTER);
+    chart1.setDataAxisLocation(XEnum.AxisLocation.VERTICAL_CENTER);
+    chart1.setCategoryAxisLocation(XEnum.AxisLocation.HORIZONTAL_CENTER);
+    chart1.getPlotLegend().hide();
+    chart1.disableScale();
+    chart1.setPlotPanMode(XEnum.PanMode.HORIZONTAL);
+    chart1.setCrurveLineStyle(XEnum.CrurveLineStyle.BEELINE);
+    chart1.getDataAxis().hideTickMarks();
+    chart1.getPlotGrid().showHorizontalLines();
+    chart1.getPlotGrid().showVerticalLines();
+    chart1.getDataAxis().setLabelFormatter(new IFormatterTextCallBack(){
+      @Override public String textFormatter(      String value){
+        Double tmp=Double.parseDouble(value);
+        String label="";
+        if (tmp == 0 || tmp <= chart1.getDataAxis().getAxisMin()) {
+          label=tmp.toString();
+        }
+ else {
+          Integer k=(int)(tmp % 30);
+          if (0 == k) {
+            DecimalFormat df=new DecimalFormat("#0");
+            label=df.format(tmp).toString();
+          }
+        }
+        return label;
+      }
+    }
+);
+  }
+ catch (  Exception e) {
+    e.printStackTrace();
+    Log.e(TAG,e.toString());
+  }
+}

@@ -1,0 +1,16 @@
+{
+  super.onSizeChanged(w,h,oldw,oldh);
+  float spad=DensityUtil.dip2px(getContext(),15);
+  float top=DensityUtil.dip2px(getContext(),5);
+  float viewHeight=DensityUtil.dip2px(getContext(),h);
+  viewHeight/=2;
+  float chart1Height=viewHeight / 5 * 3;
+  float row=DensityUtil.dip2px(getContext(),20);
+  chart1Height-=top;
+  chart1Height-=row;
+  chart1.setChartRange(0,top,w,chart1Height);
+  float chart2Height=viewHeight / 5 * 2;
+  chart2.setChartRange(0,row + chart1Height,w,chart2Height);
+  chart1.setPadding(spad,0.f,spad,0.f);
+  chart2.setPadding(spad,0.f,spad,0.f);
+}

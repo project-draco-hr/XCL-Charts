@@ -1,0 +1,10 @@
+{
+  mTimer.schedule(new TimerTask(){
+    @Override public void run(){
+      Message message=new Message();
+      message.what=1;
+      doActionHandler.sendMessage(message);
+    }
+  }
+,1000,1000);
+}

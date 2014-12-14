@@ -1,0 +1,7 @@
+{
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.activity_dy_sp);
+  this.setTitle("?????????");
+  mTimer=new Timer();
+  setTimerTask();
+}

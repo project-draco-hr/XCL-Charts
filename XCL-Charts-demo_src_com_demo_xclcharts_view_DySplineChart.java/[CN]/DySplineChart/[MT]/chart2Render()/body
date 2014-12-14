@@ -1,0 +1,49 @@
+{
+  try {
+    chart2.setCategories(labels2);
+    chart2.setDataSource(chartData2);
+    chart2.getDataAxis().setAxisMax(100);
+    chart2.getDataAxis().setAxisSteps(20);
+    chart2.setCategoryAxisMax(CHART2_X_TIME);
+    chart2.setCategoryAxisMin(0);
+    chart2.getDataAxis().getAxisPaint().setColor((int)Color.rgb(127,204,204));
+    chart2.getCategoryAxis().getAxisPaint().setColor((int)Color.rgb(127,204,204));
+    chart2.getDataAxis().getTickMarksPaint().setColor((int)Color.rgb(127,204,204));
+    chart2.getCategoryAxis().getTickMarksPaint().setColor((int)Color.rgb(127,204,204));
+    chart2.getDataAxis().setHorizontalTickAlign(Align.CENTER);
+    chart2.getDataAxis().getTickLabelPaint().setTextAlign(Align.CENTER);
+    chart2.setDataAxisLocation(XEnum.AxisLocation.VERTICAL_CENTER);
+    chart2.setCategoryAxisLocation(XEnum.AxisLocation.HORIZONTAL_CENTER);
+    chart2.getPlotLegend().hide();
+    chart2.disableScale();
+    chart2.setPlotPanMode(XEnum.PanMode.HORIZONTAL);
+    chart2.getDataAxis().hideTickMarks();
+    chart2.getPlotGrid().showHorizontalLines();
+    chart2.getPlotGrid().showVerticalLines();
+    chart2.getDataAxis().setLabelFormatter(new IFormatterTextCallBack(){
+      @Override public String textFormatter(      String value){
+        Double tmp=Double.parseDouble(value);
+        String label="";
+        if (tmp == 0 || tmp <= chart2.getDataAxis().getAxisMin()) {
+          label=tmp.toString();
+        }
+ else {
+          Integer k=(int)(tmp % 20);
+          if (0 == k) {
+            DecimalFormat df=new DecimalFormat("#0");
+            label=df.format(tmp).toString();
+          }
+        }
+        return label;
+      }
+    }
+);
+    chart2.ActiveListenItemClick();
+    chart2.extPointClickRange(5);
+    chart2.showClikedFocus();
+  }
+ catch (  Exception e) {
+    e.printStackTrace();
+    Log.e(TAG,e.toString());
+  }
+}

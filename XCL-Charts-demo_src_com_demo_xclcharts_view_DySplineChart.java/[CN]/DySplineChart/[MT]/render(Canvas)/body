@@ -1,0 +1,9 @@
+{
+  try {
+    chart1.render(canvas);
+    chart2.render(canvas);
+  }
+ catch (  Exception e) {
+    Log.e(TAG,e.toString());
+  }
+}

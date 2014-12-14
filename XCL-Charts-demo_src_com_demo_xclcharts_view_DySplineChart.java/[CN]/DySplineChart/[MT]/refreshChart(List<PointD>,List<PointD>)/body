@@ -1,0 +1,5 @@
+{
+  dataSeries1.setLineDataSet(linePoint1);
+  dataSeries2.setLineDataSet(linePoint2);
+  this.invalidate();
+}
