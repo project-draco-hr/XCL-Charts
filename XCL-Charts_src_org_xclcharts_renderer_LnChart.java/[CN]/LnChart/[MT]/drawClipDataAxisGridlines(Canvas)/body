@@ -9,36 +9,31 @@
  else   if (1 == tickCount)   labeltickCount=tickCount - 1;
   float axisX=0.0f, axisY=0.0f, currentX=0.0f, currentY=0.0f;
   double currentTickLabel=0d;
-  XEnum.Location pos=getDataAxisLocation();
+  XEnum.AxisLocation pos=getDataAxisLocation();
 switch (pos) {
 case LEFT:
 case RIGHT:
+case VERTICAL_CENTER:
     YSteps=getVerticalYSteps(labeltickCount);
-  if (XEnum.Location.RIGHT == pos) {
-    currentX=axisX=plotArea.getRight();
-  }
- else {
-    currentX=axisX=plotArea.getLeft();
-  }
+  currentX=axisX=getAxisXPos(pos);
 currentY=axisY=plotArea.getBottom();
 break;
 case TOP:
 case BOTTOM:
+case HORIZONTAL_CENTER:
 XSteps=getVerticalXSteps(labeltickCount);
-if (XEnum.Location.TOP == pos) {
-currentY=axisY=plotArea.getTop();
-}
- else {
-currentY=axisY=plotArea.getBottom();
-}
+currentY=axisY=getAxisYPos(pos);
 currentX=axisX=plotArea.getLeft();
 break;
+default :
+Log.e(TAG,"????????????????????? .");
 }
 mLstDataTick.clear();
 for (int i=0; i < tickCount + 1; i++) {
 switch (pos) {
 case LEFT:
 case RIGHT:
+case VERTICAL_CENTER:
 currentY=sub(plotArea.getBottom(),i * YSteps);
 drawHorizontalGridLines(canvas,plotArea.getLeft(),plotArea.getRight(),i,tickCount + 1,YSteps,currentY);
 currentTickLabel=MathHelper.getInstance().add(dataAxis.getAxisMin(),i * dataAxis.getAxisSteps());
@@ -46,6 +41,7 @@ mLstDataTick.add(new PlotAxisTick(i,axisX,currentY,Double.toString(currentTickLa
 break;
 case TOP:
 case BOTTOM:
+case HORIZONTAL_CENTER:
 currentX=add(plotArea.getLeft(),i * XSteps);
 drawVerticalGridLines(canvas,plotArea.getTop(),plotArea.getBottom(),i,tickCount + 1,XSteps,currentX);
 currentTickLabel=MathHelper.getInstance().add(dataAxis.getAxisMin(),i * dataAxis.getAxisSteps());

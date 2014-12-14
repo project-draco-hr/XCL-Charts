@@ -4,6 +4,7 @@
   for (  RadarData cData : dataSet) {
     key=cData.getLineKey();
     if (!isDrawKey(key))     continue;
+    if ("" == key)     continue;
     mLstKey.add(key);
     mLstColor.add(cData.getLineColor());
     mLstDotStyle.add(cData.getPlotLine().getPlotDot());

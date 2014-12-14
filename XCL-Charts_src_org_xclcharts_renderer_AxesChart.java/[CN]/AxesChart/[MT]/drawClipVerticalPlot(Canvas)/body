@@ -5,6 +5,7 @@
   float yMargin=getClipYMargin();
   float xMargin=getClipXMargin();
   float gWidth=0.0f;
+  drawClipAxisClosed(canvas);
   canvas.save();
   canvas.clipRect(this.getLeft(),this.getTop(),this.getRight(),this.getBottom());
   if (XEnum.PanMode.VERTICAL == this.getPlotPanMode() || XEnum.PanMode.FREE == this.getPlotPanMode()) {
@@ -51,7 +52,7 @@
   }
   if (XEnum.PanMode.HORIZONTAL == this.getPlotPanMode() || XEnum.PanMode.FREE == this.getPlotPanMode()) {
     canvas.save();
-    canvas.clipRect(this.getLeft() + xMargin,this.getTop(),this.getRight() + xMargin,this.getBottom());
+    canvas.clipRect(this.getLeft() + xMargin,this.getTop(),this.getRight() - xMargin,this.getBottom());
     canvas.translate(offsetX,0);
     drawClipCategoryAxisTickMarks(canvas);
     canvas.restore();

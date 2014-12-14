@@ -18,15 +18,15 @@
   float axisScreenWidth=getPlotScreenWidth();
   float axisScreenHeight=getPlotScreenHeight();
   float axisDataHeight=(float)dataAxis.getAxisRange();
-  LinkedHashMap<Double,Double> chartValues=bd.getLineDataSet();
+  List<PointD> chartValues=bd.getLineDataSet();
   if (null == chartValues)   return;
   double xMM=MathHelper.getInstance().sub(mMaxValue,mMinValue);
   int j=0;
-  Iterator iter=chartValues.entrySet().iterator();
+  Iterator iter=chartValues.iterator();
   while (iter.hasNext()) {
-    Entry entry=(Entry)iter.next();
-    Double xValue=(Double)entry.getKey();
-    Double yValue=(Double)entry.getValue();
+    PointD entry=(PointD)iter.next();
+    Double xValue=entry.x;
+    Double yValue=entry.y;
     double yScale=MathHelper.getInstance().div(MathHelper.getInstance().sub(yValue,dataAxis.getAxisMin()),axisDataHeight);
     float YvaluePos=mul(axisScreenHeight,(float)yScale);
     double xScale=MathHelper.getInstance().div(MathHelper.getInstance().sub(xValue,mMinValue),xMM);

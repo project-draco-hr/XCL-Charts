@@ -4,6 +4,7 @@
   for (  PieData cData : dataSet) {
     key=cData.getKey();
     if (!isDrawKey(key))     continue;
+    if ("" == key)     continue;
     mLstKey.add(key);
     mLstColor.add(cData.getSliceColor());
     PlotDot dot=new PlotDot();

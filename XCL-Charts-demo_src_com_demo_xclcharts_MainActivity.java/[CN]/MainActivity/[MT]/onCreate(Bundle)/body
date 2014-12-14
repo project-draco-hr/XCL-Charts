@@ -52,6 +52,10 @@
         position=chartsTitleCurr.length - 11 - position;
         intent.setClass(MainActivity.this,DialChart4Activity.class);
       }
+ else       if (position >= chartsTitleCurr.length - 12) {
+        position=chartsTitleCurr.length - 12 - position;
+        intent.setClass(MainActivity.this,DySpActivity.class);
+      }
  else {
         intent.setClass(MainActivity.this,ChartsActivity.class);
       }

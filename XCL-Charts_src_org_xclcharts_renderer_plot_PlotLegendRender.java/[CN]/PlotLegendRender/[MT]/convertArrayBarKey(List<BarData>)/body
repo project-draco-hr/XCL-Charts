@@ -4,6 +4,7 @@
   for (  BarData cData : dataSet) {
     key=cData.getKey();
     if (!isDrawKey(key))     continue;
+    if ("" == key)     continue;
     mLstKey.add(key);
     mLstColor.add(cData.getColor());
     PlotDot dot=new PlotDot();

@@ -1,0 +1,12 @@
+{
+  if (XEnum.AxisLocation.RIGHT == location) {
+    return plotArea.getRight();
+  }
+ else   if (XEnum.AxisLocation.LEFT == location) {
+    return plotArea.getLeft();
+  }
+ else   if (XEnum.AxisLocation.VERTICAL_CENTER == location) {
+    return plotArea.getCenterX();
+  }
+  return 0;
+}

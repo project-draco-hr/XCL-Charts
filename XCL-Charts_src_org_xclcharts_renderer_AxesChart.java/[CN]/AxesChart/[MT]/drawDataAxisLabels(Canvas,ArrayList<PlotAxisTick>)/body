@@ -5,10 +5,12 @@
 switch (mDataAxisLocation) {
 case LEFT:
 case RIGHT:
+case VERTICAL_CENTER:
       dataAxis.renderAxisHorizontalTick(this,canvas,t.X,t.Y,t.Label,isDrawYAxisTickMarks(t.Y,mMoveY));
     break;
 case TOP:
 case BOTTOM:
+case HORIZONTAL_CENTER:
   dataAxis.renderAxisVerticalTick(canvas,t.X,t.Y,t.Label,isDrawXAxisTickMarks(t.X,mMoveX));
 break;
 }

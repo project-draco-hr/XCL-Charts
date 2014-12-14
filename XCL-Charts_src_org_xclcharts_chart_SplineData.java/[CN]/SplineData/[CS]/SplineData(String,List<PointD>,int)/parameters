@@ -1,0 +1,3 @@
+String lineKey
+List<PointD> dataSeries
+int color

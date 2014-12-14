@@ -20,8 +20,8 @@
     chartLn.getCategoryAxis().getTickLabelPaint().setColor(Color.rgb(106,218,92));
     chartLn.getDataAxis().setHorizontalTickAlign(Align.RIGHT);
     chartLn.getDataAxis().getTickLabelPaint().setTextAlign(Align.LEFT);
-    chartLn.setDataAxisLocation(XEnum.Location.RIGHT);
-    chartLn.setCategoryAxisLocation(XEnum.Location.TOP);
+    chartLn.setDataAxisLocation(XEnum.AxisLocation.RIGHT);
+    chartLn.setCategoryAxisLocation(XEnum.AxisLocation.TOP);
     PlotGrid plot=chart.getPlotGrid();
     chartLn.getDataAxis().getAxisPaint().setStrokeWidth(plot.getHorizontalLinePaint().getStrokeWidth());
     chartLn.getCategoryAxis().getAxisPaint().setStrokeWidth(plot.getHorizontalLinePaint().getStrokeWidth());

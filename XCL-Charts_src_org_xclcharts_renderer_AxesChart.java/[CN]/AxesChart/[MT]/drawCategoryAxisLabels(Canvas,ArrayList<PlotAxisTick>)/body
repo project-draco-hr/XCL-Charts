@@ -4,10 +4,12 @@
 switch (mCategoryAxisLocation) {
 case LEFT:
 case RIGHT:
+case VERTICAL_CENTER:
       categoryAxis.renderAxisHorizontalTick(this,canvas,t.X,t.Y,t.Label,isDrawYAxisTickMarks(t.Y,mMoveY));
     break;
 case TOP:
 case BOTTOM:
+case HORIZONTAL_CENTER:
   categoryAxis.renderAxisVerticalTick(canvas,t.X,t.Y,t.Label,isDrawXAxisTickMarks(t.X,mMoveX));
 break;
 }

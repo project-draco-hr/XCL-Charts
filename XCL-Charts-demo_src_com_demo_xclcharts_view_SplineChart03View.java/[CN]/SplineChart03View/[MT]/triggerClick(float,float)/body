@@ -4,15 +4,15 @@
   if (null == record)   return;
   if (record.getDataID() >= chartData.size())   return;
   SplineData lData=chartData.get(record.getDataID());
-  LinkedHashMap<Double,Double> linePoint=lData.getLineDataSet();
+  List<PointD> linePoint=lData.getLineDataSet();
   int pos=record.getDataChildID();
   int i=0;
-  Iterator it=linePoint.entrySet().iterator();
+  Iterator it=linePoint.iterator();
   while (it.hasNext()) {
-    Entry entry=(Entry)it.next();
+    PointD entry=(PointD)it.next();
     if (pos == i) {
-      Double xValue=(Double)entry.getKey();
-      Double yValue=(Double)entry.getValue();
+      Double xValue=entry.x;
+      Double yValue=entry.y;
       float r=record.getRadius();
       chart.showFocusPointF(record.getPosition(),r + r * 0.8f);
       chart.getFocusPaint().setStyle(Style.FILL);

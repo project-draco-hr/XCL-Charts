@@ -3,6 +3,7 @@
   drawClipDataAxisGridlines(canvas);
   drawClipCategoryAxisGridlines(canvas);
   drawClipPlot(canvas);
+  drawClipAxisClosed(canvas);
   drawClipAxisLine(canvas);
   drawClipDataAxisTickMarks(canvas);
   drawClipCategoryAxisTickMarks(canvas);

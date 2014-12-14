@@ -39,6 +39,7 @@
     chart.getPlotArea().setEndColor(Color.WHITE);
     chart.getPlotLegend().setVerticalAlign(XEnum.VerticalAlign.BOTTOM);
     chart.getPlotLegend().setHorizontalAlign(XEnum.HorizontalAlign.RIGHT);
+    chart.disableHighPrecision();
   }
  catch (  Exception e) {
     e.printStackTrace();

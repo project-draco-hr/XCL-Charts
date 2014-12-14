@@ -2,6 +2,8 @@
   try {
     int[] ltrb=getBarLnDefaultSpadding();
     chart.setPadding(ltrb[0],ltrb[1],ltrb[2],ltrb[3]);
+    float margin=DensityUtil.dip2px(getContext(),20);
+    chart.setXTickMarksOffsetMargin(margin);
     chart.showRoundBorder();
     chart.setCategories(labels);
     chart.setDataSource(chartData);
@@ -15,12 +17,12 @@
     plot.getHorizontalLinePaint().setStrokeWidth(3);
     plot.getHorizontalLinePaint().setColor((int)Color.rgb(127,204,204));
     plot.setHorizontalLineStyle(XEnum.LineStyle.DOT);
-    chart.getDataAxis().getAxisPaint().setStrokeWidth(plot.getHorizontalLinePaint().getStrokeWidth());
-    chart.getCategoryAxis().getAxisPaint().setStrokeWidth(plot.getHorizontalLinePaint().getStrokeWidth());
-    chart.getDataAxis().getAxisPaint().setColor(plot.getHorizontalLinePaint().getColor());
-    chart.getCategoryAxis().getAxisPaint().setColor(plot.getHorizontalLinePaint().getColor());
-    chart.getDataAxis().getTickMarksPaint().setColor(plot.getHorizontalLinePaint().getColor());
-    chart.getCategoryAxis().getTickMarksPaint().setColor(plot.getHorizontalLinePaint().getColor());
+    chart.getDataAxis().getAxisPaint().setColor((int)Color.rgb(127,204,204));
+    chart.getCategoryAxis().getAxisPaint().setColor((int)Color.rgb(127,204,204));
+    chart.getDataAxis().getTickMarksPaint().setColor((int)Color.rgb(127,204,204));
+    chart.getCategoryAxis().getTickMarksPaint().setColor((int)Color.rgb(127,204,204));
+    chart.getDataAxis().setHorizontalTickAlign(Align.CENTER);
+    chart.getDataAxis().getTickLabelPaint().setTextAlign(Align.CENTER);
     chart.setDotLabelFormatter(new IFormatterTextCallBack(){
       @Override public String textFormatter(      String value){
         String label="(" + value + ")";
@@ -36,6 +38,9 @@
     chart.showDyLine();
     chart.getDyLine().setDyLineStyle(XEnum.DyLineStyle.Vertical);
     chart.getPlotArea().extWidth(500.f);
+    chart.setAxesClosed(true);
+    chart.setCrurveLineStyle(XEnum.CrurveLineStyle.BEELINE);
+    chart.disableHighPrecision();
   }
  catch (  Exception e) {
     e.printStackTrace();

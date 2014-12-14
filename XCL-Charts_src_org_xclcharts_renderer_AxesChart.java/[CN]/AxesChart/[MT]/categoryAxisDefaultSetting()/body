@@ -6,17 +6,17 @@
 switch (mDirection) {
 case HORIZONTAL:
 {
-        this.setCategoryAxisLocation(XEnum.Location.LEFT);
+        this.setCategoryAxisLocation(XEnum.AxisLocation.LEFT);
         break;
       }
 case VERTICAL:
 {
-      this.setCategoryAxisLocation(XEnum.Location.BOTTOM);
+      this.setCategoryAxisLocation(XEnum.AxisLocation.BOTTOM);
       break;
     }
 }
 }
-if (XEnum.Location.LEFT == mDataAxisLocation) {
+if (XEnum.AxisLocation.LEFT == mDataAxisLocation) {
 categoryAxis.setHorizontalTickAlign(Align.CENTER);
 }
 categoryAxis.getAxisPaint().setStrokeWidth(2);

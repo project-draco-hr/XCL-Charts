@@ -3,40 +3,46 @@
   float plotTop=plotArea.getTop();
   float plotRight=plotArea.getRight();
   float plotBottom=plotArea.getBottom();
+  float vcX=plotLeft + (plotRight - plotLeft) / 2;
+  float hcY=plotTop + (plotBottom - plotTop) / 2;
 switch (mDataAxisLocation) {
 case LEFT:
     dataAxis.renderAxis(canvas,plotLeft,plotBottom,plotLeft,plotTop);
-  if (getAxesClosedStatus())   dataAxis.renderAxis(canvas,plotRight,plotTop,plotRight,plotBottom);
-break;
+  break;
 case RIGHT:
 dataAxis.renderAxis(canvas,plotRight,plotTop,plotRight,plotBottom);
-if (getAxesClosedStatus()) dataAxis.renderAxis(canvas,plotLeft,plotTop,plotLeft,plotBottom);
+break;
+case VERTICAL_CENTER:
+dataAxis.renderAxis(canvas,vcX,plotTop,vcX,plotBottom);
 break;
 case TOP:
 dataAxis.renderAxis(canvas,plotLeft,plotTop,plotRight,plotTop);
-if (getAxesClosedStatus()) dataAxis.renderAxis(canvas,plotLeft,plotBottom,plotRight,plotBottom);
 break;
 case BOTTOM:
 dataAxis.renderAxis(canvas,plotLeft,plotBottom,plotRight,plotBottom);
-if (getAxesClosedStatus()) dataAxis.renderAxis(canvas,plotLeft,plotTop,plotRight,plotTop);
+break;
+case HORIZONTAL_CENTER:
+dataAxis.renderAxis(canvas,plotLeft,hcY,plotRight,hcY);
 break;
 }
 switch (mCategoryAxisLocation) {
 case LEFT:
 categoryAxis.renderAxis(canvas,plotLeft,plotBottom,plotLeft,plotTop);
-if (getAxesClosedStatus()) categoryAxis.renderAxis(canvas,plotRight,plotTop,plotRight,plotBottom);
 break;
 case RIGHT:
 categoryAxis.renderAxis(canvas,plotRight,plotTop,plotRight,plotBottom);
-if (getAxesClosedStatus()) categoryAxis.renderAxis(canvas,plotLeft,plotBottom,plotLeft,plotTop);
+break;
+case VERTICAL_CENTER:
+categoryAxis.renderAxis(canvas,vcX,plotTop,vcX,plotBottom);
 break;
 case TOP:
 categoryAxis.renderAxis(canvas,plotLeft,plotTop,plotRight,plotTop);
-if (getAxesClosedStatus()) categoryAxis.renderAxis(canvas,plotLeft,plotBottom,plotRight,plotBottom);
 break;
 case BOTTOM:
 categoryAxis.renderAxis(canvas,plotLeft,plotBottom,plotRight,plotBottom);
-if (getAxesClosedStatus()) categoryAxis.renderAxis(canvas,plotLeft,plotTop,plotRight,plotTop);
+break;
+case HORIZONTAL_CENTER:
+categoryAxis.renderAxis(canvas,plotLeft,hcY,plotRight,hcY);
 break;
 }
 }

@@ -1,4 +1,5 @@
 {
+  if (mDataSet == null)   return 0;
   int dsetMaxSize=0;
   int size=mDataSet.size();
   for (int i=0; i < size; i++) {

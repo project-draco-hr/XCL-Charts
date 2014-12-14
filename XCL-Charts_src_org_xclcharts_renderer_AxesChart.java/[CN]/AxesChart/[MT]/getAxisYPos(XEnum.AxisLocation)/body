@@ -1,0 +1,12 @@
+{
+  if (XEnum.AxisLocation.TOP == location) {
+    return plotArea.getTop();
+  }
+ else   if (XEnum.AxisLocation.BOTTOM == location) {
+    return plotArea.getBottom();
+  }
+ else   if (XEnum.AxisLocation.HORIZONTAL_CENTER == location) {
+    return plotArea.getCenterY();
+  }
+  return 0;
+}

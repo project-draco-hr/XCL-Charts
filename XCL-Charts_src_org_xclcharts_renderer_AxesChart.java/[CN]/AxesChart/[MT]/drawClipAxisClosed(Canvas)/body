@@ -1,0 +1,35 @@
+{
+  if (!getAxesClosedStatus())   return;
+  float plotLeft=plotArea.getLeft();
+  float plotTop=plotArea.getTop();
+  float plotRight=plotArea.getRight();
+  float plotBottom=plotArea.getBottom();
+switch (mDataAxisLocation) {
+case LEFT:
+case RIGHT:
+case VERTICAL_CENTER:
+    dataAxis.renderAxisLine(canvas,plotLeft,plotTop,plotLeft,plotBottom);
+  dataAxis.renderAxisLine(canvas,plotRight,plotTop,plotRight,plotBottom);
+break;
+case TOP:
+case BOTTOM:
+case HORIZONTAL_CENTER:
+dataAxis.renderAxisLine(canvas,plotLeft,plotTop,plotRight,plotTop);
+dataAxis.renderAxisLine(canvas,plotLeft,plotBottom,plotRight,plotBottom);
+break;
+}
+switch (mCategoryAxisLocation) {
+case LEFT:
+case RIGHT:
+case VERTICAL_CENTER:
+categoryAxis.renderAxisLine(canvas,plotLeft,plotBottom,plotLeft,plotTop);
+categoryAxis.renderAxisLine(canvas,plotRight,plotBottom,plotRight,plotTop);
+break;
+case TOP:
+case BOTTOM:
+case HORIZONTAL_CENTER:
+categoryAxis.renderAxisLine(canvas,plotLeft,plotTop,plotRight,plotTop);
+categoryAxis.renderAxisLine(canvas,plotLeft,plotBottom,plotRight,plotBottom);
+break;
+}
+}

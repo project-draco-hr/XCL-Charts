@@ -46,6 +46,7 @@
     chart.setPlotPanMode(XEnum.PanMode.HORIZONTAL);
     chart.getPlotArea().extWidth(200f);
     chart.getCategoryAxis().setTickLabelMargin(5);
+    chart.disableHighPrecision();
   }
  catch (  Exception e) {
     e.printStackTrace();

@@ -1,4 +1,4 @@
 String lineKey
-LinkedHashMap<Double,Double> dataSeries
+List<PointD> dataSeries
 int color
 XEnum.DotStyle dotStyle

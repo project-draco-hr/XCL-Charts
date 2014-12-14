@@ -4,6 +4,7 @@
   for (  ArcLineData cData : dataSet) {
     key=cData.getKey();
     if (!isDrawKey(key))     continue;
+    if ("" == key)     continue;
     mLstKey.add(key);
     mLstColor.add(cData.getBarColor());
     PlotDot pDot=new PlotDot();

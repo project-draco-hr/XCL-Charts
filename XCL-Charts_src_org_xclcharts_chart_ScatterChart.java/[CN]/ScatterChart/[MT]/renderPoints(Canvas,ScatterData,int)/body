@@ -19,7 +19,7 @@
     Log.e(TAG,"??????????????????????????????0.");
     return;
   }
-  LinkedHashMap<Double,Double> chartValues=bd.getDataSet();
+  List<PointD> chartValues=bd.getDataSet();
   if (null == chartValues)   return;
   int j=0;
   int childID=0;
@@ -27,11 +27,11 @@
   float itemAngle=bd.getItemLabelRotateAngle();
   PlotDot dot=bd.getPlotDot();
   float radius=dot.getDotRadius();
-  Iterator iter=chartValues.entrySet().iterator();
+  Iterator iter=chartValues.iterator();
   while (iter.hasNext()) {
-    Entry entry=(Entry)iter.next();
-    Double xValue=(Double)entry.getKey();
-    Double yValue=(Double)entry.getValue();
+    PointD entry=(PointD)iter.next();
+    Double xValue=entry.x;
+    Double yValue=entry.y;
     double yScale=MathHelper.getInstance().div(MathHelper.getInstance().sub(yValue,dataAxis.getAxisMin()),axisDataHeight);
     YvaluePos=mul(axisScreenHeight,(float)yScale);
     double xScale=MathHelper.getInstance().div(MathHelper.getInstance().sub(xValue,mMinValue),xMM);

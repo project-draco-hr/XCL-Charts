@@ -25,8 +25,8 @@
     chartLnAxes.getCategoryAxis().getTickLabelPaint().setColor((int)Color.rgb(199,64,219));
     chartLnAxes.getDataAxis().setHorizontalTickAlign(Align.RIGHT);
     chartLnAxes.getDataAxis().getTickLabelPaint().setTextAlign(Align.LEFT);
-    chartLnAxes.setDataAxisLocation(XEnum.Location.RIGHT);
-    chartLnAxes.setCategoryAxisLocation(XEnum.Location.LEFT);
+    chartLnAxes.setDataAxisLocation(XEnum.AxisLocation.RIGHT);
+    chartLnAxes.setCategoryAxisLocation(XEnum.AxisLocation.LEFT);
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

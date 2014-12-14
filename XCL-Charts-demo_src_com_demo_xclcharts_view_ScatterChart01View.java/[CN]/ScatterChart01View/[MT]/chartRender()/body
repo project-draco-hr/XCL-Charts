@@ -39,6 +39,7 @@
     chart.getPlotLegend().getBox().setBorderRectType(XEnum.RectType.RECT);
     chart.getPlotLegend().showBox();
     chart.disableScale();
+    chart.disableHighPrecision();
   }
  catch (  Exception e) {
     e.printStackTrace();

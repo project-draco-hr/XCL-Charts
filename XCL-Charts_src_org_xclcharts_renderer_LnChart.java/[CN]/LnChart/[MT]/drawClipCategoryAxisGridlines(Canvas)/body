@@ -12,43 +12,31 @@
   }
   int labeltickCount=getCategoryAxisCount();
   float axisX=0.0f, axisY=0.0f, currentX=0.0f, currentY=0.0f;
-  XEnum.Location pos=getCategoryAxisLocation();
-  if (XEnum.Location.LEFT == pos || XEnum.Location.RIGHT == pos) {
+  XEnum.AxisLocation pos=getCategoryAxisLocation();
+  if (XEnum.AxisLocation.LEFT == pos || XEnum.AxisLocation.RIGHT == pos || XEnum.AxisLocation.VERTICAL_CENTER == pos) {
     YSteps=getVerticalYSteps(labeltickCount);
-switch (pos) {
-case LEFT:
-      currentX=axisX=plotArea.getLeft();
-    break;
-case RIGHT:
-  currentX=axisX=plotArea.getRight();
-break;
-}
-currentY=axisY=plotArea.getBottom();
-}
+    currentX=axisX=getAxisXPos(pos);
+    currentY=axisY=plotArea.getBottom();
+  }
  else {
-XSteps=getVerticalXSteps(labeltickCount);
-switch (pos) {
-case TOP:
-currentY=axisY=plotArea.getTop();
-break;
-case BOTTOM:
-currentY=axisY=plotArea.getBottom();
-break;
-}
-currentX=axisX=plotArea.getLeft();
-}
-mLstCateTick.clear();
-for (int i=0; i < tickCount; i++) {
+    XSteps=getVerticalXSteps(labeltickCount);
+    currentY=axisY=getAxisYPos(pos);
+    currentX=axisX=plotArea.getLeft();
+  }
+  mLstCateTick.clear();
+  for (int i=0; i < tickCount; i++) {
 switch (pos) {
 case LEFT:
 case RIGHT:
-currentY=sub(plotArea.getBottom(),j * YSteps);
-drawHorizontalGridLines(canvas,plotArea.getLeft(),plotArea.getRight(),i,tickCount,YSteps,currentY);
-if (!categoryAxis.isShowAxisLabels()) continue;
+case VERTICAL_CENTER:
+      currentY=sub(plotArea.getBottom(),j * YSteps);
+    drawHorizontalGridLines(canvas,plotArea.getLeft(),plotArea.getRight(),i,tickCount,YSteps,currentY);
+  if (!categoryAxis.isShowAxisLabels())   continue;
 mLstCateTick.add(new PlotAxisTick(axisX,currentY,dataSet.get(i)));
 break;
 case TOP:
 case BOTTOM:
+case HORIZONTAL_CENTER:
 currentX=add(plotArea.getLeft(),(j) * XSteps);
 drawVerticalGridLines(canvas,plotArea.getTop(),plotArea.getBottom(),i,tickCount,XSteps,currentX);
 if (!categoryAxis.isShowAxisLabels()) continue;

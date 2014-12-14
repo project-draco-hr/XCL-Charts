@@ -1,5 +1,10 @@
 {
-  BigDecimal bgNum1=new BigDecimal(Double.toString(v1));
-  BigDecimal bgNum2=new BigDecimal(Double.toString(v2));
-  return bgNum1.subtract(bgNum2).doubleValue();
+  if (!mHighPrecision) {
+    return (v1 - v2);
+  }
+ else {
+    BigDecimal bgNum1=new BigDecimal(Double.toString(v1));
+    BigDecimal bgNum2=new BigDecimal(Double.toString(v2));
+    return bgNum1.subtract(bgNum2).doubleValue();
+  }
 }
