@@ -1,0 +1,12 @@
+{
+  BarPosition record=chart.getPositionRecord(x,y);
+  if (null == record)   return;
+  BarData bData=chartData.get(record.getDataID());
+  Double bValue=bData.getDataSet().get(record.getDataChildID());
+  Toast.makeText(this.getContext(),"info:" + record.getRectInfo() + " Key:"+ bData.getKey()+ " Current Value:"+ Double.toString(bValue),Toast.LENGTH_SHORT).show();
+  chart.showFocusRectF(record.getRectF());
+  chart.getFocusPaint().setStyle(Style.STROKE);
+  chart.getFocusPaint().setStrokeWidth(3);
+  chart.getFocusPaint().setColor(Color.GREEN);
+  this.invalidate();
+}

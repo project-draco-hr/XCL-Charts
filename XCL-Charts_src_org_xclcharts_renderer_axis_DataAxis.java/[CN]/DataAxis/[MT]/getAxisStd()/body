@@ -1,0 +1,8 @@
+{
+  if (mAxisStdStatus) {
+    return mDataAxisStd;
+  }
+ else {
+    return (float)mDataAxisMin;
+  }
+}

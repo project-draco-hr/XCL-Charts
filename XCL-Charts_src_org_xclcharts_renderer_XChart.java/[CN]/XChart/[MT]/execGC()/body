@@ -1,3 +1,0 @@
-{
-  if (mEnableGC)   System.gc();
-}

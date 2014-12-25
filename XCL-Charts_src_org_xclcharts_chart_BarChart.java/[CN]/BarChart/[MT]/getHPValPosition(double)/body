@@ -1,0 +1,5 @@
+{
+  double vaxlen=MathHelper.getInstance().sub(bv,dataAxis.getAxisMin());
+  float valuePostion=mul(getPlotScreenWidth(),div(dtof(vaxlen),dataAxis.getAxisRange()));
+  return (add(plotArea.getLeft(),valuePostion));
+}

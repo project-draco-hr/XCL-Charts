@@ -1,0 +1,5 @@
+{
+  mCustomLineDataset.add(new CustomLineData("??????",-5d,(int)Color.rgb(77,184,73),3));
+  mCustomLineDataset.add(new CustomLineData("??????",10d,(int)Color.rgb(171,42,96),5));
+  mCustomLineDataset.add(new CustomLineData("??????",15d,(int)Color.RED,6));
+}

@@ -1,0 +1,8 @@
+{
+  if (dataAxis.getAxisStdStatus()) {
+    return getVPValPosition(dataAxis.getAxisStd());
+  }
+ else {
+    return plotArea.getBottom();
+  }
+}

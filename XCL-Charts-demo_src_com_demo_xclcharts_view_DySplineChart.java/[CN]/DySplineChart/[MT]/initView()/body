@@ -15,4 +15,6 @@
   chart2Render();
   chart1.setAxesClosed(true);
   chart2.setAxesClosed(true);
+  chart1.disableHighPrecision();
+  chart2.disableHighPrecision();
 }

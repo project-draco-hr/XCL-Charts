@@ -14,8 +14,8 @@
   double xMM=MathHelper.getInstance().sub(mMaxValue,mMinValue);
   float axisScreenWidth=getPlotScreenWidth();
   float axisScreenHeight=getPlotScreenHeight();
-  Double axisDataHeight=dataAxis.getAxisRange();
-  if (Double.compare(axisDataHeight,0.0f) == 0 || Double.compare(axisDataHeight,0.0f) == -1) {
+  float axisDataHeight=dataAxis.getAxisRange();
+  if (Float.compare(axisDataHeight,0.0f) == 0 || Float.compare(axisDataHeight,0.0f) == -1) {
     Log.e(TAG,"??????????????????????????????0.");
     return;
   }

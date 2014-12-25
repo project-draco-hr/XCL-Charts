@@ -8,5 +8,4 @@
   }
   categoryAxisDefaultSetting();
   dataAxisDefaultSetting();
-  enabledHighPrecision();
 }

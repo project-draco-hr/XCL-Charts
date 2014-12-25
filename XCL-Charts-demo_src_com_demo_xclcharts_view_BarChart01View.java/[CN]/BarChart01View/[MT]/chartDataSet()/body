@@ -6,7 +6,7 @@
   BarData BarDataA=new BarData("Oracle",dataSeriesA,(int)Color.rgb(186,20,26));
   List<Double> dataSeriesB=new LinkedList<Double>();
   dataSeriesB.add(32d);
-  dataSeriesB.add(22d);
+  dataSeriesB.add(25d);
   dataSeriesB.add(18d);
   BarData BarDataB=new BarData("SQL Server",dataSeriesB,(int)Color.rgb(1,188,242));
   List<Double> dataSeriesC=new LinkedList<Double>();

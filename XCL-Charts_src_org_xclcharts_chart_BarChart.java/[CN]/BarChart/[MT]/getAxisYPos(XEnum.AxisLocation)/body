@@ -1,0 +1,8 @@
+{
+  if (XEnum.Direction.VERTICAL == mDirection && dataAxis.getAxisStdStatus() && categoryAxis.getAxisBuildStdStatus()) {
+    return getVPDataAxisStdY();
+  }
+ else {
+    return super.getAxisYPos(location);
+  }
+}

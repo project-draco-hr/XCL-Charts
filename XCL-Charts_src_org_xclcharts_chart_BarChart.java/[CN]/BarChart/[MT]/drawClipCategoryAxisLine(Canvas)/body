@@ -1,0 +1,13 @@
+{
+  if (XEnum.Direction.VERTICAL == mDirection && dataAxis.getAxisStdStatus() && categoryAxis.getAxisBuildStdStatus()) {
+    float y=getVPDataAxisStdY();
+    categoryAxis.renderAxis(canvas,plotArea.getLeft(),y,plotArea.getRight(),y);
+  }
+ else   if (XEnum.Direction.HORIZONTAL == mDirection && dataAxis.getAxisStdStatus() && categoryAxis.getAxisBuildStdStatus()) {
+    float x=getHPDataAxisStdX();
+    categoryAxis.renderAxis(canvas,x,plotArea.getTop(),x,plotArea.getBottom());
+  }
+ else {
+    super.drawClipCategoryAxisLine(canvas);
+  }
+}

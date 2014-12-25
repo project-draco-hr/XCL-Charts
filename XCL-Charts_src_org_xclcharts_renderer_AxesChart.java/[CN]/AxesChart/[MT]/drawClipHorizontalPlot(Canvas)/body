@@ -61,6 +61,5 @@
     drawClipCategoryAxisTickMarks(canvas);
   }
   drawClipLegend(canvas);
-  execGC();
   return true;
 }

@@ -1,0 +1,8 @@
+{
+  if (dataAxis.getAxisStdStatus()) {
+    return getHPValPosition(dataAxis.getAxisStd());
+  }
+ else {
+    return plotArea.getLeft();
+  }
+}

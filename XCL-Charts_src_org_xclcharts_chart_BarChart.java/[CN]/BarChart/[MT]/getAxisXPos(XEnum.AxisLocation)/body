@@ -1,0 +1,8 @@
+{
+  if (XEnum.Direction.HORIZONTAL == mDirection && dataAxis.getAxisStdStatus() && categoryAxis.getAxisBuildStdStatus()) {
+    return getHPDataAxisStdX();
+  }
+ else {
+    return super.getAxisXPos(location);
+  }
+}

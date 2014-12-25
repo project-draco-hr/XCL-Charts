@@ -1,0 +1,28 @@
+{
+  float plotLeft=plotArea.getLeft();
+  float plotTop=plotArea.getTop();
+  float plotRight=plotArea.getRight();
+  float plotBottom=plotArea.getBottom();
+  float vcX=plotLeft + (plotRight - plotLeft) / 2;
+  float hcY=plotTop + (plotBottom - plotTop) / 2;
+switch (mCategoryAxisLocation) {
+case LEFT:
+    categoryAxis.renderAxis(canvas,plotLeft,plotBottom,plotLeft,plotTop);
+  break;
+case RIGHT:
+categoryAxis.renderAxis(canvas,plotRight,plotTop,plotRight,plotBottom);
+break;
+case VERTICAL_CENTER:
+categoryAxis.renderAxis(canvas,vcX,plotTop,vcX,plotBottom);
+break;
+case TOP:
+categoryAxis.renderAxis(canvas,plotLeft,plotTop,plotRight,plotTop);
+break;
+case BOTTOM:
+categoryAxis.renderAxis(canvas,plotLeft,plotBottom,plotRight,plotBottom);
+break;
+case HORIZONTAL_CENTER:
+categoryAxis.renderAxis(canvas,plotLeft,hcY,plotRight,hcY);
+break;
+}
+}

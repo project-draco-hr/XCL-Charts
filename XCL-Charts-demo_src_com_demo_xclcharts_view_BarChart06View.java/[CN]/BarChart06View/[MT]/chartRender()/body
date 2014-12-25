@@ -28,6 +28,7 @@
 );
     chart.getBar().setBarInnerMargin(0d);
     chart.getPlotLegend().hide();
+    chart.disableHighPrecision();
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

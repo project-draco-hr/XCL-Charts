@@ -1,0 +1,53 @@
+{
+  try {
+    int[] ltrb=getBarLnDefaultSpadding();
+    chart.setPadding(DensityUtil.dip2px(getContext(),50),ltrb[1],ltrb[2],ltrb[3]);
+    chart.setTitle("??????????????????(??????)");
+    chart.addSubtitle("(XCL-Charts Demo)");
+    chart.setTitleVerticalAlign(XEnum.VerticalAlign.MIDDLE);
+    chart.setDataSource(chartData);
+    chart.setCategories(chartLabels);
+    chart.getAxisTitle().setLeftAxisTitle("??????230");
+    chart.getAxisTitle().setLowerAxisTitle("??????");
+    chart.getAxisTitle().setRightAxisTitle("??????230");
+    chart.getDataAxis().setAxisMax(500);
+    chart.getDataAxis().setAxisMin(100);
+    chart.getDataAxis().setAxisSteps(100);
+    chart.getDataAxis().enabledAxisStd();
+    chart.getDataAxis().setAxisStd(230);
+    chart.getCategoryAxis().setAxisBuildStd(true);
+    chart.getDataAxis().hideTickMarks();
+    chart.getDataAxis().getTickLabelPaint().setColor((int)Color.rgb(199,88,122));
+    chart.getDataAxis().setLabelFormatter(new IFormatterTextCallBack(){
+      @Override public String textFormatter(      String value){
+        String tmp=value + "??????";
+        return tmp;
+      }
+    }
+);
+    chart.getPlotGrid().showHorizontalLines();
+    chart.getPlotGrid().hideVerticalLines();
+    chart.getPlotGrid().hideEvenRowBgColor();
+    chart.getCategoryAxis().setTickLabelRotateAngle(-45f);
+    chart.setChartDirection(XEnum.Direction.HORIZONTAL);
+    chart.getBar().setItemLabelVisible(true);
+    chart.getBar().getItemLabelPaint().setTextSize(22);
+    chart.setItemLabelFormatter(new IFormatterDoubleCallBack(){
+      @Override public String doubleFormatter(      Double value){
+        DecimalFormat df=new DecimalFormat("[#0]");
+        String label=df.format(value).toString();
+        return label;
+      }
+    }
+);
+    chart.ActiveListenItemClick();
+    chart.showClikedFocus();
+    chart.disablePanMode();
+    chart.setDataAxisLocation(XEnum.AxisLocation.TOP);
+    chart.getPlotLegend().hide();
+    chart.getBar().setBarStyle(XEnum.BarStyle.FILL);
+  }
+ catch (  Exception e) {
+    Log.e(TAG,e.toString());
+  }
+}

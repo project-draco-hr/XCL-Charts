@@ -2,9 +2,10 @@
   if (null == mDataSet)   return false;
   List<String> dataSet=categoryAxis.getDataSet();
   if (null == dataSet)   return false;
-  float axisScreenHeight=getPlotScreenHeight();
-  float axisDataHeight=(float)dataAxis.getAxisRange();
   float XSteps=getVerticalXSteps(dataSet.size() + 1);
+  float dataAxisStd=getVPDataAxisStdY();
+  float itemFontHeight=0.f;
+  if (mFlatBar.getItemLabelsVisible())   itemFontHeight=DrawHelper.getInstance().getPaintFontHeight(mFlatBar.getItemLabelPaint());
   int barNumber=getDatasetSize(mDataSet);
   int currNumber=0;
   float[] ret=mFlatBar.getBarWidthAndMargin(XSteps,barNumber);
@@ -15,29 +16,48 @@
   float barWidth=ret[0];
   float barInnerMargin=ret[1];
   float labelBarUseWidth=add(mul(barNumber,barWidth),mul(sub(barNumber,1),barInnerMargin));
+  float barLeft=0.0f, barBottom=0.0f, barTop=0.f, barRight=0.f;
+  float currLableX, drawBarStartX, topY, labelTopY;
   int size=mDataSet.size();
   for (int i=0; i < size; i++) {
     BarData bd=mDataSet.get(i);
     List<Double> barValues=bd.getDataSet();
     if (null == barValues)     continue;
     List<Integer> barDataColor=bd.getDataColor();
-    int barDefualtColor=bd.getColor();
-    mFlatBar.getBarPaint().setColor(barDefualtColor);
+    mFlatBar.getBarPaint().setColor(bd.getColor());
     int countChild=barValues.size();
     for (int j=0; j < countChild; j++) {
       Double bv=barValues.get(j);
-      setBarDataColor(mFlatBar.getBarPaint(),barDataColor,j,barDefualtColor);
-      float vaxlen=(float)MathHelper.getInstance().sub(bv,dataAxis.getAxisMin());
-      float valuePostion=mul(axisScreenHeight,div(vaxlen,axisDataHeight));
-      float currLableX=add(plotArea.getLeft(),mul((j + 1),XSteps));
-      float drawBarStartX=sub(currLableX,labelBarUseWidth / 2);
+      setBarDataColor(mFlatBar.getBarPaint(),barDataColor,j,bd.getColor());
+      currLableX=add(plotArea.getLeft(),mul((j + 1),XSteps));
+      drawBarStartX=sub(currLableX,labelBarUseWidth / 2);
       drawBarStartX=add(drawBarStartX,add(barWidth,barInnerMargin) * currNumber);
-      float drawBarEndX=add(drawBarStartX,barWidth);
-      float topY=sub(plotArea.getBottom(),valuePostion);
-      mFlatBar.renderBar(drawBarStartX,plotArea.getBottom(),drawBarEndX,topY,canvas);
-      saveBarRectFRecord(i,j,drawBarStartX + mMoveX,topY + mMoveY,drawBarEndX + mMoveX,plotArea.getBottom() + mMoveY);
-      drawFocusRect(canvas,i,j,drawBarStartX,topY,drawBarEndX,plotArea.getBottom());
-      mFlatBar.renderBarItemLabel(getFormatterItemLabel(bv),add(drawBarStartX,barWidth / 2),sub(plotArea.getBottom(),valuePostion),canvas);
+      labelTopY=topY=getVPValPosition(bv);
+      if (dataAxis.getAxisStdStatus()) {
+        if (bv < dataAxis.getAxisStd()) {
+          barLeft=drawBarStartX;
+          barTop=dataAxisStd;
+          barRight=add(drawBarStartX,barWidth);
+          barBottom=topY;
+          labelTopY=labelTopY + itemFontHeight;
+        }
+ else {
+          barLeft=drawBarStartX;
+          barTop=topY;
+          barRight=add(drawBarStartX,barWidth);
+          barBottom=dataAxisStd;
+        }
+      }
+ else {
+        barLeft=drawBarStartX;
+        barTop=topY;
+        barRight=add(drawBarStartX,barWidth);
+        barBottom=plotArea.getBottom();
+      }
+      mFlatBar.renderBar(barLeft,barBottom,barRight,barTop,canvas);
+      saveBarRectFRecord(i,j,barLeft + mMoveX,barTop + mMoveY,barRight + mMoveX,barBottom + mMoveY);
+      drawFocusRect(canvas,i,j,barLeft,barTop,barRight,barBottom);
+      mFlatBar.renderBarItemLabel(getFormatterItemLabel(bv),add(drawBarStartX,barWidth / 2),labelTopY,canvas);
     }
     currNumber++;
   }
