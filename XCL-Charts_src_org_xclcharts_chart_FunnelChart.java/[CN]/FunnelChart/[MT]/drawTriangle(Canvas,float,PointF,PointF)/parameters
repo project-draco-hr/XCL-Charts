@@ -1,0 +1,4 @@
+Canvas canvas
+float cx
+PointF start
+PointF stop

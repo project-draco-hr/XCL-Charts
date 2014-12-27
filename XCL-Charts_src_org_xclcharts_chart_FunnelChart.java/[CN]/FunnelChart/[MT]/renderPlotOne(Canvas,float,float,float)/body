@@ -1,0 +1,20 @@
+{
+  FunnelData d=mDataSet.get(0);
+  float halfWidth=getHalfWidth(funnelWidth,d.getData());
+  PointF pStart=new PointF();
+  PointF pStop=new PointF();
+  pStart.x=cx - halfWidth;
+  pStop.x=cx + halfWidth;
+  if (XEnum.SortType.DESC == mSortType) {
+    pStart.y=pStop.y=plotArea.getTop();
+  }
+ else {
+    pStart.y=pStop.y=plotArea.getBottom();
+  }
+  if (d.getAlpha() != -1)   getPaint().setAlpha(d.getAlpha());
+  drawTriangle(canvas,cx,pStart,pStop);
+  if (d.getAlpha() != -1)   getPaint().setAlpha(255);
+  float labelY=plotArea.getBottom() - plotArea.getHeight() / 2;
+  renderLabels(canvas,d.getLabel(),cx,labelY,d.getColor());
+  return;
+}

@@ -1,0 +1,5 @@
+{
+  Float a=this.getData();
+  Float b=arg0.getData();
+  return Float.compare(a,b);
+}

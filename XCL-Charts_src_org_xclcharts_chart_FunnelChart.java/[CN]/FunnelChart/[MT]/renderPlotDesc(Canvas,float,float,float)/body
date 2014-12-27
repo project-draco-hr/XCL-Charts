@@ -1,0 +1,42 @@
+{
+  int count=mDataSet.size();
+  float halfWidth=0.f;
+  float bottomY=plotArea.getBottom();
+  PointF pStart=new PointF();
+  PointF pStop=new PointF();
+  pStart.x=cx - plotArea.getPlotWidth() / 2;
+  pStop.x=cx + plotArea.getPlotWidth() / 2;
+  pStart.y=pStop.y=plotArea.getBottom();
+  halfWidth=funnelWidth / 2;
+  float labelY=0.f;
+  Path path=new Path();
+  for (int i=0; i < count; i++) {
+    FunnelData d=mDataSet.get(i);
+    path.reset();
+    if (i == 0) {
+      path.moveTo(cx,plotArea.getBottom());
+    }
+ else {
+      path.moveTo(pStart.x,pStart.y);
+      path.lineTo(pStop.x,pStop.y);
+    }
+    halfWidth=getHalfWidth(funnelWidth,d.getData());
+    bottomY=sub(plotArea.getBottom(),i * funnelHeight);
+    labelY=bottomY - funnelHeight / 2;
+    pStart.x=cx - halfWidth;
+    pStart.y=bottomY - funnelHeight;
+    pStop.x=cx + halfWidth;
+    pStop.y=bottomY - funnelHeight;
+    path.lineTo(pStop.x,pStop.y);
+    path.lineTo(pStart.x,pStart.y);
+    this.getPaint().setColor(d.getColor());
+    path.close();
+    if (d.getAlpha() != -1)     getPaint().setAlpha(d.getAlpha());
+    canvas.drawPath(path,this.getPaint());
+    if (d.getAlpha() != -1)     getPaint().setAlpha(255);
+    if (i != count - 1 && mFunnelLineVisible) {
+      canvas.drawLine(pStart.x,pStart.y,pStop.x,pStop.y,this.getFunnelLinePaint());
+    }
+    renderLabels(canvas,d.getLabel(),cx,labelY,d.getColor());
+  }
+}

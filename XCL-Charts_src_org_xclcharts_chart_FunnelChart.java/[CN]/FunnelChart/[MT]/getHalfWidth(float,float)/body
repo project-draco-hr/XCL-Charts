@@ -1,0 +1,3 @@
+{
+  return funnelWidth * (data / 100) / 2;
+}

@@ -1,0 +1,8 @@
+{
+  FunnelData fd1=new FunnelData("???(80%)",80,Color.RED);
+  chartData.add(fd1);
+  chartData.add(new FunnelData("???(60%)",60,Color.rgb(243,75,125)));
+  chartData.add(new FunnelData("???-40%",40,Color.rgb(77,180,123)));
+  chartData.add(new FunnelData("???-100%",100,Color.BLUE));
+  chartData.add(new FunnelData("20%",20,Color.rgb(117,197,141)));
+}

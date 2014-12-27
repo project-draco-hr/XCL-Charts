@@ -1,0 +1,17 @@
+{
+  Path path=new Path();
+  path.moveTo(start.x,start.y);
+  path.lineTo(stop.x,stop.y);
+switch (mSortType) {
+case DESC:
+    path.lineTo(cx,plotArea.getBottom());
+  break;
+case ASC:
+case NORMAL:
+default :
+path.lineTo(cx,plotArea.getTop());
+}
+path.close();
+getPaint().setColor(mDataSet.get(0).getColor());
+canvas.drawPath(path,getPaint());
+}

@@ -1,0 +1,15 @@
+{
+  try {
+    super.postRender(canvas);
+    calcPlotRange();
+    plotArea.render(canvas);
+    renderTitle(canvas);
+    renderPlot(canvas);
+    renderFocusShape(canvas);
+    renderToolTip(canvas);
+  }
+ catch (  Exception e) {
+    throw e;
+  }
+  return true;
+}

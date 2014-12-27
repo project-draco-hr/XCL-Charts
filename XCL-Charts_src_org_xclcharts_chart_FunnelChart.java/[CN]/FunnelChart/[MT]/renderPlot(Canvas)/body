@@ -1,0 +1,16 @@
+{
+  if (!sortDataSet())   return;
+  int count=mDataSet.size();
+  float funnelWidth=plotArea.getPlotWidth() * (mPlotWidthPercent / 100);
+  float funnelHeight=this.plotArea.getHeight() / count;
+  float cx=plotArea.getCenterX();
+  if (1 == count) {
+    renderPlotOne(canvas,cx,funnelWidth,funnelHeight);
+  }
+  if (XEnum.SortType.DESC == mSortType) {
+    renderPlotDesc(canvas,cx,funnelWidth,funnelHeight);
+  }
+ else {
+    renderPlotAsc(canvas,cx,funnelWidth,funnelHeight);
+  }
+}

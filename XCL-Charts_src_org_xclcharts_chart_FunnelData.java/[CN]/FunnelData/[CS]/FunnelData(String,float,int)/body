@@ -1,0 +1,5 @@
+{
+  setLabel(label);
+  setData(percent);
+  setColor(color);
+}

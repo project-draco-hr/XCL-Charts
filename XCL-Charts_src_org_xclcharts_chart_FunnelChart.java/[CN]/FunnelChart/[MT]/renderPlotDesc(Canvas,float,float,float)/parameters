@@ -1,0 +1,4 @@
+Canvas canvas
+float cx
+float funnelWidth
+float funnelHeight

@@ -1,0 +1,41 @@
+{
+  if (!getLabelVisible())   return;
+  if ("" == label)   return;
+  if (mIsLabelLineSyncColor) {
+    getLabelLinePaint().setColor(color);
+    getLabelPaint().setColor(color);
+  }
+ else   if (mIsLabelSyncColor) {
+    getLabelPaint().setColor(color);
+  }
+  if (isShowLabelLine()) {
+    float labelWidth=DrawHelper.getInstance().getTextWidth(getLabelPaint(),label);
+switch (getLabelAlign()) {
+case LEFT:
+      canvas.drawLine(cx,y,plotArea.getLeft() + labelWidth,y,getLabelLinePaint());
+    break;
+case CENTER:
+  break;
+case RIGHT:
+canvas.drawLine(cx,y,plotArea.getRight() - labelWidth,y,getLabelLinePaint());
+break;
+default :
+break;
+}
+}
+float labelX=0.f;
+switch (getLabelAlign()) {
+case LEFT:
+labelX=plotArea.getLeft();
+break;
+case CENTER:
+labelX=cx;
+break;
+case RIGHT:
+labelX=plotArea.getRight();
+break;
+default :
+labelX=cx;
+}
+canvas.drawText(label,labelX,y,getLabelPaint());
+}

@@ -1,0 +1,5 @@
+Canvas canvas
+String label
+float cx
+float y
+int color

@@ -1,0 +1,15 @@
+{
+  if (null == mDataSet) {
+    Log.e(TAG,"???????????????!");
+    return false;
+  }
+  for (int i=mDataSet.size() - 1; i >= 0; i--) {
+    FunnelData d=mDataSet.get(i);
+    if (Float.compare(d.getData(),0.0f) == -1 || Float.compare(d.getData(),0.0f) == 0) {
+      mDataSet.remove(i);
+    }
+  }
+  if (mDataSet.size() == 0)   return false;
+  if (XEnum.SortType.NORMAL != mSortType)   Collections.sort(mDataSet);
+  return true;
+}

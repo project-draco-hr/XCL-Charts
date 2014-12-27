@@ -1,0 +1,18 @@
+{
+  mLabelAlign=align;
+switch (mLabelAlign) {
+case LEFT:
+    getLabelPaint().setTextAlign(Align.LEFT);
+  showLabelLine();
+break;
+case CENTER:
+getLabelPaint().setTextAlign(Align.CENTER);
+break;
+case RIGHT:
+getLabelPaint().setTextAlign(Align.RIGHT);
+showLabelLine();
+break;
+default :
+getLabelPaint().setTextAlign(Align.CENTER);
+}
+}

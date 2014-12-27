@@ -1,0 +1,4 @@
+{
+  if (null == mPaint)   mPaint=new Paint(Paint.ANTI_ALIAS_FLAG);
+  return mPaint;
+}

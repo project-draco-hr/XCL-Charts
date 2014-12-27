@@ -1,0 +1,4 @@
+{
+  if (null == mPaintLabelLine)   mPaintLabelLine=new Paint(Paint.ANTI_ALIAS_FLAG);
+  return mPaintLabelLine;
+}
