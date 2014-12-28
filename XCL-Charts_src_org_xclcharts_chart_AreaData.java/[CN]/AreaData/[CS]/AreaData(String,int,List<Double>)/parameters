@@ -1,0 +1,3 @@
+String key
+int linecolor
+List<Double> dataSeries

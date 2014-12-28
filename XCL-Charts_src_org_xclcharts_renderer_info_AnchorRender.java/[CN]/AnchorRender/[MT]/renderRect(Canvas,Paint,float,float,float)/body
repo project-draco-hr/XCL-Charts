@@ -1,0 +1,8 @@
+{
+  if (null == mRect)   mRect=new RectF();
+  mRect.left=(cirX - radius);
+  mRect.top=(cirY - radius);
+  mRect.right=(cirX + radius);
+  mRect.bottom=(cirY + radius);
+  canvas.drawRect(mRect,getBgPaint());
+}

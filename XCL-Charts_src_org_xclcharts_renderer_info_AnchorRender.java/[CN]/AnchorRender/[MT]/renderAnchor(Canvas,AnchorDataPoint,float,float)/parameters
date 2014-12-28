@@ -1,0 +1,4 @@
+Canvas canvas
+AnchorDataPoint pAnchor
+float cx
+float cy

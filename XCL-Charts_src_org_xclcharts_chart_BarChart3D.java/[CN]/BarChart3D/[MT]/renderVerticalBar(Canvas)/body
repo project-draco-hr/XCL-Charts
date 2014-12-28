@@ -19,7 +19,6 @@
   double axisRange=dataAxis.getAxisRange();
   double axisMin=dataAxis.getAxisMin();
   for (int i=0; i < barNumber; i++) {
-    float currentX=add(barInitX,mul((i + 1),XSteps));
     BarData bd=chartDataSource.get(i);
     List<Double> barValues=bd.getDataSet();
     if (null == barValues)     continue;

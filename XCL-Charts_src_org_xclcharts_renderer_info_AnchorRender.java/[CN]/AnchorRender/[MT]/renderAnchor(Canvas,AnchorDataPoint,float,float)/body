@@ -1,0 +1,30 @@
+{
+  if (null == pAnchor)   return;
+  float radius=pAnchor.getRadius();
+switch (pAnchor.getAreaStyle()) {
+case FILL:
+    getBgPaint().setStyle(Style.FILL);
+  break;
+case STROKE:
+getBgPaint().setStyle(Style.STROKE);
+break;
+}
+getBgPaint().setColor(pAnchor.getBgColor());
+switch (pAnchor.getAnchorStyle()) {
+case DOT:
+canvas.drawCircle(cx,cy,radius,getBgPaint());
+break;
+case RECT:
+renderRect(canvas,getBgPaint(),radius,cx,cy);
+break;
+case CIRCLE:
+canvas.drawCircle(cx,cy,radius,getBgPaint());
+break;
+default :
+}
+if (pAnchor.getAnchor() != "") {
+getTextPaint().setColor(pAnchor.getTextColor());
+getTextPaint().setTextSize(pAnchor.getTextSize());
+canvas.drawText(pAnchor.getAnchor(),cx,cy,getTextPaint());
+}
+}

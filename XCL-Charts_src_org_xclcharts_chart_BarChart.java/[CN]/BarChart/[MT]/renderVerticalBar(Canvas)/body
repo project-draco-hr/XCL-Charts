@@ -17,7 +17,7 @@
   float barInnerMargin=ret[1];
   float labelBarUseWidth=add(mul(barNumber,barWidth),mul(sub(barNumber,1),barInnerMargin));
   float barLeft=0.0f, barBottom=0.0f, barTop=0.f, barRight=0.f;
-  float currLableX, drawBarStartX, topY, labelTopY;
+  float currLableX, drawBarStartX, topY, labelTopX, labelTopY;
   int size=mDataSet.size();
   for (int i=0; i < size; i++) {
     BarData bd=mDataSet.get(i);
@@ -57,7 +57,9 @@
       mFlatBar.renderBar(barLeft,barBottom,barRight,barTop,canvas);
       saveBarRectFRecord(i,j,barLeft + mMoveX,barTop + mMoveY,barRight + mMoveX,barBottom + mMoveY);
       drawFocusRect(canvas,i,j,barLeft,barTop,barRight,barBottom);
-      mFlatBar.renderBarItemLabel(getFormatterItemLabel(bv),add(drawBarStartX,barWidth / 2),labelTopY,canvas);
+      labelTopX=add(drawBarStartX,barWidth / 2);
+      drawAnchor(this.mAnchorSet,i,j,canvas,labelTopX,labelTopY);
+      mFlatBar.renderBarItemLabel(getFormatterItemLabel(bv),labelTopX,labelTopY,canvas);
     }
     currNumber++;
   }

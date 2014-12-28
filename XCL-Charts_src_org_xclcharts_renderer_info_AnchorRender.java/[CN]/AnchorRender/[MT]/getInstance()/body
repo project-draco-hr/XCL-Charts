@@ -1,0 +1,6 @@
+{
+  if (instance == null) {
+    instance=new AnchorRender();
+  }
+  return instance;
+}

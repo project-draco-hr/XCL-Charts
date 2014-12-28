@@ -1,0 +1,5 @@
+{
+  mDataSeriesID=dataSeriesID;
+  mDataChildID=dataChildID;
+  mAnchorStyle=anchorStyle;
+}

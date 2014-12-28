@@ -1,0 +1,5 @@
+{
+  if (null == mPaintBg)   mPaintBg=new Paint(Paint.ANTI_ALIAS_FLAG);
+  mPaintBg.setStrokeWidth(2);
+  return mPaintBg;
+}

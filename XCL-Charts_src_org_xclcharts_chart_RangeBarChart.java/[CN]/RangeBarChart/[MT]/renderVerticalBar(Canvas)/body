@@ -15,7 +15,6 @@
   if (null == mDataSet)   return false;
   List<String> cateDataSet=categoryAxis.getDataSet();
   if (null == cateDataSet)   return false;
-  float XSteps=getVerticalXSteps(cateDataSet.size() + 1);
   float currentX=0.0f, barMaxPos=0.0f, barMinPos=0.0f;
   float barWidthHalf=mBarWidth / 2;
   float axisScreenWidth=getPlotScreenWidth();

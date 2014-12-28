@@ -1,0 +1,3 @@
+int dataSeriesID
+int dataChildID
+XEnum.AnchorStyle anchorStyle

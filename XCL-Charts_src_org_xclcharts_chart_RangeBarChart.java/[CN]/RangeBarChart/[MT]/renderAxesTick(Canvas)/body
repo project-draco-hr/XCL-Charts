@@ -1,6 +1,0 @@
-{
-  drawCategoryAxisLabels(canvas,mLstCateTick);
-  mLstCateTick.clear();
-  drawDataAxisLabels(canvas,mLstDataTick);
-  mLstDataTick.clear();
-}

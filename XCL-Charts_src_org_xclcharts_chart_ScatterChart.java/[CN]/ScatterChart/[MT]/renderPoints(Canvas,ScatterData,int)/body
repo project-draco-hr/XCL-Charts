@@ -21,20 +21,16 @@
   }
   List<PointD> chartValues=bd.getDataSet();
   if (null == chartValues)   return;
-  int j=0;
-  int childID=0;
   float YvaluePos=0.0f, XvaluePos=0.0f;
   float itemAngle=bd.getItemLabelRotateAngle();
   PlotDot dot=bd.getPlotDot();
   float radius=dot.getDotRadius();
-  Iterator iter=chartValues.iterator();
-  while (iter.hasNext()) {
-    PointD entry=(PointD)iter.next();
-    Double xValue=entry.x;
-    Double yValue=entry.y;
-    double yScale=MathHelper.getInstance().div(MathHelper.getInstance().sub(yValue,dataAxis.getAxisMin()),axisDataHeight);
+  int count=chartValues.size();
+  for (int i=0; i < count; i++) {
+    PointD entry=chartValues.get(i);
+    double yScale=MathHelper.getInstance().div(MathHelper.getInstance().sub(entry.y,dataAxis.getAxisMin()),axisDataHeight);
     YvaluePos=mul(axisScreenHeight,(float)yScale);
-    double xScale=MathHelper.getInstance().div(MathHelper.getInstance().sub(xValue,mMinValue),xMM);
+    double xScale=MathHelper.getInstance().div(MathHelper.getInstance().sub(entry.x,mMinValue),xMM);
     XvaluePos=mul(axisScreenWidth,(float)xScale);
     XvaluePos=add(plotArea.getLeft(),XvaluePos);
     YvaluePos=sub(plotArea.getBottom(),YvaluePos);
@@ -42,12 +38,10 @@
       getPointPaint().setColor(dot.getColor());
       getPointPaint().setAlpha(dot.getAlpha());
       PlotDotRender.getInstance().renderDot(canvas,dot,XvaluePos,YvaluePos,getPointPaint());
-      savePointRecord(dataID,childID,XvaluePos + mMoveX,YvaluePos + mMoveY,XvaluePos - radius + mMoveX,YvaluePos - radius + mMoveY,XvaluePos + radius + mMoveX,YvaluePos + radius + mMoveY);
-      childID++;
+      savePointRecord(dataID,i,XvaluePos + mMoveX,YvaluePos + mMoveY,XvaluePos - radius + mMoveX,YvaluePos - radius + mMoveY,XvaluePos + radius + mMoveX,YvaluePos + radius + mMoveY);
     }
     if (bd.getLabelVisible()) {
-      DrawHelper.getInstance().drawRotateText(getFormatterDotLabel(Double.toString(xValue) + "," + Double.toString(yValue)),XvaluePos,YvaluePos,itemAngle,canvas,bd.getDotLabelPaint());
+      DrawHelper.getInstance().drawRotateText(getFormatterDotLabel(Double.toString(entry.x) + "," + Double.toString(entry.y)),XvaluePos,YvaluePos,itemAngle,canvas,bd.getDotLabelPaint());
     }
-    j++;
   }
 }

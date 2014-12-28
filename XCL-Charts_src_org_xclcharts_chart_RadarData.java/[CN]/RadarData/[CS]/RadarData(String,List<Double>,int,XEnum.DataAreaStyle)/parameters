@@ -1,0 +1,4 @@
+String key
+List<Double> dataSeries
+int color
+XEnum.DataAreaStyle areaStyle
