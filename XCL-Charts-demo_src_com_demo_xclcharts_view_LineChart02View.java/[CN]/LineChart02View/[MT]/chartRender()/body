@@ -3,7 +3,7 @@
     int[] ltrb=getBarLnDefaultSpadding();
     chart.setPadding(DensityUtil.dip2px(getContext(),45),ltrb[1],ltrb[2],ltrb[3]);
     chart.setCategories(labels);
-    chart.setDesireLines(mCustomLineDataset);
+    chart.setCustomLines(mCustomLineDataset);
     chart.getDataAxis().setAxisMax(3500);
     chart.getDataAxis().setAxisSteps(100);
     chart.getDataAxis().setDetailModeSteps(5);

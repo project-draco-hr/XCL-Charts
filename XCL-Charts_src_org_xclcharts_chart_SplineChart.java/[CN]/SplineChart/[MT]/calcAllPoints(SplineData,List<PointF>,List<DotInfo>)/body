@@ -15,21 +15,13 @@
   float initY=plotArea.getBottom();
   float lineStartX=initX, lineStartY=initY;
   float lineStopX=0.0f, lineStopY=0.0f;
-  float axisScreenWidth=getPlotScreenWidth();
-  float axisScreenHeight=getPlotScreenHeight();
-  float axisDataHeight=(float)dataAxis.getAxisRange();
   List<PointD> chartValues=bd.getLineDataSet();
   if (null == chartValues)   return;
-  double xMM=MathHelper.getInstance().sub(mMaxValue,mMinValue);
   int count=chartValues.size();
   for (int i=0; i < count; i++) {
     PointD entry=chartValues.get(i);
-    double yScale=MathHelper.getInstance().div(MathHelper.getInstance().sub(entry.y,dataAxis.getAxisMin()),axisDataHeight);
-    float YvaluePos=mul(axisScreenHeight,(float)yScale);
-    double xScale=MathHelper.getInstance().div(MathHelper.getInstance().sub(entry.x,mMinValue),xMM);
-    float XvaluePos=mul(axisScreenWidth,(float)xScale);
-    lineStopX=add(initX,XvaluePos);
-    lineStopY=sub(initY,YvaluePos);
+    lineStopX=getLnXValPosition(entry.x,mMaxValue,mMinValue);
+    lineStopY=getVPValPosition(entry.y);
     if (0 == i) {
       lineStartX=lineStopX;
       lineStartY=lineStopY;

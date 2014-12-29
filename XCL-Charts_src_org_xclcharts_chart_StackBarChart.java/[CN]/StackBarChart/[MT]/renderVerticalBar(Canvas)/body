@@ -7,13 +7,18 @@
   float axisScreenHeight=getAxisScreenHeight();
   float axisDataHeight=(float)dataAxis.getAxisRange();
   float barWidht=mul(XSteps,0.5f);
-  float currentX=0.0f, currentY=0.0f;
+  float currentX=0.0f, currentY=0.0f, labelX=0.f;
   int dataSize=dataSet.size();
   int sourceSize=0;
   for (int r=0; r < dataSize; r++) {
     currentX=add(plotArea.getLeft(),mul((r + 1),XSteps));
     currentY=plotArea.getBottom();
     Double total=0d;
+    labelX=currentX;
+    if (XEnum.BarCenterStyle.SPACE == this.getBarCenterStyle()) {
+      labelX=sub(currentX,div(XSteps,2));
+      currentX=labelX;
+    }
     sourceSize=chartDataSource.size();
     for (int i=0; i < sourceSize; i++) {
       BarData bd=chartDataSource.get(i);
@@ -37,7 +42,9 @@
       flatBar.renderBar(leftX,topY,rightX,currentY,canvas);
       saveBarRectFRecord(i,r,leftX + mMoveX,topY + mMoveY,rightX + mMoveX,currentY + mMoveY);
       drawFocusRect(canvas,i,r,leftX,topY,rightX,currentY);
-      flatBar.renderBarItemLabel(getFormatterItemLabel(bv),currentX,sub(currentY,valuePostion / 2),canvas);
+      float labelLeftY=sub(currentY,valuePostion / 2);
+      drawAnchor(this.getAnchorDataPoint(),i,r,canvas,labelX,labelLeftY);
+      flatBar.renderBarItemLabel(getFormatterItemLabel(bv),labelX,labelLeftY,canvas);
       currentY=sub(currentY,valuePostion);
     }
     if (mTotalLabelVisible) {

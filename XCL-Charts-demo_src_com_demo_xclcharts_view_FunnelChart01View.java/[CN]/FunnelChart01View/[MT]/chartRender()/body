@@ -2,7 +2,7 @@
   try {
     int[] ltrb=getBarLnDefaultSpadding();
     chart.setPadding(ltrb[0],ltrb[1],ltrb[2],ltrb[3]);
-    chart.setTitle("?????????");
+    chart.setTitle("????????????");
     chart.addSubtitle("(XCL-Charts Demo)");
     chart.setDataSource(chartData);
     chart.showBorder();

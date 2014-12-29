@@ -1,7 +1,4 @@
 {
-  float axisScreenWidth=getPlotScreenWidth();
-  float axisScreenHeight=getPlotScreenHeight();
-  float axisDataHeight=(float)dataAxis.getAxisRange();
   List<PointD> chartValues=bd.getDataSet();
   if (null == chartValues)   return;
   float YvaluePos=0.0f, XvaluePos=0.0f;
@@ -21,7 +18,6 @@
     Log.e(TAG,"??????????????????????????????.");
     return;
   }
-  double xMM=MathHelper.getInstance().sub(mMaxValue,mMinValue);
   float scale=mBubbleScaleMax - mBubbleScaleMin;
   float size=mBubbleMaxSize - mBubbleMinSize;
   List<Double> lstBubble=bd.getBubble();
@@ -34,12 +30,8 @@
   int count=chartValues.size();
   for (int i=0; i < count; i++) {
     PointD entry=chartValues.get(i);
-    double yScale=MathHelper.getInstance().div(MathHelper.getInstance().sub(entry.y,dataAxis.getAxisMin()),axisDataHeight);
-    YvaluePos=mul(axisScreenHeight,(float)yScale);
-    double xScale=MathHelper.getInstance().div(MathHelper.getInstance().sub(entry.x,mMinValue),xMM);
-    XvaluePos=mul(axisScreenWidth,(float)xScale);
-    XvaluePos=add(plotArea.getLeft(),XvaluePos);
-    YvaluePos=sub(plotArea.getBottom(),YvaluePos);
+    XvaluePos=getLnXValPosition(entry.x,mMaxValue,mMinValue);
+    YvaluePos=getVPValPosition(entry.y);
     if (i >= bubbleSize) {
       continue;
     }
@@ -56,6 +48,7 @@
     if (bd.getBorderColor() != -1) {
       canvas.drawCircle(XvaluePos,YvaluePos,curRadius,getPointBorderPaint());
     }
+    drawAnchor(getAnchorDataPoint(),dataID,i,canvas,XvaluePos,YvaluePos);
     if (bd.getLabelVisible()) {
       DrawHelper.getInstance().drawRotateText(getFormatterDotLabel(Double.toString(entry.x) + "," + Double.toString(entry.y)+ " : "+ Double.toString(bubble)),XvaluePos,YvaluePos,itemAngle,canvas,bd.getDotLabelPaint());
     }

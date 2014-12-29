@@ -34,7 +34,13 @@
       float rightX=add(barInitX,valuePostion);
       mBar3D.renderHorizontal3DBar(barInitX,topY,rightX,drawBarButtomY,mBar3D.getBarPaint().getColor(),canvas);
       saveBarRectFRecord(i,j,barInitX + mMoveX,topY + mMoveY,rightX + mMoveX,drawBarButtomY + mMoveY);
-      mBar3D.renderBarItemLabel(getFormatterItemLabel(bv),rightX,sub(drawBarButtomY,barHeight / 2),canvas);
+      float labelTopY=sub(drawBarButtomY,barHeight / 2);
+      drawAnchor(this.getAnchorDataPoint(),i,j,canvas,rightX,labelTopY);
+      if (!mEqualAxisMin && Double.compare(dataAxis.getAxisMin(),bv) == 0) {
+      }
+ else {
+        mBar3D.renderBarItemLabel(getFormatterItemLabel(bv),rightX,labelTopY,canvas);
+      }
     }
     currNumber++;
   }

@@ -17,7 +17,7 @@
   float barInnerMargin=ret[1];
   float labelBarUseWidth=add(mul(barNumber,barWidth),mul(sub(barNumber,1),barInnerMargin));
   float barLeft=0.0f, barBottom=0.0f, barTop=0.f, barRight=0.f;
-  float currLableX, drawBarStartX, topY, labelTopX, labelTopY;
+  float currLabelX, drawBarStartX, topY, labelTopX, labelTopY;
   int size=mDataSet.size();
   for (int i=0; i < size; i++) {
     BarData bd=mDataSet.get(i);
@@ -29,8 +29,14 @@
     for (int j=0; j < countChild; j++) {
       Double bv=barValues.get(j);
       setBarDataColor(mFlatBar.getBarPaint(),barDataColor,j,bd.getColor());
-      currLableX=add(plotArea.getLeft(),mul((j + 1),XSteps));
-      drawBarStartX=sub(currLableX,labelBarUseWidth / 2);
+      currLabelX=add(plotArea.getLeft(),mul((j + 1),XSteps));
+      if (XEnum.BarCenterStyle.SPACE == mBarCenterStyle) {
+        drawBarStartX=sub(currLabelX,div(XSteps,2));
+        drawBarStartX=sub(drawBarStartX,labelBarUseWidth / 2);
+      }
+ else {
+        drawBarStartX=sub(currLabelX,labelBarUseWidth / 2);
+      }
       drawBarStartX=add(drawBarStartX,add(barWidth,barInnerMargin) * currNumber);
       labelTopY=topY=getVPValPosition(bv);
       if (dataAxis.getAxisStdStatus()) {
@@ -59,7 +65,11 @@
       drawFocusRect(canvas,i,j,barLeft,barTop,barRight,barBottom);
       labelTopX=add(drawBarStartX,barWidth / 2);
       drawAnchor(this.mAnchorSet,i,j,canvas,labelTopX,labelTopY);
-      mFlatBar.renderBarItemLabel(getFormatterItemLabel(bv),labelTopX,labelTopY,canvas);
+      if (!mEqualAxisMin && Double.compare(dataAxis.getAxisMin(),bv) == 0) {
+      }
+ else {
+        mFlatBar.renderBarItemLabel(getFormatterItemLabel(bv),labelTopX,labelTopY,canvas);
+      }
     }
     currNumber++;
   }

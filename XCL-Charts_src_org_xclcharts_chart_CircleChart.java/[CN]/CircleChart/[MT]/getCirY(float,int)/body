@@ -1,0 +1,7 @@
+{
+  float txtY=cirY;
+  if ("" == mDataInfo) {
+    txtY=cirY + labelHeight / 3;
+  }
+  return txtY;
+}

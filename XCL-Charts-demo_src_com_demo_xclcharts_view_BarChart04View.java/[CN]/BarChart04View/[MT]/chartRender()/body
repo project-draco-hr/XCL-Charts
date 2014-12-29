@@ -36,9 +36,10 @@
     }
 );
     chart.getPlotLegend().hide();
-    chart.getBar().setBarInnerMargin(0.1d);
+    chart.getBar().setBarInnerMargin(0.1f);
     chart.disablePanMode();
     chart.disableHighPrecision();
+    chart.setBarCenterStyle(XEnum.BarCenterStyle.TICKMARKS);
   }
  catch (  Exception e) {
     e.printStackTrace();

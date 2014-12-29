@@ -50,6 +50,7 @@
     chart.ActiveListenItemClick();
     chart.showClikedFocus();
     chart.setPlotPanMode(XEnum.PanMode.HORIZONTAL);
+    chart.setBarCenterStyle(XEnum.BarCenterStyle.TICKMARKS);
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

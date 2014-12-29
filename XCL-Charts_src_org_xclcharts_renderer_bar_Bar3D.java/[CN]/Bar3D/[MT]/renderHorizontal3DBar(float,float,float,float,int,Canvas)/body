@@ -1,4 +1,5 @@
 {
+  if (Float.compare(barTop,barBottom) == 0)   return;
   int lightColor=DrawHelper.getInstance().getLightColor(color,mAlpha);
   getBarPaint().setColor(color);
   mPaint3D.setColor(lightColor);

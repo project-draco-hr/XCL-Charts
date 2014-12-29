@@ -41,6 +41,19 @@
     chart.setAxesClosed(true);
     chart.setCrurveLineStyle(XEnum.CrurveLineStyle.BEELINE);
     chart.disableHighPrecision();
+    List<AnchorDataPoint> mAnchorSet=new ArrayList<AnchorDataPoint>();
+    AnchorDataPoint an1=new AnchorDataPoint(2,0,XEnum.AnchorStyle.RECT);
+    an1.setAlpha(200);
+    an1.setBgColor(Color.RED);
+    an1.setAreaStyle(XEnum.DataAreaStyle.FILL);
+    AnchorDataPoint an2=new AnchorDataPoint(1,1,XEnum.AnchorStyle.CIRCLE);
+    an2.setBgColor(Color.GRAY);
+    AnchorDataPoint an3=new AnchorDataPoint(0,2,XEnum.AnchorStyle.RECT);
+    an3.setBgColor(Color.BLUE);
+    mAnchorSet.add(an1);
+    mAnchorSet.add(an2);
+    mAnchorSet.add(an3);
+    chart.setAnchorDataPoint(mAnchorSet);
   }
  catch (  Exception e) {
     e.printStackTrace();

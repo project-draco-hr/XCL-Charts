@@ -1,4 +1,8 @@
 {
   if (renderVerticalPlot(canvas) == true) {
+    if (null != mCustomLine) {
+      mCustomLine.setVerticalPlot(dataAxis,plotArea,getAxisScreenHeight());
+      mCustomLine.renderVerticalCustomlinesDataAxis(canvas);
+    }
   }
 }

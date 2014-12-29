@@ -36,7 +36,7 @@
     }
 );
     chart.getPlotLegend().hide();
-    chart.getBar().setBarInnerMargin(0.1d);
+    chart.getBar().setBarInnerMargin(0.1f);
     chart.disableHighPrecision();
     chart.setPlotPanMode(XEnum.PanMode.HORIZONTAL);
   }

@@ -15,10 +15,8 @@
   if (null == chartValues || chartValues.size() == 0) {
     return false;
   }
-  float axisScreenHeight=getPlotScreenHeight();
-  float axisDataHeight=(float)dataAxis.getAxisRange();
   float XSteps=0.0f;
-  int j=0, childID=0;
+  int j=0;
   int tickCount=dataSet.size();
   if (0 == tickCount) {
     return false;
@@ -32,12 +30,12 @@
   PlotLine pLine=bd.getPlotLine();
   PlotDot pDot=pLine.getPlotDot();
   float radius=pDot.getDotRadius();
-  for (  Double bv : chartValues) {
-    float vaxlen=(float)MathHelper.getInstance().sub(bv,dataAxis.getAxisMin());
-    float fvper=div(vaxlen,axisDataHeight);
-    float valuePostion=mul(axisScreenHeight,fvper);
+  double bv=0.d;
+  int count=chartValues.size();
+  for (int i=0; i < count; i++) {
+    bv=chartValues.get(i);
+    lineStopY=getVPValPosition(bv);
     lineStopX=add(initX,j * XSteps);
-    lineStopY=sub(initY,valuePostion);
     if (0 == j) {
       lineStartX=lineStopX;
       lineStartY=lineStopY;
@@ -56,10 +54,10 @@
  else       if (type.equalsIgnoreCase("DOT2LABEL")) {
         if (!pLine.getDotStyle().equals(XEnum.DotStyle.HIDE)) {
           PlotDotRender.getInstance().renderDot(canvas,pDot,lineStopX,lineStopY,pLine.getDotPaint());
-          savePointRecord(dataID,childID,lineStopX + mMoveX,lineStopY + mMoveY,lineStopX - radius + mMoveX,lineStopY - radius + mMoveY,lineStopX + radius + mMoveX,lineStopY + radius + mMoveY);
-          childID++;
+          savePointRecord(dataID,i,lineStopX + mMoveX,lineStopY + mMoveY,lineStopX - radius + mMoveX,lineStopY - radius + mMoveY,lineStopX + radius + mMoveX,lineStopY + radius + mMoveY);
           lineStopX=lineStopX + radius;
         }
+        drawAnchor(getAnchorDataPoint(),dataID,i,canvas,lineStopX - radius,lineStopY);
         if (bd.getLabelVisible()) {
           bd.getPlotLabel().drawLabel(canvas,pLine.getDotLabelPaint(),getFormatterItemLabel(bv),lineStopX,lineStopY,itemAngle,bd.getLineColor());
         }

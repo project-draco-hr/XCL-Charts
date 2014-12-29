@@ -1,4 +1,0 @@
-{
-  if (null == mCustomLine)   mCustomLine=new PlotCustomLine();
-  mCustomLine.setCustomLines(customLineDataset);
-}

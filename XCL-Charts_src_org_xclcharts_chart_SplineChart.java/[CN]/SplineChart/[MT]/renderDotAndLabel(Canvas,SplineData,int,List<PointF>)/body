@@ -3,7 +3,6 @@
   if (pLine.getDotStyle().equals(XEnum.DotStyle.HIDE) == true && spData.getLabelVisible() == false) {
     return true;
   }
-  int childID=0;
   float itemAngle=spData.getItemLabelRotateAngle();
   PlotDot pDot=pLine.getPlotDot();
   float radius=pDot.getDotRadius();
@@ -12,9 +11,9 @@
     DotInfo dotInfo=mLstDotInfo.get(i);
     if (!pLine.getDotStyle().equals(XEnum.DotStyle.HIDE)) {
       PlotDotRender.getInstance().renderDot(canvas,pDot,dotInfo.mX,dotInfo.mY,pLine.getDotPaint());
-      savePointRecord(dataID,childID,dotInfo.mX + mMoveX,dotInfo.mY + mMoveY,dotInfo.mX - radius + mMoveX,dotInfo.mY - radius + mMoveY,dotInfo.mX + radius + mMoveX,dotInfo.mY + radius + mMoveY);
-      childID++;
+      savePointRecord(dataID,i,dotInfo.mX + mMoveX,dotInfo.mY + mMoveY,dotInfo.mX - radius + mMoveX,dotInfo.mY - radius + mMoveY,dotInfo.mX + radius + mMoveX,dotInfo.mY + radius + mMoveY);
     }
+    drawAnchor(getAnchorDataPoint(),dataID,i,canvas,dotInfo.mX,dotInfo.mY);
     if (spData.getLabelVisible()) {
       spData.getPlotLabel().drawLabel(canvas,pLine.getDotLabelPaint(),dotInfo.getLabel(),dotInfo.mX,dotInfo.mY,itemAngle,spData.getLineColor());
     }

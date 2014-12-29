@@ -3,7 +3,7 @@
     Log.e(TAG,"??????????????????.");
     return null;
   }
-  float labelBarTotalHeight=MathHelper.getInstance().mul(YSteps,0.9f);
+  float labelBarTotalHeight=MathHelper.getInstance().mul(YSteps,mBarTickSpacePercent);
   float barTotalInnerMargin=MathHelper.getInstance().mul(labelBarTotalHeight,MathHelper.getInstance().dtof(mBarInnerMargin));
   float barInnerMargin=MathHelper.getInstance().div(barTotalInnerMargin,barNumber);
   float barHeight=MathHelper.getInstance().div(MathHelper.getInstance().sub(labelBarTotalHeight,barTotalInnerMargin),barNumber);

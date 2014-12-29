@@ -34,7 +34,7 @@
       }
     }
 );
-    chart2.getBar().setBarInnerMargin(0d);
+    chart2.getBar().setBarInnerMargin(0.f);
     chart2.getDataAxis().getAxisPaint().setColor(axisColor);
     chart2.getCategoryAxis().getAxisPaint().setColor(axisColor);
     chart2.getDataAxis().getTickMarksPaint().setColor(axisColor);

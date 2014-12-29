@@ -1,0 +1,44 @@
+{
+  if (!isShow())   return;
+  float marksStartY=centerY;
+  float marksStopY=centerY;
+  float labelsStartY=labelY;
+switch (getVerticalTickPosition()) {
+case TOP:
+{
+      if (isShowTickMarks()) {
+        marksStartY=MathHelper.getInstance().sub(centerY,getTickMarksLength());
+        marksStopY=centerY;
+      }
+      marksStartY=MathHelper.getInstance().sub(centerY,getTickMarksLength());
+      marksStopY=centerY;
+      break;
+    }
+case MIDDLE:
+{
+    if (isShowTickMarks()) {
+      marksStartY=MathHelper.getInstance().sub(centerY,getTickMarksLength() / 2);
+      marksStopY=MathHelper.getInstance().add(centerY,getTickMarksLength() / 2);
+    }
+    break;
+  }
+case BOTTOM:
+if (isShowTickMarks()) {
+  marksStartY=centerY;
+  marksStopY=MathHelper.getInstance().add(centerY,getTickMarksLength());
+}
+if (this.isShowAxisLabels()) {
+labelsStartY=marksStopY + getTickLabelMargin() + DrawHelper.getInstance().getPaintFontHeight(getTickLabelPaint()) / 3;
+}
+break;
+default :
+break;
+}
+if (isShowTickMarks() && isTickVisible) {
+float mstartX=MathHelper.getInstance().sub(marksStartY,getAxisPaint().getStrokeWidth() / 2);
+canvas.drawLine(centerX,mstartX,centerX,marksStopY,getTickMarksPaint());
+}
+if (isShowAxisLabels()) {
+DrawHelper.getInstance().drawRotateText(getFormatterLabel(text),labelX,labelsStartY,getTickLabelRotateAngle(),canvas,getTickLabelPaint());
+}
+}

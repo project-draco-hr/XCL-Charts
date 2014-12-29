@@ -37,7 +37,9 @@
       float topY=sub(barInitY,valuePostion);
       mBar3D.renderVertical3DBar(drawBarStartX,topY,drawBarEndX,barInitY,mBar3D.getBarPaint().getColor(),canvas);
       saveBarRectFRecord(i,j,drawBarStartX + mMoveX,topY + mMoveY,drawBarEndX + mMoveX,plotArea.getBottom() + mMoveY);
-      mBar3D.renderBarItemLabel(getFormatterItemLabel(bv),add(drawBarStartX,barWidth / 2),topY,canvas);
+      float labelTopX=add(drawBarStartX,barWidth / 2);
+      drawAnchor(this.getAnchorDataPoint(),i,j,canvas,labelTopX,topY);
+      mBar3D.renderBarItemLabel(getFormatterItemLabel(bv),labelTopX,topY,canvas);
       drawFocusRect(canvas,i,j,drawBarStartX,topY,drawBarEndX,barInitY);
     }
     currNumber++;

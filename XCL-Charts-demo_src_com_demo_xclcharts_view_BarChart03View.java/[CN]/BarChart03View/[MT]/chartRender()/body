@@ -37,6 +37,7 @@
 );
     chart.getPlotLegend().hide();
     chart.getClipExt().setExtTop(150.f);
+    chart.setBarCenterStyle(XEnum.BarCenterStyle.TICKMARKS);
   }
  catch (  Exception e) {
     e.printStackTrace();

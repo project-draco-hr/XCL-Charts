@@ -1,5 +1,6 @@
 {
   XEnum.BarStyle style=getBarStyle();
+  if (Float.compare(top,bottom) == 0)   return true;
   if (XEnum.BarStyle.OUTLINE == style) {
     int barColor=getBarPaint().getColor();
     int lightColor=DrawHelper.getInstance().getLightColor(barColor,150);

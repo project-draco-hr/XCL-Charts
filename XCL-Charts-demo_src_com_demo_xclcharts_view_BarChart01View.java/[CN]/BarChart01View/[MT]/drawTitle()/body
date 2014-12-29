@@ -8,6 +8,7 @@
   chart.setPlotPanMode(XEnum.PanMode.HORIZONTAL);
   chart.getDataAxis().show();
   chart.getPlotLegend().show();
+  chart.hideEqualAxisMinBar();
   List<AnchorDataPoint> mAnchorSet=new ArrayList<AnchorDataPoint>();
   AnchorDataPoint an1=new AnchorDataPoint(2,0,XEnum.AnchorStyle.RECT);
   an1.setAlpha(200);

@@ -26,7 +26,7 @@
       }
     }
 );
-    chart.getBar().setBarInnerMargin(0d);
+    chart.getBar().setBarInnerMargin(0f);
     chart.getPlotLegend().hide();
     chart.disableHighPrecision();
   }

@@ -19,6 +19,7 @@
     currentX=axisX=plotArea.getLeft();
   }
   mLstCateTick.clear();
+  float labelX, labelY;
   for (int i=0; i < tickCount; i++) {
 switch (pos) {
 case LEFT:
@@ -27,7 +28,10 @@ case VERTICAL_CENTER:
       currentY=sub(axisY,mul((i + 1),YSteps));
     drawHorizontalGridLines(canvas,plotArea.getLeft(),plotArea.getRight(),i,tickCount,YSteps,currentY);
   if (!categoryAxis.isShowAxisLabels())   continue;
-mLstCateTick.add(new PlotAxisTick(sub(axisX,get3DOffsetX()),currentY,categoryAxis.getDataSet().get(i)));
+labelY=currentY;
+labelX=sub(axisX,get3DOffsetX());
+if (XEnum.BarCenterStyle.SPACE == mBarCenterStyle) labelY=add(currentY,div(YSteps,2));
+mLstCateTick.add(new PlotAxisTick(labelX,currentY,categoryAxis.getDataSet().get(i),labelX,labelY));
 break;
 case TOP:
 case BOTTOM:
@@ -37,7 +41,9 @@ drawVerticalGridLines(canvas,plotArea.getTop(),plotArea.getBottom(),i,tickCount,
 if (!categoryAxis.isShowAxisLabels()) continue;
 float currentY2=add(axisY,get3DBaseOffsetY());
 currentX=sub(currentX,get3DBaseOffsetX());
-mLstCateTick.add(new PlotAxisTick(currentX,currentY2,dataSet.get(i)));
+labelX=currentX;
+if (XEnum.BarCenterStyle.SPACE == mBarCenterStyle) labelX=sub(currentX,div(XSteps,2));
+mLstCateTick.add(new PlotAxisTick(currentX,currentY2,dataSet.get(i),labelX,currentY2));
 break;
 }
 }

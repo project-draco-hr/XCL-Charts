@@ -8,27 +8,20 @@
     Log.e(TAG,"?????????????????????.");
     return false;
   }
-  float initX=plotArea.getLeft();
-  float initY=plotArea.getBottom();
-  float lineStartX=initX, lineStartY=initY;
+  float lineStartX=plotArea.getLeft(), lineStartY=plotArea.getBottom();
   float lineStopX=0.0f, lineStopY=0.0f;
-  float axisScreenHeight=getPlotScreenHeight();
-  float axisDataHeight=(float)dataAxis.getAxisRange();
   float currLablesSteps=div(getPlotScreenWidth(),(categoryAxis.getDataSet().size() - 1));
-  double dper=0d;
-  int j=0;
   int count=chartValues.size();
   if (count <= 0)   return false;
-  for (  Double bv : chartValues) {
-    dper=MathHelper.getInstance().sub(bv,dataAxis.getAxisMin());
-    float valuePosition=mul(axisScreenHeight,div(dtof(dper),axisDataHeight));
-    lineStopX=add(initX,j * currLablesSteps);
-    lineStopY=sub(initY,valuePosition);
-    if (0 == j) {
+  for (int i=0; i < count; i++) {
+    double bv=chartValues.get(i);
+    lineStopX=add(plotArea.getLeft(),i * currLablesSteps);
+    lineStopY=getVPValPosition(bv);
+    if (0 == i) {
       lineStartX=lineStopX;
       lineStartY=lineStopY;
       if (2 < count) {
-        if (Double.compare(bv,dataAxis.getAxisMin()) != 0)         lstPathPoints.add(new PointF(initX,initY));
+        if (Double.compare(bv,dataAxis.getAxisMin()) != 0)         lstPathPoints.add(new PointF(plotArea.getLeft(),plotArea.getBottom()));
       }
       lstPathPoints.add(new PointF(lineStartX,lineStartY));
       lstPoints.add(new PointF(lineStartX,lineStartY));
@@ -38,11 +31,10 @@
     lstDotInfo.add(new DotInfo(bv,lineStopX,lineStopY));
     lineStartX=lineStopX;
     lineStartY=lineStopY;
-    j++;
   }
   if (count > 2) {
     lstPathPoints.add(new PointF(lineStartX,lineStartY));
-    if (Double.compare(chartValues.get(count - 1),dataAxis.getAxisMin()) != 0)     lstPathPoints.add(new PointF(lineStartX,initY));
+    if (Double.compare(chartValues.get(count - 1),dataAxis.getAxisMin()) != 0)     lstPathPoints.add(new PointF(lineStartX,plotArea.getBottom()));
   }
   return true;
 }

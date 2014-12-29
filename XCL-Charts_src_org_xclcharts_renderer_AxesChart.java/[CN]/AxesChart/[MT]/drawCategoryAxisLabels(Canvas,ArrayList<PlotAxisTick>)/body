@@ -10,7 +10,7 @@ case VERTICAL_CENTER:
 case TOP:
 case BOTTOM:
 case HORIZONTAL_CENTER:
-  categoryAxis.renderAxisVerticalTick(canvas,t.X,t.Y,t.Label,isDrawXAxisTickMarks(t.X,mMoveX));
+  categoryAxis.renderAxisVerticalTick(canvas,t.X,t.Y,t.Label,t.labelX,t.labelY,isDrawXAxisTickMarks(t.X,mMoveX));
 break;
 }
 }

@@ -1,0 +1,6 @@
+{
+  double maxminRange=MathHelper.getInstance().sub(maxValue,minValue);
+  double xScale=MathHelper.getInstance().div(MathHelper.getInstance().sub(xValue,minValue),maxminRange);
+  float XvaluePos=mul(getPlotScreenWidth(),(float)xScale);
+  return add(plotArea.getLeft(),XvaluePos);
+}

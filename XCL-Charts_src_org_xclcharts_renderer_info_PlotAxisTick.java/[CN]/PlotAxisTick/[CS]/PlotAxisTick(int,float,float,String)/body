@@ -3,4 +3,6 @@
   X=x;
   Y=y;
   Label=label;
+  labelX=x;
+  labelY=y;
 }
