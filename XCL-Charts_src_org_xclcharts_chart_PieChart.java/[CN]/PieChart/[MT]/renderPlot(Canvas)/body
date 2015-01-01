@@ -1,12 +1,14 @@
 {
   try {
     if (null == mDataset) {
-      Log.e(TAG,"???????????????.");
       return false;
     }
     float cirX=plotArea.getCenterX();
     float cirY=plotArea.getCenterY();
     float radius=getRadius();
+    if (Float.compare(radius,0.0f) == 0 || Float.compare(radius,0.0f) == -1) {
+      return false;
+    }
     float currentAngle=0.0f;
     float offsetAngle=mOffsetAngle;
     mLstLabels.clear();

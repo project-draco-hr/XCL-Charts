@@ -8,7 +8,7 @@
     chart.getDataAxis().hide();
     chart.getCategoryAxis().getTickLabelPaint().setTextAlign(Align.LEFT);
     chart.getCategoryAxis().setTickLabelRotateAngle(90);
-    chart.getAxisTitle().setLowerAxisTitle("(??????)");
+    chart.getAxisTitle().setLowerTitle("(??????)");
     chart.getPlotLegend().hide();
     chart.disableHighPrecision();
     List<AnchorDataPoint> mAnchorSet=new ArrayList<AnchorDataPoint>();

@@ -17,12 +17,12 @@
     chart.getFocusPaint().setStyle(Style.STROKE);
     chart.getFocusPaint().setStrokeWidth(3);
     chart.getFocusPaint().setColor(Color.GREEN);
-    mPaintToolTip.setColor(Color.RED);
+    mPaintToolTip.setColor(colorTitalAxes);
     mDotToolTip.setDotStyle(XEnum.DotStyle.RECT);
     chart.getToolTip().setCurrentXY(x,y);
     chart.getToolTip().setStyle(XEnum.DyInfoStyle.ROUNDRECT);
     chart.getToolTip().addToolTip(mDotToolTip,bData.getKey(),mPaintToolTip);
-    chart.getToolTip().addToolTip(" Current Value:" + Double.toString(bValue),mPaintToolTip);
+    chart.getToolTip().addToolTip("??????:" + Double.toString(bValue),mPaintToolTip);
     chart.getToolTip().getBackgroundPaint().setAlpha(100);
     this.invalidate();
   }

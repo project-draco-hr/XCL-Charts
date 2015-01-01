@@ -1,0 +1,8 @@
+{
+  X=x;
+  Y=y;
+  Label=label;
+  labelX=lx;
+  labelY=ly;
+  mHideTickMarks=tickMarks;
+}

@@ -1,8 +1,8 @@
 {
   if (null == canvas)   return;
   if (0 == axisTitle.length() || "" == axisTitle)   return;
-  double axisTitleTextHeight=DrawHelper.getInstance().getTextWidth(getLeftAxisTitlePaint(),axisTitle);
-  float axisTitleTextStartX=(float)Math.round(left + getLeftAxisTitlePaint().getTextSize());
+  double axisTitleTextHeight=DrawHelper.getInstance().getTextWidth(getLeftTitlePaint(),axisTitle);
+  float axisTitleTextStartX=(float)Math.round(left + getLeftTitlePaint().getTextSize());
   float axisTitleTextStartY=0.0f;
   if (mAxisTitleStyle == XEnum.AxisTitleStyle.ENDPOINT) {
     axisTitleTextStartY=Math.round(top + axisTitleTextHeight);
@@ -12,8 +12,8 @@
   }
   double axisTitleCharHeight=0d;
   for (int i=0; i < axisTitle.length(); i++) {
-    axisTitleCharHeight=DrawHelper.getInstance().getTextWidth(getLeftAxisTitlePaint(),axisTitle.substring(i,i + 1));
-    DrawHelper.getInstance().drawRotateText(axisTitle.substring(i,i + 1),axisTitleTextStartX,axisTitleTextStartY,-90,canvas,getLeftAxisTitlePaint());
+    axisTitleCharHeight=DrawHelper.getInstance().getTextWidth(getLeftTitlePaint(),axisTitle.substring(i,i + 1));
+    DrawHelper.getInstance().drawRotateText(axisTitle.substring(i,i + 1),axisTitleTextStartX,axisTitleTextStartY,-90,canvas,getLeftTitlePaint());
     axisTitleTextStartY-=axisTitleCharHeight;
   }
 }

@@ -1,6 +1,6 @@
 {
   if (null == mDataSet)   return false;
-  float YSteps=getHorizontalYSteps();
+  float YSteps=getVerticalYSteps(getCateTickCount());
   float barInitX=plotArea.getLeft();
   float barInitY=plotArea.getBottom();
   int barNumber=getDatasetSize(mDataSet);

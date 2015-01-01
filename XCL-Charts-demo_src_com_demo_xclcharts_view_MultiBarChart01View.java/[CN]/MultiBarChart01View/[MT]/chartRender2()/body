@@ -11,8 +11,8 @@
     chart2.getPlotTitle().getSubtitlePaint().setColor(axisColor);
     chart2.setDataSource(chartData2);
     chart2.setCategories(chartLabels);
-    chart2.getAxisTitle().setLeftAxisTitle("??????");
-    chart2.getAxisTitle().setLowerAxisTitle("???????????????");
+    chart2.getAxisTitle().setLeftTitle("??????");
+    chart2.getAxisTitle().setLowerTitle("???????????????");
     chart2.getDataAxis().setAxisMax(2500);
     chart2.getDataAxis().setAxisMin(0);
     chart2.getDataAxis().setAxisSteps(500);
@@ -41,8 +41,8 @@
     chart2.getCategoryAxis().getTickMarksPaint().setColor(axisColor);
     chart2.getDataAxis().getTickLabelPaint().setColor(axisColor);
     chart2.getCategoryAxis().getTickLabelPaint().setColor(axisColor);
-    chart2.getAxisTitle().getLeftAxisTitlePaint().setColor(axisColor);
-    chart2.getAxisTitle().getLowerAxisTitlePaint().setColor(axisColor);
+    chart2.getAxisTitle().getLeftTitlePaint().setColor(axisColor);
+    chart2.getAxisTitle().getLowerTitlePaint().setColor(axisColor);
     chart2.getPlotLegend().hide();
   }
  catch (  Exception e) {

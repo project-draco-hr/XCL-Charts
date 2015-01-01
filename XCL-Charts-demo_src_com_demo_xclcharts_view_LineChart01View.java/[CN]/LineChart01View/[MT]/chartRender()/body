@@ -17,7 +17,7 @@
     chart.getPlotGrid().getVerticalLinePaint().setColor(Color.BLUE);
     chart.setTitle("?????????(Line Chart)");
     chart.addSubtitle("(XCL-Charts Demo)");
-    chart.getAxisTitle().setLowerAxisTitle("(??????)");
+    chart.getAxisTitle().setLowerTitle("(??????)");
     chart.ActiveListenItemClick();
     chart.extPointClickRange(5);
     chart.showClikedFocus();

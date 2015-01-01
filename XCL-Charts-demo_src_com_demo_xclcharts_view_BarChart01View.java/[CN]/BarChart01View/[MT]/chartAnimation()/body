@@ -7,7 +7,7 @@
       Thread.sleep(100);
       chart.setPadding(ltrb[0],i * ltrb[1],ltrb[2],ltrb[3]);
       if (1 == i) {
-        drawTitle();
+        drawLast();
         drawDyLegend();
       }
       postInvalidate();

@@ -2,7 +2,7 @@
 switch (chartStyle) {
 case 0:
     mChart=new BarChart();
-  mChart.getAxisTitle().setLeftAxisTitle("?????????");
+  mChart.getAxisTitle().setLeftTitle("?????????");
 break;
 case 1:
 mChart=new BarChart();

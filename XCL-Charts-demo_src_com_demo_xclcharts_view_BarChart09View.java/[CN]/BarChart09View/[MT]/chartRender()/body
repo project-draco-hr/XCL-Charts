@@ -7,9 +7,9 @@
     chart.setTitleVerticalAlign(XEnum.VerticalAlign.MIDDLE);
     chart.setDataSource(chartData);
     chart.setCategories(chartLabels);
-    chart.getAxisTitle().setLeftAxisTitle("??????230");
-    chart.getAxisTitle().setLowerAxisTitle("??????");
-    chart.getAxisTitle().setRightAxisTitle("??????230");
+    chart.getAxisTitle().setLeftTitle("??????230");
+    chart.getAxisTitle().setLowerTitle("??????");
+    chart.getAxisTitle().setRightTitle("??????230");
     chart.getDataAxis().setAxisMax(500);
     chart.getDataAxis().setAxisMin(100);
     chart.getDataAxis().setAxisSteps(100);

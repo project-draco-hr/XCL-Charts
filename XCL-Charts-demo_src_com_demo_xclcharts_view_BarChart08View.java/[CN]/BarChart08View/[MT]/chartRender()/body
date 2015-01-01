@@ -39,6 +39,7 @@
     chart.getBar().setBarInnerMargin(0.1f);
     chart.disableHighPrecision();
     chart.setPlotPanMode(XEnum.PanMode.HORIZONTAL);
+    chart.setBarCenterStyle(XEnum.BarCenterStyle.TICKMARKS);
   }
  catch (  Exception e) {
     e.printStackTrace();

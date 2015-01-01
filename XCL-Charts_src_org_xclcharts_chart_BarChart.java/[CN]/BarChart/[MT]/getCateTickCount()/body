@@ -1,0 +1,5 @@
+{
+  int count=categoryAxis.getDataSet().size();
+  if (XEnum.BarCenterStyle.SPACE != mBarCenterStyle)   count+=1;
+  return count;
+}

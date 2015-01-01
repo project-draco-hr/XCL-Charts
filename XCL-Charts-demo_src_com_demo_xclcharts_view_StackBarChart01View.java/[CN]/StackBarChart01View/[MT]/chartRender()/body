@@ -17,7 +17,7 @@
     chart.addSubtitle("(XCL-Charts Demo)");
     chart.setTitleAlign(XEnum.HorizontalAlign.CENTER);
     chart.setTitleVerticalAlign(XEnum.VerticalAlign.MIDDLE);
-    chart.getAxisTitle().setLeftAxisTitle("??????(TB)");
+    chart.getAxisTitle().setLeftTitle("??????(TB)");
     chart.getPlotGrid().showEvenRowBgColor();
     chart.getPlotGrid().showOddRowBgColor();
     chart.getDataAxis().setLabelFormatter(new IFormatterTextCallBack(){

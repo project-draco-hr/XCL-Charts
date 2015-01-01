@@ -1,8 +1,10 @@
 {
   Legend dyLegend=chart.getDyLegend();
   if (null == dyLegend)   return;
-  dyLegend.setPosition(0.7f,0.3f);
-  dyLegend.setColSpan(30.f);
+  dyLegend.setPosition(0.8f,0.5f);
+  if (chart.getPlotArea().getHeight() > chart.getPlotArea().getWidth()) {
+    dyLegend.setPosition(0.6f,0.5f);
+  }
   dyLegend.getBackgroundPaint().setColor(Color.BLACK);
   dyLegend.getBackgroundPaint().setAlpha(100);
   dyLegend.setRowSpan(20.f);
@@ -12,14 +14,14 @@
   pDyLegend.setColor(Color.GREEN);
   PlotDot dotDyLegend=new PlotDot();
   dotDyLegend.setDotStyle(XEnum.DotStyle.RECT);
-  dyLegend.addLegend(dotDyLegend,"???????????????",pDyLegend);
+  dyLegend.addLegend(dotDyLegend,"?????????xxx(PB)",pDyLegend);
   Paint pDyLegend2=new Paint(Paint.ANTI_ALIAS_FLAG);
   pDyLegend2.setColor(Color.RED);
-  dyLegend.addLegend(dotDyLegend,"???????????????",pDyLegend2);
+  dyLegend.addLegend(dotDyLegend,"?????????xxx(PB)",pDyLegend2);
   Paint pDyLegend3=new Paint(Paint.ANTI_ALIAS_FLAG);
   pDyLegend3.setColor(Color.CYAN);
-  dyLegend.addLegend(dotDyLegend,"???????????????",pDyLegend3);
+  dyLegend.addLegend(dotDyLegend,"?????????xxx(PB)",pDyLegend3);
   Paint pDyLegend4=new Paint(Paint.ANTI_ALIAS_FLAG);
   pDyLegend4.setColor(Color.YELLOW);
-  dyLegend.addLegend(dotDyLegend,"???????????????",pDyLegend4);
+  dyLegend.addLegend("??????:xxx(PB)",pDyLegend4);
 }

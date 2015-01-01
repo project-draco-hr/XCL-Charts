@@ -2,5 +2,7 @@
   chartLabels();
   chartDataSet();
   chartRender();
+  chartPieDataSet();
+  chartPieRender();
   new Thread(this).start();
 }

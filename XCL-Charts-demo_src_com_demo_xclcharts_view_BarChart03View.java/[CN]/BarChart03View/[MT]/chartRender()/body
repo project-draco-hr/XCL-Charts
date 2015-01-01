@@ -6,9 +6,9 @@
     chart.addSubtitle("(XCL-Charts Demo)");
     chart.setCategories(chartLabels);
     chart.setCustomLines(mCustomLineDataset);
-    chart.getAxisTitle().setAxisTitleStyle(XEnum.AxisTitleStyle.ENDPOINT);
-    chart.getAxisTitle().setLeftAxisTitle("??????");
-    chart.getAxisTitle().setLowerAxisTitle("??????");
+    chart.getAxisTitle().setTitleStyle(XEnum.AxisTitleStyle.ENDPOINT);
+    chart.getAxisTitle().setLeftTitle("??????");
+    chart.getAxisTitle().setLowerTitle("??????");
     chart.getAxisTitle().setCrossPointTitle("(??????)");
     chart.getDataAxis().setAxisMax(105);
     chart.getDataAxis().setAxisMin(0);

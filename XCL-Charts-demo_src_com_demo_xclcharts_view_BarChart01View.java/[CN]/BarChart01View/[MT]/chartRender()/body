@@ -4,8 +4,8 @@
     chart.setPadding(ltrb[0],ltrb[1],ltrb[2],ltrb[3]);
     chart.setDataSource(chartData);
     chart.setCategories(chartLabels);
-    chart.getAxisTitle().setLeftAxisTitle("?????????");
-    chart.getAxisTitle().setLowerAxisTitle("????????????");
+    chart.getAxisTitle().setLeftTitle("?????????");
+    chart.getAxisTitle().setLowerTitle("????????????");
     chart.getDataAxis().setAxisMax(100);
     chart.getDataAxis().setAxisMin(0);
     chart.getDataAxis().setAxisSteps(5);
@@ -27,22 +27,25 @@
       }
     }
 );
-    int axisColor=Color.BLUE;
-    chart.getDataAxis().getAxisPaint().setColor(axisColor);
-    chart.getCategoryAxis().getAxisPaint().setColor(axisColor);
-    chart.getDataAxis().getTickMarksPaint().setColor(axisColor);
-    chart.getCategoryAxis().getTickMarksPaint().setColor(axisColor);
+    chart.getDataAxis().getAxisPaint().setColor(colorTitalAxes);
+    chart.getCategoryAxis().getAxisPaint().setColor(colorTitalAxes);
+    chart.getDataAxis().getTickMarksPaint().setColor(colorTitalAxes);
+    chart.getCategoryAxis().getTickMarksPaint().setColor(colorTitalAxes);
+    chart.getDataAxis().getTickLabelPaint().setColor(colorTitalAxes);
+    chart.getCategoryAxis().getTickLabelPaint().setColor(colorTitalAxes);
+    chart.getAxisTitle().getLeftTitlePaint().setColor(colorTitalAxes);
+    chart.getAxisTitle().getLowerTitlePaint().setColor(colorTitalAxes);
+    chart.getBar().getItemLabelPaint().setColor(Color.rgb(246,133,39));
+    chart.getBar().getItemLabelPaint().setTextSize(15);
     chart.getDataAxis().setDetailModeSteps(5);
-    chart.getPlotArea().extWidth(200f);
     chart.showDyLine();
     DyLine dyl=chart.getDyLine();
     if (null != dyl) {
       dyl.setDyLineStyle(XEnum.DyLineStyle.Horizontal);
       dyl.setLineDrawStyle(XEnum.LineStyle.DASH);
     }
-    chart.disableHighPrecision();
   }
  catch (  Exception e) {
-    Log.e(TAG,e.toString());
+    Log.e(TAG,"chartRender():" + e.toString());
   }
 }

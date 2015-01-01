@@ -1,0 +1,11 @@
+{
+  try {
+    chartPie.setLabelStyle(XEnum.SliceLabelStyle.INSIDE);
+    chartPie.getLabelPaint().setColor(Color.WHITE);
+    chartPie.setDataSource(chartDataPie);
+    chartPie.getPlotLegend().hide();
+  }
+ catch (  Exception e) {
+    Log.e(TAG,"chartPieRender():" + e.toString());
+  }
+}

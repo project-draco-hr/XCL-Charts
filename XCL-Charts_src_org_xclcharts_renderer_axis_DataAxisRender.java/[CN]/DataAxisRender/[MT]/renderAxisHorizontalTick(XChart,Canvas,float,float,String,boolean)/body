@@ -1,5 +1,3 @@
 {
-  if (isShow()) {
-    renderHorizontalTick(xchart,canvas,centerX,centerY,text,isTickVisible);
-  }
+  renderHorizontalTick(xchart,canvas,centerX,centerY,text,centerX,centerY,isTickVisible);
 }

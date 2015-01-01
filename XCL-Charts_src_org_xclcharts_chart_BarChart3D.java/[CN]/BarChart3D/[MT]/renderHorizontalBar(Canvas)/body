@@ -1,7 +1,7 @@
 {
   List<BarData> chartDataSource=this.getDataSource();
   if (null == chartDataSource)   return false;
-  float YSteps=getHorizontalYSteps();
+  float YSteps=getVerticalYSteps(getCateTickCount());
   float barInitX=plotArea.getLeft() + this.mMoveX;
   float barInitY=plotArea.getBottom();
   int barNumber=getDatasetSize(chartDataSource);

@@ -1,0 +1,4 @@
+{
+  int tickCount=dataAxis.getAixTickCount();
+  return tickCount + 1;
+}

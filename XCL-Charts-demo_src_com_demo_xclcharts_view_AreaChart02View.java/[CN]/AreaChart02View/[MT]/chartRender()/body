@@ -15,7 +15,7 @@
     chart.getCategoryAxis().hideTickMarks();
     chart.setTitle("???????????????");
     chart.addSubtitle("(XCL-Charts Demo)");
-    chart.getAxisTitle().setLowerAxisTitle("(??????)");
+    chart.getAxisTitle().setLowerTitle("(??????)");
     chart.setAreaAlpha(180);
     chart.getPlotLegend().show();
     chart.ActiveListenItemClick();

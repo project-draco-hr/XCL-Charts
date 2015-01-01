@@ -1,16 +1,19 @@
 {
   if (null == lstLabels)   return;
+  boolean showTicks=true;
   for (  PlotAxisTick t : lstLabels) {
 switch (mCategoryAxisLocation) {
 case LEFT:
 case RIGHT:
 case VERTICAL_CENTER:
-      categoryAxis.renderAxisHorizontalTick(this,canvas,t.X,t.Y,t.Label,isDrawYAxisTickMarks(t.Y,mMoveY));
-    break;
+      if (!t.isShowTickMarks() || !isDrawYAxisTickMarks(t.Y,mMoveY))       showTicks=false;
+    categoryAxis.renderAxisHorizontalTick(this,canvas,t.X,t.Y,t.Label,t.labelX,t.labelY,showTicks);
+  break;
 case TOP:
 case BOTTOM:
 case HORIZONTAL_CENTER:
-  categoryAxis.renderAxisVerticalTick(canvas,t.X,t.Y,t.Label,t.labelX,t.labelY,isDrawXAxisTickMarks(t.X,mMoveX));
+if (!t.isShowTickMarks() || !isDrawXAxisTickMarks(t.X,mMoveX)) showTicks=false;
+categoryAxis.renderAxisVerticalTick(canvas,t.X,t.Y,t.Label,t.labelX,t.labelY,showTicks);
 break;
 }
 }

@@ -1,0 +1,3 @@
+{
+  renderHorizontalTick(xchart,canvas,centerX,centerY,text,labelX,labelY,isTickVisible);
+}

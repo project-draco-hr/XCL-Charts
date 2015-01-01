@@ -2,7 +2,7 @@
   if (null == mDataSet)   return false;
   List<String> dataSet=categoryAxis.getDataSet();
   if (null == dataSet)   return false;
-  float XSteps=getVerticalXSteps(dataSet.size() + 1);
+  float XSteps=getVerticalXSteps(getCateTickCount());
   float dataAxisStd=getVPDataAxisStdY();
   float itemFontHeight=0.f;
   if (mFlatBar.getItemLabelsVisible())   itemFontHeight=DrawHelper.getInstance().getPaintFontHeight(mFlatBar.getItemLabelPaint());

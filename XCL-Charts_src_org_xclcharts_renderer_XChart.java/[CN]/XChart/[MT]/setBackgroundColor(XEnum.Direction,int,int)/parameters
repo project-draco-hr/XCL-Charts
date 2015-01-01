@@ -1,0 +1,3 @@
+XEnum.Direction direction
+int beginColor
+int endColor

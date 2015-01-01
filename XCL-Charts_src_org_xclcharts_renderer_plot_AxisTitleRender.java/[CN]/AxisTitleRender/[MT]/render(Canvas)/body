@@ -13,14 +13,14 @@
     right=mChart.getRight();
     bottom=mChart.getBottom();
   }
-  if (this.getLeftAxisTitle().length() > 0) {
-    drawLeftAxisTitle(canvas,getLeftAxisTitle(),left,top,right,bottom);
+  if (this.getLeftTitle().length() > 0) {
+    drawLeftAxisTitle(canvas,getLeftTitle(),left,top,right,bottom);
   }
-  if (this.getLowerAxisTitle().length() > 0) {
-    drawLowerAxisTitle(canvas,getLowerAxisTitle(),left,top,right,bottom);
+  if (this.getLowerTitle().length() > 0) {
+    drawLowerAxisTitle(canvas,getLowerTitle(),left,top,right,bottom);
   }
-  if (this.getRightAxisTitle().length() > 0) {
-    drawRightAxisTitle(canvas,getRightAxisTitle(),left,top,right,bottom);
+  if (this.getRightTitle().length() > 0) {
+    drawRightAxisTitle(canvas,getRightTitle(),left,top,right,bottom);
   }
   return true;
 }

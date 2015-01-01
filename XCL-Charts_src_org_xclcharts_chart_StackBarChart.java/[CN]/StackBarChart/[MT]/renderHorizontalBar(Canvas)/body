@@ -3,7 +3,7 @@
   float axisScreenWidth=getPlotScreenWidth();
   float axisDataRange=(float)dataAxis.getAxisRange();
   float valueWidth=axisDataRange;
-  float YSteps=getHorizontalYSteps();
+  float YSteps=getVerticalYSteps(getCateTickCount());
   int barHeight=(int)MathHelper.getInstance().round(mul(YSteps,0.5f),2);
   int cateSize=categoryAxis.getDataSet().size();
   int dataSize=0;

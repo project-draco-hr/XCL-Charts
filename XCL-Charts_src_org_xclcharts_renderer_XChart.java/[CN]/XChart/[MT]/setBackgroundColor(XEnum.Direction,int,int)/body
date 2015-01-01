@@ -1,0 +1,17 @@
+{
+  if (beginColor == endColor) {
+    getBackgroundPaint().setColor(beginColor);
+  }
+ else {
+    LinearGradient linearGradient;
+    if (direction == XEnum.Direction.VERTICAL) {
+      linearGradient=new LinearGradient(0,0,0,getBottom() - getTop(),beginColor,endColor,Shader.TileMode.MIRROR);
+    }
+ else {
+      linearGradient=new LinearGradient(getLeft(),getBottom(),getRight(),getTop(),beginColor,endColor,Shader.TileMode.CLAMP);
+    }
+    getBackgroundPaint().setShader(linearGradient);
+  }
+  if (null == mBorder)   mBorder=new BorderRender();
+  mBorder.getBackgroundPaint().setColor(endColor);
+}
