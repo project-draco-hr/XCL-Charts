@@ -30,11 +30,11 @@
       float valuePostion=0.0f;
       if (i == 0) {
         double t=MathHelper.getInstance().sub(bv,dataAxis.getAxisMin());
-        valuePostion=mul(axisScreenHeight,div(dtof(t),axisDataHeight));
+        valuePostion=mul(axisScreenHeight,div((float)(t),axisDataHeight));
       }
  else {
         double t2=MathHelper.getInstance().div(bv,axisDataHeight);
-        valuePostion=mul(axisScreenHeight,dtof(t2));
+        valuePostion=mul(axisScreenHeight,(float)(t2));
       }
       float leftX=sub(currentX,barWidht / 2);
       float topY=sub(currentY,valuePostion);
@@ -49,7 +49,7 @@
     }
     if (mTotalLabelVisible) {
       double per=MathHelper.getInstance().sub(total,dataAxis.getAxisMin());
-      float totalPostion=MathHelper.getInstance().mul(div(axisScreenHeight,axisDataHeight),dtof(per));
+      float totalPostion=MathHelper.getInstance().mul(div(axisScreenHeight,axisDataHeight),(float)(per));
       flatBar.renderBarItemLabel(getFormatterItemLabel(total),currentX,sub(plotArea.getBottom(),totalPostion),canvas);
     }
   }

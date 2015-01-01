@@ -4,7 +4,7 @@
     return null;
   }
   float labelBarTotalWidth=MathHelper.getInstance().mul(XSteps,mBarTickSpacePercent);
-  float barTotalInnerMargin=MathHelper.getInstance().mul(labelBarTotalWidth,MathHelper.getInstance().dtof(mBarInnerMargin));
+  float barTotalInnerMargin=MathHelper.getInstance().mul(labelBarTotalWidth,(float)mBarInnerMargin);
   float barTotalWidth=MathHelper.getInstance().sub(labelBarTotalWidth,barTotalInnerMargin);
   float barInnerMargin=MathHelper.getInstance().div(barTotalInnerMargin,barNumber);
   float barWidth=MathHelper.getInstance().div(barTotalWidth,barNumber);

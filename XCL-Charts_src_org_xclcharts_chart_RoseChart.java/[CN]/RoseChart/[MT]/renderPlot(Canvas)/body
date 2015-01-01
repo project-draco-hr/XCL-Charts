@@ -23,7 +23,7 @@
   for (  PieData cData : chartDataSource) {
     geArcPaint().setColor(cData.getSliceColor());
     double p=cData.getPercentage() / 100;
-    newRaidus=mul(radius,dtof(p));
+    newRaidus=mul(radius,(float)(p));
     newRaidus=div(mul(newRaidus,100),100);
     RectF nRF=new RectF(sub(cirX,newRaidus),sub(cirY,newRaidus),add(cirX,newRaidus),add(cirY,newRaidus));
     canvas.drawArc(nRF,mOffsetAngle + mIntervalAngle,arcAngle,true,geArcPaint());

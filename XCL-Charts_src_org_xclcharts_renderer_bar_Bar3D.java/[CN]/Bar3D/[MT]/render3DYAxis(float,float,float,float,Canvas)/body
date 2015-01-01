@@ -2,8 +2,8 @@
   int baseLightColor=DrawHelper.getInstance().getLightColor(getAxis3DBaseColor(),mAlpha);
   mPaintBase.setColor(getAxis3DBaseColor());
   mPaintBase3D.setColor(baseLightColor);
-  float offsetX=MathHelper.getInstance().dtof(getOffsetX());
-  float offsetY=MathHelper.getInstance().dtof(getOffsetY());
+  float offsetX=(float)(getOffsetX());
+  float offsetY=(float)(getOffsetY());
   float baseLeft2=MathHelper.getInstance().sub(baseLeft,offsetX);
   float baseTop2=MathHelper.getInstance().add(baseTop,offsetY);
   float baseBottom2=MathHelper.getInstance().add(baseBottom,offsetY);

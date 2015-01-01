@@ -3,8 +3,8 @@
   float axisDataHeight=(float)dataAxis.getAxisRange();
   float scrHeight=getAxisScreenHeight();
   double t=MathHelper.getInstance().sub(min,dataAxis.getAxisMin());
-  pos[0]=mul(scrHeight,div(dtof(t),axisDataHeight));
+  pos[0]=mul(scrHeight,div((float)(t),axisDataHeight));
   t=MathHelper.getInstance().sub(max,dataAxis.getAxisMin());
-  pos[1]=mul(scrHeight,div(dtof(t),axisDataHeight));
+  pos[1]=mul(scrHeight,div((float)(t),axisDataHeight));
   return pos;
 }

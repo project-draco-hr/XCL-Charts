@@ -29,7 +29,7 @@
       float drawBarButtomY=add(sub(barInitY,mul((j + 1),YSteps)),labelBarUseHeight / 2);
       drawBarButtomY=sub(drawBarButtomY,(barHeight + barInnerMargin) * currNumber);
       double tlen=MathHelper.getInstance().sub(bv,dataAxis.getAxisMin());
-      float valuePostion=mul(scrWidth,div(dtof(tlen),valueWidth));
+      float valuePostion=mul(scrWidth,div((float)(tlen),valueWidth));
       float topY=sub(drawBarButtomY,barHeight);
       float rightX=add(barInitX,valuePostion);
       mBar3D.renderHorizontal3DBar(barInitX,topY,rightX,drawBarButtomY,mBar3D.getBarPaint().getColor(),canvas);
