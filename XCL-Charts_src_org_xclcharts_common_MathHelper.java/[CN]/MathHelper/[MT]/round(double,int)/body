@@ -1,0 +1,6 @@
+{
+  if (scale < 0)   throw new IllegalArgumentException("The scale must be a positive integer or zero");
+  BigDecimal bgNum1=new BigDecimal(Double.toString(v));
+  BigDecimal bgNum2=new BigDecimal("1");
+  return bgNum1.divide(bgNum2,scale,BigDecimal.ROUND_HALF_UP).doubleValue();
+}

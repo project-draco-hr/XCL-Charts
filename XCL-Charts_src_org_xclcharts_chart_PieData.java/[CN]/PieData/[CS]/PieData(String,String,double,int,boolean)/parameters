@@ -1,4 +1,5 @@
+String key
 String label
-float percent
+double percent
 int color
 boolean selected

@@ -1,7 +1,7 @@
 {
   chartDataPie.clear();
-  chartDataPie.add(new PieData("ORACLE","27%",0.27f,colorORACLE));
-  chartDataPie.add(new PieData("SQL Server","8%",0.08f,colorMSSQL));
-  chartDataPie.add(new PieData("MySQL","42%",0.42f,colorMYSQL));
-  chartDataPie.add(new PieData("??????","23%",0.23f,colorOTHER));
+  chartDataPie.add(new PieData("ORACLE","27%",27,colorORACLE));
+  chartDataPie.add(new PieData("SQL Server","8%",8,colorMSSQL));
+  chartDataPie.add(new PieData("MySQL","42%",42,colorMYSQL));
+  chartDataPie.add(new PieData("??????","23%",23,colorOTHER));
 }
