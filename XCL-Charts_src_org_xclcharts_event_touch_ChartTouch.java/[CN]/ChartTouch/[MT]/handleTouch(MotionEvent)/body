@@ -1,8 +1,12 @@
 {
-  if (event.getPointerCount() == 1) {
+switch (event.getPointerCount()) {
+case 1:
     handleTouch_PanMode(event);
-  }
- else   if (event.getPointerCount() == 2) {
-    if (null != mChart && mChart.getScaleStatus())     handleTouch_Scale(event);
-  }
+  break;
+case 2:
+handleTouch_Scale(event);
+break;
+default :
+break;
+}
 }

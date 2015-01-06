@@ -15,12 +15,12 @@
     plot.showHorizontalLines();
     plot.showVerticalLines();
     plot.getHorizontalLinePaint().setStrokeWidth(3);
-    plot.getHorizontalLinePaint().setColor((int)Color.rgb(127,204,204));
+    plot.getHorizontalLinePaint().setColor(Color.rgb(127,204,204));
     plot.setHorizontalLineStyle(XEnum.LineStyle.DOT);
-    chart.getDataAxis().getAxisPaint().setColor((int)Color.rgb(127,204,204));
-    chart.getCategoryAxis().getAxisPaint().setColor((int)Color.rgb(127,204,204));
-    chart.getDataAxis().getTickMarksPaint().setColor((int)Color.rgb(127,204,204));
-    chart.getCategoryAxis().getTickMarksPaint().setColor((int)Color.rgb(127,204,204));
+    chart.getDataAxis().getAxisPaint().setColor(Color.rgb(127,204,204));
+    chart.getCategoryAxis().getAxisPaint().setColor(Color.rgb(127,204,204));
+    chart.getDataAxis().getTickMarksPaint().setColor(Color.rgb(127,204,204));
+    chart.getCategoryAxis().getTickMarksPaint().setColor(Color.rgb(127,204,204));
     chart.getDataAxis().setHorizontalTickAlign(Align.CENTER);
     chart.getDataAxis().getTickLabelPaint().setTextAlign(Align.CENTER);
     chart.setDotLabelFormatter(new IFormatterTextCallBack(){

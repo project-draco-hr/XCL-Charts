@@ -8,8 +8,8 @@
   AreaData line2=new AreaData("?????????",dataSeries2,Color.RED,Color.YELLOW);
   line2.getDotLabelPaint().setColor(Color.rgb(83,148,235));
   line2.setLabelVisible(true);
-  line2.getPlotLabel().showBox();
-  line2.getPlotLabel().setOffsetY(20.f);
+  line2.getLabelOptions().showBox();
+  line2.getLabelOptions().setOffsetY(20.f);
   line2.setApplayGradient(true);
   line2.setGradientMode(Shader.TileMode.MIRROR);
   line2.setAreaBeginColor(Color.WHITE);

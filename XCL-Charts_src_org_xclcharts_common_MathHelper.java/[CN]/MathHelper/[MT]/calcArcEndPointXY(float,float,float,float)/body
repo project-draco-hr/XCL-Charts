@@ -19,7 +19,7 @@
     mPosY=add(cirY,(float)(Math.sin(arcAngle) * radius));
   }
  else   if (Float.compare(cirAngle,180.0f) == 0) {
-    mPosX=(float)(cirX - radius);
+    mPosX=cirX - radius;
     mPosY=cirY;
   }
  else   if (Float.compare(cirAngle,180.0f) == 1 && Float.compare(cirAngle,270.0f) == -1) {

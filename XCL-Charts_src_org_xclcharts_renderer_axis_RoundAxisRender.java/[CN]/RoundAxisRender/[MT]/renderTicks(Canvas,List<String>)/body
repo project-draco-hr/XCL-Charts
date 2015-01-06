@@ -32,7 +32,7 @@
       Angle=mInitAngle;
     }
  else {
-      Angle=(float)MathHelper.getInstance().add(mInitAngle,i * stepsAngle);
+      Angle=MathHelper.getInstance().add(mInitAngle,i * stepsAngle);
     }
     MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,innerRadius1,Angle);
     startX=MathHelper.getInstance().getPosX();

@@ -1,7 +1,7 @@
 {
   if (null == mPaintPoint) {
     mPaintPoint=new Paint();
-    mPaintPoint.setColor((int)Color.rgb(235,138,61));
+    mPaintPoint.setColor(Color.rgb(235,138,61));
     mPaintPoint.setStrokeWidth(3);
     mPaintPoint.setStyle(Style.FILL);
     mPaintPoint.setAntiAlias(true);

@@ -1,6 +1,6 @@
 {
   List<Double> dataSeries1=new LinkedList<Double>();
-  dataSeries1.add((double)0.01);
+  dataSeries1.add(0.01);
   dataSeries1.add((double)60);
   dataSeries1.add((double)71);
   dataSeries1.add((double)40);
@@ -19,7 +19,7 @@
   dataSeries3.add((double)55);
   AreaData line1=new AreaData("??????",dataSeries1,Color.BLUE,Color.YELLOW);
   line1.setDotStyle(XEnum.DotStyle.HIDE);
-  AreaData line2=new AreaData("?????????",dataSeries2,(int)Color.rgb(79,200,100),Color.GREEN);
+  AreaData line2=new AreaData("?????????",dataSeries2,Color.rgb(79,200,100),Color.GREEN);
   line2.getDotLabelPaint().setColor(Color.RED);
   line2.setLabelVisible(true);
   AreaData line3=new AreaData("????????????",dataSeries3,Color.rgb(246,134,31),Color.rgb(213,198,126));

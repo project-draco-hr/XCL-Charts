@@ -6,11 +6,11 @@
   for (int i=0; i < count; i++) {
     int angle=i * step;
     double rAngle=Math.toRadians(angle);
-    lineSin.add(new PointD((double)angle,Math.sin(rAngle)));
-    lineCos.add(new PointD((double)angle,Math.cos(rAngle)));
+    lineSin.add(new PointD(angle,Math.sin(rAngle)));
+    lineCos.add(new PointD(angle,Math.cos(rAngle)));
   }
-  SplineData dataSeriesSin=new SplineData("Sin",lineSin,(int)Color.rgb(54,141,238));
-  SplineData dataSeriesCos=new SplineData("Cos",lineCos,(int)Color.rgb(255,165,132));
+  SplineData dataSeriesSin=new SplineData("Sin",lineSin,Color.rgb(54,141,238));
+  SplineData dataSeriesCos=new SplineData("Cos",lineCos,Color.rgb(255,165,132));
   dataSeriesSin.setDotStyle(XEnum.DotStyle.HIDE);
   dataSeriesCos.setDotStyle(XEnum.DotStyle.HIDE);
   chartData.add(dataSeriesSin);

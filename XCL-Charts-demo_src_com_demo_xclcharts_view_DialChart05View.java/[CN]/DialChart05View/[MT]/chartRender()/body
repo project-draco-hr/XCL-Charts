@@ -1,7 +1,7 @@
 {
   try {
     chart.setApplyBackgroundColor(true);
-    chart.setBackgroundColor((int)Color.rgb(28,129,243));
+    chart.setBackgroundColor(Color.rgb(28,129,243));
     chart.showRoundBorder();
     chart.getPointer().setPercentage(mPercentage);
     chart.getPointer().setLength(0.6f);

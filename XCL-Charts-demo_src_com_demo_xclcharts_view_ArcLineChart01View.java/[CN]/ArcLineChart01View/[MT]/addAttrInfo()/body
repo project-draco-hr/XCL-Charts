@@ -10,6 +10,6 @@
   paintSrc.setTextAlign(Align.CENTER);
   paintSrc.setTextSize(25);
   paintSrc.setAntiAlias(true);
-  paintSrc.setColor((int)Color.rgb(41,34,102));
+  paintSrc.setColor(Color.rgb(41,34,102));
   chart.getPlotAttrInfo().addAttributeInfo(XEnum.Location.BOTTOM,"ExcelPro",0.2f,paintSrc);
 }

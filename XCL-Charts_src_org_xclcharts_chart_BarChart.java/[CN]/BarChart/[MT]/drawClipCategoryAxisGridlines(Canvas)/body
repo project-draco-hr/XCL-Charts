@@ -4,6 +4,7 @@
   int tickCount=dataSet.size();
   int labeltickCount=getCateTickCount();
   if (0 == tickCount) {
+    Log.w(TAG,"?????????????????????0!");
     return;
   }
   float axisX=0.0f, axisY=0.0f, currentX=0.0f, currentY=0.0f;

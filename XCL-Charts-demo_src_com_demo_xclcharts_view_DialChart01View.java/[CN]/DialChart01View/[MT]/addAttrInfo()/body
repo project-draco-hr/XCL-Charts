@@ -15,6 +15,6 @@
   Paint paintBase=new Paint();
   paintBase.setTextAlign(Align.CENTER);
   paintBase.setTextSize(22);
-  paintBase.setColor((int)Color.rgb(56,172,240));
+  paintBase.setColor(Color.rgb(56,172,240));
   plotAttrInfo.addAttributeInfo(XEnum.Location.BOTTOM,"?????????:" + Float.toString(mPercentage * 100),0.3f,paintBase);
 }

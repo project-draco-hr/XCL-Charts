@@ -1,4 +1,4 @@
 {
-  mWidth=(float)Math.abs(mRight - mLeft);
+  mWidth=Math.abs(mRight - mLeft);
   return mWidth;
 }

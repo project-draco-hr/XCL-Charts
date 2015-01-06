@@ -1,6 +1,6 @@
 {
   FrameLayout content=new FrameLayout(this);
-  FrameLayout.LayoutParams frameParm=new FrameLayout.LayoutParams(FrameLayout.LayoutParams.WRAP_CONTENT,FrameLayout.LayoutParams.WRAP_CONTENT);
+  FrameLayout.LayoutParams frameParm=new FrameLayout.LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT);
   frameParm.gravity=Gravity.BOTTOM | Gravity.RIGHT;
   DisplayMetrics dm=getResources().getDisplayMetrics();
   int scrWidth=(int)(dm.widthPixels * 0.9);

@@ -10,13 +10,13 @@
     chart.setCategoryAxisMax(100);
     chart.setCategoryAxisMin(0);
     chart.setApplyBackgroundColor(true);
-    chart.setBackgroundColor((int)Color.rgb(212,194,129));
-    chart.getBorder().setBorderLineColor((int)Color.rgb(179,147,197));
+    chart.setBackgroundColor(Color.rgb(212,194,129));
+    chart.getBorder().setBorderLineColor(Color.rgb(179,147,197));
     chart.getCategoryAxis().hideTickMarks();
     chart.getDataAxis().hideAxisLine();
     chart.getDataAxis().hideTickMarks();
     chart.getPlotGrid().showHorizontalLines();
-    chart.getPlotGrid().getHorizontalLinePaint().setColor((int)Color.rgb(179,147,197));
+    chart.getPlotGrid().getHorizontalLinePaint().setColor(Color.rgb(179,147,197));
     chart.getCategoryAxis().getAxisPaint().setColor(chart.getPlotGrid().getHorizontalLinePaint().getColor());
     chart.getCategoryAxis().getAxisPaint().setStrokeWidth(chart.getPlotGrid().getHorizontalLinePaint().getStrokeWidth());
     chart.setDotLabelFormatter(new IFormatterTextCallBack(){

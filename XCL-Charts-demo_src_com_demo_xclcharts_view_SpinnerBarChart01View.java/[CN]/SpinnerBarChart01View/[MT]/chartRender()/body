@@ -18,7 +18,7 @@
     }
 );
     mChart.getBar().setItemLabelVisible(true);
-    mChart.getBar().getItemLabelPaint().setColor((int)Color.rgb(72,61,139));
+    mChart.getBar().getItemLabelPaint().setColor(Color.rgb(72,61,139));
     mChart.getBar().getItemLabelPaint().setFakeBoldText(true);
     mChart.setItemLabelFormatter(new IFormatterDoubleCallBack(){
       @Override public String doubleFormatter(      Double value){

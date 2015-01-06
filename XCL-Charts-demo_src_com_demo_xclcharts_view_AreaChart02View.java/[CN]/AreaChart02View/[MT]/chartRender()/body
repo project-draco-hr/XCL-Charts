@@ -37,7 +37,7 @@
       }
     }
 );
-    CustomLineData line1=new CustomLineData("?????????",60d,(int)Color.RED,7);
+    CustomLineData line1=new CustomLineData("?????????",60d,Color.RED,7);
     line1.setCustomLineCap(XEnum.DotStyle.CROSS);
     line1.setLabelHorizontalPostion(Align.CENTER);
     line1.setLabelOffset(15);

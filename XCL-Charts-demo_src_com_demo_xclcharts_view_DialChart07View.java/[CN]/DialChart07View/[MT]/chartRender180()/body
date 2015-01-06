@@ -12,12 +12,12 @@
     ringPercentage.add(rper);
     ringPercentage.add(rper);
     List<Integer> rcolor=new ArrayList<Integer>();
-    rcolor.add((int)Color.rgb(242,110,131));
-    rcolor.add((int)Color.rgb(238,204,71));
-    rcolor.add((int)Color.rgb(42,231,250));
-    rcolor.add((int)Color.rgb(140,196,27));
+    rcolor.add(Color.rgb(242,110,131));
+    rcolor.add(Color.rgb(238,204,71));
+    rcolor.add(Color.rgb(42,231,250));
+    rcolor.add(Color.rgb(140,196,27));
     chart180.addStrokeRingAxis(0.75f,0.6f,ringPercentage,rcolor);
-    chart180.getPlotAxis().get(0).getFillAxisPaint().setColor((int)Color.rgb(28,129,243));
+    chart180.getPlotAxis().get(0).getFillAxisPaint().setColor(Color.rgb(28,129,243));
     Paint paintTB=new Paint();
     paintTB.setColor(Color.WHITE);
     paintTB.setTextAlign(Align.CENTER);

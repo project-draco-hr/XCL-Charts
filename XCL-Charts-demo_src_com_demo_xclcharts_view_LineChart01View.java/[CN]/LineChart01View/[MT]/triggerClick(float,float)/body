@@ -26,6 +26,14 @@
     chart.getToolTip().addToolTip(" Key:" + lData.getLineKey(),mPaintTooltips);
     chart.getToolTip().addToolTip(" Label:" + lData.getLabel(),mPaintTooltips);
     chart.getToolTip().addToolTip(" Current Value:" + Double.toString(lValue),mPaintTooltips);
+    int cid=record.getDataChildID();
+    String xLabels="";
+    for (    LineData data : chartData) {
+      if (cid < data.getLinePoint().size()) {
+        xLabels=Double.toString(data.getLinePoint().get(cid));
+        chart.getToolTip().addToolTip("Line:" + data.getLabel() + ","+ xLabels,mPaintTooltips);
+      }
+    }
     this.invalidate();
   }
 }

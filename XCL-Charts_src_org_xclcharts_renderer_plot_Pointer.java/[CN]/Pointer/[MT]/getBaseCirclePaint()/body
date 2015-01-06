@@ -3,7 +3,7 @@
     mPaintBaseCircle=new Paint();
     mPaintBaseCircle.setStyle(Style.FILL);
     mPaintBaseCircle.setAntiAlias(true);
-    mPaintBaseCircle.setColor((int)Color.rgb(235,138,61));
+    mPaintBaseCircle.setColor(Color.rgb(235,138,61));
     mPaintBaseCircle.setStrokeWidth(8);
   }
   return mPaintBaseCircle;

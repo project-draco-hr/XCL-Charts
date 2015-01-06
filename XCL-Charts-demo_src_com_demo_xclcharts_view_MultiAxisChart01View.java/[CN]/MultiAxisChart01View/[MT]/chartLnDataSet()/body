@@ -3,8 +3,8 @@
   BarKey1.add(0d);
   LinkedList<Double> BarKey2=new LinkedList<Double>();
   BarKey2.add(0d);
-  LineData lineDataBarKey1=new LineData("Virtual OPM",BarKey1,(int)Color.rgb(0,221,177));
-  LineData lineDataBarKey2=new LineData("Physical OPM",BarKey2,(int)Color.rgb(238,28,161));
+  LineData lineDataBarKey1=new LineData("Virtual OPM",BarKey1,Color.rgb(0,221,177));
+  LineData lineDataBarKey2=new LineData("Physical OPM",BarKey2,Color.rgb(238,28,161));
   lineDataBarKey1.setDotStyle(XEnum.DotStyle.RECT);
   lineDataBarKey2.setDotStyle(XEnum.DotStyle.RECT);
   chartDatasetLn.add(lineDataBarKey1);
@@ -19,10 +19,10 @@
   physical.add(110d);
   physical.add(125d);
   physical.add(0d);
-  LineData lineData1=new LineData("Virtual RT",virtual,(int)Color.rgb(234,83,71));
-  LineData lineData2=new LineData("Physical RT",physical,(int)Color.rgb(75,166,51));
+  LineData lineData1=new LineData("Virtual RT",virtual,Color.rgb(234,83,71));
+  LineData lineData2=new LineData("Physical RT",physical,Color.rgb(75,166,51));
   lineData1.setDotStyle(XEnum.DotStyle.TRIANGLE);
-  lineData1.getDotPaint().setColor((int)Color.rgb(234,83,71));
+  lineData1.getDotPaint().setColor(Color.rgb(234,83,71));
   chartDatasetLn.add(lineData1);
   chartDatasetLn.add(lineData2);
 }

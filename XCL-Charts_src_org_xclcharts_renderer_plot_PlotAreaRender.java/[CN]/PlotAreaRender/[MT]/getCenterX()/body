@@ -1,3 +1,3 @@
 {
-  return (float)Math.abs(mLeft + (mRight - mLeft) / 2);
+  return Math.abs(mLeft + (mRight - mLeft) / 2);
 }

@@ -5,7 +5,7 @@
     mPaintTick=new Paint();
     mPaintTick.setStyle(Style.FILL);
     mPaintTick.setAntiAlias(true);
-    mPaintTick.setColor((int)Color.rgb(50,149,222));
+    mPaintTick.setColor(Color.rgb(50,149,222));
     mPaintTick.setStrokeWidth(1);
   }
   if (null == mPaintPointerLine) {
@@ -30,7 +30,7 @@
   if (null == mPaintDount) {
     mPaintDount=new Paint();
     mPaintDount.setStyle(Style.STROKE);
-    mPaintDount.setColor((int)Color.rgb(50,149,222));
+    mPaintDount.setColor(Color.rgb(50,149,222));
     mPaintDount.setAntiAlias(true);
     mPaintDount.setStrokeWidth(2);
   }

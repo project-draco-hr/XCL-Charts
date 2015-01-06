@@ -6,7 +6,7 @@
   linePoint1.add(new PointD(60d,80d));
   ScatterData dataSeries1=new ScatterData("??????1",linePoint1,Color.rgb(41,161,64),XEnum.DotStyle.DOT);
   dataSeries1.setLabelVisible(true);
-  dataSeries1.getDotLabelPaint().setColor((int)Color.rgb(41,161,64));
+  dataSeries1.getDotLabelPaint().setColor(Color.rgb(41,161,64));
   List<PointD> linePoint2=new ArrayList<PointD>();
   linePoint2.add(new PointD(43d,70d));
   linePoint2.add(new PointD(56d,85d));

@@ -2,9 +2,9 @@
   if (null == dataSeries1)   dataSeries1=new SplineData();
   if (null == dataSeries2)   dataSeries2=new SplineData();
   dataSeries1.setDotStyle(XEnum.DotStyle.DOT);
-  dataSeries1.setLineColor((int)Color.rgb(54,141,238));
+  dataSeries1.setLineColor(Color.rgb(54,141,238));
   dataSeries2.setDotStyle(XEnum.DotStyle.RING);
-  dataSeries2.setLineColor((int)Color.rgb(255,165,132));
+  dataSeries2.setLineColor(Color.rgb(255,165,132));
   dataSeries1.getLinePaint().setStrokeWidth(2);
   dataSeries2.getLinePaint().setStrokeWidth(2);
   chartData.add(dataSeries1);

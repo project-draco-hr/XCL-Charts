@@ -1,6 +1,6 @@
 {
   float[] pos=new float[2];
-  float axisDataHeight=(float)dataAxis.getAxisRange();
+  float axisDataHeight=dataAxis.getAxisRange();
   float scrHeight=getAxisScreenHeight();
   double t=MathHelper.getInstance().sub(min,dataAxis.getAxisMin());
   pos[0]=mul(scrHeight,div((float)(t),axisDataHeight));

@@ -13,7 +13,7 @@
     getLowerTitlePaint().setTextAlign(Align.RIGHT);
   }
  else {
-    axisTitleTextStartX=(float)Math.round(left + (right - left) / 2);
+    axisTitleTextStartX=Math.round(left + (right - left) / 2);
   }
   DrawHelper.getInstance().drawRotateText(axisTitle,axisTitleTextStartX,axisTitleY,0,canvas,getLowerTitlePaint());
 }

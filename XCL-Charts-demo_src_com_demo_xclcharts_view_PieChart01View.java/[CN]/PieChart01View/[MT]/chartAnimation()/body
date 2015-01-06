@@ -10,7 +10,7 @@
         animationData.add(chartData.get(j));
         sum=(float)MathHelper.getInstance().add(sum,chartData.get(j).getPercentage());
       }
-      animationData.add(new PieData("","",MathHelper.getInstance().sub(100.0f,sum),(int)Color.argb(1,0,0,0)));
+      animationData.add(new PieData("","",MathHelper.getInstance().sub(100.0f,sum),Color.argb(1,0,0,0)));
       chart.setDataSource(animationData);
       if (count - 1 == i) {
         chart.ActiveListenItemClick();

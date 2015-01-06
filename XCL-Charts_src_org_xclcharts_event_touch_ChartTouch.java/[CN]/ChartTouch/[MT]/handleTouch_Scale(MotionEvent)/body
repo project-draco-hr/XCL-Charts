@@ -1,4 +1,5 @@
 {
+  if (null == mChart || !mChart.getScaleStatus())   return;
 switch (event.getActionMasked()) {
 case MotionEvent.ACTION_DOWN:
     scaleRate=1.0f;

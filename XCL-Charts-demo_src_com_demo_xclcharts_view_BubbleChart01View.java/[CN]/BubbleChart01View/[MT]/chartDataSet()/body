@@ -14,7 +14,7 @@
   linePoint1_bubble.add(95d);
   linePoint1_bubble.add(75d);
   linePoint1_bubble.add(78d);
-  BubbleData dataSeries1=new BubbleData("??????????????????",linePoint1,linePoint1_bubble,(int)Color.rgb(54,141,238));
+  BubbleData dataSeries1=new BubbleData("??????????????????",linePoint1,linePoint1_bubble,Color.rgb(54,141,238));
   dataSeries1.setLabelVisible(true);
   dataSeries1.getDotLabelPaint().setTextAlign(Align.CENTER);
   dataSeries1.setBorderColor(Color.RED);
@@ -32,7 +32,7 @@
   linePoint2_bubble.add(95d);
   linePoint2_bubble.add(75d);
   linePoint2_bubble.add(78d);
-  BubbleData dataSeries2=new BubbleData("?????????",linePoint2,linePoint2_bubble,(int)Color.rgb(255,165,132));
+  BubbleData dataSeries2=new BubbleData("?????????",linePoint2,linePoint2_bubble,Color.rgb(255,165,132));
   dataSeries2.setLabelVisible(true);
   dataSeries2.getDotLabelPaint().setColor(Color.rgb(69,199,101));
   dataSeries2.setItemLabelRotateAngle(45.f);
@@ -44,7 +44,7 @@
   linePoint3_bubble.add(55d);
   linePoint3_bubble.add(60d);
   linePoint3_bubble.add(65d);
-  BubbleData dataSeries3=new BubbleData("????????????",linePoint2,linePoint3_bubble,(int)Color.rgb(247,178,79));
+  BubbleData dataSeries3=new BubbleData("????????????",linePoint2,linePoint3_bubble,Color.rgb(247,178,79));
   dataSeries3.setBorderColor(Color.rgb(47,254,225));
   chartData.add(dataSeries1);
   chartData.add(dataSeries2);

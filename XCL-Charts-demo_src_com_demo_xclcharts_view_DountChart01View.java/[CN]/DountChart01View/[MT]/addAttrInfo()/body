@@ -8,12 +8,12 @@
   Paint paintLR=new Paint();
   paintLR.setTextAlign(Align.CENTER);
   paintLR.setTextSize(25);
-  paintLR.setColor((int)Color.rgb(191,79,75));
+  paintLR.setColor(Color.rgb(191,79,75));
   chart.getPlotAttrInfo().addAttributeInfo(XEnum.Location.LEFT,"?????????!",0.5f,paintLR);
   chart.getPlotAttrInfo().addAttributeInfo(XEnum.Location.RIGHT,"?????????!",0.5f,paintLR);
   Paint paintBase=new Paint();
   paintBase.setTextAlign(Align.CENTER);
   paintBase.setTextSize(25);
-  paintBase.setColor((int)Color.rgb(242,167,69));
+  paintBase.setColor(Color.rgb(242,167,69));
   chart.getPlotAttrInfo().addAttributeInfo(XEnum.Location.BOTTOM,"?????????,",0.3f,paintBase);
 }

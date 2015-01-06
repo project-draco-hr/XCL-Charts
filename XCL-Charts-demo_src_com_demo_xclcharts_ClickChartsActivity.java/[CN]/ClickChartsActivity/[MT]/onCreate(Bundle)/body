@@ -1,7 +1,6 @@
 {
   super.onCreate(savedInstanceState);
   mCharts=new ClickPieChart01View(this);
-  Bundle bunde=this.getIntent().getExtras();
   initActivity();
   setTitle("??????????????????(View -> Activity)");
 }

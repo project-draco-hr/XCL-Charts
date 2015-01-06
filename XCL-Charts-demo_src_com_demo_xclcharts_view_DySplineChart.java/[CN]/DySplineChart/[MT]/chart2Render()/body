@@ -6,10 +6,10 @@
     chart2.getDataAxis().setAxisSteps(20);
     chart2.setCategoryAxisMax(CHART2_X_TIME);
     chart2.setCategoryAxisMin(0);
-    chart2.getDataAxis().getAxisPaint().setColor((int)Color.rgb(127,204,204));
-    chart2.getCategoryAxis().getAxisPaint().setColor((int)Color.rgb(127,204,204));
-    chart2.getDataAxis().getTickMarksPaint().setColor((int)Color.rgb(127,204,204));
-    chart2.getCategoryAxis().getTickMarksPaint().setColor((int)Color.rgb(127,204,204));
+    chart2.getDataAxis().getAxisPaint().setColor(Color.rgb(127,204,204));
+    chart2.getCategoryAxis().getAxisPaint().setColor(Color.rgb(127,204,204));
+    chart2.getDataAxis().getTickMarksPaint().setColor(Color.rgb(127,204,204));
+    chart2.getCategoryAxis().getTickMarksPaint().setColor(Color.rgb(127,204,204));
     chart2.getDataAxis().setHorizontalTickAlign(Align.CENTER);
     chart2.getDataAxis().getTickLabelPaint().setTextAlign(Align.CENTER);
     chart2.setDataAxisLocation(XEnum.AxisLocation.VERTICAL_CENTER);

@@ -1,7 +1,7 @@
 {
   if (null == categoryAxis.getDataSet())   return false;
   float axisScreenWidth=getPlotScreenWidth();
-  float axisDataRange=(float)dataAxis.getAxisRange();
+  float axisDataRange=dataAxis.getAxisRange();
   float valueWidth=axisDataRange;
   float YSteps=getVerticalYSteps(getCateTickCount());
   int barHeight=(int)MathHelper.getInstance().round(mul(YSteps,0.5f),2);

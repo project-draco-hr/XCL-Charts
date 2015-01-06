@@ -3,6 +3,6 @@
     mPaintGridLineHorizontal=new Paint();
     mPaintGridLineHorizontal.setAntiAlias(true);
     mPaintGridLineHorizontal.setStrokeWidth(1);
-    mPaintGridLineHorizontal.setColor((int)Color.rgb(180,205,230));
+    mPaintGridLineHorizontal.setColor(Color.rgb(180,205,230));
   }
 }

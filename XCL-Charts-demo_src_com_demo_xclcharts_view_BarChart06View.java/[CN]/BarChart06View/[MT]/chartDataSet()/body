@@ -8,7 +8,7 @@
       int num=random.nextInt(max) % (max - min + 1) + min;
       dataSeries.add((double)num);
     }
-    BarData barData=new BarData("??????????????????",dataSeries,(int)Color.rgb(arrColorRgb[i][0],arrColorRgb[i][1],arrColorRgb[i][2]));
+    BarData barData=new BarData("??????????????????",dataSeries,Color.rgb(arrColorRgb[i][0],arrColorRgb[i][1],arrColorRgb[i][2]));
     chartData.add(barData);
   }
 }

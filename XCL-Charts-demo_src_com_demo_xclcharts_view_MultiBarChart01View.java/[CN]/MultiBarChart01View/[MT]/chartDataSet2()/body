@@ -5,14 +5,14 @@
   dataSeriesA.add(1800d);
   dataSeriesA.add(1800d);
   dataSeriesA.add(1500d);
-  BarData BarDataA=new BarData("??????",dataSeriesA,(int)Color.rgb(38,137,176));
+  BarData BarDataA=new BarData("??????",dataSeriesA,Color.rgb(38,137,176));
   List<Double> dataSeriesB=new LinkedList<Double>();
   dataSeriesB.add(1500d);
   dataSeriesB.add(1300d);
   dataSeriesB.add(1400d);
   dataSeriesB.add(1200d);
   dataSeriesB.add(1600d);
-  BarData BarDataB=new BarData("???????????????",dataSeriesB,(int)Color.rgb(13,116,161));
+  BarData BarDataB=new BarData("???????????????",dataSeriesB,Color.rgb(13,116,161));
   chartData2.add(BarDataA);
   chartData2.add(BarDataB);
 }

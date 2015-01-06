@@ -15,8 +15,8 @@ break;
 case 3:
 mChart=new RoseChart();
 mChart.setApplyBackgroundColor(true);
-mChart.setBackgroundColor((int)Color.rgb(115,153,0));
-((RoseChart)mChart).getInnerPaint().setColor((int)Color.rgb(153,204,0));
+mChart.setBackgroundColor(Color.rgb(115,153,0));
+((RoseChart)mChart).getInnerPaint().setColor(Color.rgb(153,204,0));
 mChart.getLabelPaint().setColor(Color.WHITE);
 mChart.setLabelStyle(XEnum.SliceLabelStyle.INSIDE);
 break;

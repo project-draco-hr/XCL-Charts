@@ -12,7 +12,7 @@
     chart.getCategoryAxis().setTickLabelRotateAngle(-45f);
     Paint labelPaint=chart.getCategoryAxis().getTickLabelPaint();
     labelPaint.setTextAlign(Align.RIGHT);
-    labelPaint.setColor((int)Color.rgb(0,75,106));
+    labelPaint.setColor(Color.rgb(0,75,106));
     chart.setTitle("?????????????????????????????????");
     chart.addSubtitle("(XCL-Charts Demo)");
     chart.setTitleAlign(XEnum.HorizontalAlign.CENTER);

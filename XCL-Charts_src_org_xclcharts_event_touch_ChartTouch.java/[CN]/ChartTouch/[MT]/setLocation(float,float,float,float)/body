@@ -6,8 +6,16 @@
   if (null == txy)   return;
   xx=txy[0];
   yy=txy[1];
-  xx=(float)(txy[0] + newX - oldX);
-  yy=(float)(txy[1] + newY - oldY);
+  xx=txy[0] + newX - oldX;
+  yy=txy[1] + newY - oldY;
+  if (mChart.getCtlPanRangeStatus()) {
+    if (Float.compare(Math.abs(xx),mChart.getPlotArea().getPlotWidth() / 2) == 1) {
+      return;
+    }
+    if (Float.compare(Math.abs(yy),mChart.getHeight() / 2) == 1) {
+      return;
+    }
+  }
   mChart.setTranslateXY(xx,yy);
   mView.invalidate((int)mChart.getLeft(),(int)mChart.getTop(),(int)mChart.getRight(),(int)mChart.getBottom());
 }

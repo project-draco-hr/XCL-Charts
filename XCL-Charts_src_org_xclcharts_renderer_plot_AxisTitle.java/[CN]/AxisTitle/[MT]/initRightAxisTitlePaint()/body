@@ -4,6 +4,6 @@
     mPaintRightAxisTitle.setTextAlign(Align.CENTER);
     mPaintRightAxisTitle.setAntiAlias(true);
     mPaintRightAxisTitle.setTextSize(26);
-    mPaintRightAxisTitle.setColor((int)Color.rgb(51,204,204));
+    mPaintRightAxisTitle.setColor(Color.rgb(51,204,204));
   }
 }

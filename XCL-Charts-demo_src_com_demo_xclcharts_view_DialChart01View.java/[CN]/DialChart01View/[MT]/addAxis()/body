@@ -17,10 +17,10 @@
     ringPercentage.add(rper);
     ringPercentage.add(rper);
     List<Integer> rcolor=new ArrayList<Integer>();
-    rcolor.add((int)Color.rgb(242,110,131));
-    rcolor.add((int)Color.rgb(238,204,71));
-    rcolor.add((int)Color.rgb(42,231,250));
-    rcolor.add((int)Color.rgb(140,196,27));
+    rcolor.add(Color.rgb(242,110,131));
+    rcolor.add(Color.rgb(238,204,71));
+    rcolor.add(Color.rgb(42,231,250));
+    rcolor.add(Color.rgb(140,196,27));
     chart.addStrokeRingAxis(0.75f,0.6f,ringPercentage,rcolor);
     List<String> rlabels=new ArrayList<String>();
     rlabels.add("a");
@@ -30,11 +30,11 @@
     rlabels.add("e");
     rlabels.add("f");
     chart.addOuterTicksAxis(0.6f,rlabels);
-    chart.addFillAxis(0.5f,(int)Color.rgb(225,230,246));
+    chart.addFillAxis(0.5f,Color.rgb(225,230,246));
     List<Float> innerPercentage=new ArrayList<Float>();
     innerPercentage.add(mPercentage);
     List<Integer> innerColor=new ArrayList<Integer>();
-    innerColor.add((int)Color.rgb(227,64,167));
+    innerColor.add(Color.rgb(227,64,167));
     chart.addFillRingAxis(0.5f,innerPercentage,innerColor);
     chart.getPlotAxis().get(0).getAxisPaint().setColor(Color.BLUE);
     chart.addLineAxis(XEnum.Location.TOP,1.6f);

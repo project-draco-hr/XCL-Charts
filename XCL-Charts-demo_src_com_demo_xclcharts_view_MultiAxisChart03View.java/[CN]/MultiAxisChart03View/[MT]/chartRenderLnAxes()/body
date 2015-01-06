@@ -21,8 +21,8 @@
     chartLnAxes.getCategoryAxis().hideTickMarks();
     chartLnAxes.getCategoryAxis().setTickLabelRotateAngle(-90);
     chartLnAxes.getDataAxis().setTickLabelRotateAngle(-90);
-    chartLnAxes.getDataAxis().getTickLabelPaint().setColor((int)Color.rgb(48,145,255));
-    chartLnAxes.getCategoryAxis().getTickLabelPaint().setColor((int)Color.rgb(199,64,219));
+    chartLnAxes.getDataAxis().getTickLabelPaint().setColor(Color.rgb(48,145,255));
+    chartLnAxes.getCategoryAxis().getTickLabelPaint().setColor(Color.rgb(199,64,219));
     chartLnAxes.getDataAxis().setHorizontalTickAlign(Align.RIGHT);
     chartLnAxes.getDataAxis().getTickLabelPaint().setTextAlign(Align.LEFT);
     chartLnAxes.setDataAxisLocation(XEnum.AxisLocation.RIGHT);

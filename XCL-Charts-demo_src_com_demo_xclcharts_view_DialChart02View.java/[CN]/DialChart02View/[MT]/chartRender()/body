@@ -1,7 +1,7 @@
 {
   try {
     chart.setApplyBackgroundColor(true);
-    chart.setBackgroundColor((int)Color.rgb(47,199,140));
+    chart.setBackgroundColor(Color.rgb(47,199,140));
     chart.showRoundBorder();
     chart.getPointer().setLength(0.68f);
     addAxis();

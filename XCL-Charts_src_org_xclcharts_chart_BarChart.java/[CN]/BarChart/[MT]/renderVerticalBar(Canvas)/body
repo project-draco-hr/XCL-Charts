@@ -1,5 +1,5 @@
 {
-  if (null == mDataSet)   return false;
+  if (null == mDataSet || mDataSet.size() == 0)   return false;
   List<String> dataSet=categoryAxis.getDataSet();
   if (null == dataSet)   return false;
   float XSteps=getVerticalXSteps(getCateTickCount());
@@ -7,6 +7,7 @@
   float itemFontHeight=0.f;
   if (mFlatBar.getItemLabelsVisible())   itemFontHeight=DrawHelper.getInstance().getPaintFontHeight(mFlatBar.getItemLabelPaint());
   int barNumber=getDatasetSize(mDataSet);
+  if (barNumber <= 0)   return false;
   int currNumber=0;
   float[] ret=mFlatBar.getBarWidthAndMargin(XSteps,barNumber);
   if (null == ret || ret.length != 2) {

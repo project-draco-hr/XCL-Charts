@@ -4,6 +4,6 @@
   dataSeriesA.add(100d);
   dataSeriesA.add(95d);
   dataSeriesA.add(100d);
-  BarData BarDataA=new BarData("",dataSeriesA,(int)Color.rgb(53,169,239));
+  BarData BarDataA=new BarData("",dataSeriesA,Color.rgb(53,169,239));
   chartData.add(BarDataA);
 }

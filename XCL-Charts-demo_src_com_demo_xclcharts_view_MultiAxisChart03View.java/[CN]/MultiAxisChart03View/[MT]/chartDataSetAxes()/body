@@ -1,7 +1,7 @@
 {
   List<PointD> linePoint1=new ArrayList<PointD>();
   linePoint1.add(new PointD(0d,0d));
-  SplineData dataSeries1=new SplineData("",linePoint1,(int)Color.rgb(54,141,238));
+  SplineData dataSeries1=new SplineData("",linePoint1,Color.rgb(54,141,238));
   dataSeries1.setDotStyle(XEnum.DotStyle.HIDE);
   chartDataAxes.add(dataSeries1);
 }

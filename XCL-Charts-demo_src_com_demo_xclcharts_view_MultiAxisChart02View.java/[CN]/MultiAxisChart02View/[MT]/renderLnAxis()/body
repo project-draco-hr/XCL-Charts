@@ -7,8 +7,8 @@
   dataAxis.setAxisMax(135);
   dataAxis.setAxisMin(0);
   dataAxis.setAxisSteps(15);
-  dataAxis.getAxisPaint().setColor((int)Color.rgb(51,204,204));
-  dataAxis.getTickMarksPaint().setColor((int)Color.rgb(51,204,204));
+  dataAxis.getAxisPaint().setColor(Color.rgb(51,204,204));
+  dataAxis.getTickMarksPaint().setColor(Color.rgb(51,204,204));
   lnChart.getDataAxis().setLabelFormatter(new IFormatterTextCallBack(){
     @Override public String textFormatter(    String value){
       double label=Double.parseDouble(value);

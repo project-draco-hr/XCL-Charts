@@ -1,10 +1,11 @@
 {
   List<BarData> chartDataSource=this.getDataSource();
-  if (null == chartDataSource)   return false;
+  if (null == chartDataSource || chartDataSource.size() == 0)   return false;
   float YSteps=getVerticalYSteps(getCateTickCount());
   float barInitX=plotArea.getLeft() + this.mMoveX;
   float barInitY=plotArea.getBottom();
   int barNumber=getDatasetSize(chartDataSource);
+  if (barNumber <= 0)   return false;
   int currNumber=0;
   float[] ret=mBar3D.getBarHeightAndMargin(YSteps,barNumber);
   if (null == ret || ret.length != 2) {
@@ -15,11 +16,11 @@
   float barInnerMargin=ret[1];
   float labelBarUseHeight=add(mul(barNumber,barHeight),mul((barNumber - 1),barInnerMargin));
   float scrWidth=plotArea.getPlotWidth();
-  float valueWidth=(float)dataAxis.getAxisRange();
+  float valueWidth=dataAxis.getAxisRange();
   for (int i=0; i < barNumber; i++) {
     BarData bd=chartDataSource.get(i);
     List<Double> barValues=bd.getDataSet();
-    if (null == barValues)     continue;
+    if (null == barValues || barValues.size() == 0)     continue;
     List<Integer> barDataColor=bd.getDataColor();
     int barDefualtColor=bd.getColor();
     mBar3D.getBarPaint().setColor(barDefualtColor);

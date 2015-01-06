@@ -18,10 +18,10 @@
     chart.getDataAxis().getTickLabelPaint().setTextAlign(Align.LEFT);
     chart.getDataAxis().getAxisPaint().setStrokeWidth(3);
     chart.getCategoryAxis().getAxisPaint().setStrokeWidth(3);
-    chart.getDataAxis().getAxisPaint().setColor((int)Color.rgb(127,204,204));
-    chart.getCategoryAxis().getAxisPaint().setColor((int)Color.rgb(127,204,204));
-    chart.getDataAxis().getTickMarksPaint().setColor((int)Color.rgb(127,204,204));
-    chart.getCategoryAxis().getTickMarksPaint().setColor((int)Color.rgb(127,204,204));
+    chart.getDataAxis().getAxisPaint().setColor(Color.rgb(127,204,204));
+    chart.getCategoryAxis().getAxisPaint().setColor(Color.rgb(127,204,204));
+    chart.getDataAxis().getTickMarksPaint().setColor(Color.rgb(127,204,204));
+    chart.getCategoryAxis().getTickMarksPaint().setColor(Color.rgb(127,204,204));
     chart.setDotLabelFormatter(new IFormatterTextCallBack(){
       @Override public String textFormatter(      String value){
         String label="(" + value + ")";

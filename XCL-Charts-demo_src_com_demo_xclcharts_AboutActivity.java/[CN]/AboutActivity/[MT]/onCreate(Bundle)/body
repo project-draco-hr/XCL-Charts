@@ -2,10 +2,10 @@
   super.onCreate(savedInstanceState);
   requestWindowFeature(Window.FEATURE_NO_TITLE);
   setContentView(R.layout.activity_about);
-  GradientDrawable grad=new GradientDrawable(Orientation.TOP_BOTTOM,new int[]{(int)Color.rgb(133,224,224),(int)Color.rgb(51,136,103)});
+  GradientDrawable grad=new GradientDrawable(Orientation.TOP_BOTTOM,new int[]{Color.rgb(133,224,224),Color.rgb(51,136,103)});
   getWindow().setBackgroundDrawable(grad);
   TextView tv_title=(TextView)findViewById(R.id.tv_title);
-  String html="<big><font color ='red'>XCL-Charts</font></big><br/>" + "&nbsp;&nbsp;&nbsp;&nbsp;??????: 2.2<br/>" + "&nbsp;&nbsp;&nbsp;&nbsp;????????????: 2015-01-01<br/>"+ "&nbsp;&nbsp;&nbsp;&nbsp;QQ?????????: 374780627<br/>"+ "<big><font color ='red'>License</font></big><br/>"+ "&nbsp;&nbsp;&nbsp;&nbsp;Apache v2 License???????????????"+ "<br/><big><font color ='red'>??????????????????</font></big><br/>"+ "<br/>GitHub:https://github.com/xcltapestry/XCL-Charts";
+  String html="<big><font color ='red'>XCL-Charts</font></big><br/>" + "&nbsp;&nbsp;&nbsp;&nbsp;??????: 2.2<br/>" + "&nbsp;&nbsp;&nbsp;&nbsp;????????????: 2015-01-05<br/>"+ "&nbsp;&nbsp;&nbsp;&nbsp;QQ?????????: 374780627<br/>"+ "<big><font color ='red'>License</font></big><br/>"+ "&nbsp;&nbsp;&nbsp;&nbsp;Apache v2 License???????????????"+ "<br/><big><font color ='red'>??????????????????</font></big><br/>"+ "<br/>GitHub:https://github.com/xcltapestry/XCL-Charts";
   CharSequence charSequence=Html.fromHtml(html);
   tv_title.setText(charSequence);
   tv_title.setMovementMethod(LinkMovementMethod.getInstance());

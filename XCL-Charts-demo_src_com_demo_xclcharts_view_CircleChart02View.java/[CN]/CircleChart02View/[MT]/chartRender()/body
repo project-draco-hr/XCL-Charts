@@ -2,9 +2,9 @@
   try {
     chart.setAttributeInfo(mDataInfo);
     chart.setDataSource(mlPieData);
-    chart.getBgCirclePaint().setColor((int)Color.rgb(117,197,141));
-    chart.getFillCirclePaint().setColor((int)Color.rgb(77,180,123));
-    chart.getDataInfoPaint().setColor((int)Color.rgb(243,75,125));
+    chart.getBgCirclePaint().setColor(Color.rgb(117,197,141));
+    chart.getFillCirclePaint().setColor(Color.rgb(77,180,123));
+    chart.getDataInfoPaint().setColor(Color.rgb(243,75,125));
     chart.showRoundBorder();
   }
  catch (  Exception e) {

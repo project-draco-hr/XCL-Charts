@@ -7,6 +7,6 @@
   dataSeriesB.add(380d);
   dataSeriesB.add(452.57d);
   dataSeriesB.add(657.65d);
-  BarDataSet.add(new BarData("??????(Budget)",dataSeriesA,(int)Color.rgb(64,175,240)));
-  BarDataSet.add(new BarData("??????(Actual)",dataSeriesB,(int)Color.rgb(247,156,27)));
+  BarDataSet.add(new BarData("??????(Budget)",dataSeriesA,Color.rgb(64,175,240)));
+  BarDataSet.add(new BarData("??????(Actual)",dataSeriesB,Color.rgb(247,156,27)));
 }

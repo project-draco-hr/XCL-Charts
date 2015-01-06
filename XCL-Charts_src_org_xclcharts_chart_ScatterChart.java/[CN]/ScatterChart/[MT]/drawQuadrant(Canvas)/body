@@ -2,7 +2,7 @@
   if (!getPlotQuadrant().isShow())   return;
   float axisScreenWidth=getPlotScreenWidth();
   float axisScreenHeight=getPlotScreenHeight();
-  float axisDataHeight=(float)dataAxis.getAxisRange();
+  float axisDataHeight=dataAxis.getAxisRange();
   Double xValue=getPlotQuadrant().getQuadrantXValue();
   Double yValue=getPlotQuadrant().getQuadrantYValue();
   float centerY=(float)(axisScreenHeight * ((yValue - dataAxis.getAxisMin()) / axisDataHeight));

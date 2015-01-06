@@ -17,10 +17,10 @@
     chart.getDataAxis().getTickLabelPaint().setTextAlign(Align.LEFT);
     chart.getDataAxis().getAxisPaint().setStrokeWidth(3);
     chart.getCategoryAxis().getAxisPaint().setStrokeWidth(3);
-    chart.getDataAxis().getAxisPaint().setColor((int)Color.rgb(127,204,204));
-    chart.getCategoryAxis().getAxisPaint().setColor((int)Color.rgb(127,204,204));
-    chart.getDataAxis().getTickMarksPaint().setColor((int)Color.rgb(127,204,204));
-    chart.getCategoryAxis().getTickMarksPaint().setColor((int)Color.rgb(127,204,204));
+    chart.getDataAxis().getAxisPaint().setColor(Color.rgb(127,204,204));
+    chart.getCategoryAxis().getAxisPaint().setColor(Color.rgb(127,204,204));
+    chart.getDataAxis().getTickMarksPaint().setColor(Color.rgb(127,204,204));
+    chart.getCategoryAxis().getTickMarksPaint().setColor(Color.rgb(127,204,204));
     chart.setDotLabelFormatter(new IFormatterTextCallBack(){
       @Override public String textFormatter(      String value){
         String label="(" + value + ")";
@@ -37,8 +37,8 @@
     chart.getPlotLegend().setHorizontalAlign(XEnum.HorizontalAlign.RIGHT);
     chart.getPlotQuadrant().show(45d,55d);
     chart.getPlotQuadrant().setBgColor(Color.rgb(106,79,193),Color.rgb(34,174,215),Color.rgb(82,187,197),Color.rgb(217,78,69));
-    chart.getPlotQuadrant().getHorizontalLinePaint().setColor((int)Color.rgb(127,204,204));
-    chart.getPlotQuadrant().getVerticalLinePaint().setColor((int)Color.rgb(127,204,204));
+    chart.getPlotQuadrant().getHorizontalLinePaint().setColor(Color.rgb(127,204,204));
+    chart.getPlotQuadrant().getVerticalLinePaint().setColor(Color.rgb(127,204,204));
     chart.getPlotQuadrant().getHorizontalLinePaint().setStrokeWidth(8);
     chart.getPlotQuadrant().getVerticalLinePaint().setStrokeWidth(8);
   }

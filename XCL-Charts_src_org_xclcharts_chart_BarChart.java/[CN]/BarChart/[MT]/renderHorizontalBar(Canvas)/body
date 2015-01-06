@@ -1,9 +1,10 @@
 {
-  if (null == mDataSet)   return false;
+  if (null == mDataSet || mDataSet.size() == 0)   return false;
   float YSteps=getVerticalYSteps(getCateTickCount());
   float barInitX=plotArea.getLeft();
   float barInitY=plotArea.getBottom();
   int barNumber=getDatasetSize(mDataSet);
+  if (barNumber <= 0)   return false;
   int currNumber=0;
   float[] ret=mFlatBar.getBarHeightAndMargin(YSteps,barNumber);
   if (null == ret || ret.length != 2) {

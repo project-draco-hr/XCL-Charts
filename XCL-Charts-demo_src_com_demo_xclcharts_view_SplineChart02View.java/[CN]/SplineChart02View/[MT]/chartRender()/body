@@ -14,7 +14,7 @@
     plot.showHorizontalLines();
     plot.showVerticalLines();
     plot.getHorizontalLinePaint().setStrokeWidth(3);
-    plot.getHorizontalLinePaint().setColor((int)Color.rgb(127,204,204));
+    plot.getHorizontalLinePaint().setColor(Color.rgb(127,204,204));
     plot.setHorizontalLineStyle(XEnum.LineStyle.DOT);
     chart.getDataAxis().getAxisPaint().setStrokeWidth(plot.getHorizontalLinePaint().getStrokeWidth());
     chart.getCategoryAxis().getAxisPaint().setStrokeWidth(plot.getHorizontalLinePaint().getStrokeWidth());

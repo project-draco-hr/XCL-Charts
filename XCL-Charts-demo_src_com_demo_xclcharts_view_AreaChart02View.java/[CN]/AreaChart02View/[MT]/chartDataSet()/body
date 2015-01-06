@@ -19,12 +19,12 @@
   line1.setApplayGradient(true);
   line1.setAreaBeginColor(Color.WHITE);
   line1.setAreaEndColor(Color.parseColor("#80C007"));
-  AreaData line2=new AreaData("?????????",dataSeries2,(int)Color.rgb(182,23,123),(int)Color.rgb(255,191,235));
+  AreaData line2=new AreaData("?????????",dataSeries2,Color.rgb(182,23,123),Color.rgb(255,191,235));
   line2.getDotLabelPaint().setColor(Color.rgb(83,148,235));
   line2.setLabelVisible(true);
   line2.getDotLabelPaint().setTextAlign(Align.CENTER);
-  line2.getPlotLabel().showBox();
-  line2.getPlotLabel().setOffsetY(30.f);
+  line2.getLabelOptions().showBox();
+  line2.getLabelOptions().setOffsetY(30.f);
   line2.setApplayGradient(true);
   line2.setGradientDirection(XEnum.Direction.HORIZONTAL);
   line2.setAreaBeginColor(Color.WHITE);

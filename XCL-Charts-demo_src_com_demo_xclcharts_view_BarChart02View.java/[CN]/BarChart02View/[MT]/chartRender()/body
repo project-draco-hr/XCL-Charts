@@ -14,7 +14,7 @@
     chart.getDataAxis().setAxisMax(500);
     chart.getDataAxis().setAxisMin(100);
     chart.getDataAxis().setAxisSteps(100);
-    chart.getDataAxis().getTickLabelPaint().setColor((int)Color.rgb(199,88,122));
+    chart.getDataAxis().getTickLabelPaint().setColor(Color.rgb(199,88,122));
     chart.getDataAxis().setLabelFormatter(new IFormatterTextCallBack(){
       @Override public String textFormatter(      String value){
         String tmp=value + "??????";

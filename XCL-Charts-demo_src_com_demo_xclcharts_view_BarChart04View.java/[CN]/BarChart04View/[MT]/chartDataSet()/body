@@ -8,18 +8,18 @@
     int v=random.nextInt(max) % (max - min + 1) + min;
     dataSeriesA.add((double)v);
     if (v <= 18.5d) {
-      dataColorA.add((int)Color.rgb(77,184,73));
+      dataColorA.add(Color.rgb(77,184,73));
     }
  else     if (v <= 24d) {
-      dataColorA.add((int)Color.rgb(252,210,9));
+      dataColorA.add(Color.rgb(252,210,9));
     }
  else     if (v <= 27.9d) {
-      dataColorA.add((int)Color.rgb(171,42,96));
+      dataColorA.add(Color.rgb(171,42,96));
     }
  else {
-      dataColorA.add((int)Color.RED);
+      dataColorA.add(Color.RED);
     }
   }
-  BarData BarDataA=new BarData("",dataSeriesA,dataColorA,(int)Color.rgb(53,169,239));
+  BarData BarDataA=new BarData("",dataSeriesA,dataColorA,Color.rgb(53,169,239));
   chartData.add(BarDataA);
 }

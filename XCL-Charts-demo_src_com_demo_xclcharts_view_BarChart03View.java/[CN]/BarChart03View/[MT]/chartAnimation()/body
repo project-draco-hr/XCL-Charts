@@ -11,7 +11,7 @@
           dataSeries.add(barData.getDataSet().get(k));
           dataColorA.add(barData.getDataColor().get(k));
         }
-        BarData animationBarData=new BarData("",dataSeries,dataColorA,(int)Color.rgb(53,169,239));
+        BarData animationBarData=new BarData("",dataSeries,dataColorA,Color.rgb(53,169,239));
         animationData.add(animationBarData);
         chart.setDataSource(animationData);
         postInvalidate();

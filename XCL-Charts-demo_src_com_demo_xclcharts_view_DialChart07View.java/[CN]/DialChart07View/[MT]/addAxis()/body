@@ -21,7 +21,7 @@
   chart.getPointer().setPointerStyle(XEnum.PointerStyle.TRIANGLE);
   chart.getPointer().getPointerPaint().setStrokeWidth(3);
   chart.getPointer().getPointerPaint().setStyle(Style.FILL);
-  chart.getPointer().getPointerPaint().setColor((int)Color.rgb(242,110,131));
-  chart.getPointer().getBaseCirclePaint().setColor((int)Color.rgb(238,204,71));
+  chart.getPointer().getPointerPaint().setColor(Color.rgb(242,110,131));
+  chart.getPointer().getBaseCirclePaint().setColor(Color.rgb(238,204,71));
   chart.getPointer().setBaseRadius(10f);
 }

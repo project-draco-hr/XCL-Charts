@@ -2,7 +2,7 @@
   List<Double> dataSeriesA=new LinkedList<Double>();
   List<Integer> dataColorA=new LinkedList<Integer>();
   dataSeriesA.add(0d);
-  dataColorA.add((int)Color.RED);
-  BarData BarDataA=new BarData("",dataSeriesA,dataColorA,(int)Color.rgb(53,169,239));
+  dataColorA.add(Color.RED);
+  BarData BarDataA=new BarData("",dataSeriesA,dataColorA,Color.rgb(53,169,239));
   chartData.add(BarDataA);
 }

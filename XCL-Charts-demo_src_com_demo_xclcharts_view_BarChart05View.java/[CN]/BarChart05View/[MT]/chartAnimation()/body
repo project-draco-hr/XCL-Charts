@@ -9,7 +9,7 @@
         for (int k=0; k <= j; k++) {
           dataSeries.add(barData.getDataSet().get(k));
         }
-        BarData animationBarData=new BarData("",dataSeries,(int)Color.rgb(53,169,239));
+        BarData animationBarData=new BarData("",dataSeries,Color.rgb(53,169,239));
         animationData.add(animationBarData);
         chart.setDataSource(animationData);
         postInvalidate();

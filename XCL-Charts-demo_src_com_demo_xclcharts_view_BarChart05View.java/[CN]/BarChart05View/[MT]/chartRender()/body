@@ -37,7 +37,7 @@
     chart.getBar().setBarStyle(XEnum.BarStyle.TRIANGLE);
     chart.getCategoryAxis().setHorizontalTickAlign(Align.RIGHT);
     chart.getCategoryAxis().getTickLabelPaint().setTextAlign(Align.LEFT);
-    chart.getCategoryAxis().getTickLabelPaint().setColor((int)Color.rgb(199,88,122));
+    chart.getCategoryAxis().getTickLabelPaint().setColor(Color.rgb(199,88,122));
     chart.getClipExt().setExtTop(10.f);
     chart.getClipExt().setExtRight(100.f);
   }

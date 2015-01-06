@@ -14,7 +14,7 @@
     if (null == cData)     continue;
     currentAngle=cData.getSliceAngle();
     if (!validateAngle(currentAngle))     continue;
-    geArcPaint().setColor(DrawHelper.getInstance().getDarkerColor((int)cData.getSliceColor()));
+    geArcPaint().setColor(DrawHelper.getInstance().getDarkerColor(cData.getSliceColor()));
     if (cData.getSelected()) {
       newRadius=div(radius,getSelectedOffset());
       PointF point=MathHelper.getInstance().calcArcEndPointXY(cirX,cirY,newRadius,add(offsetAngle,div(currentAngle,2f)));

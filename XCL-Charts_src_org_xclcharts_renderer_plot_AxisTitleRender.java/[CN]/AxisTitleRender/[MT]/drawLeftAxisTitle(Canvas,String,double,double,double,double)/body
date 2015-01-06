@@ -2,7 +2,7 @@
   if (null == canvas)   return;
   if (0 == axisTitle.length() || "" == axisTitle)   return;
   double axisTitleTextHeight=DrawHelper.getInstance().getTextWidth(getLeftTitlePaint(),axisTitle);
-  float axisTitleTextStartX=(float)Math.round(left + getLeftTitlePaint().getTextSize());
+  float axisTitleTextStartX=Math.round(left + getLeftTitlePaint().getTextSize());
   float axisTitleTextStartY=0.0f;
   if (mAxisTitleStyle == XEnum.AxisTitleStyle.ENDPOINT) {
     axisTitleTextStartY=Math.round(top + axisTitleTextHeight);

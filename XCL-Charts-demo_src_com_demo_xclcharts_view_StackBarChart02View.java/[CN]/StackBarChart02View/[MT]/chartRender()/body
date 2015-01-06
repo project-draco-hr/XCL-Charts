@@ -25,7 +25,7 @@
       }
     }
 );
-    chart.getCategoryAxis().getTickLabelPaint().setColor((int)Color.rgb(1,188,242));
+    chart.getCategoryAxis().getTickLabelPaint().setColor(Color.rgb(1,188,242));
     chart.getBar().setItemLabelVisible(true);
     chart.setItemLabelFormatter(new IFormatterDoubleCallBack(){
       @Override public String doubleFormatter(      Double value){
