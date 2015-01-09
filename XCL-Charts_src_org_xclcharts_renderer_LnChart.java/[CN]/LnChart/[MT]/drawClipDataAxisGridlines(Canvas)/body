@@ -34,17 +34,17 @@ switch (pos) {
 case LEFT:
 case RIGHT:
 case VERTICAL_CENTER:
-currentY=sub(plotArea.getBottom(),i * YSteps);
+currentY=sub(plotArea.getBottom(),mul(i,YSteps));
 drawHorizontalGridLines(canvas,plotArea.getLeft(),plotArea.getRight(),i,tickCount + 1,YSteps,currentY);
-currentTickLabel=MathHelper.getInstance().add(dataAxis.getAxisMin(),i * dataAxis.getAxisSteps());
+currentTickLabel=MathHelper.getInstance().add(dataAxis.getAxisMin(),mul(i,(float)dataAxis.getAxisSteps()));
 mLstDataTick.add(new PlotAxisTick(i,axisX,currentY,Double.toString(currentTickLabel)));
 break;
 case TOP:
 case BOTTOM:
 case HORIZONTAL_CENTER:
-currentX=add(plotArea.getLeft(),i * XSteps);
+currentX=add(plotArea.getLeft(),mul(i,XSteps));
 drawVerticalGridLines(canvas,plotArea.getTop(),plotArea.getBottom(),i,tickCount + 1,XSteps,currentX);
-currentTickLabel=MathHelper.getInstance().add(dataAxis.getAxisMin(),i * dataAxis.getAxisSteps());
+currentTickLabel=MathHelper.getInstance().add(dataAxis.getAxisMin(),mul(i,(float)dataAxis.getAxisSteps()));
 mLstDataTick.add(new PlotAxisTick(i,currentX,axisY,Double.toString(currentTickLabel)));
 break;
 }

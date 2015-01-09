@@ -5,6 +5,9 @@
     renderLnAxis();
     lnChart.getPlotLegend().show();
     lnChart.setLineAxisIntersectVisible(false);
+    lnChart.setXCoordFirstTickmarksBegin(true);
+    lnChart.setBarCenterStyle(XEnum.BarCenterStyle.TICKMARKS);
+    lnChart.getCategoryAxis().hideAxisLabels();
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

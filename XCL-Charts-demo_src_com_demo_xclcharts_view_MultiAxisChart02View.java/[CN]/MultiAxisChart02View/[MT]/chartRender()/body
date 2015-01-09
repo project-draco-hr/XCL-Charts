@@ -41,7 +41,7 @@
     chart.getPlotGrid().showEvenRowBgColor();
     chart.getPlotGrid().showOddRowBgColor();
     chart.getPlotLegend().hide();
-    chart.setBarCenterStyle(XEnum.BarCenterStyle.TICKMARKS);
+    chart.setBarCenterStyle(XEnum.BarCenterStyle.SPACE);
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

@@ -1,3 +1,3 @@
 {
-  return (bubbleRadius * (scale / scaleTotalSize));
+  return mul(bubbleRadius,div(scale,scaleTotalSize));
 }

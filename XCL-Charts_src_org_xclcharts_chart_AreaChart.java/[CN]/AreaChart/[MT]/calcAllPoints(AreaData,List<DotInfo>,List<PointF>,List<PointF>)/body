@@ -1,11 +1,11 @@
 {
   if (null == bd) {
-    Log.e(TAG,"?????????????????????????????????.");
+    Log.w(TAG,"?????????????????????????????????.");
     return false;
   }
   List<Double> chartValues=bd.getLinePoint();
   if (null == chartValues) {
-    Log.e(TAG,"?????????????????????.");
+    Log.w(TAG,"?????????????????????.");
     return false;
   }
   float lineStartX=plotArea.getLeft(), lineStartY=plotArea.getBottom();
@@ -15,7 +15,7 @@
   if (count <= 0)   return false;
   for (int i=0; i < count; i++) {
     double bv=chartValues.get(i);
-    lineStopX=add(plotArea.getLeft(),i * currLablesSteps);
+    lineStopX=add(plotArea.getLeft(),mul(i,currLablesSteps));
     lineStopY=getVPValPosition(bv);
     if (0 == i) {
       lineStartX=lineStopX;
@@ -34,7 +34,9 @@
   }
   if (count > 2) {
     lstPathPoints.add(new PointF(lineStartX,lineStartY));
-    if (Double.compare(chartValues.get(count - 1),dataAxis.getAxisMin()) != 0)     lstPathPoints.add(new PointF(lineStartX,plotArea.getBottom()));
+    if (Double.compare(chartValues.get(count - 1),dataAxis.getAxisMin()) != 0) {
+      lstPathPoints.add(new PointF(lineStartX,plotArea.getBottom()));
+    }
   }
   return true;
 }

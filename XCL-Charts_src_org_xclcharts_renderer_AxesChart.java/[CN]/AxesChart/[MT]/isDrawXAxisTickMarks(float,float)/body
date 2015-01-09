@@ -1,6 +1,5 @@
 {
-  if (Float.compare(currentX,plotArea.getLeft() - moveX) == -1 || Float.compare(currentX,plotArea.getRight() - moveX) == 1) {
-    return false;
-  }
+  if (Float.compare(currentX + moveX,plotArea.getLeft()) == -1)   return false;
+  if (Float.compare(currentX + moveX,plotArea.getRight()) == 1)   return false;
   return true;
 }

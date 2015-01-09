@@ -1,14 +1,10 @@
 {
   LinkedList<Double> virtual=new LinkedList<Double>();
-  virtual.add(0d);
   virtual.add(95d);
   virtual.add(100d);
-  virtual.add(0d);
   LinkedList<Double> physical=new LinkedList<Double>();
-  physical.add(0d);
   physical.add(110d);
   physical.add(125d);
-  physical.add(0d);
   LineData lineData1=new LineData("Virtual RT",virtual,Color.rgb(234,83,71));
   LineData lineData2=new LineData("Physical RT",physical,Color.rgb(75,166,51));
   lineData1.setDotStyle(XEnum.DotStyle.TRIANGLE);

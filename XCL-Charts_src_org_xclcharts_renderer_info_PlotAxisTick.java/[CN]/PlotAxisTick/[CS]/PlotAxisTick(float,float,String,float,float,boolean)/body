@@ -4,5 +4,5 @@
   Label=label;
   labelX=lx;
   labelY=ly;
-  mHideTickMarks=tickMarks;
+  mShowTickMarks=tickMarks;
 }

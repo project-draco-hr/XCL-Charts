@@ -33,9 +33,7 @@ case VERTICAL_CENTER:
 labelY=currentY;
 labelX=currentX=sub(axisX,get3DOffsetX());
 if (XEnum.BarCenterStyle.SPACE == mBarCenterStyle) {
-if (i == tickCount - 1) {
-showTicks=false;
-}
+if (i == tickCount - 1) showTicks=false;
 labelY=add(currentY,div(YSteps,2));
 }
 mLstCateTick.add(new PlotAxisTick(currentX,currentY,categoryAxis.getDataSet().get(i),labelX,labelY,showTicks));

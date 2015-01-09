@@ -1,0 +1,4 @@
+Path bezierPath
+PointF start
+PointF stop
+PointF[] bezierControls

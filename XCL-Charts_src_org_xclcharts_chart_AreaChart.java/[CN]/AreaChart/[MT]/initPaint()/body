@@ -3,6 +3,6 @@
     mPaintAreaFill=new Paint();
     mPaintAreaFill.setStyle(Style.FILL);
     mPaintAreaFill.setAntiAlias(true);
-    mPaintAreaFill.setColor(Color.rgb(73,172,72));
+    mPaintAreaFill.setColor((int)Color.rgb(73,172,72));
   }
 }

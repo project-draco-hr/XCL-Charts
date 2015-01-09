@@ -20,4 +20,6 @@
   lnChart.setLineAxisIntersectVisible(false);
   lnChart.getDataAxis().setHorizontalTickAlign(Align.RIGHT);
   lnChart.getDataAxis().getTickLabelPaint().setTextAlign(Align.LEFT);
+  lnChart.setXCoordFirstTickmarksBegin(true);
+  lnChart.setBarCenterStyle(XEnum.BarCenterStyle.SPACE);
 }

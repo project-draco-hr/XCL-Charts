@@ -1,18 +1,12 @@
 {
   try {
-    float sum=0.0f;
-    int count=chartData.size();
-    for (int i=0; i < count; i++) {
-      Thread.sleep(150);
-      ArrayList<PieData> animationData=new ArrayList<PieData>();
-      sum=0.0f;
-      for (int j=0; j <= i; j++) {
-        animationData.add(chartData.get(j));
-        sum=(float)MathHelper.getInstance().add(sum,chartData.get(j).getPercentage());
-      }
-      animationData.add(new PieData("","",MathHelper.getInstance().sub(100.0f,sum),Color.argb(1,0,0,0)));
-      chart.setDataSource(animationData);
+    chart.setDataSource(chartData);
+    int count=360 / 10;
+    for (int i=1; i < count; i++) {
+      Thread.sleep(40);
+      chart.setTotalAngle(10 * i);
       if (count - 1 == i) {
+        chart.setTotalAngle(360);
         chart.ActiveListenItemClick();
         chart.getArcBorderPaint().setColor(Color.YELLOW);
         chart.getArcBorderPaint().setStrokeWidth(3);

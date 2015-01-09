@@ -1,10 +1,11 @@
 {
   List<String> dataSet=categoryAxis.getDataSet();
+  if (null == dataSet)   return;
   float XSteps=0.0f, YSteps=0.0f;
   int j=0;
   int tickCount=dataSet.size();
   if (0 == tickCount) {
-    Log.e(TAG,"?????????????????????0!");
+    Log.w(TAG,"?????????????????????0!");
     return;
   }
  else   if (1 == tickCount) {
@@ -24,23 +25,47 @@
     currentX=axisX=plotArea.getLeft();
   }
   mLstCateTick.clear();
+  float labelX, labelY;
+  boolean showTicks=true;
   for (int i=0; i < tickCount; i++) {
 switch (pos) {
 case LEFT:
 case RIGHT:
 case VERTICAL_CENTER:
-      currentY=sub(plotArea.getBottom(),j * YSteps);
+      if (mXCoordFirstTickmarksBegin) {
+        currentY=sub(plotArea.getBottom(),mul((j + 1),YSteps));
+      }
+ else {
+        currentY=sub(plotArea.getBottom(),mul(j,YSteps));
+      }
     drawHorizontalGridLines(canvas,plotArea.getLeft(),plotArea.getRight(),i,tickCount,YSteps,currentY);
   if (!categoryAxis.isShowAxisLabels())   continue;
-mLstCateTick.add(new PlotAxisTick(axisX,currentY,dataSet.get(i)));
+labelX=axisX;
+labelY=currentY;
+if (mXCoordFirstTickmarksBegin && XEnum.BarCenterStyle.SPACE == mBarCenterStyle) {
+if (i == tickCount - 1) showTicks=false;
+labelY=add(currentY,div(YSteps,2));
+}
+mLstCateTick.add(new PlotAxisTick(axisX,currentY,dataSet.get(i),labelX,labelY,showTicks));
 break;
 case TOP:
 case BOTTOM:
 case HORIZONTAL_CENTER:
-currentX=add(plotArea.getLeft(),(j) * XSteps);
+if (mXCoordFirstTickmarksBegin) {
+currentX=add(plotArea.getLeft(),mul((j + 1),XSteps));
+}
+ else {
+currentX=add(plotArea.getLeft(),mul(j,XSteps));
+}
 drawVerticalGridLines(canvas,plotArea.getTop(),plotArea.getBottom(),i,tickCount,XSteps,currentX);
 if (!categoryAxis.isShowAxisLabels()) continue;
-mLstCateTick.add(new PlotAxisTick(currentX,axisY,dataSet.get(i)));
+labelX=currentX;
+labelY=axisY;
+if (mXCoordFirstTickmarksBegin && XEnum.BarCenterStyle.SPACE == mBarCenterStyle) {
+if (i == tickCount - 1) showTicks=false;
+labelX=sub(currentX,div(XSteps,2));
+}
+mLstCateTick.add(new PlotAxisTick(currentX,axisY,dataSet.get(i),labelX,labelY,showTicks));
 break;
 }
 j++;

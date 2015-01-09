@@ -21,12 +21,7 @@
   float XSteps=0.0f;
   int j=0;
   int tickCount=dataSet.size();
-  if (0 == tickCount) {
-    return false;
-  }
- else   if (1 == tickCount) {
-    j=1;
-  }
+  if (1 == tickCount)   j=1;
   int labeltickCount=getCategoryAxisCount();
   XSteps=getVerticalXSteps(labeltickCount);
   float itemAngle=bd.getItemLabelRotateAngle();
@@ -38,7 +33,13 @@
   for (int i=0; i < count; i++) {
     bv=chartValues.get(i);
     lineStopY=getVPValPosition(bv);
-    lineStopX=add(initX,j * XSteps);
+    if (mXCoordFirstTickmarksBegin) {
+      lineStopX=add(initX,mul((j + 1),XSteps));
+    }
+ else {
+      lineStopX=add(initX,mul(j,XSteps));
+    }
+    if (mXCoordFirstTickmarksBegin && XEnum.BarCenterStyle.SPACE == mBarCenterStyle)     lineStopX=sub(lineStopX,div(XSteps,2));
     if (0 == j) {
       lineStartX=lineStopX;
       lineStartY=lineStopY;
@@ -58,7 +59,7 @@
         if (!pLine.getDotStyle().equals(XEnum.DotStyle.HIDE)) {
           PlotDotRender.getInstance().renderDot(canvas,pDot,lineStopX,lineStopY,pLine.getDotPaint());
           savePointRecord(dataID,i,lineStopX + mMoveX,lineStopY + mMoveY,lineStopX - radius + mMoveX,lineStopY - radius + mMoveY,lineStopX + radius + mMoveX,lineStopY + radius + mMoveY);
-          lineStopX=lineStopX + radius;
+          lineStopX=add(lineStopX,radius);
         }
         drawAnchor(getAnchorDataPoint(),dataID,i,canvas,lineStopX - radius,lineStopY);
         if (bd.getLabelVisible()) {
@@ -66,7 +67,7 @@
         }
       }
  else {
-        Log.e(TAG,"????????????????????????");
+        Log.w(TAG,"????????????????????????");
         return false;
       }
       lineStartX=lineStopX;

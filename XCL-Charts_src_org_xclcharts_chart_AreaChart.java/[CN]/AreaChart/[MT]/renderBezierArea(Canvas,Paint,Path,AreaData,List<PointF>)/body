@@ -35,7 +35,9 @@
   for (int i=0; i < count; i++) {
     if (i < 3)     continue;
     if (lstPathPoints.get(i - 1).y >= axisMinValue && lstPathPoints.get(i).y >= axisMinValue) {
-      CurveHelper.curve3(lstPathPoints.get(i - 2),lstPathPoints.get(i - 1),lstPathPoints.get(i - 3),lstPathPoints.get(i),mBezierControls);
+      if (i == count - 1) {
+        continue;
+      }
       if (null == bezierPath) {
         bezierPath=new Path();
         bezierPath.moveTo(lstPathPoints.get(i - 2).x,lstPathPoints.get(i - 2).y);
@@ -43,7 +45,13 @@
  else {
         bezierPath.lineTo(lstPathPoints.get(i - 2).x,lstPathPoints.get(i - 2).y);
       }
-      bezierPath.quadTo(mBezierControls[0].x,mBezierControls[0].y,lstPathPoints.get(i - 1).x,lstPathPoints.get(i - 1).y);
+      if (lstPathPoints.get(i - 2).y >= axisMinValue) {
+        bezierPath.moveTo(lstPathPoints.get(i - 1).x,lstPathPoints.get(i - 1).y);
+      }
+ else {
+        CurveHelper.curve3(lstPathPoints.get(i - 2),lstPathPoints.get(i - 1),lstPathPoints.get(i - 3),lstPathPoints.get(i),mBezierControls);
+        bezierPath.quadTo(mBezierControls[0].x,mBezierControls[0].y,lstPathPoints.get(i - 1).x,lstPathPoints.get(i - 1).y);
+      }
       bezierPath.close();
       if (areaData.getApplayGradient()) {
         LinearGradient linearGradient;
@@ -66,15 +74,16 @@
       continue;
     }
     CurveHelper.curve3(lstPathPoints.get(i - 2),lstPathPoints.get(i - 1),lstPathPoints.get(i - 3),lstPathPoints.get(i),mBezierControls);
-    bezierPath.cubicTo(mBezierControls[0].x,mBezierControls[0].y,mBezierControls[1].x,mBezierControls[1].y,lstPathPoints.get(i - 1).x,lstPathPoints.get(i - 1).y);
+    bezierCurvePathAxisMinValue(bezierPath,lstPathPoints.get(i - 2),lstPathPoints.get(i - 1),mBezierControls);
   }
   PointF stop=lstPathPoints.get(count - 1);
-  if (Float.compare(stop.y,plotArea.getBottom()) == 0) {
-    bezierPath.lineTo(stop.x,stop.y);
+  if (lstPathPoints.get(count - 2).y >= axisMinValue) {
+    CurveHelper.curve3(lstPathPoints.get(count - 3),stop,lstPathPoints.get(count - 4),stop,mBezierControls);
+    bezierCurvePathAxisMinValue(bezierPath,lstPathPoints.get(count - 3),stop,mBezierControls);
   }
  else {
     CurveHelper.curve3(lstPathPoints.get(count - 2),stop,lstPathPoints.get(count - 3),stop,mBezierControls);
-    bezierPath.cubicTo(mBezierControls[0].x,mBezierControls[0].y,mBezierControls[1].x,mBezierControls[1].y,stop.x,stop.y);
+    bezierCurvePathAxisMinValue(bezierPath,lstPathPoints.get(count - 2),lstPathPoints.get(count - 1),mBezierControls);
   }
   bezierPath.close();
   if (areaData.getApplayGradient()) {

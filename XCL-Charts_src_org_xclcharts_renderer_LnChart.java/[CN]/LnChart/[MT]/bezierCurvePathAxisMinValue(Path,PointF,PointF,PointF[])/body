@@ -1,0 +1,20 @@
+{
+  float axisMinValue=plotArea.getBottom();
+  if (start.y >= axisMinValue && stop.y >= axisMinValue) {
+    bezierPath.lineTo(stop.x,stop.y);
+  }
+ else {
+    if (bezierControls[0].y >= axisMinValue && bezierControls[1].y >= axisMinValue) {
+      bezierPath.lineTo(stop.x,stop.y);
+    }
+ else     if (bezierControls[0].y >= axisMinValue && bezierControls[1].y < axisMinValue) {
+      bezierPath.cubicTo(bezierControls[0].x,axisMinValue,bezierControls[1].x,bezierControls[1].y,stop.x,stop.y);
+    }
+ else     if (bezierControls[0].y < axisMinValue && bezierControls[1].y >= axisMinValue) {
+      bezierPath.cubicTo(bezierControls[0].x,bezierControls[0].y,bezierControls[1].x,axisMinValue,stop.x,stop.y);
+    }
+ else {
+      bezierPath.cubicTo(bezierControls[0].x,bezierControls[0].y,bezierControls[1].x,bezierControls[1].y,stop.x,stop.y);
+    }
+  }
+}

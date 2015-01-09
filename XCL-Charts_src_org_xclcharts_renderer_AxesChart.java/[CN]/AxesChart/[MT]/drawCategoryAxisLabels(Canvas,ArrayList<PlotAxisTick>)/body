@@ -16,5 +16,6 @@ if (!t.isShowTickMarks() || !isDrawXAxisTickMarks(t.X,mMoveX)) showTicks=false;
 categoryAxis.renderAxisVerticalTick(canvas,t.X,t.Y,t.Label,t.labelX,t.labelY,showTicks);
 break;
 }
+showTicks=true;
 }
 }

@@ -2,14 +2,24 @@
   int tickCount=categoryAxis.getDataSet().size();
   int labeltickCount=0;
   if (0 == tickCount) {
-    Log.e(TAG,"?????????????????????0!");
+    Log.w(TAG,"?????????????????????0!");
     return labeltickCount;
   }
  else   if (1 == tickCount) {
     labeltickCount=tickCount;
   }
  else {
-    labeltickCount=tickCount - 1;
+    if (mXCoordFirstTickmarksBegin) {
+      if (XEnum.BarCenterStyle.SPACE == mBarCenterStyle) {
+        labeltickCount=tickCount;
+      }
+ else {
+        labeltickCount=tickCount + 1;
+      }
+    }
+ else {
+      labeltickCount=tickCount - 1;
+    }
   }
   return labeltickCount;
 }

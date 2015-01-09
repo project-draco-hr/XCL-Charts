@@ -1,0 +1,17 @@
+{
+  float Angle=0.0f;
+  try {
+    float currentValue=percentage;
+    if (currentValue >= 101f || currentValue < 0.0f) {
+    }
+ else {
+      Angle=MathHelper.getInstance().round(MathHelper.getInstance().mul(totalAngle,MathHelper.getInstance().div(currentValue,100f)),2);
+    }
+  }
+ catch (  Exception ex) {
+    Angle=-1f;
+  }
+ finally {
+  }
+  return Angle;
+}

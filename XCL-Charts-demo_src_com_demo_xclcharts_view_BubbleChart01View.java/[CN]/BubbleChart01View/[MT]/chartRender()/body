@@ -1,7 +1,7 @@
 {
   try {
     int[] ltrb=getBarLnDefaultSpadding();
-    chart.setPadding(10,ltrb[1],10,ltrb[3]);
+    chart.setPadding(15,ltrb[1],15,ltrb[3]);
     chart.showRoundBorder();
     chart.setCategories(labels);
     chart.setDataSource(chartData);

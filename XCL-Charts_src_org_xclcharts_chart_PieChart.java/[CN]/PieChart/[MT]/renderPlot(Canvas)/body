@@ -19,7 +19,7 @@
     int count=mDataset.size();
     for (int i=0; i < count; i++) {
       PieData cData=mDataset.get(i);
-      currentAngle=cData.getSliceAngle();
+      currentAngle=MathHelper.getInstance().getSliceAngle(getTotalAngle(),(float)cData.getPercentage());
       if (!validateAngle(currentAngle))       continue;
       geArcPaint().setColor(cData.getSliceColor());
       if (getGradient())       geArcPaint().setShader(renderRadialGradient(geArcPaint(),cirX,cirY,radius));

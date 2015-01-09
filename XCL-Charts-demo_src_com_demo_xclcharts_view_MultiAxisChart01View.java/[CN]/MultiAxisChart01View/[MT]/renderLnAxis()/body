@@ -1,6 +1,5 @@
 {
   lnChart.setCategories(chartLabelsLn);
-  lnChart.getCategoryAxis().hide();
   lnChart.setDataSource(chartDatasetLn);
   DataAxis dataAxis=lnChart.getDataAxis();
   dataAxis.setHorizontalTickAlign(Align.RIGHT);

@@ -25,4 +25,5 @@
   chart.getPlotGrid().hideHorizontalLines();
   chart.getPlotGrid().hideOddRowBgColor();
   chart.getPlotGrid().hideVerticalLines();
+  chart.setBarCenterStyle(XEnum.BarCenterStyle.TICKMARKS);
 }

@@ -16,23 +16,25 @@
   for (int i=0; i < count; i++) {
     if (i < 3)     continue;
     if (lstPoints.get(i - 1).y >= axisMinValue && lstPoints.get(i).y >= axisMinValue) {
-      CurveHelper.curve3(lstPoints.get(i - 2),lstPoints.get(i - 1),lstPoints.get(i - 3),lstPoints.get(i),BezierControls);
-      if (null == bezierPath)       bezierPath=new Path();
+      if (null == bezierPath) {
+        bezierPath=new Path();
+      }
       bezierPath.reset();
       bezierPath.moveTo(lstPoints.get(i - 2).x,lstPoints.get(i - 2).y);
-      bezierPath.quadTo(BezierControls[0].x,BezierControls[0].y,lstPoints.get(i - 1).x,lstPoints.get(i - 1).y);
-      canvas.drawPath(bezierPath,paint);
-      bezierPath.reset();
+      if (lstPoints.get(i - 2).y >= axisMinValue) {
+        bezierPath.lineTo(lstPoints.get(i - 1).x,lstPoints.get(i - 1).y);
+      }
+ else {
+        CurveHelper.curve3(lstPoints.get(i - 2),lstPoints.get(i - 1),lstPoints.get(i - 3),lstPoints.get(i),BezierControls);
+        bezierPath.quadTo(BezierControls[0].x,BezierControls[0].y,lstPoints.get(i - 1).x,lstPoints.get(i - 1).y);
+        canvas.drawPath(bezierPath,paint);
+        bezierPath.reset();
+      }
       canvas.drawLine(lstPoints.get(i - 1).x,lstPoints.get(i - 1).y,lstPoints.get(i).x,lstPoints.get(i).y,paint);
       continue;
     }
     CurveHelper.curve3(lstPoints.get(i - 2),lstPoints.get(i - 1),lstPoints.get(i - 3),lstPoints.get(i),BezierControls);
-    if (lstPoints.get(i - 1).y >= axisMinValue) {
-      continue;
-    }
- else {
-      renderBezierCurvePath(canvas,paint,bezierPath,lstPoints.get(i - 2),lstPoints.get(i - 1),BezierControls);
-    }
+    renderBezierCurvePath(canvas,paint,bezierPath,lstPoints.get(i - 2),lstPoints.get(i - 1),BezierControls);
   }
   if (count > 3) {
     PointF stop=lstPoints.get(count - 1);
