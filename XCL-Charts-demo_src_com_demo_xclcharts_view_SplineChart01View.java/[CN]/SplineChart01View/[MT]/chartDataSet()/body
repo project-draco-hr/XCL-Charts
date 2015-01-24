@@ -1,21 +1,15 @@
 {
   List<PointD> linePoint1=new ArrayList<PointD>();
+  linePoint1.add(new PointD(2d,8d));
   linePoint1.add(new PointD(5d,8d));
-  linePoint1.add(new PointD(12d,12d));
-  linePoint1.add(new PointD(25d,15d));
-  linePoint1.add(new PointD(30d,30d));
-  linePoint1.add(new PointD(45d,25d));
-  linePoint1.add(new PointD(55d,33d));
-  linePoint1.add(new PointD(62d,45d));
+  linePoint1.add(new PointD(10d,12d));
   SplineData dataSeries1=new SplineData("??????????????????",linePoint1,Color.rgb(54,141,238));
   dataSeries1.getLinePaint().setStrokeWidth(2);
   List<PointD> linePoint2=new ArrayList<PointD>();
-  linePoint2.add(new PointD(40d,50d));
-  linePoint2.add(new PointD(55d,55d));
-  linePoint2.add(new PointD(60d,65d));
-  linePoint2.add(new PointD(65d,85d));
-  linePoint2.add(new PointD(72d,70d));
-  linePoint2.add(new PointD(85d,68d));
+  linePoint2.add(new PointD(1d,50d));
+  linePoint2.add(new PointD(2d,52d));
+  linePoint2.add(new PointD(3d,53d));
+  linePoint2.add(new PointD(8d,55d));
   SplineData dataSeries2=new SplineData("?????????",linePoint2,Color.rgb(255,165,132));
   dataSeries2.setLabelVisible(true);
   dataSeries2.setDotStyle(XEnum.DotStyle.RECT);
