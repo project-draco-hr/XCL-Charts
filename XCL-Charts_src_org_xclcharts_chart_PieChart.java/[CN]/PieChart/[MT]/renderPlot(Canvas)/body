@@ -35,7 +35,7 @@
       }
       canvas.drawArc(mRectF,offsetAngle,currentAngle,true,geArcPaint());
       renderArcBorder(canvas,mRectF,offsetAngle,currentAngle);
-      saveArcRecord(i,cirX + this.mTranslateXY[0],cirY + this.mTranslateXY[1],radius,offsetAngle,currentAngle,mSelectedOffset,getInitialAngle());
+      saveArcRecord(i,cirX + this.mTranslateXY[0],cirY + this.mTranslateXY[1],radius,offsetAngle,currentAngle,mSelectedOffset,getOffsetAngle());
       offsetAngle=add(offsetAngle,currentAngle);
     }
     renderLabels(canvas);

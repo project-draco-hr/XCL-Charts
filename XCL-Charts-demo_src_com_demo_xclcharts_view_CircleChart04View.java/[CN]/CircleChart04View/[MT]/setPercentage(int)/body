@@ -1,0 +1,7 @@
+{
+  mlPieData.clear();
+  int color=Color.rgb(72,201,176);
+  mDataInfo="???????????????......";
+  color=Color.rgb(243,75,125);
+  mlPieData.add(new PieData("Golang GO!",per,color));
+}

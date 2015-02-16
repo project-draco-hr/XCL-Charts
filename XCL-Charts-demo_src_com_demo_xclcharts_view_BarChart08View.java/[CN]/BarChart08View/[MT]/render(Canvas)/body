@@ -1,6 +1,13 @@
 {
   try {
     chart.render(canvas);
+    paint.setTextSize(22);
+    paint.setColor(Color.RED);
+    float textHeight=DrawHelper.getInstance().getPaintFontHeight(paint);
+    paint.setTextAlign(Align.LEFT);
+    canvas.drawText("Y?????????",chart.getPlotArea().getLeft(),chart.getPlotArea().getTop() - textHeight,paint);
+    paint.setTextAlign(Align.RIGHT);
+    canvas.drawText("X?????????",chart.getPlotArea().getRight(),chart.getPlotArea().getBottom() + textHeight,paint);
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

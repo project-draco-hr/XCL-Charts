@@ -1,0 +1,5 @@
+{
+  super(context,attrs,defStyle);
+  setPercentage(80);
+  chartRender();
+}

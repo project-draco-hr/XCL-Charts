@@ -15,5 +15,5 @@
  else {
     axisTitleTextStartX=Math.round(left + (right - left) / 2);
   }
-  DrawHelper.getInstance().drawRotateText(axisTitle,axisTitleTextStartX,axisTitleY,0,canvas,getLowerTitlePaint());
+  DrawHelper.getInstance().drawRotateText(axisTitle,axisTitleTextStartX - mLowerAxisTitleOffsetY,axisTitleY,0,canvas,getLowerTitlePaint());
 }

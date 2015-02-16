@@ -1,0 +1,16 @@
+{
+  try {
+    chart.setAttributeInfo(mDataInfo);
+    chart.setDataSource(mlPieData);
+    chart.getBgCirclePaint().setColor(Color.rgb(117,197,141));
+    chart.getFillCirclePaint().setColor(Color.rgb(77,180,123));
+    chart.getDataInfoPaint().setColor(Color.rgb(243,75,125));
+    chart.setORadius(0.7f);
+    chart.setIRadius(0.7f);
+    chart.getDataInfoPaint().setTextSize(28);
+    chart.ShowCap();
+  }
+ catch (  Exception e) {
+    Log.e(TAG,e.toString());
+  }
+}
