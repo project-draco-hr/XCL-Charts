@@ -1,6 +1,6 @@
 {
   try {
-    setLayerType(View.LAYER_TYPE_SOFTWARE,null);
+    setLayerType(View.LAYER_TYPE_NONE,null);
     chart.setCategories(labels);
     chart.setDataSource(chartData);
     chart.getDataAxis().setAxisMax(100);
