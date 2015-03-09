@@ -1,4 +1,5 @@
 {
   paint.setPathEffect(getDotLineStyle());
   canvas.drawLine(startX,startY,stopX,stopY,paint);
+  paint.setPathEffect(null);
 }

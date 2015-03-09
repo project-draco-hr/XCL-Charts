@@ -4,7 +4,7 @@
   float axisDataRange=dataAxis.getAxisRange();
   float valueWidth=axisDataRange;
   float YSteps=getVerticalYSteps(getCateTickCount());
-  int barHeight=(int)MathHelper.getInstance().round(mul(YSteps,0.5f),2);
+  float barHeight=getHBarHeight(YSteps);
   int cateSize=categoryAxis.getDataSet().size();
   int dataSize=0;
   float labelY=0.f;
@@ -43,7 +43,7 @@
       saveBarRectFRecord(i,r,currentX + mMoveX,topY + mMoveY,rightX + mMoveX,bottomY + mMoveY);
       drawFocusRect(canvas,i,r,currentX,topY,rightX,bottomY);
       float labelLeftX=add(currentX,valuePostion / 2);
-      drawAnchor(this.getAnchorDataPoint(),i,r,canvas,labelLeftX,labelY);
+      drawAnchor(this.getAnchorDataPoint(),i,r,canvas,labelLeftX,labelY,0.0f);
       flatBar.renderBarItemLabel(getFormatterItemLabel(bv),labelLeftX,labelY,canvas);
       currentX=add(currentX,valuePostion);
     }

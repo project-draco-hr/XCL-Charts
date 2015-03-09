@@ -13,7 +13,7 @@
       PlotDotRender.getInstance().renderDot(canvas,pDot,dotInfo.mX,dotInfo.mY,pLine.getDotPaint());
       savePointRecord(dataID,i,dotInfo.mX + mMoveX,dotInfo.mY + mMoveY,dotInfo.mX - radius + mMoveX,dotInfo.mY - radius + mMoveY,dotInfo.mX + radius + mMoveX,dotInfo.mY + radius + mMoveY);
     }
-    drawAnchor(getAnchorDataPoint(),dataID,i,canvas,dotInfo.mX,dotInfo.mY);
+    drawAnchor(getAnchorDataPoint(),dataID,i,canvas,dotInfo.mX,dotInfo.mY,radius);
     if (bd.getLabelVisible()) {
       bd.getLabelOptions().drawLabel(canvas,pLine.getDotLabelPaint(),getFormatterItemLabel(dotInfo.mValue),dotInfo.mX,dotInfo.mY,itemAngle,bd.getLineColor());
     }

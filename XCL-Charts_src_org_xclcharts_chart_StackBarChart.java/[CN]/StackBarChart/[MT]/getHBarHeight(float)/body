@@ -1,0 +1,8 @@
+{
+  float barHeight=MathHelper.getInstance().round(mul(YSteps,0.5f),2);
+  float maxHeight=flatBar.getBarMaxPxHeight();
+  if (Float.compare(maxHeight,0.0f) == 1 && Float.compare(barHeight,maxHeight) == 1) {
+    barHeight=maxHeight;
+  }
+  return barHeight;
+}

@@ -1,0 +1,6 @@
+Canvas canvas
+String label
+float labelX
+float labelY
+float labelAngle
+Paint labelPaint

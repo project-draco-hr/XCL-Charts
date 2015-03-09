@@ -33,7 +33,7 @@
       PlotDotRender.getInstance().renderDot(canvas,dot,XvaluePos,YvaluePos,getPointPaint());
       savePointRecord(dataID,i,XvaluePos + mMoveX,YvaluePos + mMoveY,XvaluePos - radius + mMoveX,YvaluePos - radius + mMoveY,XvaluePos + radius + mMoveX,YvaluePos + radius + mMoveY);
     }
-    drawAnchor(getAnchorDataPoint(),dataID,i,canvas,XvaluePos,YvaluePos);
+    drawAnchor(getAnchorDataPoint(),dataID,i,canvas,XvaluePos,YvaluePos,radius);
     if (bd.getLabelVisible()) {
       DrawHelper.getInstance().drawRotateText(getFormatterDotLabel(Double.toString(entry.x) + "," + Double.toString(entry.y)),XvaluePos,YvaluePos,itemAngle,canvas,bd.getDotLabelPaint());
     }

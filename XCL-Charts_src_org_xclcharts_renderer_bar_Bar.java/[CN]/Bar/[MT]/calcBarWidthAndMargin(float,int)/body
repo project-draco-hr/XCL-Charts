@@ -9,6 +9,9 @@
   float barInnerMargin=MathHelper.getInstance().div(barTotalInnerMargin,barNumber);
   float barWidth=MathHelper.getInstance().div(barTotalWidth,barNumber);
   float[] ret=new float[2];
+  if (Float.compare(mBarMaxPxWidth,0.0f) == 1 && Float.compare(barWidth,mBarMaxPxWidth) == 1) {
+    barWidth=mBarMaxPxWidth;
+  }
   ret[0]=barWidth;
   ret[1]=barInnerMargin;
   return ret;

@@ -1,7 +1,3 @@
 {
-  if (null != mDataSet) {
-    mDataSet.clear();
-    mDataSet=null;
-  }
   mDataSet=dataSet;
 }

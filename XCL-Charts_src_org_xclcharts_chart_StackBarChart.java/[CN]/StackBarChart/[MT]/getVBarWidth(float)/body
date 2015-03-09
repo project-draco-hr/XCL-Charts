@@ -1,0 +1,8 @@
+{
+  float barWidth=mul(XSteps,0.5f);
+  float maxWidth=flatBar.getBarMaxPxWidth();
+  if (Float.compare(maxWidth,0.0f) == 1 && Float.compare(barWidth,maxWidth) == 1) {
+    barWidth=maxWidth;
+  }
+  return barWidth;
+}

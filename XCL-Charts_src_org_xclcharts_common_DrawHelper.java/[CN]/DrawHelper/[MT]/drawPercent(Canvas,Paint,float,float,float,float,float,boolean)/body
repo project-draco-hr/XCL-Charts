@@ -6,6 +6,7 @@
     mRectF.right=cirX + radius;
     mRectF.bottom=cirY + radius;
     canvas.drawArc(mRectF,startAngle,sweepAngle,useCenter,paintArc);
+    mRectF.setEmpty();
   }
  catch (  Exception e) {
     throw e;

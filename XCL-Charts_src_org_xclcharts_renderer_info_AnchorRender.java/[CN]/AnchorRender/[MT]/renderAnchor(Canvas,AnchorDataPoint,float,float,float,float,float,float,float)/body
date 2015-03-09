@@ -10,12 +10,34 @@ getBgPaint().setStyle(Style.STROKE);
 break;
 }
 getBgPaint().setColor(pAnchor.getBgColor());
+float width=getBgPaint().getStrokeWidth();
+if (pAnchor.getLineWidth() > -1) {
+getBgPaint().setStrokeWidth(pAnchor.getLineWidth());
+}
 switch (pAnchor.getAnchorStyle()) {
 case RECT:
 renderRect(canvas,getBgPaint(),radius,cx,cy);
 break;
 case CIRCLE:
 canvas.drawCircle(cx,cy,radius,getBgPaint());
+break;
+case VLINE:
+canvas.drawLine(cx,top,cx,bottom,getBgPaint());
+break;
+case HLINE:
+canvas.drawLine(left,cy,right,cy,getBgPaint());
+break;
+case TOBOTTOM:
+canvas.drawLine(cx,cy + cradius,cx,bottom,getBgPaint());
+break;
+case TOTOP:
+canvas.drawLine(cx,cy - cradius,cx,top,getBgPaint());
+break;
+case TOLEFT:
+canvas.drawLine(cx - cradius,cy,left,cy,getBgPaint());
+break;
+case TORIGHT:
+canvas.drawLine(cx + cradius,cy,right,cy,getBgPaint());
 break;
 default :
 }
@@ -24,4 +46,5 @@ getTextPaint().setColor(pAnchor.getTextColor());
 getTextPaint().setTextSize(pAnchor.getTextSize());
 canvas.drawText(pAnchor.getAnchor(),cx,cy,getTextPaint());
 }
+getBgPaint().setStrokeWidth(width);
 }

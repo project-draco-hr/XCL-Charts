@@ -15,8 +15,7 @@
     chart.getLabelPaint().setFakeBoldText(true);
     chart.getLabelPaint().setColor(Color.WHITE);
     chart.ActiveListenItemClick();
-    chart.getPlotLabel().showBox();
-    chart.getPlotLabel().showBox();
+    chart.getPlotLabel().setLabelBoxStyle(XEnum.LabelBoxStyle.RECT);
     chart.getPlotLabel().getBox().setBorderLineColor(Color.rgb(0,126,231));
   }
  catch (  Exception e) {

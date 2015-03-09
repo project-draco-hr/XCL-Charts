@@ -18,7 +18,7 @@
   lineData1.getDotLabelPaint().setTextSize(22);
   lineData1.getDotLabelPaint().setTextAlign(Align.LEFT);
   lineData1.setItemLabelRotateAngle(45.f);
-  lineData1.getLabelOptions().hideBox();
+  lineData1.getLabelOptions().setLabelBoxStyle(XEnum.LabelBoxStyle.RECT);
   LinkedList<Double> dataSeries2=new LinkedList<Double>();
   dataSeries2.add((double)50);
   dataSeries2.add((double)42);
@@ -30,7 +30,7 @@
   lineData2.getPlotLine().getDotPaint().setColor(Color.RED);
   lineData2.setLabelVisible(true);
   lineData2.getPlotLine().getPlotDot().setRingInnerColor(Color.GREEN);
-  lineData2.getLabelOptions().showBox();
+  lineData2.getLabelOptions().setLabelBoxStyle(XEnum.LabelBoxStyle.CAPRECT);
   LinkedList<Double> dataSeries3=new LinkedList<Double>();
   dataSeries3.add((double)55);
   dataSeries3.add((double)42);
@@ -38,7 +38,7 @@
   dataSeries3.add((double)45);
   LineData lineData3=new LineData("???",dataSeries3,Color.rgb(199,64,219));
   lineData3.setDotStyle(XEnum.DotStyle.TRIANGLE);
-  lineData3.getLabelOptions().hideBox();
+  lineData3.getLabelOptions().setLabelBoxStyle(XEnum.LabelBoxStyle.TEXT);
   chartData.add(line2);
   chartData.add(lineData1);
   chartData.add(lineData2);

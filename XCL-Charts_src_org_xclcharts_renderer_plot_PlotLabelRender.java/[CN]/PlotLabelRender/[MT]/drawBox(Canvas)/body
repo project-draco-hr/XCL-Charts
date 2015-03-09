@@ -1,0 +1,5 @@
+{
+  initBox();
+  if (mBorderColor != -1)   mBorder.setBorderLineColor(mBorderColor);
+  mBorder.renderBox(canvas,mRectBox,mShowBoxBorder,mShowBackground);
+}

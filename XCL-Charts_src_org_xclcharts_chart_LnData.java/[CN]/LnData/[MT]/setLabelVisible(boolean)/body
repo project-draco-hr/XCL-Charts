@@ -1,5 +1,4 @@
 {
   mLabelVisible=visible;
   getLabelOptions().setOffsetY(15.f);
-  getLabelOptions().showBox();
 }

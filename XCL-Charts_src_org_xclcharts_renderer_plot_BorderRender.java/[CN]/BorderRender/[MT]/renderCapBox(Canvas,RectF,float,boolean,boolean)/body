@@ -1,0 +1,18 @@
+{
+  setPaintLineStyle();
+  if (null == mPath)   mPath=new Path();
+  float centerX=rect.left + rect.width() * 0.5f;
+  float AngleH=capHeight;
+  float AngleY=rect.bottom;
+  mPath.moveTo(rect.left,rect.bottom);
+  mPath.lineTo(rect.left,rect.top);
+  mPath.lineTo(rect.right,rect.top);
+  mPath.lineTo(rect.right,rect.bottom);
+  mPath.lineTo(centerX + AngleH,AngleY);
+  mPath.lineTo(centerX,AngleY + AngleH);
+  mPath.lineTo(centerX - AngleH,AngleY);
+  mPath.close();
+  if (showBackground)   canvas.drawPath(mPath,getBackgroundPaint());
+  if (showBoxBorder)   canvas.drawPath(mPath,getLinePaint());
+  mPath.reset();
+}

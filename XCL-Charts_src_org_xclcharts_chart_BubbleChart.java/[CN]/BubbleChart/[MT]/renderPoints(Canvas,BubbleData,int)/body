@@ -48,7 +48,7 @@
     if (bd.getBorderColor() != -1) {
       canvas.drawCircle(XvaluePos,YvaluePos,curRadius,getPointBorderPaint());
     }
-    drawAnchor(getAnchorDataPoint(),dataID,i,canvas,XvaluePos,YvaluePos);
+    drawAnchor(getAnchorDataPoint(),dataID,i,canvas,XvaluePos,YvaluePos,curRadius);
     if (bd.getLabelVisible()) {
       DrawHelper.getInstance().drawRotateText(getFormatterDotLabel(Double.toString(entry.x) + "," + Double.toString(entry.y)+ " : "+ Double.toString(bubble)),XvaluePos,YvaluePos,itemAngle,canvas,bd.getDotLabelPaint());
     }

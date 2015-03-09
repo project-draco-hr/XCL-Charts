@@ -36,4 +36,5 @@ paint.setStyle(Paint.Style.FILL);
 break;
 }
 canvas.drawPath(mPath,paint);
+mPath.reset();
 }

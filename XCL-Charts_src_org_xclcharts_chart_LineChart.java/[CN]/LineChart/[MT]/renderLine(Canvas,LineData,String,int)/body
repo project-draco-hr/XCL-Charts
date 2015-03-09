@@ -61,9 +61,9 @@
           savePointRecord(dataID,i,lineStopX + mMoveX,lineStopY + mMoveY,lineStopX - radius + mMoveX,lineStopY - radius + mMoveY,lineStopX + radius + mMoveX,lineStopY + radius + mMoveY);
           lineStopX=add(lineStopX,radius);
         }
-        drawAnchor(getAnchorDataPoint(),dataID,i,canvas,lineStopX - radius,lineStopY);
+        drawAnchor(getAnchorDataPoint(),dataID,i,canvas,lineStopX - radius,lineStopY,radius);
         if (bd.getLabelVisible()) {
-          bd.getLabelOptions().drawLabel(canvas,pLine.getDotLabelPaint(),getFormatterItemLabel(bv),lineStopX,lineStopY,itemAngle,bd.getLineColor());
+          bd.getLabelOptions().drawLabel(canvas,pLine.getDotLabelPaint(),getFormatterItemLabel(bv),lineStopX - radius,lineStopY,itemAngle,bd.getLineColor());
         }
       }
  else {

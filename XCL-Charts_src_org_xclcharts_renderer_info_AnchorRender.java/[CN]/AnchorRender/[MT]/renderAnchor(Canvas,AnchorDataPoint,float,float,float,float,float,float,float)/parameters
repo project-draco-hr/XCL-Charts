@@ -1,4 +1,8 @@
 Canvas canvas
+AnchorDataPoint pAnchor
+float cx
+float cy
+float cradius
 float left
 float top
 float right

@@ -1,0 +1,16 @@
+{
+  mLabelBoxStyle=style;
+  if (XEnum.LabelBoxStyle.TEXT == mLabelBoxStyle) {
+    this.hideBorder();
+    this.hideBackground();
+    return;
+  }
+  if (XEnum.LabelBoxStyle.CIRCLE == mLabelBoxStyle) {
+    this.hideBorder();
+    showBackground();
+  }
+ else {
+    showBorder();
+    showBackground();
+  }
+}

@@ -8,6 +8,8 @@
     initPath();
     mPath.addArc(mRectF,startAngle,sweepAngle);
     canvas.drawPath(mPath,paintArc);
+    mRectF.setEmpty();
+    mPath.reset();
   }
  catch (  Exception e) {
     throw e;

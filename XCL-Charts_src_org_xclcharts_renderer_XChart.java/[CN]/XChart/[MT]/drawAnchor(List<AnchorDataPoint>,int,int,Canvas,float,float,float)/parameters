@@ -4,3 +4,4 @@ int childID
 Canvas canvas
 float x
 float y
+float radius

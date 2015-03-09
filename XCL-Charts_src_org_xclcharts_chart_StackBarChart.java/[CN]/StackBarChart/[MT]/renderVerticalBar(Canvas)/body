@@ -6,7 +6,7 @@
   float XSteps=getVerticalXSteps(dataSet.size() + 1);
   float axisScreenHeight=getAxisScreenHeight();
   float axisDataHeight=dataAxis.getAxisRange();
-  float barWidht=mul(XSteps,0.5f);
+  float barWidth=getVBarWidth(XSteps);
   float currentX=0.0f, currentY=0.0f, labelX=0.f;
   int dataSize=dataSet.size();
   int sourceSize=0;
@@ -36,14 +36,14 @@
         double t2=MathHelper.getInstance().div(bv,axisDataHeight);
         valuePostion=mul(axisScreenHeight,(float)(t2));
       }
-      float leftX=sub(currentX,barWidht / 2);
+      float leftX=sub(currentX,barWidth / 2);
       float topY=sub(currentY,valuePostion);
-      float rightX=add(currentX,barWidht / 2);
+      float rightX=add(currentX,barWidth / 2);
       flatBar.renderBar(leftX,topY,rightX,currentY,canvas);
       saveBarRectFRecord(i,r,leftX + mMoveX,topY + mMoveY,rightX + mMoveX,currentY + mMoveY);
       drawFocusRect(canvas,i,r,leftX,topY,rightX,currentY);
       float labelLeftY=sub(currentY,valuePostion / 2);
-      drawAnchor(this.getAnchorDataPoint(),i,r,canvas,labelX,labelLeftY);
+      drawAnchor(this.getAnchorDataPoint(),i,r,canvas,labelX,labelLeftY,0.0f);
       flatBar.renderBarItemLabel(getFormatterItemLabel(bv),labelX,labelLeftY,canvas);
       currentY=sub(currentY,valuePostion);
     }

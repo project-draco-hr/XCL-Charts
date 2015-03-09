@@ -24,6 +24,7 @@
     mAnchorSet.add(an2);
     mAnchorSet.add(an3);
     chart.setAnchorDataPoint(mAnchorSet);
+    chart.disablePanMode();
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

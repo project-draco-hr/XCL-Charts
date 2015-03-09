@@ -65,7 +65,7 @@
       saveBarRectFRecord(i,j,barLeft + mMoveX,barTop + mMoveY,barRight + mMoveX,barBottom + mMoveY);
       drawFocusRect(canvas,i,j,barLeft,barTop,barRight,barBottom);
       labelTopX=add(drawBarStartX,barWidth / 2);
-      drawAnchor(this.mAnchorSet,i,j,canvas,labelTopX,labelTopY);
+      drawAnchor(this.mAnchorSet,i,j,canvas,labelTopX,labelTopY,0.0f);
       if (!mEqualAxisMin && Double.compare(dataAxis.getAxisMin(),bv) == 0) {
       }
  else {

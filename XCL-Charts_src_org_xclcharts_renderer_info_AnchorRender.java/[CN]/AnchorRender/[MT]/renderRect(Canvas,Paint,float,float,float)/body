@@ -5,4 +5,5 @@
   mRect.right=(cirX + radius);
   mRect.bottom=(cirY + radius);
   canvas.drawRect(mRect,getBgPaint());
+  mRect.setEmpty();
 }

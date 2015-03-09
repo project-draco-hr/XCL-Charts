@@ -64,7 +64,7 @@
       mFlatBar.renderBar(barLeft,barBottom,barRight,barTop,canvas);
       saveBarRectFRecord(i,j,barLeft + mMoveX,barTop + mMoveY,barRight + mMoveX,barBottom + mMoveY);
       labelLeftY=sub(barBottom,barHeight / 2);
-      drawAnchor(this.mAnchorSet,i,j,canvas,labelLeftX,labelLeftY);
+      drawAnchor(this.mAnchorSet,i,j,canvas,labelLeftX,labelLeftY,0.0f);
       if (!mEqualAxisMin && Double.compare(dataAxis.getAxisMin(),bv) == 0) {
       }
  else {

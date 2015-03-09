@@ -6,16 +6,46 @@
   float h=getLabelHeight(paint);
   float x=cX + mOffsetX;
   float y=cY - mOffsetY;
-  if (mShowBox) {
+  if (XEnum.LabelBoxStyle.TEXT == mLabelBoxStyle) {
+    DrawHelper.getInstance().drawRotateText(label,x,y - mMargin,itemAngle,canvas,paint);
+    return true;
+  }
+  if (XEnum.LabelBoxStyle.CIRCLE == mLabelBoxStyle) {
+    initBox();
+    float radius=mRadius;
+    if (Float.compare(mRadius,0.f) == 0 || Float.compare(mRadius,0.f) == -1) {
+      try {
+        radius=Math.max(w,h);
+        radius=radius / 2 + 5.f;
+      }
+ catch (      Exception ex) {
+        radius=25;
+      }
+    }
+    y=y - mMargin - radius;
+    canvas.drawCircle(x,y,radius,mBorder.getBackgroundPaint());
+    if (mShowBoxBorder)     canvas.drawCircle(x,y,radius,mBorder.getLinePaint());
+    DrawHelper.getInstance().drawRotateText(label,x,y,itemAngle,canvas,paint);
+    return true;
+  }
+ else {
     left=x - w / 2 - mMargin;
     right=x + w / 2 + mMargin;
     top=y - h - mMargin;
     bottom=y;
-    drawBox(canvas,left,top,right,bottom);
-    DrawHelper.getInstance().drawRotateText(label,x,y - mMargin,itemAngle,canvas,paint);
-  }
+    if (null == mRectBox)     mRectBox=new RectF();
+    mRectBox.left=left;
+    mRectBox.right=right;
+    mRectBox.top=top;
+    mRectBox.bottom=bottom;
+    if (XEnum.LabelBoxStyle.CAPRECT == mLabelBoxStyle) {
+      drawCapBox(canvas,label,x,y - mMargin,itemAngle,paint);
+    }
  else {
-    DrawHelper.getInstance().drawRotateText(label,x,y,itemAngle,canvas,paint);
+      drawBox(canvas);
+      DrawHelper.getInstance().drawRotateText(label,x,y - mMargin,itemAngle,canvas,paint);
+    }
+    mRectBox.setEmpty();
   }
   return true;
 }

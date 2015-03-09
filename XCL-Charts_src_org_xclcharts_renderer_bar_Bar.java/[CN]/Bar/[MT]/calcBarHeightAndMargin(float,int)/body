@@ -8,6 +8,9 @@
   float barInnerMargin=MathHelper.getInstance().div(barTotalInnerMargin,barNumber);
   float barHeight=MathHelper.getInstance().div(MathHelper.getInstance().sub(labelBarTotalHeight,barTotalInnerMargin),barNumber);
   float[] ret=new float[2];
+  if (Float.compare(mBarMaxPxHeight,0.0f) == 1 && Float.compare(barHeight,mBarMaxPxHeight) == 1) {
+    barHeight=mBarMaxPxHeight;
+  }
   ret[0]=barHeight;
   ret[1]=barInnerMargin;
   return ret;

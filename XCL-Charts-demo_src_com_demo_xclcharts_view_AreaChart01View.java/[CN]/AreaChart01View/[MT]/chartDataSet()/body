@@ -22,6 +22,8 @@
   AreaData line2=new AreaData("?????????",dataSeries2,Color.rgb(79,200,100),Color.GREEN);
   line2.getDotLabelPaint().setColor(Color.RED);
   line2.setLabelVisible(true);
+  line2.getLabelOptions().setLabelBoxStyle(XEnum.LabelBoxStyle.RECT);
+  line2.getLabelOptions().getBox().getBackgroundPaint().setColor(Color.rgb(250,194,142));
   AreaData line3=new AreaData("????????????",dataSeries3,Color.rgb(246,134,31),Color.rgb(213,198,126));
   line3.setLineStyle(XEnum.LineStyle.DOT);
   mDataset.add(line1);

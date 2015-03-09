@@ -1,6 +1,7 @@
 {
   XEnum.BarStyle style=getBarStyle();
   if (Float.compare(top,bottom) == 0)   return true;
+  if (null == mPath)   mPath=new Path();
   if (XEnum.BarStyle.OUTLINE == style) {
     int barColor=getBarPaint().getColor();
     int lightColor=DrawHelper.getInstance().getLightColor(barColor,150);
@@ -11,13 +12,12 @@
     getBarPaint().setStyle(Style.STROKE);
     getBarPaint().setColor(barColor);
     getBarPaint().setStrokeWidth(5);
-    canvas.drawRect(left,bottom,right,top,getBarPaint());
+    drawPathBar(left,top,right,bottom,canvas);
     getBarPaint().setStrokeWidth(pWidth);
     return true;
   }
  else   if (XEnum.BarStyle.TRIANGLE == style) {
     float mid=0.0f;
-    if (null == mPath)     mPath=new Path();
 switch (this.getBarDirection()) {
 case HORIZONTAL:
       mid=top + (bottom - top) / 2;
@@ -63,7 +63,7 @@ return false;
 if (getBarStyle() != XEnum.BarStyle.FILL) {
 setBarGradient(left,top,right,bottom);
 }
-canvas.drawRect(left,bottom,right,top,getBarPaint());
+drawPathBar(left,top,right,bottom,canvas);
 }
 return true;
 }
