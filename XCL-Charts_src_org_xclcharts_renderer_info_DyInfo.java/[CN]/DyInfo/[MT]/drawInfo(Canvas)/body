@@ -7,30 +7,36 @@
   getContentRect();
   if (null == mRect)   return;
   if (XEnum.DyInfoStyle.RECT == mStyle) {
-    canvas.drawRect(mRect,this.getBackgroundPaint());
-    canvas.drawRect(mRect,this.getBorderPaint());
+    if (mShowBackground)     canvas.drawRect(mRect,this.getBackgroundPaint());
+    if (mShowBoxBorder)     canvas.drawRect(mRect,this.getBorderPaint());
+  }
+ else   if (XEnum.DyInfoStyle.CAPRECT == mStyle) {
+    renderCapBox(canvas,mRect);
+  }
+ else   if (XEnum.DyInfoStyle.CIRCLE == mStyle) {
+    renderCircle(canvas,mRect);
   }
  else {
-    canvas.drawRoundRect(mRect,mRoundRectX,mRoundRectY,this.getBackgroundPaint());
-    canvas.drawRoundRect(mRect,mRoundRectX,mRoundRectY,this.getBorderPaint());
+    if (mShowBackground)     canvas.drawRoundRect(mRect,mRoundRectX,mRoundRectY,this.getBackgroundPaint());
+    if (mShowBoxBorder)     canvas.drawRoundRect(mRect,mRoundRectX,mRoundRectY,this.getBorderPaint());
   }
   float currDotsX=mRect.left + mMargin;
   float currRowY=mRect.top + mMargin;
   float textHeight=0.0f;
   float currTextX=currDotsX;
-  Paint paint=null;
+  int j=0;
   for (int i=0; i < countText; i++) {
-    if (countPaint > i)     paint=mClickedPaint.get(i);
-    if (null == paint)     break;
-    textHeight=DrawHelper.getInstance().getPaintFontHeight(paint);
+    if (countPaint > i)     j=i;
+    if (null == mClickedPaint.get(j))     break;
+    textHeight=DrawHelper.getInstance().getPaintFontHeight(mClickedPaint.get(j));
     if (countDots > i) {
       PlotDot plot=mClickedDotStyle.get(i);
       if (plot.getDotStyle() != XEnum.DotStyle.HIDE) {
-        PlotDotRender.getInstance().renderDot(canvas,plot,currDotsX + (textHeight / 2),currRowY + (textHeight / 2),paint);
+        PlotDotRender.getInstance().renderDot(canvas,plot,currDotsX + (textHeight / 2),currRowY + (textHeight / 2),mClickedPaint.get(j));
         currTextX=currDotsX + textHeight + mColSpan;
       }
     }
-    if (countText > i)     canvas.drawText(mClickedText.get(i),currTextX,currRowY + textHeight,paint);
+    if (countText > i)     canvas.drawText(mClickedText.get(i),currTextX,currRowY + textHeight,mClickedPaint.get(j));
     currRowY+=textHeight + mRowSpan;
     currTextX=currDotsX;
   }

@@ -1,0 +1,49 @@
+{
+  if (XEnum.AxisLineStyle.CAP == mAxisLineStyle || XEnum.AxisLineStyle.FILLCAP == mAxisLineStyle) {
+    float w=mAxisLineStyleWidth / 2;
+    float angleTop=0.f;
+    float axisEnd=mAxisLineStyleHeight / 2;
+    Path path=new Path();
+    if (Float.compare(startY,stopY) != 0) {
+      angleTop=stopY - mAxisLineStyleHeight;
+      float angleLeftX=stopX - w;
+      float angleRightX=stopX + w;
+      axisEnd=angleTop + axisEnd;
+      if (XEnum.AxisLineStyle.FILLCAP == mAxisLineStyle) {
+        path.moveTo(angleLeftX,axisEnd);
+        path.lineTo(stopX,angleTop);
+        path.lineTo(angleRightX,axisEnd);
+        path.close();
+        canvas.drawPath(path,getAxisPaint());
+        canvas.drawLine(startX,startY,stopX,axisEnd,this.getAxisPaint());
+      }
+ else {
+        canvas.drawLine(startX,startY,stopX,angleTop,this.getAxisPaint());
+        canvas.drawLine(angleLeftX,axisEnd,stopX,angleTop,this.getAxisPaint());
+        canvas.drawLine(angleRightX,axisEnd,stopX,angleTop,this.getAxisPaint());
+      }
+    }
+ else {
+      angleTop=stopX + mAxisLineStyleHeight;
+      float angleTopY=stopY - w;
+      float angleBottom=stopY + w;
+      axisEnd=angleTop - axisEnd;
+      if (XEnum.AxisLineStyle.FILLCAP == mAxisLineStyle) {
+        path.moveTo(axisEnd,angleTopY);
+        path.lineTo(angleTop,stopY);
+        path.lineTo(axisEnd,angleBottom);
+        path.close();
+        canvas.drawPath(path,getAxisPaint());
+        canvas.drawLine(startX,startY,axisEnd,stopY,this.getAxisPaint());
+      }
+ else {
+        canvas.drawLine(startX,startY,angleTop,stopY,this.getAxisPaint());
+        canvas.drawLine(axisEnd,angleTopY,angleTop,stopY,this.getAxisPaint());
+        canvas.drawLine(axisEnd,angleBottom,angleTop,stopY,this.getAxisPaint());
+      }
+    }
+  }
+ else {
+    canvas.drawLine(startX,startY,stopX,stopY,this.getAxisPaint());
+  }
+}

@@ -8,7 +8,7 @@
     mFocusRect.right=right;
     mFocusRect.bottom=bottom;
     canvas.drawRect(mFocusRect,getFocusPaint());
-    mFocusRect=null;
+    mFocusRect.setEmpty();
     clearSelected();
   }
   return true;

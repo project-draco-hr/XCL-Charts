@@ -44,7 +44,6 @@
 );
     chart.ActiveListenItemClick();
     chart.setPlotPanMode(XEnum.PanMode.HORIZONTAL);
-    chart.getPlotArea().extWidth(200f);
     chart.getCategoryAxis().setTickLabelMargin(5);
     chart.disableHighPrecision();
   }

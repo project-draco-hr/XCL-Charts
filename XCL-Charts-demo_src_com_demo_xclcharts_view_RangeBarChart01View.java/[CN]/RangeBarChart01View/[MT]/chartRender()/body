@@ -56,7 +56,6 @@
     chart.setKey("??????");
     chart.ActiveListenItemClick();
     chart.showClikedFocus();
-    chart.enablePanMode();
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

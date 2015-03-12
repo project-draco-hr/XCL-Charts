@@ -1,4 +1,3 @@
 {
-  if (null != mCustomLineDataset)   mCustomLineDataset.clear();
   mCustomLineDataset=customLineDataSet;
 }

@@ -17,13 +17,17 @@
     chart.getFocusPaint().setStyle(Style.STROKE);
     chart.getFocusPaint().setStrokeWidth(3);
     chart.getFocusPaint().setColor(Color.GREEN);
-    mPaintToolTip.setColor(colorTitalAxes);
+    mPaintToolTip.setAntiAlias(true);
+    mPaintToolTip.setColor(bData.getColor());
     mDotToolTip.setDotStyle(XEnum.DotStyle.RECT);
+    mDotToolTip.setColor(Color.BLUE);
     chart.getToolTip().setCurrentXY(x,y);
     chart.getToolTip().setStyle(XEnum.DyInfoStyle.ROUNDRECT);
     chart.getToolTip().addToolTip(mDotToolTip,bData.getKey(),mPaintToolTip);
     chart.getToolTip().addToolTip("??????:" + Double.toString(bValue),mPaintToolTip);
     chart.getToolTip().getBackgroundPaint().setAlpha(100);
+    chart.getToolTip().setAlign(Align.CENTER);
+    chart.getToolTip().setInfoStyle(XEnum.DyInfoStyle.CIRCLE);
     this.invalidate();
   }
 }

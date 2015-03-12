@@ -40,6 +40,8 @@
     chart.disablePanMode();
     chart.disableHighPrecision();
     chart.setBarCenterStyle(XEnum.BarCenterStyle.TICKMARKS);
+    chart.getDataAxis().setAxisLineStyle(XEnum.AxisLineStyle.FILLCAP);
+    chart.getCategoryAxis().setAxisLineStyle(XEnum.AxisLineStyle.FILLCAP);
   }
  catch (  Exception e) {
     e.printStackTrace();

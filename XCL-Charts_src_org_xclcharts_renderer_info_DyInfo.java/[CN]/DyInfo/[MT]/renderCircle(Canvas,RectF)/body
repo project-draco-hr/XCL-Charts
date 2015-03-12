@@ -1,0 +1,6 @@
+{
+  float radius=Math.max(rect.width(),rect.height()) / 2 + 5;
+  if (Float.compare(mRadius,0.0f) != 0)   radius=mRadius;
+  if (mShowBackground)   canvas.drawCircle(rect.centerX(),rect.centerY(),radius,this.getBackgroundPaint());
+  if (mShowBoxBorder)   canvas.drawCircle(rect.centerX(),rect.centerY(),radius,this.getBorderPaint());
+}

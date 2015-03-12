@@ -1,3 +1,3 @@
 {
-  canvas.drawLine(startX,startY,stopX,stopY,this.getAxisPaint());
+  drawAxisLine(canvas,startX,startY,stopX,stopY);
 }

@@ -12,5 +12,5 @@
     pData.setSelected(true);
   }
   mSelectedID=record.getDataID();
-  this.invalidate();
+  this.refreshChart();
 }

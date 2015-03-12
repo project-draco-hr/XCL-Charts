@@ -1,5 +1,5 @@
 {
-  int result=0;
+  int result=100;
   int specMode=MeasureSpec.getMode(measureSpec);
   int specSize=MeasureSpec.getSize(measureSpec);
   if (specMode == MeasureSpec.EXACTLY) {
