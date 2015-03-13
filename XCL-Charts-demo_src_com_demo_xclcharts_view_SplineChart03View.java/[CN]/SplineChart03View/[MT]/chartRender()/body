@@ -7,8 +7,10 @@
     chart.setDataSource(chartData);
     chart.getDataAxis().setAxisMax(100);
     chart.getDataAxis().setAxisSteps(10);
+    chart.setCustomLines(mYCustomLineDataset);
     chart.setCategoryAxisMax(100);
     chart.setCategoryAxisMin(0);
+    chart.setCategoryAxisCustomLines(mXCustomLineDataset);
     chart.setApplyBackgroundColor(true);
     chart.setBackgroundColor(Color.rgb(212,194,129));
     chart.getBorder().setBorderLineColor(Color.rgb(179,147,197));

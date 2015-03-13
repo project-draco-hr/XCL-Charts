@@ -11,6 +11,7 @@
       if (i == count - 1) {
         chart.getDataAxis().show();
         chart.getDataAxis().showAxisLabels();
+        chart.setCustomLines(mCustomLineDataset);
       }
       postInvalidate();
     }

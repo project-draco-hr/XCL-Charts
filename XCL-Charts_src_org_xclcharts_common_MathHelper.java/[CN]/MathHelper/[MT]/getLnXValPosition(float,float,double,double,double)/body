@@ -1,0 +1,3 @@
+{
+  return add(plotAreaLeft,getLnXValPosition(plotScreenWidth,plotAreaLeft,xValue,maxValue,minValue));
+}

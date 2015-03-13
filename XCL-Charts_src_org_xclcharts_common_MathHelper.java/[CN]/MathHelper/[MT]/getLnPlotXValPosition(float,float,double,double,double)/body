@@ -1,0 +1,5 @@
+{
+  double maxminRange=sub(maxValue,minValue);
+  double xScale=div(sub(xValue,minValue),maxminRange);
+  return mul(plotScreenWidth,(float)xScale);
+}

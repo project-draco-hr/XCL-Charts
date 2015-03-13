@@ -1,0 +1,5 @@
+Canvas canvas
+float plotScreenWidth
+PlotAreaRender plotArea
+double maxValue
+double minValue

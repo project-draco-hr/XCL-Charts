@@ -1,5 +1,6 @@
 {
   chartLabels();
+  chartCustomeLines();
   chartDataSet();
   chartRender();
 }

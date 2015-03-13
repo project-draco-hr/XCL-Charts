@@ -1,0 +1,12 @@
+{
+  setPlotArea(plotArea);
+  for (  CustomLineData line : mCustomLineDataset) {
+    line.getCustomLinePaint().setColor(line.getColor());
+    line.getCustomLinePaint().setStrokeWidth(line.getLineStroke());
+    float pos=MathHelper.getInstance().getLnPlotXValPosition(plotScreenWidth,plotArea.getLeft(),line.getValue(),maxValue,minValue);
+    float currentX=MathHelper.getInstance().add(plotArea.getLeft(),pos);
+    if (line.isShowLine())     DrawHelper.getInstance().drawLine(line.getLineStyle(),currentX,plotArea.getBottom(),currentX,plotArea.getTop(),canvas,line.getCustomLinePaint());
+    renderCapLabelHorizontalPlot(canvas,line,pos);
+  }
+  return true;
+}

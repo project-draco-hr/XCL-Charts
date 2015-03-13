@@ -1,0 +1,4 @@
+{
+  if (null == mXAxisCustomLine)   mXAxisCustomLine=new PlotCustomLine();
+  mXAxisCustomLine.setCustomLines(customLineDataset);
+}

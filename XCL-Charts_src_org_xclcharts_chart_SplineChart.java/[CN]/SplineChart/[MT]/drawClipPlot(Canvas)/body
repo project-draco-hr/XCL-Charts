@@ -4,5 +4,8 @@
       mCustomLine.setVerticalPlot(dataAxis,plotArea,getPlotScreenHeight());
       mCustomLine.renderVerticalCustomlinesDataAxis(canvas);
     }
+    if (null != mXAxisCustomLine) {
+      mXAxisCustomLine.renderCategoryAxisCustomlines(canvas,this.getPlotScreenWidth(),this.plotArea,mMaxValue,mMinValue);
+    }
   }
 }

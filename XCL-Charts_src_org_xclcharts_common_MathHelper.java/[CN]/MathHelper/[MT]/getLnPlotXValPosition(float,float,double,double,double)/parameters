@@ -1,0 +1,5 @@
+float plotScreenWidth
+float plotAreaLeft
+double xValue
+double maxValue
+double minValue

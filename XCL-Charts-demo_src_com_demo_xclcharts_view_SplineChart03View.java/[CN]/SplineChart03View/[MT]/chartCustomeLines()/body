@@ -1,0 +1,10 @@
+{
+  CustomLineData cdx1=new CustomLineData("??????",30d,Color.rgb(35,172,57),5);
+  CustomLineData cdx2=new CustomLineData("??????",40d,Color.rgb(69,181,248),5);
+  cdx1.setLabelVerticalAlign(XEnum.VerticalAlign.MIDDLE);
+  mXCustomLineDataset.add(cdx1);
+  mXCustomLineDataset.add(cdx2);
+  CustomLineData cdy1=new CustomLineData("?????????",45d,Color.rgb(69,181,248),5);
+  cdy1.setLabelHorizontalPostion(Align.CENTER);
+  mYCustomLineDataset.add(cdy1);
+}
