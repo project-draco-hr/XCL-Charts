@@ -50,4 +50,9 @@
   chartData.add(lineData4);
   chartData.add(lineData5);
   chartData.add(lineData6);
+  AnchorDataPoint an4=new AnchorDataPoint(0,2,XEnum.AnchorStyle.CAPRECT);
+  an4.setAnchor("??????");
+  an4.setBgColor(Color.rgb(255,145,126));
+  mAnchorSet.add(an4);
+  chart.setAnchorDataPoint(mAnchorSet);
 }

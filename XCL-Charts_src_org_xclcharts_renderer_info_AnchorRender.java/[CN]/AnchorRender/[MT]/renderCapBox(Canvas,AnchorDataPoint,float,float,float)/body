@@ -1,0 +1,33 @@
+{
+  float angleW=pAnchor.getCapRectW() / 2;
+  float angleH=pAnchor.getCapRectH();
+  if (Float.compare(radius,angleW) == -1 || Float.compare(radius,angleW) == 0) {
+    radius=angleW + 10.f;
+  }
+  float fontH=angleH + 5.f;
+  float extW=angleW + radius;
+  if (pAnchor.getAnchor() != "") {
+    fontH=DrawHelper.getInstance().calcTextHeight(getTextPaint(),pAnchor.getAnchor());
+    fontH+=5.f;
+    float FontW=DrawHelper.getInstance().getTextWidth(getTextPaint(),pAnchor.getAnchor());
+    if (Float.compare(extW * 2,FontW) == -1)     extW=FontW / 2;
+    extW+=3.f;
+  }
+  Path path=new Path();
+  path.moveTo(cirX,cirY);
+  path.lineTo(cirX - angleW,cirY - angleH);
+  path.lineTo(cirX - extW,cirY - angleH);
+  path.lineTo(cirX - extW,cirY - angleH - fontH);
+  path.lineTo(cirX + extW,cirY - angleH - fontH);
+  path.lineTo(cirX + extW,cirY - angleH);
+  path.lineTo(cirX + angleW,cirY - angleH);
+  path.lineTo(cirX,cirY);
+  path.close();
+  canvas.drawPath(path,getBgPaint());
+  if (pAnchor.getAnchor() != "") {
+    getTextPaint().setColor(pAnchor.getTextColor());
+    getTextPaint().setTextSize(pAnchor.getTextSize());
+    canvas.drawText(pAnchor.getAnchor(),cirX,cirY - angleH - fontH / 3,getTextPaint());
+  }
+  path.reset();
+}

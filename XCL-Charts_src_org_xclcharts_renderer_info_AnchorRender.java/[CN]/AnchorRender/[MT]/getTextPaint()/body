@@ -1,4 +1,7 @@
 {
-  if (null == mPaintText)   mPaintText=new Paint(Paint.ANTI_ALIAS_FLAG);
+  if (null == mPaintText) {
+    mPaintText=new Paint(Paint.ANTI_ALIAS_FLAG);
+    mPaintText.setTextAlign(Align.CENTER);
+  }
   return mPaintText;
 }

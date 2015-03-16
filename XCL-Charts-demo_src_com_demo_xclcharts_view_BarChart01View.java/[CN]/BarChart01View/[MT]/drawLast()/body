@@ -17,9 +17,13 @@
   an2.setBgColor(Color.GRAY);
   AnchorDataPoint an3=new AnchorDataPoint(0,2,XEnum.AnchorStyle.RECT);
   an3.setBgColor(Color.rgb(255,145,126));
+  AnchorDataPoint an4=new AnchorDataPoint(0,1,XEnum.AnchorStyle.CAPRECT);
+  an4.setBgColor(Color.rgb(255,145,126));
+  an4.setAnchor("????????????");
   mAnchorSet.add(an1);
   mAnchorSet.add(an2);
   mAnchorSet.add(an3);
+  mAnchorSet.add(an4);
   chart.setAnchorDataPoint(mAnchorSet);
   chart.setApplyBackgroundColor(true);
   chart.setBackgroundColor(XEnum.Direction.VERTICAL,Color.rgb(69,117,180),Color.rgb(224,243,248));
