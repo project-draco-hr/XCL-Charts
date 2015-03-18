@@ -1,5 +1,4 @@
 {
   FontMetrics fm=paint.getFontMetrics();
-  int charHeight=(int)Math.ceil(fm.descent - fm.ascent);
-  return charHeight;
+  return (float)Math.ceil(fm.descent - fm.ascent);
 }

@@ -36,7 +36,7 @@ if (isShowTickMarks() && isTickVisible) {
 canvas.drawLine(marksStartX,centerY,MathHelper.getInstance().add(markeStopX,this.getAxisPaint().getStrokeWidth() / 2),centerY,getTickMarksPaint());
 }
 if (isShowAxisLabels()) {
-int textHeight=DrawHelper.getInstance().getPaintFontHeight(getTickLabelPaint());
+float textHeight=DrawHelper.getInstance().getPaintFontHeight(getTickLabelPaint());
 textHeight/=4;
 if (Align.LEFT == getHorizontalTickAlign()) {
 float width=0.0f;

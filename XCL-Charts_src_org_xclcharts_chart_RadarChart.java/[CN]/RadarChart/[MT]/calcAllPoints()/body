@@ -13,7 +13,7 @@
   mArrayLabelX=new Float[dataAxisTickCount][labelsCount];
   mArrayLabelY=new Float[dataAxisTickCount][labelsCount];
   mArrayRadius=new Float[dataAxisTickCount];
-  int labelHeight=DrawHelper.getInstance().getPaintFontHeight(getLabelPaint());
+  float labelHeight=DrawHelper.getInstance().getPaintFontHeight(getLabelPaint());
   float labelRadius=this.getRadius() + labelHeight + mLabelOffset;
   float currAgent=0.0f;
   for (int i=0; i < dataAxisTickCount; i++) {
