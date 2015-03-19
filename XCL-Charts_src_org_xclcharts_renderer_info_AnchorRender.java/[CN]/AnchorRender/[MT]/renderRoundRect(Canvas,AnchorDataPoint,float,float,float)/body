@@ -1,0 +1,34 @@
+{
+  float angleW=pAnchor.getCapRectW() / 2;
+  float angleH=pAnchor.getCapRectH();
+  float fontH=pAnchor.getCapRectHeight();
+  float extW=angleW + radius;
+  if (Float.compare(radius,angleW) == -1 || Float.compare(radius,angleW) == 0) {
+    extW=angleW + 30.f;
+  }
+  String anchor=pAnchor.getAnchor().trim();
+  if (pAnchor.getAnchor() != "") {
+    float textHeight=DrawHelper.getInstance().getPaintFontHeight(getTextPaint()) + 30.f;
+    if (Float.compare(textHeight,fontH) == 1)     fontH=textHeight;
+    float textWidth=DrawHelper.getInstance().getTextWidth(getTextPaint(),anchor);
+    if (Float.compare(textWidth,extW) == 1)     extW=textWidth;
+  }
+switch (pAnchor.getAnchorStyle()) {
+case CAPRECT:
+    renderCapRect(canvas,pAnchor,cirX,cirY,radius,angleW,angleH,fontH,extW);
+  break;
+case CAPROUNDRECT:
+renderCapRound(canvas,pAnchor,cirX,cirY,radius,angleW,angleH,fontH,extW);
+break;
+case ROUNDRECT:
+renderRound(canvas,pAnchor,cirX,cirY,radius,angleW,angleH,fontH,extW);
+break;
+default :
+}
+if (pAnchor.getAnchor() != "") {
+getTextPaint().setColor(pAnchor.getTextColor());
+getTextPaint().setTextSize(pAnchor.getTextSize());
+canvas.drawText(anchor,cirX,cirY - angleH - fontH / 3,getTextPaint());
+}
+mPaintText=null;
+}

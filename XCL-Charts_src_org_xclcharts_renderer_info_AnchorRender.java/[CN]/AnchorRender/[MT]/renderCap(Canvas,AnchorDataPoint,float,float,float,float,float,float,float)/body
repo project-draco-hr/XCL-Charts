@@ -1,0 +1,9 @@
+{
+  Path path=new Path();
+  path.moveTo(cirX,cirY);
+  path.lineTo(cirX - angleW,cirY - angleH);
+  path.lineTo(cirX + angleW,cirY - angleH);
+  path.close();
+  canvas.drawPath(path,getBgPaint());
+  path.reset();
+}

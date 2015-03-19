@@ -5,5 +5,5 @@
   rect.right=mKeyLabelX + mRectWidth;
   rect.top=mKeyLabelY;
   rect.bottom=mKeyLabelY + mRectHeight;
-  mBorder.renderBox(canvas,rect,mShowBoxBorder,mShowBackground);
+  mBorder.renderRect(canvas,rect,mShowBoxBorder,mShowBackground);
 }

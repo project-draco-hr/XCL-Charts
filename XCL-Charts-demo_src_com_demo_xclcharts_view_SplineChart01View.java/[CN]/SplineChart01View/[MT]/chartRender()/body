@@ -39,7 +39,7 @@
     chart.setCrurveLineStyle(XEnum.CrurveLineStyle.BEELINE);
     chart.disableHighPrecision();
     List<AnchorDataPoint> mAnchorSet=new ArrayList<AnchorDataPoint>();
-    AnchorDataPoint an1=new AnchorDataPoint(2,0,XEnum.AnchorStyle.RECT);
+    AnchorDataPoint an1=new AnchorDataPoint(2,0,XEnum.AnchorStyle.CAPROUNDRECT);
     an1.setAlpha(200);
     an1.setBgColor(Color.RED);
     an1.setAreaStyle(XEnum.DataAreaStyle.FILL);

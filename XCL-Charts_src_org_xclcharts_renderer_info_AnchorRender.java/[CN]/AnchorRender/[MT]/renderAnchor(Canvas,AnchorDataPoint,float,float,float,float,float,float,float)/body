@@ -16,8 +16,12 @@ getBgPaint().setStrokeWidth(pAnchor.getLineWidth());
 }
 switch (pAnchor.getAnchorStyle()) {
 case CAPRECT:
-renderCapBox(canvas,pAnchor,cx,cy,radius);
+case CAPROUNDRECT:
+case ROUNDRECT:
+renderRoundRect(canvas,pAnchor,cx,cy,radius);
 break;
+default :
+switch (pAnchor.getAnchorStyle()) {
 case RECT:
 renderRect(canvas,getBgPaint(),radius,cx,cy);
 break;
@@ -44,10 +48,11 @@ canvas.drawLine(cx + cradius,cy,right,cy,getBgPaint());
 break;
 default :
 }
-if (pAnchor.getAnchor() != "" && pAnchor.getAnchorStyle() != XEnum.AnchorStyle.CAPRECT) {
+if (pAnchor.getAnchor().trim() != "") {
 getTextPaint().setColor(pAnchor.getTextColor());
 getTextPaint().setTextSize(pAnchor.getTextSize());
 canvas.drawText(pAnchor.getAnchor(),cx,cy,getTextPaint());
+}
 }
 getBgPaint().setStrokeWidth(width);
 }

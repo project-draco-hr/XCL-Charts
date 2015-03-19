@@ -1,0 +1,10 @@
+{
+  setPaintLineStyle();
+  if (null == mRect)   mRect=new RectF();
+  mRect.left=rect.left + mBorderSpadding;
+  mRect.top=rect.top + mBorderSpadding;
+  mRect.right=rect.right - mBorderSpadding;
+  mRect.bottom=rect.bottom - mBorderSpadding;
+  if (showBackground)   canvas.drawRoundRect(mRect,this.getRoundRadius(),this.getRoundRadius(),getBackgroundPaint());
+  if (showBoxBorder)   canvas.drawRoundRect(mRect,this.getRoundRadius(),this.getRoundRadius(),getLinePaint());
+}

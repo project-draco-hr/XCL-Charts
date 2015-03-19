@@ -1,0 +1,5 @@
+{
+  getBgPaint().setStyle(Style.FILL);
+  renderRound(canvas,pAnchor,cirX,cirY,radius,angleW,angleH,fontH,extW);
+  renderCap(canvas,pAnchor,cirX,cirY,radius,angleW,angleH,fontH,extW);
+}

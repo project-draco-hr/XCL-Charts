@@ -1,0 +1,9 @@
+Canvas canvas
+AnchorDataPoint pAnchor
+float cirX
+float cirY
+float radius
+float angleW
+float angleH
+float fontH
+float extW

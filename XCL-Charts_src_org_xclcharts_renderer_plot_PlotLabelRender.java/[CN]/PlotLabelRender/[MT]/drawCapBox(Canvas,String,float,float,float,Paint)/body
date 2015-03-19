@@ -1,9 +1,0 @@
-{
-  float AngleH=mRectBox.width() * mScale;
-  mRectBox.top-=AngleH;
-  mRectBox.bottom-=AngleH;
-  initBox();
-  if (mBorderColor != -1)   mBorder.setBorderLineColor(mBorderColor);
-  mBorder.renderCapBox(canvas,mRectBox,AngleH,mShowBoxBorder,mShowBackground);
-  DrawHelper.getInstance().drawRotateText(label,labelX,labelY - AngleH,labelAngle,canvas,labelPaint);
-}

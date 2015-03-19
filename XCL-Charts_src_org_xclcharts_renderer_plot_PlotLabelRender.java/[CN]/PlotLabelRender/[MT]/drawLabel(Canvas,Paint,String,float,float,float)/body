@@ -38,14 +38,31 @@
     mRectBox.right=right;
     mRectBox.top=top;
     mRectBox.bottom=bottom;
-    if (XEnum.LabelBoxStyle.CAPRECT == mLabelBoxStyle) {
-      drawCapBox(canvas,label,x,y - mMargin,itemAngle,paint);
-    }
- else {
+    if (XEnum.LabelBoxStyle.RECT == mLabelBoxStyle) {
       drawBox(canvas);
       DrawHelper.getInstance().drawRotateText(label,x,y - mMargin,itemAngle,canvas,paint);
     }
-    mRectBox.setEmpty();
-  }
-  return true;
+ else {
+      float AngleH=mRectBox.width() * mScale;
+      mRectBox.top-=AngleH;
+      mRectBox.bottom-=AngleH;
+      initBox();
+      if (mBorderColor != -1)       mBorder.setBorderLineColor(mBorderColor);
+switch (mLabelBoxStyle) {
+case CAPRECT:
+        mBorder.renderCapRect(canvas,mRectBox,AngleH,mShowBoxBorder,mShowBackground);
+      break;
+case CAPROUNDRECT:
+    mBorder.renderCapRound(canvas,mRectBox,AngleH,mShowBoxBorder,mShowBackground);
+  break;
+case ROUNDRECT:
+mBorder.renderRound(canvas,mRectBox,AngleH,mShowBoxBorder,mShowBackground);
+break;
+default :
+}
+DrawHelper.getInstance().drawRotateText(label,x,y - mMargin - AngleH,itemAngle,canvas,paint);
+}
+mRectBox.setEmpty();
+}
+return true;
 }

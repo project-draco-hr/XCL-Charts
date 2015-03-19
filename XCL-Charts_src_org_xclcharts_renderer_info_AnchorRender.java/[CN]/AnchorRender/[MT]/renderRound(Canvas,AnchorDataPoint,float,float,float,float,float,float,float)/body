@@ -1,0 +1,10 @@
+{
+  if (null == mRect)   mRect=new RectF();
+  mRect.left=cirX - extW;
+  mRect.top=cirY - angleH - fontH;
+  mRect.right=cirX + extW;
+  mRect.bottom=cirY - angleH;
+  getBgPaint().setStyle(Style.FILL);
+  canvas.drawRoundRect(mRect,pAnchor.getRoundRadius(),pAnchor.getRoundRadius(),getBgPaint());
+  mRect.setEmpty();
+}
