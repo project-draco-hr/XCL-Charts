@@ -1,0 +1,16 @@
+{
+  if (!mShowBackground)   return;
+  float AngleH=rect.width() * mScale;
+  rect.top-=AngleH;
+  rect.bottom-=AngleH;
+  float centerX=rect.left + rect.width() * 0.5f;
+  float AngleY=rect.bottom;
+  Path path=new Path();
+  path.moveTo(centerX + AngleH,AngleY);
+  path.lineTo(centerX,AngleY + AngleH);
+  path.lineTo(centerX - AngleH,AngleY);
+  path.close();
+  canvas.drawRoundRect(mRect,mRoundRectX,mRoundRectY,getBackgroundPaint());
+  canvas.drawPath(path,this.getBackgroundPaint());
+  path.reset();
+}

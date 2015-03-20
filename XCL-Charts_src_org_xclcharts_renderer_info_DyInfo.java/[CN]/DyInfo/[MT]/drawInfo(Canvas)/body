@@ -11,7 +11,10 @@
     if (mShowBoxBorder)     canvas.drawRect(mRect,this.getBorderPaint());
   }
  else   if (XEnum.DyInfoStyle.CAPRECT == mStyle) {
-    renderCapBox(canvas,mRect);
+    renderCapRect(canvas,mRect);
+  }
+ else   if (XEnum.DyInfoStyle.CAPROUNDRECT == mStyle) {
+    renderCapRound(canvas,mRect);
   }
  else   if (XEnum.DyInfoStyle.CIRCLE == mStyle) {
     renderCircle(canvas,mRect);
