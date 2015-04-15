@@ -1,4 +1,5 @@
 {
+  if (!showBackground)   return;
   setPaintLineStyle();
   float centerX=rect.left + rect.width() * 0.5f;
   float AngleH=capHeight;
@@ -9,15 +10,13 @@
   mRect.right=rect.right - mBorderSpadding;
   mRect.bottom=rect.bottom - mBorderSpadding;
   getBackgroundPaint().setStyle(Style.FILL);
-  if (showBackground)   canvas.drawRoundRect(mRect,this.getRoundRadius(),this.getRoundRadius(),getBackgroundPaint());
+  canvas.drawRoundRect(mRect,this.getRoundRadius(),this.getRoundRadius(),getBackgroundPaint());
   if (null == mPath)   mPath=new Path();
-  if (showBackground) {
-    float pHeight=DrawHelper.getInstance().getPaintFontHeight(getBackgroundPaint());
-    mPath.moveTo(centerX + AngleH,AngleY - pHeight);
-    mPath.lineTo(centerX,AngleY + AngleH);
-    mPath.lineTo(centerX - AngleH,AngleY - pHeight);
-    mPath.close();
-    canvas.drawPath(mPath,getBackgroundPaint());
-    mPath.reset();
-  }
+  float pHeight=DrawHelper.getInstance().getPaintFontHeight(getBackgroundPaint());
+  mPath.moveTo(centerX + AngleH,AngleY - pHeight);
+  mPath.lineTo(centerX,AngleY + AngleH);
+  mPath.lineTo(centerX - AngleH,AngleY - pHeight);
+  mPath.close();
+  canvas.drawPath(mPath,getBackgroundPaint());
+  mPath.reset();
 }
