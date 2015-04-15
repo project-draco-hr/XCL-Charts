@@ -15,7 +15,7 @@
     }
     drawAnchor(getAnchorDataPoint(),dataID,i,canvas,dotInfo.mX,dotInfo.mY,radius);
     if (spData.getLabelVisible()) {
-      spData.getLabelOptions().drawLabel(canvas,pLine.getDotLabelPaint(),dotInfo.getLabel(),dotInfo.mX,dotInfo.mY,itemAngle,spData.getLineColor());
+      spData.getLabelOptions().drawLabel(canvas,pLine.getDotLabelPaint(),getFormatterDotLabel(dotInfo.getLabel()),dotInfo.mX,dotInfo.mY,itemAngle,spData.getLineColor());
     }
   }
   return true;
