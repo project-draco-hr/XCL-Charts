@@ -1,0 +1,13 @@
+{
+  try {
+    int[] ltrb=getBarLnDefaultSpadding();
+    chart.setPadding(ltrb[0],ltrb[1],ltrb[2],ltrb[3]);
+    chart.setTitle("?????????(?????????)");
+    chart.addSubtitle("(XCL-Charts Demo)");
+    chart.setDataSource(chartData);
+    chart.getPaintLabel().setTextSize(22);
+  }
+ catch (  Exception e) {
+    e.printStackTrace();
+  }
+}

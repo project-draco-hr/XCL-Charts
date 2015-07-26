@@ -1,0 +1,6 @@
+{
+  chartData.add(new Funnel2Data("??????",0.4f,0.1f,Color.rgb(163,73,164)));
+  chartData.add(new Funnel2Data("??????",0.2f,0.2f,Color.rgb(34,177,76)));
+  chartData.add(new Funnel2Data("??????",0.3f,0.3f,Color.rgb(255,242,0)));
+  chartData.add(new Funnel2Data("?????? ",0.1f,0.4f,Color.rgb(237,28,36)));
+}

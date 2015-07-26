@@ -42,6 +42,8 @@
     chart.getClipExt().setExtRight(100.f);
     chart.getDataAxis().setAxisLineStyle(XEnum.AxisLineStyle.CAP);
     chart.getCategoryAxis().setAxisLineStyle(XEnum.AxisLineStyle.CAP);
+    chart.getDataAxis().getTickLabelPaint().setTextSize(26);
+    chart.getCategoryAxis().getTickLabelPaint().setTextSize(36);
   }
  catch (  Exception e) {
     e.printStackTrace();

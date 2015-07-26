@@ -1,0 +1,4 @@
+String label
+float base
+float percent
+int color

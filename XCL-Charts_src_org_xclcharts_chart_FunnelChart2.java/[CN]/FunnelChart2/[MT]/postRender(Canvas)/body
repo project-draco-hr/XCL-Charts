@@ -1,0 +1,16 @@
+{
+  try {
+    super.postRender(canvas);
+    calcPlotRange();
+    canvas.drawColor(mBgColor);
+    plotArea.render(canvas);
+    renderTitle(canvas);
+    renderPlot(canvas);
+    renderFocusShape(canvas);
+    renderToolTip(canvas);
+  }
+ catch (  Exception e) {
+    throw e;
+  }
+  return true;
+}
