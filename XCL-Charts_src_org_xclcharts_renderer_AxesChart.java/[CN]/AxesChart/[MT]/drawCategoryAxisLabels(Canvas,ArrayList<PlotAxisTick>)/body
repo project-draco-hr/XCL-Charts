@@ -1,19 +1,21 @@
 {
   if (null == lstLabels)   return;
   boolean showTicks=true;
-  for (  PlotAxisTick t : lstLabels) {
+  for (int i=0; i < lstLabels.size(); i++) {
+    PlotAxisTick t=lstLabels.get(i);
 switch (mCategoryAxisLocation) {
 case LEFT:
 case RIGHT:
 case VERTICAL_CENTER:
       if (!t.isShowTickMarks() || !isDrawYAxisTickMarks(t.Y,mMoveY))       showTicks=false;
-    categoryAxis.renderAxisHorizontalTick(this,canvas,t.X,t.Y,t.Label,t.labelX,t.labelY,showTicks);
+    categoryAxis.renderAxisHorizontalTick(this.getLeft(),this.getPlotArea().getLeft(),canvas,t.X,t.Y,t.Label,t.labelX,t.labelY,showTicks);
   break;
 case TOP:
 case BOTTOM:
 case HORIZONTAL_CENTER:
+XEnum.ODD_EVEN oe=(i % 2 != 0) ? XEnum.ODD_EVEN.ODD : XEnum.ODD_EVEN.EVEN;
 if (!t.isShowTickMarks() || !isDrawXAxisTickMarks(t.X,mMoveX)) showTicks=false;
-categoryAxis.renderAxisVerticalTick(canvas,t.X,t.Y,t.Label,t.labelX,t.labelY,showTicks);
+categoryAxis.renderAxisVerticalTick(canvas,t.X,t.Y,t.Label,t.labelX,t.labelY,showTicks,oe);
 break;
 }
 showTicks=true;

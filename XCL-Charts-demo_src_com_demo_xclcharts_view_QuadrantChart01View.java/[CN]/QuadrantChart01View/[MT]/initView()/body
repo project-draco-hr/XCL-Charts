@@ -6,4 +6,7 @@
   chartRenderScat();
   chartDataSetSp();
   chartRenderSp();
+  this.bindTouch(this,chart);
+  this.bindTouch(this,chartScat);
+  this.bindTouch(this,chartSp);
 }

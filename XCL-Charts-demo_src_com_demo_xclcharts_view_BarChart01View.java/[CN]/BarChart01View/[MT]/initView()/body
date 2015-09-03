@@ -4,5 +4,7 @@
   chartRender();
   chartPieDataSet();
   chartPieRender();
+  this.bindTouch(this,chart);
+  this.bindTouch(this,chartPie);
   new Thread(this).start();
 }

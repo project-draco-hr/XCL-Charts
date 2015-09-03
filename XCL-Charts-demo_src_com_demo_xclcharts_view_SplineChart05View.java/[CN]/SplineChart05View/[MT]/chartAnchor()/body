@@ -1,0 +1,36 @@
+{
+  chart.ActiveListenItemClick();
+  chart.extPointClickRange(5);
+  chart.showClikedFocus();
+  List<AnchorDataPoint> mAnchorSet=new ArrayList<AnchorDataPoint>();
+  AnchorDataPoint an2=new AnchorDataPoint(0,0,XEnum.AnchorStyle.TOBOTTOM);
+  an2.setBgColor(Color.GRAY);
+  an2.setLineStyle(XEnum.LineStyle.DOT);
+  AnchorDataPoint an3=new AnchorDataPoint(0,1,XEnum.AnchorStyle.TOBOTTOM);
+  an3.setBgColor(Color.RED);
+  an3.setAreaStyle(XEnum.DataAreaStyle.STROKE);
+  an3.setLineStyle(XEnum.LineStyle.DOT);
+  AnchorDataPoint an4=new AnchorDataPoint(0,2,XEnum.AnchorStyle.TOBOTTOM);
+  an4.setBgColor(Color.WHITE);
+  an4.setLineWidth(15);
+  an4.setLineStyle(XEnum.LineStyle.DOT);
+  AnchorDataPoint an5=new AnchorDataPoint(0,3,XEnum.AnchorStyle.TOBOTTOM);
+  an5.setBgColor(Color.WHITE);
+  an5.setLineWidth(15);
+  an5.setLineStyle(XEnum.LineStyle.DASH);
+  AnchorDataPoint an6=new AnchorDataPoint(0,4,XEnum.AnchorStyle.TOBOTTOM);
+  an6.setBgColor(Color.RED);
+  an6.setLineWidth(15);
+  an6.setLineStyle(XEnum.LineStyle.DOT);
+  AnchorDataPoint an7=new AnchorDataPoint(0,5,XEnum.AnchorStyle.TOBOTTOM);
+  an7.setBgColor(Color.WHITE);
+  an7.setLineWidth(15);
+  an7.setLineStyle(XEnum.LineStyle.DASH);
+  mAnchorSet.add(an2);
+  mAnchorSet.add(an3);
+  mAnchorSet.add(an4);
+  mAnchorSet.add(an5);
+  mAnchorSet.add(an6);
+  mAnchorSet.add(an7);
+  chart.setAnchorDataPoint(mAnchorSet);
+}

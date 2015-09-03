@@ -17,4 +17,6 @@
   chart2.setAxesClosed(true);
   chart1.disableHighPrecision();
   chart2.disableHighPrecision();
+  this.bindTouch(this,chart1);
+  this.bindTouch(this,chart2);
 }

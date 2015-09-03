@@ -6,4 +6,7 @@
   chartDataSet2();
   chartRender3();
   chartDataSet3();
+  this.bindTouch(this,chartRose);
+  this.bindTouch(this,chartRose3);
+  this.bindTouch(this,chartRose1);
 }

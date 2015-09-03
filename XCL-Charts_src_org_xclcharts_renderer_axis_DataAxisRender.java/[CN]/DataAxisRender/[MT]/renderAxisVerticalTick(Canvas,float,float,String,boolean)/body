@@ -1,3 +1,0 @@
-{
-  renderVerticalTick(canvas,centerX,centerY,text,centerX,centerY,isTickVisible);
-}

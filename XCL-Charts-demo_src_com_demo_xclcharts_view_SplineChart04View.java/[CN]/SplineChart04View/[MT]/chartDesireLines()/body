@@ -1,0 +1,21 @@
+{
+  CustomLineData s=new CustomLineData("GO",15d,Color.rgb(54,141,238),3);
+  s.hideLine();
+  s.getLineLabelPaint().setColor(Color.rgb(54,141,238));
+  s.getLineLabelPaint().setTextSize(27);
+  s.setLineStyle(XEnum.LineStyle.DASH);
+  s.setLabelOffset(5);
+  mCustomLineDataset.add(s);
+  CustomLineData s2=new CustomLineData("C/C++",18d,Color.rgb(255,165,132),3);
+  s2.hideLine();
+  s2.getLineLabelPaint().setColor(Color.rgb(255,165,132));
+  s2.getLineLabelPaint().setTextSize(25);
+  s2.setLabelOffset(5);
+  mCustomLineDataset.add(s2);
+  CustomLineData s3=new CustomLineData("Java",16d,Color.rgb(77,184,73),3);
+  s3.getLineLabelPaint().setColor(Color.rgb(77,184,73));
+  s3.getLineLabelPaint().setTextSize(25);
+  s3.hideLine();
+  s3.setLabelOffset(10);
+  mCustomLineDataset.add(s3);
+}

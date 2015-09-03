@@ -38,6 +38,7 @@
     chart.setAxesClosed(true);
     chart.setCrurveLineStyle(XEnum.CrurveLineStyle.BEELINE);
     chart.disableHighPrecision();
+    chart.setPlotPanMode(XEnum.PanMode.HORIZONTAL);
     List<AnchorDataPoint> mAnchorSet=new ArrayList<AnchorDataPoint>();
     AnchorDataPoint an1=new AnchorDataPoint(2,0,XEnum.AnchorStyle.CAPROUNDRECT);
     an1.setAlpha(200);

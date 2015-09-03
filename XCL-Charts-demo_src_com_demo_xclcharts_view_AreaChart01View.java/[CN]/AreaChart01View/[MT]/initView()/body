@@ -3,4 +3,5 @@
   chartDataSet();
   chartRender();
   new Thread(this).start();
+  this.bindTouch(this,chart);
 }

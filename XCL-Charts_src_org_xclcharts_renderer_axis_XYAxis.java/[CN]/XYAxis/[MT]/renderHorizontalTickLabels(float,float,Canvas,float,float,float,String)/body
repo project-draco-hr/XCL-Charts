@@ -1,0 +1,17 @@
+{
+  float labelHeight=DrawHelper.getInstance().getPaintFontHeight(getTickLabelPaint());
+  float textHeight=labelHeight / 4;
+  if (Align.LEFT == getHorizontalTickAlign()) {
+    float width=0.0f;
+    if (isShowTickMarks()) {
+      width=markeStopX - chatLeft;
+    }
+ else {
+      width=MathHelper.getInstance().sub(plotLeft,chatLeft);
+    }
+    renderLeftAxisTickMaskLabel(canvas,labelStartX,labelStartY + textHeight,text,width);
+  }
+ else {
+    DrawHelper.getInstance().drawRotateText(getFormatterLabel(text),labelStartX,labelStartY + textHeight,getTickLabelRotateAngle(),canvas,getTickLabelPaint());
+  }
+}

@@ -35,6 +35,8 @@
     chart.showDyLine();
     chart.setAxesClosed(false);
     chart.getClipExt().setExtRight(150.f);
+    chart.getCategoryAxis().setLabelLineFeed(XEnum.LabelLineFeed.ODD_EVEN);
+    chart.setPlotPanMode(XEnum.PanMode.HORIZONTAL);
   }
  catch (  Exception e) {
     Log.e(TAG,e.toString());

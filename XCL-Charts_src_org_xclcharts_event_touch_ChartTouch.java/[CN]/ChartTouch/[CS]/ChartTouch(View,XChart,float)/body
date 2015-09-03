@@ -1,0 +1,5 @@
+{
+  this.mChart=chart;
+  this.mView=view;
+  this.mPanRatio=panRatio;
+}

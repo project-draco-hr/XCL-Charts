@@ -1,0 +1,58 @@
+{
+  if (!isShow())   return;
+  float marksStartY=centerY;
+  float marksStopY=centerY;
+  float labelsStartY=labelY;
+switch (getVerticalTickPosition()) {
+case TOP:
+{
+      if (isShowTickMarks()) {
+        marksStartY=MathHelper.getInstance().sub(centerY,getTickMarksLength());
+        marksStopY=centerY;
+      }
+      marksStartY=MathHelper.getInstance().sub(centerY,getTickMarksLength());
+      marksStopY=centerY;
+      break;
+    }
+case MIDDLE:
+{
+    if (isShowTickMarks()) {
+      marksStartY=MathHelper.getInstance().sub(centerY,getTickMarksLength() / 2);
+      marksStopY=MathHelper.getInstance().add(centerY,getTickMarksLength() / 2);
+    }
+    break;
+  }
+case BOTTOM:
+if (isShowTickMarks()) {
+  marksStartY=centerY;
+  marksStopY=MathHelper.getInstance().add(centerY,getTickMarksLength());
+}
+if (this.isShowAxisLabels()) {
+labelsStartY=marksStopY + getTickLabelMargin() + DrawHelper.getInstance().getPaintFontHeight(getTickLabelPaint()) / 3;
+}
+break;
+default :
+break;
+}
+if (isShowTickMarks() && isTickVisible) {
+float mstartX=MathHelper.getInstance().sub(marksStartY,getAxisPaint().getStrokeWidth() / 2);
+canvas.drawLine(centerX,mstartX,centerX,marksStopY,getTickMarksPaint());
+}
+if (isShowAxisLabels()) {
+float labelHeight=DrawHelper.getInstance().getPaintFontHeight(getTickLabelPaint());
+float currY=labelsStartY;
+if (this.mLineFeed != XEnum.LabelLineFeed.NORMAL) {
+switch (this.mLineFeed) {
+case ODD_EVEN:
+if (oe == XEnum.ODD_EVEN.ODD) currY+=labelHeight;
+break;
+case EVEN_ODD:
+if (oe == XEnum.ODD_EVEN.EVEN) currY+=labelHeight;
+break;
+case NORMAL:
+break;
+}
+}
+DrawHelper.getInstance().drawRotateText(getFormatterLabel(text),labelX,currY,getTickLabelRotateAngle(),canvas,getTickLabelPaint());
+}
+}

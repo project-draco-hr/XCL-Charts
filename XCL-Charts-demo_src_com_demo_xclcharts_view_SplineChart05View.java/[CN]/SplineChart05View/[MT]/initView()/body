@@ -1,0 +1,7 @@
+{
+  chartLabels();
+  chartDataSet();
+  chartAnchor();
+  chartRender();
+  this.bindTouch(this,chart);
+}

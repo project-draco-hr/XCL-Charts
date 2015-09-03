@@ -1,0 +1,34 @@
+{
+  List<PointD> linePoint1=new ArrayList<PointD>();
+  linePoint1.add(new PointD(0d,3d));
+  linePoint1.add(new PointD(1d,9d));
+  linePoint1.add(new PointD(2d,8d));
+  linePoint1.add(new PointD(3d,7d));
+  linePoint1.add(new PointD(6d,15d));
+  SplineData dataSeries1=new SplineData("Go",linePoint1,Color.rgb(54,141,238));
+  dataSeries1.getLinePaint().setStrokeWidth(3);
+  dataSeries1.setLineStyle(XEnum.LineStyle.DASH);
+  dataSeries1.setLabelVisible(false);
+  dataSeries1.setDotStyle(XEnum.DotStyle.HIDE);
+  List<PointD> linePoint2=new ArrayList<PointD>();
+  linePoint2.add(new PointD(0d,10d));
+  linePoint2.add(new PointD(1d,13d));
+  linePoint2.add(new PointD(2d,16d));
+  linePoint2.add(new PointD(3d,15d));
+  linePoint2.add(new PointD(6d,18d));
+  SplineData dataSeries2=new SplineData("C/C++",linePoint2,Color.rgb(255,165,132));
+  dataSeries2.setLabelVisible(false);
+  dataSeries2.setDotStyle(XEnum.DotStyle.HIDE);
+  List<PointD> linePoint3=new ArrayList<PointD>();
+  linePoint3.add(new PointD(0d,8d));
+  linePoint3.add(new PointD(1d,13d));
+  linePoint3.add(new PointD(2d,11d));
+  linePoint3.add(new PointD(3d,15d));
+  linePoint3.add(new PointD(6d,16d));
+  SplineData dataSeries3=new SplineData("Java",linePoint3,Color.rgb(77,184,73));
+  dataSeries3.setLabelVisible(false);
+  dataSeries3.setDotStyle(XEnum.DotStyle.HIDE);
+  chartData.add(dataSeries1);
+  chartData.add(dataSeries2);
+  chartData.add(dataSeries3);
+}

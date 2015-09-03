@@ -1,0 +1,31 @@
+{
+  if (chart.getDyLineVisible())   chart.getDyLine().setCurrentXY(x,y);
+  if (!chart.getListenItemClickStatus()) {
+    if (chart.getDyLineVisible() && chart.getDyLine().isInvalidate())     this.invalidate();
+  }
+ else {
+    PointPosition record=chart.getPositionRecord(x,y);
+    if (null == record)     return;
+    if (record.getDataID() >= chartData.size())     return;
+    SplineData lData=chartData.get(record.getDataID());
+    List<PointD> linePoint=lData.getLineDataSet();
+    int pos=record.getDataChildID();
+    int i=0;
+    Iterator it=linePoint.iterator();
+    while (it.hasNext()) {
+      PointD entry=(PointD)it.next();
+      if (pos == i) {
+        Double xValue=entry.x;
+        Double yValue=entry.y;
+        float r=record.getRadius();
+        chart.showFocusPointF(record.getPosition(),r * 2);
+        chart.getFocusPaint().setStyle(Style.FILL);
+        chart.getFocusPaint().setStrokeWidth(6);
+        chart.getFocusPaint().setColor(Color.rgb(237,92,92));
+        this.invalidate();
+        break;
+      }
+      i++;
+    }
+  }
+}

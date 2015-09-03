@@ -1,0 +1,42 @@
+{
+  try {
+    int[] ltrb=getBarLnDefaultSpadding();
+    chart.setPadding(ltrb[0] + DensityUtil.dip2px(this.getContext(),10),ltrb[1],ltrb[2] + DensityUtil.dip2px(this.getContext(),20),ltrb[3]);
+    chart.setTitle("New GitHub repositories");
+    chart.addSubtitle("(XCL-Charts Demo)");
+    chart.getAxisTitle().setLeftTitle("Percentage (annual)");
+    chart.getAxisTitle().getLeftTitlePaint().setColor(Color.BLACK);
+    chart.showRoundBorder();
+    chart.setCategories(labels);
+    chart.setDataSource(chartData);
+    chart.setCustomLines(mCustomLineDataset);
+    chart.getDataAxis().setAxisMax(20);
+    chart.getDataAxis().setAxisSteps(5);
+    chart.setCategoryAxisMax(6);
+    chart.setCategoryAxisMin(0);
+    PlotGrid plot=chart.getPlotGrid();
+    plot.hideHorizontalLines();
+    plot.hideVerticalLines();
+    chart.getDataAxis().getAxisPaint().setColor(Color.rgb(127,204,204));
+    chart.getCategoryAxis().getAxisPaint().setColor(Color.rgb(127,204,204));
+    chart.getDataAxis().getTickMarksPaint().setColor(Color.rgb(127,204,204));
+    chart.getCategoryAxis().getTickMarksPaint().setColor(Color.rgb(127,204,204));
+    chart.getDataAxis().setLabelFormatter(new IFormatterTextCallBack(){
+      @Override public String textFormatter(      String value){
+        Double tmp=Double.parseDouble(value);
+        DecimalFormat df=new DecimalFormat("#0");
+        String label=df.format(tmp).toString();
+        return (label);
+      }
+    }
+);
+    chart.disableHighPrecision();
+    chart.disablePanMode();
+    chart.hideBorder();
+    chart.getPlotLegend().hide();
+  }
+ catch (  Exception e) {
+    e.printStackTrace();
+    Log.e(TAG,e.toString());
+  }
+}

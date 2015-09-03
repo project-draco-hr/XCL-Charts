@@ -1,0 +1,3 @@
+{
+  renderHorizontalTick(chatLeft,plotLeft,canvas,centerX,centerY,text,labelX,labelY,isTickVisible);
+}

@@ -2,4 +2,5 @@
   chartLabels();
   chartDataSet();
   chartRender();
+  this.bindTouch(this,chart);
 }

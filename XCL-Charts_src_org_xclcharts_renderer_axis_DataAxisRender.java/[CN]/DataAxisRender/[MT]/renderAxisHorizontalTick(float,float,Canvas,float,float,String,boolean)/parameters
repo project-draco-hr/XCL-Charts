@@ -1,0 +1,7 @@
+float chatLeft
+float plotLeft
+Canvas canvas
+float centerX
+float centerY
+String text
+boolean isTickVisible

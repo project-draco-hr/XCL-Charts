@@ -3,4 +3,5 @@
   chartDataSet();
   chartDesireLines();
   chartRender();
+  this.bindTouch(this,chart);
 }

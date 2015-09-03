@@ -1,0 +1,8 @@
+{
+  labels.add("2018");
+  labels.add("2019");
+  labels.add("2020");
+  labels.add("2021");
+  labels.add("2022");
+  labels.add("2023");
+}

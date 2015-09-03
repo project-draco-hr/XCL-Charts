@@ -9,10 +9,15 @@
   xx=txy[0] + newX - oldX;
   yy=txy[1] + newY - oldY;
   if (mChart.getCtlPanRangeStatus()) {
-    if (Float.compare(Math.abs(xx),mChart.getPlotArea().getPlotWidth() / 2) == 1) {
+    float xr=1.f, yr=1.f;
+    if (Float.compare(mPanRatio,0.f) > 0) {
+      xr=mChart.getPlotArea().getPlotWidth() / mPanRatio;
+      yr=mChart.getHeight() / mPanRatio;
+    }
+    if (Float.compare(Math.abs(xx),xr) == 1) {
       return;
     }
-    if (Float.compare(Math.abs(yy),mChart.getHeight() / 2) == 1) {
+    if (Float.compare(Math.abs(yy),yr) == 1) {
       return;
     }
   }

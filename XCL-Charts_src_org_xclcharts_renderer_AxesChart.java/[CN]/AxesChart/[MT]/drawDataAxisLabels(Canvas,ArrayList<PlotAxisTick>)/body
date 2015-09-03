@@ -1,17 +1,19 @@
 {
   if (null == lstLabels)   return;
-  for (  PlotAxisTick t : lstLabels) {
+  for (int i=0; i < lstLabels.size(); i++) {
+    PlotAxisTick t=lstLabels.get(i);
+    XEnum.ODD_EVEN oe=(i % 2 != 0) ? XEnum.ODD_EVEN.ODD : XEnum.ODD_EVEN.EVEN;
     dataAxis.setAxisTickCurrentID(t.ID);
 switch (mDataAxisLocation) {
 case LEFT:
 case RIGHT:
 case VERTICAL_CENTER:
-      dataAxis.renderAxisHorizontalTick(this,canvas,t.X,t.Y,t.Label,isDrawYAxisTickMarks(t.Y,mMoveY));
+      dataAxis.renderAxisHorizontalTick(this.getLeft(),this.getPlotArea().getLeft(),canvas,t.X,t.Y,t.Label,isDrawYAxisTickMarks(t.Y,mMoveY));
     break;
 case TOP:
 case BOTTOM:
 case HORIZONTAL_CENTER:
-  dataAxis.renderAxisVerticalTick(canvas,t.X,t.Y,t.Label,isDrawXAxisTickMarks(t.X,mMoveX));
+  dataAxis.renderAxisVerticalTick(canvas,t.X,t.Y,t.Label,isDrawXAxisTickMarks(t.X,mMoveX),oe);
 break;
 }
 }

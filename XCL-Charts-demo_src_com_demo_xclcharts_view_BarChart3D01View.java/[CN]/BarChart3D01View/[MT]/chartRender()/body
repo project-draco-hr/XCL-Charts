@@ -1,7 +1,7 @@
 {
   try {
     int[] ltrb=getBarLnDefaultSpadding();
-    chart.setPadding(DensityUtil.dip2px(getContext(),50),ltrb[1],ltrb[2],ltrb[3]);
+    chart.setPadding(DensityUtil.dip2px(getContext(),50),ltrb[1],ltrb[2],ltrb[3] + DensityUtil.dip2px(getContext(),25));
     chart.showRoundBorder();
     chart.setDataSource(BarDataset);
     chart.setCategories(chartLabels);
@@ -27,6 +27,7 @@
       }
     }
 );
+    chart.getCategoryAxis().setLabelLineFeed(XEnum.LabelLineFeed.EVEN_ODD);
     chart.getCategoryAxis().setLabelFormatter(new IFormatterTextCallBack(){
       @Override public String textFormatter(      String value){
         return value;

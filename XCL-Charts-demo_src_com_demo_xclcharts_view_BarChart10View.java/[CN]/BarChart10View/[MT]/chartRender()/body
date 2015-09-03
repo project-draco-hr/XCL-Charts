@@ -1,0 +1,54 @@
+{
+  try {
+    int[] ltrb=getBarLnDefaultSpadding();
+    chart.setPadding(ltrb[0],ltrb[1],ltrb[2] + 100.f,ltrb[3]);
+    chart.showRoundBorder();
+    chart.setTitle("US Population by Decade(millions)");
+    chart.addSubtitle("(XCL-Charts Demo)");
+    chart.setTitleAlign(XEnum.HorizontalAlign.LEFT);
+    chart.setDataSource(chartData);
+    chart.setCategories(chartLabels);
+    chart.setCustomLines(mCustomLineDataset);
+    chart.getDataAxis().setAxisMax(300);
+    chart.getDataAxis().setAxisMin(0);
+    chart.getDataAxis().setAxisSteps(50);
+    chart.getDataAxis().hideAxisLine();
+    chart.getDataAxis().hideTickMarks();
+    chart.getPlotGrid().hideHorizontalLines();
+    chart.getPlotGrid().hideVerticalLines();
+    chart.getCategoryAxis().hideTickMarks();
+    chart.getDataAxis().setLabelFormatter(new IFormatterTextCallBack(){
+      @Override public String textFormatter(      String value){
+        Double tmp=Double.parseDouble(value);
+        DecimalFormat df=new DecimalFormat("#0");
+        String label=df.format(tmp).toString();
+        return (label);
+      }
+    }
+);
+    chart.getCategoryAxis().setTickLabelRotateAngle(45f);
+    chart.getCategoryAxis().getTickLabelPaint().setTextSize(15);
+    chart.setItemLabelFormatter(new IFormatterDoubleCallBack(){
+      @Override public String doubleFormatter(      Double value){
+        DecimalFormat df=new DecimalFormat("#0");
+        String label=df.format(value).toString();
+        return label;
+      }
+    }
+);
+    chart.getPlotLegend().hide();
+    chart.disableHighPrecision();
+    chart.setBarCenterStyle(XEnum.BarCenterStyle.TICKMARKS);
+    chart.getCategoryAxis().setLabelLineFeed(XEnum.LabelLineFeed.EVEN_ODD);
+    chart.getDataAxis().setHorizontalTickAlign(Align.RIGHT);
+    chart.setDataAxisLocation(XEnum.AxisLocation.RIGHT);
+    chart.setPlotPanMode(XEnum.PanMode.HORIZONTAL);
+    chart.getCategoryAxis().setLabelLineFeed(XEnum.LabelLineFeed.EVEN_ODD);
+    chart.getCategoryAxis().hideAxisLine();
+    chart.getDataAxis().setHorizontalTickAlign(Align.RIGHT);
+    chart.getDataAxis().setTickLabelMargin(DensityUtil.dip2px(this.getContext(),30));
+  }
+ catch (  Exception e) {
+    e.printStackTrace();
+  }
+}

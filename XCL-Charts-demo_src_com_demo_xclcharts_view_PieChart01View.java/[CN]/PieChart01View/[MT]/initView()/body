@@ -1,5 +1,6 @@
 {
   chartDataSet();
   chartRender();
+  this.bindTouch(this,chart);
   new Thread(this).start();
 }

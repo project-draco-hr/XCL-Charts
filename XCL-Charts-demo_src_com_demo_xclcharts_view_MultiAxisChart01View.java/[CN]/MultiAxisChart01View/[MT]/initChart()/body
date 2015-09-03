@@ -5,4 +5,6 @@
   chartLnDataSet();
   chartRender();
   chartLnRender();
+  this.bindTouch(this,chart);
+  this.bindTouch(this,lnChart);
 }

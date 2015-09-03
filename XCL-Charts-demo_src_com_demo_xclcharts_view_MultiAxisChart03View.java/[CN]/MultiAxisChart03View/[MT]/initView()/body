@@ -9,4 +9,6 @@
   chartRenderLn();
   chartRenderLnAxes();
   chartRenderPie();
+  this.bindTouch(this,chart);
+  this.bindTouch(this,chartLn);
 }

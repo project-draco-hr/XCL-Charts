@@ -1,6 +1,0 @@
-{
-  List<XChart> lst=new ArrayList<XChart>();
-  lst.add(chart1);
-  lst.add(chart2);
-  return lst;
-}

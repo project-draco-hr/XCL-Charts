@@ -1,0 +1,3 @@
+{
+  mTouch.add(new ChartTouch(this,chart,panRatio));
+}

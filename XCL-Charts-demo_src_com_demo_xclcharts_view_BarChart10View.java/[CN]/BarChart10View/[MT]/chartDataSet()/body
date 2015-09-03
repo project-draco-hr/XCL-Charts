@@ -1,0 +1,26 @@
+{
+  List<Double> dataSeriesA=new LinkedList<Double>();
+  List<Integer> dataColorA=new LinkedList<Integer>();
+  dataSeriesA.add((double)70);
+  dataColorA.add(Color.rgb(171,42,96));
+  dataSeriesA.add((double)85);
+  dataColorA.add(Color.rgb(171,42,96));
+  dataSeriesA.add((double)90);
+  dataColorA.add(Color.rgb(171,42,96));
+  dataSeriesA.add((double)102);
+  dataColorA.add(Color.rgb(171,42,96));
+  dataSeriesA.add((double)140);
+  dataColorA.add(Color.rgb(171,42,96));
+  dataSeriesA.add((double)155);
+  dataColorA.add(Color.rgb(252,210,9));
+  dataSeriesA.add((double)155);
+  dataColorA.add(Color.rgb(171,42,96));
+  dataSeriesA.add((double)160);
+  dataColorA.add(Color.rgb(171,42,96));
+  dataSeriesA.add((double)200);
+  dataColorA.add(Color.rgb(77,184,73));
+  dataSeriesA.add((double)230);
+  dataColorA.add(Color.rgb(171,42,96));
+  BarData BarDataA=new BarData("",dataSeriesA,dataColorA,Color.rgb(53,169,239));
+  chartData.add(BarDataA);
+}

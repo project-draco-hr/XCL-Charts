@@ -1,0 +1,17 @@
+{
+  List<PointD> linePoint1=new ArrayList<PointD>();
+  linePoint1.add(new PointD(0d,3d));
+  linePoint1.add(new PointD(1d,9d));
+  linePoint1.add(new PointD(2d,8d));
+  linePoint1.add(new PointD(3d,7d));
+  linePoint1.add(new PointD(4d,15d));
+  linePoint1.add(new PointD(5d,16d));
+  SplineData dataSeries1=new SplineData("Go",linePoint1,Color.WHITE);
+  dataSeries1.getLinePaint().setStrokeWidth(6);
+  dataSeries1.setLineStyle(XEnum.LineStyle.DASH);
+  dataSeries1.setLabelVisible(false);
+  dataSeries1.setDotStyle(XEnum.DotStyle.RING);
+  dataSeries1.getDotPaint().setColor(Color.rgb(30,179,143));
+  dataSeries1.getPlotLine().getPlotDot().setRingInnerColor(Color.WHITE);
+  chartData.add(dataSeries1);
+}

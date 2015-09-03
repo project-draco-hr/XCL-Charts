@@ -1,0 +1,5 @@
+{
+  for (int i=2000; i < 2010; i++) {
+    chartLabels.add(Integer.toString(i));
+  }
+}

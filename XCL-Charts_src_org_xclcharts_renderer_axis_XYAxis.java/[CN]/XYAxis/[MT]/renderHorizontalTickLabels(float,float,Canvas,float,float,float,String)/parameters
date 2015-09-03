@@ -1,0 +1,7 @@
+float chatLeft
+float plotLeft
+Canvas canvas
+float labelStartX
+float labelStartY
+float markeStopX
+String text
