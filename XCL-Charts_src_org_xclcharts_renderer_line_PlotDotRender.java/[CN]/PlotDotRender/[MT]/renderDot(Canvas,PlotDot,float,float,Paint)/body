@@ -20,6 +20,9 @@ case DOT:
 case RING:
 renderRing(canvas,paint,radius,pDot,cirX,cirY);
 break;
+case RING2:
+renderRing2(canvas,paint,radius,pDot,cirX,cirY);
+break;
 case TRIANGLE:
 renderTriangle(canvas,paint,radius,cirX,cirY);
 break;

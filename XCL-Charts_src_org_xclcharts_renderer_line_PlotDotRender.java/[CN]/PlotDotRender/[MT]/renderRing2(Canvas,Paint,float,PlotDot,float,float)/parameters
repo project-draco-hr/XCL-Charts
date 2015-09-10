@@ -1,0 +1,6 @@
+Canvas canvas
+Paint paint
+float radius
+PlotDot pDot
+float cX
+float bottom

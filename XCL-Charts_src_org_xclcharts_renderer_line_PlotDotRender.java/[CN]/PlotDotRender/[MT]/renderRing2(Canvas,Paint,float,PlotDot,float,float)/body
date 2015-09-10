@@ -1,0 +1,9 @@
+{
+  float ringRadius=radius * 0.7f;
+  canvas.drawCircle(cX,bottom,radius,paint);
+  getInnerFillPaint().setColor(pDot.getRingInnerColor());
+  canvas.drawCircle(cX,bottom,ringRadius,getInnerFillPaint());
+  ringRadius=radius * 0.3f;
+  getInnerFillPaint().setColor(pDot.getRing2InnerColor());
+  canvas.drawCircle(cX,bottom,ringRadius,getInnerFillPaint());
+}
