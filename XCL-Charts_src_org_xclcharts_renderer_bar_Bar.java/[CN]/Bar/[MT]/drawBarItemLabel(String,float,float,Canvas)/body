@@ -1,13 +1,37 @@
 {
-  if (getItemLabelsVisible()) {
+  if (getItemLabelsVisible() && text.length() > 0) {
     float cx=x;
     float cy=y;
 switch (mBarDirection) {
 case VERTICAL:
+      float textHeight=DrawHelper.getInstance().getPaintFontHeight(getItemLabelPaint());
+switch (mItemLabelStyle) {
+case OUTER:
       cy-=this.mItemLabelAnchorOffset;
-    break;
+    cy-=textHeight;
+  break;
+case INNER:
+cy+=this.mItemLabelAnchorOffset;
+cy+=textHeight;
+break;
+default :
+cy-=this.mItemLabelAnchorOffset;
+}
+break;
 case HORIZONTAL:
-  cx+=this.mItemLabelAnchorOffset;
+float textWidth=DrawHelper.getInstance().getTextWidth(getItemLabelPaint(),text);
+switch (mItemLabelStyle) {
+case OUTER:
+cx+=this.mItemLabelAnchorOffset;
+cx+=textWidth;
+break;
+case INNER:
+cx-=this.mItemLabelAnchorOffset;
+cx-=textWidth;
+break;
+default :
+cx+=this.mItemLabelAnchorOffset;
+}
 break;
 default :
 break;

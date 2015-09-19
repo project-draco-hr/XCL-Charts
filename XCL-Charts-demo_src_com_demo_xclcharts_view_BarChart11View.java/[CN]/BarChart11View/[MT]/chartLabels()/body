@@ -1,0 +1,9 @@
+{
+  chartLabels.add("Carbonite");
+  chartLabels.add("Dropbox");
+  chartLabels.add("Google Drive");
+  chartLabels.add("Microsoft OneDrive");
+  chartLabels.add("Box");
+  chartLabels.add("SugarSync");
+  chartLabels.add("AVERAGE");
+}

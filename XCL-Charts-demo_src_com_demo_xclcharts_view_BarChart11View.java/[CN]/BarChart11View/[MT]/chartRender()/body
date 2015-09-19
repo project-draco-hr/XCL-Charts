@@ -1,0 +1,58 @@
+{
+  try {
+    int[] ltrb=getBarLnDefaultSpadding();
+    chart.setPadding(ltrb[0] + DensityUtil.dip2px(this.getContext(),40),ltrb[1] + DensityUtil.dip2px(this.getContext(),10),ltrb[2],ltrb[3]);
+    chart.setTitle("Cloud Computing Services\n(SOHO/SMB) - Overall Scores");
+    chart.setTitleAlign(XEnum.HorizontalAlign.CENTER);
+    chart.setDataSource(chartData);
+    chart.setCategories(chartLabels);
+    chart.getDataAxis().setAxisMax(8);
+    chart.getDataAxis().setAxisMin(6);
+    chart.getDataAxis().setAxisSteps(1);
+    chart.getDataAxis().hideAxisLine();
+    chart.getDataAxis().hideTickMarks();
+    chart.getCategoryAxis().hideTickMarks();
+    chart.getDataAxis().setVerticalTickPosition(XEnum.VerticalAlign.TOP);
+    chart.getCategoryAxis().setVerticalTickPosition(XEnum.VerticalAlign.TOP);
+    chart.setChartDirection(XEnum.Direction.HORIZONTAL);
+    chart.setDataAxisLocation(XEnum.AxisLocation.TOP);
+    chart.getDataAxis().setLabelFormatter(new IFormatterTextCallBack(){
+      @Override public String textFormatter(      String value){
+        Double tmp=Double.parseDouble(value);
+        DecimalFormat df=new DecimalFormat("#0.0");
+        String label=df.format(tmp).toString();
+        return (label);
+      }
+    }
+);
+    chart.setItemLabelFormatter(new IFormatterDoubleCallBack(){
+      @Override public String doubleFormatter(      Double value){
+        DecimalFormat df=new DecimalFormat("#0.0");
+        String label=df.format(value).toString();
+        return label;
+      }
+    }
+);
+    chart.getPlotLegend().hide();
+    chart.disableHighPrecision();
+    chart.setApplyBackgroundColor(true);
+    chart.setBackgroundColor(Color.BLACK);
+    chart.getDataAxis().getTickLabelPaint().setColor(Color.WHITE);
+    chart.getCategoryAxis().getTickLabelPaint().setColor(Color.WHITE);
+    chart.getPlotTitle().getTitlePaint().setColor(Color.WHITE);
+    chart.getPlotTitle().getSubtitlePaint().setColor(Color.WHITE);
+    chart.getBar().getItemLabelPaint().setColor(Color.WHITE);
+    chart.getPlotGrid().getVerticalLinePaint().setColor(Color.rgb(106,194,57));
+    chart.getPlotGrid().getHorizontalLinePaint().setColor(Color.rgb(106,194,57));
+    chart.getPlotGrid().showVerticalLines();
+    chart.getBar().setBarStyle(XEnum.BarStyle.FILL);
+    chart.getBar().setItemLabelVisible(true);
+    chart.getBar().getItemLabelPaint().setTextSize(22);
+    chart.getBar().setItemLabelStyle(XEnum.ItemLabelStyle.INNER);
+    chart.getCategoryAxis().getAxisPaint().setColor(Color.rgb(106,194,57));
+    chart.getDataAxis().setVerticalTickPosition(XEnum.VerticalAlign.TOP);
+  }
+ catch (  Exception e) {
+    e.printStackTrace();
+  }
+}
