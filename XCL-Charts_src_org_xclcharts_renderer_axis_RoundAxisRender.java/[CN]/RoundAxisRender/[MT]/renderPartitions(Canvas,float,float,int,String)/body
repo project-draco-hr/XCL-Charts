@@ -1,5 +1,5 @@
 {
-  if (color >= -1)   getAxisPaint().setColor(color);
+  getAxisPaint().setColor(color);
   if (Float.compare(sweepAngle,0.0f) < 0) {
     Log.e(TAG,"????????????!!!");
     return false;

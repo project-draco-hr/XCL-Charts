@@ -2,10 +2,10 @@
   if ("" == text || text.length() == 0)   return;
   if (angle != 0) {
     canvas.rotate(angle,x,y);
-    canvas.drawText(text,x,y,paint);
+    drawText(canvas,paint,text,x,y);
     canvas.rotate(-1 * angle,x,y);
   }
  else {
-    canvas.drawText(text,x,y,paint);
+    drawText(canvas,paint,text,x,y);
   }
 }
