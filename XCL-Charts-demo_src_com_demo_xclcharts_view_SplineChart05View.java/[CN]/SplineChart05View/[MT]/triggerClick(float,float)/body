@@ -15,13 +15,11 @@
     while (it.hasNext()) {
       PointD entry=(PointD)it.next();
       if (pos == i) {
-        Double xValue=entry.x;
-        Double yValue=entry.y;
         float r=record.getRadius();
-        chart.showFocusPointF(record.getPosition(),r * 2);
         chart.getFocusPaint().setStyle(Style.FILL);
         chart.getFocusPaint().setStrokeWidth(6);
         chart.getFocusPaint().setColor(Color.rgb(237,92,92));
+        chart.showFocusPointF(record.getPosition(),r * 2);
         this.invalidate();
         break;
       }
