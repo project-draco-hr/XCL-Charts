@@ -1,0 +1,6 @@
+{
+  chartLabels2.add("Kerberos");
+  chartLabels2.add("PKI");
+  chartLabels2.add("OpenStack Keystone");
+  chartLabels2.add("CoreOS Dex");
+}

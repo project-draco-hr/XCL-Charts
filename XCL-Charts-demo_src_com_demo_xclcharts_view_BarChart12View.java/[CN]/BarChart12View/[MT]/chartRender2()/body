@@ -1,0 +1,53 @@
+{
+  try {
+    int[] ltrb=getBarLnDefaultSpadding();
+    chart2.setPadding(ltrb[0],ltrb[1],ltrb[2],ltrb[3] + DensityUtil.dip2px(this.getContext(),30));
+    chart2.setCategories(chartLabels2);
+    chart2.setDataSource(chartData2);
+    chart2.getDataAxis().setAxisMax(105);
+    chart2.getDataAxis().setAxisMin(0);
+    chart2.getDataAxis().setAxisSteps(5);
+    chart2.getDataAxis().setDetailModeSteps(5);
+    chart2.getPlotGrid().hideHorizontalLines();
+    chart2.getPlotGrid().hideVerticalLines();
+    chart2.getPlotGrid().hideEvenRowBgColor();
+    chart2.getPlotGrid().hideOddRowBgColor();
+    chart2.getDataAxis().setLabelFormatter(new IFormatterTextCallBack(){
+      @Override public String textFormatter(      String value){
+        Double tmp=Double.parseDouble(value);
+        DecimalFormat df=new DecimalFormat("#0");
+        String label=df.format(tmp).toString();
+        return (label);
+      }
+    }
+);
+    chart2.getBar().setItemLabelVisible(true);
+    chart2.getBar().setItemLabelStyle(XEnum.ItemLabelStyle.INNER);
+    chart2.getBar().getItemLabelPaint().setColor(Color.WHITE);
+    chart2.getBar().getItemLabelPaint().setTextSize(20);
+    chart2.getBar().setBarRoundRadius(15);
+    chart2.getBar().setBarStyle(XEnum.BarStyle.ROUNDBAR);
+    chart2.getCategoryAxis().hideAxisLine();
+    chart2.getCategoryAxis().hideTickMarks();
+    chart2.getDataAxis().hide();
+    chart2.getBar().setBarTickSpacePercent(0.9f);
+    chart2.getCategoryAxis().setTickLabelRotateAngle(45);
+    chart2.getCategoryAxis().getTickLabelPaint().setColor(Color.rgb(83,194,232));
+    chart2.getCategoryAxis().getTickLabelPaint().setTextSize(20);
+    chart2.disablePanMode();
+    chart2.disableHighPrecision();
+    chart2.setItemLabelFormatter(new IFormatterDoubleCallBack(){
+      @Override public String doubleFormatter(      Double value){
+        DecimalFormat df=new DecimalFormat("#0");
+        String label=df.format(value).toString();
+        return label;
+      }
+    }
+);
+    chart2.getPlotLegend().hide();
+    chart2.setBarCenterStyle(XEnum.BarCenterStyle.TICKMARKS);
+  }
+ catch (  Exception e) {
+    e.printStackTrace();
+  }
+}

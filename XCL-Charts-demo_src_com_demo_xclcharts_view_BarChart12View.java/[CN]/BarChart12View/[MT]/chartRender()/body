@@ -1,20 +1,19 @@
 {
   try {
     int[] ltrb=getBarLnDefaultSpadding();
-    chart.setPadding(ltrb[0],ltrb[1],ltrb[2],ltrb[3]);
-    chart.setTitle("????????? - ??????????????????");
+    chart.setPadding(ltrb[0],ltrb[1],ltrb[2],ltrb[3] + DensityUtil.dip2px(this.getContext(),30));
+    chart.setTitle("??????????????????");
     chart.addSubtitle("(XCL-Charts Demo)");
     chart.setCategories(chartLabels);
-    chart.setCustomLines(mCustomLineDataset);
-    chart.getAxisTitle().setTitleStyle(XEnum.AxisTitleStyle.ENDPOINT);
-    chart.getAxisTitle().setLeftTitle("??????");
-    chart.getAxisTitle().setLowerTitle("??????");
-    chart.getAxisTitle().setCrossPointTitle("(??????)");
+    chart.setDataSource(chartData);
     chart.getDataAxis().setAxisMax(105);
     chart.getDataAxis().setAxisMin(0);
     chart.getDataAxis().setAxisSteps(5);
     chart.getDataAxis().setDetailModeSteps(5);
-    chart.getPlotGrid().showHorizontalLines();
+    chart.getPlotGrid().hideHorizontalLines();
+    chart.getPlotGrid().hideVerticalLines();
+    chart.getPlotGrid().hideEvenRowBgColor();
+    chart.getPlotGrid().hideOddRowBgColor();
     chart.getDataAxis().setLabelFormatter(new IFormatterTextCallBack(){
       @Override public String textFormatter(      String value){
         Double tmp=Double.parseDouble(value);
@@ -25,10 +24,18 @@
     }
 );
     chart.getBar().setItemLabelVisible(true);
-    chart.getBar().setBarStyle(XEnum.BarStyle.OUTLINE);
-    chart.getBar().setBorderWidth(5);
-    chart.getBar().setOutlineAlpha(150);
+    chart.getBar().setItemLabelStyle(XEnum.ItemLabelStyle.INNER);
+    chart.getBar().getItemLabelPaint().setColor(Color.rgb(162,53,46));
+    chart.getBar().getItemLabelPaint().setTextSize(20);
+    chart.getBar().setBarRoundRadius(15);
+    chart.getBar().setBarStyle(XEnum.BarStyle.ROUNDBAR);
+    chart.getCategoryAxis().hideAxisLine();
+    chart.getCategoryAxis().hideTickMarks();
+    chart.getCategoryAxis().hideAxisLabels();
+    chart.getBar().setBarTickSpacePercent(0.9f);
+    chart.getDataAxis().hide();
     chart.disablePanMode();
+    chart.disableHighPrecision();
     chart.setItemLabelFormatter(new IFormatterDoubleCallBack(){
       @Override public String doubleFormatter(      Double value){
         DecimalFormat df=new DecimalFormat("#0");

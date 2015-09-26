@@ -1,0 +1,7 @@
+{
+  if (null == mPaintOutlineBar) {
+    mPaintOutlineBar=new Paint(Paint.ANTI_ALIAS_FLAG);
+    mPaintOutlineBar.setStyle(Style.FILL);
+  }
+  return mPaintOutlineBar;
+}

@@ -1,0 +1,10 @@
+{
+  chartLabels();
+  chartDataSet();
+  chartLabels2();
+  chartDataSet2();
+  chartRender();
+  chartRender2();
+  this.bindTouch(this,chart);
+  this.bindTouch(this,chart2);
+}
