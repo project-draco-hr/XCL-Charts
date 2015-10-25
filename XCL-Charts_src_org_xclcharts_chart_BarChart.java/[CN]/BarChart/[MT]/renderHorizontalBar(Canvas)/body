@@ -68,7 +68,12 @@
       if (!mEqualAxisMin && Double.compare(dataAxis.getAxisMin(),bv) == 0) {
       }
  else {
-        mFlatBar.renderBarItemLabel(label,labelLeftX,labelLeftY,canvas);
+        if (mFlatBar.getItemLabelStyle() == XEnum.ItemLabelStyle.BOTTOM) {
+          mFlatBar.renderBarItemLabel(label,barLeft,labelLeftY,canvas);
+        }
+ else {
+          mFlatBar.renderBarItemLabel(label,labelLeftX,labelLeftY,canvas);
+        }
       }
       drawFocusRect(canvas,i,j,barLeft,barTop,barRight,barBottom);
     }

@@ -69,7 +69,12 @@
       if (!mEqualAxisMin && Double.compare(dataAxis.getAxisMin(),bv) == 0) {
       }
  else {
-        mFlatBar.renderBarItemLabel(getFormatterItemLabel(bv),labelTopX,labelTopY,canvas);
+        if (mFlatBar.getItemLabelStyle() == XEnum.ItemLabelStyle.BOTTOM) {
+          mFlatBar.renderBarItemLabel(getFormatterItemLabel(bv),labelTopX,barBottom,canvas);
+        }
+ else {
+          mFlatBar.renderBarItemLabel(getFormatterItemLabel(bv),labelTopX,labelTopY,canvas);
+        }
       }
     }
     currNumber++;

@@ -1,7 +1,12 @@
 {
-  chartData.add(new PieData("48","48%",45,Color.rgb(215,124,124)));
-  chartData.add(new PieData("15","15%",15,Color.rgb(253,180,90)));
-  chartData.add(new PieData("5","5%",5,Color.rgb(77,83,97)));
-  chartData.add(new PieData("10","10%",10f,Color.rgb(253,180,90)));
-  chartData.add(new PieData("??????","25%",25,Color.rgb(52,194,188),true));
+  PieData pd1=new PieData("48","48%",45,Color.rgb(215,124,124));
+  PieData pd2=new PieData("15","15%",15,Color.rgb(253,180,90));
+  PieData pd3=new PieData("5","5%",5,Color.rgb(77,83,97));
+  PieData pd4=new PieData("10","10%",10f,Color.rgb(253,180,90));
+  PieData pd5=new PieData("??????","25%",25,Color.rgb(52,194,188),true);
+  chartData.add(pd1);
+  chartData.add(pd2);
+  chartData.add(pd3);
+  chartData.add(pd4);
+  chartData.add(pd5);
 }

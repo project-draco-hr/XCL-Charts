@@ -1,0 +1,86 @@
+{
+  try {
+    int[] ltrb=getBarLnDefaultSpadding();
+    chart.setPadding(ltrb[0],ltrb[1],ltrb[2],ltrb[3]);
+    chart.setTitle("????????????????????? (???23?????????)");
+    chart.addSubtitle("(XCL-Charts Demo)");
+    chart.setTitleVerticalAlign(XEnum.VerticalAlign.BOTTOM);
+    chart.setTitleAlign(XEnum.HorizontalAlign.RIGHT);
+    chart.getPlotTitle().getTitlePaint().setColor(Color.rgb(255,9,52));
+    chart.setDataSource(chartData);
+    chart.setCategories(chartLabels);
+    chart.getDataAxis().setAxisMax(500);
+    chart.getDataAxis().setAxisMin(100);
+    chart.getDataAxis().setAxisSteps(100);
+    chart.getDataAxis().getTickLabelPaint().setColor(Color.rgb(199,88,122));
+    chart.getPlotGrid().hideHorizontalLines();
+    chart.getPlotGrid().hideVerticalLines();
+    chart.getBar().setItemLabelStyle(XEnum.ItemLabelStyle.BOTTOM);
+    chart.getBar().setBarStyle(XEnum.BarStyle.OUTLINE);
+    chart.getBar().setBarTickSpacePercent(0.6f);
+    chart.setChartDirection(XEnum.Direction.HORIZONTAL);
+    chart.setCategoryAxisLocation(XEnum.AxisLocation.RIGHT);
+    chart.getCategoryAxis().hideAxisLine();
+    chart.getCategoryAxis().hideTickMarks();
+    chart.getDataAxis().hide();
+    chart.getCategoryAxis().getTickLabelPaint().setColor(Color.rgb(166,84,254));
+    chart.getBar().setItemLabelVisible(true);
+    chart.getBar().getItemLabelPaint().setTextSize(22);
+    chart.getBar().setBarStyle(XEnum.BarStyle.ROUNDBAR);
+    chart.setItemLabelFormatter(new IFormatterDoubleCallBack(){
+      @Override public String doubleFormatter(      Double value){
+        if (Double.compare(value,200d) == 0) {
+          return "1) ?????????";
+        }
+ else         if (Double.compare(value,250d) == 0) {
+          return "2) ???????????????";
+        }
+ else         if (Double.compare(value,300d) == 0) {
+          return "3) ???????????????";
+        }
+ else         if (Double.compare(value,350d) == 0) {
+          return "4) ???????????????";
+        }
+ else         if (Double.compare(value,400d) == 0) {
+          return "5) ?????????????????????";
+        }
+ else {
+          DecimalFormat df=new DecimalFormat("[#0]");
+          String label=df.format(value).toString();
+          return label;
+        }
+      }
+    }
+);
+    chart.disablePanMode();
+    List<AnchorDataPoint> mAnchorSet=new ArrayList<AnchorDataPoint>();
+    AnchorDataPoint an0=new AnchorDataPoint(0,0,XEnum.AnchorStyle.ROUNDRECT);
+    an0.setBgColor(Color.rgb(255,145,126));
+    an0.setAnchor("64%");
+    AnchorDataPoint an1=new AnchorDataPoint(0,1,XEnum.AnchorStyle.ROUNDRECT);
+    an1.setBgColor(Color.rgb(255,145,126));
+    an1.setAnchor("53%");
+    AnchorDataPoint an2=new AnchorDataPoint(0,2,XEnum.AnchorStyle.ROUNDRECT);
+    an2.setBgColor(Color.rgb(255,145,126));
+    an2.setAnchor("42%");
+    AnchorDataPoint an3=new AnchorDataPoint(0,3,XEnum.AnchorStyle.CIRCLE);
+    an3.setBgColor(Color.rgb(56,127,255));
+    an3.setAreaStyle(XEnum.DataAreaStyle.FILL);
+    an3.setAnchor("???");
+    an3.setTextColor(Color.WHITE);
+    AnchorDataPoint an4=new AnchorDataPoint(0,4,XEnum.AnchorStyle.CIRCLE);
+    an4.setBgColor(Color.rgb(56,127,255));
+    an4.setAreaStyle(XEnum.DataAreaStyle.FILL);
+    an4.setAnchor("???");
+    an4.setTextColor(Color.WHITE);
+    mAnchorSet.add(an0);
+    mAnchorSet.add(an1);
+    mAnchorSet.add(an2);
+    mAnchorSet.add(an3);
+    mAnchorSet.add(an4);
+    chart.setAnchorDataPoint(mAnchorSet);
+  }
+ catch (  Exception e) {
+    Log.e(TAG,e.toString());
+  }
+}
