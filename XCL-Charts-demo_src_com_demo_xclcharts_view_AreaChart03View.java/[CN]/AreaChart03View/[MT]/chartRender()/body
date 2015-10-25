@@ -1,0 +1,57 @@
+{
+  try {
+    int[] ltrb=getBarLnDefaultSpadding();
+    chart.setPadding(ltrb[0],ltrb[1],ltrb[2],ltrb[3]);
+    chart.disableHighPrecision();
+    chart.disablePanMode();
+    chart.setCategories(mLabels);
+    chart.setDataSource(mDataset);
+    chart.setCrurveLineStyle(XEnum.CrurveLineStyle.BEELINE);
+    chart.getDataAxis().setAxisMax(100);
+    chart.getDataAxis().setAxisSteps(10);
+    chart.getPlotGrid().hideHorizontalLines();
+    chart.getPlotGrid().hideVerticalLines();
+    chart.getDataAxis().hideAxisLine();
+    chart.getDataAxis().hideTickMarks();
+    chart.getCategoryAxis().hideAxisLine();
+    chart.getCategoryAxis().hideTickMarks();
+    chart.setTitle("?????????(Area Chart)");
+    chart.addSubtitle("(XCL-Charts Demo)");
+    chart.setItemLabelFormatter(new IFormatterDoubleCallBack(){
+      @Override public String doubleFormatter(      Double value){
+        DecimalFormat df=new DecimalFormat("#0");
+        String label=df.format(value).toString();
+        return label;
+      }
+    }
+);
+    chart.getAreaFillPaint().setAlpha(254);
+    chart.setAreaAlpha(254);
+    chart.getDataAxis().hide();
+    chart.getCategoryAxis().hide();
+    CustomLineData line1=new CustomLineData("30",mStdValue,Color.RED,7);
+    line1.getLineLabelPaint().setColor(Color.RED);
+    line1.setLabelHorizontalPostion(Align.LEFT);
+    line1.setLineStyle(XEnum.LineStyle.DASH);
+    line1.setLabelOffset(chart.getDataAxis().getTickLabelMargin());
+    mCustomLineDataset.add(line1);
+    CustomLineData line2=new CustomLineData("20",20d,Color.RED,7);
+    line2.setLabelHorizontalPostion(Align.LEFT);
+    line2.hideLine();
+    line2.setLabelOffset(chart.getDataAxis().getTickLabelMargin());
+    line2.getLineLabelPaint().setColor(Color.RED);
+    mCustomLineDataset.add(line2);
+    CustomLineData line3=new CustomLineData("10",10d,Color.RED,7);
+    line3.setLabelHorizontalPostion(Align.LEFT);
+    line3.hideLine();
+    line3.getLineLabelPaint().setColor(Color.RED);
+    line3.setLabelOffset(chart.getDataAxis().getTickLabelMargin());
+    mCustomLineDataset.add(line3);
+    chart.setCustomLines(mCustomLineDataset);
+    chart.getPlotLegend().hide();
+  }
+ catch (  Exception e) {
+    e.printStackTrace();
+    Log.e(TAG,e.toString());
+  }
+}

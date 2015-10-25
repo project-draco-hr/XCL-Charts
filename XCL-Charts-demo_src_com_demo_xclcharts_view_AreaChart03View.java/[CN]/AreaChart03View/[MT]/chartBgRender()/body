@@ -1,0 +1,40 @@
+{
+  try {
+    int[] ltrb=getBarLnDefaultSpadding();
+    chartBg.setPadding(ltrb[0],ltrb[1],ltrb[2],ltrb[3]);
+    chartBg.disableHighPrecision();
+    chartBg.disablePanMode();
+    chartBg.setCategories(mBgLabels);
+    chartBg.setCrurveLineStyle(XEnum.CrurveLineStyle.BEELINE);
+    chartBg.getDataAxis().setAxisMax(100);
+    chartBg.getDataAxis().setAxisSteps(10);
+    chartBg.getPlotGrid().showHorizontalLines();
+    chartBg.getPlotGrid().showVerticalLines();
+    chartBg.getPlotGrid().setHorizontalLineStyle(XEnum.LineStyle.DOT);
+    chartBg.getPlotGrid().setVerticalLineStyle(XEnum.LineStyle.DOT);
+    chartBg.getDataAxis().hideAxisLine();
+    chartBg.getDataAxis().hideTickMarks();
+    chartBg.getCategoryAxis().hideAxisLine();
+    chartBg.getCategoryAxis().hideTickMarks();
+    chartBg.getDataAxis().getTickLabelPaint().setColor(Color.GREEN);
+    chartBg.getDataAxis().setLabelFormatter(new IFormatterTextCallBack(){
+      @Override public String textFormatter(      String value){
+        Double tmp=Double.parseDouble(value);
+        if (Double.compare(tmp,mStdValue) == -1 || Double.compare(tmp,mStdValue) == 0) {
+          return "";
+        }
+ else {
+          DecimalFormat df=new DecimalFormat("#0");
+          String label=df.format(tmp).toString();
+          return (label);
+        }
+      }
+    }
+);
+    chartBg.getPlotLegend().hide();
+  }
+ catch (  Exception e) {
+    e.printStackTrace();
+    Log.e(TAG,e.toString());
+  }
+}

@@ -5,4 +5,5 @@
     mPaintAreaFill.setAntiAlias(true);
     mPaintAreaFill.setColor(Color.rgb(73,172,72));
   }
+  return mPaintAreaFill;
 }

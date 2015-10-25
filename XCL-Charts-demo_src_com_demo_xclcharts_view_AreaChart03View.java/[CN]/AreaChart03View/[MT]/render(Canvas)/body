@@ -1,0 +1,14 @@
+{
+  try {
+    chartBg.render(canvas);
+    chart.render(canvas);
+    Paint paint=new Paint();
+    paint.setAntiAlias(true);
+    paint.setColor(Color.rgb(11,35,122));
+    paint.setTextSize(22);
+    canvas.drawText("2015/10/26 ??????12???  ??????  ??????:xxxx",chart.getPlotArea().getLeft(),chart.getPlotArea().getTop() - 10.f,paint);
+  }
+ catch (  Exception e) {
+    Log.e(TAG,e.toString());
+  }
+}

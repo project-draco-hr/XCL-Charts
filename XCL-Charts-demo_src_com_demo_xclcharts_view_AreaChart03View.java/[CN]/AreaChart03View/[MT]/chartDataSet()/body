@@ -1,0 +1,15 @@
+{
+  List<Double> dataSeries1=new LinkedList<Double>();
+  double testData[]={40,21,32,56,40,54,46,32,89,76,53,62,66,78,47,53,90,80,60,82,77,67,79,85,83,90};
+  for (int i=0; i < testData.length; i++) {
+    dataSeries1.add(testData[i]);
+    mLabels.add(Integer.toString(i));
+  }
+  AreaData line1=new AreaData("??????",dataSeries1,Color.rgb(108,180,223),Color.YELLOW);
+  line1.setDotStyle(XEnum.DotStyle.HIDE);
+  line1.setApplayGradient(true);
+  line1.setAreaBeginColor(Color.WHITE);
+  line1.setAreaEndColor(Color.rgb(108,180,223));
+  line1.setGradientDirection(XEnum.Direction.VERTICAL);
+  mDataset.add(line1);
+}

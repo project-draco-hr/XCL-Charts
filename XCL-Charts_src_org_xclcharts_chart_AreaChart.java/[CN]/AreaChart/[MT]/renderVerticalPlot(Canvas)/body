@@ -3,7 +3,6 @@
     Log.e(TAG,"???????????????.");
     return false;
   }
-  this.initPaint();
   if (null == mPathArea)   mPathArea=new Path();
   int count=mDataSet.size();
   for (int i=0; i < count; i++) {
@@ -11,11 +10,11 @@
     calcAllPoints(areaData,mLstDotInfo,mLstPoints,mLstPathPoints);
 switch (getCrurveLineStyle()) {
 case BEZIERCURVE:
-      renderBezierArea(canvas,mPaintAreaFill,mPathArea,areaData,mLstPathPoints);
+      renderBezierArea(canvas,getAreaFillPaint(),mPathArea,areaData,mLstPathPoints);
     renderBezierCurveLine(canvas,mPathArea,areaData,mLstPoints);
   break;
 case BEELINE:
-renderArea(canvas,mPaintAreaFill,mPathArea,areaData,mLstPathPoints);
+renderArea(canvas,getAreaFillPaint(),mPathArea,areaData,mLstPathPoints);
 renderLine(canvas,areaData,mLstPoints);
 break;
 default :
